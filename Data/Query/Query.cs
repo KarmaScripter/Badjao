@@ -258,8 +258,7 @@ namespace BudgetExecution
         /// </param>
         /// <returns>
         /// </returns>
-        public DbDataReader GetDataReader(
-            CommandBehavior behavior = CommandBehavior.CloseConnection )
+        public DbDataReader GetDataReader( CommandBehavior behavior = CommandBehavior.CloseConnection )
         {
             if( DataConnection != null
                && !string.IsNullOrEmpty( DataCommand?.CommandText )
