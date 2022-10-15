@@ -12,6 +12,7 @@ namespace BudgetExecution
     using System.Windows.Forms;
     using Syncfusion.Windows.Forms.Tools;
 
+    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class CurrencyBase : CurrencyEdit
     {
         /// <summary>
@@ -261,7 +262,6 @@ namespace BudgetExecution
                 try
                 {
                     var filter = string.Empty;
-
                     foreach( var kvp in dict )
                     {
                         if( !string.IsNullOrEmpty( kvp.Key )
@@ -326,7 +326,6 @@ namespace BudgetExecution
         public virtual void OnMouseOver( object sender, EventArgs e )
         {
             var _currencyTextBox = sender as CurrencyBox;
-
             try
             {
                 if( _currencyTextBox != null
@@ -364,7 +363,6 @@ namespace BudgetExecution
         public virtual void OnMouseLeave( object sender, EventArgs e )
         {
             var _currencyTextBox = sender as CurrencyBox;
-
             try
             {
                 if( _currencyTextBox != null )
