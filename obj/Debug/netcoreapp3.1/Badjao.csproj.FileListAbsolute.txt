@@ -159,3 +159,5 @@ C:\Users\terry\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.csproj.CopyCom
 C:\Users\terry\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.dll
 C:\Users\terry\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.pdb
 C:\Users\terry\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.genruntimeconfig.cache
+C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.dll
+C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.pdb
