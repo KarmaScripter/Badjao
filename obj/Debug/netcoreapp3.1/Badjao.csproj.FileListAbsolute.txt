@@ -125,7 +125,6 @@ C:\Users\terry\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.SQLite.EF
 C:\Users\terry\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.SQLite.Linq.xml
 C:\Users\terry\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.csproj.AssemblyReference.cache
 C:\Users\terry\source\repos\Badjao\obj\Debug\netcoreapp3.1\BudgetExecution.CalculationForm.resources
-C:\Users\terry\source\repos\Badjao\obj\Debug\netcoreapp3.1\BudgetExecution.CalendarForm.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\netcoreapp3.1\BudgetExecution.CarouselForm.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\netcoreapp3.1\BudgetExecution.ChartForm.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\netcoreapp3.1\BudgetExecution.ColumnConfiguration.resources
