@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BudgetExecution.BindingModelBase">
+    <Position X="10" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAQAAQAAAAAABEAAAAgCAQAAEBAAAAAoAAAAgAA=</HashCode>
+      <FileName>Controls\Chart\BindingModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BudgetExecution.BindingModel">
+    <Position X="7" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEMAAAAAgAAAAIAAAAgAAAAAIAAAAAAAAEAAwAABAA=</HashCode>
+      <FileName>Controls\Chart\BindingModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BudgetExecution.CallOut">
+    <Position X="13" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Chart\CallOut.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BudgetExecution.LegendItem">
+    <Position X="13" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Chart\LegendItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BudgetExecution.TitleInfo">
+    <Position X="1.5" Y="10.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAABAAABAAAAAQACAAAAAAgAAAAAAAAAAQAARAAAAAA=</HashCode>
+      <FileName>Controls\Chart\TitleInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BudgetExecution.ChartSeries">
+    <Position X="0.5" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAAAgAAAAAAAAAAAAgAAAAAEAABAAAgAAAAAAA=</HashCode>
+      <FileName>Controls\Chart\ChartSeries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BudgetExecution.Chart">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BgEAAAUAAgAAAgAABAAAAAgiAAAAABAAAAIAAQAAgAA=</HashCode>
+      <FileName>Controls\Chart\Chart.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
