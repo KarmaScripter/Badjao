@@ -2,8 +2,7 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\teppler\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\teppler\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\WPF\\20.3.0.47\\ToolboxNuGetPackages"
+      "C:\\Users\\teppler\\.nuget\\packages"
     ]
   }
 }

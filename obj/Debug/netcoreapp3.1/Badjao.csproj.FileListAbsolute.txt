@@ -5,34 +5,6 @@ C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\Badjao.runtimeconfi
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\Badjao.runtimeconfig.dev.json
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\Badjao.dll
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\Badjao.pdb
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.OleDb.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.OleDb.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.AccessControl.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
-C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Windows.Extensions.dll
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\C1.Win.4.8.dll
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\C1.Win.C1FlexGrid.4.8.dll
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\CharmNotification.dll
@@ -79,6 +51,8 @@ C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\Syncfusion.XlsIO.Ba
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.Entity.Design.dll
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.Entity.dll
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.Linq.dll
+C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.OleDb.dll
+C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.SQLite.dll
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.SQLite.EF6.dll
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.SQLite.Linq.dll
@@ -89,6 +63,7 @@ C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\C1.Win.C1FlexGrid.4
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\DataGridMetro.dll.config
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\DocumentFormat.OpenXml.xml
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\EPPlus.xml
+C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\MetroFramework.pdb
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\MetroSet UI.dll.config
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\SQLite.Designer.xml
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\Syncfusion.Calculate.Base.xml
@@ -125,6 +100,7 @@ C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.SQLite.
 C:\Users\teppler\source\repos\Badjao\bin\Debug\netcoreapp3.1\System.Data.SQLite.Linq.xml
 C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.csproj.AssemblyReference.cache
 C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\BudgetExecution.CalculationForm.resources
+C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\BudgetExecution.CalendarForm.resources
 C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\BudgetExecution.CarouselForm.resources
 C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\BudgetExecution.ChartForm.resources
 C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\BudgetExecution.ColumnConfiguration.resources
@@ -158,5 +134,3 @@ C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.csproj.CopyC
 C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.dll
 C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.pdb
 C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.genruntimeconfig.cache
-C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.dll
-C:\Users\teppler\source\repos\Badjao\obj\Debug\netcoreapp3.1\Badjao.pdb
