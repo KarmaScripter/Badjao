@@ -328,7 +328,7 @@ namespace BudgetExecution
 
                     Environment.GetFolderPath( Environment.SpecialFolder.Personal ),
                     Environment.GetFolderPath( Environment.SpecialFolder.Recent ),
-                    @"C:\Users\terry\source\repos\Badjao\Resources\Docs",
+                    @"C:\Users\teppler\source\repos\Badjao\Resources\Docs",
                     _current
                 };
 
