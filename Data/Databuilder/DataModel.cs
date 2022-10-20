@@ -233,14 +233,15 @@ namespace BudgetExecution
             string value )
         {
             if( dataRows?.Any( ) == true
+               && !string.IsNullOrEmpty( name ) 
                && Enum.IsDefined( typeof( Field ), name )
                && !string.IsNullOrEmpty( value ) )
             {
                 try
                 {
                     var _query = dataRows
-                        ?.Where( p => p.Field<string>( $"{name}" ).Equals( value ) )
-                        ?.Select( p => p.Field<string>( $"{name}" ) )?.Distinct( );
+                        ?.Where( p => p.Field<string>( $"{ name }" ).Equals( value ) )
+                        ?.Select( p => p.Field<string>( $"{ name }" ) )?.Distinct( );
 
                     return _query?.Any( ) == true
                         ? _query
@@ -315,7 +316,7 @@ namespace BudgetExecution
 
                     using var _command = new OleDbCommand( );
                     _command.Connection = _connection;
-                    _command.CommandText = "SELECT * FROM [" + _sheetName + "]";
+                    _command.CommandText = $"SELECT * FROM [ { _sheetName } ]";
                     using var _dataAdapter = new OleDbDataAdapter( _command );
                     _dataAdapter.Fill( _dataSet, "excelData" );
                     using var _table = _dataSet.Tables[ "ExcelData" ];
