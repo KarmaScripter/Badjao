@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {
+    "net6.0-windows10.0.22621": {
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -18,10 +18,14 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -37,10 +41,14 @@
       "Microsoft.Win32.SystemEvents/7.0.0-rc.2.22472.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -87,6 +95,31 @@
           }
         }
       },
+      "Syncfusion.Licensing/20.3.0.50": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Shared.Base/20.3.0.50": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.50"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Shared.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Shared.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Configuration.ConfigurationManager/7.0.0-rc.2.22472.3": {
         "type": "package",
         "dependencies": {
@@ -94,10 +127,14 @@
           "System.Security.Permissions": "7.0.0-rc.2.22472.3"
         },
         "compile": {
-          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {}
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {}
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -110,10 +147,14 @@
           "System.Diagnostics.PerformanceCounter": "7.0.0-rc.2.22472.3"
         },
         "compile": {
-          "lib/net6.0/System.Data.OleDb.dll": {}
+          "lib/net6.0/System.Data.OleDb.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Data.OleDb.dll": {}
+          "lib/net6.0/System.Data.OleDb.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -133,10 +174,14 @@
           "runtime.native.System.Data.SqlClient.sni": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {}
+          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {}
+          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll": {
@@ -155,10 +200,14 @@
           "System.Configuration.ConfigurationManager": "7.0.0-rc.2.22472.3"
         },
         "compile": {
-          "lib/net6.0/System.Diagnostics.PerformanceCounter.dll": {}
+          "lib/net6.0/System.Diagnostics.PerformanceCounter.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Diagnostics.PerformanceCounter.dll": {}
+          "lib/net6.0/System.Diagnostics.PerformanceCounter.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -176,10 +225,14 @@
           "Microsoft.Win32.SystemEvents": "7.0.0-rc.2.22472.3"
         },
         "compile": {
-          "lib/net6.0/System.Drawing.Common.dll": {}
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Drawing.Common.dll": {}
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -198,10 +251,14 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.AccessControl.dll": {}
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
@@ -213,10 +270,14 @@
       "System.Security.Cryptography.ProtectedData/7.0.0-rc.2.22472.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {}
+          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {}
+          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -234,10 +295,14 @@
           "System.Windows.Extensions": "7.0.0-rc.2.22472.3"
         },
         "compile": {
-          "lib/net6.0/System.Security.Permissions.dll": {}
+          "lib/net6.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Security.Permissions.dll": {}
+          "lib/net6.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -246,10 +311,14 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -268,10 +337,14 @@
           "System.Drawing.Common": "7.0.0-rc.2.22472.3"
         },
         "compile": {
-          "lib/net6.0/System.Windows.Extensions.dll": {}
+          "lib/net6.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Windows.Extensions.dll": {}
+          "lib/net6.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/net6.0/System.Windows.Extensions.dll": {
@@ -439,6 +512,70 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Syncfusion.Licensing/20.3.0.50": {
+      "sha512": "KxTr1PgtR8lyLPTEvcNAEkacGfoysT0ZVQetVsqAHUiRKCRiKGy8ymwYDVX/Ug/WzTWW+NvICSIGDe5yaWMhnw==",
+      "type": "package",
+      "path": "syncfusion.licensing/20.3.0.50",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/MonoAndroid10.0/Syncfusion.Licensing.dll",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/net5.0/Syncfusion.Licensing.dll",
+        "lib/net6.0/Syncfusion.Licensing.dll",
+        "lib/netcoreapp3.1/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.20.3.0.50.nupkg.sha512",
+        "syncfusion.licensing.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Shared.Base/20.3.0.50": {
+      "sha512": "8BBfu9IYFnoaF8QJQ6B36JkdFvOgawy6ydbSBiBF6+RMcRFJQ4nebxpZ17YX2tKvnms1iMXGY1W5+hA3ugKOpQ==",
+      "type": "package",
+      "path": "syncfusion.shared.base/20.3.0.50",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Shared.Base.dll",
+        "lib/net20/Syncfusion.Shared.Base.xml",
+        "lib/net35/Syncfusion.Shared.Base.dll",
+        "lib/net35/Syncfusion.Shared.Base.xml",
+        "lib/net40/Syncfusion.Shared.Base.dll",
+        "lib/net40/Syncfusion.Shared.Base.xml",
+        "lib/net45/Syncfusion.Shared.Base.dll",
+        "lib/net45/Syncfusion.Shared.Base.xml",
+        "lib/net451/Syncfusion.Shared.Base.dll",
+        "lib/net451/Syncfusion.Shared.Base.xml",
+        "lib/net46/Syncfusion.Shared.Base.dll",
+        "lib/net46/Syncfusion.Shared.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Shared.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Shared.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Shared.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Shared.Base.xml",
+        "syncfusion.shared.base.20.3.0.50.nupkg.sha512",
+        "syncfusion.shared.base.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
       ]
     },
     "System.Configuration.ConfigurationManager/7.0.0-rc.2.22472.3": {
@@ -842,7 +979,8 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": [
+    "net6.0-windows10.0.22621": [
+      "Syncfusion.Shared.Base >= 20.3.0.50",
       "System.Data.OleDb >= 7.0.0-rc.2.22472.3",
       "System.Data.SqlClient >= 4.8.4"
     ]
@@ -869,15 +1007,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Syncfusion Toolbox for WPF.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows10.0.22621.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net6.0-windows10.0.22621": {
+          "targetAlias": "net6.0-windows10.0.22621.0",
           "projectReferences": {}
         }
       },
@@ -888,9 +1026,13 @@
       }
     },
     "frameworks": {
-      "net6.0-windows7.0": {
-        "targetAlias": "net6.0-windows",
+      "net6.0-windows10.0.22621": {
+        "targetAlias": "net6.0-windows10.0.22621.0",
         "dependencies": {
+          "Syncfusion.Shared.Base": {
+            "target": "Package",
+            "version": "[20.3.0.50, )"
+          },
           "System.Data.OleDb": {
             "target": "Package",
             "version": "[7.0.0-rc.2.22472.3, )"
@@ -911,15 +1053,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Windows.SDK.NET.Ref",
+            "version": "[10.0.22621.27, 10.0.22621.27]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref": {
             "privateAssets": "all"
           },
           "Microsoft.WindowsDesktop.App.WindowsForms": {
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\terry\\source\\compilers\\cs\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

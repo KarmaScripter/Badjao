@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iN5n1DNS+371I8pmE7lz6u+H1eEcAFBobxRykZQqgBqobFfLMOewwu0RBEDdlsL0HNa+Rj36WPDKsCKpFJg4EQ==",
+  "dgSpecHash": "DhDaScCAm41Up8PNUI95NhUVLBkdWLeonCJNQMhi95SnW+RjZQJUigIzQekywVuuuik6bvOaPMMO56hKxBnmRQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\terry\\source\\repos\\Badjao\\Badjao.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "C:\\Users\\terry\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\terry\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\terry\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\terry\\.nuget\\packages\\syncfusion.licensing\\20.3.0.50\\syncfusion.licensing.20.3.0.50.nupkg.sha512",
+    "C:\\Users\\terry\\.nuget\\packages\\syncfusion.shared.base\\20.3.0.50\\syncfusion.shared.base.20.3.0.50.nupkg.sha512",
     "C:\\Users\\terry\\.nuget\\packages\\system.configuration.configurationmanager\\7.0.0-rc.2.22472.3\\system.configuration.configurationmanager.7.0.0-rc.2.22472.3.nupkg.sha512",
     "C:\\Users\\terry\\.nuget\\packages\\system.data.oledb\\7.0.0-rc.2.22472.3\\system.data.oledb.7.0.0-rc.2.22472.3.nupkg.sha512",
     "C:\\Users\\terry\\.nuget\\packages\\system.data.sqlclient\\4.8.4\\system.data.sqlclient.4.8.4.nupkg.sha512",
@@ -20,7 +22,8 @@
     "C:\\Users\\terry\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0-rc.2.22472.3\\system.security.cryptography.protecteddata.7.0.0-rc.2.22472.3.nupkg.sha512",
     "C:\\Users\\terry\\.nuget\\packages\\system.security.permissions\\7.0.0-rc.2.22472.3\\system.security.permissions.7.0.0-rc.2.22472.3.nupkg.sha512",
     "C:\\Users\\terry\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\terry\\.nuget\\packages\\system.windows.extensions\\7.0.0-rc.2.22472.3\\system.windows.extensions.7.0.0-rc.2.22472.3.nupkg.sha512"
+    "C:\\Users\\terry\\.nuget\\packages\\system.windows.extensions\\7.0.0-rc.2.22472.3\\system.windows.extensions.7.0.0-rc.2.22472.3.nupkg.sha512",
+    "C:\\Users\\terry\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.27\\microsoft.windows.sdk.net.ref.10.0.22621.27.nupkg.sha512"
   ],
   "logs": []
 }

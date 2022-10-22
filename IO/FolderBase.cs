@@ -161,7 +161,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    string[ ] _files = Directory.GetFiles( FullPath );
+                    var _files = Directory.GetFiles( FullPath );
                     return _files?.Any( ) == true
                         ? _files
                         : default( IEnumerable<string> );
@@ -209,7 +209,7 @@ namespace BudgetExecution
         {
             try
             {
-                string[ ] _folders = Enum.GetNames( typeof( Environment.SpecialFolder ) );
+                var _folders = Enum.GetNames( typeof( Environment.SpecialFolder ) );
                 return _folders?.Any( ) == true
                     ? _folders
                     : default( string[ ] );

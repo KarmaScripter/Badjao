@@ -11,7 +11,6 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Windows.Forms;
     using Syncfusion.Windows.Forms;
-    using VisualPlus.Enumerators;
 
     [ SuppressMessage( "ReSharper", "UnusedParameter.Global" ) ]
     public partial class Error : MetroForm
@@ -149,6 +148,11 @@ namespace BudgetExecution
             TextBox.Text = msg;
         }
 
+        /// <summary>
+        /// Called when [click].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         public void OnClick( object sender, EventArgs e )
         {
             if( sender is Button )

@@ -118,7 +118,7 @@ namespace BudgetExecution
         {
             try
             {
-                EnumerableRowCollection<DataRow> _dataRows = DataTable?.AsEnumerable( );
+                var _dataRows = DataTable?.AsEnumerable( );
 
                 return _dataRows?.Any( ) == true
                     ? _dataRows
@@ -178,7 +178,7 @@ namespace BudgetExecution
         [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
         protected void Fail( Exception ex )
         {
-            using Error _error = new Error( ex );
+            using var _error = new Error( ex );
             _error?.SetText( );
             _error?.ShowDialog( );
         }

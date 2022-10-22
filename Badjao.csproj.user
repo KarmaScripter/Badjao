@@ -7,7 +7,7 @@
     <Compile Update="Controls\Calculator\CalculatorBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\Calendar\CalendarForm.cs">
+    <Compile Update="Controls\CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\CarouselForm.cs">
@@ -36,12 +36,6 @@
     </Compile>
     <Compile Update="Controls\ColumnConfiguration.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Controls\ComboBox\ComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ComboBox\ComboBoxBase.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\CurrencyBox\CurrencyBase.cs">
       <SubType>Component</SubType>
@@ -115,12 +109,6 @@
     <Compile Update="Controls\Message.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\MetroTip\MetroTip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\MetroTip\MetroTipBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Controls\Notification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,9 +134,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\PivotGrid\PivotGridBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\RadioButton\RadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\SplashControl\SplashBase.cs">
