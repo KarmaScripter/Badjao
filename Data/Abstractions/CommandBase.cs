@@ -1,6 +1,6 @@
-﻿// // <copyright file = "CommandBase.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿// <copyright file = "CommandBase.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -181,18 +181,19 @@ namespace BudgetExecution
 
                         default:
                         {
-                            return default( DbCommand );
+                            return default;
                         }
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>
@@ -215,32 +216,37 @@ namespace BudgetExecution
                         case SQL.SELECT:
                         {
                             var _sql = sqlStatement?.GetSelectStatement( );
+
                             return !string.IsNullOrEmpty( _sql )
                                 ? new SQLiteCommand( _sql, _connection )
-                                : default( SQLiteCommand );
+                                : default;
                         }
 
                         case SQL.INSERT:
                         {
                             var _sql = sqlStatement?.GetInsertStatement( );
+
                             return new SQLiteCommand( _sql, _connection );
                         }
 
                         case SQL.UPDATE:
                         {
                             var _sql = sqlStatement?.GetUpdateStatement( );
+
                             return new SQLiteCommand( _sql, _connection );
                         }
 
                         case SQL.DELETE:
                         {
                             var _sql = sqlStatement?.GetDeleteStatement( );
+
                             return new SQLiteCommand( _sql, _connection );
                         }
 
                         default:
                         {
                             var _sql = sqlStatement?.GetSelectStatement( );
+
                             return new SQLiteCommand( _sql, _connection );
                         }
                     }
@@ -248,11 +254,12 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>
@@ -277,6 +284,7 @@ namespace BudgetExecution
                             case SQL.SELECT:
                             {
                                 var _sql = sqlStatement?.GetSelectStatement( );
+
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql, _connection )
                                     : default( DbCommand );
@@ -285,6 +293,7 @@ namespace BudgetExecution
                             case SQL.INSERT:
                             {
                                 var _sql = sqlStatement?.GetInsertStatement( );
+
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql, _connection )
                                     : default( DbCommand );
@@ -293,6 +302,7 @@ namespace BudgetExecution
                             case SQL.UPDATE:
                             {
                                 var _sql = sqlStatement?.GetUpdateStatement( );
+
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql, _connection )
                                     : default( DbCommand );
@@ -301,6 +311,7 @@ namespace BudgetExecution
                             case SQL.DELETE:
                             {
                                 var _sql = sqlStatement?.GetDeleteStatement( );
+
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql, _connection )
                                     : default( DbCommand );
@@ -309,6 +320,7 @@ namespace BudgetExecution
                             default:
                             {
                                 var _sql = sqlStatement?.GetSelectStatement( );
+
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql, _connection )
                                     : default( DbCommand );
@@ -319,11 +331,12 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>
@@ -348,30 +361,35 @@ namespace BudgetExecution
                             case SQL.SELECT:
                             {
                                 var _sql = sqlStatement?.GetSelectStatement( );
+
                                 return new SqlCommand( _sql, _connection );
                             }
 
                             case SQL.INSERT:
                             {
                                 var _sql = sqlStatement?.GetInsertStatement( );
+
                                 return new SqlCommand( _sql, _connection );
                             }
 
                             case SQL.UPDATE:
                             {
                                 var _sql = sqlStatement?.GetUpdateStatement( );
+
                                 return new SqlCommand( _sql, _connection );
                             }
 
                             case SQL.DELETE:
                             {
                                 var _sql = sqlStatement?.GetDeleteStatement( );
+
                                 return new SqlCommand( _sql, _connection );
                             }
 
                             default:
                             {
                                 var _sql = sqlStatement?.GetSelectStatement( );
+
                                 return new SqlCommand( _sql, _connection );
                             }
                         }
@@ -380,11 +398,12 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>
@@ -407,30 +426,35 @@ namespace BudgetExecution
                         case SQL.SELECT:
                         {
                             var _sql = sqlStatement?.GetSelectStatement( );
+
                             return new OleDbCommand( _sql, _connection );
                         }
 
                         case SQL.INSERT:
                         {
                             var _sql = sqlStatement?.GetInsertStatement( );
+
                             return new OleDbCommand( _sql, _connection );
                         }
 
                         case SQL.UPDATE:
                         {
                             var _sql = sqlStatement.GetUpdateStatement( );
+
                             return new OleDbCommand( _sql, _connection );
                         }
 
                         case SQL.DELETE:
                         {
                             var _sql = sqlStatement?.GetDeleteStatement( );
+
                             return new OleDbCommand( _sql, _connection );
                         }
 
                         default:
                         {
                             var _sql = sqlStatement?.GetSelectStatement( );
+
                             return new OleDbCommand( _sql, _connection );
                         }
                     }
@@ -438,11 +462,12 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>
