@@ -1133,14 +1133,14 @@ namespace BudgetExcess
         /// </summary>
         /// <param name="conn">The connection.</param>
         /// <param name="tablename">The tablename.</param>
-        /// <param name="tschma">The tschma.</param>
+        /// <param name="schema">The tschma.</param>
         /// <returns></returns>
-        private TableSchema CreateTableSchema( SqlConnection conn, string tablename, string tschma )
+        private protected TableSchema CreateTableSchema( SqlConnection conn, string tablename, string schema )
         {
             var res = new TableSchema
             {
                 TableName = tablename,
-                TableSchemaName = tschma,
+                TableSchemaName = schema,
                 Columns = new List<ColumnSchema>( )
             };
 
@@ -1290,7 +1290,7 @@ namespace BudgetExcess
             }
 
             using( var cmd4 =
-                  new SqlCommand( @"EXEC sptablecollations '" + tschma + "." + tablename + "'",
+                  new SqlCommand( @"EXEC sptablecollations '" + schema + "." + tablename + "'",
                       conn ) )
             {
                 var reader = cmd4.ExecuteReader( );
@@ -1321,7 +1321,7 @@ namespace BudgetExcess
             try
             {
                 var _command =
-                    new SqlCommand( @"exec sphelpindex '" + tschma + "." + tablename + "'", conn );
+                    new SqlCommand( @"exec sphelpindex '" + schema + "." + tablename + "'", conn );
 
                 var _reader = _command.ExecuteReader( );
                 res.Indexes = new List<IndexSchema>( );

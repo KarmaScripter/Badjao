@@ -141,7 +141,8 @@ namespace BudgetExecution
         /// <param name="location">The location.</param>
         /// <param name="parent">The parent.</param>
         /// <param name="text">The text.</param>
-        public Button( Size size, Point location, Control parent, string text )
+        public Button( Size size, Point location, Control parent,
+            string text ) 
             : this( size, location, parent )
         {
             Text = text;

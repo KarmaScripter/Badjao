@@ -38,6 +38,7 @@ namespace BudgetExecution
                 {
                     using var _dataSet = new DataSet( );
                     _dataSet?.Tables?.Add( ListToDataTable( data ) );
+
                     return CreateExcelDocument( _dataSet, path );
                 }
                 catch( Exception ex )

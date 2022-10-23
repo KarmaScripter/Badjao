@@ -11,6 +11,7 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Windows.Forms;
     using Syncfusion.Windows.Forms;
+    using VisualPlus.Enumerators;
 
     [ SuppressMessage( "ReSharper", "UnusedParameter.Global" ) ]
     public partial class Error : MetroForm

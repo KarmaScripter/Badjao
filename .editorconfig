@@ -1,0 +1,6 @@
+
+[*]
+
+# ReSharper properties
+resharper_blank_lines_before_control_transfer_statements = 0
+resharper_csharp_keep_blank_lines_in_code = 0

@@ -64,10 +64,7 @@ namespace BudgetExecution
         {
             Worksheet = workSheet;
             Range = range;
-
-            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row,
-                Range.End.Row );
-
+            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row, Range.End.Row );
             From = ( Address.Start.Row, Address.Start.Column );
             To = ( Address.End.Row, Address.End.Column );
         }
@@ -107,15 +104,12 @@ namespace BudgetExecution
         /// <param name = "toColumn" >
         /// The toColumn.
         /// </param>
-        public Grid( ExcelWorksheet workSheet, int fromRow = 1, int fromColumn = 1, int toRow = 55,
-            int toColumn = 12 )
+        public Grid( ExcelWorksheet workSheet, int fromRow = 1, int fromColumn = 1,
+            int toRow = 55, int toColumn = 12 )
         {
             Worksheet = workSheet;
             Range = Worksheet.Cells[ fromRow, fromColumn, toRow, toColumn ];
-
-            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row,
-                Range.End.Row );
-
+            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row, Range.End.Row );
             From = ( Address.Start.Row, Address.Start.Column );
             To = ( Address.End.Row, Address.End.Column );
         }
@@ -132,10 +126,7 @@ namespace BudgetExecution
         {
             Worksheet = workSheet;
             Range = Worksheet.Cells[ cell[ 0 ], cell[ 1 ], cell[ 2 ], cell[ 3 ] ];
-
-            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row,
-                Range.End.Column );
-
+            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row, Range.End.Column );
             From = ( Address.Start.Row, Address.Start.Column );
             To = ( Address.End.Row, Address.End.Column );
         }
@@ -151,15 +142,11 @@ namespace BudgetExecution
         /// <param name = "to" >
         /// To.
         /// </param>
-        public Grid( ExcelWorksheet workSheet, (int Row, int Column) from,
-            (int Row, int Column) to )
+        public Grid( ExcelWorksheet workSheet, (int Row, int Column) from, (int Row, int Column) to )
         {
             Worksheet = workSheet;
             Range = Worksheet.Cells[ from.Row, from.Column, to.Row, to.Column ];
-
-            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row,
-                Range.End.Row );
-
+            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row, Range.End.Row );
             From = from;
             To = to;
         }
@@ -177,10 +164,7 @@ namespace BudgetExecution
         {
             Worksheet = workSheet;
             Range = Worksheet.Cells[ from.Row, from.Column ];
-
-            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.Start.Row,
-                Range.Start.Column );
-
+            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.Start.Row, Range.Start.Column );
             From = from;
             To = From;
         }
@@ -196,12 +180,12 @@ namespace BudgetExecution
             {
                 return Address.Columns > 0
                     ? Address
-                    : default( ExcelAddress );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ExcelAddress );
+                return default;
             }
         }
 
@@ -216,12 +200,12 @@ namespace BudgetExecution
             {
                 return Range.Columns > 0
                     ? Range
-                    : default( ExcelRange );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ExcelRange );
+                return default;
             }
         }
 
@@ -276,12 +260,12 @@ namespace BudgetExecution
             {
                 return !string.IsNullOrEmpty( Worksheet.Name )
                     ? Worksheet
-                    : default( ExcelWorksheet );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ExcelWorksheet );
+                return default;
             }
         }
 
@@ -322,7 +306,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( int );
+                return default;
             }
         }
 
@@ -342,7 +326,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( int );
+                return default;
             }
         }
 

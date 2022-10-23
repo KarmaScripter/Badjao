@@ -14,7 +14,6 @@ namespace BudgetExecution
     using System.Windows.Forms;
     using Syncfusion.Windows.Forms.Spreadsheet;
     using Syncfusion.XlsIO;
-    using ExcelHorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment;
 
     /// <summary>
     /// 
@@ -84,8 +83,7 @@ namespace BudgetExecution
         /// <value>
         /// The center.
         /// </value>
-        public virtual ExcelHorizontalAlignment Center { get; set; } =
-            ExcelHorizontalAlignment.CenterContinuous;
+        public virtual ExcelHorizontalAlignment Center { get; set; } = ExcelHorizontalAlignment.CenterMiddle;
 
         /// <summary>
         /// Gets or sets the right.
@@ -371,7 +369,8 @@ namespace BudgetExecution
                     spreadSheet.Workbook.ActiveSheet.StandardWidth = 12.5f;
                     var name = spreadSheet.Workbook.Worksheets[ 0 ].Name;
                     var sheet = spreadSheet.Workbook.ActiveSheet;
-                    spreadSheet.ActiveSheet.ImportDataGridView( dataGrid, 1, 1, true, false );
+                    var _table = (DataTable)dataGrid.DataSource;
+                    spreadSheet.ActiveSheet.ImportDataTable( _table, 1, 1, true, false );
                     var range = sheet.UsedRange;
                     var table = sheet.ListObjects.Create( name, range );
                     table.BuiltInTableStyle = TableBuiltInStyles.TableStyleMedium2;

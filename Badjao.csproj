@@ -16,53 +16,32 @@
     <Content Include="Resources\Images\Ninja\BudExNinjaGrey.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>Lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>Lib\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqStatistics">
+      <HintPath>Lib\LinqStatistics.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSet UI">
+      <HintPath>Lib\MetroSet UI.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.Calculate.Base">
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Calculate.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Calculate.Windows">
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Calculate.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Chart.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Chart.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Chart.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Chart.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Compression.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Compression.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Core.WinForms">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Core.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Data.WinForms">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Data.WinForms.dll</HintPath>
-    </Reference>
     <Reference Include="Syncfusion.DataSource.WinForms">
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.DataSource.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Edit.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Edit.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Grid.Grouping.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Grid.Grouping.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Grid.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Grid.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.GridHelperClasses.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.GridHelperClasses.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Grouping.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Grouping.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.HTMLUI.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.HTMLUI.Windows.dll</HintPath>
-    </Reference>
     <Reference Include="Syncfusion.Licensing">
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Linq.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Linq.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Office2016Theme.WinForms">
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Office2016Theme.WinForms.dll</HintPath>
@@ -70,50 +49,20 @@
     <Reference Include="Syncfusion.Office2019Theme.WinForms">
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Office2019Theme.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Pdf.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Pdf.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.PdfViewer.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.PdfViewer.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.PivotAnalysis.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.PivotAnalysis.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.PivotAnalysis.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.PivotAnalysis.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.PivotChart.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.PivotChart.Windows.dll</HintPath>
-    </Reference>
     <Reference Include="Syncfusion.PivotConverter.Windows">
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.PivotConverter.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Scripting.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Scripting.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfInput.WinForms">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.SfInput.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Shared.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Shared.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Shared.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Shared.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Spreadsheet.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Spreadsheet.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SpreadsheetHelper.Windows">
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.SpreadsheetHelper.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Tools.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Tools.Base.dll</HintPath>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>Lib\System.Data.SQLite.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Tools.Windows">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Tools.Windows.dll</HintPath>
+    <Reference Include="System.Data.SqlServerCe">
+      <HintPath>Lib\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.XlsIO.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.XlsIO.Base.dll</HintPath>
+    <Reference Include="VisualPlus">
+      <HintPath>Lib\VisualPlus.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -148,7 +97,23 @@
     <ReferencePathWithRefAssemblies Update="C:\Users\teppler\source\compilers\cs\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Data.DataSetExtensions.dll" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Chart.Windows" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.Core.WinForms" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.DocIO.WinForms" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.Edit.Windows" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.Grid.Windows" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.GridHelperClasses.Windows" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.HTMLUI.Windows" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.Pdf.WinForms" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.PdfViewer.Windows" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.PivotChart.Windows" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.SfDataGrid.Winforms" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.SfInput.WinForms" Version="20.3.0.50" />
     <PackageReference Include="Syncfusion.Shared.Base" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.Shared.Windows" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.Spreadsheet.Windows" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.Tools.Windows" Version="20.3.0.50" />
+    <PackageReference Include="Syncfusion.XlsIO.WinForms" Version="20.3.0.50" />
     <PackageReference Include="System.Data.OleDb" Version="7.0.0-rc.2.22472.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.4" />
   </ItemGroup>

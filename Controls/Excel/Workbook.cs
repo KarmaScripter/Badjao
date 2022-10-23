@@ -11,7 +11,9 @@ namespace BudgetExecution
     using System.IO;
     using OfficeOpenXml;
     using OfficeOpenXml.Style;
+    using ExcelHorizontalAlignment = Syncfusion.XlsIO.ExcelHorizontalAlignment;
 
+    [ SuppressMessage( "ReSharper", "MergeIntoPattern" ) ]
     public class Workbook : ExcelBase
     {
         /// <summary>
@@ -115,7 +117,7 @@ namespace BudgetExecution
                     {
                         SetFontColor( grid, FontColor );
                         SetBackgroundColor( grid, PrimaryBackColor );
-                        SetHorizontalAlignment( grid, Left );
+                        SetHorizontalAlignment( grid, OfficeOpenXml.Style.ExcelHorizontalAlignment.Left );
                     }
                 }
                 catch( Exception ex )
@@ -143,7 +145,7 @@ namespace BudgetExecution
                     var _column = _range.Start.Column;
                     SetFontColor( grid, FontColor );
                     SetBackgroundColor( grid, PrimaryBackColor );
-                    SetHorizontalAlignment( grid, Left );
+                    SetHorizontalAlignment( grid, OfficeOpenXml.Style.ExcelHorizontalAlignment.Left );
                     _worksheet.Cells[ _row, _column ].Value = "Account";
                     _worksheet.Cells[ _row, _column + 1 ].Value = "SuperfundSite";
                     _worksheet.Cells[ _row, _column + 2 ].Value = "Travel";
@@ -176,7 +178,7 @@ namespace BudgetExecution
                     excelRange.Style.Font.SetFromFont( Font );
                     excelRange.Style.Fill.PatternType = ExcelFillStyle.Solid;
                     excelRange.Style.Fill.BackgroundColor.SetColor( PrimaryBackColor );
-                    excelRange.Style.HorizontalAlignment = Center;
+                    excelRange.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
                     excelRange.Style.Border.Bottom.Style = ExcelBorderStyle.Hair;
                 }
                 catch( Exception ex )
@@ -203,7 +205,7 @@ namespace BudgetExecution
                     excelRange.Style.Font.SetFromFont( Font );
                     excelRange.Style.Fill.PatternType = ExcelFillStyle.Solid;
                     excelRange.Style.Fill.BackgroundColor.SetColor( Color.White );
-                    excelRange.Style.HorizontalAlignment = Center;
+                    excelRange.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
                     excelRange.Style.Border.Bottom.Style = ExcelBorderStyle.Hair;
                 }
                 catch( Exception ex )
@@ -222,10 +224,10 @@ namespace BudgetExecution
         public void SetAlternatingRowColor( ExcelRange excelRange )
         {
             if( Worksheet != null
-                && excelRange?.Start?.Row > -1
-                && excelRange.Start.Column > -1
-                && excelRange.End?.Row > -1
-                && excelRange.End.Column > -1 )
+               && excelRange?.Start?.Row > -1
+               && excelRange.Start.Column > -1
+               && excelRange.End?.Row > -1
+               && excelRange.End.Column > -1 )
             {
                 try
                 {
@@ -263,16 +265,16 @@ namespace BudgetExecution
         public void SetNumericRowFormat( ExcelRange excelRange )
         {
             if( Worksheet != null
-                && excelRange.Start.Row > -1
-                && excelRange.Start.Column > -1
-                && excelRange.End.Row > -1
-                && excelRange.End.Column > -1 )
+               && excelRange.Start.Row > -1
+               && excelRange.Start.Column > -1
+               && excelRange.End.Row > -1
+               && excelRange.End.Column > -1 )
             {
                 try
                 {
                     using( excelRange )
                     {
-                        excelRange.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                        excelRange.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
                         excelRange.Style.Numberformat.Format = "#,###";
                     }
                 }
@@ -301,7 +303,7 @@ namespace BudgetExecution
                     _range.Style.Border.BorderAround( ExcelBorderStyle.Thin );
                     _range.Style.Fill.PatternType = ExcelFillStyle.Solid;
                     _range.Style.Fill.BackgroundColor.SetColor( PrimaryBackColor );
-                    _range.Style.HorizontalAlignment = Center;
+                    _range.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
                 }
                 catch( Exception ex )
                 {
@@ -319,10 +321,10 @@ namespace BudgetExecution
         public void SetTotalRowFormat( ExcelRange excelRange )
         {
             if( Worksheet != null
-                && excelRange.Start.Row > -1
-                && excelRange.Start.Column > -1
-                && excelRange.End.Row > -1
-                && excelRange.End.Column > -1 )
+               && excelRange.Start.Row > -1
+               && excelRange.Start.Column > -1
+               && excelRange.End.Row > -1
+               && excelRange.End.Column > -1 )
             {
                 try
                 {
