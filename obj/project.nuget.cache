@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LwhIyvDpK6mXxyMadqMtU5pLTlv9hwFSUCMbl1Fb2EdFRBYdWgpfcQPgwsXB9WqVgsSWUYE30UMTrFrXKpqeIQ==",
+  "dgSpecHash": "i2kx6aa0MVMkZgxYrTmeBJ8I5iMtJgjfUzFtyJ1X1TXr3cSPp3roEpBoOuhVh29cEXqC7mXRfx8riAjkICJnYw==",
   "success": true,
   "projectFilePath": "C:\\Users\\terry\\source\\repos\\Badjao\\Badjao.csproj",
   "expectedPackageFiles": [
@@ -56,8 +56,7 @@
     "C:\\Users\\terry\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0-rc.2.22472.3\\system.security.cryptography.protecteddata.7.0.0-rc.2.22472.3.nupkg.sha512",
     "C:\\Users\\terry\\.nuget\\packages\\system.security.permissions\\7.0.0-rc.2.22472.3\\system.security.permissions.7.0.0-rc.2.22472.3.nupkg.sha512",
     "C:\\Users\\terry\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\terry\\.nuget\\packages\\system.windows.extensions\\7.0.0-rc.2.22472.3\\system.windows.extensions.7.0.0-rc.2.22472.3.nupkg.sha512",
-    "C:\\Users\\terry\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.27\\microsoft.windows.sdk.net.ref.10.0.22621.27.nupkg.sha512"
+    "C:\\Users\\terry\\.nuget\\packages\\system.windows.extensions\\7.0.0-rc.2.22472.3\\system.windows.extensions.7.0.0-rc.2.22472.3.nupkg.sha512"
   ],
   "logs": []
 }

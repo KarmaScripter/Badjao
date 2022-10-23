@@ -10,7 +10,7 @@
     <PackageIcon>BudExNinja.png</PackageIcon>
     <AnalysisLevel>latest-recommended</AnalysisLevel>
     <LangVersion>10</LangVersion>
-    <TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Resources\Images\Ninja\BudExNinjaGrey.ico" />

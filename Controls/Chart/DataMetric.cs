@@ -16,6 +16,7 @@ namespace BudgetExecution
     /// 
     /// </summary>
     /// <seealso cref = "MetricBase"/>
+    [ SuppressMessage( "ReSharper", "WrongIndentSize" ) ]
     public class DataMetric : MetricBase
     {
         /// <summary>
@@ -63,7 +64,7 @@ namespace BudgetExecution
         }
 
         public DataMetric( BindingSource bindingSource, IDictionary<string, object> where,
-            Numeric numeric = Numeric.Amount )
+            Numeric numeric = Numeric.Amount)
             : base( bindingSource, where, numeric )
         {
             Variance = CalculateVariance( Data, Numeric );
@@ -138,8 +139,9 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _query = dataRow?.Where( p => p.Field<decimal>( $"{numeric}" ) != 0 )
-                        ?.StandardDeviation( p => p.Field<decimal>( $"{numeric}" ) );
+                    var _query = dataRow
+                        ?.Where( p => p.Field<decimal>( $"{ numeric }" ) != 0 )
+                        ?.StandardDeviation( p => p.Field<decimal>( $"{ numeric }" ) );
 
                     return _query > 0
                         ? double.Parse( _query.ToString( ) )
@@ -176,8 +178,8 @@ namespace BudgetExecution
                 try
                 {
                     var _query = _table?.AsEnumerable( )
-                        ?.Where( p => p.Field<decimal>( $"{numeric}" ) != 0 )
-                        ?.Variance( p => p.Field<decimal>( $"{numeric}" ) );
+                        ?.Where( p => p.Field<decimal>( $"{ numeric }" ) != 0 )
+                        ?.Variance( p => p.Field<decimal>( $"{ numeric }" ) );
 
                     return _query > 0
                         ? double.Parse( _query.ToString( ) )

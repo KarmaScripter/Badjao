@@ -9,48 +9,37 @@
       "Badjao/1.0.0": {
         "dependencies": {
           "Syncfusion.Chart.Windows": "20.3.0.50",
+          "Syncfusion.Core.WinForms": "20.3.0.50",
+          "Syncfusion.DocIO.WinForms": "20.3.0.50",
           "Syncfusion.Edit.Windows": "20.3.0.50",
           "Syncfusion.Grid.Windows": "20.3.0.50",
           "Syncfusion.GridHelperClasses.Windows": "20.3.0.50",
           "Syncfusion.HTMLUI.windows": "20.3.0.50",
+          "Syncfusion.Pdf.WinForms": "20.3.0.50",
           "Syncfusion.PdfViewer.Windows": "20.3.0.50",
           "Syncfusion.PivotChart.Windows": "20.3.0.50",
           "Syncfusion.SfDataGrid.WinForms": "20.3.0.50",
           "Syncfusion.SfInput.WinForms": "20.3.0.50",
+          "Syncfusion.Shared.Base": "20.3.0.50",
           "Syncfusion.Shared.Windows": "20.3.0.50",
           "Syncfusion.Spreadsheet.Windows": "20.3.0.50",
           "Syncfusion.Tools.Windows": "20.3.0.50",
-          "System.Data.OleDb": "6.0.0",
+          "Syncfusion.XlsIO.WinForms": "20.3.0.50",
+          "System.Data.OleDb": "7.0.0-rc.2.22472.3",
           "System.Data.SqlClient": "4.8.4",
-          "C1.Win.4.8": "4.8.20221.557",
-          "C1.Win.C1FlexGrid.4.8": "4.8.20221.557",
-          "CharmNotification": "1.0.0.0",
-          "DataGridMetro": "1.0.0.0",
-          "DataGridViewExtension": "1.0.0.0",
           "DocumentFormat.OpenXml": "2.16.0.0",
           "EPPlus": "0.0.0.0",
-          "Expander": "1.0.0.0",
           "LinqStatistics": "2.2.0.0",
           "log4net": "2.0.12.0",
-          "MetroFramework.Design": "1.4.0.0",
-          "MetroFramework": "1.3.0.0",
-          "MetroFramework.Fonts": "1.4.0.0",
           "MetroSet UI": "1.0.3.0",
           "SQLite.Designer": "1.0.108.0",
           "Syncfusion.Calculate.Base": "19.3460.0.53",
           "Syncfusion.Calculate.Windows": "19.3460.0.53",
-          "Syncfusion.Grid.Base": "19.3460.0.53",
           "Syncfusion.Office2016Theme.WinForms": "19.3460.0.53",
           "Syncfusion.Office2019Theme.WinForms": "19.3460.0.53",
-          "Syncfusion.Pdf.Windows": "19.3460.0.53",
           "Syncfusion.PivotConverter.Windows": "19.3460.0.53",
           "Syncfusion.SpreadsheetHelper.Windows": "19.3460.0.53",
-          "System.Data.Entity.Design": "4.0.0.0",
-          "System.Data.Entity": "4.0.0.0",
-          "System.Data.Linq": "4.0.0.0",
           "System.Data.SQLite": "1.0.108.0",
-          "System.Data.SQLite.EF6": "1.0.108.0",
-          "System.Data.SQLite.Linq": "1.0.108.0",
           "System.Data.SqlServerCe": "4.0.0.0",
           "VisualPlus": "0.4.1.7"
         },
@@ -58,13 +47,29 @@
           "Badjao.dll": {}
         }
       },
+      "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
-          "System.Security.AccessControl": "6.0.0",
+          "System.Security.AccessControl": "4.7.0",
           "System.Security.Principal.Windows": "4.7.0"
         }
       },
-      "Microsoft.Win32.SystemEvents/6.0.0": {},
+      "Microsoft.Win32.SystemEvents/7.0.0-rc.2.22472.3": {
+        "runtime": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
         "dependencies": {
           "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
@@ -561,29 +566,35 @@
           }
         }
       },
-      "System.Configuration.ConfigurationManager/6.0.0": {
+      "System.Configuration.ConfigurationManager/7.0.0-rc.2.22472.3": {
         "dependencies": {
-          "System.Security.Cryptography.ProtectedData": "6.0.0",
-          "System.Security.Permissions": "6.0.0"
+          "System.Security.Cryptography.ProtectedData": "7.0.0-rc.2.22472.3",
+          "System.Security.Permissions": "7.0.0-rc.2.22472.3"
+        },
+        "runtime": {
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
         }
       },
-      "System.Data.OleDb/6.0.0": {
+      "System.Data.OleDb/7.0.0-rc.2.22472.3": {
         "dependencies": {
-          "System.Configuration.ConfigurationManager": "6.0.0",
-          "System.Diagnostics.PerformanceCounter": "6.0.0"
+          "System.Configuration.ConfigurationManager": "7.0.0-rc.2.22472.3",
+          "System.Diagnostics.PerformanceCounter": "7.0.0-rc.2.22472.3"
         },
         "runtime": {
           "lib/net6.0/System.Data.OleDb.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
           }
         },
         "runtimeTargets": {
           "runtimes/win/lib/net6.0/System.Data.OleDb.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
           }
         }
       },
@@ -614,67 +625,94 @@
           }
         }
       },
-      "System.Diagnostics.PerformanceCounter/6.0.0": {
+      "System.Diagnostics.PerformanceCounter/7.0.0-rc.2.22472.3": {
         "dependencies": {
-          "System.Configuration.ConfigurationManager": "6.0.0"
+          "System.Configuration.ConfigurationManager": "7.0.0-rc.2.22472.3"
+        },
+        "runtime": {
+          "lib/net6.0/System.Diagnostics.PerformanceCounter.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Diagnostics.PerformanceCounter.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
         }
       },
-      "System.Drawing.Common/6.0.0": {
+      "System.Drawing.Common/7.0.0-rc.2.22472.3": {
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "6.0.0"
+          "Microsoft.Win32.SystemEvents": "7.0.0-rc.2.22472.3"
+        },
+        "runtime": {
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
         }
       },
-      "System.Security.AccessControl/6.0.0": {},
-      "System.Security.Cryptography.ProtectedData/6.0.0": {},
-      "System.Security.Permissions/6.0.0": {
+      "System.Security.AccessControl/4.7.0": {
         "dependencies": {
-          "System.Security.AccessControl": "6.0.0",
-          "System.Windows.Extensions": "6.0.0"
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/7.0.0-rc.2.22472.3": {
+        "runtime": {
+          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
+        }
+      },
+      "System.Security.Permissions/7.0.0-rc.2.22472.3": {
+        "dependencies": {
+          "System.Windows.Extensions": "7.0.0-rc.2.22472.3"
+        },
+        "runtime": {
+          "lib/net6.0/System.Security.Permissions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
+          }
         }
       },
       "System.Security.Principal.Windows/4.7.0": {},
-      "System.Windows.Extensions/6.0.0": {
+      "System.Windows.Extensions/7.0.0-rc.2.22472.3": {
         "dependencies": {
-          "System.Drawing.Common": "6.0.0"
-        }
-      },
-      "C1.Win.4.8/4.8.20221.557": {
+          "System.Drawing.Common": "7.0.0-rc.2.22472.3"
+        },
         "runtime": {
-          "C1.Win.4.8.dll": {
-            "assemblyVersion": "4.8.20221.557",
-            "fileVersion": "4.8.20221.557"
+          "lib/net6.0/System.Windows.Extensions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
           }
-        }
-      },
-      "C1.Win.C1FlexGrid.4.8/4.8.20221.557": {
-        "runtime": {
-          "C1.Win.C1FlexGrid.4.8.dll": {
-            "assemblyVersion": "4.8.20221.557",
-            "fileVersion": "4.8.20221.557"
-          }
-        }
-      },
-      "CharmNotification/1.0.0.0": {
-        "runtime": {
-          "CharmNotification.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "DataGridMetro/1.0.0.0": {
-        "runtime": {
-          "DataGridMetro.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "DataGridViewExtension/1.0.0.0": {
-        "runtime": {
-          "DataGridViewExtension.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Windows.Extensions.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.47203"
           }
         }
       },
@@ -694,14 +732,6 @@
           }
         }
       },
-      "Expander/1.0.0.0": {
-        "runtime": {
-          "Expander.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "LinqStatistics/2.2.0.0": {
         "runtime": {
           "LinqStatistics.dll": {
@@ -715,30 +745,6 @@
           "log4net.dll": {
             "assemblyVersion": "2.0.12.0",
             "fileVersion": "2.0.12.0"
-          }
-        }
-      },
-      "MetroFramework.Design/1.4.0.0": {
-        "runtime": {
-          "MetroFramework.Design.dll": {
-            "assemblyVersion": "1.4.0.0",
-            "fileVersion": "1.4.0.0"
-          }
-        }
-      },
-      "MetroFramework/1.3.0.0": {
-        "runtime": {
-          "MetroFramework.dll": {
-            "assemblyVersion": "1.3.0.0",
-            "fileVersion": "1.3.0.0"
-          }
-        }
-      },
-      "MetroFramework.Fonts/1.4.0.0": {
-        "runtime": {
-          "MetroFramework.Fonts.dll": {
-            "assemblyVersion": "1.4.0.0",
-            "fileVersion": "1.4.0.0"
           }
         }
       },
@@ -774,14 +780,6 @@
           }
         }
       },
-      "Syncfusion.Grid.Base/19.3460.0.53": {
-        "runtime": {
-          "Syncfusion.Grid.Base.dll": {
-            "assemblyVersion": "19.3460.0.53",
-            "fileVersion": "19.3460.0.53"
-          }
-        }
-      },
       "Syncfusion.Office2016Theme.WinForms/19.3460.0.53": {
         "runtime": {
           "Syncfusion.Office2016Theme.WinForms.dll": {
@@ -793,14 +791,6 @@
       "Syncfusion.Office2019Theme.WinForms/19.3460.0.53": {
         "runtime": {
           "Syncfusion.Office2019Theme.WinForms.dll": {
-            "assemblyVersion": "19.3460.0.53",
-            "fileVersion": "19.3460.0.53"
-          }
-        }
-      },
-      "Syncfusion.Pdf.Windows/19.3460.0.53": {
-        "runtime": {
-          "Syncfusion.Pdf.Windows.dll": {
             "assemblyVersion": "19.3460.0.53",
             "fileVersion": "19.3460.0.53"
           }
@@ -822,49 +812,9 @@
           }
         }
       },
-      "System.Data.Entity.Design/4.0.0.0": {
-        "runtime": {
-          "System.Data.Entity.Design.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.8.3752.0"
-          }
-        }
-      },
-      "System.Data.Entity/4.0.0.0": {
-        "runtime": {
-          "System.Data.Entity.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.8.3752.0"
-          }
-        }
-      },
-      "System.Data.Linq/4.0.0.0": {
-        "runtime": {
-          "System.Data.Linq.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.8.3752.0"
-          }
-        }
-      },
       "System.Data.SQLite/1.0.108.0": {
         "runtime": {
           "System.Data.SQLite.dll": {
-            "assemblyVersion": "1.0.108.0",
-            "fileVersion": "1.0.108.0"
-          }
-        }
-      },
-      "System.Data.SQLite.EF6/1.0.108.0": {
-        "runtime": {
-          "System.Data.SQLite.EF6.dll": {
-            "assemblyVersion": "1.0.108.0",
-            "fileVersion": "1.0.108.0"
-          }
-        }
-      },
-      "System.Data.SQLite.Linq/1.0.108.0": {
-        "runtime": {
-          "System.Data.SQLite.Linq.dll": {
             "assemblyVersion": "1.0.108.0",
             "fileVersion": "1.0.108.0"
           }
@@ -894,6 +844,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
+    },
     "Microsoft.Win32.Registry/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -901,12 +858,12 @@
       "path": "microsoft.win32.registry/4.7.0",
       "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/6.0.0": {
+    "Microsoft.Win32.SystemEvents/7.0.0-rc.2.22472.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
-      "path": "microsoft.win32.systemevents/6.0.0",
-      "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+      "sha512": "sha512-/1Q4EliHYtAwVNBSB/qByvayhKV+1PYkpKF1VMKz67twIGjRcnw8UfvYrl7xWE426MiLl/fOsT/ql/7ii/HoTA==",
+      "path": "microsoft.win32.systemevents/7.0.0-rc.2.22472.3",
+      "hashPath": "microsoft.win32.systemevents.7.0.0-rc.2.22472.3.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "type": "package",
@@ -1188,19 +1145,19 @@
       "path": "syncfusion.xlsio.winforms/20.3.0.50",
       "hashPath": "syncfusion.xlsio.winforms.20.3.0.50.nupkg.sha512"
     },
-    "System.Configuration.ConfigurationManager/6.0.0": {
+    "System.Configuration.ConfigurationManager/7.0.0-rc.2.22472.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7T+m0kDSlIPTHIkPMIu6m6tV6qsMqJpvQWW2jIc2qi7sn40qxFo0q+7mEQAhMPXZHMKnWrnv47ntGlM/ejvw3g==",
-      "path": "system.configuration.configurationmanager/6.0.0",
-      "hashPath": "system.configuration.configurationmanager.6.0.0.nupkg.sha512"
+      "sha512": "sha512-mgHgSZLbLOxppC8/sA/kY84brw666iFe0n0p6fUP04Ii/PXrZ3X5jp2HGwCtaDtUsLzZnbOP4ei8Ari5i028YQ==",
+      "path": "system.configuration.configurationmanager/7.0.0-rc.2.22472.3",
+      "hashPath": "system.configuration.configurationmanager.7.0.0-rc.2.22472.3.nupkg.sha512"
     },
-    "System.Data.OleDb/6.0.0": {
+    "System.Data.OleDb/7.0.0-rc.2.22472.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LQ8PjTIF1LtrrlGiyiTVjAkQtTWKm9GSNnygIlWjhN9y88s7xhy6DUNDDkmQQ9f6ex7mA4k0Tl97lz/CklaiLg==",
-      "path": "system.data.oledb/6.0.0",
-      "hashPath": "system.data.oledb.6.0.0.nupkg.sha512"
+      "sha512": "sha512-q/nnYsomTmqHwFLQVqZwu7yJWx0uE55hujY3UtwJlHFMRetUbEF5OgxUIIueKcBZyWllsRK451e2fRPRvC0zjA==",
+      "path": "system.data.oledb/7.0.0-rc.2.22472.3",
+      "hashPath": "system.data.oledb.7.0.0-rc.2.22472.3.nupkg.sha512"
     },
     "System.Data.SqlClient/4.8.4": {
       "type": "package",
@@ -1209,40 +1166,40 @@
       "path": "system.data.sqlclient/4.8.4",
       "hashPath": "system.data.sqlclient.4.8.4.nupkg.sha512"
     },
-    "System.Diagnostics.PerformanceCounter/6.0.0": {
+    "System.Diagnostics.PerformanceCounter/7.0.0-rc.2.22472.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gbeE5tNp/oB7O8kTTLh3wPPJCxpNOphXPTWVs1BsYuFOYapFijWuh0LYw1qnDo4gwDUYPXOmpTIhvtxisGsYOQ==",
-      "path": "system.diagnostics.performancecounter/6.0.0",
-      "hashPath": "system.diagnostics.performancecounter.6.0.0.nupkg.sha512"
+      "sha512": "sha512-L1LSUjKDKULV9sNknDiaFCAhW/kzTsZ9g684zIhsz0TtvHBJ07pLdzfOasBMkO9C3Ux3w/8Ow1J+9qodXnQvIQ==",
+      "path": "system.diagnostics.performancecounter/7.0.0-rc.2.22472.3",
+      "hashPath": "system.diagnostics.performancecounter.7.0.0-rc.2.22472.3.nupkg.sha512"
     },
-    "System.Drawing.Common/6.0.0": {
+    "System.Drawing.Common/7.0.0-rc.2.22472.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
-      "path": "system.drawing.common/6.0.0",
-      "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
+      "sha512": "sha512-3rIg2KRI+DqQysJ8mcpyOcNRaBR0L5gmVt91y7VOEBbTmK1jnfTXdm+zWHwv4SSCXRSOtYUKNW7iEnPuI6O9dw==",
+      "path": "system.drawing.common/7.0.0-rc.2.22472.3",
+      "hashPath": "system.drawing.common.7.0.0-rc.2.22472.3.nupkg.sha512"
     },
-    "System.Security.AccessControl/6.0.0": {
+    "System.Security.AccessControl/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AUADIc0LIEQe7MzC+I0cl0rAT8RrTAKFHl53yHjEUzNVIaUlhFY11vc2ebiVJzVBuOzun6F7FBA+8KAbGTTedQ==",
-      "path": "system.security.accesscontrol/6.0.0",
-      "hashPath": "system.security.accesscontrol.6.0.0.nupkg.sha512"
+      "sha512": "sha512-JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
+      "path": "system.security.accesscontrol/4.7.0",
+      "hashPath": "system.security.accesscontrol.4.7.0.nupkg.sha512"
     },
-    "System.Security.Cryptography.ProtectedData/6.0.0": {
+    "System.Security.Cryptography.ProtectedData/7.0.0-rc.2.22472.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rp1gMNEZpvx9vP0JW0oHLxlf8oSiQgtno77Y4PLUBjSiDYoD77Y8uXHr1Ea5XG4/pIKhqAdxZ8v8OTUtqo9PeQ==",
-      "path": "system.security.cryptography.protecteddata/6.0.0",
-      "hashPath": "system.security.cryptography.protecteddata.6.0.0.nupkg.sha512"
+      "sha512": "sha512-ON42xvuGqrZunDni15lKH9e1YYnIJY0G9mCrzJN0O7qoEpB0YtA3c3ewfL9PFzn9QJqwiIlu+hjDZFh7ZXCKnQ==",
+      "path": "system.security.cryptography.protecteddata/7.0.0-rc.2.22472.3",
+      "hashPath": "system.security.cryptography.protecteddata.7.0.0-rc.2.22472.3.nupkg.sha512"
     },
-    "System.Security.Permissions/6.0.0": {
+    "System.Security.Permissions/7.0.0-rc.2.22472.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-T/uuc7AklkDoxmcJ7LGkyX1CcSviZuLCa4jg3PekfJ7SU0niF0IVTXwUiNVP9DSpzou2PpxJ+eNY2IfDM90ZCg==",
-      "path": "system.security.permissions/6.0.0",
-      "hashPath": "system.security.permissions.6.0.0.nupkg.sha512"
+      "sha512": "sha512-Ilm5qMxre/7ODWccTw+fTxjA9qX2mUPIW4eA+6OC6tqhkPptshUUPuTRppEwh/T7wcw4zEHYX2UZ8wSXI0Jv0A==",
+      "path": "system.security.permissions/7.0.0-rc.2.22472.3",
+      "hashPath": "system.security.permissions.7.0.0-rc.2.22472.3.nupkg.sha512"
     },
     "System.Security.Principal.Windows/4.7.0": {
       "type": "package",
@@ -1251,37 +1208,12 @@
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
     },
-    "System.Windows.Extensions/6.0.0": {
+    "System.Windows.Extensions/7.0.0-rc.2.22472.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
-      "path": "system.windows.extensions/6.0.0",
-      "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
-    },
-    "C1.Win.4.8/4.8.20221.557": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "C1.Win.C1FlexGrid.4.8/4.8.20221.557": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "CharmNotification/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DataGridMetro/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DataGridViewExtension/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
+      "sha512": "sha512-xBwPi8E0uCi/HueVzbKrOCns6t23saqzkwg0+tXFLKWbpOEll5DnzhvNFG4OplGSRSllACY7X+VuzMz7Dz6yiA==",
+      "path": "system.windows.extensions/7.0.0-rc.2.22472.3",
+      "hashPath": "system.windows.extensions.7.0.0-rc.2.22472.3.nupkg.sha512"
     },
     "DocumentFormat.OpenXml/2.16.0.0": {
       "type": "reference",
@@ -1293,32 +1225,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Expander/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "LinqStatistics/2.2.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "log4net/2.0.12.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "MetroFramework.Design/1.4.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "MetroFramework/1.3.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "MetroFramework.Fonts/1.4.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1343,22 +1255,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Syncfusion.Grid.Base/19.3460.0.53": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Syncfusion.Office2016Theme.WinForms/19.3460.0.53": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "Syncfusion.Office2019Theme.WinForms/19.3460.0.53": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Syncfusion.Pdf.Windows/19.3460.0.53": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1373,32 +1275,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Data.Entity.Design/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Data.Entity/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Data.Linq/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "System.Data.SQLite/1.0.108.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Data.SQLite.EF6/1.0.108.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Data.SQLite.Linq/1.0.108.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
