@@ -56,3 +56,5 @@ dkms.conf
 *.accdb
 *.mdf
 *.sdf
+/Data/Database/Access/DataModels/Data.laccdb
+/Data/Database/SqlServer/DataModels/Data_log.ldf

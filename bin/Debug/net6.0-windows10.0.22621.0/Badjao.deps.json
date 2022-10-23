@@ -32,6 +32,7 @@
           "LinqStatistics": "2.2.0.0",
           "log4net": "2.0.12.0",
           "MetroSet UI": "1.0.3.0",
+          "SQLite.Designer": "1.0.108.0",
           "Syncfusion.Calculate.Base": "19.3460.0.53",
           "Syncfusion.Calculate.Windows": "19.3460.0.53",
           "Syncfusion.Office2016Theme.WinForms": "19.3460.0.53",
@@ -768,6 +769,14 @@
           }
         }
       },
+      "SQLite.Designer/1.0.108.0": {
+        "runtime": {
+          "SQLite.Designer.dll": {
+            "assemblyVersion": "1.0.108.0",
+            "fileVersion": "1.0.108.0"
+          }
+        }
+      },
       "Syncfusion.Calculate.Base/19.3460.0.53": {
         "runtime": {
           "Syncfusion.Calculate.Base.dll": {
@@ -1245,6 +1254,11 @@
       "sha512": ""
     },
     "MetroSet UI/1.0.3.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SQLite.Designer/1.0.108.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

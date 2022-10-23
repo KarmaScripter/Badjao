@@ -31,6 +31,9 @@
     <Reference Include="MetroSet UI">
       <HintPath>Lib\MetroSet UI.dll</HintPath>
     </Reference>
+    <Reference Include="SQLite.Designer">
+      <HintPath>Lib\SQLite.Designer.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.Calculate.Base">
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\net5.0\Syncfusion.Calculate.Base.dll</HintPath>
     </Reference>

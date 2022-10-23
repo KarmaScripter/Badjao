@@ -121,3 +121,5 @@ C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows10.0.22621.0\refint\B
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows10.0.22621.0\Badjao.pdb
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows10.0.22621.0\Badjao.genruntimeconfig.cache
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows10.0.22621.0\ref\Badjao.dll
+C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows10.0.22621.0\SQLite.Designer.dll
+C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows10.0.22621.0\SQLite.Designer.xml
