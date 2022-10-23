@@ -2,7 +2,7 @@
 // // Copyright (c) Terry D. Eppler. All rights reserved.
 // // </copyright>
 
-namespace BudgetExcess
+namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;
@@ -14,7 +14,6 @@ namespace BudgetExcess
     using System.Text;
     using System.Text.RegularExpressions;
     using System.Threading;
-    using BudgetExecution;
     using log4net;
     using System.IO;
 
@@ -1135,7 +1134,7 @@ namespace BudgetExcess
         /// <param name="tablename">The tablename.</param>
         /// <param name="schema">The tschma.</param>
         /// <returns></returns>
-        private protected TableSchema CreateTableSchema( SqlConnection conn, string tablename, string schema )
+        private protected TableSchema CreateTableSchema(SqlConnection conn, string tablename, string schema)
         {
             var res = new TableSchema
             {
@@ -1144,10 +1143,10 @@ namespace BudgetExcess
                 Columns = new List<ColumnSchema>( )
             };
 
-            using( var _command = new SqlCommand(
-                      @"SELECT COLUMNNAME, COLUMNDEFAULT, ISNULLABLE,DATATYPE,  (columnproperty(objectid(TABLENAME), COLUMNNAME, 'IsIdentity')) A[IDENT], "
-                      + @"CHARACTERMAXIMUMLENGTH AS CSIZE FROM INFORMATIONSCHEMA.COLUMNS WHERE TABLENAME = '{tablename}' ORDER BY ORDINALPOSITION ASC",
-                      conn ) )
+            using( var _command = new SqlCommand( @"SELECT COLUMNNAME, COLUMNDEFAULT, ISNULLABLE, DATATYPE,  "
+                      + "(columnproperty(objectid(TABLENAME), COLUMNNAME, 'IsIdentity')) A[IDENT], "
+                      + @"CHARACTERMAXIMUMLENGTH AS CSIZE FROM INFORMATIONSCHEMA.COLUMNS WHERE " 
+                      + $"TABLENAME = '{tablename}' ORDER BY ORDINALPOSITION ASC", conn ) )
             {
                 var _reader = _command.ExecuteReader( );
                 while( _reader.Read( ) )
