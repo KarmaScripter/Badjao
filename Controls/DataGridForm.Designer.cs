@@ -117,7 +117,7 @@
             this.HeaderLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.HeaderLabel.BindingSource = null;
             this.HeaderLabel.DataFilter = null;
-            this.HeaderLabel.Font = new System.Drawing.Font("Roboto", 9F);
+            this.HeaderLabel.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.HeaderLabel.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.HeaderLabel.HoverText = null;
             this.HeaderLabel.Location = new System.Drawing.Point(30, 13);
@@ -127,6 +127,7 @@
             this.HeaderLabel.Outline = false;
             this.HeaderLabel.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.HeaderLabel.OutlineLocation = new System.Drawing.Point(0, 0);
+            this.HeaderLabel.Padding = new System.Windows.Forms.Padding(1);
             this.HeaderLabel.ReflectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.HeaderLabel.ReflectionSpacing = 0;
             this.HeaderLabel.ShadowColor = System.Drawing.Color.Black;
@@ -162,11 +163,11 @@
             this.DataGridGroupBox.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.DataGridGroupBox.Controls.Add(this.GridPanel);
             this.DataGridGroupBox.DataFilter = null;
-            this.DataGridGroupBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.DataGridGroupBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DataGridGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DataGridGroupBox.HeaderText = null;
             this.DataGridGroupBox.HoverText = null;
-            this.DataGridGroupBox.Image = global::BudgetExecution.Properties.Resources.DataSetIcon;
+            this.DataGridGroupBox.Image = null;
             this.DataGridGroupBox.Location = new System.Drawing.Point(30, 97);
             this.DataGridGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.DataGridGroupBox.Name = "DataGridGroupBox";
@@ -226,7 +227,7 @@
             // 
             this.DataGrid.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(39)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -238,7 +239,7 @@
             this.DataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 9F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(39)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -248,7 +249,7 @@
             this.DataGrid.DataFilter = null;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(39)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -256,7 +257,7 @@
             this.DataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGrid.EnableHeadersVisualStyles = false;
-            this.DataGrid.Font = new System.Drawing.Font("Roboto", 8F);
+            this.DataGrid.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(139)))), ((int)(((byte)(138)))));
             this.DataGrid.HoverText = null;
             this.DataGrid.Location = new System.Drawing.Point(0, 0);
@@ -264,7 +265,7 @@
             this.DataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -273,7 +274,7 @@
             this.DataGrid.RowHeadersWidth = 20;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(39)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -313,7 +314,7 @@
             this.ToolStrip.CalculatorButton = this.CalculatorButton;
             this.ToolStrip.CanOverrideStyle = true;
             this.ToolStrip.CaptionAlignment = Syncfusion.Windows.Forms.Tools.CaptionAlignment.Near;
-            this.ToolStrip.CaptionFont = new System.Drawing.Font("Roboto", 9F);
+            this.ToolStrip.CaptionFont = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ToolStrip.CaptionStyle = Syncfusion.Windows.Forms.Tools.CaptionStyle.Top;
             this.ToolStrip.CaptionTextStyle = Syncfusion.Windows.Forms.Tools.CaptionTextStyle.Plain;
             this.ToolStrip.ChartButton = this.ChartButton;
@@ -332,7 +333,7 @@
             this.ToolStrip.Field = BudgetExecution.Field.AccountCode;
             this.ToolStrip.FilterDataButton = null;
             this.ToolStrip.FirstButton = this.FirstButton;
-            this.ToolStrip.Font = new System.Drawing.Font("Roboto", 9F);
+            this.ToolStrip.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ToolStrip.ForeColor = System.Drawing.Color.MidnightBlue;
             this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.ToolStrip.HomeButton = this.HomeButton;
@@ -434,7 +435,7 @@
             this.CalculatorButton.DataFilter = null;
             this.CalculatorButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.CalculatorButton.Field = BudgetExecution.Field.AccountCode;
-            this.CalculatorButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.CalculatorButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CalculatorButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.CalculatorButton.HoverText = "Launch Calculator";
             this.CalculatorButton.Image = ((System.Drawing.Image)(resources.GetObject("CalculatorButton.Image")));
@@ -453,7 +454,7 @@
             this.ChartButton.DataFilter = null;
             this.ChartButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.ChartButton.Field = BudgetExecution.Field.AccountCode;
-            this.ChartButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.ChartButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ChartButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ChartButton.HoverText = "Data Visualizations";
             this.ChartButton.Image = ((System.Drawing.Image)(resources.GetObject("ChartButton.Image")));
@@ -472,14 +473,13 @@
             this.DeleteRecordButton.DataFilter = null;
             this.DeleteRecordButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.DeleteRecordButton.Field = BudgetExecution.Field.AccountCode;
-            this.DeleteRecordButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.DeleteRecordButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DeleteRecordButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteRecordButton.HoverText = "Delete Record";
-            this.DeleteRecordButton.Image = global::BudgetExecution.Properties.Resources.DeleteRecord;
             this.DeleteRecordButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteRecordButton.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteRecordButton.Name = "DeleteRecordButton";
-            this.DeleteRecordButton.Size = new System.Drawing.Size(24, 26);
+            this.DeleteRecordButton.Size = new System.Drawing.Size(23, 26);
             this.DeleteRecordButton.ToolTip = this.ToolTip;
             this.DeleteRecordButton.ToolType = BudgetExecution.ToolType.DeleteRecordButton;
             // 
@@ -490,7 +490,7 @@
             this.DropDown.DataFilter = null;
             this.DropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DropDown.Field = BudgetExecution.Field.AccountCode;
-            this.DropDown.Font = new System.Drawing.Font("Roboto", 9F);
+            this.DropDown.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DropDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(218)))), ((int)(((byte)(218)))));
             this.DropDown.HoverText = "Make Selection";
             this.DropDown.Margin = new System.Windows.Forms.Padding(5);
@@ -511,14 +511,13 @@
             this.EditButton.DataFilter = null;
             this.EditButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.EditButton.Field = BudgetExecution.Field.AccountCode;
-            this.EditButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.EditButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditButton.HoverText = "Edit Record";
-            this.EditButton.Image = global::BudgetExecution.Properties.Resources.EditRecord;
             this.EditButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditButton.Margin = new System.Windows.Forms.Padding(5);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(24, 26);
+            this.EditButton.Size = new System.Drawing.Size(23, 26);
             this.EditButton.ToolTip = this.ToolTip;
             this.EditButton.ToolType = BudgetExecution.ToolType.EditRecordButton;
             // 
@@ -530,7 +529,7 @@
             this.FirstButton.DataFilter = null;
             this.FirstButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.FirstButton.Field = BudgetExecution.Field.AccountCode;
-            this.FirstButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.FirstButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FirstButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.FirstButton.HoverText = "First Record";
             this.FirstButton.Image = ((System.Drawing.Image)(resources.GetObject("FirstButton.Image")));
@@ -549,7 +548,7 @@
             this.HomeButton.DataFilter = null;
             this.HomeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.HomeButton.Field = BudgetExecution.Field.AccountCode;
-            this.HomeButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.HomeButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.HomeButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.HomeButton.HoverText = "Main Menu";
             this.HomeButton.Image = ((System.Drawing.Image)(resources.GetObject("HomeButton.Image")));
@@ -574,7 +573,7 @@
             this.Label.BindingSource = this.BindingSource;
             this.Label.DataFilter = null;
             this.Label.Field = BudgetExecution.Field.AccountCode;
-            this.Label.Font = new System.Drawing.Font("Roboto", 9F);
+            this.Label.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Label.ForeColor = System.Drawing.Color.Black;
             this.Label.HoverText = null;
             this.Label.Margin = new System.Windows.Forms.Padding(5);
@@ -597,7 +596,7 @@
             this.TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.TextBox.BindingSource = this.BindingSource;
             this.TextBox.Field = BudgetExecution.Field.AccountCode;
-            this.TextBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.TextBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.TextBox.HoverText = "";
             this.TextBox.Margin = new System.Windows.Forms.Padding(5);
@@ -638,7 +637,7 @@
             this.PreviousButton.DataFilter = null;
             this.PreviousButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.PreviousButton.Field = BudgetExecution.Field.AccountCode;
-            this.PreviousButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.PreviousButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PreviousButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.PreviousButton.HoverText = "Previous Record";
             this.PreviousButton.Image = ((System.Drawing.Image)(resources.GetObject("PreviousButton.Image")));
@@ -665,7 +664,7 @@
             this.NextButton.DataFilter = null;
             this.NextButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.NextButton.Field = BudgetExecution.Field.AccountCode;
-            this.NextButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.NextButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NextButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.NextButton.HoverText = "Next Record";
             this.NextButton.Image = ((System.Drawing.Image)(resources.GetObject("NextButton.Image")));
@@ -692,7 +691,7 @@
             this.LastButton.DataFilter = null;
             this.LastButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.LastButton.Field = BudgetExecution.Field.AccountCode;
-            this.LastButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.LastButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LastButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.LastButton.HoverText = "Last Record";
             this.LastButton.Image = ((System.Drawing.Image)(resources.GetObject("LastButton.Image")));
@@ -719,14 +718,13 @@
             this.FilterDataButton.DataFilter = null;
             this.FilterDataButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.FilterDataButton.Field = BudgetExecution.Field.AccountCode;
-            this.FilterDataButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.FilterDataButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FilterDataButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.FilterDataButton.HoverText = "Filter Data";
-            this.FilterDataButton.Image = global::BudgetExecution.Properties.Resources.FilterData;
             this.FilterDataButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.FilterDataButton.Margin = new System.Windows.Forms.Padding(5);
             this.FilterDataButton.Name = "FilterDataButton";
-            this.FilterDataButton.Size = new System.Drawing.Size(24, 26);
+            this.FilterDataButton.Size = new System.Drawing.Size(23, 26);
             this.FilterDataButton.ToolTip = this.ToolTip;
             this.FilterDataButton.ToolType = BudgetExecution.ToolType.FilterDataButton;
             // 
@@ -754,14 +752,13 @@
             this.EditColumnButton.DataFilter = null;
             this.EditColumnButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.EditColumnButton.Field = BudgetExecution.Field.AccountCode;
-            this.EditColumnButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.EditColumnButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditColumnButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditColumnButton.HoverText = "Edit Data Column";
-            this.EditColumnButton.Image = global::BudgetExecution.Properties.Resources.EditColumn;
             this.EditColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditColumnButton.Margin = new System.Windows.Forms.Padding(5);
             this.EditColumnButton.Name = "EditColumnButton";
-            this.EditColumnButton.Size = new System.Drawing.Size(24, 26);
+            this.EditColumnButton.Size = new System.Drawing.Size(23, 26);
             this.EditColumnButton.Text = "toolStripButton4";
             this.EditColumnButton.ToolTip = this.ToolTip;
             this.EditColumnButton.ToolType = BudgetExecution.ToolType.EditColumnButton;
@@ -782,14 +779,13 @@
             this.AddColumnButton.DataFilter = null;
             this.AddColumnButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.AddColumnButton.Field = BudgetExecution.Field.AccountCode;
-            this.AddColumnButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.AddColumnButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddColumnButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.AddColumnButton.HoverText = "Add Data Column";
-            this.AddColumnButton.Image = global::BudgetExecution.Properties.Resources.AddColumn;
             this.AddColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddColumnButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddColumnButton.Name = "AddColumnButton";
-            this.AddColumnButton.Size = new System.Drawing.Size(24, 26);
+            this.AddColumnButton.Size = new System.Drawing.Size(23, 26);
             this.AddColumnButton.Text = "toolStripButton1";
             this.AddColumnButton.ToolTip = this.ToolTip;
             this.AddColumnButton.ToolType = BudgetExecution.ToolType.AddColumnButton;
@@ -810,14 +806,13 @@
             this.DeleteColumnButton.DataFilter = null;
             this.DeleteColumnButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.DeleteColumnButton.Field = BudgetExecution.Field.AccountCode;
-            this.DeleteColumnButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.DeleteColumnButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DeleteColumnButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteColumnButton.HoverText = "Delete Data Column";
-            this.DeleteColumnButton.Image = global::BudgetExecution.Properties.Resources.DeleteColumn;
             this.DeleteColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteColumnButton.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteColumnButton.Name = "DeleteColumnButton";
-            this.DeleteColumnButton.Size = new System.Drawing.Size(24, 26);
+            this.DeleteColumnButton.Size = new System.Drawing.Size(23, 26);
             this.DeleteColumnButton.ToolTip = this.ToolTip;
             this.DeleteColumnButton.ToolType = BudgetExecution.ToolType.DeleteColumnButton;
             // 
@@ -845,14 +840,13 @@
             this.CopyButton.DataFilter = null;
             this.CopyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.CopyButton.Field = BudgetExecution.Field.AccountCode;
-            this.CopyButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.CopyButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CopyButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.CopyButton.HoverText = "Copy Record";
-            this.CopyButton.Image = global::BudgetExecution.Properties.Resources.CopyRecord;
             this.CopyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CopyButton.Margin = new System.Windows.Forms.Padding(5);
             this.CopyButton.Name = "CopyButton";
-            this.CopyButton.Size = new System.Drawing.Size(24, 26);
+            this.CopyButton.Size = new System.Drawing.Size(23, 26);
             this.CopyButton.Text = "toolStripButton5";
             this.CopyButton.ToolTip = this.ToolTip;
             this.CopyButton.ToolType = BudgetExecution.ToolType.CopyButton;
@@ -873,14 +867,13 @@
             this.AddTableButton.DataFilter = null;
             this.AddTableButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.AddTableButton.Field = BudgetExecution.Field.AccountCode;
-            this.AddTableButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.AddTableButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddTableButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.AddTableButton.HoverText = "Add Data Table";
-            this.AddTableButton.Image = global::BudgetExecution.Properties.Resources.AddTable;
             this.AddTableButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddTableButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddTableButton.Name = "AddTableButton";
-            this.AddTableButton.Size = new System.Drawing.Size(24, 26);
+            this.AddTableButton.Size = new System.Drawing.Size(23, 26);
             this.AddTableButton.ToolTip = this.ToolTip;
             this.AddTableButton.ToolType = BudgetExecution.ToolType.AddTableButton;
             // 
@@ -900,14 +893,13 @@
             this.DeleteTableButton.DataFilter = null;
             this.DeleteTableButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.DeleteTableButton.Field = BudgetExecution.Field.AccountCode;
-            this.DeleteTableButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.DeleteTableButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DeleteTableButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteTableButton.HoverText = "Delete Data Table";
-            this.DeleteTableButton.Image = global::BudgetExecution.Properties.Resources.DeleteTable;
             this.DeleteTableButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteTableButton.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteTableButton.Name = "DeleteTableButton";
-            this.DeleteTableButton.Size = new System.Drawing.Size(24, 26);
+            this.DeleteTableButton.Size = new System.Drawing.Size(23, 26);
             this.DeleteTableButton.ToolTip = this.ToolTip;
             this.DeleteTableButton.ToolType = BudgetExecution.ToolType.DeleteTableButton;
             // 
@@ -927,14 +919,13 @@
             this.RefreshButton.DataFilter = null;
             this.RefreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.RefreshButton.Field = BudgetExecution.Field.AccountCode;
-            this.RefreshButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.RefreshButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RefreshButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.RefreshButton.HoverText = "Refresh Data";
-            this.RefreshButton.Image = global::BudgetExecution.Properties.Resources.RefreshButton;
             this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(5);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(24, 26);
+            this.RefreshButton.Size = new System.Drawing.Size(23, 26);
             this.RefreshButton.ToolTip = this.ToolTip;
             this.RefreshButton.ToolType = BudgetExecution.ToolType.RefreshButton;
             // 
@@ -954,14 +945,13 @@
             this.VerifyButton.DataFilter = null;
             this.VerifyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.VerifyButton.Field = BudgetExecution.Field.AccountCode;
-            this.VerifyButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.VerifyButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.VerifyButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.VerifyButton.HoverText = "Confirm";
-            this.VerifyButton.Image = global::BudgetExecution.Properties.Resources.VerifyButton;
             this.VerifyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.VerifyButton.Margin = new System.Windows.Forms.Padding(5);
             this.VerifyButton.Name = "VerifyButton";
-            this.VerifyButton.Size = new System.Drawing.Size(24, 26);
+            this.VerifyButton.Size = new System.Drawing.Size(23, 26);
             this.VerifyButton.ToolTip = this.ToolTip;
             this.VerifyButton.ToolType = BudgetExecution.ToolType.VerifyButton;
             // 
@@ -981,7 +971,7 @@
             this.SaveButton.DataFilter = null;
             this.SaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.SaveButton.Field = BudgetExecution.Field.AccountCode;
-            this.SaveButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.SaveButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SaveButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.SaveButton.HoverText = "Save Changes";
             this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
@@ -1008,14 +998,13 @@
             this.EditSqlButton.DataFilter = null;
             this.EditSqlButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.EditSqlButton.Field = BudgetExecution.Field.AccountCode;
-            this.EditSqlButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.EditSqlButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditSqlButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditSqlButton.HoverText = "SQL Editor";
-            this.EditSqlButton.Image = global::BudgetExecution.Properties.Resources.EditButton;
             this.EditSqlButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditSqlButton.Margin = new System.Windows.Forms.Padding(5);
             this.EditSqlButton.Name = "EditSqlButton";
-            this.EditSqlButton.Size = new System.Drawing.Size(24, 26);
+            this.EditSqlButton.Size = new System.Drawing.Size(23, 26);
             this.EditSqlButton.ToolTip = this.ToolTip;
             this.EditSqlButton.ToolType = BudgetExecution.ToolType.EditSqlButton;
             // 
@@ -1035,14 +1024,13 @@
             this.ExcelButton.DataFilter = null;
             this.ExcelButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.ExcelButton.Field = BudgetExecution.Field.AccountCode;
-            this.ExcelButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.ExcelButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ExcelButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ExcelButton.HoverText = "Excel Export";
-            this.ExcelButton.Image = global::BudgetExecution.Properties.Resources.ExcelButton;
             this.ExcelButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExcelButton.Margin = new System.Windows.Forms.Padding(5);
             this.ExcelButton.Name = "ExcelButton";
-            this.ExcelButton.Size = new System.Drawing.Size(24, 26);
+            this.ExcelButton.Size = new System.Drawing.Size(23, 26);
             this.ExcelButton.ToolTip = this.ToolTip;
             this.ExcelButton.ToolType = BudgetExecution.ToolType.ExcelButton;
             // 
@@ -1062,14 +1050,13 @@
             this.BrowseButton.DataFilter = null;
             this.BrowseButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.BrowseButton.Field = BudgetExecution.Field.AccountCode;
-            this.BrowseButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.BrowseButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BrowseButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.BrowseButton.HoverText = "Browse File";
-            this.BrowseButton.Image = global::BudgetExecution.Properties.Resources.LookupButton;
             this.BrowseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BrowseButton.Margin = new System.Windows.Forms.Padding(5);
             this.BrowseButton.Name = "BrowseButton";
-            this.BrowseButton.Size = new System.Drawing.Size(24, 26);
+            this.BrowseButton.Size = new System.Drawing.Size(23, 26);
             this.BrowseButton.ToolTip = this.ToolTip;
             this.BrowseButton.ToolType = BudgetExecution.ToolType.BrowseButton;
             // 
@@ -1105,14 +1092,13 @@
             this.CalendarButton.DataFilter = null;
             this.CalendarButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.CalendarButton.Field = BudgetExecution.Field.AccountCode;
-            this.CalendarButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.CalendarButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CalendarButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.CalendarButton.HoverText = "Calendar App";
-            this.CalendarButton.Image = global::BudgetExecution.Properties.Resources.CalendarButton;
             this.CalendarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CalendarButton.Margin = new System.Windows.Forms.Padding(5);
             this.CalendarButton.Name = "CalendarButton";
-            this.CalendarButton.Size = new System.Drawing.Size(24, 26);
+            this.CalendarButton.Size = new System.Drawing.Size(23, 26);
             this.CalendarButton.Text = "toolStripButton1";
             this.CalendarButton.ToolTip = this.ToolTip;
             this.CalendarButton.ToolType = BudgetExecution.ToolType.CalendarButton;
@@ -1143,11 +1129,11 @@
             this.ColumnGroupBox.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.ColumnGroupBox.Controls.Add(this.ColumnListBox);
             this.ColumnGroupBox.DataFilter = null;
-            this.ColumnGroupBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.ColumnGroupBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ColumnGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ColumnGroupBox.HeaderText = null;
             this.ColumnGroupBox.HoverText = null;
-            this.ColumnGroupBox.Image = global::BudgetExecution.Properties.Resources.ColumnIcon;
+            this.ColumnGroupBox.Image = null;
             this.ColumnGroupBox.Location = new System.Drawing.Point(1022, 294);
             this.ColumnGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ColumnGroupBox.Name = "ColumnGroupBox";
@@ -1184,9 +1170,10 @@
             this.ColumnListBox.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.ColumnListBox.Border.Visible = false;
             this.ColumnListBox.DataFilter = null;
-            this.ColumnListBox.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColumnListBox.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ColumnListBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ColumnListBox.HoverText = null;
+            this.ColumnListBox.ImageList = null;
             this.ColumnListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ColumnListBox.ItemHeight = 30;
             this.ColumnListBox.ItemLineAlignment = System.Drawing.StringAlignment.Center;
@@ -1195,6 +1182,7 @@
             this.ColumnListBox.Location = new System.Drawing.Point(6, 35);
             this.ColumnListBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ColumnListBox.Name = "ColumnListBox";
+            this.ColumnListBox.Padding = new System.Windows.Forms.Padding(1);
             this.ColumnListBox.Size = new System.Drawing.Size(325, 124);
             this.ColumnListBox.TabIndex = 1;
             this.ColumnListBox.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
@@ -1224,11 +1212,11 @@
             this.ValueGroupBox.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.ValueGroupBox.Controls.Add(this.ValueListBox);
             this.ValueGroupBox.DataFilter = null;
-            this.ValueGroupBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.ValueGroupBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ValueGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ValueGroupBox.HeaderText = null;
             this.ValueGroupBox.HoverText = null;
-            this.ValueGroupBox.Image = global::BudgetExecution.Properties.Resources.RowIcon;
+            this.ValueGroupBox.Image = null;
             this.ValueGroupBox.Location = new System.Drawing.Point(1022, 474);
             this.ValueGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ValueGroupBox.Name = "ValueGroupBox";
@@ -1265,9 +1253,10 @@
             this.ValueListBox.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.ValueListBox.Border.Visible = false;
             this.ValueListBox.DataFilter = null;
-            this.ValueListBox.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValueListBox.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ValueListBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ValueListBox.HoverText = null;
+            this.ValueListBox.ImageList = null;
             this.ValueListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ValueListBox.ItemHeight = 30;
             this.ValueListBox.ItemLineAlignment = System.Drawing.StringAlignment.Center;
@@ -1276,6 +1265,7 @@
             this.ValueListBox.Location = new System.Drawing.Point(6, 39);
             this.ValueListBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ValueListBox.Name = "ValueListBox";
+            this.ValueListBox.Padding = new System.Windows.Forms.Padding(1);
             this.ValueListBox.Size = new System.Drawing.Size(325, 125);
             this.ValueListBox.TabIndex = 2;
             this.ValueListBox.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
@@ -1305,11 +1295,11 @@
             this.TableGroupBox.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.TableGroupBox.Controls.Add(this.TableListBox);
             this.TableGroupBox.DataFilter = null;
-            this.TableGroupBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.TableGroupBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TableGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.TableGroupBox.HeaderText = null;
             this.TableGroupBox.HoverText = null;
-            this.TableGroupBox.Image = global::BudgetExecution.Properties.Resources.TableIcon;
+            this.TableGroupBox.Image = null;
             this.TableGroupBox.Location = new System.Drawing.Point(1022, 97);
             this.TableGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.TableGroupBox.Name = "TableGroupBox";
@@ -1346,9 +1336,10 @@
             this.TableListBox.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.TableListBox.Border.Visible = false;
             this.TableListBox.DataFilter = null;
-            this.TableListBox.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TableListBox.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TableListBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.TableListBox.HoverText = null;
+            this.TableListBox.ImageList = null;
             this.TableListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.TableListBox.ItemHeight = 30;
             this.TableListBox.ItemLineAlignment = System.Drawing.StringAlignment.Center;
@@ -1357,6 +1348,7 @@
             this.TableListBox.Location = new System.Drawing.Point(6, 35);
             this.TableListBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.TableListBox.Name = "TableListBox";
+            this.TableListBox.Padding = new System.Windows.Forms.Padding(1);
             this.TableListBox.Size = new System.Drawing.Size(325, 153);
             this.TableListBox.TabIndex = 2;
             this.TableListBox.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
@@ -1394,7 +1386,7 @@
             this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.CaptionButtonHoverColor = System.Drawing.Color.DarkRed;
-            this.CaptionFont = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaptionFont = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1388, 763);
             this.Controls.Add(this.HeaderLabel);
@@ -1403,7 +1395,7 @@
             this.Controls.Add(this.ColumnGroupBox);
             this.Controls.Add(this.ValueGroupBox);
             this.Controls.Add(this.TableGroupBox);
-            this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
