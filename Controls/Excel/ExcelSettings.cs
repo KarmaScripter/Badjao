@@ -18,6 +18,7 @@ namespace BudgetExecution
     /// <summary>
     /// 
     /// </summary>
+    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class ExcelSettings
     {
         /// <summary>
@@ -405,7 +406,7 @@ namespace BudgetExecution
                         _excelComment.To.Row = _range.End.Row;
                         _excelComment.To.Column = _range.End.Column;
                         _excelComment.BackgroundColor = Color.FromArgb( 15, 15, 15 );
-                        _excelComment.Font.FontName = "Consolas";
+                        _excelComment.Font.FontName = "Roboto";
                         _excelComment.Font.Size = 8;
                         _excelComment.Font.Color = Color.Black;
                         _excelComment.Text = text;
