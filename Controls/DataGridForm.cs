@@ -11,6 +11,7 @@ namespace BudgetExecution
     using VisualPlus.Toolkit.Controls.DataManagement;
 
     [ SuppressMessage( "ReSharper", "UnusedParameter.Global" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public partial class DataGridForm : MetroForm
     {
         /// <summary>
@@ -35,7 +36,7 @@ namespace BudgetExecution
         /// <value>
         /// The source prefix.
         /// </value>
-        public string SourcePrefix { get; } = " Data Source : ";
+        public string SourcePrefix { get; set; } = " Data Source : ";
 
         /// <summary>
         /// Gets the table prefix.
@@ -43,7 +44,7 @@ namespace BudgetExecution
         /// <value>
         /// The table prefix.
         /// </value>
-        public string TablePrefix { get; } = " Tables : ";
+        public string TablePrefix { get; set; } = " Tables : ";
 
         /// <summary>
         /// Gets the column prefix.
@@ -51,7 +52,7 @@ namespace BudgetExecution
         /// <value>
         /// The column prefix.
         /// </value>
-        public string ColumnPrefix { get; } = " Columns : ";
+        public string ColumnPrefix { get; set; } = " Columns : ";
 
         /// <summary>
         /// Gets the value prefix.
@@ -59,7 +60,7 @@ namespace BudgetExecution
         /// <value>
         /// The value prefix.
         /// </value>
-        public string ValuePrefix { get; } = " Values : ";
+        public string ValuePrefix { get; set; } = " Values : ";
 
         /// <summary>
         /// Gets or sets the selected table.
@@ -296,7 +297,7 @@ namespace BudgetExecution
                 var _query = string.Empty;
 
                 if( !string.IsNullOrEmpty( SelectedTable )
-                    & !string.IsNullOrEmpty( SelectedColumn ) )
+                   & !string.IsNullOrEmpty( SelectedColumn ) )
                 {
                     FormFilter.Add( SelectedColumn, SelectedValue );
 

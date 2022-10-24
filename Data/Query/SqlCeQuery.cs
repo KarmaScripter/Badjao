@@ -13,12 +13,12 @@ namespace BudgetExecution
     /// <inheritdoc/>
     /// <summary>
     /// </summary>
-    /// <seealso cref = "T:BudgetExecution.Query"/>
+    /// <seealso/>
     public class SqlCeQuery : Query
     {
         /// <inheritdoc/>
         /// <summary>
-        /// Initializes a new instance of the <see cref = "T:BudgetExecution.SqlCeQuery"/>
+        /// Initializes a new instance of the <see/>
         /// class.
         /// </summary>
         public SqlCeQuery( )

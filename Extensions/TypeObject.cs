@@ -16,6 +16,7 @@ namespace BudgetExecution
     /// <summary>
     /// 
     /// </summary>
+    [ SuppressMessage( "ReSharper", "CompareNonConstrainedGenericWithNull" ) ]
     public static class TypeObject
     {
         /// <summary>
@@ -104,37 +105,7 @@ namespace BudgetExecution
 
             return default( string );
         }
-
-        /// <summary>
-        /// An object extension method that serialize an object to binary.
-        /// </summary>
-        /// <typeparam name="T">Generic type parameter.</typeparam>
-        /// <param name="type">The @type to act on.</param>
-        /// <param name="encoding">The encoding.</param>
-        /// <returns>
-        /// A string.
-        /// </returns>
-        public static string BinarySerialize<T>( this T type, Encoding encoding )
-        {
-            if( type != null )
-            {
-                try
-                {
-                    var _formatter = new BinaryFormatter( );
-                    using var _stream = new MemoryStream( );
-                    _formatter.Serialize( _stream, type );
-                    return encoding.GetString( _stream.ToArray( ) );
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                    return default( string );
-                }
-            }
-
-            return default( string );
-        }
-
+        
         /// <summary>
         /// An object extension method that serialize a string to XML.
         /// </summary>

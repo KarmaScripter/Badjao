@@ -16,7 +16,7 @@ namespace BudgetExecution
     /// 
     /// </summary>
     /// <seealso cref = "MetricBase"/>
-    [ SuppressMessage( "ReSharper", "WrongIndentSize" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class DataMetric : MetricBase
     {
         /// <summary>
@@ -134,8 +134,8 @@ namespace BudgetExecution
         public double CalculateDeviation( IEnumerable<DataRow> dataRow, Numeric numeric )
         {
             if( dataRow?.Any( ) == true
-                && dataRow.HasNumeric( )
-                && GetCount( dataRow, numeric ) > 30 )
+               && dataRow.HasNumeric( )
+               && GetCount( dataRow, numeric ) > 30 )
             {
                 try
                 {
@@ -171,8 +171,8 @@ namespace BudgetExecution
         public double CalculateVariance( IEnumerable<DataRow> dataRow, Numeric numeric )
         {
             if( dataRow?.Any( ) == true
-                && dataRow.HasNumeric( )
-                && GetCount( dataRow, numeric ) > 30 )
+               && dataRow.HasNumeric( )
+               && GetCount( dataRow, numeric ) > 30 )
             {
                 var _table = dataRow.CopyToDataTable( );
                 try

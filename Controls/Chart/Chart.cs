@@ -14,6 +14,7 @@ namespace BudgetExecution
     using Syncfusion.Drawing;
     using Syncfusion.Windows.Forms.Chart;
 
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class Chart : ChartControl, IChart
     {
         /// <summary>
@@ -341,7 +342,7 @@ namespace BudgetExecution
         public void SetPoints( )
         {
             if( Enum.IsDefined( typeof( ChartSeriesType ), DataSeries.Type )
-                && DataValues?.Any( ) == true )
+               && DataValues?.Any( ) == true )
             {
                 try
                 {

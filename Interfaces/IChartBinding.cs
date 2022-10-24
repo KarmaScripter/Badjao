@@ -30,7 +30,7 @@ namespace BudgetExecution
         /// <summary>
         /// Gets the total number of items in the underlying list, 
         /// taking the current 
-        /// <see cref="P:System.Windows.Forms.BindingSource.Filter" /> value into consideration.
+        /// <see/> value into consideration.
         /// </summary>
         int Count { get; set; }
 
