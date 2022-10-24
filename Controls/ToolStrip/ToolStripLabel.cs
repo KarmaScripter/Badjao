@@ -9,6 +9,7 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Windows.Forms;
 
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class ToolStripLabel : ToolStripLabelBase, IToolStripLabel
     {
         /// <summary>
@@ -31,7 +32,7 @@ namespace BudgetExecution
         /// Initializes a new instance of the <see cref="ToolStripLabel"/> class.
         /// </summary>
         /// <param name="text">The text to display
-        /// on the <see cref="T:System.Windows.Forms.ToolStripLabel" />.</param>
+        /// on the <see/>.</param>
         public ToolStripLabel( string text )
             : this( )
         {
@@ -81,9 +82,7 @@ namespace BudgetExecution
         {
             try
             {
-                Font = font != null
-                    ? font
-                    : new Font( "Roboto", 9 );
+                Font = font ?? new Font( "Roboto", 9 );
 
                 ForeColor = color != Color.Empty
                     ? color
@@ -125,7 +124,7 @@ namespace BudgetExecution
         public void OnMouseHover( object sender, EventArgs e )
         {
             if( sender is ToolStripLabel _label
-                && !string.IsNullOrEmpty( _label?.HoverText ) )
+               && !string.IsNullOrEmpty( _label?.HoverText ) )
             {
                 try
                 {

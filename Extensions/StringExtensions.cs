@@ -130,7 +130,7 @@ namespace BudgetExecution
             try
             {
                 return text?.Length > length
-                    ? text.Substring( 0, length )
+                    ? text[ ..length ]
                     : text;
             }
             catch( Exception ex )

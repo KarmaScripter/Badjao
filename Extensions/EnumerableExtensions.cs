@@ -251,7 +251,8 @@ namespace BudgetExecution
                 {
                     var _row = dataRow?.First( );
                     var _columns = _row?.Table?.Columns;
-                    if( _columns?.Contains( column?.ColumnName ) == true )
+                    if( !string.IsNullOrEmpty( column.ColumnName ) 
+                       && _columns?.Contains( column.ColumnName ) == true ) 
                     {
                         var _enumerable = dataRow
                             ?.Where( p => p.Field<string>( column.ColumnName ).Equals( filter ) )
