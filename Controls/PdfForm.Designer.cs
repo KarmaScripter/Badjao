@@ -401,7 +401,6 @@
             this.PreviousButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.PreviousButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.PreviousButton.HoverText = null;
-            this.PreviousButton.Image = global::BudgetExecution.Properties.Resources.PreviousButton;
             this.PreviousButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PreviousButton.Margin = new System.Windows.Forms.Padding(5);
             this.PreviousButton.Name = "PreviousButton";
@@ -429,7 +428,6 @@
             this.NextButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.NextButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.NextButton.HoverText = null;
-            this.NextButton.Image = global::BudgetExecution.Properties.Resources.NextButton;
             this.NextButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NextButton.Margin = new System.Windows.Forms.Padding(5);
             this.NextButton.Name = "NextButton";
@@ -457,7 +455,6 @@
             this.LastButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.LastButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.LastButton.HoverText = null;
-            this.LastButton.Image = global::BudgetExecution.Properties.Resources.LastButton;
             this.LastButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.LastButton.Margin = new System.Windows.Forms.Padding(5);
             this.LastButton.Name = "LastButton";
@@ -501,7 +498,6 @@
             this.RefreshButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.RefreshButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.RefreshButton.HoverText = null;
-            this.RefreshButton.Image = global::BudgetExecution.Properties.Resources.RefreshButton;
             this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(5);
             this.RefreshButton.Name = "RefreshButton";
@@ -529,7 +525,6 @@
             this.SaveButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.SaveButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.SaveButton.HoverText = null;
-            this.SaveButton.Image = global::BudgetExecution.Properties.Resources.SaveButton;
             this.SaveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveButton.Margin = new System.Windows.Forms.Padding(5);
             this.SaveButton.Name = "SaveButton";
@@ -573,7 +568,6 @@
             this.ChartButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.ChartButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ChartButton.HoverText = null;
-            this.ChartButton.Image = global::BudgetExecution.Properties.Resources.ChartButton;
             this.ChartButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ChartButton.Margin = new System.Windows.Forms.Padding(5);
             this.ChartButton.Name = "ChartButton";
@@ -609,7 +603,6 @@
             this.HomeButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.HomeButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.HomeButton.HoverText = null;
-            this.HomeButton.Image = global::BudgetExecution.Properties.Resources.HomeButton;
             this.HomeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.HomeButton.Margin = new System.Windows.Forms.Padding(5);
             this.HomeButton.Name = "HomeButton";
@@ -639,7 +632,6 @@
             this.CaptionFont = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             captionImage1.BackColor = System.Drawing.Color.Transparent;
-            captionImage1.Image = global::BudgetExecution.Properties.Resources.PDF;
             captionImage1.Location = new System.Drawing.Point(4, 4);
             captionImage1.Name = "CaptionImage";
             captionImage1.Size = new System.Drawing.Size(22, 22);

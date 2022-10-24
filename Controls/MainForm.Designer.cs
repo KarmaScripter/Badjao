@@ -80,7 +80,6 @@
             this.CaptionFont = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             captionImage1.BackColor = System.Drawing.Color.Transparent;
-            captionImage1.Image = global::BudgetExecution.Properties.Resources.Earth;
             captionImage1.Location = new System.Drawing.Point(4, 4);
             captionImage1.Name = "CaptionImage";
             captionImage1.Size = new System.Drawing.Size(22, 22);

@@ -224,7 +224,6 @@ namespace BudgetExecution
             this.PictureBox.DataFilter = null;
             this.PictureBox.Field = BudgetExecution.Field.RpioActivityCode;
             this.PictureBox.HoverText = null;
-            this.PictureBox.Image = global::BudgetExecution.Properties.Resources.Message;
             this.PictureBox.Location = new System.Drawing.Point(3, 3);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Numeric = BudgetExecution.Numeric.NS;

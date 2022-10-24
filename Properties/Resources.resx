@@ -118,70 +118,124 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LastButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ToolStrip\png\LastButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddColumnIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\AddColumnIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddDatabaseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\AddDatabaseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ColumnsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\ColumnsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ConnectionIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\ConnectionIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CopyDatabaseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\CopyDatabaseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Providers\DB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DataSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\Data\png\DataSearchIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DataSetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\DatabaseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DeleteColumnIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\DeleteColumnIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DeleteDatabaseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\DeleteDatabaseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EditDataIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\EditDataIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MenuIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\MenuIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RowIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\RowIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SqlServerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\SqlServerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TableIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Data\png\TableIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Earth" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\EPA\png\Earth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\EPA\png\Chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Databases" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\EPA\png\Databases.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Access" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\EPA\png\Access.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\EPA\png\Excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LastButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\ToolStrip\png\LastButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\EPA\png\PDF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DeleteDatabaseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\DeleteDatabaseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddColumn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\AddColumn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Update" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Navigation\Update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Browse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Folders\Browse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataRefresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\DataRefresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Earth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\EPA\png\Earth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataSetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\DatabaseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\EPA\png\Excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Access" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\EPA\png\Access.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddTable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\AddTable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VerifyData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\VerifyData.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RowIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\RowIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditRecord" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\EditRecord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SqlServerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\SqlServerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditColumn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\EditColumn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteRecord" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\DeleteRecord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_synchronize_96px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Interface\icons8_synchronize_96px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CopyDatabaseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\CopyDatabaseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditDataIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\EditDataIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\TableIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CopyRecord" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\CopyRecord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Extensions\MDF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteColumn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\DeleteColumn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteColumnIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\DeleteColumnIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilterData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\FilterData.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\MenuIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteTable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\DeleteTable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Databases" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\EPA\png\Databases.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ColumnsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\ColumnsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Word" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\EPA\png\Word.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddDatabaseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\AddDatabaseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XLSX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Office\XLSX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddColumnIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\AddColumnIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConnectionIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Data\png\ConnectionIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OutlookCalendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Office\OutlookCalendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

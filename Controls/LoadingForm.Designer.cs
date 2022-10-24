@@ -42,7 +42,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBox.Image = global::BudgetExecution.Properties.Resources.Processing;
             this.PictureBox.Location = new System.Drawing.Point(367, 85);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(645, 445);

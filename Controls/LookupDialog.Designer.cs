@@ -117,7 +117,6 @@
             this.LookupTabPage.Controls.Add(this.ColumnGroupBox);
             this.LookupTabPage.Controls.Add(this.ProviderGroupBox);
             this.LookupTabPage.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.LookupTabPage.Image = global::BudgetExecution.Properties.Resources.DataSearch;
             this.LookupTabPage.ImageSize = new System.Drawing.Size(12, 12);
             this.LookupTabPage.Location = new System.Drawing.Point(0, 22);
             this.LookupTabPage.Name = "LookupTabPage";
@@ -149,7 +148,6 @@
             this.TableGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.TableGroupBox.HeaderText = null;
             this.TableGroupBox.HoverText = null;
-            this.TableGroupBox.Image = global::BudgetExecution.Properties.Resources.TableIcon;
             this.TableGroupBox.Location = new System.Drawing.Point(712, 44);
             this.TableGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.TableGroupBox.Name = "TableGroupBox";
@@ -249,7 +247,6 @@
             this.ValueGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ValueGroupBox.HeaderText = null;
             this.ValueGroupBox.HoverText = null;
-            this.ValueGroupBox.Image = global::BudgetExecution.Properties.Resources.RowIcon;
             this.ValueGroupBox.Location = new System.Drawing.Point(712, 259);
             this.ValueGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ValueGroupBox.Name = "ValueGroupBox";
@@ -331,7 +328,6 @@
             this.ColumnGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ColumnGroupBox.HeaderText = null;
             this.ColumnGroupBox.HoverText = null;
-            this.ColumnGroupBox.Image = global::BudgetExecution.Properties.Resources.ColumnIcon;
             this.ColumnGroupBox.Location = new System.Drawing.Point(177, 259);
             this.ColumnGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ColumnGroupBox.Name = "ColumnGroupBox";
@@ -415,7 +411,6 @@
             this.ProviderGroupBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ProviderGroupBox.HeaderText = "";
             this.ProviderGroupBox.HoverText = null;
-            this.ProviderGroupBox.Image = global::BudgetExecution.Properties.Resources.ConnectionIcon;
             this.ProviderGroupBox.Location = new System.Drawing.Point(180, 44);
             this.ProviderGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ProviderGroupBox.Name = "ProviderGroupBox";

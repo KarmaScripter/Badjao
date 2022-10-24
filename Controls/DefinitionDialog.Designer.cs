@@ -174,7 +174,6 @@
             this.CreateTableTabPage.Controls.Add(this.CreateTableTablesGroupBox);
             this.CreateTableTabPage.Controls.Add(this.CreateTableProviderGroupBox);
             this.CreateTableTabPage.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.CreateTableTabPage.Image = global::BudgetExecution.Properties.Resources.AddDatabaseIcon;
             this.CreateTableTabPage.ImageSize = new System.Drawing.Size(16, 16);
             this.CreateTableTabPage.Location = new System.Drawing.Point(0, 22);
             this.CreateTableTabPage.Name = "CreateTableTabPage";
@@ -210,7 +209,6 @@
             this.CreateTableSchemaGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.CreateTableSchemaGroupBox.HeaderText = null;
             this.CreateTableSchemaGroupBox.HoverText = null;
-            this.CreateTableSchemaGroupBox.Image = global::BudgetExecution.Properties.Resources.ColumnIcon;
             this.CreateTableSchemaGroupBox.Location = new System.Drawing.Point(187, 277);
             this.CreateTableSchemaGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.CreateTableSchemaGroupBox.Name = "CreateTableSchemaGroupBox";
@@ -496,7 +494,6 @@
             this.CreateTableTablesGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.CreateTableTablesGroupBox.HeaderText = null;
             this.CreateTableTablesGroupBox.HoverText = null;
-            this.CreateTableTablesGroupBox.Image = global::BudgetExecution.Properties.Resources.TableIcon;
             this.CreateTableTablesGroupBox.Location = new System.Drawing.Point(816, 36);
             this.CreateTableTablesGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.CreateTableTablesGroupBox.Name = "CreateTableTablesGroupBox";
@@ -632,7 +629,6 @@
             this.CreateTableProviderGroupBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.CreateTableProviderGroupBox.HeaderText = "";
             this.CreateTableProviderGroupBox.HoverText = null;
-            this.CreateTableProviderGroupBox.Image = global::BudgetExecution.Properties.Resources.ConnectionIcon;
             this.CreateTableProviderGroupBox.Location = new System.Drawing.Point(187, 38);
             this.CreateTableProviderGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.CreateTableProviderGroupBox.Name = "CreateTableProviderGroupBox";
@@ -736,7 +732,6 @@
             this.EditColumnTabPage.Controls.Add(this.EditColumnSelectColumnGroupBox);
             this.EditColumnTabPage.Controls.Add(this.EditColumnProviderGroupBox);
             this.EditColumnTabPage.Controls.Add(this.SchemaGroupBox);
-            this.EditColumnTabPage.Image = global::BudgetExecution.Properties.Resources.EditDataIcon;
             this.EditColumnTabPage.ImageSize = new System.Drawing.Size(16, 16);
             this.EditColumnTabPage.Location = new System.Drawing.Point(0, 22);
             this.EditColumnTabPage.Name = "EditColumnTabPage";
@@ -963,7 +958,6 @@
             this.EditColumnSelectTableGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditColumnSelectTableGroupBox.HeaderText = null;
             this.EditColumnSelectTableGroupBox.HoverText = null;
-            this.EditColumnSelectTableGroupBox.Image = global::BudgetExecution.Properties.Resources.TableIcon;
             this.EditColumnSelectTableGroupBox.Location = new System.Drawing.Point(816, 36);
             this.EditColumnSelectTableGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.EditColumnSelectTableGroupBox.Name = "EditColumnSelectTableGroupBox";
@@ -1118,7 +1112,6 @@
             this.EditColumnSelectColumnGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditColumnSelectColumnGroupBox.HeaderText = null;
             this.EditColumnSelectColumnGroupBox.HoverText = null;
-            this.EditColumnSelectColumnGroupBox.Image = global::BudgetExecution.Properties.Resources.ColumnIcon;
             this.EditColumnSelectColumnGroupBox.Location = new System.Drawing.Point(187, 277);
             this.EditColumnSelectColumnGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.EditColumnSelectColumnGroupBox.Name = "EditColumnSelectColumnGroupBox";
@@ -1201,7 +1194,6 @@
             this.EditColumnProviderGroupBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.EditColumnProviderGroupBox.HeaderText = "";
             this.EditColumnProviderGroupBox.HoverText = null;
-            this.EditColumnProviderGroupBox.Image = global::BudgetExecution.Properties.Resources.ConnectionIcon;
             this.EditColumnProviderGroupBox.Location = new System.Drawing.Point(187, 38);
             this.EditColumnProviderGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.EditColumnProviderGroupBox.Name = "EditColumnProviderGroupBox";
@@ -1304,7 +1296,6 @@
             this.DeleteTableTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.DeleteTableTabPage.Controls.Add(this.DeleteTableTablesGroupBox);
             this.DeleteTableTabPage.Controls.Add(this.DeleteTableProviderGroupBox);
-            this.DeleteTableTabPage.Image = global::BudgetExecution.Properties.Resources.DeleteDatabaseIcon;
             this.DeleteTableTabPage.ImageSize = new System.Drawing.Size(16, 16);
             this.DeleteTableTabPage.Location = new System.Drawing.Point(0, 22);
             this.DeleteTableTabPage.Name = "DeleteTableTabPage";
@@ -1338,7 +1329,6 @@
             this.DeleteTableTablesGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteTableTablesGroupBox.HeaderText = null;
             this.DeleteTableTablesGroupBox.HoverText = null;
-            this.DeleteTableTablesGroupBox.Image = global::BudgetExecution.Properties.Resources.TableIcon;
             this.DeleteTableTablesGroupBox.Location = new System.Drawing.Point(804, 129);
             this.DeleteTableTablesGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.DeleteTableTablesGroupBox.Name = "DeleteTableTablesGroupBox";
@@ -1495,7 +1485,6 @@
             this.DeleteTableProviderGroupBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.DeleteTableProviderGroupBox.HeaderText = "";
             this.DeleteTableProviderGroupBox.HoverText = null;
-            this.DeleteTableProviderGroupBox.Image = global::BudgetExecution.Properties.Resources.ConnectionIcon;
             this.DeleteTableProviderGroupBox.Location = new System.Drawing.Point(180, 129);
             this.DeleteTableProviderGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.DeleteTableProviderGroupBox.Name = "DeleteTableProviderGroupBox";
@@ -1598,7 +1587,6 @@
             this.DeleteColumnTabPage.Controls.Add(this.DeleteColumnGroupBox);
             this.DeleteColumnTabPage.Controls.Add(this.DeleteColumnTablesGroupBox);
             this.DeleteColumnTabPage.Controls.Add(this.DeleteColumnProviderGroupBox);
-            this.DeleteColumnTabPage.Image = global::BudgetExecution.Properties.Resources.DeleteColumnIcon;
             this.DeleteColumnTabPage.ImageSize = new System.Drawing.Size(16, 16);
             this.DeleteColumnTabPage.Location = new System.Drawing.Point(0, 22);
             this.DeleteColumnTabPage.Name = "DeleteColumnTabPage";
@@ -1630,7 +1618,6 @@
             this.DeleteColumnGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteColumnGroupBox.HeaderText = null;
             this.DeleteColumnGroupBox.HoverText = null;
-            this.DeleteColumnGroupBox.Image = global::BudgetExecution.Properties.Resources.ColumnIcon;
             this.DeleteColumnGroupBox.Location = new System.Drawing.Point(945, 129);
             this.DeleteColumnGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.DeleteColumnGroupBox.Name = "DeleteColumnGroupBox";
@@ -1713,7 +1700,6 @@
             this.DeleteColumnTablesGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteColumnTablesGroupBox.HeaderText = null;
             this.DeleteColumnTablesGroupBox.HoverText = null;
-            this.DeleteColumnTablesGroupBox.Image = global::BudgetExecution.Properties.Resources.TableIcon;
             this.DeleteColumnTablesGroupBox.Location = new System.Drawing.Point(502, 129);
             this.DeleteColumnTablesGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.DeleteColumnTablesGroupBox.Name = "DeleteColumnTablesGroupBox";
@@ -1869,7 +1855,6 @@
             this.DeleteColumnProviderGroupBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.DeleteColumnProviderGroupBox.HeaderText = "";
             this.DeleteColumnProviderGroupBox.HoverText = null;
-            this.DeleteColumnProviderGroupBox.Image = global::BudgetExecution.Properties.Resources.ConnectionIcon;
             this.DeleteColumnProviderGroupBox.Location = new System.Drawing.Point(55, 129);
             this.DeleteColumnProviderGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.DeleteColumnProviderGroupBox.Name = "DeleteColumnProviderGroupBox";
@@ -2636,7 +2621,6 @@
             this.SchemaGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.SchemaGroupBox.HeaderText = null;
             this.SchemaGroupBox.HoverText = null;
-            this.SchemaGroupBox.Image = global::BudgetExecution.Properties.Resources.ColumnIcon;
             this.SchemaGroupBox.Location = new System.Drawing.Point(816, 277);
             this.SchemaGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.SchemaGroupBox.Name = "SchemaGroupBox";

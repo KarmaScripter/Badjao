@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BudgetExecution.Properties {
+namespace Badjao.Properties {
     using System;
     
     

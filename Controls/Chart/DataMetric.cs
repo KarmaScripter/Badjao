@@ -64,7 +64,7 @@ namespace BudgetExecution
         }
 
         public DataMetric( BindingSource bindingSource, IDictionary<string, object> where,
-            Numeric numeric = Numeric.Amount)
+            Numeric numeric = Numeric.Amount )
             : base( bindingSource, where, numeric )
         {
             Variance = CalculateVariance( Data, Numeric );

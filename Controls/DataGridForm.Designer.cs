@@ -476,10 +476,11 @@
             this.DeleteRecordButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DeleteRecordButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteRecordButton.HoverText = "Delete Record";
+            this.DeleteRecordButton.Image = global::Badjao.Properties.Resources.DeleteRecord;
             this.DeleteRecordButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteRecordButton.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteRecordButton.Name = "DeleteRecordButton";
-            this.DeleteRecordButton.Size = new System.Drawing.Size(23, 26);
+            this.DeleteRecordButton.Size = new System.Drawing.Size(24, 26);
             this.DeleteRecordButton.ToolTip = this.ToolTip;
             this.DeleteRecordButton.ToolType = BudgetExecution.ToolType.DeleteRecordButton;
             // 
@@ -514,10 +515,11 @@
             this.EditButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditButton.HoverText = "Edit Record";
+            this.EditButton.Image = global::Badjao.Properties.Resources.EditRecord;
             this.EditButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditButton.Margin = new System.Windows.Forms.Padding(5);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(23, 26);
+            this.EditButton.Size = new System.Drawing.Size(24, 26);
             this.EditButton.ToolTip = this.ToolTip;
             this.EditButton.ToolType = BudgetExecution.ToolType.EditRecordButton;
             // 
@@ -721,10 +723,11 @@
             this.FilterDataButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FilterDataButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.FilterDataButton.HoverText = "Filter Data";
+            this.FilterDataButton.Image = global::Badjao.Properties.Resources.FilterData;
             this.FilterDataButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.FilterDataButton.Margin = new System.Windows.Forms.Padding(5);
             this.FilterDataButton.Name = "FilterDataButton";
-            this.FilterDataButton.Size = new System.Drawing.Size(23, 26);
+            this.FilterDataButton.Size = new System.Drawing.Size(24, 26);
             this.FilterDataButton.ToolTip = this.ToolTip;
             this.FilterDataButton.ToolType = BudgetExecution.ToolType.FilterDataButton;
             // 
@@ -755,10 +758,11 @@
             this.EditColumnButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditColumnButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditColumnButton.HoverText = "Edit Data Column";
+            this.EditColumnButton.Image = global::Badjao.Properties.Resources.EditColumn;
             this.EditColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditColumnButton.Margin = new System.Windows.Forms.Padding(5);
             this.EditColumnButton.Name = "EditColumnButton";
-            this.EditColumnButton.Size = new System.Drawing.Size(23, 26);
+            this.EditColumnButton.Size = new System.Drawing.Size(24, 26);
             this.EditColumnButton.Text = "toolStripButton4";
             this.EditColumnButton.ToolTip = this.ToolTip;
             this.EditColumnButton.ToolType = BudgetExecution.ToolType.EditColumnButton;
@@ -782,10 +786,11 @@
             this.AddColumnButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddColumnButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.AddColumnButton.HoverText = "Add Data Column";
+            this.AddColumnButton.Image = global::Badjao.Properties.Resources.AddColumn;
             this.AddColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddColumnButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddColumnButton.Name = "AddColumnButton";
-            this.AddColumnButton.Size = new System.Drawing.Size(23, 26);
+            this.AddColumnButton.Size = new System.Drawing.Size(24, 26);
             this.AddColumnButton.Text = "toolStripButton1";
             this.AddColumnButton.ToolTip = this.ToolTip;
             this.AddColumnButton.ToolType = BudgetExecution.ToolType.AddColumnButton;
@@ -809,10 +814,11 @@
             this.DeleteColumnButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DeleteColumnButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteColumnButton.HoverText = "Delete Data Column";
+            this.DeleteColumnButton.Image = global::Badjao.Properties.Resources.DeleteColumn;
             this.DeleteColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteColumnButton.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteColumnButton.Name = "DeleteColumnButton";
-            this.DeleteColumnButton.Size = new System.Drawing.Size(23, 26);
+            this.DeleteColumnButton.Size = new System.Drawing.Size(24, 26);
             this.DeleteColumnButton.ToolTip = this.ToolTip;
             this.DeleteColumnButton.ToolType = BudgetExecution.ToolType.DeleteColumnButton;
             // 
@@ -843,10 +849,11 @@
             this.CopyButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CopyButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.CopyButton.HoverText = "Copy Record";
+            this.CopyButton.Image = global::Badjao.Properties.Resources.CopyRecord;
             this.CopyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CopyButton.Margin = new System.Windows.Forms.Padding(5);
             this.CopyButton.Name = "CopyButton";
-            this.CopyButton.Size = new System.Drawing.Size(23, 26);
+            this.CopyButton.Size = new System.Drawing.Size(24, 26);
             this.CopyButton.Text = "toolStripButton5";
             this.CopyButton.ToolTip = this.ToolTip;
             this.CopyButton.ToolType = BudgetExecution.ToolType.CopyButton;
@@ -870,10 +877,11 @@
             this.AddTableButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddTableButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.AddTableButton.HoverText = "Add Data Table";
+            this.AddTableButton.Image = global::Badjao.Properties.Resources.AddTable;
             this.AddTableButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddTableButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddTableButton.Name = "AddTableButton";
-            this.AddTableButton.Size = new System.Drawing.Size(23, 26);
+            this.AddTableButton.Size = new System.Drawing.Size(24, 26);
             this.AddTableButton.ToolTip = this.ToolTip;
             this.AddTableButton.ToolType = BudgetExecution.ToolType.AddTableButton;
             // 
@@ -896,10 +904,11 @@
             this.DeleteTableButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DeleteTableButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteTableButton.HoverText = "Delete Data Table";
+            this.DeleteTableButton.Image = global::Badjao.Properties.Resources.DeleteTable;
             this.DeleteTableButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteTableButton.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteTableButton.Name = "DeleteTableButton";
-            this.DeleteTableButton.Size = new System.Drawing.Size(23, 26);
+            this.DeleteTableButton.Size = new System.Drawing.Size(24, 26);
             this.DeleteTableButton.ToolTip = this.ToolTip;
             this.DeleteTableButton.ToolType = BudgetExecution.ToolType.DeleteTableButton;
             // 
@@ -925,7 +934,7 @@
             this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(5);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(23, 26);
+            this.RefreshButton.Size = new System.Drawing.Size(24, 26);
             this.RefreshButton.ToolTip = this.ToolTip;
             this.RefreshButton.ToolType = BudgetExecution.ToolType.RefreshButton;
             // 
@@ -951,7 +960,7 @@
             this.VerifyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.VerifyButton.Margin = new System.Windows.Forms.Padding(5);
             this.VerifyButton.Name = "VerifyButton";
-            this.VerifyButton.Size = new System.Drawing.Size(23, 26);
+            this.VerifyButton.Size = new System.Drawing.Size(24, 26);
             this.VerifyButton.ToolTip = this.ToolTip;
             this.VerifyButton.ToolType = BudgetExecution.ToolType.VerifyButton;
             // 
@@ -1004,7 +1013,7 @@
             this.EditSqlButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditSqlButton.Margin = new System.Windows.Forms.Padding(5);
             this.EditSqlButton.Name = "EditSqlButton";
-            this.EditSqlButton.Size = new System.Drawing.Size(23, 26);
+            this.EditSqlButton.Size = new System.Drawing.Size(24, 26);
             this.EditSqlButton.ToolTip = this.ToolTip;
             this.EditSqlButton.ToolType = BudgetExecution.ToolType.EditSqlButton;
             // 
@@ -1030,7 +1039,7 @@
             this.ExcelButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExcelButton.Margin = new System.Windows.Forms.Padding(5);
             this.ExcelButton.Name = "ExcelButton";
-            this.ExcelButton.Size = new System.Drawing.Size(23, 26);
+            this.ExcelButton.Size = new System.Drawing.Size(24, 26);
             this.ExcelButton.ToolTip = this.ToolTip;
             this.ExcelButton.ToolType = BudgetExecution.ToolType.ExcelButton;
             // 
@@ -1056,7 +1065,7 @@
             this.BrowseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BrowseButton.Margin = new System.Windows.Forms.Padding(5);
             this.BrowseButton.Name = "BrowseButton";
-            this.BrowseButton.Size = new System.Drawing.Size(23, 26);
+            this.BrowseButton.Size = new System.Drawing.Size(24, 26);
             this.BrowseButton.ToolTip = this.ToolTip;
             this.BrowseButton.ToolType = BudgetExecution.ToolType.BrowseButton;
             // 
@@ -1098,7 +1107,7 @@
             this.CalendarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CalendarButton.Margin = new System.Windows.Forms.Padding(5);
             this.CalendarButton.Name = "CalendarButton";
-            this.CalendarButton.Size = new System.Drawing.Size(23, 26);
+            this.CalendarButton.Size = new System.Drawing.Size(24, 26);
             this.CalendarButton.Text = "toolStripButton1";
             this.CalendarButton.ToolTip = this.ToolTip;
             this.CalendarButton.ToolType = BudgetExecution.ToolType.CalendarButton;

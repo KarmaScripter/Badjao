@@ -271,7 +271,6 @@
             this.DatabaseButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.DatabaseButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DatabaseButton.HoverText = "Database";
-            this.DatabaseButton.Image = global::BudgetExecution.Properties.Resources.EditDatabase;
             this.DatabaseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DatabaseButton.Margin = new System.Windows.Forms.Padding(5);
             this.DatabaseButton.Name = "DatabaseButton";
@@ -290,7 +289,6 @@
             this.DeleteRecordButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.DeleteRecordButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteRecordButton.HoverText = "Delete Record";
-            this.DeleteRecordButton.Image = global::BudgetExecution.Properties.Resources.DeleteRecord;
             this.DeleteRecordButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteRecordButton.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteRecordButton.Name = "DeleteRecordButton";
@@ -329,7 +327,6 @@
             this.EditButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.EditButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditButton.HoverText = "Edit Record";
-            this.EditButton.Image = global::BudgetExecution.Properties.Resources.EditRecord;
             this.EditButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditButton.Margin = new System.Windows.Forms.Padding(5);
             this.EditButton.Name = "EditButton";
@@ -537,7 +534,6 @@
             this.FilterDataButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.FilterDataButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.FilterDataButton.HoverText = "Filter Data";
-            this.FilterDataButton.Image = global::BudgetExecution.Properties.Resources.FilterData;
             this.FilterDataButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.FilterDataButton.Margin = new System.Windows.Forms.Padding(5);
             this.FilterDataButton.Name = "FilterDataButton";
@@ -572,7 +568,6 @@
             this.EditColumnButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.EditColumnButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditColumnButton.HoverText = "Edit Data Column";
-            this.EditColumnButton.Image = global::BudgetExecution.Properties.Resources.EditColumn;
             this.EditColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditColumnButton.Margin = new System.Windows.Forms.Padding(5);
             this.EditColumnButton.Name = "EditColumnButton";
@@ -600,7 +595,6 @@
             this.AddColumnButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.AddColumnButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.AddColumnButton.HoverText = "Add Data Column";
-            this.AddColumnButton.Image = global::BudgetExecution.Properties.Resources.AddColumn;
             this.AddColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddColumnButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddColumnButton.Name = "AddColumnButton";
@@ -628,7 +622,6 @@
             this.DeleteColumnButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.DeleteColumnButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteColumnButton.HoverText = "Delete Data Column";
-            this.DeleteColumnButton.Image = global::BudgetExecution.Properties.Resources.DeleteColumn;
             this.DeleteColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteColumnButton.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteColumnButton.Name = "DeleteColumnButton";
@@ -663,7 +656,6 @@
             this.CopyButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.CopyButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.CopyButton.HoverText = "Copy Record";
-            this.CopyButton.Image = global::BudgetExecution.Properties.Resources.CopyRecord;
             this.CopyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CopyButton.Margin = new System.Windows.Forms.Padding(5);
             this.CopyButton.Name = "CopyButton";
@@ -691,7 +683,6 @@
             this.AddTableButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.AddTableButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.AddTableButton.HoverText = "Add Data Table";
-            this.AddTableButton.Image = global::BudgetExecution.Properties.Resources.AddTable;
             this.AddTableButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddTableButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddTableButton.Name = "AddTableButton";
@@ -718,7 +709,6 @@
             this.DeleteTableButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.DeleteTableButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteTableButton.HoverText = "Delete Data Table";
-            this.DeleteTableButton.Image = global::BudgetExecution.Properties.Resources.DeleteTable;
             this.DeleteTableButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteTableButton.Margin = new System.Windows.Forms.Padding(5);
             this.DeleteTableButton.Name = "DeleteTableButton";
@@ -745,7 +735,6 @@
             this.RefreshButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.RefreshButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.RefreshButton.HoverText = "Refresh Data";
-            this.RefreshButton.Image = global::BudgetExecution.Properties.Resources.RefreshButton;
             this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(5);
             this.RefreshButton.Name = "RefreshButton";
@@ -772,7 +761,6 @@
             this.VerifyButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.VerifyButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.VerifyButton.HoverText = "Confirm";
-            this.VerifyButton.Image = global::BudgetExecution.Properties.Resources.VerifyButton;
             this.VerifyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.VerifyButton.Margin = new System.Windows.Forms.Padding(5);
             this.VerifyButton.Name = "VerifyButton";
@@ -826,7 +814,6 @@
             this.EditSqlButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.EditSqlButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditSqlButton.HoverText = "SQL Editor";
-            this.EditSqlButton.Image = global::BudgetExecution.Properties.Resources.EditButton;
             this.EditSqlButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditSqlButton.Margin = new System.Windows.Forms.Padding(5);
             this.EditSqlButton.Name = "EditSqlButton";
@@ -853,7 +840,6 @@
             this.ExcelButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.ExcelButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ExcelButton.HoverText = "Excel Export";
-            this.ExcelButton.Image = global::BudgetExecution.Properties.Resources.ExcelButton;
             this.ExcelButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExcelButton.Margin = new System.Windows.Forms.Padding(5);
             this.ExcelButton.Name = "ExcelButton";
@@ -880,7 +866,6 @@
             this.BrowseButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.BrowseButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.BrowseButton.HoverText = "Browse File";
-            this.BrowseButton.Image = global::BudgetExecution.Properties.Resources.LookupButton;
             this.BrowseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BrowseButton.Margin = new System.Windows.Forms.Padding(5);
             this.BrowseButton.Name = "BrowseButton";
@@ -923,7 +908,6 @@
             this.CalendarButton.Font = new System.Drawing.Font("Roboto", 9F);
             this.CalendarButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.CalendarButton.HoverText = "Calendar App";
-            this.CalendarButton.Image = global::BudgetExecution.Properties.Resources.CalendarButton;
             this.CalendarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CalendarButton.Margin = new System.Windows.Forms.Padding(5);
             this.CalendarButton.Name = "CalendarButton";
