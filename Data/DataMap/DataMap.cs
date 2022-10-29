@@ -1,6 +1,6 @@
-﻿// // <copyright file = "DataMap.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -17,14 +17,6 @@ namespace BudgetExecution
     /// <seealso cref="IMap" />
     public class DataMap : Arg, IMap
     {
-        /// <summary>
-        /// Gets the count.
-        /// </summary>
-        /// <value>
-        /// The count.
-        /// </value>
-        public int Count { get; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="DataMap"/> class.
         /// </summary>
@@ -59,6 +51,14 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets the count.
+        /// </summary>
+        /// <value>
+        /// The count.
+        /// </value>
+        public int Count { get; }
+
+        /// <summary>
         /// Gets the input.
         /// </summary>
         /// <returns></returns>
@@ -68,12 +68,12 @@ namespace BudgetExecution
             {
                 return Input?.Any( ) == true
                     ? Input
-                    : default( IDictionary<string, object> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<string, object> );
+                return default;
             }
         }
 
@@ -87,13 +87,75 @@ namespace BudgetExecution
             {
                 return Output?.Any( ) == true
                     ? Output
-                    : default( IDictionary<string, object> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<string, object> );
+                return default;
             }
+        }
+
+        /// <summary>
+        /// Gets the key.
+        /// </summary>
+        /// <returns></returns>
+        public IKey GetKey( )
+        {
+            if( Input?.HasPrimaryKey( ) == true )
+            {
+                try
+                {
+                    var _data = Input.GetPrimaryKey( );
+
+                    return !string.IsNullOrEmpty( _data.Key )
+                        ? new Key( _data )
+                        : default( IKey );
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                    return default;
+                }
+            }
+
+            return default;
+        }
+
+        /// <summary>
+        /// Gets the elements.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<IElement> GetElements( )
+        {
+            if( Output?.Any( ) == true )
+            {
+                try
+                {
+                    var _output = new List<IElement>( );
+                    var _fields = Enum.GetNames( typeof( Field ) );
+
+                    foreach( var kvp in Output )
+                    {
+                        if( !string.IsNullOrEmpty( kvp.Key )
+                           && _fields?.Contains( kvp.Key ) == true )
+                        {
+                            _output.Add( new Element( kvp ) );
+                        }
+                    }
+
+                    return _output?.Any( ) == true
+                        ? _output
+                        : default;
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                    return default;
+                }
+            }
+
+            return default;
         }
 
         /// <summary>
@@ -128,6 +190,7 @@ namespace BudgetExecution
                 try
                 {
                     var _fields = Enum.GetNames( typeof( Field ) );
+
                     foreach( var kvp in Input )
                     {
                         if( !string.IsNullOrEmpty( kvp.Key )
@@ -140,71 +203,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( bool );
+                    return default;
                 }
             }
 
             return false;
-        }
-
-        /// <summary>
-        /// Gets the key.
-        /// </summary>
-        /// <returns></returns>
-        public IKey GetKey( )
-        {
-            if( Input?.HasPrimaryKey( ) == true )
-            {
-                try
-                {
-                    var _data = Input.GetPrimaryKey( );
-                    return !string.IsNullOrEmpty( _data.Key )
-                        ? new Key( _data )
-                        : default( IKey );
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                    return default( IKey );
-                }
-            }
-
-            return default( IKey );
-        }
-
-        /// <summary>
-        /// Gets the elements.
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<IElement> GetElements( )
-        {
-            if( Output?.Any( ) == true )
-            {
-                try
-                {
-                    var _output = new List<IElement>( );
-                    var _fields = Enum.GetNames( typeof( Field ) );
-                    foreach( var kvp in Output )
-                    {
-                        if( !string.IsNullOrEmpty( kvp.Key )
-                           && _fields?.Contains( kvp.Key ) == true )
-                        {
-                            _output.Add( new Element( kvp ) );
-                        }
-                    }
-
-                    return _output?.Any( ) == true
-                        ? _output
-                        : default( List<IElement> );
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                    return default( IEnumerable<IElement> );
-                }
-            }
-
-            return default( IEnumerable<IElement> );
         }
     }
 }

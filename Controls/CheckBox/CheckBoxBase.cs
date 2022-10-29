@@ -1,6 +1,6 @@
-﻿// <copyright file = "CheckBoxBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -11,6 +11,13 @@ namespace BudgetExecution
 
     public abstract class CheckBoxBase : VisualCheckBox
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckBoxBase"/> class.
+        /// </summary>
+        protected CheckBoxBase( )
+        {
+        }
+
         /// <summary>
         /// Gets or sets the tool tip.
         /// </summary>
@@ -36,13 +43,6 @@ namespace BudgetExecution
         public virtual IDictionary<string, object> DataFilter { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CheckBoxBase"/> class.
-        /// </summary>
-        protected CheckBoxBase( )
-        {
-        }
-
-        /// <summary>
         /// Called when [mouse over].
         /// </summary>
         /// <param name="sender">The sender.</param>
@@ -56,7 +56,7 @@ namespace BudgetExecution
             try
             {
                 if( _checkBox != null
-                    && !string.IsNullOrEmpty( HoverText ) )
+                   && !string.IsNullOrEmpty( HoverText ) )
                 {
                     var _hoverText = _checkBox?.HoverText;
                     var _ = new MetroTip( _checkBox, _hoverText );

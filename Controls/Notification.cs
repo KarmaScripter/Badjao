@@ -1,6 +1,6 @@
-﻿// <copyright file = "Notification.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -18,27 +18,6 @@ namespace BudgetExecution
     /// <seealso cref="Syncfusion.Windows.Forms.MetroForm" />
     public partial class Notification : MetroForm
     {
-        /// <summary>
-        /// The open notifications
-        /// </summary>
-        public static readonly List<Notification> OpenNotifications = new List<Notification>( );
-
-        /// <summary>
-        /// Gets or sets a value indicating whether [allow focus].
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if [allow focus]; otherwise, <c>false</c>.
-        /// </value>
-        public bool AllowFocus { get; set; }
-
-        /// <summary>
-        /// Gets the animator.
-        /// </summary>
-        /// <value>
-        /// The animator.
-        /// </value>
-        public FormAnimator Animator { get; }
-
         /// <summary>
         /// The current foreground window
         /// </summary>
@@ -71,8 +50,10 @@ namespace BudgetExecution
             Title.Text = title;
             Message.Text = body;
             Animator = new FormAnimator( this, animation, direction, 500 );
+
             Region = Region.FromHrgn(
-                NativeMethods.CreateRoundRectRgn( 0, 0, Width - 5, Height - 5, 20, 20 ) );
+                NativeMethods.CreateRoundRectRgn( 0, 0, Width - 5, Height - 5, 20,
+                    20 ) );
 
             Activated += OnActivated;
             Shown += OnShown;
@@ -84,12 +65,41 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// The open notifications
+        /// </summary>
+        public static readonly List<Notification> OpenNotifications = new ( );
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [allow focus].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [allow focus]; otherwise, <c>false</c>.
+        /// </value>
+        public bool AllowFocus { get; set; }
+
+        /// <summary>
+        /// Gets the animator.
+        /// </summary>
+        /// <value>
+        /// The animator.
+        /// </value>
+        public FormAnimator Animator { get; }
+
+        /// <summary>
         /// Displays the control to the user.
         /// </summary>
         public new void Show( )
         {
             _currentForegroundWindow = NativeMethods.GetForegroundWindow( );
             base.Show( );
+        }
+
+        /// <summary>
+        /// Notifications the close.
+        /// </summary>
+        public void NotificationClose( )
+        {
+            Close( );
         }
 
         /// <summary>
@@ -162,14 +172,6 @@ namespace BudgetExecution
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void OnTimerTick( object sender, EventArgs e )
-        {
-            Close( );
-        }
-
-        /// <summary>
-        /// Notifications the close.
-        /// </summary>
-        public void NotificationClose( )
         {
             Close( );
         }

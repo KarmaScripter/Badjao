@@ -1,6 +1,6 @@
-﻿// <copyright file = "ColumnConfiguration.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -21,6 +21,32 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "SuggestBaseTypeForParameter" ) ]
     public partial class ColumnConfiguration : MetroForm
     {
+        /// <summary>
+        /// Sets Basic Properties Initializes a new instance of the
+        /// <see cref = "ColumnConfiguration"/> class.
+        /// </summary>
+        public ColumnConfiguration( )
+        {
+            InitializeComponent( );
+            Enabled = true;
+            Visible = true;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref = "ColumnConfiguration"/> class.
+        /// </summary>
+        /// <param name = "dataGrid" >
+        /// The DGV.
+        /// </param>
+        public ColumnConfiguration( DataGridView dataGrid )
+            : this( )
+        {
+            Grid = dataGrid;
+            PopUp = new System.Windows.Forms.ToolStripDropDown( );
+            ColumnListBox.CheckOnClick = true;
+            ColumnListBox.ItemCheck += OnListItemChecked;
+        }
+
         /// <summary>
         /// Gets the grid.
         /// </summary>
@@ -54,29 +80,53 @@ namespace BudgetExecution
         public ToolStripControlHost Host { get; set; }
 
         /// <summary>
-        /// Sets Basic Properties Initializes a new instance of the
-        /// <see cref = "ColumnConfiguration"/> class.
+        /// Called when [datagrid right click].
         /// </summary>
-        public ColumnConfiguration( )
+        /// <param name = "sender" >
+        /// The sender.
+        /// </param>
+        /// <param name = "e" >
+        /// The <see cref = "DataGridViewCellMouseEventArgs"/> instance containing the
+        /// event data.
+        /// </param>
+        public void OnDataGridRightClick( object sender, DataGridViewCellMouseEventArgs e )
         {
-            InitializeComponent( );
-            Enabled = true;
-            Visible = true;
+            if( e.Button == MouseButtons.Right
+               && Grid?.Columns != null )
+            {
+                try
+                {
+                    ColumnListBox?.Items?.Clear( );
+
+                    foreach( DataGridViewColumn c in Grid?.Columns )
+                    {
+                        ColumnListBox?.Items.Add( c.HeaderText, c.Visible );
+                    }
+
+                    var _columnConfiguration = new ColumnConfiguration( Grid )
+                    {
+                        Location = Grid.PointToScreen( new Point( e.X, e.Y ) )
+                    };
+
+                    _columnConfiguration?.ShowDialog( );
+                    _columnConfiguration.TopMost = true;
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                }
+            }
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref = "ColumnConfiguration"/> class.
+        /// Get Error Dialog.
         /// </summary>
-        /// <param name = "dataGrid" >
-        /// The DGV.
-        /// </param>
-        public ColumnConfiguration( DataGridView dataGrid )
-            : this( )
+        /// <param name="ex">The ex.</param>
+        protected static void Fail( Exception ex )
         {
-            Grid = dataGrid;
-            PopUp = new System.Windows.Forms.ToolStripDropDown( );
-            ColumnListBox.CheckOnClick = true;
-            ColumnListBox.ItemCheck += OnListItemChecked;
+            using var _error = new Error( ex );
+            _error?.SetText( );
+            _error?.ShowDialog( );
         }
 
         /// <summary>
@@ -94,55 +144,22 @@ namespace BudgetExecution
                 try
                 {
                     var _controlHost = new ToolStripControlHost( this )
-                        { AutoSize = true, Margin = Padding.Empty, Padding = Padding.Empty };
+                    {
+                        AutoSize = true,
+                        Margin = Padding.Empty,
+                        Padding = Padding.Empty
+                    };
 
                     return _controlHost;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( ToolStripControlHost );
+                    return default;
                 }
             }
 
-            return default( ToolStripControlHost );
-        }
-
-        /// <summary>
-        /// Called when [datagrid right click].
-        /// </summary>
-        /// <param name = "sender" >
-        /// The sender.
-        /// </param>
-        /// <param name = "e" >
-        /// The <see cref = "DataGridViewCellMouseEventArgs"/> instance containing the
-        /// event data.
-        /// </param>
-        public void OnDataGridRightClick( object sender, DataGridViewCellMouseEventArgs e )
-        {
-            if( e.Button == MouseButtons.Right
-                && Grid?.Columns != null )
-            {
-                try
-                {
-                    ColumnListBox?.Items?.Clear( );
-
-                    foreach( DataGridViewColumn c in Grid?.Columns )
-                    {
-                        ColumnListBox?.Items.Add( c.HeaderText, c.Visible );
-                    }
-
-                    var _columnConfiguration = new ColumnConfiguration( Grid )
-                        { Location = Grid.PointToScreen( new Point( e.X, e.Y ) ) };
-
-                    _columnConfiguration?.ShowDialog( );
-                    _columnConfiguration.TopMost = true;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
+            return default;
         }
 
         /// <summary>
@@ -167,17 +184,6 @@ namespace BudgetExecution
                     Fail( ex );
                 }
             }
-        }
-
-        /// <summary>
-        /// Get Error Dialog.
-        /// </summary>
-        /// <param name="ex">The ex.</param>
-        protected static void Fail( Exception ex )
-        {
-            using var _error = new Error( ex );
-            _error?.SetText( );
-            _error?.ShowDialog( );
         }
     }
 }

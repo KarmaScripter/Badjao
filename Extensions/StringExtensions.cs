@@ -1,6 +1,6 @@
-﻿// // <copyright file = "StringExtensions.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -38,7 +38,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( string );
+                return default;
             }
         }
 
@@ -63,7 +63,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( string );
+                return default;
             }
         }
 
@@ -109,7 +109,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( string );
+                return default;
             }
         }
 
@@ -136,7 +136,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( string );
+                return default;
             }
         }
 
@@ -161,13 +161,13 @@ namespace BudgetExecution
                 }
                 else
                 {
-                    return default( string );
+                    return default;
                 }
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( string );
+                return default;
             }
         }
 
@@ -187,18 +187,19 @@ namespace BudgetExecution
                 try
                 {
                     var _date = DateTime.TryParse( text, out var _dateTime );
+
                     return _date
                         ? _dateTime
-                        : default( DateTime );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DateTime );
+                    return default;
                 }
             }
 
-            return default( DateTime );
+            return default;
         }
 
         /// <summary>
@@ -220,7 +221,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( MemoryStream );
+                return default;
             }
         }
 
@@ -238,7 +239,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( FileInfo );
+                return default;
             }
         }
 
@@ -256,7 +257,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DirectoryInfo );
+                return default;
             }
         }
 
@@ -276,7 +277,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( XmlDocument );
+                return default;
             }
         }
 
@@ -295,7 +296,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( byte[ ] );
+                return default;
             }
         }
 
@@ -311,6 +312,7 @@ namespace BudgetExecution
         public static int WordCount( this string text )
         {
             var _count = 0;
+
             try
             {
                 var re = new Regex( @"[^\text]+" );
@@ -341,12 +343,12 @@ namespace BudgetExecution
             {
                 return !string.IsNullOrEmpty( text )
                     ? new StreamReader( text )
-                    : default( StreamReader );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( StreamReader );
+                return default;
             }
         }
 

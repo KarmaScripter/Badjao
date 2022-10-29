@@ -1,6 +1,6 @@
-﻿// <copyright file = "Label.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -18,38 +18,6 @@ namespace BudgetExecution
     /// <seealso cref="VisualLabel" />
     public class Label : LabelBase, ILabel
     {
-        /// <summary>
-        /// Gets or sets the binding source.
-        /// </summary>
-        /// <value>
-        /// The binding source.
-        /// </value>
-        public override BindingSource BindingSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public override MetroTip ToolTip { get; set; }
-
-        /// <summary>
-        /// Gets or sets the hover text.
-        /// </summary>
-        /// <value>
-        /// The hover text.
-        /// </value>
-        public override string HoverText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the filter.
-        /// </summary>
-        /// <value>
-        /// The filter.
-        /// </value>
-        public override IDictionary<string, object> DataFilter { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the
         /// <see cref="Label" />
@@ -124,7 +92,8 @@ namespace BudgetExecution
         /// <param name="location">The location.</param>
         /// <param name="parent">The parent.</param>
         /// <param name="text">The text.</param>
-        public Label( Size size, Point location, Control parent, string text )
+        public Label( Size size, Point location, Control parent,
+            string text )
             : this( size, location, parent )
         {
             Text = text;
@@ -139,11 +108,44 @@ namespace BudgetExecution
         /// <param name="location">The location.</param>
         /// <param name="parent">The parent.</param>
         /// <param name="bindingSource">The bindingSource.</param>
-        public Label( Size size, Point location, Control parent, BindingSource bindingSource )
+        public Label( Size size, Point location, Control parent,
+            BindingSource bindingSource )
             : this( size, location, parent )
         {
             BindingSource = bindingSource;
         }
+
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public override BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public override MetroTip ToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hover text.
+        /// </summary>
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public override string HoverText { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public override IDictionary<string, object> DataFilter { get; set; }
 
         /// <summary>
         /// Sets the color of the border.

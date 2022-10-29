@@ -1,6 +1,6 @@
-﻿// <copyright file = "BorderConfig.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -15,6 +15,13 @@ namespace BudgetExecution
     /// </summary>
     public class BorderConfig
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BorderConfig"/> class.
+        /// </summary>
+        public BorderConfig( )
+        {
+        }
+
         /// <summary>
         /// The fixed
         /// </summary>
@@ -34,13 +41,6 @@ namespace BudgetExecution
         /// The thin
         /// </summary>
         public static readonly int Thin = 1;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BorderConfig"/> class.
-        /// </summary>
-        public BorderConfig( )
-        {
-        }
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is hoverable.
@@ -206,7 +206,7 @@ namespace BudgetExecution
         public static void OnMouseHover( object sender, EventArgs e )
         {
             if( sender != null
-                && e != null )
+               && e != null )
             {
                 try
                 {
@@ -228,7 +228,7 @@ namespace BudgetExecution
         public static void OnBorderChanged( object sender, EventArgs e )
         {
             if( sender != null
-                && e != null )
+               && e != null )
             {
                 try
                 {

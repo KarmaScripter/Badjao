@@ -1,6 +1,6 @@
-﻿// // <copyright file = "DataFile.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -45,28 +45,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Creates the specified file path.
-        /// </summary>
-        /// <param name="filePath">
-        /// The file path.
-        /// </param>
-        /// <returns></returns>
-        public static FileInfo Create( string filePath )
-        {
-            try
-            {
-                return !string.IsNullOrEmpty( filePath )
-                    ? new FileInfo( filePath )
-                    : default( FileInfo );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( FileInfo );
-            }
-        }
-
-        /// <summary>
         /// Transfers the specified folder.
         /// </summary>
         /// <param name="folder">The folder.</param>
@@ -81,6 +59,7 @@ namespace BudgetExecution
             try
             {
                 var _files = folder?.GetFiles( );
+
                 if( _files?.Any( ) == true )
                 {
                     foreach( var _fileInfo in _files )
@@ -111,10 +90,12 @@ namespace BudgetExecution
                 {
                     using var _stream = File.Open( search, FileMode.Open );
                     using var _reader = new StreamReader( _stream );
+
                     if( _reader != null )
                     {
                         var _text = _reader?.ReadLine( );
                         var _result = false;
+
                         while( _text == string.Empty )
                         {
                             if( Regex.IsMatch( _text, search ) )
@@ -151,6 +132,7 @@ namespace BudgetExecution
                 try
                 {
                     var _input = Path.GetFullPath( Buffer );
+
                     if( !string.IsNullOrEmpty( _input )
                        && File.Exists( _input ) )
                     {
@@ -158,6 +140,7 @@ namespace BudgetExecution
                             Directory.GetDirectories( _input, pattern );
 
                         var _list = new List<FileInfo>( );
+
                         foreach( var file in _enumerable )
                         {
                             _list.Add( new FileInfo( file ) );
@@ -165,17 +148,17 @@ namespace BudgetExecution
 
                         return _list?.Any( ) == true
                             ? _list
-                            : default( List<FileInfo> );
+                            : default;
                     }
                 }
                 catch( IOException ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<FileInfo> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<FileInfo> );
+            return default;
         }
 
         /// <summary>
@@ -202,6 +185,49 @@ namespace BudgetExecution
             return string.Empty;
         }
 
+        /// <summary>Returns a string that
+        /// represents the current object.
+        /// </summary>
+        /// <returns>A string that represents
+        /// the current object.
+        /// </returns>
+        public override string ToString( )
+        {
+            try
+            {
+                return !string.IsNullOrEmpty( Name )
+                    ? Name
+                    : string.Empty;
+            }
+            catch( IOException ex )
+            {
+                Fail( ex );
+                return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Creates the specified file path.
+        /// </summary>
+        /// <param name="filePath">
+        /// The file path.
+        /// </param>
+        /// <returns></returns>
+        public static FileInfo Create( string filePath )
+        {
+            try
+            {
+                return !string.IsNullOrEmpty( filePath )
+                    ? new FileInfo( filePath )
+                    : default;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default;
+            }
+        }
+
         /// <summary>
         /// Browses this instance.
         /// </summary>
@@ -219,27 +245,6 @@ namespace BudgetExecution
                 return _dialog.FileName;
             }
             catch( Exception ex )
-            {
-                Fail( ex );
-                return string.Empty;
-            }
-        }
-
-        /// <summary>Returns a string that
-        /// represents the current object.
-        /// </summary>
-        /// <returns>A string that represents
-        /// the current object.
-        /// </returns>
-        public override string ToString( )
-        {
-            try
-            {
-                return !string.IsNullOrEmpty( Name )
-                    ? Name
-                    : string.Empty;
-            }
-            catch( IOException ex )
             {
                 Fail( ex );
                 return string.Empty;

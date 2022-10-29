@@ -1,6 +1,6 @@
-﻿// // <copyright file = "DataAccess.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -36,14 +36,15 @@ namespace BudgetExecution
             {
                 var _dataTable = GetDataTable( );
                 IEnumerable<DataRow> _data = _dataTable?.AsEnumerable( );
+
                 return _data?.Any( ) == true
                     ? _data
-                    : default( IEnumerable<DataRow> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IEnumerable<DataRow> );
+                return default;
             }
         }
 
@@ -63,18 +64,19 @@ namespace BudgetExecution
                     using var _adapter = Query.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable.TableName );
                     SetColumnCaptions( DataTable );
+
                     return DataTable?.Rows?.Count > 0
                         ? DataTable
-                        : default( DataTable );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DataTable );
+                    return default;
                 }
             }
 
-            return default( DataTable );
+            return default;
         }
 
         /// <summary>
@@ -93,18 +95,19 @@ namespace BudgetExecution
                     using var _adapter = Query.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable?.TableName );
                     SetColumnCaptions( DataTable );
+
                     return DataTable?.Rows?.Count > 0
                         ? DataSet
-                        : default( DataSet );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DataSet );
+                    return default;
                 }
             }
 
-            return default( DataSet );
+            return default;
         }
 
         /// <summary>
@@ -150,18 +153,19 @@ namespace BudgetExecution
                     using var _adapter = Query?.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable.TableName );
                     SetColumnCaptions( DataTable );
+
                     return DataTable?.Columns?.Count > 0
                         ? DataTable.Columns
-                        : default( DataColumnCollection );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DataColumnCollection );
+                    return default;
                 }
             }
 
-            return default( DataColumnCollection );
+            return default;
         }
 
         /// <summary>
@@ -178,6 +182,7 @@ namespace BudgetExecution
                 {
                     var _table = dataRows?.CopyToDataTable( );
                     var _values = _table?.GetPrimaryKeyValues( );
+
                     return _values?.Any( ) == true
                         ? _values.ToArray( )
                         : default( IEnumerable<int> );
@@ -185,11 +190,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<int> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<int> );
+            return default;
         }
     }
 }

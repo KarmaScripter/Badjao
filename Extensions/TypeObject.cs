@@ -1,6 +1,6 @@
-﻿// <copyright file = "TypeObject.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -39,11 +39,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( string );
+                    return default;
                 }
             }
 
-            return default( string );
+            return default;
         }
 
         /// <summary>
@@ -70,13 +70,13 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( string );
+                    return default;
                 }
             }
 
-            return default( string );
+            return default;
         }
-        
+
         /// <summary>
         /// An object extension method that serialize a string to XML.
         /// </summary>
@@ -100,11 +100,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( string );
+                    return default;
                 }
             }
 
-            return default( string );
+            return default;
         }
 
         /// <summary>Fails the specified ex.</summary>

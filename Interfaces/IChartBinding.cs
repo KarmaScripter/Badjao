@@ -1,6 +1,6 @@
-﻿// // <copyright file = "IChartBinding.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -149,8 +149,7 @@ namespace BudgetExecution
         /// <param name="bindingList">The bindingsource.</param>
         /// <param name="dict">The dictionary.</param>
         void SetDataSource<T1, T2>( T1 bindingList, T2 dict )
-            where T1 : IBindingList
-            where T2 : IDictionary<string, object>;
+            where T1 : IBindingList where T2 : IDictionary<string, object>;
 
         /// <summary>
         /// Sets the binding source.

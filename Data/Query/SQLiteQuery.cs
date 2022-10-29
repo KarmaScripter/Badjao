@@ -1,6 +1,6 @@
-﻿// // <copyright file = "SQLiteQuery.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -190,7 +190,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( SQLiteDataAdapter );
+                return default;
             }
         }
 
@@ -211,61 +211,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( SQLiteDataReader );
-            }
-        }
-
-        /// <summary>
-        /// Gets the command builder.
-        /// </summary>
-        /// <param name = "adapter" >
-        /// The adapter.
-        /// </param>
-        /// <returns>
-        /// </returns>
-        private SQLiteCommandBuilder GetCommandBuilder( SQLiteDataAdapter adapter )
-        {
-            try
-            {
-                return new SQLiteCommandBuilder( adapter );
-            }
-            catch( SystemException ex )
-            {
-                Fail( ex );
-                return default( SQLiteCommandBuilder );
-            }
-        }
-
-        /// <summary>
-        /// Gets the excel file path.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        private string GetExcelFilePath( )
-        {
-            try
-            {
-                var _fname = "";
-                var fdlg = new OpenFileDialog
-                {
-                    Title = "Excel File Dialog",
-                    InitialDirectory = @"c:\",
-                    Filter = "All files (*.*)|*.*|All files (*.*)|*.*",
-                    FilterIndex = 2,
-                    RestoreDirectory = true
-                };
-
-                if( fdlg.ShowDialog( ) == DialogResult.OK )
-                {
-                    _fname = fdlg.FileName;
-                }
-
-                return _fname;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( string );
+                return default;
             }
         }
 
@@ -295,6 +241,7 @@ namespace BudgetExecution
                     var _connection = _excelQuery.DataConnection as OleDbConnection;
                     _connection?.Open( );
                     var _table = _connection?.GetOleDbSchemaTable( OleDbSchemaGuid.Tables, null );
+
                     if( _table?.Rows.Count > 0
                        && CheckIfSheetNameExists( sheetName, _table ) )
                     {
@@ -313,11 +260,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DataTable );
+                    return default;
                 }
             }
 
-            return default( DataTable );
+            return default;
         }
 
         /// <summary>
@@ -345,6 +292,7 @@ namespace BudgetExecution
                     _dataSet.Tables.Add( _dataTable );
                     var _sql = $"SELECT * FROM [{sheetName}]";
                     var _cstring = GetExcelFilePath( );
+
                     if( !string.IsNullOrEmpty( _cstring ) )
                     {
                         var _csvquery = new CsvQuery( _cstring, _sql );
@@ -352,19 +300,20 @@ namespace BudgetExecution
                         var _connection = _csvquery.DataConnection as OleDbConnection;
                         var _adapter = new OleDbDataAdapter( _select.CommandText, _connection );
                         _adapter?.Fill( _dataSet, sheetName );
+
                         return _dataTable.Columns.Count > 0
                             ? _dataTable
-                            : default( DataTable );
+                            : default;
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DataTable );
+                    return default;
                 }
             }
 
-            return default( DataTable );
+            return default;
         }
 
         /// <summary>
@@ -383,16 +332,94 @@ namespace BudgetExecution
                 {
                     return dict.Keys.Any( )
                         ? dict.ToSqlDbParameters( Provider )
-                        : default( IEnumerable<DbParameter> );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<DbParameter> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<DbParameter> );
+            return default;
+        }
+
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources.
+        /// </summary>
+        /// <param name = "disposing" >
+        /// <c>
+        /// true
+        /// </c>
+        /// to release both managed and unmanaged resources;
+        /// <c>
+        /// false
+        /// </c>
+        /// to release only unmanaged resources.
+        /// </param>
+        protected override void Dispose( bool disposing )
+        {
+            if( disposing )
+            {
+                base.Dispose( disposing );
+            }
+
+            IsDisposed = true;
+        }
+
+        /// <summary>
+        /// Gets the command builder.
+        /// </summary>
+        /// <param name = "adapter" >
+        /// The adapter.
+        /// </param>
+        /// <returns>
+        /// </returns>
+        private SQLiteCommandBuilder GetCommandBuilder( SQLiteDataAdapter adapter )
+        {
+            try
+            {
+                return new SQLiteCommandBuilder( adapter );
+            }
+            catch( SystemException ex )
+            {
+                Fail( ex );
+                return default;
+            }
+        }
+
+        /// <summary>
+        /// Gets the excel file path.
+        /// </summary>
+        /// <returns>
+        /// </returns>
+        private string GetExcelFilePath( )
+        {
+            try
+            {
+                var _fname = "";
+
+                var fdlg = new OpenFileDialog
+                {
+                    Title = "Excel File Dialog",
+                    InitialDirectory = @"c:\",
+                    Filter = "All files (*.*)|*.*|All files (*.*)|*.*",
+                    FilterIndex = 2,
+                    RestoreDirectory = true
+                };
+
+                if( fdlg.ShowDialog( ) == DialogResult.OK )
+                {
+                    _fname = fdlg.FileName;
+                }
+
+                return _fname;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default;
+            }
         }
 
         /// <summary>
@@ -415,6 +442,7 @@ namespace BudgetExecution
                 for( var i = 0; i < dataSchema.Rows.Count; i++ )
                 {
                     var _dataRow = dataSchema.Rows[ i ];
+
                     if( sheetName == _dataRow[ "TABLENAME" ].ToString( ) )
                     {
                         return true;
@@ -444,41 +472,20 @@ namespace BudgetExecution
             _command.ExecuteNonQuery( );
             _command.CommandText = "INSERT INTO MyTable (Key,Value) Values ('key one','value one')";
             _command.ExecuteNonQuery( );
+
             _command.CommandText =
                 "INSERT INTO MyTable (Key,Value) Values ('key two','value value')";
 
             _command.ExecuteNonQuery( );
             _command.CommandText = "Select * FROM MyTable";
             var _reader = _command.ExecuteReader( );
+
             while( _reader.Read( ) )
             {
                 Console.WriteLine( _reader[ "Key" ] + " : " + _reader[ "Value" ] );
             }
 
             _connection.Close( );
-        }
-
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
-        /// <param name = "disposing" >
-        /// <c>
-        /// true
-        /// </c>
-        /// to release both managed and unmanaged resources;
-        /// <c>
-        /// false
-        /// </c>
-        /// to release only unmanaged resources.
-        /// </param>
-        protected override void Dispose( bool disposing )
-        {
-            if( disposing )
-            {
-                base.Dispose( disposing );
-            }
-
-            IsDisposed = true;
         }
     }
 }

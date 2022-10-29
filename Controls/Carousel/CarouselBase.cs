@@ -1,6 +1,6 @@
-﻿// // <copyright file = "CarouselBase.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -15,6 +15,13 @@ namespace BudgetExecution
 
     public abstract class CarouselBase : Carousel
     {
+        /// <summary>Initializes a new instance of the class.
+        /// 	<see cref="CarouselBase" />
+        /// </summary>
+        protected CarouselBase( )
+        {
+        }
+
         /// <summary>
         /// Gets or sets the binding source.
         /// </summary>
@@ -54,13 +61,6 @@ namespace BudgetExecution
         /// The hover text.
         /// </value>
         public virtual string HoverText { get; set; }
-
-        /// <summary>Initializes a new instance of the class.
-        /// 	<see cref="CarouselBase" />
-        /// </summary>
-        protected CarouselBase( )
-        {
-        }
 
         /// <summary>
         /// Sets the size.
@@ -255,6 +255,7 @@ namespace BudgetExecution
                 IEnumerable<string> _files = Directory.GetDirectories( srcDir );
                 var _paths = _files?.ToList( );
                 var _list = new ImageList( );
+
                 for( var i = 0; i < _paths?.Count; i++ )
                 {
                     if( !string.IsNullOrEmpty( _paths[ i ] )
@@ -268,10 +269,10 @@ namespace BudgetExecution
 
                 return _list?.Images?.Count > 0
                     ? _list
-                    : default( ImageList );
+                    : default;
             }
 
-            return default( ImageList );
+            return default;
         }
 
         /// <summary>
@@ -287,6 +288,7 @@ namespace BudgetExecution
                 IEnumerable<string> _files = Directory.GetDirectories( srcDir );
                 var _paths = _files?.ToList( );
                 var _list = new ImageList( );
+
                 for( var i = 0; i < _paths?.Count; i++ )
                 {
                     if( !string.IsNullOrEmpty( _paths[ i ] )
@@ -294,11 +296,7 @@ namespace BudgetExecution
                     {
                         var _name = Path.GetFileNameWithoutExtension( _paths[ i ] );
                         using var _stream = File.Open( _paths[ i ], FileMode.Open );
-                        var _img = new Bitmap( _stream )
-                        {
-                            Tag = _name
-                        };
-
+                        var _img = new Bitmap( _stream ) { Tag = _name };
                         _list.ImageSize = size;
                         _list?.Images?.Add( _img );
                     }
@@ -306,10 +304,10 @@ namespace BudgetExecution
 
                 return _list?.Images?.Count > 0
                     ? _list
-                    : default( ImageList );
+                    : default;
             }
 
-            return default( ImageList );
+            return default;
         }
 
         /// <summary>
@@ -323,6 +321,7 @@ namespace BudgetExecution
             {
                 var _list = paths.ToList( );
                 var _carouselImages = new List<CarouselImage>( );
+
                 for( var i = 0; i < _list?.Count; i++ )
                 {
                     if( !string.IsNullOrEmpty( _list[ i ] )
@@ -330,11 +329,7 @@ namespace BudgetExecution
                     {
                         using var _stream = File.Open( _list[ i ], FileMode.Open );
                         using var _img = new Bitmap( _stream );
-                        var _carouselImage = new CarouselImage
-                        {
-                            ItemImage = _img
-                        };
-
+                        var _carouselImage = new CarouselImage { ItemImage = _img };
                         _carouselImages.Add( _carouselImage );
                     }
                 }
@@ -344,7 +339,7 @@ namespace BudgetExecution
                     : default( IEnumerable<CarouselImage> );
             }
 
-            return default( IEnumerable<CarouselImage> );
+            return default;
         }
 
         /// <summary>

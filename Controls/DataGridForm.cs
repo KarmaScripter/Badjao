@@ -1,6 +1,6 @@
-﻿// <copyright file = "DataGridForm.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -14,6 +14,32 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public partial class DataGridForm : MetroForm
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataGridForm"/> class.
+        /// </summary>
+        public DataGridForm( )
+        {
+            InitializeComponent( );
+            Load += OnLoad;
+            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
+            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
+            ValueListBox.SelectedValueChanged += OnValueListBoxSelectionChanged;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataGridForm"/> class.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name="provider">The provider.</param>
+        public DataGridForm( Source source, Provider provider )
+        {
+            InitializeComponent( );
+            Load += OnLoad;
+            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
+            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
+            ValueListBox.SelectedValueChanged += OnValueListBoxSelectionChanged;
+        }
+
         /// <summary>
         /// Gets or sets the data model.
         /// </summary>
@@ -95,32 +121,6 @@ namespace BudgetExecution
         public string SqlQuery { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DataGridForm"/> class.
-        /// </summary>
-        public DataGridForm( )
-        {
-            InitializeComponent( );
-            Load += OnLoad;
-            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
-            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
-            ValueListBox.SelectedValueChanged += OnValueListBoxSelectionChanged;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DataGridForm"/> class.
-        /// </summary>
-        /// <param name="source">The source.</param>
-        /// <param name="provider">The provider.</param>
-        public DataGridForm( Source source, Provider provider )
-        {
-            InitializeComponent( );
-            Load += OnLoad;
-            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
-            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
-            ValueListBox.SelectedValueChanged += OnValueListBoxSelectionChanged;
-        }
-
-        /// <summary>
         /// Called when [load].
         /// </summary>
         /// <param name="sender">The sender.</param>
@@ -134,6 +134,7 @@ namespace BudgetExecution
                     { "BFY", "2022" },
                     { "FundCode", "B" }
                 };
+
                 DataModel = new DataBuilder( Source.StatusOfFunds, Provider.Access, FormFilter );
                 BindingSource.DataSource = DataModel.DataTable;
                 DataGrid.DataSource = BindingSource;

@@ -1,6 +1,6 @@
-﻿// // <copyright file = "ModelBase.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -35,6 +35,7 @@ namespace BudgetExecution
                 {
                     var _columns = DataTable.Columns;
                     var _values = new List<int>( );
+
                     if( _columns?.Count > 0 )
                     {
                         foreach( DataColumn _dataColumn in _columns )
@@ -50,11 +51,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<int> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<int> );
+            return default;
         }
 
         /// <summary>
@@ -68,9 +69,11 @@ namespace BudgetExecution
                 try
                 {
                     var _columns = DataTable?.Columns;
+
                     if( _columns?.Count > 0 )
                     {
                         var _schema = new Dictionary<string, Type>( );
+
                         foreach( DataColumn col in _columns )
                         {
                             _schema.Add( col.ColumnName, col.DataType );
@@ -82,17 +85,17 @@ namespace BudgetExecution
                     }
                     else
                     {
-                        return default( IDictionary<string, Type> );
+                        return default;
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IDictionary<string, Type> );
+                    return default;
                 }
             }
 
-            return default( IDictionary<string, Type> );
+            return default;
         }
 
         /// <summary>
@@ -108,6 +111,7 @@ namespace BudgetExecution
                     var _elements = new List<IElement>( );
                     var _columns = Record?.Table?.Columns;
                     var _fields = Enum.GetNames( typeof( Field ) );
+
                     if( _columns?.Count > 0 )
                     {
                         foreach( DataColumn column in _columns )
@@ -125,17 +129,17 @@ namespace BudgetExecution
                     }
                     else
                     {
-                        return default( IEnumerable<IElement> );
+                        return default;
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<IElement> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<IElement> );
+            return default;
         }
 
         /// <summary>
@@ -155,6 +159,7 @@ namespace BudgetExecution
                     var _criteria = dict.ToCriteria( );
                     var _dataTable = dataRows.CopyToDataTable( );
                     var _data = _dataTable.Select( _criteria );
+
                     return _data?.Length > 0
                         ? _data
                         : default( IEnumerable<DataRow> );
@@ -162,11 +167,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<DataRow> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<DataRow> );
+            return default;
         }
 
         /// <summary>
@@ -181,6 +186,7 @@ namespace BudgetExecution
                 {
                     var _dataColumns = new List<DataColumn>( );
                     var _data = dataTable?.Columns;
+
                     if( _data?.Count > 0 )
                     {
                         foreach( DataColumn column in _data )
@@ -194,17 +200,17 @@ namespace BudgetExecution
                     }
                     else
                     {
-                        return default( IEnumerable<DataColumn> );
+                        return default;
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<DataColumn> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<DataColumn> );
+            return default;
         }
 
         /// <summary>
@@ -219,6 +225,7 @@ namespace BudgetExecution
                 {
                     var _dataColumns = new List<DataColumn>( );
                     var _data = DataTable?.Columns;
+
                     if( _data?.Count > 0 )
                     {
                         foreach( DataColumn column in _data )
@@ -235,17 +242,17 @@ namespace BudgetExecution
                     }
                     else
                     {
-                        return default( IEnumerable<DataColumn> );
+                        return default;
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<DataColumn> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<DataColumn> );
+            return default;
         }
     }
 }

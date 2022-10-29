@@ -1,6 +1,6 @@
-﻿// <copyright file = "BindingBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -80,12 +80,12 @@ namespace BudgetExecution
             {
                 return DataFilter?.Any( ) == true
                     ? DataFilter
-                    : default( IDictionary<string, object> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<string, object> );
+                return default;
             }
         }
 
@@ -100,12 +100,12 @@ namespace BudgetExecution
             {
                 return DataTable?.Rows?.Count > 0 && DataTable?.Columns?.Count > 0
                     ? DataTable
-                    : default( DataTable );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DataTable );
+                return default;
             }
         }
 
@@ -122,12 +122,12 @@ namespace BudgetExecution
 
                 return _dataRows?.Any( ) == true
                     ? _dataRows
-                    : default( EnumerableRowCollection<DataRow> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IEnumerable<DataRow> );
+                return default;
             }
         }
 
@@ -142,12 +142,12 @@ namespace BudgetExecution
             {
                 return Record?.ItemArray?.Length > 0
                     ? Record
-                    : default( DataRow );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DataRow );
+                return default;
             }
         }
 
@@ -167,7 +167,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( int );
+                return default;
             }
         }
 

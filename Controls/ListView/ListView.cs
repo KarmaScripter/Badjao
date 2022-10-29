@@ -1,6 +1,6 @@
-﻿// <copyright file = "ListView.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -15,38 +15,6 @@ namespace BudgetExecution
 
     public class ListView : ListViewBase, IListView
     {
-        /// <summary>
-        /// Gets or sets the binding source.
-        /// </summary>
-        /// <value>
-        /// The binding source.
-        /// </value>
-        public override BindingSource BindingSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public override MetroTip ToolTip { get; set; }
-
-        /// <summary>
-        /// Gets or sets the hover text.
-        /// </summary>
-        /// <value>
-        /// The hover text.
-        /// </value>
-        public override string HoverText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the filter.
-        /// </summary>
-        /// <value>
-        /// The filter.
-        /// </value>
-        public override IDictionary<string, object> DataFilter { get; set; }
-
         /// <summary>
         /// Initializes a new instance
         /// of the <see cref="ListView"/> class.
@@ -145,7 +113,8 @@ namespace BudgetExecution
         /// <param name="location">The location.</param>
         /// <param name="parent">The parent.</param>
         /// <param name="text">The text.</param>
-        public ListView( Size size, Point location, Control parent, string text )
+        public ListView( Size size, Point location, Control parent,
+            string text )
             : this( size, location, parent )
         {
             Text = text;
@@ -160,11 +129,44 @@ namespace BudgetExecution
         /// <param name="location">The location.</param>
         /// <param name="parent">The parent.</param>
         /// <param name="bindingSource">The binding source.</param>
-        public ListView( Size size, Point location, Control parent, BindingSource bindingSource )
+        public ListView( Size size, Point location, Control parent,
+            BindingSource bindingSource )
             : this( size, location, parent )
         {
             BindingSource = bindingSource;
         }
+
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public override BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public override MetroTip ToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hover text.
+        /// </summary>
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public override string HoverText { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public override IDictionary<string, object> DataFilter { get; set; }
 
         /// <summary>
         /// Sets the color of the border.
@@ -223,6 +225,7 @@ namespace BudgetExecution
                         Border.Type = ShapeTypes.Rounded;
                         break;
                     }
+
                     case false:
                     {
                         Border.Color = Color.FromArgb( 15, 15, 15 );
@@ -270,25 +273,6 @@ namespace BudgetExecution
                 try
                 {
                     Text = text;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Sets the tag.
-        /// </summary>
-        /// <param name="tag">The tag.</param>
-        public void ReTag( object tag )
-        {
-            if( tag != null )
-            {
-                try
-                {
-                    Tag = tag;
                 }
                 catch( Exception ex )
                 {
@@ -358,6 +342,25 @@ namespace BudgetExecution
                             Items?.RemoveByKey( item );
                         }
                     }
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets the tag.
+        /// </summary>
+        /// <param name="tag">The tag.</param>
+        public void ReTag( object tag )
+        {
+            if( tag != null )
+            {
+                try
+                {
+                    Tag = tag;
                 }
                 catch( Exception ex )
                 {

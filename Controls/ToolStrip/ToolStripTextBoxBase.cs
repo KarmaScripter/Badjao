@@ -1,6 +1,6 @@
-﻿// <copyright file = "ToolStripTextBoxBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -10,6 +10,14 @@ namespace BudgetExecution
 
     public abstract class ToolStripTextBase : System.Windows.Forms.ToolStripTextBox
     {
+        /// <summary>
+        /// Initializes a new instance
+        /// of the <see cref="ToolStripTextBase"/> class.
+        /// </summary>
+        protected ToolStripTextBase( )
+        {
+        }
+
         /// <summary>
         /// Gets or sets the binding source.
         /// </summary>
@@ -41,14 +49,6 @@ namespace BudgetExecution
         /// The tool tip.
         /// </value>
         public virtual MetroTip ToolTip { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance
-        /// of the <see cref="ToolStripTextBase"/> class.
-        /// </summary>
-        protected ToolStripTextBase( )
-        {
-        }
 
         /// <summary>
         /// Fails the specified ex.

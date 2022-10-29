@@ -1,6 +1,6 @@
-﻿// // <copyright file = "SqlStatement.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -144,6 +144,7 @@ namespace BudgetExecution
                 try
                 {
                     var _update = CreateUpdateStatement( Updates, Criteria );
+
                     return !string.IsNullOrEmpty( _update )
                         ? _update
                         : string.Empty;
@@ -151,11 +152,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( string );
+                    return default;
                 }
             }
 
-            return default( string );
+            return default;
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( string );
+                return default;
             }
         }
 
@@ -192,7 +193,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( string );
+                return default;
             }
         }
 

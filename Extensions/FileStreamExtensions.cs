@@ -1,6 +1,6 @@
-﻿// // <copyright file = "FileStreamExtensions.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -81,11 +81,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( StreamReader );
+                    return default;
                 }
             }
 
-            return default( StreamReader );
+            return default;
         }
 
         /// <summary>
@@ -112,11 +112,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( StreamReader );
+                    return default;
                 }
             }
 
-            return default( StreamReader );
+            return default;
         }
 
         /// <summary>
@@ -139,11 +139,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( StreamWriter );
+                    return default;
                 }
             }
 
-            return default( StreamWriter );
+            return default;
         }
 
         /// <summary>
@@ -170,11 +170,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( StreamWriter );
+                    return default;
                 }
             }
 
-            return default( StreamWriter );
+            return default;
         }
 
         /// <summary>
@@ -215,11 +215,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( string );
+                    return default;
                 }
             }
 
-            return default( string );
+            return default;
         }
 
         /// <summary>
@@ -243,11 +243,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( Stream );
+                    return default;
                 }
             }
 
-            return default( Stream );
+            return default;
         }
 
         /// <summary>
@@ -271,11 +271,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( Stream );
+                    return default;
                 }
             }
 
-            return default( Stream );
+            return default;
         }
 
         /// <summary>
@@ -304,6 +304,7 @@ namespace BudgetExecution
                 {
                     var _buffer = new byte[ buffer ];
                     int _count;
+
                     while( ( _count = stream.Read( _buffer, 0, buffer ) ) > 0 )
                     {
                         target.Write( _buffer, 0, _count );
@@ -343,11 +344,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( MemoryStream );
+                    return default;
                 }
             }
 
-            return default( MemoryStream );
+            return default;
         }
 
         /// <summary>
@@ -371,11 +372,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<byte> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<byte> );
+            return default;
         }
 
         /// <summary>
@@ -398,9 +399,11 @@ namespace BudgetExecution
                 {
                     var _buffer = new byte[ bufsize ];
                     var _offset = 0;
+
                     do
                     {
                         var _read = stream.Read( _buffer, _offset, bufsize - _offset );
+
                         if( _read == 0 )
                         {
                             return null;
@@ -415,11 +418,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<byte> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<byte> );
+            return default;
         }
 
         /// <summary>

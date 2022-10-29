@@ -1,6 +1,6 @@
-﻿// // <copyright file = "ConnectionBuilder.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -79,6 +79,7 @@ namespace BudgetExecution
                 try
                 {
                     var _connectionString = ConnectionPath[ $"{Provider}" ]?.ConnectionString;
+
                     switch( Provider )
                     {
                         case Provider.SQLite:
@@ -108,11 +109,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbConnection );
+                    return default;
                 }
             }
 
-            return default( DbConnection );
+            return default;
         }
     }
 }

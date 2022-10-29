@@ -1,6 +1,6 @@
-﻿// <copyright file = "DefinitionDialog.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -18,14 +18,6 @@ namespace BudgetExecution
     /// <seealso cref="EditBase" />
     public partial class DefinitionDialog : EditBase
     {
-        /// <summary>
-        /// Gets or sets the sqlite data types.
-        /// </summary>
-        /// <value>
-        /// The sqlite data types.
-        /// </value>
-        public override IEnumerable<string> DataTypes { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="DefinitionDialog"/> class.
         /// </summary>
@@ -72,6 +64,14 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets or sets the sqlite data types.
+        /// </summary>
+        /// <value>
+        /// The sqlite data types.
+        /// </value>
+        public override IEnumerable<string> DataTypes { get; set; }
+
+        /// <summary>
         /// Called when [visible].
         /// </summary>
         /// <param name="sender">The sender.</param>
@@ -101,6 +101,7 @@ namespace BudgetExecution
             try
             {
                 var _names = Enum.GetNames( typeof( Source ) );
+
                 foreach( var name in _names )
                 {
                     if( name != "NS" )
@@ -130,6 +131,7 @@ namespace BudgetExecution
                     CreateTableDataTypeComboBox.SelectedText = string.Empty;
                     EditColumnDataTypeComboBox.Items.Clear( );
                     CreateTableDataTypeComboBox.Items.Clear( );
+
                     foreach( var name in DataTypes )
                     {
                         EditColumnDataTypeComboBox.Items.Add( name );
@@ -182,6 +184,7 @@ namespace BudgetExecution
                             Provider = Provider.Access;
                             EditColumnAccessRadioButton.Checked = true;
                             EditColumnAccessRadioButton.CheckedChanged += OnProviderButtonChecked;
+
                             EditColumnSqlServerRadioButton.CheckedChanged +=
                                 OnProviderButtonChecked;
 
@@ -191,6 +194,7 @@ namespace BudgetExecution
                             CreateTableTabPage.TabVisible = false;
                             break;
                         }
+
                         case ToolType.AddDatabaseButton:
                         {
                             CreateTableTabPage.Text = "Add Database";
@@ -202,6 +206,7 @@ namespace BudgetExecution
                             DeleteColumnTabPage.TabVisible = false;
                             break;
                         }
+
                         case ToolType.AddTableButton:
                         {
                             CreateTableTabPage.Text = "Add Table";
@@ -210,6 +215,7 @@ namespace BudgetExecution
                             CreateTableAccessRadioButton.Checked = true;
                             CreateTableAccessRadioButton.Checked = true;
                             CreateTableAccessRadioButton.CheckedChanged += OnProviderButtonChecked;
+
                             CreateTableSqlServerRadioButton.CheckedChanged +=
                                 OnProviderButtonChecked;
 
@@ -219,6 +225,7 @@ namespace BudgetExecution
                             DeleteColumnTabPage.TabVisible = false;
                             break;
                         }
+
                         case ToolType.EditColumnButton:
                         {
                             EditColumnTabPage.Text = "Rename Column";
@@ -226,6 +233,7 @@ namespace BudgetExecution
                             Provider = Provider.Access;
                             EditColumnAccessRadioButton.Checked = true;
                             EditColumnAccessRadioButton.CheckedChanged += OnProviderButtonChecked;
+
                             EditColumnSqlServerRadioButton.CheckedChanged +=
                                 OnProviderButtonChecked;
 
@@ -235,6 +243,7 @@ namespace BudgetExecution
                             DeleteColumnTabPage.TabVisible = false;
                             break;
                         }
+
                         case ToolType.DeleteColumnButton:
                         {
                             DeleteColumnTabPage.Text = "Delete Column";
@@ -244,6 +253,7 @@ namespace BudgetExecution
                             EditColumnTabPage.TabVisible = false;
                             break;
                         }
+
                         case ToolType.DeleteTableButton:
                         {
                             DeleteTableTabPage.Text = "Delete Table";
@@ -253,6 +263,7 @@ namespace BudgetExecution
                             DeleteColumnTabPage.TabVisible = false;
                             break;
                         }
+
                         case ToolType.DeleteDatabaseButton:
                         {
                             DeleteTableTabPage.Text = "Delete Database";
@@ -282,6 +293,7 @@ namespace BudgetExecution
                 try
                 {
                     var _tabPages = new Dictionary<string, TabPageAdv>( );
+
                     foreach( TabPageAdv tabpage in TabControl.TabPages )
                     {
                         if( tabpage != null )
@@ -297,11 +309,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IDictionary<string, TabPageAdv> );
+                    return default;
                 }
             }
 
-            return default( IDictionary<string, TabPageAdv> );
+            return default;
         }
     }
 }

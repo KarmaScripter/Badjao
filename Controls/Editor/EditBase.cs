@@ -1,6 +1,6 @@
-﻿// <copyright file = "EditBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -17,6 +17,16 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public partial class EditBase : MetroForm
     {
+        /// <summary>
+        /// Initializes a new instance 
+        /// of the <see cref="EditBase"/> class.
+        /// </summary>
+        public EditBase( )
+        {
+            InitializeComponent( );
+            Text = string.Empty;
+        }
+
         /// <summary>
         /// Gets or sets the source.
         /// </summary>
@@ -170,16 +180,6 @@ namespace BudgetExecution
         public virtual IEnumerable<string> DataTypes { get; set; }
 
         /// <summary>
-        /// Initializes a new instance 
-        /// of the <see cref="EditBase"/> class.
-        /// </summary>
-        public EditBase( )
-        {
-            InitializeComponent( );
-            Text = string.Empty;
-        }
-
-        /// <summary>
         /// Gets the data types.
         /// </summary>
         /// <param name="provider">The provider.</param>
@@ -193,9 +193,7 @@ namespace BudgetExecution
                     var _query = "SELECT DISTINCT SchemaTypes.TypeName" + " FROM SchemaTypes"
                         + $" WHERE SchemaTypes.Provider = '{provider}'";
 
-                    var _model =
-                        new DataBuilder( Source.SchemaTypes, Provider.Access, _query );
-
+                    var _model = new DataBuilder( Source.SchemaTypes, Provider.Access, _query );
                     var _data = _model.DataTable.GetUniqueFieldValues( "TypeName" );
 
                     return _data?.Length > 0
@@ -205,11 +203,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<string> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<string> );
+            return default;
         }
 
         /// <summary>
@@ -313,8 +311,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _buttons =
-                        new Dictionary<string, RadioButton>( );
+                    var _buttons = new Dictionary<string, RadioButton>( );
 
                     foreach( var _tabPage in TabPages.Values )
                     {
@@ -343,11 +340,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IDictionary<string, RadioButton> );
+                    return default;
                 }
             }
 
-            return default( IDictionary<string, RadioButton> );
+            return default;
         }
 
         /// <summary>
@@ -389,11 +386,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IDictionary<string, ComboBox> );
+                    return default;
                 }
             }
 
-            return default( IDictionary<string, ComboBox> );
+            return default;
         }
 
         /// <summary>
@@ -426,11 +423,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IDictionary<string, GroupBox> );
+                    return default;
                 }
             }
 
-            return default( IDictionary<string, GroupBox> );
+            return default;
         }
 
         /// <summary>
@@ -466,11 +463,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IDictionary<string, ListBox> );
+                    return default;
                 }
             }
 
-            return default( IDictionary<string, ListBox> );
+            return default;
         }
 
         /// <summary>

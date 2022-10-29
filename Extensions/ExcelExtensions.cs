@@ -1,6 +1,6 @@
-﻿// // <copyright file = "ExcelExtensions.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -19,6 +19,19 @@ namespace BudgetExecution
     /// </summary>
     public static class ExcelExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public enum InsertMode
+        {
+            /// <summary>The row before</summary>
+            RowBefore, RowAfter,
+
+            ColumnRight,
+
+            ColumnLeft
+        }
+
         /// <summary>Converts to dataset.</summary>
         /// <param name="excelPackage">The excelPackage.</param>
         /// <param name="header">if set to <c>true</c> [header].</param>
@@ -46,14 +59,12 @@ namespace BudgetExecution
             }
 
             var _result = new DataSet( );
+
             foreach( var _worksheet in excelPackage.Workbook.Worksheets )
             {
-                var _table = new DataTable
-                {
-                    TableName = _worksheet?.Name
-                };
-
+                var _table = new DataTable { TableName = _worksheet?.Name };
                 var _start = 1;
+
                 if( header > 0 )
                 {
                     _start = header;
@@ -66,6 +77,7 @@ namespace BudgetExecution
                         : $"Column {_cell?.Start?.Column}" );
 
                 _table.Columns.AddRange( _columns?.ToArray( ) );
+
                 var i = header > 0
                     ? _start + 1
                     : _start;
@@ -76,6 +88,7 @@ namespace BudgetExecution
                         _worksheet.Cells[ index, 1, index, _worksheet.Dimension.End.Column ];
 
                     var _row = _table.Rows.Add( );
+
                     foreach( var cell in _range )
                     {
                         _row[ cell.Start.Column - 1 ] = cell.Value;
@@ -108,6 +121,7 @@ namespace BudgetExecution
         public static bool IsLastRowEmpty( this ExcelWorksheet worksheet )
         {
             var _empties = new List<bool>( );
+
             for( var index = 1; index <= worksheet.Dimension.End.Column; index++ )
             {
                 var _value = worksheet.Cells[ worksheet.Dimension.End.Row, index ].Value;
@@ -115,19 +129,6 @@ namespace BudgetExecution
             }
 
             return _empties.All( e => e );
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public enum InsertMode
-        {
-            /// <summary>The row before</summary>
-            RowBefore, RowAfter,
-
-            ColumnRight,
-
-            ColumnLeft
         }
 
         /// <summary>Sets the width.</summary>
@@ -142,6 +143,7 @@ namespace BudgetExecution
                     / 12.0, 2 );
 
             var _second = width - _first;
+
             var _third = width >= 1.0
                 ? Math.Round( 7.0 * _second - 0.0, 0 ) / 7.0
                 : Math.Round( 12.0 * _second - 0.0, 0 ) / 12.0 + 0.0;

@@ -1,6 +1,6 @@
-﻿// <copyright file = "Grid.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -14,37 +14,6 @@ namespace BudgetExecution
     /// </summary>
     public class Grid : ExcelCellBase, IGrid
     {
-        /// <summary>
-        /// The range
-        /// </summary>
-        public ExcelRange Range { get; set; }
-
-        /// <summary>
-        /// The workSheet
-        /// </summary>
-        public ExcelWorksheet Worksheet { get; set; }
-
-        /// <summary>
-        /// The address
-        /// </summary>
-        public ExcelAddress Address { get; set; }
-
-        /// <summary>
-        /// Gets or sets from.
-        /// </summary>
-        /// <value>
-        /// From.
-        /// </value>
-        public ( int Row, int Column ) From { get; set; }
-
-        /// <summary>
-        /// Gets or sets to.
-        /// </summary>
-        /// <value>
-        /// To.
-        /// </value>
-        public ( int Row, int Column ) To { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref = "Grid"/> class.
         /// </summary>
@@ -64,7 +33,10 @@ namespace BudgetExecution
         {
             Worksheet = workSheet;
             Range = range;
-            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row, Range.End.Row );
+
+            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row,
+                Range.End.Row );
+
             From = ( Address.Start.Row, Address.Start.Column );
             To = ( Address.End.Row, Address.End.Column );
         }
@@ -109,7 +81,10 @@ namespace BudgetExecution
         {
             Worksheet = workSheet;
             Range = Worksheet.Cells[ fromRow, fromColumn, toRow, toColumn ];
-            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row, Range.End.Row );
+
+            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row,
+                Range.End.Row );
+
             From = ( Address.Start.Row, Address.Start.Column );
             To = ( Address.End.Row, Address.End.Column );
         }
@@ -126,7 +101,10 @@ namespace BudgetExecution
         {
             Worksheet = workSheet;
             Range = Worksheet.Cells[ cell[ 0 ], cell[ 1 ], cell[ 2 ], cell[ 3 ] ];
-            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row, Range.End.Column );
+
+            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row,
+                Range.End.Column );
+
             From = ( Address.Start.Row, Address.Start.Column );
             To = ( Address.End.Row, Address.End.Column );
         }
@@ -142,11 +120,15 @@ namespace BudgetExecution
         /// <param name = "to" >
         /// To.
         /// </param>
-        public Grid( ExcelWorksheet workSheet, (int Row, int Column) from, (int Row, int Column) to )
+        public Grid( ExcelWorksheet workSheet, (int Row, int Column) from,
+            (int Row, int Column) to )
         {
             Worksheet = workSheet;
             Range = Worksheet.Cells[ from.Row, from.Column, to.Row, to.Column ];
-            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row, Range.End.Row );
+
+            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.End.Row,
+                Range.End.Row );
+
             From = from;
             To = to;
         }
@@ -164,10 +146,44 @@ namespace BudgetExecution
         {
             Worksheet = workSheet;
             Range = Worksheet.Cells[ from.Row, from.Column ];
-            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.Start.Row, Range.Start.Column );
+
+            Address = new ExcelAddress( Range.Start.Row, Range.Start.Column, Range.Start.Row,
+                Range.Start.Column );
+
             From = from;
             To = From;
         }
+
+        /// <summary>
+        /// The range
+        /// </summary>
+        public ExcelRange Range { get; set; }
+
+        /// <summary>
+        /// The workSheet
+        /// </summary>
+        public ExcelWorksheet Worksheet { get; set; }
+
+        /// <summary>
+        /// The address
+        /// </summary>
+        public ExcelAddress Address { get; set; }
+
+        /// <summary>
+        /// Gets or sets from.
+        /// </summary>
+        /// <value>
+        /// From.
+        /// </value>
+        public ( int Row, int Column ) From { get; set; }
+
+        /// <summary>
+        /// Gets or sets to.
+        /// </summary>
+        /// <value>
+        /// To.
+        /// </value>
+        public ( int Row, int Column ) To { get; set; }
 
         /// <summary>
         /// Gets the address.
@@ -206,46 +222,6 @@ namespace BudgetExecution
             {
                 Fail( ex );
                 return default;
-            }
-        }
-
-        /// <summary>
-        /// Gets from.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public (int Row, int Column) GetFrom( )
-        {
-            try
-            {
-                return From.Row > 0 && From.Column > 0
-                    ? ( From.Row, From.Column )
-                    : default( (int, int) );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( (int, int) );
-            }
-        }
-
-        /// <summary>
-        /// Gets to.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public (int Row, int Column) GetTo( )
-        {
-            try
-            {
-                return To.Row > 0 && To.Column > 0
-                    ? ( To.Row, To.Column )
-                    : default( (int, int) );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( (int, int) );
             }
         }
 
@@ -327,6 +303,46 @@ namespace BudgetExecution
             {
                 Fail( ex );
                 return default;
+            }
+        }
+
+        /// <summary>
+        /// Gets from.
+        /// </summary>
+        /// <returns>
+        /// </returns>
+        public (int Row, int Column) GetFrom( )
+        {
+            try
+            {
+                return From.Row > 0 && From.Column > 0
+                    ? ( From.Row, From.Column )
+                    : default( (int, int) );
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( (int, int) );
+            }
+        }
+
+        /// <summary>
+        /// Gets to.
+        /// </summary>
+        /// <returns>
+        /// </returns>
+        public (int Row, int Column) GetTo( )
+        {
+            try
+            {
+                return To.Row > 0 && To.Column > 0
+                    ? ( To.Row, To.Column )
+                    : default( (int, int) );
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( (int, int) );
             }
         }
 

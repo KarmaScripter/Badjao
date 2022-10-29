@@ -1,6 +1,6 @@
-﻿// <copyright file = "RichTextBox.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -62,6 +62,7 @@ namespace BudgetExecution
             : this( )
         {
             Location = location;
+
             if( parent != null )
             {
                 Parent = parent;
@@ -80,6 +81,7 @@ namespace BudgetExecution
             : this( )
         {
             Size = size;
+
             if( parent != null )
             {
                 Parent = parent;
@@ -148,7 +150,7 @@ namespace BudgetExecution
         public void SetFontStyle( string fontFamily, Color fontColor, int fontSize = 10 )
         {
             if( !string.IsNullOrEmpty( fontFamily )
-                && fontColor != Color.Empty )
+               && fontColor != Color.Empty )
             {
                 try
                 {

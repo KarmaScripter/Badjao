@@ -1,6 +1,6 @@
-﻿// // <copyright file = "CommandFactory.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -20,14 +20,6 @@ namespace BudgetExecution
     /// <seealso cref="ICommandFactory" />
     public class CommandFactory : CommandBuilder
     {
-        /// <summary>
-        /// Gets or sets the connection.
-        /// </summary>
-        /// <value>
-        /// The connection.
-        /// </value>
-        public DbConnection Connection { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandFactory"/> class.
         /// </summary>
@@ -60,6 +52,14 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets or sets the connection.
+        /// </summary>
+        /// <value>
+        /// The connection.
+        /// </value>
+        public DbConnection Connection { get; set; }
+
+        /// <summary>
         /// Gets the create table command.
         /// </summary>
         /// <param name="tableName">Name of the table.</param>
@@ -74,6 +74,7 @@ namespace BudgetExecution
                 try
                 {
                     var _sql = $"CREATE TABLE {tableName}";
+
                     if( Enum.IsDefined( typeof( Provider ), Provider )
                        && !string.IsNullOrEmpty( _sql ) )
                     {
@@ -83,21 +84,21 @@ namespace BudgetExecution
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SQLiteCommand( _sql )
-                                    : default( SQLiteCommand );
+                                    : default;
                             }
 
                             case Provider.SqlCe:
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql )
-                                    : default( SqlCeCommand );
+                                    : default;
                             }
 
                             case Provider.SqlServer:
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCommand( _sql )
-                                    : default( SqlCommand );
+                                    : default;
                             }
 
                             case Provider.Excel:
@@ -107,7 +108,7 @@ namespace BudgetExecution
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new OleDbCommand( _sql )
-                                    : default( OleDbCommand );
+                                    : default;
                             }
                         }
                     }
@@ -115,11 +116,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>
@@ -139,20 +140,21 @@ namespace BudgetExecution
                 try
                 {
                     var _sql = $"CREATE VIEW {viewName};";
+
                     switch( Provider )
                     {
                         case Provider.SQLite:
                         {
                             return !string.IsNullOrEmpty( _sql )
                                 ? new SQLiteCommand( _sql )
-                                : default( SQLiteCommand );
+                                : default;
                         }
 
                         case Provider.SqlServer:
                         {
                             return !string.IsNullOrEmpty( _sql )
                                 ? new SqlCommand( _sql )
-                                : default( SqlCommand );
+                                : default;
                         }
 
                         case Provider.Excel:
@@ -162,18 +164,18 @@ namespace BudgetExecution
                         {
                             return !string.IsNullOrEmpty( _sql )
                                 ? new OleDbCommand( _sql )
-                                : default( OleDbCommand );
+                                : default;
                         }
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>
@@ -189,6 +191,7 @@ namespace BudgetExecution
                 try
                 {
                     var _sql = $"DROP TABLE {dataTable.TableName};";
+
                     if( !string.IsNullOrEmpty( _sql )
                        && Enum.IsDefined( typeof( Provider ), Provider ) )
                     {
@@ -198,21 +201,21 @@ namespace BudgetExecution
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SQLiteCommand( _sql )
-                                    : default( SQLiteCommand );
+                                    : default;
                             }
 
                             case Provider.SqlCe:
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql )
-                                    : default( SqlCeCommand );
+                                    : default;
                             }
 
                             case Provider.SqlServer:
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCommand( _sql )
-                                    : default( SqlCommand );
+                                    : default;
                             }
 
                             case Provider.Excel:
@@ -222,7 +225,7 @@ namespace BudgetExecution
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new OleDbCommand( _sql )
-                                    : default( OleDbCommand );
+                                    : default;
                             }
                         }
                     }
@@ -230,11 +233,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>
@@ -263,21 +266,21 @@ namespace BudgetExecution
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SQLiteCommand( _sql )
-                                    : default( SQLiteCommand );
+                                    : default;
                             }
 
                             case Provider.SqlCe:
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql )
-                                    : default( SqlCeCommand );
+                                    : default;
                             }
 
                             case Provider.SqlServer:
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCommand( _sql )
-                                    : default( SqlCommand );
+                                    : default;
                             }
 
                             case Provider.Excel:
@@ -287,7 +290,7 @@ namespace BudgetExecution
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new OleDbCommand( _sql )
-                                    : default( OleDbCommand );
+                                    : default;
                             }
                         }
                     }
@@ -295,11 +298,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>
@@ -317,6 +320,7 @@ namespace BudgetExecution
                 try
                 {
                     var _sql = $"ALTER TABLE {dataTable.TableName} RENAME {name};";
+
                     if( Enum.IsDefined( typeof( Provider ), Provider )
                        && !string.IsNullOrEmpty( _sql ) )
                     {
@@ -326,21 +330,21 @@ namespace BudgetExecution
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SQLiteCommand( _sql )
-                                    : default( SQLiteCommand );
+                                    : default;
                             }
 
                             case Provider.SqlCe:
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql )
-                                    : default( SqlCeCommand );
+                                    : default;
                             }
 
                             case Provider.SqlServer:
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCommand( _sql )
-                                    : default( SqlCommand );
+                                    : default;
                             }
 
                             case Provider.Excel:
@@ -350,7 +354,7 @@ namespace BudgetExecution
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new OleDbCommand( _sql )
-                                    : default( OleDbCommand );
+                                    : default;
                             }
                         }
                     }
@@ -358,11 +362,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>
@@ -377,6 +381,7 @@ namespace BudgetExecution
                 try
                 {
                     var _sql = SqlStatement.GetSelectStatement( );
+
                     switch( Provider )
                     {
                         case Provider.SQLite:
@@ -411,11 +416,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbCommand );
+                    return default;
                 }
             }
 
-            return default( DbCommand );
+            return default;
         }
 
         /// <summary>

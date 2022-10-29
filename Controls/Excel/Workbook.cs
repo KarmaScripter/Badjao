@@ -1,6 +1,6 @@
-﻿// <copyright file = "Workbook.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -17,6 +17,40 @@ namespace BudgetExecution
     public class Workbook : ExcelBase
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="Workbook"/> class.
+        /// </summary>
+        public Workbook( )
+        {
+            FileInfo = new FileInfo( FilePath );
+            Excel = new ExcelPackage( FileInfo );
+            Workbook = Excel.Workbook;
+        }
+
+        public Workbook( DataTable dataTable )
+            : this( )
+        {
+            Data = dataTable.AsEnumerable( );
+            Worksheet = Workbook.Worksheets.Add( dataTable.TableName );
+            Worksheet.View.ShowGridLines = false;
+            Worksheet.View.ZoomScale = ZoomLevel;
+            Worksheet.View.PageLayoutView = true;
+            Worksheet.View.ShowHeaders = true;
+            Worksheet.DefaultRowHeight = RowHeight;
+            Worksheet.DefaultColWidth = ColumnWidth;
+            Worksheet.PrinterSettings.ShowHeaders = false;
+            Worksheet.PrinterSettings.ShowGridLines = false;
+            Worksheet.PrinterSettings.LeftMargin = LeftMargin;
+            Worksheet.PrinterSettings.RightMargin = RightMargin;
+            Worksheet.PrinterSettings.TopMargin = TopMargin;
+            Worksheet.PrinterSettings.BottomMargin = BottomMargin;
+            Worksheet.PrinterSettings.HorizontalCentered = true;
+            Worksheet.PrinterSettings.VerticalCentered = true;
+            Worksheet.PrinterSettings.FitToPage = true;
+            Worksheet.HeaderFooter.AlignWithMargins = true;
+            Worksheet.HeaderFooter.ScaleWithDocument = true;
+        }
+
+        /// <summary>
         /// The font color
         /// </summary>
         public Color FontColor { get; set; } = Color.Black;
@@ -24,12 +58,12 @@ namespace BudgetExecution
         /// <summary>
         /// The font
         /// </summary>
-        public Font Font { get; set; } = new Font( "Roboto", 8, FontStyle.Regular );
+        public Font Font { get; set; } = new ( "Roboto", 8, FontStyle.Regular );
 
         /// <summary>
         /// The title font
         /// </summary>
-        public Font TitleFont { get; set; } = new Font( "Roboto", 10, FontStyle.Bold );
+        public Font TitleFont { get; set; } = new ( "Roboto", 10, FontStyle.Bold );
 
         /// <summary>
         /// The header image width
@@ -68,40 +102,6 @@ namespace BudgetExecution
         public Image FooterImage { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Workbook"/> class.
-        /// </summary>
-        public Workbook( )
-        {
-            FileInfo = new FileInfo( FilePath );
-            Excel = new ExcelPackage( FileInfo );
-            Workbook = Excel.Workbook;
-        }
-
-        public Workbook( DataTable dataTable )
-            : this( )
-        {
-            Data = dataTable.AsEnumerable( );
-            Worksheet = Workbook.Worksheets.Add( dataTable.TableName );
-            Worksheet.View.ShowGridLines = false;
-            Worksheet.View.ZoomScale = ZoomLevel;
-            Worksheet.View.PageLayoutView = true;
-            Worksheet.View.ShowHeaders = true;
-            Worksheet.DefaultRowHeight = RowHeight;
-            Worksheet.DefaultColWidth = ColumnWidth;
-            Worksheet.PrinterSettings.ShowHeaders = false;
-            Worksheet.PrinterSettings.ShowGridLines = false;
-            Worksheet.PrinterSettings.LeftMargin = LeftMargin;
-            Worksheet.PrinterSettings.RightMargin = RightMargin;
-            Worksheet.PrinterSettings.TopMargin = TopMargin;
-            Worksheet.PrinterSettings.BottomMargin = BottomMargin;
-            Worksheet.PrinterSettings.HorizontalCentered = true;
-            Worksheet.PrinterSettings.VerticalCentered = true;
-            Worksheet.PrinterSettings.FitToPage = true;
-            Worksheet.HeaderFooter.AlignWithMargins = true;
-            Worksheet.HeaderFooter.ScaleWithDocument = true;
-        }
-
-        /// <summary>
         /// Sets the header format.
         /// </summary>
         /// <param name = "grid" >
@@ -117,7 +117,9 @@ namespace BudgetExecution
                     {
                         SetFontColor( grid, FontColor );
                         SetBackgroundColor( grid, PrimaryBackColor );
-                        SetHorizontalAlignment( grid, OfficeOpenXml.Style.ExcelHorizontalAlignment.Left );
+
+                        SetHorizontalAlignment( grid,
+                            OfficeOpenXml.Style.ExcelHorizontalAlignment.Left );
                     }
                 }
                 catch( Exception ex )
@@ -145,7 +147,10 @@ namespace BudgetExecution
                     var _column = _range.Start.Column;
                     SetFontColor( grid, FontColor );
                     SetBackgroundColor( grid, PrimaryBackColor );
-                    SetHorizontalAlignment( grid, OfficeOpenXml.Style.ExcelHorizontalAlignment.Left );
+
+                    SetHorizontalAlignment( grid,
+                        OfficeOpenXml.Style.ExcelHorizontalAlignment.Left );
+
                     _worksheet.Cells[ _row, _column ].Value = "Account";
                     _worksheet.Cells[ _row, _column + 1 ].Value = "SuperfundSite";
                     _worksheet.Cells[ _row, _column + 2 ].Value = "Travel";
@@ -178,7 +183,10 @@ namespace BudgetExecution
                     excelRange.Style.Font.SetFromFont( Font );
                     excelRange.Style.Fill.PatternType = ExcelFillStyle.Solid;
                     excelRange.Style.Fill.BackgroundColor.SetColor( PrimaryBackColor );
-                    excelRange.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
+
+                    excelRange.Style.HorizontalAlignment = OfficeOpenXml.Style
+                        .ExcelHorizontalAlignment.CenterContinuous;
+
                     excelRange.Style.Border.Bottom.Style = ExcelBorderStyle.Hair;
                 }
                 catch( Exception ex )
@@ -205,7 +213,10 @@ namespace BudgetExecution
                     excelRange.Style.Font.SetFromFont( Font );
                     excelRange.Style.Fill.PatternType = ExcelFillStyle.Solid;
                     excelRange.Style.Fill.BackgroundColor.SetColor( Color.White );
-                    excelRange.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
+
+                    excelRange.Style.HorizontalAlignment = OfficeOpenXml.Style
+                        .ExcelHorizontalAlignment.CenterContinuous;
+
                     excelRange.Style.Border.Bottom.Style = ExcelBorderStyle.Hair;
                 }
                 catch( Exception ex )
@@ -231,8 +242,8 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _prc = Worksheet.Cells[ excelRange.Start.Row,
-                        excelRange.Start.Column, excelRange.End.Row, excelRange.End.Column ];
+                    var _prc = Worksheet.Cells[ excelRange.Start.Row, excelRange.Start.Column,
+                        excelRange.End.Row, excelRange.End.Column ];
 
                     for( var i = excelRange.Start.Row; i < excelRange.End.Row; i++ )
                     {
@@ -274,7 +285,9 @@ namespace BudgetExecution
                 {
                     using( excelRange )
                     {
-                        excelRange.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
+                        excelRange.Style.HorizontalAlignment = OfficeOpenXml.Style
+                            .ExcelHorizontalAlignment.CenterContinuous;
+
                         excelRange.Style.Numberformat.Format = "#,###";
                     }
                 }
@@ -303,7 +316,9 @@ namespace BudgetExecution
                     _range.Style.Border.BorderAround( ExcelBorderStyle.Thin );
                     _range.Style.Fill.PatternType = ExcelFillStyle.Solid;
                     _range.Style.Fill.BackgroundColor.SetColor( PrimaryBackColor );
-                    _range.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
+
+                    _range.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment
+                        .CenterContinuous;
                 }
                 catch( Exception ex )
                 {
@@ -328,13 +343,11 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _total = Worksheet.Cells[ excelRange.Start.Row,
-                        excelRange.Start.Column, excelRange.Start.Row,
-                        excelRange.Start.Column + 6 ];
+                    var _total = Worksheet.Cells[ excelRange.Start.Row, excelRange.Start.Column,
+                        excelRange.Start.Row, excelRange.Start.Column + 6 ];
 
-                    var _range = Worksheet.Cells[ excelRange.Start.Row,
-                        excelRange.Start.Column + 1, excelRange.Start.Row,
-                        excelRange.Start.Column + 6 ];
+                    var _range = Worksheet.Cells[ excelRange.Start.Row, excelRange.Start.Column + 1,
+                        excelRange.Start.Row, excelRange.Start.Column + 6 ];
 
                     _total.Style.Fill.PatternType = ExcelFillStyle.Solid;
                     _total.Style.Fill.BackgroundColor.SetColor( PrimaryBackColor );

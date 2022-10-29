@@ -1,6 +1,6 @@
-﻿// <copyright file = "LookupDialog.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -10,6 +10,21 @@ namespace BudgetExecution
 
     public partial class LookupDialog : EditBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LookupDialog"/> class.
+        /// </summary>
+        public LookupDialog( )
+        {
+            InitializeComponent( );
+            GroupBoxes = GetGroupBoxes( );
+            RadioButtons = GetRadioButtons( );
+            TabControl.TabPanelBackColor = Color.FromArgb( 15, 15, 15 );
+            Load += OnLoad;
+            CloseButton.Click += OnCloseButtonClicked;
+            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
+            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
+        }
+
         /// <summary>
         /// Gets the table prefix.
         /// </summary>
@@ -33,21 +48,6 @@ namespace BudgetExecution
         /// The value prefix.
         /// </value>
         public string ValuePrefix { get; } = " Values : ";
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LookupDialog"/> class.
-        /// </summary>
-        public LookupDialog( )
-        {
-            InitializeComponent( );
-            GroupBoxes = GetGroupBoxes( );
-            RadioButtons = GetRadioButtons( );
-            TabControl.TabPanelBackColor = Color.FromArgb( 15, 15, 15 );
-            Load += OnLoad;
-            CloseButton.Click += OnCloseButtonClicked;
-            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
-            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
-        }
 
         /// <summary>
         /// Called when [load].
@@ -87,6 +87,7 @@ namespace BudgetExecution
             {
                 TableListBox.Items.Clear( );
                 var _names = Enum.GetNames( typeof( Source ) );
+
                 foreach( var name in _names )
                 {
                     if( name != "NS" )
@@ -117,12 +118,14 @@ namespace BudgetExecution
                 ValueGroupBox.Text = string.Empty;
                 var _listBox = sender as ListBox;
                 var _value = _listBox?.SelectedItem.ToString( );
+
                 if( !string.IsNullOrEmpty( _value ) )
                 {
                     var _source = (Source)Enum.Parse( typeof( Source ), _value );
                     DataModel = new DataBuilder( _source, Provider.Access );
                     BindingSource.DataSource = DataModel.DataTable;
                     var _columns = DataModel.GetDataColumns( );
+
                     foreach( var col in _columns )
                     {
                         ColumnListBox.Items.Add( col.ColumnName );
@@ -151,6 +154,7 @@ namespace BudgetExecution
                 var _listBox = sender as ListBox;
                 var _column = _listBox?.SelectedItem?.ToString( );
                 var _series = DataModel.DataElements;
+
                 if( !string.IsNullOrEmpty( _column ) )
                 {
                     foreach( var item in _series[ _column ] )

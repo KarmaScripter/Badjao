@@ -1,6 +1,6 @@
-﻿// <copyright file = "TitleInfo.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -16,22 +16,6 @@ namespace BudgetExecution
     /// <seealso cref="ITitleInfo" />
     public class TitleInfo : ITitleInfo
     {
-        /// <summary>
-        /// Gets the main.
-        /// </summary>
-        /// <value>
-        /// The main.
-        /// </value>
-        public string Main { get; }
-
-        /// <summary>
-        /// Gets the axis.
-        /// </summary>
-        /// <value>
-        /// The axis.
-        /// </value>
-        public string Axis { get; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="TitleInfo"/> class.
         /// </summary>
@@ -60,11 +44,11 @@ namespace BudgetExecution
         {
             Main = title.ContainsKey( "Main" )
                 ? title[ "Main" ]
-                : default( string );
+                : default;
 
             Axis = title.ContainsKey( "Axis" )
                 ? title[ "Main" ]
-                : default( string );
+                : default;
         }
 
         /// <summary>
@@ -76,6 +60,22 @@ namespace BudgetExecution
             Main = title[ 0 ] ?? string.Empty;
             Axis = title[ 1 ] ?? string.Empty;
         }
+
+        /// <summary>
+        /// Gets the main.
+        /// </summary>
+        /// <value>
+        /// The main.
+        /// </value>
+        public string Main { get; }
+
+        /// <summary>
+        /// Gets the axis.
+        /// </summary>
+        /// <value>
+        /// The axis.
+        /// </value>
+        public string Axis { get; }
 
         /// <summary>
         /// Sets the main title.
@@ -92,11 +92,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( string );
+                    return default;
                 }
             }
 
-            return default( string );
+            return default;
         }
 
         /// <summary>
@@ -114,39 +114,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( string );
+                    return default;
                 }
             }
 
-            return default( string );
-        }
-
-        /// <summary>
-        /// Sets the data.
-        /// </summary>
-        /// <param name="main">The main.</param>
-        /// <param name="axis">The axis.</param>
-        /// <returns></returns>
-        public IDictionary<string, string> SetData( string main, string axis )
-        {
-            if( !string.IsNullOrEmpty( main )
-                && !string.IsNullOrEmpty( axis ) )
-            {
-                try
-                {
-                    var data = new Dictionary<string, string>
-                        { [ "Main" ] = main, [ "Axis" ] = axis };
-
-                    return data;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                    return default( IDictionary<string, string> );
-                }
-            }
-
-            return default( IDictionary<string, string> );
+            return default;
         }
 
         /// <summary>
@@ -170,11 +142,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( ChartTitle );
+                    return default;
                 }
             }
 
-            return default( ChartTitle );
+            return default;
         }
 
         /// <summary>
@@ -198,11 +170,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( ChartTitle );
+                    return default;
                 }
             }
 
-            return default( ChartTitle );
+            return default;
         }
 
         /// <summary>
@@ -214,7 +186,7 @@ namespace BudgetExecution
         public ChartTitle GetChartMainTitle( Color color, Font font )
         {
             if( !color.IsEmpty
-                && font != null )
+               && font != null )
             {
                 try
                 {
@@ -229,11 +201,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( ChartTitle );
+                    return default;
                 }
             }
 
-            return default( ChartTitle );
+            return default;
         }
 
         /// <summary>
@@ -245,7 +217,7 @@ namespace BudgetExecution
         public ChartTitle GetChartAxisTitle( Color color, Font font )
         {
             if( !color.IsEmpty
-                && font != null )
+               && font != null )
             {
                 try
                 {
@@ -260,11 +232,42 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( ChartTitle );
+                    return default;
                 }
             }
 
-            return default( ChartTitle );
+            return default;
+        }
+
+        /// <summary>
+        /// Sets the data.
+        /// </summary>
+        /// <param name="main">The main.</param>
+        /// <param name="axis">The axis.</param>
+        /// <returns></returns>
+        public IDictionary<string, string> SetData( string main, string axis )
+        {
+            if( !string.IsNullOrEmpty( main )
+               && !string.IsNullOrEmpty( axis ) )
+            {
+                try
+                {
+                    var data = new Dictionary<string, string>
+                    {
+                        [ "Main" ] = main,
+                        [ "Axis" ] = axis
+                    };
+
+                    return data;
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                    return default;
+                }
+            }
+
+            return default;
         }
 
         /// <summary>

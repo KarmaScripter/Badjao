@@ -1,6 +1,6 @@
-﻿// <copyright file = "ToolStrip.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -17,51 +17,6 @@ namespace BudgetExecution
     /// <seealso cref="ToolStripBase" />
     public class ToolStrip : ToolStripBase, IToolStrip
     {
-        /// <summary>
-        /// Gets or sets the field.
-        /// </summary>
-        /// <value>
-        /// The field.
-        /// </value>
-        public Field Field { get; set; }
-
-        /// <summary>
-        /// Gets or sets the numeric.
-        /// </summary>
-        /// <value>
-        /// The numeric.
-        /// </value>
-        public Numeric Numeric { get; set; }
-
-        /// <summary>
-        /// Gets or sets the filter.
-        /// </summary>
-        /// <value>
-        /// The filter.
-        /// </value>
-        public IDictionary<string, object> DataFilter { get; set; }
-
-        /// <summary>
-        /// The image path
-        /// </summary>
-        public virtual string ImageDirectory { get; set; }
-
-        /// <summary>
-        /// Gets the buttons.
-        /// </summary>
-        /// <value>
-        /// The buttons.
-        /// </value>
-        public IDictionary<string, ToolStripButton> Buttons { get; }
-
-        /// <summary>
-        /// Gets or sets the size of the image.
-        /// </summary>
-        /// <value>
-        /// The size of the image.
-        /// </value>
-        public Size ImageSize { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolStrip"/> class.
         /// </summary>
@@ -103,12 +58,58 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets or sets the numeric.
+        /// </summary>
+        /// <value>
+        /// The numeric.
+        /// </value>
+        public Numeric Numeric { get; set; }
+
+        /// <summary>
+        /// The image path
+        /// </summary>
+        public virtual string ImageDirectory { get; set; }
+
+        /// <summary>
+        /// Gets or sets the field.
+        /// </summary>
+        /// <value>
+        /// The field.
+        /// </value>
+        public Field Field { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public IDictionary<string, object> DataFilter { get; set; }
+
+        /// <summary>
+        /// Gets the buttons.
+        /// </summary>
+        /// <value>
+        /// The buttons.
+        /// </value>
+        public IDictionary<string, ToolStripButton> Buttons { get; }
+
+        /// <summary>
+        /// Gets or sets the size of the image.
+        /// </summary>
+        /// <value>
+        /// The size of the image.
+        /// </value>
+        public Size ImageSize { get; set; }
+
+        /// <summary>
         /// Gets the buttons.
         /// </summary>
         /// <returns></returns>
         public IDictionary<string, ToolStripButton> GetButtons( )
         {
             var _buttons = new SortedList<string, ToolStripButton>( );
+
             if( Items?.Count > 0 )
             {
                 foreach( var control in Items )
@@ -124,10 +125,10 @@ namespace BudgetExecution
 
                 return _buttons?.Count > 0
                     ? _buttons
-                    : default( SortedList<string, ToolStripButton> );
+                    : default;
             }
 
-            return default( IDictionary<string, ToolStripButton> );
+            return default;
         }
 
         /// <summary>

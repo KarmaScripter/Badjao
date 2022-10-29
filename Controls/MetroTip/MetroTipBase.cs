@@ -1,6 +1,6 @@
-﻿// <copyright file = "TipBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -56,7 +56,7 @@ namespace BudgetExecution
         /// The binding source.
         /// </value>
         public virtual BindingSource BindingSource { get; set; }
-        
+
         /// <summary>
         /// Sets the animation.
         /// </summary>
@@ -149,7 +149,7 @@ namespace BudgetExecution
                 }
             }
         }
-        
+
         /// <summary>
         /// Sets the tag.
         /// </summary>
@@ -198,7 +198,7 @@ namespace BudgetExecution
         public virtual void SetToolTipText( Control control, string caption )
         {
             if( control != null
-                && !string.IsNullOrEmpty( caption ) )
+               && !string.IsNullOrEmpty( caption ) )
             {
                 try
                 {
@@ -219,7 +219,7 @@ namespace BudgetExecution
         public virtual void SetToolTipText( ToolStripItem item )
         {
             if( item.GetCurrentParent( ) != null
-                && item != null )
+               && item != null )
             {
                 try
                 {
@@ -246,7 +246,7 @@ namespace BudgetExecution
         public virtual void SetToolTipText( Component component )
         {
             if( component != null
-                && component is Control control )
+               && component is Control control )
             {
                 try
                 {
@@ -272,7 +272,7 @@ namespace BudgetExecution
         public virtual void SetToolTipText( Component component, string caption )
         {
             if( component != null
-                && !string.IsNullOrEmpty( caption ) )
+               && !string.IsNullOrEmpty( caption ) )
             {
                 try
                 {

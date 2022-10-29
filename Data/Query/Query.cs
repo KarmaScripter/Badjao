@@ -1,6 +1,6 @@
-﻿// // <copyright file = "Query.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -213,6 +213,7 @@ namespace BudgetExecution
             Provider = ConnectionBuilder.Provider;
             Source = ConnectionBuilder.Source;
             DataConnection = ConnectionBuilder.Connection;
+
             SqlStatement = new SqlStatement( ConnectionBuilder.Source, ConnectionBuilder.Provider,
                 sqlText );
 
@@ -251,6 +252,25 @@ namespace BudgetExecution
 
         /// <inheritdoc/>
         /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or
+        /// resetting unmanaged resources.
+        /// </summary>
+        public virtual void Dispose( )
+        {
+            try
+            {
+                Dispose( true );
+                GC.SuppressFinalize( this );
+            }
+            catch( Exception ex )
+            {
+                IsDisposed = false;
+                Fail( ex );
+            }
+        }
+
+        /// <inheritdoc/>
+        /// <summary>
         /// Sets the Data reader.
         /// </summary>
         /// <param name = "behavior" >
@@ -258,7 +278,8 @@ namespace BudgetExecution
         /// </param>
         /// <returns>
         /// </returns>
-        public DbDataReader GetDataReader( CommandBehavior behavior = CommandBehavior.CloseConnection )
+        public DbDataReader GetDataReader(
+            CommandBehavior behavior = CommandBehavior.CloseConnection )
         {
             if( DataConnection != null
                && !string.IsNullOrEmpty( DataCommand?.CommandText )
@@ -285,11 +306,11 @@ namespace BudgetExecution
                     }
 
                     Fail( ex );
-                    return default( DbDataReader );
+                    return default;
                 }
             }
 
-            return default( DbDataReader );
+            return default;
         }
 
         /// <summary>
@@ -320,25 +341,6 @@ namespace BudgetExecution
                     IsDisposed = false;
                     Fail( ex );
                 }
-            }
-        }
-
-        /// <inheritdoc/>
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or
-        /// resetting unmanaged resources.
-        /// </summary>
-        public virtual void Dispose( )
-        {
-            try
-            {
-                Dispose( true );
-                GC.SuppressFinalize( this );
-            }
-            catch( Exception ex )
-            {
-                IsDisposed = false;
-                Fail( ex );
             }
         }
     }

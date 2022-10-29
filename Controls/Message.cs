@@ -1,6 +1,6 @@
-﻿// <copyright file = "Message.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -61,7 +61,7 @@ namespace BudgetExecution
         public virtual void OnCloseButtonClick( object sender, EventArgs e )
         {
             if( sender is Button _button
-                && !string.IsNullOrEmpty( _button?.Name ) )
+               && !string.IsNullOrEmpty( _button?.Name ) )
             {
                 try
                 {
@@ -77,7 +77,7 @@ namespace BudgetExecution
         public virtual void OnOpenButtonClick( object sender, EventArgs e )
         {
             if( sender is Button _button
-                && !string.IsNullOrEmpty( _button?.Name ) )
+               && !string.IsNullOrEmpty( _button?.Name ) )
             {
                 try
                 {

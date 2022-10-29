@@ -1,6 +1,6 @@
-﻿// // <copyright file = "LinqExtensions.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -64,9 +64,11 @@ namespace BudgetExecution
             }
 
             var _matches = 0;
+
             foreach( var _unused in source.Where( predicate ) )
             {
                 _matches++;
+
                 if( _matches >= minCount )
                 {
                     return true;
@@ -112,9 +114,11 @@ namespace BudgetExecution
             }
 
             var _matches = 0;
+
             foreach( var _unused in source.Where( predicate ) )
             {
                 ++_matches;
+
                 if( _matches > count )
                 {
                     return false;
@@ -158,9 +162,11 @@ namespace BudgetExecution
             }
 
             var _matches = 0;
+
             foreach( var _unused in source.Where( predicate ) )
             {
                 _matches++;
+
                 if( _matches > limit )
                 {
                     return false;

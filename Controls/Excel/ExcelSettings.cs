@@ -1,6 +1,6 @@
-﻿// // <copyright file = "ExcelSettings.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -21,6 +21,32 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class ExcelSettings
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public enum BorderSide
+        {
+            /// <summary>
+            /// The top
+            /// </summary>
+            Top,
+
+            /// <summary>
+            /// The bottom
+            /// </summary>
+            Bottom,
+
+            /// <summary>
+            /// The left
+            /// </summary>
+            Left,
+
+            /// <summary>
+            /// The right
+            /// </summary>
+            Right
+        };
+
         /// <summary>
         /// Gets or sets the index.
         /// </summary>
@@ -84,7 +110,8 @@ namespace BudgetExecution
         /// <value>
         /// The center.
         /// </value>
-        public virtual ExcelHorizontalAlignment Center { get; set; } = ExcelHorizontalAlignment.CenterMiddle;
+        public virtual ExcelHorizontalAlignment Center { get; set; } =
+            ExcelHorizontalAlignment.CenterMiddle;
 
         /// <summary>
         /// Gets or sets the right.
@@ -184,32 +211,6 @@ namespace BudgetExecution
         public virtual int ZoomLevel { get; set; } = 100;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public enum BorderSide
-        {
-            /// <summary>
-            /// The top
-            /// </summary>
-            Top,
-
-            /// <summary>
-            /// The bottom
-            /// </summary>
-            Bottom,
-
-            /// <summary>
-            /// The left
-            /// </summary>
-            Left,
-
-            /// <summary>
-            /// The right
-            /// </summary>
-            Right
-        };
-
-        /// <summary>
         /// Sets the file path.
         /// </summary>
         /// <param name="filePath">The file path.</param>
@@ -261,20 +262,22 @@ namespace BudgetExecution
             try
             {
                 var _path = Path.GetExtension( filePath );
+
                 if( _path != null )
                 {
                     var _extension = (EXT)Enum.Parse( typeof( EXT ), _path );
+
                     return Enum.IsDefined( typeof( EXT ), _extension )
                         ? _extension
-                        : default( EXT );
+                        : default;
                 }
 
-                return default( EXT );
+                return default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( EXT );
+                return default;
             }
         }
 
@@ -399,6 +402,7 @@ namespace BudgetExecution
                 {
                     using var _range = grid?.GetRange( );
                     var _excelComment = _range?.AddComment( text, "Budget" );
+
                     if( _excelComment != null )
                     {
                         _excelComment.From.Row = _range.Start.Row;

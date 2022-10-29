@@ -1,6 +1,6 @@
-﻿// // <copyright file = "DataBuilder.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -146,6 +146,7 @@ namespace BudgetExecution
                 {
                     var _criteria = where.ToCriteria( );
                     var _data = DataTable.Select( _criteria );
+
                     return _data?.Length > 0
                         ? _data
                         : default( IEnumerable<DataRow> );
@@ -153,11 +154,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<DataRow> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<DataRow> );
+            return default;
         }
 
         /// <summary>
@@ -181,16 +182,16 @@ namespace BudgetExecution
 
                     return _query?.Any( ) == true
                         ? _query.ToArray( )
-                        : default( DataRow[ ] );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<DataRow> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<DataRow> );
+            return default;
         }
 
         /// <summary>
@@ -200,7 +201,7 @@ namespace BudgetExecution
         /// <param name="name">The field.</param>
         /// <param name="value">The filter.</param>
         /// <returns></returns>
-        public static IDictionary<string, IEnumerable<string>> CreateSeries( 
+        public static IDictionary<string, IEnumerable<string>> CreateSeries(
             IEnumerable<DataRow> dataRows, string name, string value )
         {
             if( dataRows?.Any( ) == true
@@ -213,11 +214,13 @@ namespace BudgetExecution
                     var _columns = _dataTable?.Columns;
                     var _dictionary = new Dictionary<string, IEnumerable<string>>( );
                     var _values = GetValues( dataRows, name, value );
+
                     if( _values?.Any( ) == true )
                     {
                         for( var i = 0; i < _columns?.Count; i++ )
                         {
                             var _columnName = _columns[ i ].ColumnName;
+
                             if( !string.IsNullOrEmpty( _columnName )
                                && _columns[ i ]?.DataType == typeof( string ) )
                             {
@@ -227,19 +230,19 @@ namespace BudgetExecution
 
                         return _dictionary?.Any( ) == true
                             ? _dictionary
-                            : default( Dictionary<string, IEnumerable<string>> );
+                            : default;
                     }
 
-                    return default( IDictionary<string, IEnumerable<string>> );
+                    return default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IDictionary<string, IEnumerable<string>> );
+                    return default;
                 }
             }
 
-            return default( IDictionary<string, IEnumerable<string>> );
+            return default;
         }
     }
 }

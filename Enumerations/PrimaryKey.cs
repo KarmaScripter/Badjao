@@ -1,6 +1,6 @@
-﻿// // <copyright file = "PrimaryKey.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -33,7 +33,7 @@ namespace BudgetExecution
         /// The appropriation documents identifier
         /// </summary>
         AppropriationDocumentsId,
-        
+
         /// <summary>
         /// The application tables identifier
         /// </summary>

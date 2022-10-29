@@ -1,6 +1,6 @@
-﻿// <copyright file = "SplashControl.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -30,6 +30,7 @@ namespace BudgetExecution
             Size = new Size( 300, 150 );
             BorderStyle = Border3DStyle.Etched;
             BorderType = SplashBorderType.Border3D;
+
             BackgroundColor = new BrushInfo( GradientStyle.PathEllipse,
                 Color.FromArgb( 15, 15, 15 ), Color.FromArgb( 45, 45, 45 ) );
 
@@ -63,6 +64,7 @@ namespace BudgetExecution
         /// Initializes a new instance of the <see cref="SplashControl"/> class.
         /// </summary>
         /// <param name="toolTip">The tool tip.</param>
+
         // ReSharper disable once SuggestBaseTypeForParameter
         public SplashControl( MetroTip toolTip )
             : this( )

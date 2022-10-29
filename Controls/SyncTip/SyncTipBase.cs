@@ -1,6 +1,6 @@
-﻿// <copyright file = "ToolTip.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -14,30 +14,6 @@ namespace BudgetExecution
 
     public class SyncTipBase : SfToolTip
     {
-        /// <summary>
-        /// Gets or sets the tip text.
-        /// </summary>
-        /// <value>
-        /// The tip text.
-        /// </value>
-        public virtual TextItem TipText { get; set; } = new TextItem( );
-
-        /// <summary>
-        /// Gets or sets the tip information.
-        /// </summary>
-        /// <value>
-        /// The tip information.
-        /// </value>
-        public virtual ToolTipInfo TipInfo { get; set; } = new ToolTipInfo( );
-
-        /// <summary>
-        /// Gets or sets the tip item.
-        /// </summary>
-        /// <value>
-        /// The tip item.
-        /// </value>
-        public virtual ToolTipInfo.ToolTipItem TipItem { get; set; } 
-        
         /// <summary>
         /// Initializes a new instance
         /// of the <see cref="MetroTip"/> class.
@@ -71,7 +47,6 @@ namespace BudgetExecution
 
         public SyncTipBase( TextItem tipText )
         {
-            
         }
 
         /// <summary>
@@ -109,6 +84,30 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets or sets the tip text.
+        /// </summary>
+        /// <value>
+        /// The tip text.
+        /// </value>
+        public virtual TextItem TipText { get; set; } = new ( );
+
+        /// <summary>
+        /// Gets or sets the tip information.
+        /// </summary>
+        /// <value>
+        /// The tip information.
+        /// </value>
+        public virtual ToolTipInfo TipInfo { get; set; } = new ( );
+
+        /// <summary>
+        /// Gets or sets the tip item.
+        /// </summary>
+        /// <value>
+        /// The tip item.
+        /// </value>
+        public virtual ToolTipInfo.ToolTipItem TipItem { get; set; }
+
+        /// <summary>
         /// Sets the common tool information properties.
         /// </summary>
         public virtual void SetCommonProperties( )
@@ -132,27 +131,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Sets the header tool information properties.
-        /// </summary>
-        protected void SetHeaderToolInfoProperties( )
-        {
-            try
-            {
-                TipInfo.Header.Font = TipText.HeaderFont;
-                TipInfo.Header.ForeColor = TipText.HeaderForeColor;
-                TipInfo.Header.TextAlign = TipText.HeaderAlignment;
-
-                TipInfo.Header.Text = !string.IsNullOrEmpty( TipText.HeaderText )
-                    ? TipText.HeaderText
-                    : string.Empty;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
-        /// <summary>
         /// Sets the header text.
         /// </summary>
         /// <param name="bodyText">The body text.</param>
@@ -162,7 +140,6 @@ namespace BudgetExecution
             {
                 if( !string.IsNullOrEmpty( bodyText ) )
                 {
-
                     TipInfo.Body.Text = bodyText;
                 }
             }
@@ -225,6 +202,27 @@ namespace BudgetExecution
 
                 TipInfo.Footer.Text = !string.IsNullOrEmpty( TipText.FooterText )
                     ? TipText.FooterText
+                    : string.Empty;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+            }
+        }
+
+        /// <summary>
+        /// Sets the header tool information properties.
+        /// </summary>
+        protected void SetHeaderToolInfoProperties( )
+        {
+            try
+            {
+                TipInfo.Header.Font = TipText.HeaderFont;
+                TipInfo.Header.ForeColor = TipText.HeaderForeColor;
+                TipInfo.Header.TextAlign = TipText.HeaderAlignment;
+
+                TipInfo.Header.Text = !string.IsNullOrEmpty( TipText.HeaderText )
+                    ? TipText.HeaderText
                     : string.Empty;
             }
             catch( Exception ex )

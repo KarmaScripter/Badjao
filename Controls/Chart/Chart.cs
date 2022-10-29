@@ -1,6 +1,6 @@
-// <copyright file = "ChartControl.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -17,126 +17,6 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class Chart : ChartControl, IChart
     {
-        /// <summary>
-        /// Gets or sets the header.
-        /// </summary>
-        /// <value>
-        /// The header.
-        /// </value>
-        public ChartTitle Header { get; set; }
-
-        /// <summary>
-        /// Gets or sets the binding source.
-        /// </summary>
-        /// <value>
-        /// The binding source.
-        /// </value>
-        public BindingSource BindingSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public MetroTip ToolTip { get; set; }
-
-        /// <summary>
-        /// Gets or sets the hover text.
-        /// </summary>
-        /// <value>
-        /// The hover text.
-        /// </value>
-        public string HoverText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the field.
-        /// </summary>
-        /// <value>
-        /// The field.
-        /// </value>
-        public Field Field { get; set; }
-
-        /// <summary>
-        /// Gets or sets the numeric.
-        /// </summary>
-        /// <value>
-        /// The numeric.
-        /// </value>
-        public Numeric Numeric { get; set; }
-
-        /// <summary>
-        /// Gets or sets the stat.
-        /// </summary>
-        /// <value>
-        /// The stat.
-        /// </value>
-        public STAT Stat { get; set; }
-
-        /// <summary>
-        /// Gets or sets the source.
-        /// </summary>
-        /// <value>
-        /// The source.
-        /// </value>
-        public Source Source { get; set; }
-
-        /// <summary>
-        /// Gets or sets the data values.
-        /// </summary>
-        /// <value>
-        /// The data values.
-        /// </value>
-        public IDictionary<string, double> DataValues { get; set; }
-
-        /// <summary>
-        /// Gets or sets the data source.
-        /// </summary>
-        /// <value>
-        /// The data source.
-        /// </value>
-        public object DataSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the table.
-        /// </summary>
-        /// <value>
-        /// The name of the table.
-        /// </value>
-        public string TableName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the filter.
-        /// </summary>
-        /// <value>
-        /// The filter.
-        /// </value>
-        public IDictionary<string, object> DataFilter { get; set; }
-
-        /// <summary>
-        /// Gets or sets the metric.
-        /// </summary>
-        /// <value>
-        /// The metric.
-        /// </value>
-        public DataMetric DataMetric { get; set; }
-
-        /// <summary>
-        /// Gets the data series.
-        /// </summary>
-        /// <value>
-        /// The data series.
-        /// </value>
-        public ChartSeries DataSeries { get; set; }
-
-        /// <summary>
-        /// Gets or sets the data.
-        /// </summary>
-        /// <value>
-        /// The data.
-        /// </value>
-        public IBindingModel BindingModel { get; set; }
-
         // Initializes Properties
         /// <summary>
         /// Initializes a new instance
@@ -164,6 +44,7 @@ namespace BudgetExecution
             PrintColorMode = ChartPrintColorMode.CheckPrinter;
             BackInterior = new BrushInfo( Color.FromArgb( 15, 15, 15 ) );
             BackColor = Color.FromArgb( 15, 15, 15 );
+
             ChartInterior = new BrushInfo( GradientStyle.PathRectangle, Color.LightSteelBlue,
                 Color.FromArgb( 15, 15, 15 ) );
 
@@ -185,6 +66,7 @@ namespace BudgetExecution
             SeriesHighlight = true;
             SeriesHighlightIndex = -1;
             ShadowWidth = 5;
+
             ShadowColor = new BrushInfo( GradientStyle.PathRectangle, Color.FromArgb( 15, 15, 15 ),
                 Color.Silver );
 
@@ -337,6 +219,126 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets or sets the header.
+        /// </summary>
+        /// <value>
+        /// The header.
+        /// </value>
+        public ChartTitle Header { get; set; }
+
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public MetroTip ToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hover text.
+        /// </summary>
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public string HoverText { get; set; }
+
+        /// <summary>
+        /// Gets or sets the field.
+        /// </summary>
+        /// <value>
+        /// The field.
+        /// </value>
+        public Field Field { get; set; }
+
+        /// <summary>
+        /// Gets or sets the numeric.
+        /// </summary>
+        /// <value>
+        /// The numeric.
+        /// </value>
+        public Numeric Numeric { get; set; }
+
+        /// <summary>
+        /// Gets or sets the stat.
+        /// </summary>
+        /// <value>
+        /// The stat.
+        /// </value>
+        public STAT Stat { get; set; }
+
+        /// <summary>
+        /// Gets or sets the source.
+        /// </summary>
+        /// <value>
+        /// The source.
+        /// </value>
+        public Source Source { get; set; }
+
+        /// <summary>
+        /// Gets or sets the data values.
+        /// </summary>
+        /// <value>
+        /// The data values.
+        /// </value>
+        public IDictionary<string, double> DataValues { get; set; }
+
+        /// <summary>
+        /// Gets or sets the data source.
+        /// </summary>
+        /// <value>
+        /// The data source.
+        /// </value>
+        public object DataSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the table.
+        /// </summary>
+        /// <value>
+        /// The name of the table.
+        /// </value>
+        public string TableName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public IDictionary<string, object> DataFilter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the metric.
+        /// </summary>
+        /// <value>
+        /// The metric.
+        /// </value>
+        public DataMetric DataMetric { get; set; }
+
+        /// <summary>
+        /// Gets the data series.
+        /// </summary>
+        /// <value>
+        /// The data series.
+        /// </value>
+        public ChartSeries DataSeries { get; set; }
+
+        /// <summary>
+        /// Gets or sets the data.
+        /// </summary>
+        /// <value>
+        /// The data.
+        /// </value>
+        public IBindingModel BindingModel { get; set; }
+
+        /// <summary>
         /// Sets the points.
         /// </summary>
         public void SetPoints( )
@@ -360,6 +362,7 @@ namespace BudgetExecution
                             foreach( var kvp in DataValues )
                             {
                                 DataSeries.Points.Add( kvp.Key, kvp.Value );
+
                                 if( DataSeries.STAT != STAT.Percentage )
                                 {
                                     DataSeries.Styles[ 0 ].TextFormat =
@@ -374,6 +377,7 @@ namespace BudgetExecution
 
                             break;
                         }
+
                         default:
                         {
                             foreach( var kvp in DataValues )

@@ -1,6 +1,6 @@
-﻿// // <copyright file = "SqlServerConverter.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -34,17 +34,17 @@ namespace BudgetExecution
         /// <summary>
         /// The key
         /// </summary>
-        private readonly Regex _keys = new Regex( @"(([a-zA-ZäöüÄÖÜß0-9\.]|(\s+))+)(\(\-\))?" );
-
-        /// <summary>
-        /// The default value
-        /// </summary>
-        private readonly Regex _value = new Regex( @"\(N(\'.*\')\)" );
+        private readonly Regex _keys = new ( @"(([a-zA-ZäöüÄÖÜß0-9\.]|(\s+))+)(\(\-\))?" );
 
         /// <summary>
         /// The log
         /// </summary>
         private readonly ILog _log = LogManager.GetLogger( typeof( SqlServerConverter ) );
+
+        /// <summary>
+        /// The default value
+        /// </summary>
+        private readonly Regex _value = new ( @"\(N(\'.*\')\)" );
 
         /// <summary>
         /// Initializes a new instance of the
@@ -65,17 +65,6 @@ namespace BudgetExecution
         /// .
         /// </value>
         private bool IsActive { get; set; }
-
-        /// <summary>
-        /// Writes the trigger schema.
-        /// </summary>
-        /// <param name="schema">The ts.</param>
-        /// <returns></returns>
-        private string WriteTriggerSchema( TriggerSchema schema )
-        {
-            return @"CREATE TRIGGER [" + schema.Name + "] " + schema.Type + " " + schema.Event
-                + " ON [" + schema.Table + "] " + "BEGIN " + schema.Body + " END;";
-        }
 
         /// <summary>
         /// Cancels the conversion.
@@ -106,11 +95,13 @@ namespace BudgetExecution
             bool createTriggers, bool createViews )
         {
             _cancelled = false;
+
             ThreadPool.QueueUserWorkItem( delegate
             {
                 try
                 {
                     IsActive = true;
+
                     ConvertToSQLite( connectionString, path, passWord, handler, selectionHandler,
                         failureHandler, createTriggers, createViews );
 
@@ -124,6 +115,17 @@ namespace BudgetExecution
                     handler( true, false, 100, ex.Message );
                 }
             } );
+        }
+
+        /// <summary>
+        /// Writes the trigger schema.
+        /// </summary>
+        /// <param name="schema">The ts.</param>
+        /// <returns></returns>
+        private string WriteTriggerSchema( TriggerSchema schema )
+        {
+            return @"CREATE TRIGGER [" + schema.Name + "] " + schema.Type + " " + schema.Event
+                + " ON [" + schema.Table + "] " + "BEGIN " + schema.Body + " END;";
         }
 
         /// <summary>
@@ -151,10 +153,12 @@ namespace BudgetExecution
             }
 
             var ds = ReadSqlServerSchema( sqlconnstring, handler, selectionhandler );
+
             CreateSQLiteDatabase( path, ds, password, handler, viewfailurehandler,
                 createviews );
 
             CopyDataRows( sqlconnstring, path, ds.Tables, password, handler );
+
             if( createtriggers )
             {
                 AddTriggersForForeignKeys( path, ds.Tables, password );
@@ -180,22 +184,27 @@ namespace BudgetExecution
             var sqliteconnstring = CreateSQLiteConnectionString( path, password );
             var sqconn = new SQLiteConnection( sqliteconnstring );
             sqconn.Open( );
+
             for( var i = 0; i < schema.Count; i++ )
             {
                 var tx = sqconn.BeginTransaction( );
+
                 try
                 {
                     var tablequery = BuildSqlServerTableQuery( schema[ i ] );
+
                     using( var query = new SqlCommand( tablequery, ssconn ) )
                     {
                         var reader = query.ExecuteReader( );
                         var insert = BuildSQLiteInsert( schema[ i ] );
                         var counter = 0;
+
                         while( reader.Read( ) )
                         {
                             insert.Connection = sqconn;
                             insert.Transaction = tx;
                             var pnames = new List<string>( );
+
                             for( var j = 0; j < schema[ i ].Columns.Count; j++ )
                             {
                                 var pname = "@"
@@ -210,10 +219,12 @@ namespace BudgetExecution
 
                             insert.ExecuteNonQuery( );
                             counter++;
+
                             if( counter % 1000 == 0 )
                             {
                                 CheckCancelled( );
                                 tx.Commit( );
+
                                 handler( false, true, (int)( 100.0 * i / schema.Count ),
                                     "Added " + counter + " rows to table " + schema[ i ].TableName
                                     + " so far" );
@@ -225,6 +236,7 @@ namespace BudgetExecution
 
                     CheckCancelled( );
                     tx.Commit( );
+
                     handler( false, true, (int)( 100.0 * i / schema.Count ),
                         "Finished inserting rows for table " + schema[ i ].TableName );
 
@@ -256,6 +268,7 @@ namespace BudgetExecution
             }
 
             var dt = GetDbTypeOfColumn( columnschema );
+
             switch( dt )
             {
                 case DbType.Int32:
@@ -397,6 +410,7 @@ namespace BudgetExecution
                 default:
                 {
                     _log.Error( "argument exception - illegal database type" );
+
                     throw new ArgumentException( "Illegal database type ["
                         + Enum.GetName( typeof( DbType ), dt ) + "]" );
                 }
@@ -413,11 +427,13 @@ namespace BudgetExecution
         private Guid ParseBlobAsGuid( IEnumerable<byte> blob )
         {
             var data = blob.ToArray( );
+
             switch( blob.Count( ) )
             {
                 case 16:
                 {
                     data = new byte[ 16 ];
+
                     for( var i = 0; i < 16; i++ )
                     {
                         data[ i ] = blob.ToArray( )[ i ];
@@ -429,6 +445,7 @@ namespace BudgetExecution
                 case 17:
                 {
                     data = new byte[ 16 ];
+
                     for( var i = 0; i < blob.Count( ); i++ )
                     {
                         data[ i ] = blob.ToArray( )[ i ];
@@ -468,9 +485,11 @@ namespace BudgetExecution
             var _command = new SQLiteCommand( );
             var _stringBuilder = new StringBuilder( );
             _stringBuilder.Append( $"INSERT INTO {ts.TableName}" );
+
             for( var i = 0; i < ts.Columns.Count; i++ )
             {
                 _stringBuilder.Append( "[" + ts.Columns[ i ].ColumnName + "]" );
+
                 if( i < ts.Columns.Count - 1 )
                 {
                     _stringBuilder.Append( ", " );
@@ -479,10 +498,12 @@ namespace BudgetExecution
 
             _stringBuilder.Append( ") VALUES (" );
             var _names = new List<string>( );
+
             for( var i = 0; i < ts.Columns.Count; i++ )
             {
                 var _name = "@" + GetNormalizedName( ts.Columns[ i ].ColumnName, _names );
                 _stringBuilder.Append( _name );
+
                 if( i < ts.Columns.Count - 1 )
                 {
                     _stringBuilder.Append( ", " );
@@ -509,6 +530,7 @@ namespace BudgetExecution
         private string GetNormalizedName( string str, ICollection<string> names )
         {
             var _stringBuilder = new StringBuilder( );
+
             for( var i = 0; i < str.Length; i++ )
             {
                 if( char.IsLetterOrDigit( str[ i ] ) )
@@ -610,9 +632,11 @@ namespace BudgetExecution
         {
             var _stringBuilder = new StringBuilder( );
             _stringBuilder.Append( "SELECT " );
+
             for( var i = 0; i < ts.Columns.Count; i++ )
             {
                 _stringBuilder.Append( "[" + ts.Columns[ i ].ColumnName + "]" );
+
                 if( i < ts.Columns.Count - 1 )
                 {
                     _stringBuilder.Append( ", " );
@@ -642,10 +666,12 @@ namespace BudgetExecution
             SQLiteConnection.CreateFile( path );
             _log.Debug( "SQLite file was created successfully at [" + path + "]" );
             var sqliteconnstring = CreateSQLiteConnectionString( path, passWord );
+
             using( var conn = new SQLiteConnection( sqliteconnstring ) )
             {
                 conn.Open( );
                 var count = 0;
+
                 foreach( var dt in schema.Tables )
                 {
                     try
@@ -660,6 +686,7 @@ namespace BudgetExecution
 
                     count++;
                     CheckCancelled( );
+
                     handler( false, true, (int)( count * 50.0 / schema.Tables.Count ),
                         "Added table " + dt.TableName + " to the SQLite database" );
 
@@ -667,6 +694,7 @@ namespace BudgetExecution
                 }
 
                 count = 0;
+
                 if( createViews )
                 {
                     foreach( var vs in schema.Views )
@@ -683,6 +711,7 @@ namespace BudgetExecution
 
                         count++;
                         CheckCancelled( );
+
                         handler( false, true, 50 + (int)( count * 50.0 / schema.Views.Count ),
                             "Added view " + vs.ViewName + " to the SQLite database" );
 
@@ -706,6 +735,7 @@ namespace BudgetExecution
             var stmt = vs.ViewSql;
             _log.Info( "\n\n" + stmt + "\n\n" );
             var tx = conn.BeginTransaction( );
+
             try
             {
                 using( var cmd = new SQLiteCommand( stmt, conn, tx ) )
@@ -718,6 +748,7 @@ namespace BudgetExecution
             catch( SQLiteException )
             {
                 tx.Rollback( );
+
                 if( handler != null )
                 {
                     var updated = new ViewSchema
@@ -727,6 +758,7 @@ namespace BudgetExecution
                     };
 
                     var sql = handler( updated );
+
                     if( sql == null )
                     {
                     }
@@ -766,11 +798,13 @@ namespace BudgetExecution
             var _stringBuilder = new StringBuilder( );
             _stringBuilder.Append( $"CREATE TABLE {schema.TableName}" );
             var _key = false;
+
             for( var i = 0; i < schema.Columns.Count; i++ )
             {
                 var _column = schema.Columns[ i ];
                 var _statement = BuildColumnStatement( _column, schema, ref _key );
                 _stringBuilder.Append( _statement );
+
                 if( i < schema.Columns.Count - 1 )
                 {
                     _stringBuilder.Append( ",\n" );
@@ -782,9 +816,11 @@ namespace BudgetExecution
             {
                 _stringBuilder.Append( ",\n" );
                 _stringBuilder.Append( "    PRIMARY KEY (" );
+
                 for( var i = 0; i < schema.PrimaryKey.Count; i++ )
                 {
                     _stringBuilder.Append( "[" + schema.PrimaryKey[ i ] + "]" );
+
                     if( i < schema.PrimaryKey.Count - 1 )
                     {
                         _stringBuilder.Append( ", " );
@@ -801,14 +837,17 @@ namespace BudgetExecution
             if( schema.ForeignKeys.Count > 0 )
             {
                 _stringBuilder.Append( ",\n" );
+
                 for( var i = 0; i < schema.ForeignKeys.Count; i++ )
                 {
                     var foreignkey = schema.ForeignKeys[ i ];
+
                     var stmt = $"    FOREIGN KEY ([{foreignkey.ColumnName}])\n "
                         + "REFERENCES [{foreignkey.ForeignTableName}]"
                         + "([{foreignkey.ForeignColumnName}])";
 
                     _stringBuilder.Append( stmt );
+
                     if( i < schema.ForeignKeys.Count - 1 )
                     {
                         _stringBuilder.Append( ",\n" );
@@ -818,6 +857,7 @@ namespace BudgetExecution
 
             _stringBuilder.Append( '\n' );
             _stringBuilder.Append( ");\n" );
+
             if( schema.Indexes != null )
             {
                 for( var i = 0; i < schema.Indexes.Count; i++ )
@@ -841,6 +881,7 @@ namespace BudgetExecution
         {
             var _stringBuilder = new StringBuilder( );
             _stringBuilder.Append( "CREATE " );
+
             if( schema.IsUnique )
             {
                 _stringBuilder.Append( "UNIQUE " );
@@ -849,9 +890,11 @@ namespace BudgetExecution
             _stringBuilder.Append( "INDEX [" + tablename + "" + schema.IndexName + "]\n" );
             _stringBuilder.Append( "ON [" + tablename + "]\n" );
             _stringBuilder.Append( '(' );
+
             for( var i = 0; i < schema.Columns.Count; i++ )
             {
                 _stringBuilder.Append( "[" + schema.Columns[ i ] + "]" );
+
                 if( schema.Columns[ i ] != null )
                 {
                     _stringBuilder.Append( " DESC" );
@@ -881,6 +924,7 @@ namespace BudgetExecution
         {
             var _stringBuilder = new StringBuilder( );
             _stringBuilder.Append( "\t[" + column.ColumnName + "]\t" );
+
             if( column.IsIdentity )
             {
                 if( schema.PrimaryKey.Count == 1
@@ -927,6 +971,7 @@ namespace BudgetExecution
 
             var _default = StripParens( column.DefaultValue );
             _default = DiscardNational( _default );
+
             _log.Debug( "DEFAULT VALUE BEFORE [" + column.DefaultValue + "] AFTER [" + _default
                 + "]" );
 
@@ -956,6 +1001,7 @@ namespace BudgetExecution
         {
             var rx = new Regex( @"N\'([^\']*)\'" );
             var m = rx.Match( value );
+
             return m.Success
                 ? m.Groups[ 1 ].Value
                 : value;
@@ -1001,6 +1047,7 @@ namespace BudgetExecution
         {
             var rx = new Regex( @"\(([^\)]*)\)" );
             var m = rx.Match( value );
+
             return !m.Success
                 ? value
                 : StripParens( m.Groups[ 1 ].Value );
@@ -1018,16 +1065,19 @@ namespace BudgetExecution
         {
             var _tables = new List<TableSchema>( );
             using var _connection = new SqlConnection( connectionString );
+
             {
                 _connection.Open( );
                 var _tableNames = new List<string>( );
                 var _tableSchema = new List<string>( );
+
                 const string _sql =
                     @"select * from INFORMATIONSCHEMA.TABLES  where TABLETYPE = 'BASE TABLE'";
 
                 using( var cmd = new SqlCommand( _sql, _connection ) )
                 {
                     var reader = cmd.ExecuteReader( );
+
                     while( reader.Read( ) )
                     {
                         if( reader[ "TABLENAME" ] == DBNull.Value )
@@ -1046,6 +1096,7 @@ namespace BudgetExecution
                 }
 
                 var count = 0;
+
                 for( var i = 0; i < _tableNames.Count; i++ )
                 {
                     var _name = _tableNames[ i ];
@@ -1055,6 +1106,7 @@ namespace BudgetExecution
                     _tables.Add( ts );
                     count++;
                     CheckCancelled( );
+
                     handler( false, true, (int)( count * 50.0 / _tableNames.Count ),
                         "Parsed table " + _name );
 
@@ -1064,6 +1116,7 @@ namespace BudgetExecution
 
             _log.Debug( "finished parsing all tables in SQL Server schema" );
             var _updated = selectionHandler?.Invoke( _tables );
+
             if( _updated != null )
             {
                 _tables = _updated;
@@ -1071,18 +1124,22 @@ namespace BudgetExecution
 
             var _regex = new Regex( @"dbo\.", RegexOptions.Compiled | RegexOptions.IgnoreCase );
             var views = new List<ViewSchema>( );
+
             using( var conn = new SqlConnection( connectionString ) )
             {
                 conn.Open( );
+
                 const string _sql =
                     @"SELECT TABLENAME, VIEWDEFINITION  from INFORMATIONSCHEMA.VIEWS";
 
                 var _command = new SqlCommand( _sql, conn );
                 var _reader = _command.ExecuteReader( );
                 var _count = 0;
+
                 while( _reader.Read( ) )
                 {
                     var _schema = new ViewSchema( );
+
                     if( _reader[ "TABLENAME" ] == DBNull.Value )
                     {
                         continue;
@@ -1099,6 +1156,7 @@ namespace BudgetExecution
                     views.Add( _schema );
                     _count++;
                     CheckCancelled( );
+
                     handler( false, true, 50 + (int)( _count * 50.0 / views.Count ),
                         "Parsed view " + _schema.ViewName );
 
@@ -1128,13 +1186,275 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Validates the type of the Data.
+        /// </summary>
+        /// <param name="dataType">The datatype.</param>
+        /// <exception cref="ApplicationException">Validation failed for Data type [" +
+        /// datatype + "]</exception>
+        private void ValidateDataType( string dataType )
+        {
+            if( dataType == "int"
+               || dataType == "smallint"
+               || dataType == "bit"
+               || dataType == "float"
+               || dataType == "real"
+               || dataType == "nvarchar"
+               || dataType == "varchar"
+               || dataType == "timestamp"
+               || dataType == "varbinary"
+               || dataType == "image"
+               || dataType == "text"
+               || dataType == "ntext"
+               || dataType == "bigint"
+               || dataType == "char"
+               || dataType == "numeric"
+               || dataType == "binary"
+               || dataType == "smalldatetime"
+               || dataType == "smallmoney"
+               || dataType == "money"
+               || dataType == "tinyint"
+               || dataType == "uniqueidentifier"
+               || dataType == "xml"
+               || dataType == "sqlvariant"
+               || dataType == "datetime2"
+               || dataType == "date"
+               || dataType == "time"
+               || dataType == "decimal"
+               || dataType == "nchar"
+               || dataType == "datetime" )
+            {
+                return;
+            }
+
+            throw new ApplicationException( "Validation failed for Data type [" + dataType + "]" );
+        }
+
+        /// <summary>
+        /// Fixes the default value string.
+        /// </summary>
+        /// <param name="columnDefault">The coldefault.</param>
+        /// <returns></returns>
+        private string FixDefaultValueString( string columnDefault )
+        {
+            var _replaced = false;
+            var _res = columnDefault.Trim( );
+            var _first = -1;
+            var _last = -1;
+
+            for( var i = 0; i < _res.Length; i++ )
+            {
+                if( _res[ i ] == '\''
+                   && _first == -1 )
+                {
+                    _first = i;
+                }
+
+                if( _res[ i ] == '\''
+                   && _first != -1
+                   && i > _last )
+                {
+                    _last = i;
+                }
+            }
+
+            if( _first != -1
+               && _last > _first )
+            {
+                return _res.Substring( _first, _last - _first + 1 );
+            }
+
+            var sb = new StringBuilder( );
+
+            for( var i = 0; i < _res.Length; i++ )
+            {
+                if( _res[ i ] != '('
+                   && _res[ i ] != ')' )
+                {
+                    sb.Append( _res[ i ] );
+                    _replaced = true;
+                }
+            }
+
+            return _replaced
+                ? "(" + sb + ")"
+                : sb.ToString( );
+        }
+
+        /// <summary>
+        /// Creates the foreign key schema.
+        /// </summary>
+        /// <param name="conn">The connection.</param>
+        /// <param name="ts">The ts.</param>
+        private void CreateForeignKeySchema( SqlConnection conn, TableSchema ts )
+        {
+            ts.ForeignKeys = new List<ForeignKeySchema>( );
+
+            var cmd = new SqlCommand(
+                $@"SELECT   ColumnName = CU.COLUMNNAME,   ForeignTableName  = PK.TABLENAME,   ForeignColumnName = PT.COLUMNNAME,   DeleteRule = C.DELETERULE,   IsNullable = COL.ISNULLABLE FROM INFORMATIONSCHEMA.REFERENTIALCONSTRAINTS C INNER JOIN INFORMATIONSCHEMA.TABLECONSTRAINTS FK ON C.CONSTRAINTNAME = FK.CONSTRAINTNAME INNER JOIN INFORMATIONSCHEMA.TABLECONSTRAINTS PK ON C.UNIQUECONSTRAINTNAME = PK.CONSTRAINTNAME INNER JOIN INFORMATIONSCHEMA.KEYCOLUMNUSAGE CU ON C.CONSTRAINTNAME = CU.CONSTRAINTNAME INNER JOIN   (     SELECT i1.TABLENAME, i2.COLUMNNAME     FROM  INFORMATIONSCHEMA.TABLECONSTRAINTS i1     INNER JOIN INFORMATIONSCHEMA.KEYCOLUMNUSAGE i2 ON i1.CONSTRAINTNAME = i2.CONSTRAINTNAME     WHERE i1.CONSTRAINTTYPE = 'PRIMARY KEY'   ) PT ON PT.TABLENAME = PK.TABLENAME INNER JOIN INFORMATIONSCHEMA.COLUMNS AS COL ON CU.COLUMNNAME = COL.COLUMNNAME AND FK.TABLENAME = COL.TABLENAME WHERE FK.TableNAME='{
+                    ts.TableName
+                }'", conn );
+
+            var reader = cmd.ExecuteReader( );
+
+            while( reader.Read( ) )
+            {
+                var fkc = new ForeignKeySchema
+                {
+                    ColumnName = (string)reader[ "ColumnName" ],
+                    ForeignTableName = (string)reader[ "ForeignTableName" ],
+                    ForeignColumnName = (string)reader[ "ForeignColumnName" ],
+                    CascadeOnDelete = (string)reader[ "DeleteRule" ] == "CASCADE",
+                    IsNullable = (string)reader[ "IsNullable" ] == "YES",
+                    TableName = ts.TableName
+                };
+
+                ts.ForeignKeys.Add( fkc );
+            }
+        }
+
+        /// <summary>
+        /// Builds the index schema.
+        /// </summary>
+        /// <param name="indexname">The indexname.</param>
+        /// <param name="desc">The desc.</param>
+        /// <param name="keys">The keys.</param>
+        /// <returns></returns>
+        /// <exception cref="ApplicationException">Illegal key name [" + p + "] in
+        /// index [" + indexname + "]</exception>
+        private IndexSchema BuildIndexSchema( string indexname, string desc, string keys )
+        {
+            var res = new IndexSchema { IndexName = indexname };
+            var descparts = desc.Split( ',' );
+
+            for( var i = 0; i < descparts.Length; i++ )
+            {
+                var p = descparts[ i ];
+
+                if( p.Trim( ).Contains( "unique" ) )
+                {
+                    res.IsUnique = true;
+                    break;
+                }
+            }
+
+            res.Columns = new List<IndexColumn>( );
+            var _parts = keys.Split( ',' );
+
+            foreach( var p in _parts )
+            {
+                var m = _keys.Match( p.Trim( ) );
+
+                if( !m.Success )
+                {
+                    throw new ApplicationException( "Illegal key name [" + p + "] in index ["
+                        + indexname + "]" );
+                }
+
+                var ic = new IndexColumn( );
+                res.Columns.Add( ic );
+            }
+
+            return res;
+        }
+
+        /// <summary>
+        /// Adjusts the default value.
+        /// </summary>
+        /// <param name="val">The value.</param>
+        /// <returns></returns>
+        private string AdjustDefaultValue( string val )
+        {
+            if( string.IsNullOrEmpty( val ) )
+            {
+                return val;
+            }
+
+            var m = _value.Match( val );
+
+            return m.Success
+                ? m.Groups[ 1 ].Value
+                : val;
+        }
+
+        /// <summary>
+        /// Creates the sq lite connection string.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="password">The password.</param>
+        /// <returns></returns>
+        private string CreateSQLiteConnectionString( string path, string password )
+        {
+            var _builder = new SQLiteConnectionStringBuilder { DataSource = path };
+
+            if( password != null )
+            {
+                _builder.Password = password;
+            }
+
+            _builder.PageSize = 4096;
+            _builder.UseUTF16Encoding = true;
+            var _connectionString = _builder.ConnectionString;
+            return _connectionString;
+        }
+
+        /// <summary>
+        /// Adds the triggers for foreign keys.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="schema">The schema.</param>
+        /// <param name="passWord">The password.</param>
+        private void AddTriggersForForeignKeys( string path, IEnumerable<TableSchema> schema,
+            string passWord )
+        {
+            var _connectionString = CreateSQLiteConnectionString( path, passWord );
+
+            using( var _connection = new SQLiteConnection( _connectionString ) )
+            {
+                _connection.Open( );
+
+                foreach( var _item in schema )
+                {
+                    try
+                    {
+                        AddTableTriggers( _connection, _item );
+                    }
+                    catch( Exception ex )
+                    {
+                        _log.Error( "AddTableTriggers failed", ex );
+                        throw;
+                    }
+                }
+            }
+
+            _log.Debug( "finished adding triggers to schema" );
+        }
+
+        /// <summary>
+        /// Adds the table triggers.
+        /// </summary>
+        /// <param name="conn">The connection.</param>
+        /// <param name="dt">The dt.</param>
+        private void AddTableTriggers( SQLiteConnection conn, TableSchema dt )
+        {
+            var _triggers = TriggerBuilder.GetForeignKeyTriggers( dt );
+
+            for( var i = 0; i < _triggers.Count; i++ )
+            {
+                var _trigger = _triggers[ i ];
+                var _command = new SQLiteCommand( WriteTriggerSchema( _trigger ), conn );
+                _command.ExecuteNonQuery( );
+            }
+        }
+
+        /// <summary>
         /// Creates the table schema.
         /// </summary>
         /// <param name="conn">The connection.</param>
         /// <param name="tablename">The tablename.</param>
         /// <param name="schema">The tschma.</param>
         /// <returns></returns>
-        private protected TableSchema CreateTableSchema(SqlConnection conn, string tablename, string schema)
+        private protected TableSchema CreateTableSchema( SqlConnection conn, string tablename,
+            string schema )
         {
             var res = new TableSchema
             {
@@ -1143,15 +1463,18 @@ namespace BudgetExecution
                 Columns = new List<ColumnSchema>( )
             };
 
-            using( var _command = new SqlCommand( @"SELECT COLUMNNAME, COLUMNDEFAULT, ISNULLABLE, DATATYPE,  "
+            using( var _command = new SqlCommand(
+                      @"SELECT COLUMNNAME, COLUMNDEFAULT, ISNULLABLE, DATATYPE,  "
                       + "(columnproperty(objectid(TABLENAME), COLUMNNAME, 'IsIdentity')) A[IDENT], "
-                      + @"CHARACTERMAXIMUMLENGTH AS CSIZE FROM INFORMATIONSCHEMA.COLUMNS WHERE " 
+                      + @"CHARACTERMAXIMUMLENGTH AS CSIZE FROM INFORMATIONSCHEMA.COLUMNS WHERE "
                       + $"TABLENAME = '{tablename}' ORDER BY ORDINALPOSITION ASC", conn ) )
             {
                 var _reader = _command.ExecuteReader( );
+
                 while( _reader.Read( ) )
                 {
                     var _tmp = _reader[ "COLUMNNAME" ];
+
                     if( _tmp is DBNull )
                     {
                         continue;
@@ -1159,6 +1482,7 @@ namespace BudgetExecution
 
                     var _columnName = (string)_reader[ "COLUMNNAME" ];
                     _tmp = _reader[ "COLUMNDEFAULT" ];
+
                     var _columnDefault = true & _tmp is DBNull
                         ? string.Empty
                         : (string)_tmp;
@@ -1167,6 +1491,7 @@ namespace BudgetExecution
                     var _isNullable = (string)_tmp == "YES";
                     var _dataType = (string)_reader[ "DATATYPE" ];
                     var _isIdentity = false;
+
                     if( _reader[ "IDENT" ] != DBNull.Value )
                     {
                         if( (int)_reader[ "IDENT" ] == 1 )
@@ -1180,6 +1505,7 @@ namespace BudgetExecution
                         : 0;
 
                     ValidateDataType( _dataType );
+
                     switch( _dataType )
                     {
                         case "timestamp":
@@ -1263,6 +1589,7 @@ namespace BudgetExecution
                     }
 
                     _columnDefault = FixDefaultValueString( _columnDefault );
+
                     var _schema = new ColumnSchema
                     {
                         ColumnName = _columnName,
@@ -1281,6 +1608,7 @@ namespace BudgetExecution
             {
                 var reader = cmd2.ExecuteReader( );
                 res.PrimaryKey = new List<string>( );
+
                 while( reader.Read( ) )
                 {
                     var _item = (string)reader[ "COLUMNNAME" ];
@@ -1293,10 +1621,12 @@ namespace BudgetExecution
                       conn ) )
             {
                 var reader = cmd4.ExecuteReader( );
+
                 while( reader.Read( ) )
                 {
                     bool? _isCaseSensitive = null;
                     var _columnName = (string)reader[ "name" ];
+
                     if( reader[ "tdscollation" ] != DBNull.Value )
                     {
                         var mask = (byte[ ])reader[ "tdscollation" ];
@@ -1324,11 +1654,13 @@ namespace BudgetExecution
 
                 var _reader = _command.ExecuteReader( );
                 res.Indexes = new List<IndexSchema>( );
+
                 while( _reader.Read( ) )
                 {
                     var _indexName = (string)_reader[ "indexname" ];
                     var _desc = (string)_reader[ "indexdescription" ];
                     var _indexes = (string)_reader[ "indexkeys" ];
+
                     if( _desc.Contains( "primary key" ) )
                     {
                         continue;
@@ -1344,262 +1676,6 @@ namespace BudgetExecution
             }
 
             return res;
-        }
-
-        /// <summary>
-        /// Validates the type of the Data.
-        /// </summary>
-        /// <param name="dataType">The datatype.</param>
-        /// <exception cref="ApplicationException">Validation failed for Data type [" +
-        /// datatype + "]</exception>
-        private void ValidateDataType( string dataType )
-        {
-            if( dataType == "int"
-               || dataType == "smallint"
-               || dataType == "bit"
-               || dataType == "float"
-               || dataType == "real"
-               || dataType == "nvarchar"
-               || dataType == "varchar"
-               || dataType == "timestamp"
-               || dataType == "varbinary"
-               || dataType == "image"
-               || dataType == "text"
-               || dataType == "ntext"
-               || dataType == "bigint"
-               || dataType == "char"
-               || dataType == "numeric"
-               || dataType == "binary"
-               || dataType == "smalldatetime"
-               || dataType == "smallmoney"
-               || dataType == "money"
-               || dataType == "tinyint"
-               || dataType == "uniqueidentifier"
-               || dataType == "xml"
-               || dataType == "sqlvariant"
-               || dataType == "datetime2"
-               || dataType == "date"
-               || dataType == "time"
-               || dataType == "decimal"
-               || dataType == "nchar"
-               || dataType == "datetime" )
-            {
-                return;
-            }
-
-            throw new ApplicationException( "Validation failed for Data type [" + dataType + "]" );
-        }
-
-        /// <summary>
-        /// Fixes the default value string.
-        /// </summary>
-        /// <param name="columnDefault">The coldefault.</param>
-        /// <returns></returns>
-        private string FixDefaultValueString( string columnDefault )
-        {
-            var _replaced = false;
-            var _res = columnDefault.Trim( );
-            var _first = -1;
-            var _last = -1;
-            for( var i = 0; i < _res.Length; i++ )
-            {
-                if( _res[ i ] == '\''
-                   && _first == -1 )
-                {
-                    _first = i;
-                }
-
-                if( _res[ i ] == '\''
-                   && _first != -1
-                   && i > _last )
-                {
-                    _last = i;
-                }
-            }
-
-            if( _first != -1
-               && _last > _first )
-            {
-                return _res.Substring( _first, _last - _first + 1 );
-            }
-
-            var sb = new StringBuilder( );
-            for( var i = 0; i < _res.Length; i++ )
-            {
-                if( _res[ i ] != '('
-                   && _res[ i ] != ')' )
-                {
-                    sb.Append( _res[ i ] );
-                    _replaced = true;
-                }
-            }
-
-            return _replaced
-                ? "(" + sb + ")"
-                : sb.ToString( );
-        }
-
-        /// <summary>
-        /// Creates the foreign key schema.
-        /// </summary>
-        /// <param name="conn">The connection.</param>
-        /// <param name="ts">The ts.</param>
-        private void CreateForeignKeySchema( SqlConnection conn, TableSchema ts )
-        {
-            ts.ForeignKeys = new List<ForeignKeySchema>( );
-            var cmd = new SqlCommand(
-                $@"SELECT   ColumnName = CU.COLUMNNAME,   ForeignTableName  = PK.TABLENAME,   ForeignColumnName = PT.COLUMNNAME,   DeleteRule = C.DELETERULE,   IsNullable = COL.ISNULLABLE FROM INFORMATIONSCHEMA.REFERENTIALCONSTRAINTS C INNER JOIN INFORMATIONSCHEMA.TABLECONSTRAINTS FK ON C.CONSTRAINTNAME = FK.CONSTRAINTNAME INNER JOIN INFORMATIONSCHEMA.TABLECONSTRAINTS PK ON C.UNIQUECONSTRAINTNAME = PK.CONSTRAINTNAME INNER JOIN INFORMATIONSCHEMA.KEYCOLUMNUSAGE CU ON C.CONSTRAINTNAME = CU.CONSTRAINTNAME INNER JOIN   (     SELECT i1.TABLENAME, i2.COLUMNNAME     FROM  INFORMATIONSCHEMA.TABLECONSTRAINTS i1     INNER JOIN INFORMATIONSCHEMA.KEYCOLUMNUSAGE i2 ON i1.CONSTRAINTNAME = i2.CONSTRAINTNAME     WHERE i1.CONSTRAINTTYPE = 'PRIMARY KEY'   ) PT ON PT.TABLENAME = PK.TABLENAME INNER JOIN INFORMATIONSCHEMA.COLUMNS AS COL ON CU.COLUMNNAME = COL.COLUMNNAME AND FK.TABLENAME = COL.TABLENAME WHERE FK.TableNAME='{
-                    ts.TableName
-                }'", conn );
-
-            var reader = cmd.ExecuteReader( );
-            while( reader.Read( ) )
-            {
-                var fkc = new ForeignKeySchema
-                {
-                    ColumnName = (string)reader[ "ColumnName" ],
-                    ForeignTableName = (string)reader[ "ForeignTableName" ],
-                    ForeignColumnName = (string)reader[ "ForeignColumnName" ],
-                    CascadeOnDelete = (string)reader[ "DeleteRule" ] == "CASCADE",
-                    IsNullable = (string)reader[ "IsNullable" ] == "YES",
-                    TableName = ts.TableName
-                };
-
-                ts.ForeignKeys.Add( fkc );
-            }
-        }
-
-        /// <summary>
-        /// Builds the index schema.
-        /// </summary>
-        /// <param name="indexname">The indexname.</param>
-        /// <param name="desc">The desc.</param>
-        /// <param name="keys">The keys.</param>
-        /// <returns></returns>
-        /// <exception cref="ApplicationException">Illegal key name [" + p + "] in
-        /// index [" + indexname + "]</exception>
-        private IndexSchema BuildIndexSchema( string indexname, string desc, string keys )
-        {
-            var res = new IndexSchema
-            {
-                IndexName = indexname
-            };
-
-            var descparts = desc.Split( ',' );
-            for( var i = 0; i < descparts.Length; i++ )
-            {
-                var p = descparts[ i ];
-                if( p.Trim( ).Contains( "unique" ) )
-                {
-                    res.IsUnique = true;
-                    break;
-                }
-            }
-
-            res.Columns = new List<IndexColumn>( );
-            var keysparts = keys.Split( ',' );
-            foreach( var p in keysparts )
-            {
-                var m = _keys.Match( p.Trim( ) );
-                if( !m.Success )
-                {
-                    throw new ApplicationException( "Illegal key name [" + p + "] in index ["
-                        + indexname + "]" );
-                }
-
-                var ic = new IndexColumn( );
-                res.Columns.Add( ic );
-            }
-
-            return res;
-        }
-
-        /// <summary>
-        /// Adjusts the default value.
-        /// </summary>
-        /// <param name="val">The value.</param>
-        /// <returns></returns>
-        private string AdjustDefaultValue( string val )
-        {
-            if( string.IsNullOrEmpty( val ) )
-            {
-                return val;
-            }
-
-            var m = _value.Match( val );
-            return m.Success
-                ? m.Groups[ 1 ].Value
-                : val;
-        }
-
-        /// <summary>
-        /// Creates the sq lite connection string.
-        /// </summary>
-        /// <param name="path">The path.</param>
-        /// <param name="password">The password.</param>
-        /// <returns></returns>
-        private string CreateSQLiteConnectionString( string path, string password )
-        {
-            var _builder = new SQLiteConnectionStringBuilder
-            {
-                DataSource = path
-            };
-
-            if( password != null )
-            {
-                _builder.Password = password;
-            }
-
-            _builder.PageSize = 4096;
-            _builder.UseUTF16Encoding = true;
-            var _connectionString = _builder.ConnectionString;
-            return _connectionString;
-        }
-
-        /// <summary>
-        /// Adds the triggers for foreign keys.
-        /// </summary>
-        /// <param name="path">The path.</param>
-        /// <param name="schema">The schema.</param>
-        /// <param name="passWord">The password.</param>
-        private void AddTriggersForForeignKeys( string path, IEnumerable<TableSchema> schema,
-            string passWord )
-        {
-            var _connectionString = CreateSQLiteConnectionString( path, passWord );
-            using( var _connection = new SQLiteConnection( _connectionString ) )
-            {
-                _connection.Open( );
-                foreach( var _item in schema )
-                {
-                    try
-                    {
-                        AddTableTriggers( _connection, _item );
-                    }
-                    catch( Exception ex )
-                    {
-                        _log.Error( "AddTableTriggers failed", ex );
-                        throw;
-                    }
-                }
-            }
-
-            _log.Debug( "finished adding triggers to schema" );
-        }
-
-        /// <summary>
-        /// Adds the table triggers.
-        /// </summary>
-        /// <param name="conn">The connection.</param>
-        /// <param name="dt">The dt.</param>
-        private void AddTableTriggers( SQLiteConnection conn, TableSchema dt )
-        {
-            var _triggers = TriggerBuilder.GetForeignKeyTriggers( dt );
-            for( var i = 0; i < _triggers.Count; i++ )
-            {
-                var _trigger = _triggers[ i ];
-                var _command = new SQLiteCommand( WriteTriggerSchema( _trigger ), conn );
-                _command.ExecuteNonQuery( );
-            }
         }
     }
 }

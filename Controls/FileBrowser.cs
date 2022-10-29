@@ -1,6 +1,6 @@
-﻿// <copyright file = "FileBrowser.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -16,6 +16,30 @@ namespace BudgetExecution
 
     public partial class FileBrowser
     {
+        /// <summary>Initializes a new instance of the 
+        /// <see cref="FileBrowser" /> class.</summary>
+        public FileBrowser( )
+        {
+            InitializeComponent( );
+            Size = new Size( 700, 480 );
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            BackColor = Color.FromArgb( 15, 15, 15 );
+            InitialDirPaths = GetInitialDirPaths( );
+            RadioButtons = GetRadioButtons( );
+            FileExtension = "xlsx";
+            PictureBox.Image = GetImage( );
+            FilePaths = GetListViewPaths( );
+            FileDialog.DefaultExt = FileExtension;
+
+            FileDialog.InitialDirectory =
+                Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory );
+
+            FileDialog.CheckFileExists = true;
+            CloseButton.Click += OnCloseButtonClicked;
+            FileList.SelectedValueChanged += OnPathSelected;
+            Load += OnLoaded;
+        }
+
         /// <summary>
         /// Gets or sets the extension.
         /// </summary>
@@ -72,33 +96,6 @@ namespace BudgetExecution
         /// </value>
         public string SelectedFile { get; set; }
 
-        /// <summary>Initializes a new instance of the 
-        /// <see cref="FileBrowser" /> class.</summary>
-        public FileBrowser( )
-        {
-            InitializeComponent( );
-            Size = new Size( 700, 480 );
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            InitialDirPaths = GetInitialDirPaths( );
-            RadioButtons = GetRadioButtons( );
-            FileExtension = "xlsx";
-            PictureBox.Image = GetImage( );
-            FilePaths = GetListViewPaths( );
-
-            FileDialog.DefaultExt = FileExtension;
-
-            FileDialog.InitialDirectory =
-                Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory );
-
-            FileDialog.CheckFileExists = true;
-
-            CloseButton.Click += OnCloseButtonClicked;
-            FileList.SelectedValueChanged += OnPathSelected;
-
-            Load += OnLoaded;
-        }
-
         /// <summary>
         /// Called when [browser loaded].
         /// </summary>
@@ -139,7 +136,6 @@ namespace BudgetExecution
                     {
                         var _extension = FileExtension.TrimStart( '.' ).ToUpper( );
                         var _file = _files.Where( f => f.Contains( _extension ) )?.First( );
-
                         using var stream = File.Open( _file, FileMode.Open );
                         var _img = Image.FromStream( stream );
                         return new Bitmap( _img, 22, 22 );
@@ -211,7 +207,6 @@ namespace BudgetExecution
                             ?.Select( f => Path.GetFullPath( f ) )?.ToList( );
 
                         _list.AddRange( _first );
-
                         var _dirs = Directory.GetDirectories( path );
 
                         foreach( var dir in _dirs )
@@ -223,7 +218,6 @@ namespace BudgetExecution
                                     ?.Select( s => Path.GetFullPath( s ) )?.ToList( );
 
                                 _list.AddRange( _second );
-
                                 var _subdir = Directory.GetDirectories( dir );
 
                                 foreach( var sub in _subdir )
@@ -245,11 +239,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<string> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<string> );
+            return default;
         }
 
         /// <summary>
@@ -259,7 +253,7 @@ namespace BudgetExecution
         public virtual void OnRadioButtonSelected( object sender )
         {
             if( sender is RadioButton _radioButton
-                && !string.IsNullOrEmpty( _radioButton.Tag?.ToString( ) ) )
+               && !string.IsNullOrEmpty( _radioButton.Tag?.ToString( ) ) )
             {
                 try
                 {
@@ -309,7 +303,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IEnumerable<RadioButton> );
+                return default;
             }
         }
 
@@ -322,10 +316,10 @@ namespace BudgetExecution
             try
             {
                 var _current = Environment.CurrentDirectory;
+
                 var _list = new List<string>
                 {
                     Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory ),
-
                     Environment.GetFolderPath( Environment.SpecialFolder.Personal ),
                     Environment.GetFolderPath( Environment.SpecialFolder.Recent ),
                     @"C:\Users\teppler\source\repos\Badjao\Resources\Docs",
@@ -339,7 +333,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IEnumerable<string> );
+                return default;
             }
         }
 
@@ -399,8 +393,8 @@ namespace BudgetExecution
         public virtual void OnPathSelected( object sender, EventArgs e )
         {
             if( sender is ListBox listBox
-                && !string.IsNullOrEmpty( listBox.SelectedItem?.ToString( ) )
-                && e != null )
+               && !string.IsNullOrEmpty( listBox.SelectedItem?.ToString( ) )
+               && e != null )
             {
                 try
                 {

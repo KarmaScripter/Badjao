@@ -1,6 +1,6 @@
-﻿// <copyright file = "DataGrid.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -19,38 +19,6 @@ namespace BudgetExecution
     /// <seealso/>
     public class DataGrid : DataGridView, IDataGrid
     {
-        /// <summary>
-        /// Gets or sets the hover text.
-        /// </summary>
-        /// <value>
-        /// The hover text.
-        /// </value>
-        public string HoverText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public MetroTip ToolTip { get; set; }
-
-        /// <summary>
-        /// Gets or sets the binding source.
-        /// </summary>
-        /// <value>
-        /// The binding source.
-        /// </value>
-        public BindingSource BindingSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the filter.
-        /// </summary>
-        /// <value>
-        /// The filter.
-        /// </value>
-        public IDictionary<string, object> DataFilter { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the
         /// <see cref="DataGrid" />
@@ -110,7 +78,6 @@ namespace BudgetExecution
             RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb( 22, 39, 70 );
             RowsDefaultCellStyle.SelectionForeColor = Color.White;
             RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb( 55, 55, 55 );
             AlternatingRowsDefaultCellStyle.ForeColor = Color.LightSteelBlue;
             AlternatingRowsDefaultCellStyle.Font = new Font( "Roboto", 8 );
@@ -161,52 +128,36 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Sets the column configuration.
+        /// Gets or sets the hover text.
         /// </summary>
-        public void SetColumnConfiguration( )
-        {
-            try
-            {
-                ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle
-                {
-                    Font = new Font( "Roboto", 9, FontStyle.Bold ),
-                    Alignment = DataGridViewContentAlignment.MiddleCenter, ForeColor = Color.White,
-                    BackColor = Color.SteelBlue
-                };
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public string HoverText { get; set; }
 
         /// <summary>
-        /// Sets the row configuration.
+        /// Gets or sets the tool tip.
         /// </summary>
-        public void SetRowConfiguration( )
-        {
-            try
-            {
-                RowHeadersDefaultCellStyle = new DataGridViewCellStyle
-                {
-                    Alignment = DataGridViewContentAlignment.BottomCenter, ForeColor = Color.Black,
-                    Font = new Font( "Roboto", 9, FontStyle.Bold ),
-                    BackColor = Color.FromArgb( 141, 139, 138 )
-                };
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public MetroTip ToolTip { get; set; }
 
-                RowsDefaultCellStyle = new DataGridViewCellStyle
-                {
-                    Alignment = DataGridViewContentAlignment.BottomCenter,
-                    SelectionForeColor = Color.Black,
-                    SelectionBackColor = SystemColors.ControlLight, ForeColor = Color.Black,
-                    Font = new Font( "Roboto", 9 ), BackColor = Color.LightSteelBlue
-                };
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public IDictionary<string, object> DataFilter { get; set; }
 
         /// <summary>
         /// Sets the binding source.
@@ -217,7 +168,7 @@ namespace BudgetExecution
             IDictionary<string, object> dict )
         {
             if( dataRows?.Any( ) == true
-                && dict?.Any( ) == true )
+               && dict?.Any( ) == true )
             {
                 try
                 {
@@ -290,11 +241,11 @@ namespace BudgetExecution
                     catch( Exception ex )
                     {
                         Fail( ex );
-                        return default( string );
+                        return default;
                     }
                 }
 
-                return default( string );
+                return default;
             }
         }
 
@@ -308,12 +259,12 @@ namespace BudgetExecution
             {
                 using var _message = new Message( "Not Yet Implemented." );
                 _message?.ShowDialog( );
-                return default( DataRow );
+                return default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DataRow );
+                return default;
             }
         }
 
@@ -329,7 +280,9 @@ namespace BudgetExecution
                 try
                 {
                     var _columnConfiguration = new ColumnConfiguration( this )
-                        { Location = PointToScreen( new Point( e.X, e.Y ) ) };
+                    {
+                        Location = PointToScreen( new Point( e.X, e.Y ) )
+                    };
 
                     _columnConfiguration.ColumnListBox?.Items?.Clear( );
 
@@ -344,6 +297,58 @@ namespace BudgetExecution
                 {
                     Fail( ex );
                 }
+            }
+        }
+
+        /// <summary>
+        /// Sets the column configuration.
+        /// </summary>
+        public void SetColumnConfiguration( )
+        {
+            try
+            {
+                ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle
+                {
+                    Font = new Font( "Roboto", 9, FontStyle.Bold ),
+                    Alignment = DataGridViewContentAlignment.MiddleCenter,
+                    ForeColor = Color.White,
+                    BackColor = Color.SteelBlue
+                };
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+            }
+        }
+
+        /// <summary>
+        /// Sets the row configuration.
+        /// </summary>
+        public void SetRowConfiguration( )
+        {
+            try
+            {
+                RowHeadersDefaultCellStyle = new DataGridViewCellStyle
+                {
+                    Alignment = DataGridViewContentAlignment.BottomCenter,
+                    ForeColor = Color.Black,
+                    Font = new Font( "Roboto", 9, FontStyle.Bold ),
+                    BackColor = Color.FromArgb( 141, 139, 138 )
+                };
+
+                RowsDefaultCellStyle = new DataGridViewCellStyle
+                {
+                    Alignment = DataGridViewContentAlignment.BottomCenter,
+                    SelectionForeColor = Color.Black,
+                    SelectionBackColor = SystemColors.ControlLight,
+                    ForeColor = Color.Black,
+                    Font = new Font( "Roboto", 9 ),
+                    BackColor = Color.LightSteelBlue
+                };
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
             }
         }
 

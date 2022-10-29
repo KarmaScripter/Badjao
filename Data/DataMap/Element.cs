@@ -1,6 +1,6 @@
-﻿// // <copyright file = "Element.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -16,30 +16,6 @@ namespace BudgetExecution
     /// <seealso cref="IElement" />
     public class Element : DataUnit, IElement
     {
-        /// <summary>
-        /// Gets the identifier.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IKey ID { get; set; }
-
-        /// <summary>
-        /// Gets the code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public string Code { get; set; }
-
-        /// <summary>
-        /// The initial
-        /// </summary>
-        public string Initial { get; set; }
-
-        /// <summary>
-        /// The default
-        /// </summary>
-        public static readonly IElement Default = new Element( );
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Element"/> class.
         /// </summary>
@@ -103,6 +79,7 @@ namespace BudgetExecution
         {
             Name = dataRow[ columnName ].ToString( );
             Value = dataRow[ columnName ];
+
             if( !string.IsNullOrEmpty( Name ) )
             {
                 Field = (Field)Enum.Parse( typeof( Field ), Name );
@@ -120,6 +97,11 @@ namespace BudgetExecution
             Name = dataColumn.ColumnName;
             Value = dataRow[ dataColumn ];
         }
+
+        /// <summary>
+        /// The default
+        /// </summary>
+        public static readonly IElement Default = new Element( );
 
         /// <summary>
         /// Determines whether the specified element is match.
@@ -148,6 +130,25 @@ namespace BudgetExecution
 
             return false;
         }
+
+        /// <summary>
+        /// Gets the identifier.
+        /// </summary>
+        /// <returns>
+        /// </returns>
+        public IKey ID { get; set; }
+
+        /// <summary>
+        /// Gets the code.
+        /// </summary>
+        /// <returns>
+        /// </returns>
+        public string Code { get; set; }
+
+        /// <summary>
+        /// The initial
+        /// </summary>
+        public string Initial { get; set; }
 
         /// <summary>
         /// Determines whether the specified primary is match.
@@ -190,6 +191,7 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
+
                     Name = _names?.Contains( columnName ) == true
                         ? columnName
                         : dataRow.Table.TableName;
@@ -235,6 +237,7 @@ namespace BudgetExecution
                 try
                 {
                     var _columnNames = dataRow.Table?.GetColumnNames( );
+
                     Name = _columnNames?.Contains( field.ToString( ) ) == true
                         ? field.ToString( )
                         : dataRow.Table.TableName;
@@ -258,9 +261,10 @@ namespace BudgetExecution
                 try
                 {
                     var _input = (Field)Enum.Parse( typeof( Field ), fieldName );
+
                     Field = !Enum.IsDefined( typeof( Field ), _input )
                         ? (Field)Enum.Parse( typeof( Field ), fieldName )
-                        : default( Field );
+                        : default;
                 }
                 catch( Exception ex )
                 {
@@ -284,6 +288,7 @@ namespace BudgetExecution
                 {
                     var _input = (Field)Enum.Parse( typeof( Field ), fieldName );
                     var _names = dataRow.Table?.GetColumnNames( );
+
                     if( _names?.Any( ) == true
                        && _names?.Contains( $" {_input}" ) == true )
                     {
@@ -307,7 +312,7 @@ namespace BudgetExecution
             {
                 Field = Enum.IsDefined( typeof( Field ), field )
                     ? field
-                    : default( Field );
+                    : default;
             }
             catch( Exception ex )
             {
@@ -329,9 +334,10 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
+
                     Field = _names?.Contains( field.ToString( ) ) == true
                         ? field
-                        : default( Field );
+                        : default;
                 }
                 catch( Exception ex )
                 {
@@ -373,6 +379,7 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
+
                     Value = _names?.Contains( columnName ) == true
                         ? dataRow[ columnName ]?.ToString( )
                         : string.Empty;
@@ -397,6 +404,7 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
+
                     Value = _names?.Contains( field.ToString( ) ) == true
                         ? dataRow[ $"{field}" ]?.ToString( )
                         : string.Empty;

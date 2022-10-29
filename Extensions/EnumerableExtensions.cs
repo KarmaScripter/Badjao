@@ -1,6 +1,6 @@
-﻿// // <copyright file = "EnumerableExtensions.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -34,6 +34,7 @@ namespace BudgetExecution
                     var _dictionary = _row?.ToDictionary( );
                     var _array = _dictionary?.Keys.ToArray( );
                     var _names = Enum.GetNames( typeof( Numeric ) );
+
                     if( _array != null )
                     {
                         foreach( var k in _array )
@@ -50,7 +51,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( bool );
+                    return default;
                 }
             }
 
@@ -74,6 +75,7 @@ namespace BudgetExecution
                     var _dict = _row?.ToDictionary( );
                     var _key = _dict?.Keys.ToArray( );
                     var _names = Enum.GetNames( typeof( PrimaryKey ) );
+
                     if( _key != null )
                     {
                         foreach( var k in _key )
@@ -91,7 +93,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( bool );
+                    return default;
                 }
             }
 
@@ -111,6 +113,7 @@ namespace BudgetExecution
                 try
                 {
                     var _list = new List<int>( );
+
                     foreach( var _row in dataRow )
                     {
                         if( _row?.ItemArray[ 0 ] != null )
@@ -121,16 +124,16 @@ namespace BudgetExecution
 
                     return _list?.Any( ) == true
                         ? _list.ToArray( )
-                        : default( int[ ] );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<int> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<int> );
+            return default;
         }
 
         /// <summary>
@@ -145,6 +148,7 @@ namespace BudgetExecution
                 try
                 {
                     var _list = new BindingList<DataRow>( );
+
                     foreach( var item in dataRows )
                     {
                         _list.Add( item );
@@ -152,16 +156,16 @@ namespace BudgetExecution
 
                     return _list?.Any( ) == true
                         ? _list
-                        : default( BindingList<DataRow> );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( BindingList<DataRow> );
+                    return default;
                 }
             }
 
-            return default( BindingList<DataRow> );
+            return default;
         }
 
         /// <summary>
@@ -183,6 +187,7 @@ namespace BudgetExecution
                     var _row = dataRow?.First( );
                     var _dictionary = _row.ToDictionary( );
                     var _array = _dictionary.Keys.ToArray( );
+
                     if( _array?.Contains( columnName ) == true )
                     {
                         var _select = dataRow?.Where( p => p.Field<string>( columnName ) == filter )
@@ -190,17 +195,17 @@ namespace BudgetExecution
 
                         return _select?.Any( ) == true
                             ? _select
-                            : default( IEnumerable<DataRow> );
+                            : default;
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<DataRow> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<DataRow> );
+            return default;
         }
 
         /// <summary>
@@ -219,6 +224,7 @@ namespace BudgetExecution
                 {
                     var _table = dataRow.CopyToDataTable( );
                     var _rows = _table?.Select( dict.ToCriteria( ) );
+
                     return _rows?.Any( ) == true
                         ? _rows
                         : default( IEnumerable<DataRow> );
@@ -226,11 +232,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<DataRow> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<DataRow> );
+            return default;
         }
 
         /// <summary>
@@ -251,8 +257,9 @@ namespace BudgetExecution
                 {
                     var _row = dataRow?.First( );
                     var _columns = _row?.Table?.Columns;
-                    if( !string.IsNullOrEmpty( column.ColumnName ) 
-                       && _columns?.Contains( column.ColumnName ) == true ) 
+
+                    if( !string.IsNullOrEmpty( column.ColumnName )
+                       && _columns?.Contains( column.ColumnName ) == true )
                     {
                         var _enumerable = dataRow
                             ?.Where( p => p.Field<string>( column.ColumnName ).Equals( filter ) )
@@ -260,17 +267,17 @@ namespace BudgetExecution
 
                         return _enumerable?.Any( ) == true
                             ? _enumerable.ToArray( )
-                            : default( DataRow[ ] );
+                            : default;
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<DataRow> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<DataRow> );
+            return default;
         }
 
         /// <summary>
@@ -291,6 +298,7 @@ namespace BudgetExecution
                 {
                     var _row = dataRow?.First( );
                     var _columns = _row?.Table?.Columns;
+
                     if( _columns?.Contains( field.ToString( ) ) == true )
                     {
                         var _enumerable = dataRow
@@ -299,17 +307,17 @@ namespace BudgetExecution
 
                         return _enumerable?.Any( ) == true
                             ? _enumerable.ToArray( )
-                            : default( DataRow[ ] );
+                            : default;
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<DataRow> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<DataRow> );
+            return default;
         }
 
         /// <summary>
@@ -348,7 +356,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ExcelPackage );
+                return default;
             }
         }
 
@@ -367,6 +375,7 @@ namespace BudgetExecution
                && end > 0 )
             {
                 var _index = 0;
+
                 foreach( var item in type )
                 {
                     if( _index >= end )

@@ -1,6 +1,6 @@
-﻿// <copyright file = "EditDialog.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -14,24 +14,10 @@ namespace BudgetExecution
     using Syncfusion.Windows.Forms.Tools;
 
     [ SuppressMessage( "ReSharper", "UnusedParameter.Global" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public partial class EditDialog : EditBase
     {
-        /// <summary>
-        /// Gets or sets the current.
-        /// </summary>
-        /// <value>
-        /// The current.
-        /// </value>
-        public DataRow Current { get; set; }
-
-        /// <summary>
-        /// Gets or sets the frames.
-        /// </summary>
-        /// <value>
-        /// The frames.
-        /// </value>
-        public IEnumerable<Frame> Frames { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="EditDialog"/> class.
         /// </summary>
@@ -111,6 +97,22 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets or sets the current.
+        /// </summary>
+        /// <value>
+        /// The current.
+        /// </value>
+        public DataRow Current { get; set; }
+
+        /// <summary>
+        /// Gets or sets the frames.
+        /// </summary>
+        /// <value>
+        /// The frames.
+        /// </value>
+        public IEnumerable<Frame> Frames { get; set; }
+
+        /// <summary>
         /// Called when [load].
         /// </summary>
         /// <param name="sender">The sender.</param>
@@ -153,6 +155,7 @@ namespace BudgetExecution
                             SqlTab.TabVisible = false;
                             break;
                         }
+
                         case ToolType.DeleteRecordButton:
                         {
                             DataTab.Text = "Delete Data";
@@ -162,6 +165,7 @@ namespace BudgetExecution
                             SqlTab.TabVisible = false;
                             break;
                         }
+
                         case ToolType.EditSqlButton:
                         {
                             SqlTab.Text = "SQL Editor";
@@ -171,6 +175,7 @@ namespace BudgetExecution
                             DataTab.TabVisible = false;
                             break;
                         }
+
                         default:
                         {
                             DataTab.Text = "Edit Data";
@@ -199,6 +204,7 @@ namespace BudgetExecution
                 try
                 {
                     var _cols = Columns.ToArray( );
+
                     foreach( var frame in Frames )
                     {
                         if( frame.Index >= _cols.Length )
@@ -256,43 +262,26 @@ namespace BudgetExecution
         public void SetTableLocation( )
         {
             if( FrameTable != null
-                && Columns?.Any( ) == true )
+               && Columns?.Any( ) == true )
             {
                 try
                 {
                     var _cols = Columns.ToArray( );
-                    if( _cols.Length >= 43 )
+
+                    switch( _cols.Length )
                     {
-                        FrameTable.Location = new Point( 12, 25 );
-                    }
-                    else if( _cols.Length < 43
-                        && _cols.Length >= 35 )
-                    {
-                        FrameTable.Location = new Point( 12, 25 );
-                    }
-                    else if( _cols.Length < 35
-                        && _cols.Length >= 28 )
-                    {
-                        FrameTable.Location = new Point( 12, 81 );
-                    }
-                    else if( _cols.Length < 28
-                        && _cols.Length >= 21 )
-                    {
-                        FrameTable.Location = new Point( 12, 81 );
-                    }
-                    else if( _cols.Length < 21
-                        && _cols.Length >= 14 )
-                    {
-                        FrameTable.Location = new Point( 12, 81 );
-                    }
-                    else if( _cols.Length < 14
-                        && _cols.Length > 7 )
-                    {
-                        FrameTable.Location = new Point( 12, 81 );
-                    }
-                    else if( _cols.Length <= 7 )
-                    {
-                        FrameTable.Location = new Point( 12, 81 );
+                        case >= 43:
+                        case < 43 and >= 35:
+                            FrameTable.Location = new Point( 12, 25 );
+                            break;
+
+                        case < 35 and >= 28:
+                        case < 28 and >= 21:
+                        case < 21 and >= 14:
+                        case < 14 and > 7:
+                        case <= 7:
+                            FrameTable.Location = new Point( 12, 81 );
+                            break;
                     }
                 }
                 catch( Exception ex )
@@ -308,18 +297,19 @@ namespace BudgetExecution
         public void BindRecordData( )
         {
             if( Current != null
-                && Frames?.Any( ) == true
-                && Columns?.Any( ) == true )
+               && Frames?.Any( ) == true
+               && Columns?.Any( ) == true )
             {
                 try
                 {
                     var _items = Current.ItemArray;
                     var _frames = Frames.OrderBy( f => f.Index ).ToArray( );
                     var _cols = Columns.ToArray( );
+
                     for( var i = 0; i < _cols.Length; i++ )
                     {
                         _frames[ i ].Label.Text = _cols[ i ].SplitPascal( );
-                        _frames[ i ].TextBox.Text = _items[ i ].ToString( );
+                        _frames[ i ].TextBox.Text = _items[ i ]?.ToString( );
                     }
                 }
                 catch( Exception ex )
@@ -340,6 +330,7 @@ namespace BudgetExecution
                 try
                 {
                     var _tabPages = new Dictionary<string, TabPageAdv>( );
+
                     foreach( TabPageAdv tabpage in TabControl.TabPages )
                     {
                         if( tabpage != null )
@@ -355,11 +346,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IDictionary<string, TabPageAdv> );
+                    return default;
                 }
             }
 
-            return default( IDictionary<string, TabPageAdv> );
+            return default;
         }
 
         /// <summary>
@@ -371,6 +362,7 @@ namespace BudgetExecution
             try
             {
                 var _frames = new List<Frame>( );
+
                 foreach( var _control in FrameTable.Controls )
                 {
                     if( _control.GetType( ) == typeof( Frame ) )
@@ -390,7 +382,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IEnumerable<Frame> );
+                return default;
             }
         }
     }

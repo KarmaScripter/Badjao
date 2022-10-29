@@ -1,6 +1,6 @@
-﻿// <copyright file = "SourceBinding.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -58,18 +58,15 @@ namespace BudgetExecution
         public void SetDataFilter( Field field, string filter )
         {
             if( Enum.IsDefined( typeof( Field ), field )
-                && !string.IsNullOrEmpty( filter ) )
+               && !string.IsNullOrEmpty( filter ) )
             {
                 try
                 {
-                    var _dataFilter = new Dictionary<string, object>
-                    {
-                        { $"{field}", filter }
-                    };
+                    var _dataFilter = new Dictionary<string, object> { { $"{field}", filter } };
 
                     DataFilter = _dataFilter?.Any( ) == true
                         ? _dataFilter
-                        : default( Dictionary<string, object> );
+                        : default;
                 }
                 catch( Exception ex )
                 {
@@ -96,7 +93,7 @@ namespace BudgetExecution
                     foreach( var kvp in dict )
                     {
                         if( !string.IsNullOrEmpty( kvp.Key )
-                            && kvp.Value != null )
+                           && kvp.Value != null )
                         {
                             DataFilter?.Add( kvp.Key, kvp.Value );
                         }
@@ -119,12 +116,12 @@ namespace BudgetExecution
             {
                 return DataSet?.Tables?.Count > 0
                     ? DataSet
-                    : default( DataSet );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DataSet );
+                return default;
             }
         }
     }

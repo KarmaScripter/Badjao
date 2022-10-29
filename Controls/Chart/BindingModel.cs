@@ -1,6 +1,6 @@
-﻿// <copyright file = "BindingModel.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -19,6 +19,125 @@ namespace BudgetExecution
     /// <seealso cref="IBindingModel" />
     public class BindingModel : BindingModelBase, IBindingModel
     {
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="BindingModel" />
+        /// class.
+        /// </summary>
+        public BindingModel( )
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="BindingModel" />
+        /// class.
+        /// </summary>
+        public BindingModel( BindingSource bindingSource )
+        {
+            Source = (Source)Enum.Parse( typeof( Source ),
+                ( (DataTable)bindingSource.DataSource ).TableName );
+
+            BindingSource = bindingSource;
+            DataSource = (DataTable)bindingSource.DataSource;
+            DataTable = (DataTable)bindingSource.DataSource;
+            DataSet = ( (DataTable)bindingSource.DataSource ).DataSet;
+            Data = ( (DataTable)bindingSource.DataSource ).AsEnumerable( );
+            AxisLabelModel = new ChartDataBindAxisLabelModel( DataSource );
+            BindingList = Data.ToBindingList( );
+            BindingSource.DataSource = BindingList;
+            TableName = Source.ToString( );
+            DataMember = TableName;
+            Record = bindingSource.GetCurrentDataRow( );
+            DataSource = bindingSource;
+            DataMetric = new DataMetric( bindingSource );
+            SeriesData = DataMetric.CalculateStatistics( );
+            Categories = SeriesData.Keys;
+            YNames = Categories.ToArray( );
+            Values = GetSeriesValues( );
+            ChartData.Changed += OnChanged;
+            Changed += OnCurrentChanged;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BindingModel"/> class.
+        /// </summary>
+        /// <param name="dataTable">The data table.</param>
+        public BindingModel( DataTable dataTable )
+        {
+            BindingSource = new BindingSource { DataSource = dataTable };
+            Data = dataTable.AsEnumerable( );
+            BindingList = Data.ToBindingList( );
+            Source = (Source)Enum.Parse( typeof( Source ), dataTable.TableName );
+            DataTable = dataTable;
+            TableName = dataTable.TableName;
+            DataSource = dataTable;
+            DataSet = dataTable.DataSet;
+            Record = BindingSource.GetCurrentDataRow( );
+            DataMetric = new DataMetric( DataTable );
+            SeriesData = DataMetric.CalculateStatistics( );
+            Categories = SeriesData.Keys;
+            Values = GetSeriesValues( );
+            ChartData.Changed += OnChanged;
+            Changed += OnCurrentChanged;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="BindingModel" />
+        /// class.
+        /// </summary>
+        /// <param name = "dataSet" >
+        /// </param>
+        /// <param name = "tableName" > 
+        /// </param>
+        public BindingModel( DataSet dataSet, string tableName )
+        {
+            TableName = tableName;
+
+            BindingSource = new BindingSource
+            {
+                DataSource = dataSet,
+                DataMember = tableName
+            };
+
+            DataTable = dataSet.Tables[ tableName ];
+            DataSource = BindingSource.DataSource;
+            DataMember = tableName;
+            DataSet = dataSet;
+            Data = dataSet.Tables[ tableName ].AsEnumerable( );
+            Record = BindingSource.GetCurrentDataRow( );
+            DataMetric = new DataMetric( DataTable );
+            SeriesData = DataMetric.CalculateStatistics( );
+            Categories = SeriesData.Keys;
+            Values = GetSeriesValues( );
+            ChartData.Changed += OnChanged;
+            Changed += OnCurrentChanged;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BindingModel"/> class.
+        /// </summary>
+        /// <param name="dataRows">The data rows.</param>
+        public BindingModel( IEnumerable<DataRow> dataRows )
+        {
+            BindingSource = new BindingSource { DataSource = dataRows.CopyToDataTable( ) };
+            Data = dataRows;
+            BindingList = dataRows.ToBindingList( );
+            Source = (Source)Enum.Parse( typeof( Source ), DataTable?.TableName );
+            DataTable = dataRows.CopyToDataTable( );
+            TableName = Source.ToString( );
+            DataSource = DataTable.ToBindingList( );
+            DataSet = DataTable.DataSet;
+            Record = BindingSource.GetCurrentDataRow( );
+            DataMetric = new DataMetric( dataRows );
+            SeriesData = DataMetric.CalculateStatistics( );
+            Categories = SeriesData.Keys;
+            Values = GetSeriesValues( );
+            ChartData.Changed += OnChanged;
+            Changed += OnCurrentChanged;
+        }
+
         /// <summary>
         /// Gets or sets the chart handler.
         /// </summary>
@@ -82,132 +201,6 @@ namespace BudgetExecution
         /// The binding source.
         /// </value>
         public BindingSource BindingSource { get; set; }
-        
-        /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="BindingModel" />
-        /// class.
-        /// </summary>
-        public BindingModel( )
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="BindingModel" />
-        /// class.
-        /// </summary>
-        public BindingModel( BindingSource bindingSource )
-        {
-            Source = (Source)Enum.Parse( typeof( Source ),
-                ( (DataTable)bindingSource.DataSource ).TableName );
-
-            BindingSource = bindingSource;
-            DataSource = (DataTable)bindingSource.DataSource;
-            DataTable = (DataTable)bindingSource.DataSource;
-            DataSet = ( (DataTable)bindingSource.DataSource ).DataSet;
-            Data = ( (DataTable)bindingSource.DataSource ).AsEnumerable( );
-            AxisLabelModel = new ChartDataBindAxisLabelModel( DataSource );
-            BindingList = Data.ToBindingList( );
-            BindingSource.DataSource = BindingList;
-            TableName = Source.ToString( );
-            DataMember = TableName;
-            Record = bindingSource.GetCurrentDataRow( );
-            DataSource = bindingSource;
-            DataMetric = new DataMetric( bindingSource );
-            SeriesData = DataMetric.CalculateStatistics( );
-            Categories = SeriesData.Keys;
-            YNames = Categories.ToArray( );
-            Values = GetSeriesValues( );
-            ChartData.Changed += OnChanged;
-            Changed += OnCurrentChanged;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BindingModel"/> class.
-        /// </summary>
-        /// <param name="dataTable">The data table.</param>
-        public BindingModel( DataTable dataTable )
-        {
-            BindingSource = new BindingSource
-            {
-                DataSource = dataTable
-            };
-
-            Data = dataTable.AsEnumerable( );
-            BindingList = Data.ToBindingList( );
-            Source = (Source)Enum.Parse( typeof( Source ), dataTable.TableName );
-            DataTable = dataTable;
-            TableName = dataTable.TableName;
-            DataSource = dataTable;
-            DataSet = dataTable.DataSet;
-            Record = BindingSource.GetCurrentDataRow( );
-            DataMetric = new DataMetric( DataTable );
-            SeriesData = DataMetric.CalculateStatistics( );
-            Categories = SeriesData.Keys;
-            Values = GetSeriesValues( );
-            ChartData.Changed += OnChanged;
-            Changed += OnCurrentChanged;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="BindingModel" />
-        /// class.
-        /// </summary>
-        /// <param name = "dataSet" >
-        /// </param>
-        /// <param name = "tableName" > 
-        /// </param>
-        public BindingModel( DataSet dataSet, string tableName )
-        {
-            TableName = tableName;
-            BindingSource = new BindingSource
-            {
-                DataSource = dataSet,
-                DataMember = tableName
-            };
-
-            DataTable = dataSet.Tables[ tableName ];
-            DataSource = BindingSource.DataSource;
-            DataMember = tableName;
-            DataSet = dataSet;
-            Data = dataSet.Tables[ tableName ].AsEnumerable( );
-            Record = BindingSource.GetCurrentDataRow( );
-            DataMetric = new DataMetric( DataTable );
-            SeriesData = DataMetric.CalculateStatistics( );
-            Categories = SeriesData.Keys;
-            Values = GetSeriesValues( );
-            ChartData.Changed += OnChanged;
-            Changed += OnCurrentChanged;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BindingModel"/> class.
-        /// </summary>
-        /// <param name="dataRows">The data rows.</param>
-        public BindingModel( IEnumerable<DataRow> dataRows )
-        {
-            BindingSource = new BindingSource
-            {
-                DataSource = dataRows.CopyToDataTable( )
-            };
-
-            Data = dataRows;
-            BindingList = dataRows.ToBindingList( );
-            Source = (Source)Enum.Parse( typeof( Source ), DataTable?.TableName );
-            DataTable = dataRows.CopyToDataTable( );
-            TableName = Source.ToString( );
-            DataSource = DataTable.ToBindingList( );
-            DataSet = DataTable.DataSet;
-            Record = BindingSource.GetCurrentDataRow( );
-            DataMetric = new DataMetric( dataRows );
-            SeriesData = DataMetric.CalculateStatistics( );
-            Categories = SeriesData.Keys;
-            Values = GetSeriesValues( );
-            ChartData.Changed += OnChanged;
-            Changed += OnCurrentChanged;
-        }
 
         /// <summary>
         /// Called when [current changed].
@@ -219,7 +212,7 @@ namespace BudgetExecution
         public void OnCurrentChanged( object sender, ListChangedEventArgs e )
         {
             if( sender != null
-                && e != null )
+               && e != null )
             {
                 try
                 {
@@ -242,14 +235,15 @@ namespace BudgetExecution
             try
             {
                 var _values = SeriesData?.Values?.Select( v => v );
+
                 return _values?.Any( ) == true
                     ? _values.ToArray( )
-                    : default( double[ ] );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IEnumerable<double> );
+                return default;
             }
         }
 
@@ -266,7 +260,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( BindingModel );
+                return default;
             }
         }
     }

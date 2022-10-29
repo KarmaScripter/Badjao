@@ -1,6 +1,6 @@
-﻿// // <copyright file = "AccessConversion.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -30,6 +30,21 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Performs application-defined tasks
+        /// associated with freeing, releasing,
+        /// or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose( )
+        {
+            if( _connection.State == ConnectionState.Open )
+            {
+                _connection = null;
+            }
+
+            GC.SuppressFinalize( this );
+        }
+
+        /// <summary>
         /// Creates the table.
         /// </summary>
         /// <param name="name">The name.</param>
@@ -55,21 +70,6 @@ namespace BudgetExecution
             _cmd.Parameters.AddWithValue( "@word", word );
             _cmd.Parameters.AddWithValue( "@image", image );
             return _cmd.ExecuteNonQuery( );
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks
-        /// associated with freeing, releasing,
-        /// or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose( )
-        {
-            if( _connection.State == ConnectionState.Open )
-            {
-                _connection = null;
-            }
-            
-            GC.SuppressFinalize( this );
         }
     }
 }

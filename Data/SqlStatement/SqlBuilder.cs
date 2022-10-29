@@ -1,6 +1,6 @@
-﻿// // <copyright file = "SqlBuilder.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -15,6 +15,29 @@ namespace BudgetExecution
     /// </summary>
     public class SqlBuilder
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SqlBuilder"/> class.
+        /// </summary>
+        public SqlBuilder( )
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SqlBuilder"/> class.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name = "ext" > </param>
+        /// <param name="commandType">Type of the command.</param>
+        public SqlBuilder( Source source, SQL commandType, EXT ext )
+        {
+            Source = source;
+            CommandType = commandType;
+            Extension = ext;
+            DirectoryPath = GetSqlDirectoryPath( );
+            Files = Directory.GetFiles( DirectoryPath );
+            Commands = GetCommands( );
+        }
+
         /// <summary>
         /// The source
         /// </summary>
@@ -57,26 +80,28 @@ namespace BudgetExecution
         public IDictionary<string, string> Commands { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SqlBuilder"/> class.
+        /// Gets the command text.
         /// </summary>
-        public SqlBuilder( )
+        /// <param name="commandName">Name of the command.</param>
+        /// <returns></returns>
+        public string GetCommandText( string commandName )
         {
-        }
+            if( !string.IsNullOrEmpty( commandName )
+               && Commands?.Any( ) == true
+               && Commands.Keys?.Contains( commandName ) == true )
+            {
+                try
+                {
+                    return Commands[ commandName ];
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                    return string.Empty;
+                }
+            }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SqlBuilder"/> class.
-        /// </summary>
-        /// <param name="source">The source.</param>
-        /// <param name = "ext" > </param>
-        /// <param name="commandType">Type of the command.</param>
-        public SqlBuilder( Source source, SQL commandType, EXT ext )
-        {
-            Source = source;
-            CommandType = commandType;
-            Extension = ext;
-            DirectoryPath = GetSqlDirectoryPath( );
-            Files = Directory.GetFiles( DirectoryPath );
-            Commands = GetCommands( );
+            return string.Empty;
         }
 
         /// <summary>
@@ -96,6 +121,7 @@ namespace BudgetExecution
                     var _folder = $@"\{CommandType}";
                     var _remove = _path?.Remove( _index, _end );
                     var _dirpath = _remove + _folder;
+
                     return Directory.Exists( _dirpath )
                         ? _dirpath
                         : string.Empty;
@@ -120,9 +146,11 @@ namespace BudgetExecution
                && Files?.Any( ) == true )
             {
                 var _repository = new Dictionary<string, string>( );
+
                 foreach( var file in Files )
                 {
                     string _output;
+
                     using( var _stream = File.OpenText( file ) )
                     {
                         _output = _stream.ReadToEnd( );
@@ -140,32 +168,7 @@ namespace BudgetExecution
                     : default( IDictionary<string, string> );
             }
 
-            return default( IDictionary<string, string> );
-        }
-
-        /// <summary>
-        /// Gets the command text.
-        /// </summary>
-        /// <param name="commandName">Name of the command.</param>
-        /// <returns></returns>
-        public string GetCommandText( string commandName )
-        {
-            if( !string.IsNullOrEmpty( commandName )
-               && Commands?.Any( ) == true
-               && Commands.Keys?.Contains( commandName ) == true )
-            {
-                try
-                {
-                    return Commands[ commandName ];
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                    return string.Empty;
-                }
-            }
-
-            return string.Empty;
+            return default;
         }
 
         /// <summary>

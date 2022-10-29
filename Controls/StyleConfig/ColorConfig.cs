@@ -1,6 +1,6 @@
-﻿// <copyright file = "ColorConfig.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -14,6 +14,14 @@ namespace BudgetExecution
     /// </summary>
     public class ColorConfig
     {
+        /// <summary>
+        /// Initializes a new instance
+        ///  of the <see cref = "ColorConfig"/> class.
+        /// </summary>
+        public ColorConfig( )
+        {
+        }
+
         /// <summary>
         /// The gray border
         /// </summary>
@@ -78,14 +86,6 @@ namespace BudgetExecution
         /// The blue back hover
         /// </summary>
         public static readonly Color HoverBlue = Color.FromArgb( 50, 93, 129 );
-
-        /// <summary>
-        /// Initializes a new instance
-        ///  of the <see cref = "ColorConfig"/> class.
-        /// </summary>
-        public ColorConfig( )
-        {
-        }
 
         /// <summary>
         /// Gets the color.
@@ -203,7 +203,7 @@ namespace BudgetExecution
         public static void OnColorChanged( object sender, EventArgs e )
         {
             if( sender != null
-                && e != null )
+               && e != null )
             {
                 try
                 {

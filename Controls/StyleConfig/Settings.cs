@@ -1,6 +1,6 @@
-﻿// <copyright file = "Settings.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -20,7 +20,7 @@ namespace BudgetExecution
         /// <value>
         /// The image size icon.
         /// </value>
-        public static Size ImageSizeIcon { get; set; } = new Size( 16, 16 );
+        public static Size ImageSizeIcon { get; set; } = new ( 16, 16 );
 
         /// <summary>
         /// Gets or sets the image size small.
@@ -28,7 +28,7 @@ namespace BudgetExecution
         /// <value>
         /// The image size small.
         /// </value>
-        public static Size ImageSizeSmall { get; set; } = new Size( 20, 20 );
+        public static Size ImageSizeSmall { get; set; } = new ( 20, 20 );
 
         /// <summary>
         /// Gets or sets the image size medium.
@@ -36,7 +36,7 @@ namespace BudgetExecution
         /// <value>
         /// The image size medium.
         /// </value>
-        public static Size ImageSizeMedium { get; set; } = new Size( 50, 50 );
+        public static Size ImageSizeMedium { get; set; } = new ( 50, 50 );
 
         /// <summary>
         /// Gets or sets the image size large.
@@ -44,7 +44,7 @@ namespace BudgetExecution
         /// <value>
         /// The image size large.
         /// </value>
-        public static Size ImageSizeLarge { get; set; } = new Size( 100, 100 );
+        public static Size ImageSizeLarge { get; set; } = new ( 100, 100 );
 
         /// <summary>
         /// Gets or sets the image size large.
@@ -52,7 +52,7 @@ namespace BudgetExecution
         /// <value>
         /// The image size large.
         /// </value>
-        public static Size ImageSizeHuge { get; set; } = new Size( 250, 250 );
+        public static Size ImageSizeHuge { get; set; } = new ( 250, 250 );
 
         /// <summary>
         /// Gets the tag.
@@ -67,16 +67,16 @@ namespace BudgetExecution
                 {
                     return !string.IsNullOrEmpty( tag.ToString( ) )
                         ? tag
-                        : default( object );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( object );
+                    return default;
                 }
             }
 
-            return default( object );
+            return default;
         }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace BudgetExecution
         public static Point ReLocate( Point point )
         {
             if( point.X > -1
-                && point.Y > -1 )
+               && point.Y > -1 )
             {
                 try
                 {
@@ -270,11 +270,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( Point );
+                    return default;
                 }
             }
 
-            return default( Point );
+            return default;
         }
 
         /// <summary>
@@ -297,7 +297,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( Font );
+                return default;
             }
         }
 
@@ -317,7 +317,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( Font );
+                return default;
             }
         }
 
@@ -352,7 +352,7 @@ namespace BudgetExecution
         public static MetroTip GetToolTip( Control control, string text )
         {
             if( control != null
-                && !string.IsNullOrEmpty( text ) )
+               && !string.IsNullOrEmpty( text ) )
             {
                 try
                 {
@@ -361,11 +361,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( MetroTip );
+                    return default;
                 }
             }
 
-            return default( MetroTip );
+            return default;
         }
 
         /// <summary>
@@ -388,7 +388,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( StringAlignment );
+                return default;
             }
         }
 
@@ -412,7 +412,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( HorizontalAlignment );
+                return default;
             }
         }
 

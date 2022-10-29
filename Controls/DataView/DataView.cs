@@ -1,6 +1,6 @@
-﻿// <copyright file = "DataView.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -15,10 +15,6 @@ namespace BudgetExecution
     /// <seealso cref="DataViewBase" />
     public class DataView : DataViewBase
     {
-        /// <summary>Gets or sets the data table.</summary>
-        /// <value>The data table.</value>
-        public DataTable DataTable { get; set; }
-
         /// <summary>
         /// Initializes a new instance
         /// of the <see cref="DataView"/> class.
@@ -90,10 +86,14 @@ namespace BudgetExecution
         /// <see cref="DataView"/> class.
         /// </summary>
         /// <param name="dataTable">The data table.</param>
-        public DataView( DataTable dataTable ) 
+        public DataView( DataTable dataTable )
             : this( )
         {
             DataTable = dataTable;
         }
+
+        /// <summary>Gets or sets the data table.</summary>
+        /// <value>The data table.</value>
+        public DataTable DataTable { get; set; }
     }
 }

@@ -1,6 +1,6 @@
-﻿// // <copyright file = "DateTimeExtensions.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -49,7 +49,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DateTime );
+                return default;
             }
         }
 
@@ -71,7 +71,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DateTime );
+                return default;
             }
         }
 
@@ -93,7 +93,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DateTime );
+                return default;
             }
         }
 
@@ -115,7 +115,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DateTime );
+                return default;
             }
         }
 
@@ -137,7 +137,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DateTime );
+                return default;
             }
         }
 
@@ -159,7 +159,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DateTime );
+                return default;
             }
         }
 
@@ -181,7 +181,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DateTime );
+                return default;
             }
         }
 
@@ -203,7 +203,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DateTime );
+                return default;
             }
         }
 
@@ -294,9 +294,11 @@ namespace BudgetExecution
                 var _timeSpan = endDate - startDate;
                 Console.WriteLine( _timeSpan.Days );
                 var _days = 0;
+
                 for( var i = 0; i < _timeSpan.Days; i++ )
                 {
                     var _dateTime = startDate.AddDays( i );
+
                     if( _dateTime.IsWeekDay( ) )
                     {
                         _days++;
@@ -331,9 +333,11 @@ namespace BudgetExecution
             {
                 var _timeSpan = endDate - startDate;
                 var _weekEnds = 0;
+
                 for( var i = 0; i < _timeSpan.Days; i++ )
                 {
                     var _dateTime = startDate.AddDays( i );
+
                     if( _dateTime.IsWeekEnd( ) )
                     {
                         _weekEnds++;
@@ -372,7 +376,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( TimeSpan );
+                return default;
             }
         }
 
@@ -394,6 +398,7 @@ namespace BudgetExecution
             var _friday = _date == DayOfWeek.Friday;
             var _monday = _date == DayOfWeek.Monday;
             var _weekend = _date == DayOfWeek.Saturday || _date == DayOfWeek.Sunday;
+
             switch( dateTime.Month )
             {
                 // New Years Day (Jan 1, or preceding Friday/following Monday if weekend)

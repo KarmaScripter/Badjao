@@ -1,6 +1,6 @@
-﻿// <copyright file = "Button.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -21,38 +21,6 @@ namespace BudgetExecution
     /// <seealso cref="IDisposable" />
     public class Button : ButtonBase, IButton
     {
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public override MetroTip ToolTip { get; set; }
-
-        /// <summary>
-        /// Gets or sets the hover text.
-        /// </summary>
-        /// <value>
-        /// The hover text.
-        /// </value>
-        public override string HoverText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the binding source.
-        /// </summary>
-        /// <value>
-        /// The binding source.
-        /// </value>
-        public override BindingSource BindingSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the filter.
-        /// </summary>
-        /// <value>
-        /// The filter.
-        /// </value>
-        public override IDictionary<string, object> DataFilter { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the
         /// <see cref="Button" />
@@ -142,7 +110,7 @@ namespace BudgetExecution
         /// <param name="parent">The parent.</param>
         /// <param name="text">The text.</param>
         public Button( Size size, Point location, Control parent,
-            string text ) 
+            string text )
             : this( size, location, parent )
         {
             Text = text;
@@ -187,6 +155,38 @@ namespace BudgetExecution
             Parent = parent;
             Tag = field.ToString( );
         }
+
+        /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public override MetroTip ToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hover text.
+        /// </summary>
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public override string HoverText { get; set; }
+
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public override BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public override IDictionary<string, object> DataFilter { get; set; }
 
         /// <summary>
         /// Sets the color of the fore. Required Attributes: ForeColor
@@ -258,6 +258,7 @@ namespace BudgetExecution
             try
             {
                 TextImageRelation = TextImageRelation.ImageBeforeText;
+
                 TextStyle = new TextStyle
                 {
                     TextLineAlignment = StringAlignment.Center,
@@ -303,10 +304,11 @@ namespace BudgetExecution
         public void OnMouseOver( object sender, EventArgs e )
         {
             var _button = sender as Button;
+
             try
             {
                 if( _button != null
-                    && !string.IsNullOrEmpty( HoverText ) )
+                   && !string.IsNullOrEmpty( HoverText ) )
                 {
                     if( !string.IsNullOrEmpty( HoverText ) )
                     {
@@ -330,6 +332,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Called when [click].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The
+        /// <see cref="EventArgs" />
+        /// instance containing the event data.</param>
+        public virtual void OnClick( object sender, EventArgs e )
+        {
+        }
+
+        /// <summary>
         /// Called when [mouse leave].
         /// </summary>
         /// <param name="sender">The sender.</param>
@@ -340,6 +353,7 @@ namespace BudgetExecution
         public override void OnMouseLeave( object sender, EventArgs e )
         {
             var _button = sender as Button;
+
             try
             {
                 if( _button != null )
@@ -350,17 +364,6 @@ namespace BudgetExecution
             {
                 Fail( ex );
             }
-        }
-
-        /// <summary>
-        /// Called when [click].
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="e">The
-        /// <see cref="EventArgs" />
-        /// instance containing the event data.</param>
-        public virtual void OnClick( object sender, EventArgs e )
-        {
         }
     }
 }

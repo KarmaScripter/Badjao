@@ -1,6 +1,6 @@
-﻿// <copyright file = "ToolFactory.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -15,6 +15,14 @@ namespace BudgetExecution
     public class ToolFactory
     {
         /// <summary>
+        /// Initializes a new instance
+        /// of the <see cref="ToolFactory"/> class.
+        /// </summary>
+        public ToolFactory( )
+        {
+        }
+
+        /// <summary>
         /// Gets or sets the image directory.
         /// </summary>
         /// <value>
@@ -22,14 +30,6 @@ namespace BudgetExecution
         /// </value>
         public static string ImageDirectory { get; } =
             ConfigurationManager.AppSettings[ "ToolStrip" ];
-
-        /// <summary>
-        /// Initializes a new instance
-        /// of the <see cref="ToolFactory"/> class.
-        /// </summary>
-        public ToolFactory( )
-        {
-        }
 
         public static ToolSeparator CreateSeparator( )
         {
@@ -41,7 +41,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolSeparator );
+                return default;
             }
         }
 
@@ -57,7 +57,8 @@ namespace BudgetExecution
 
                 var _firstButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "First Record",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "First Record",
                     ToolType = ToolType.FirstButton
                 };
 
@@ -66,7 +67,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -82,7 +83,8 @@ namespace BudgetExecution
 
                 var _previousButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Previous Record",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Previous Record",
                     ToolType = ToolType.PreviousButton
                 };
 
@@ -91,7 +93,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -107,7 +109,8 @@ namespace BudgetExecution
 
                 var _nextButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Next Record",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Next Record",
                     ToolType = ToolType.NextButton
                 };
 
@@ -116,7 +119,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -132,7 +135,8 @@ namespace BudgetExecution
 
                 var _lastButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Last Record",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Last Record",
                     ToolType = ToolType.LastButton
                 };
 
@@ -141,7 +145,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -157,7 +161,8 @@ namespace BudgetExecution
 
                 var _editButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Edit Record",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Edit Record",
                     ToolType = ToolType.EditButton
                 };
 
@@ -166,7 +171,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -182,7 +187,8 @@ namespace BudgetExecution
 
                 var _addButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Add Record",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Add Record",
                     ToolType = ToolType.AddButton
                 };
 
@@ -191,7 +197,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -207,7 +213,8 @@ namespace BudgetExecution
 
                 var _deleteButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Delete Record",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Delete Record",
                     ToolType = ToolType.DeleteButton
                 };
 
@@ -216,7 +223,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -232,7 +239,8 @@ namespace BudgetExecution
 
                 var _refreshButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Refresh Data",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Refresh Data",
                     ToolType = ToolType.RefreshButton
                 };
 
@@ -241,7 +249,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -257,7 +265,8 @@ namespace BudgetExecution
 
                 var _saveButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Save Changes",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Save Changes",
                     ToolType = ToolType.SaveButton
                 };
 
@@ -266,7 +275,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -282,7 +291,8 @@ namespace BudgetExecution
 
                 var _printButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Print Data",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Print Data",
                     ToolType = ToolType.PrintButton
                 };
 
@@ -291,7 +301,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -307,7 +317,8 @@ namespace BudgetExecution
 
                 var _excelButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Export to Excel",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Export to Excel",
                     ToolType = ToolType.ExcelButton
                 };
 
@@ -316,7 +327,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -332,7 +343,8 @@ namespace BudgetExecution
 
                 var _calculatorButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Launch Calculator",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Launch Calculator",
                     ToolType = ToolType.CalculatorButton
                 };
 
@@ -341,7 +353,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -357,7 +369,8 @@ namespace BudgetExecution
 
                 var _homeButton = new ToolStripButton
                 {
-                    Image = Image.FromFile( _filename ), HoverText = "Main Menu",
+                    Image = Image.FromFile( _filename ),
+                    HoverText = "Main Menu",
                     ToolType = ToolType.HomeButton
                 };
 
@@ -366,7 +379,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripButton );
+                return default;
             }
         }
 
@@ -385,7 +398,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripLabel );
+                return default;
             }
         }
 
@@ -404,7 +417,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripComboBoxEx );
+                return default;
             }
         }
 
@@ -423,7 +436,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripProgressBar );
+                return default;
             }
         }
 
@@ -442,7 +455,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ToolStripTextBox );
+                return default;
             }
         }
 

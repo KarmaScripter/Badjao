@@ -1,6 +1,6 @@
-﻿// <copyright file = "DataViewBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -59,13 +59,12 @@ namespace BudgetExecution
         /// Sets the binding source.
         /// </summary>
         /// <param name="bindingSource">The bindingSource.</param>
-        public virtual void SetDataSource<T1>( T1 bindingSource )
-            where T1 : IBindingList
+        public virtual void SetDataSource<T1>( T1 bindingSource ) where T1 : IBindingList
         {
             try
             {
                 if( bindingSource is BindingSource _binder
-                    && _binder?.DataSource != null )
+                   && _binder?.DataSource != null )
                 {
                     try
                     {
@@ -91,13 +90,12 @@ namespace BudgetExecution
         /// <param name="bindingList">The bindingSource.</param>
         /// <param name="dict">The dictionary.</param>
         public virtual void SetDataSource<T1, T2>( T1 bindingList, T2 dict )
-            where T1 : IBindingList
-            where T2 : IDictionary<string, object>
+            where T1 : IBindingList where T2 : IDictionary<string, object>
         {
             try
             {
                 if( bindingList != null
-                    && dict?.Any( ) == true )
+                   && dict?.Any( ) == true )
                 {
                     try
                     {
@@ -107,14 +105,14 @@ namespace BudgetExecution
                         foreach( var _kvp in dict )
                         {
                             if( !string.IsNullOrEmpty( _kvp.Key )
-                                && _kvp.Value != null )
+                               && _kvp.Value != null )
                             {
                                 _filter += $"{_kvp.Key} = {_kvp.Value} AND";
                             }
                         }
 
                         if( _filter?.Length > 0
-                            && _list?.DataSource != null )
+                           && _list?.DataSource != null )
                         {
                             BindingSource.DataSource = _list?.DataSource;
                             BindingSource.Filter = _filter?.TrimEnd( " AND".ToCharArray( ) );
@@ -159,8 +157,7 @@ namespace BudgetExecution
         /// <param name="data">The data.</param>
         /// <param name="dict">The dictionary.</param>
         public virtual void SetDataSource<T1>( IEnumerable<T1> data,
-            IDictionary<string, object> dict )
-            where T1 : IEnumerable<DataRow>
+            IDictionary<string, object> dict ) where T1 : IEnumerable<DataRow>
         {
             if( data?.Any( ) == true )
             {
@@ -171,7 +168,7 @@ namespace BudgetExecution
                     foreach( var kvp in dict )
                     {
                         if( !string.IsNullOrEmpty( kvp.Key )
-                            && kvp.Value != null )
+                           && kvp.Value != null )
                         {
                             filter += $"{kvp.Key} = {kvp.Value} AND";
                         }
@@ -197,11 +194,10 @@ namespace BudgetExecution
         /// <param name="field">The field.</param>
         /// <param name="filter">The dictionary.</param>
         public virtual void SetDataSource<T1, T2, T3>( IEnumerable<T1> data, T2 field, T3 filter )
-            where T1 : IEnumerable<DataRow>
-            where T2 : struct
+            where T1 : IEnumerable<DataRow> where T2 : struct
         {
             if( data?.Any( ) == true
-                && Enum.IsDefined( typeof( Field ), field ) )
+               && Enum.IsDefined( typeof( Field ), field ) )
             {
                 try
                 {
@@ -261,11 +257,10 @@ namespace BudgetExecution
         /// <param>The numeric.</param>
         /// <param name = "dict" > </param>
         public virtual void SetDataSource<T1, T2>( IEnumerable<T1> data, T2 dict )
-            where T1 : IEnumerable<DataRow>
-            where T2 : IDictionary<string, object>
+            where T1 : IEnumerable<DataRow> where T2 : IDictionary<string, object>
         {
             if( data?.Any( ) == true
-                && dict?.Any( ) == true )
+               && dict?.Any( ) == true )
             {
                 try
                 {
@@ -274,7 +269,7 @@ namespace BudgetExecution
                     foreach( var _kvp in dict )
                     {
                         if( !string.IsNullOrEmpty( _kvp.Key )
-                            && _kvp.Value != null )
+                           && _kvp.Value != null )
                         {
                             _filter += $"{_kvp.Key} = {_kvp.Value} AND";
                         }
@@ -297,12 +292,10 @@ namespace BudgetExecution
         /// <param name="field">The field.</param>
         /// <param name="filter">The filter.</param>
         public virtual void SetDataSource<T1, T2>( IEnumerable<T1> data, T2 field,
-            object filter = null )
-            where T1 : IEnumerable<DataRow>
-            where T2 : struct
+            object filter = null ) where T1 : IEnumerable<DataRow> where T2 : struct
         {
             if( data?.Any( ) == true
-                && Enum.IsDefined( typeof( Field ), field ) )
+               && Enum.IsDefined( typeof( Field ), field ) )
             {
                 try
                 {

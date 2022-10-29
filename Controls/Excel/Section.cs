@@ -1,6 +1,6 @@
-﻿// <copyright file = "Section.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -13,9 +13,30 @@ namespace BudgetExecution
     public class Section : Grid
     {
         /// <summary>
-        /// The grid
+        /// Initializes a new instance of the
+        /// <see cref = "Heading"/> class.
         /// </summary>
-        private IGrid Grid { get; set; }
+        public Section( )
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Section"/> class.
+        /// </summary>
+        /// <param name = "grid" > </param>
+        public Section( IGrid grid )
+
+        {
+            Grid = grid;
+            Worksheet = Grid.GetWorksheet( );
+            Range = Grid.GetRange( );
+            Address = Grid.GetAddress( );
+            From = ( Range.Start.Row, Range.Start.Column );
+            To = ( Range.End.Row, Range.End.Column );
+            Span = Range.Columns;
+            Depth = Range.Rows;
+            Area = ( Depth, Span );
+        }
 
         /// <summary>
         /// Gets or sets from.
@@ -50,30 +71,9 @@ namespace BudgetExecution
         public (int Depth, int Span) Area { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref = "Heading"/> class.
+        /// The grid
         /// </summary>
-        public Section( )
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Section"/> class.
-        /// </summary>
-        /// <param name = "grid" > </param>
-        public Section( IGrid grid )
-
-        {
-            Grid = grid;
-            Worksheet = Grid.GetWorksheet( );
-            Range = Grid.GetRange( );
-            Address = Grid.GetAddress( );
-            From = ( Range.Start.Row, Range.Start.Column );
-            To = ( Range.End.Row, Range.End.Column );
-            Span = Range.Columns;
-            Depth = Range.Rows;
-            Area = ( Depth, Span );
-        }
+        private IGrid Grid { get; set; }
 
         /// <summary>
         /// Gets the anchor.
@@ -83,7 +83,7 @@ namespace BudgetExecution
         {
             try
             {
-                return default( (int Row, int Column) );
+                return default;
             }
             catch( Exception ex )
             {
@@ -100,7 +100,7 @@ namespace BudgetExecution
         {
             try
             {
-                return default( int );
+                return default;
             }
             catch( Exception ex )
             {
@@ -117,7 +117,7 @@ namespace BudgetExecution
         {
             try
             {
-                return default( int );
+                return default;
             }
             catch( Exception ex )
             {
@@ -134,7 +134,7 @@ namespace BudgetExecution
         {
             try
             {
-                return default( (int Depth, int Span) );
+                return default;
             }
             catch( Exception ex )
             {

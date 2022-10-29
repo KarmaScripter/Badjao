@@ -1,6 +1,6 @@
-﻿// <copyright file = "RadioButton.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -14,30 +14,6 @@ namespace BudgetExecution
 
     public class RadioButton : MetroSetRadioButton
     {
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public MetroTip ToolTip { get; set; }
-
-        /// <summary>
-        /// Gets or sets the result.
-        /// </summary>
-        /// <value>
-        /// The result.
-        /// </value>
-        public virtual string Result { get; set; }
-
-        /// <summary>
-        /// Gets or sets the hover text.
-        /// </summary>
-        /// <value>
-        /// The hover text.
-        /// </value>
-        public virtual string HoverText { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the 
         /// <see cref="RadioButton"/> class.
@@ -72,13 +48,37 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public MetroTip ToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the result.
+        /// </summary>
+        /// <value>
+        /// The result.
+        /// </value>
+        public virtual string Result { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hover text.
+        /// </summary>
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public virtual string HoverText { get; set; }
+
+        /// <summary>
         /// Called when [check state changed].
         /// </summary>
         /// <param name="sender">The sender.</param>
         public void OnCheckStateChanged( object sender )
         {
             if( sender is RadioButton radioButton
-                && radioButton.Tag != null )
+               && radioButton.Tag != null )
             {
                 try
                 {
@@ -104,7 +104,7 @@ namespace BudgetExecution
                 var _control = sender as RadioButton;
 
                 if( _control is RadioButton _radioButton
-                    && !string.IsNullOrEmpty( HoverText ) )
+                   && !string.IsNullOrEmpty( HoverText ) )
                 {
                     var tip = new MetroTip( _radioButton, HoverText );
                     ToolTip = tip;

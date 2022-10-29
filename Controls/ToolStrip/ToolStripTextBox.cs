@@ -1,6 +1,6 @@
-﻿// <copyright file = "ToolStripTextBox.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -83,6 +83,7 @@ namespace BudgetExecution
         public void SetHoverText( ToolStripItem item )
         {
             var _text = item?.Tag?.ToString( );
+
             if( !string.IsNullOrEmpty( _text ) )
             {
                 try
@@ -106,8 +107,9 @@ namespace BudgetExecution
             try
             {
                 var _button = sender as ToolStripTextBox;
+
                 if( _button != null
-                    && !string.IsNullOrEmpty( HoverText ) )
+                   && !string.IsNullOrEmpty( HoverText ) )
                 {
                     _button.Tag = HoverText;
                     var _tip = new MetroTip( _button );

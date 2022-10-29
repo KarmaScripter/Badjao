@@ -1,6 +1,6 @@
-﻿// <copyright file = "TileBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -17,6 +17,14 @@ namespace BudgetExecution
     /// <seealso cref="HubTile" />
     public abstract class TileBase : HubTile
     {
+        /// <summary>
+        /// Initializes a new instance of the
+        ///  <see cref="TileBase"/> class.
+        /// </summary>
+        protected TileBase( )
+        {
+        }
+
         /// <summary>
         /// Gets or sets the binding source.
         /// </summary>
@@ -40,7 +48,7 @@ namespace BudgetExecution
         /// The hover text.
         /// </value>
         public virtual string HoverText { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the filter.
         /// </summary>
@@ -63,14 +71,6 @@ namespace BudgetExecution
         public virtual Color HoverColor { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the
-        ///  <see cref="TileBase"/> class.
-        /// </summary>
-        protected TileBase( )
-        {
-        }
-
-        /// <summary>
         /// Sets the location.
         /// </summary>
         /// <param name="x">The x.</param>
@@ -78,7 +78,7 @@ namespace BudgetExecution
         public virtual void SetLocation( int x = 1, int y = 1 )
         {
             if( x > 0
-                && y > 0 )
+               && y > 0 )
             {
                 try
                 {
@@ -99,7 +99,7 @@ namespace BudgetExecution
         public virtual void SetSize( int width = 140, int height = 140 )
         {
             if( width > -1
-                && height > -1 )
+               && height > -1 )
             {
                 try
                 {
@@ -120,7 +120,7 @@ namespace BudgetExecution
         public virtual void SetImageConfiguration( Image image, int speed = 1 )
         {
             if( speed > 0
-                && image != null )
+               && image != null )
             {
                 try
                 {
@@ -160,7 +160,7 @@ namespace BudgetExecution
         public virtual void SetTitleText( string message )
         {
             if( !string.IsNullOrEmpty( message )
-                && Title != null )
+               && Title != null )
             {
                 try
                 {
@@ -181,7 +181,7 @@ namespace BudgetExecution
         public virtual void SetTitleConfiguration( Font font, Color color )
         {
             if( font != null
-                && color != Color.Empty )
+               && color != Color.Empty )
             {
                 try
                 {
@@ -202,7 +202,7 @@ namespace BudgetExecution
         public virtual void SetBodyText( string message )
         {
             if( !string.IsNullOrEmpty( message )
-                && Body != null )
+               && Body != null )
             {
                 try
                 {
@@ -223,7 +223,7 @@ namespace BudgetExecution
         public virtual void SetBodyConfiguration( Font font, Color color )
         {
             if( font != null
-                && color != Color.Empty )
+               && color != Color.Empty )
             {
                 try
                 {
@@ -244,8 +244,8 @@ namespace BudgetExecution
         public virtual void SetBannerText( string message )
         {
             if( !string.IsNullOrEmpty( message )
-                && Banner != null
-                && ShowBanner )
+               && Banner != null
+               && ShowBanner )
             {
                 try
                 {
@@ -267,7 +267,7 @@ namespace BudgetExecution
         public virtual void SetBannerConfiguration( Font font, Color color, int height )
         {
             if( font != null
-                && color != Color.Empty )
+               && color != Color.Empty )
             {
                 try
                 {
@@ -290,7 +290,7 @@ namespace BudgetExecution
         public virtual void SetBannerIcon( Image image )
         {
             if( image != null
-                && Banner != null )
+               && Banner != null )
             {
                 try
                 {

@@ -1,6 +1,6 @@
-﻿// <copyright file = "SpreadsheetBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -17,6 +17,23 @@ namespace BudgetExecution
     /// <seealso cref="ISpreadsheet" />
     public abstract class SpreadsheetBase : Spreadsheet, ISpreadsheet
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SpreadsheetBase"/> class.
+        /// </summary>
+        protected SpreadsheetBase( )
+        {
+            CanApplyTheme = true;
+            CanOverrideStyle = true;
+            Margin = new Padding( 3 );
+            Padding = new Padding( 1 );
+            BackColor = Color.FromArgb( 15, 15, 15 );
+            ForeColor = Color.Black;
+            Font = new Font( "Roboto", 9, FontStyle.Regular );
+            DefaultColumnCount = 26;
+            DefaultRowCount = 66;
+            AllowZooming = true;
+        }
+
         /// <summary>
         /// Gets or sets the grid.
         /// </summary>
@@ -40,23 +57,6 @@ namespace BudgetExecution
         /// The binding source.
         /// </value>
         public BindingSource BindingSource { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SpreadsheetBase"/> class.
-        /// </summary>
-        protected SpreadsheetBase( )
-        {
-            CanApplyTheme = true;
-            CanOverrideStyle = true;
-            Margin = new Padding( 3 );
-            Padding = new Padding( 1 );
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            ForeColor = Color.Black;
-            Font = new Font( "Roboto", 9, FontStyle.Regular );
-            DefaultColumnCount = 26;
-            DefaultRowCount = 66;
-            AllowZooming = true;
-        }
 
         /// <summary>
         /// Opens the file.

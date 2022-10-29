@@ -1,6 +1,6 @@
-﻿// // <copyright file = "AccessConnect.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -34,6 +34,21 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Performs application-defined tasks
+        /// associated with freeing, releasing,
+        /// or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose( )
+        {
+            if( _connection.State == ConnectionState.Open )
+            {
+                _connection = null;
+            }
+
+            GC.SuppressFinalize( this );
+        }
+
+        /// <summary>
         /// Gets the table names.
         /// </summary>
         /// <returns></returns>
@@ -43,6 +58,7 @@ namespace BudgetExecution
             var _restrictions = new string[ 4 ];
             _restrictions[ 3 ] = "Table";
             var _schema = _connection.GetSchema( "Tables", _restrictions );
+
             for( var i = 0; i < _schema.Rows.Count; i++ )
             {
                 _names.Add( _schema.Rows[ i ][ 2 ].ToString( ) );
@@ -63,9 +79,10 @@ namespace BudgetExecution
                 var _table = new DataTable( );
                 var _adapter = new OleDbDataAdapter( "SELECT * FROM " + name, _connection );
                 _adapter.Fill( _table );
+
                 return _table.Rows.Count > 0
                     ? _table
-                    : default( DataTable );
+                    : default;
             }
             catch( Exception ex )
             {
@@ -86,6 +103,7 @@ namespace BudgetExecution
             using var _dataReader = _command.ExecuteReader( CommandBehavior.SchemaOnly );
             var _dataTable = _dataReader.GetSchemaTable( );
             var _dataColumn = _dataTable?.Columns[ "ColumnName" ];
+
             if( _dataTable?.Rows != null )
             {
                 foreach( DataRow row in _dataTable?.Rows )
@@ -99,22 +117,7 @@ namespace BudgetExecution
 
             return _names?.Any( ) == true
                 ? _names
-                : default( List<string> );
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks
-        /// associated with freeing, releasing,
-        /// or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose( )
-        {
-            if( _connection.State == ConnectionState.Open )
-            {
-                _connection = null;
-            }
-
-            GC.SuppressFinalize( this );
+                : default;
         }
     }
 }

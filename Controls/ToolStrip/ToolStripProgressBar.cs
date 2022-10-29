@@ -1,6 +1,6 @@
-﻿// <copyright file = "ToolStripProgressBar.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -81,7 +81,7 @@ namespace BudgetExecution
             {
                 Field = Enum.IsDefined( typeof( Field ), field )
                     ? field
-                    : default( Field );
+                    : default;
             }
             catch( Exception ex )
             {
@@ -134,11 +134,12 @@ namespace BudgetExecution
         public void OnMouseHover( object sender, EventArgs e )
         {
             if( sender is ToolStripProgressBar progress
-                && progress != null )
+               && progress != null )
             {
                 try
                 {
                     var _text = progress?.HoverText;
+
                     if( !string.IsNullOrEmpty( _text ) )
                     {
                         var _ = new MetroTip( this, _text );
@@ -146,7 +147,7 @@ namespace BudgetExecution
                     else
                     {
                         if( !string.IsNullOrEmpty( Tag?.ToString( ) )
-                            && !string.IsNullOrEmpty( Tag.ToString( ) ) )
+                           && !string.IsNullOrEmpty( Tag.ToString( ) ) )
                         {
                             var _ = new MetroTip( progress, Tag?.ToString( )?.SplitPascal( ) );
                         }

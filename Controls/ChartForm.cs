@@ -1,6 +1,6 @@
-﻿// <copyright file = "ChartForm.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -11,14 +11,6 @@ namespace BudgetExecution
 
     public partial class ChartForm : MetroForm
     {
-        /// <summary>
-        /// Gets or sets the chart.
-        /// </summary>
-        /// <value>
-        /// The chart.
-        /// </value>
-        public Chart Chart { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartForm"/> class.
         /// </summary>
@@ -39,11 +31,7 @@ namespace BudgetExecution
             ToolStrip.Office12Mode = true;
             ToolStrip.BindingSource = bindingSource;
             ToolStrip.BindingSource.DataSource = bindingSource.DataSource;
-            Chart = new Chart( bindingSource )
-            {
-                Dock = DockStyle.Fill
-            };
-
+            Chart = new Chart( bindingSource ) { Dock = DockStyle.Fill };
             Chart.SetPoints( );
             Controls.Add( Chart );
         }
@@ -55,19 +43,11 @@ namespace BudgetExecution
         public ChartForm( DataTable dataTable )
             : this( )
         {
-            BindingSource = new BindingSource
-            {
-                DataSource = dataTable
-            };
-
+            BindingSource = new BindingSource { DataSource = dataTable };
             ToolStrip.Office12Mode = true;
             ToolStrip.BindingSource = BindingSource;
             ToolStrip.BindingSource.DataSource = BindingSource.DataSource;
-            Chart = new Chart( dataTable )
-            {
-                Dock = DockStyle.Fill
-            };
-
+            Chart = new Chart( dataTable ) { Dock = DockStyle.Fill };
             Chart.SetPoints( );
             Controls.Add( Chart );
         }
@@ -76,20 +56,20 @@ namespace BudgetExecution
             : this( )
         {
             ToolStrip.Office12Mode = true;
-            BindingSource = new BindingSource
-            {
-                DataSource = dataRows.CopyToDataTable( )
-            };
-
+            BindingSource = new BindingSource { DataSource = dataRows.CopyToDataTable( ) };
             ToolStrip.BindingSource = BindingSource;
             ToolStrip.BindingSource.DataSource = BindingSource.DataSource;
-            Chart = new Chart( dataRows )
-            {
-                Dock = DockStyle.Fill
-            };
-
+            Chart = new Chart( dataRows ) { Dock = DockStyle.Fill };
             Chart.SetPoints( );
             Controls.Add( Chart );
         }
+
+        /// <summary>
+        /// Gets or sets the chart.
+        /// </summary>
+        /// <value>
+        /// The chart.
+        /// </value>
+        public Chart Chart { get; set; }
     }
 }

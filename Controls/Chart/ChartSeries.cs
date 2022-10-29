@@ -1,6 +1,6 @@
-﻿// <copyright file = "ChartSeries.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -18,46 +18,6 @@ namespace BudgetExecution
     /// </summary>
     public class ChartSeries : Syncfusion.Windows.Forms.Chart.ChartSeries
     {
-        /// <summary>
-        /// Gets or sets the data points.
-        /// </summary>
-        /// <value>
-        /// The data points.
-        /// </value>
-        public ChartPointIndexer PointIndexer { get; set; }
-
-        /// <summary>
-        /// Gets the series categories.
-        /// </summary>
-        /// <value>
-        /// The series categories.
-        /// </value>
-        public IEnumerable<string> Categories { get; set; }
-
-        /// <summary>
-        /// Gets the series values.
-        /// </summary>
-        /// <value>
-        /// The series values.
-        /// </value>
-        public IEnumerable<double> Values { get; set; }
-
-        /// <summary>
-        /// Gets or sets the binding source.
-        /// </summary>
-        /// <value>
-        /// The binding source.
-        /// </value>
-        public BindingModel BindingModel { get; set; }
-
-        /// <summary>
-        /// Gets the metric.
-        /// </summary>
-        /// <value>
-        /// The metric.
-        /// </value>
-        public STAT STAT { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartSeries"/> class.
         /// </summary>
@@ -132,6 +92,46 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets or sets the data points.
+        /// </summary>
+        /// <value>
+        /// The data points.
+        /// </value>
+        public ChartPointIndexer PointIndexer { get; set; }
+
+        /// <summary>
+        /// Gets the series categories.
+        /// </summary>
+        /// <value>
+        /// The series categories.
+        /// </value>
+        public IEnumerable<string> Categories { get; set; }
+
+        /// <summary>
+        /// Gets the series values.
+        /// </summary>
+        /// <value>
+        /// The series values.
+        /// </value>
+        public IEnumerable<double> Values { get; set; }
+
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public BindingModel BindingModel { get; set; }
+
+        /// <summary>
+        /// Gets the metric.
+        /// </summary>
+        /// <value>
+        /// The metric.
+        /// </value>
+        public STAT STAT { get; set; }
+
+        /// <summary>
         /// Sets the points.
         /// </summary>
         /// <param name="data">The data.</param>
@@ -160,24 +160,28 @@ namespace BudgetExecution
                                 Points.Add( _kvp.Key, _kvp.Value );
                                 var _keys = data.Keys.Select( k => k.ToString( ) ).ToArray( );
                                 var _vals = data.Values.Select( v => v ).ToArray( );
+
                                 if( stat != STAT.Percentage )
                                 {
                                     for( var i = 0; i < data.Keys.Count; i++ )
                                     {
-                                        Styles[ i ].TextFormat = $"{ _keys[ i ] } \n {_vals[ i ]:N1}";
+                                        Styles[ i ].TextFormat =
+                                            $"{ _keys[ i ] } \n {_vals[ i ]:N1}";
                                     }
                                 }
                                 else if( stat == STAT.Percentage )
                                 {
                                     for( var i = 0; i < data.Keys.Count; i++ )
                                     {
-                                        Styles[ i ].TextFormat = $"{ _keys[ i ] } \n {_vals[ i ]:P}";
+                                        Styles[ i ].TextFormat =
+                                            $"{ _keys[ i ] } \n {_vals[ i ]:P}";
                                     }
                                 }
                             }
 
                             break;
                         }
+
                         default:
                         {
                             foreach( var _kvp in data )

@@ -1,6 +1,6 @@
-﻿// // <copyright file = "Key.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -16,32 +16,6 @@ namespace BudgetExecution
     /// <seealso cref="IKey" />
     public class Key : IKey
     {
-        /// <summary>
-        /// Gets the default.
-        /// </summary>
-        /// <value>
-        /// The default.
-        /// </value>
-        public static IKey Default { get; } = new Key( PrimaryKey.NS, "-1" );
-
-        /// <summary>
-        /// Gets or sets the primary key.
-        /// </summary>
-        /// <value>
-        /// The primary key.
-        /// </value>
-        public PrimaryKey PrimaryKey { get; set; }
-
-        /// <summary>
-        /// Gets the index.
-        /// </summary>
-        public int Index { get; set; }
-
-        /// <summary>
-        /// Gets the name.
-        /// </summary>
-        public string Name { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Key"/> class.
         /// </summary>
@@ -101,6 +75,32 @@ namespace BudgetExecution
             PrimaryKey = (PrimaryKey)Enum.Parse( typeof( PrimaryKey ), dataRow[ 0 ].ToString( ) );
             Index = int.Parse( dataRow[ 0 ].ToString( ) );
         }
+
+        /// <summary>
+        /// Gets the default.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
+        public static IKey Default { get; } = new Key( PrimaryKey.NS, "-1" );
+
+        /// <summary>
+        /// Gets or sets the primary key.
+        /// </summary>
+        /// <value>
+        /// The primary key.
+        /// </value>
+        public PrimaryKey PrimaryKey { get; set; }
+
+        /// <summary>
+        /// Gets the index.
+        /// </summary>
+        public int Index { get; set; }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        public string Name { get; set; }
 
         /// <summary>
         /// Converts to string.
@@ -187,6 +187,7 @@ namespace BudgetExecution
                 try
                 {
                     var _key = (PrimaryKey)Enum.Parse( typeof( PrimaryKey ), keyName );
+
                     PrimaryKey = Enum.IsDefined( typeof( PrimaryKey ), _key )
                         ? PrimaryKey
                         : PrimaryKey.NS;
@@ -210,6 +211,7 @@ namespace BudgetExecution
                 try
                 {
                     var _columns = Enum.GetNames( typeof( PrimaryKey ) );
+
                     if( !string.IsNullOrEmpty( dataRow[ 0 ]?.ToString( ) )
                        && _columns?.Contains( dataRow[ 0 ]?.ToString( ) ) == true )
                     {
@@ -217,6 +219,7 @@ namespace BudgetExecution
                             dataRow[ 0 ].ToString( ) );
 
                         var _names = dataRow.Table?.GetColumnNames( );
+
                         PrimaryKey = _names?.Contains( _field.ToString( ) ) == true
                             ? _field
                             : PrimaryKey.NS;
@@ -261,6 +264,7 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
+
                     PrimaryKey = _names?.Contains( keyName.ToString( ) ) == true
                         ? keyName
                         : PrimaryKey.NS;
@@ -303,6 +307,7 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow?.Table?.GetColumnNames( );
+
                     Index = _names?.Contains( key.ToString( ) ) == true
                         ? int.Parse( dataRow[ $"{key}" ].ToString( ) )
                         : (int)PrimaryKey.NS;

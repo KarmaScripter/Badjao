@@ -1,6 +1,6 @@
-﻿// // <copyright file = "AccessQuery.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -12,11 +12,6 @@ namespace BudgetExecution
     /// <seealso cref="BudgetExecution.Query" />
     public class AccessQuery : Query
     {
-        /// <summary>
-        /// Gets the Provider
-        /// </summary>
-        public override Provider Provider { get; set; } = Provider.Access;
-
         /// <summary>
         /// Initializes a new instance of the <see cref = "AccessQuery"/> class.
         /// </summary>
@@ -144,6 +139,11 @@ namespace BudgetExecution
             : base( fullPath, commandType, dict )
         {
         }
+
+        /// <summary>
+        /// Gets the Provider
+        /// </summary>
+        public override Provider Provider { get; set; } = Provider.Access;
 
         /// <summary>
         /// The Dispose

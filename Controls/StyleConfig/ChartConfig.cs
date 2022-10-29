@@ -1,6 +1,6 @@
-﻿// <copyright file = "ChartConfig.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -57,7 +57,7 @@ namespace BudgetExecution
                 }
             }
 
-            return default( ChartFontInfo );
+            return default;
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace BudgetExecution
                 }
             }
 
-            return default( ChartFontInfo );
+            return default;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( AnchorStyles );
+                return default;
             }
         }
 
@@ -147,7 +147,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( ChartLineInfo );
+                return default;
             }
         }
 

@@ -1,6 +1,6 @@
-﻿// // <copyright file = "DataModel.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -20,11 +20,6 @@ namespace BudgetExecution
     /// <seealso cref="ModelBase" />
     public class DataModel : ModelBase
     {
-        /// <summary>
-        /// The program elements
-        /// </summary>
-        public IDictionary<string, IEnumerable<string>> DataElements { get; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="DataModel"/> class.
         /// </summary>
@@ -195,6 +190,11 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// The program elements
+        /// </summary>
+        public IDictionary<string, IEnumerable<string>> DataElements { get; }
+
+        /// <summary>
         /// Gets the values.
         /// </summary>
         /// <param name="dataRows">The dataRows.</param>
@@ -208,18 +208,19 @@ namespace BudgetExecution
                 try
                 {
                     var _query = dataRows?.Select( p => p.Field<string>( column ) )?.Distinct( );
+
                     return _query?.Any( ) == true
                         ? _query
-                        : default( IEnumerable<string> );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<string> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<string> );
+            return default;
         }
 
         /// <summary>
@@ -233,7 +234,7 @@ namespace BudgetExecution
             string value )
         {
             if( dataRows?.Any( ) == true
-               && !string.IsNullOrEmpty( name ) 
+               && !string.IsNullOrEmpty( name )
                && Enum.IsDefined( typeof( Field ), name )
                && !string.IsNullOrEmpty( value ) )
             {
@@ -245,16 +246,16 @@ namespace BudgetExecution
 
                     return _query?.Any( ) == true
                         ? _query
-                        : default( IEnumerable<string> );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<string> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<string> );
+            return default;
         }
 
         /// <summary>
@@ -270,18 +271,19 @@ namespace BudgetExecution
                 {
                     using var _reader = new DataTableReader( dataTable );
                     var _schema = _reader?.GetSchemaTable( );
+
                     return _schema?.Rows?.Count > 0
                         ? _schema
-                        : default( DataTable );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DataTable );
+                    return default;
                 }
             }
 
-            return default( DataTable );
+            return default;
         }
 
         /// <summary>
@@ -304,6 +306,7 @@ namespace BudgetExecution
                     using var _dataSet = new DataSet( );
                     using var _schema = _connection?.GetSchema( );
                     var _sheetName = string.Empty;
+
                     if( _schema != null )
                     {
                         var _dataTable = _schema?.AsEnumerable( )
@@ -326,11 +329,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DataTable );
+                    return default;
                 }
             }
 
-            return default( DataTable );
+            return default;
         }
 
         /// <summary>
@@ -351,6 +354,7 @@ namespace BudgetExecution
                     _package.Load( _stream );
                     var _worksheet = _package?.Workbook?.Worksheets?.First( );
                     var _table = new DataTable( _worksheet?.Name );
+
                     if( _worksheet?.Cells != null )
                     {
                         foreach( var _firstRowCell in _worksheet?.Cells[ 1, 1, 1,
@@ -371,6 +375,7 @@ namespace BudgetExecution
                                 _worksheet.Dimension.End.Column ];
 
                             var _dataRow = _table.Rows?.Add( );
+
                             foreach( var cell in _excelRange )
                             {
                                 _dataRow[ cell.Start.Column - 1 ] = cell?.Text;
@@ -379,17 +384,17 @@ namespace BudgetExecution
 
                         return _table?.Rows?.Count > 0
                             ? _table
-                            : default( DataTable );
+                            : default;
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DataTable );
+                    return default;
                 }
             }
 
-            return default( DataTable );
+            return default;
         }
 
         /// <summary>
@@ -406,6 +411,7 @@ namespace BudgetExecution
                     var _dict = new Dictionary<string, IEnumerable<string>>( );
                     var _columns = dataTable?.Columns;
                     var _rows = dataTable?.AsEnumerable( );
+
                     for( var i = 0; i < _columns?.Count; i++ )
                     {
                         if( !string.IsNullOrEmpty( _columns[ i ]?.ColumnName )
@@ -418,16 +424,16 @@ namespace BudgetExecution
 
                     return _dict?.Any( ) == true
                         ? _dict
-                        : default( Dictionary<string, IEnumerable<string>> );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IDictionary<string, IEnumerable<string>> );
+                    return default;
                 }
             }
 
-            return default( IDictionary<string, IEnumerable<string>> );
+            return default;
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿// // <copyright file = "Folder.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -35,65 +35,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Gets the current directory.
-        /// </summary>
-        /// <returns></returns>
-        public static string GetCurrentDirectory( )
-        {
-            try
-            {
-                return !string.IsNullOrEmpty( Environment.CurrentDirectory )
-                    ? Environment.CurrentDirectory
-                    : string.Empty;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( string );
-            }
-        }
-
-        /// <summary>
-        /// Creates the specified filepath.
-        /// </summary>
-        /// <param name="fullName">The filepath.</param>
-        /// <returns></returns>
-        public static DirectoryInfo Create( string fullName )
-        {
-            try
-            {
-                return !string.IsNullOrEmpty( fullName ) && !Directory.Exists( fullName )
-                    ? Directory.CreateDirectory( fullName )
-                    : default( DirectoryInfo );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( DirectoryInfo );
-            }
-        }
-
-        /// <summary>
-        /// Deletes the specified folderName.
-        /// </summary>
-        /// <param name="folderName">The folderName.</param>
-        public static void Delete( string folderName )
-        {
-            try
-            {
-                if( !string.IsNullOrEmpty( folderName )
-                   && Directory.Exists( folderName ) )
-                {
-                    Directory.Delete( folderName, true );
-                }
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
-        /// <summary>
         /// Creates the sub folder.
         /// </summary>
         /// <param name="folderName">The folderName.</param>
@@ -102,7 +43,7 @@ namespace BudgetExecution
         {
             if( string.IsNullOrEmpty( folderName ) )
             {
-                return default( DirectoryInfo );
+                return default;
             }
 
             if( !string.IsNullOrEmpty( folderName )
@@ -115,12 +56,12 @@ namespace BudgetExecution
             {
                 return !string.IsNullOrEmpty( folderName ) && !Directory.Exists( folderName )
                     ? DirectoryInfo?.CreateSubdirectory( folderName )
-                    : default( DirectoryInfo );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( DirectoryInfo );
+                return default;
             }
         }
 
@@ -135,6 +76,7 @@ namespace BudgetExecution
                 try
                 {
                     var _files = DirectoryInfo.GetFiles( );
+
                     return _files?.Any( ) == true
                         ? _files
                         : default( IEnumerable<FileInfo> );
@@ -142,11 +84,11 @@ namespace BudgetExecution
                 catch( IOException ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<FileInfo> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<FileInfo> );
+            return default;
         }
 
         /// <summary>
@@ -157,16 +99,16 @@ namespace BudgetExecution
         {
             try
             {
-                if( !string.IsNullOrEmpty( fullName )
-                   && !Directory.Exists( fullName ) )
+                switch( string.IsNullOrEmpty( fullName ) )
                 {
-                    DirectoryInfo?.MoveTo( fullName );
-                }
-                else if( !string.IsNullOrEmpty( fullName )
-                        && Directory.Exists( fullName ) )
-                {
-                    Directory.CreateDirectory( fullName );
-                    DirectoryInfo?.MoveTo( fullName );
+                    case false when !Directory.Exists( fullName ):
+                        DirectoryInfo?.MoveTo( fullName );
+                        break;
+
+                    case false when Directory.Exists( fullName ):
+                        Directory.CreateDirectory( fullName );
+                        DirectoryInfo?.MoveTo( fullName );
+                        break;
                 }
             }
             catch( Exception ex )
@@ -216,6 +158,84 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Sets the access control.
+        /// </summary>
+        /// <param name="security">The security.</param>
+        public void SetAccessControl( DirectorySecurity security )
+        {
+            if( security != null )
+            {
+                try
+                {
+                    DirectoryInfo?.SetAccessControl( security );
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets the current directory.
+        /// </summary>
+        /// <returns></returns>
+        public static string GetCurrentDirectory( )
+        {
+            try
+            {
+                return !string.IsNullOrEmpty( Environment.CurrentDirectory )
+                    ? Environment.CurrentDirectory
+                    : string.Empty;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default;
+            }
+        }
+
+        /// <summary>
+        /// Creates the specified filepath.
+        /// </summary>
+        /// <param name="fullName">The filepath.</param>
+        /// <returns></returns>
+        public static DirectoryInfo Create( string fullName )
+        {
+            try
+            {
+                return !string.IsNullOrEmpty( fullName ) && !Directory.Exists( fullName )
+                    ? Directory.CreateDirectory( fullName )
+                    : default;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default;
+            }
+        }
+
+        /// <summary>
+        /// Deletes the specified folderName.
+        /// </summary>
+        /// <param name="folderName">The folderName.</param>
+        public static void Delete( string folderName )
+        {
+            try
+            {
+                if( !string.IsNullOrEmpty( folderName )
+                   && Directory.Exists( folderName ) )
+                {
+                    Directory.Delete( folderName, true );
+                }
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+            }
+        }
+
+        /// <summary>
         /// Creats the zip file.
         /// </summary>
         /// <param name="sourcePath">The sourcePath.</param>
@@ -232,25 +252,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-            }
-        }
-
-        /// <summary>
-        /// Sets the access control.
-        /// </summary>
-        /// <param name="security">The security.</param>
-        public void SetAccessControl( DirectorySecurity security )
-        {
-            if( security != null )
-            {
-                try
-                {
-                    DirectoryInfo?.SetAccessControl( security );
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
             }
         }
     }

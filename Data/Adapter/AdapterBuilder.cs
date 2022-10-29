@@ -1,6 +1,6 @@
-﻿// // <copyright file = "AdapterBuilder.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -19,6 +19,50 @@ namespace BudgetExecution
     /// <seealso cref="DbDataAdapter" />
     public class AdapterBuilder : DbDataAdapter
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdapterBuilder"/> class.
+        /// </summary>
+        public AdapterBuilder( )
+        {
+            MissingMappingAction = MissingMappingAction.Ignore;
+            MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            ContinueUpdateOnError = true;
+            AcceptChangesDuringFill = true;
+            AcceptChangesDuringUpdate = true;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdapterBuilder"/> class.
+        /// </summary>
+        /// <param name="commandBuilder">The commandbuilder.</param>
+        public AdapterBuilder( ICommandBuilder commandBuilder )
+            : this( )
+        {
+            Source = commandBuilder.Source;
+            Provider = commandBuilder.Provider;
+            CommandBuilder = commandBuilder;
+            SqlStatement = commandBuilder.SqlStatement;
+            ConnectionBuilder = commandBuilder.ConnectionBuilder;
+            Connection = ConnectionBuilder.Connection;
+            CommandText = SqlStatement.CommandText;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdapterBuilder"/> class.
+        /// </summary>
+        /// <param name="sqlStatement">The sqlstatement.</param>
+        public AdapterBuilder( ISqlStatement sqlStatement )
+            : this( )
+        {
+            Source = sqlStatement.Source;
+            Provider = sqlStatement.Provider;
+            SqlStatement = sqlStatement;
+            ConnectionBuilder = new ConnectionBuilder( sqlStatement.Source, sqlStatement.Provider );
+            CommandBuilder = new CommandBuilder( sqlStatement );
+            Connection = ConnectionBuilder.Connection;
+            CommandText = sqlStatement.CommandText;
+        }
+
         /// <summary>
         /// Gets or sets the source.
         /// </summary>
@@ -75,50 +119,6 @@ namespace BudgetExecution
         public string CommandText { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AdapterBuilder"/> class.
-        /// </summary>
-        public AdapterBuilder( )
-        {
-            MissingMappingAction = MissingMappingAction.Ignore;
-            MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            ContinueUpdateOnError = true;
-            AcceptChangesDuringFill = true;
-            AcceptChangesDuringUpdate = true;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AdapterBuilder"/> class.
-        /// </summary>
-        /// <param name="commandBuilder">The commandbuilder.</param>
-        public AdapterBuilder( ICommandBuilder commandBuilder )
-            : this( )
-        {
-            Source = commandBuilder.Source;
-            Provider = commandBuilder.Provider;
-            CommandBuilder = commandBuilder;
-            SqlStatement = commandBuilder.SqlStatement;
-            ConnectionBuilder = commandBuilder.ConnectionBuilder;
-            Connection = ConnectionBuilder.Connection;
-            CommandText = SqlStatement.CommandText;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AdapterBuilder"/> class.
-        /// </summary>
-        /// <param name="sqlStatement">The sqlstatement.</param>
-        public AdapterBuilder( ISqlStatement sqlStatement )
-            : this( )
-        {
-            Source = sqlStatement.Source;
-            Provider = sqlStatement.Provider;
-            SqlStatement = sqlStatement;
-            ConnectionBuilder = new ConnectionBuilder( sqlStatement.Source, sqlStatement.Provider );
-            CommandBuilder = new CommandBuilder( sqlStatement );
-            Connection = ConnectionBuilder.Connection;
-            CommandText = sqlStatement.CommandText;
-        }
-
-        /// <summary>
         /// Gets the adapter.
         /// </summary>
         /// <returns></returns>
@@ -170,11 +170,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( DbDataAdapter );
+                    return default;
                 }
             }
 
-            return default( DbDataAdapter );
+            return default;
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
-﻿// <copyright file = "ToolStripBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -13,6 +13,13 @@ namespace BudgetExecution
 
     public abstract class ToolStripBase : ToolStripEx
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolStripBase"/> class.
+        /// </summary>
+        protected ToolStripBase( )
+        {
+        }
+
         /// <summary>
         /// Gets or sets the binding source.
         /// </summary>
@@ -238,13 +245,6 @@ namespace BudgetExecution
         public virtual ToolStripButton HomeButton { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ToolStripBase"/> class.
-        /// </summary>
-        protected ToolStripBase( )
-        {
-        }
-
-        /// <summary>
         /// Creates the text box.
         /// </summary>
         /// <returns>
@@ -292,6 +292,7 @@ namespace BudgetExecution
             try
             {
                 DropDown?.ComboBox.Items?.Clear( );
+
                 if( items?.Count( ) > 0 )
                 {
                     foreach( var item in items )

@@ -1,6 +1,6 @@
-﻿// // <copyright file = "Amount.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -14,31 +14,6 @@ namespace BudgetExecution
     /// <seealso cref="IAmount" />
     public class Amount : DataUnit, IAmount
     {
-        /// <summary>
-        /// The default
-        /// </summary>
-        public static readonly IAmount Default = new Amount( Numeric.NS, 0.0 );
-
-        /// <summary>
-        /// The funding
-        /// </summary>
-        public double Funding { get; set; }
-
-        /// <summary>
-        /// The initial
-        /// </summary>
-        public double Initial { get; set; }
-
-        /// <summary>
-        /// The delta
-        /// </summary>
-        public double Delta { get; set; }
-
-        /// <summary>
-        /// The numeric
-        /// </summary>
-        public Numeric Numeric { get; set; } = Numeric.Amount;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Amount"/> class.
         /// </summary>
@@ -86,6 +61,31 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// The default
+        /// </summary>
+        public static readonly IAmount Default = new Amount( Numeric.NS, 0.0 );
+
+        /// <summary>
+        /// The initial
+        /// </summary>
+        public double Initial { get; set; }
+
+        /// <summary>
+        /// The delta
+        /// </summary>
+        public double Delta { get; set; }
+
+        /// <summary>
+        /// The funding
+        /// </summary>
+        public double Funding { get; set; }
+
+        /// <summary>
+        /// The numeric
+        /// </summary>
+        public Numeric Numeric { get; set; } = Numeric.Amount;
+
+        /// <summary>
         /// Gets the numeric.
         /// </summary>
         /// <returns></returns>
@@ -100,7 +100,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( Numeric );
+                return default;
             }
         }
 
@@ -152,6 +152,7 @@ namespace BudgetExecution
             {
                 Delta = increment;
                 Funding += Delta;
+
                 if( Initial != Funding )
                 {
                     //unfinished
@@ -172,6 +173,7 @@ namespace BudgetExecution
             try
             {
                 Delta = decrement;
+
                 if( Funding > decrement )
                 {
                     Funding -= decrement;

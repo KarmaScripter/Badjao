@@ -1,6 +1,6 @@
-﻿// <copyright file = "GroupBox.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -20,55 +20,6 @@ namespace BudgetExecution
     /// <seealso cref="IGroupBox" />
     public class GroupBox : GroupBoxBase, IGroupBox
     {
-        /// <summary>
-        /// Gets or sets the binding source.
-        /// </summary>
-        /// <value>
-        /// The binding source.
-        /// </value>
-        public override BindingSource BindingSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public override MetroTip ToolTip { get; set; }
-
-        /// <summary>
-        /// Gets or sets the hover text.
-        /// </summary>
-        /// <value>
-        /// The hover text.
-        /// </value>
-        public override string HoverText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the filter.
-        /// </summary>
-        /// <value>
-        /// The filter.
-        /// </value>
-        public override IDictionary<string, object> DataFilter { get; set; }
-
-        /// <summary>
-        /// Gets or sets the header text.
-        /// </summary>
-        /// <value>
-        /// The header text.
-        /// </value>
-        public string HeaderText { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="GroupBox"/> is separator.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if separator; otherwise, <c>false</c>.
-        /// </value>
-        [ DefaultValue( true ) ]
-        public bool Separate { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the
         /// <see cref="GroupBox" />
@@ -137,6 +88,7 @@ namespace BudgetExecution
             : this( )
         {
             Location = location;
+
             if( parent != null )
             {
                 Parent = parent;
@@ -155,6 +107,7 @@ namespace BudgetExecution
             : this( )
         {
             Size = size;
+
             if( parent != null )
             {
                 Parent = parent;
@@ -190,6 +143,55 @@ namespace BudgetExecution
         {
             Text = title;
         }
+
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public override BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public override MetroTip ToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hover text.
+        /// </summary>
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public override string HoverText { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public override IDictionary<string, object> DataFilter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the header text.
+        /// </summary>
+        /// <value>
+        /// The header text.
+        /// </value>
+        public string HeaderText { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="GroupBox"/> is separator.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if separator; otherwise, <c>false</c>.
+        /// </value>
+        [ DefaultValue( true ) ]
+        public bool Separate { get; set; }
 
         /// <summary>
         /// Sets the color of the border.
@@ -250,6 +252,7 @@ namespace BudgetExecution
                         Border.Type = ShapeTypes.Rounded;
                         break;
                     }
+
                     case false:
                     {
                         Border.Color = Color.FromArgb( 15, 15, 15 );
@@ -377,6 +380,7 @@ namespace BudgetExecution
                 try
                 {
                     var _children = new List<Control>( );
+
                     foreach( Control _item in Controls )
                     {
                         if( _item != null )
@@ -387,16 +391,16 @@ namespace BudgetExecution
 
                     return _children.Any( )
                         ? _children
-                        : default( List<Control> );
+                        : default;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IEnumerable<Control> );
+                    return default;
                 }
             }
 
-            return default( IEnumerable<Control> );
+            return default;
         }
 
         /// <summary>

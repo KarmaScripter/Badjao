@@ -1,6 +1,6 @@
-﻿// <copyright file = "Heading.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -14,30 +14,6 @@ namespace BudgetExecution
     /// </summary>
     public class Heading : Grid
     {
-        /// <summary>
-        /// Gets or sets the span.
-        /// </summary>
-        /// <value>
-        /// The span.
-        /// </value>
-        public int Span { get; set; }
-
-        /// <summary>
-        /// Gets or sets from.
-        /// </summary>
-        /// <value>
-        /// From.
-        /// </value>
-        public (int Row, int Column) Anchor { get; set; }
-
-        /// <summary>
-        /// Gets or sets the caption.
-        /// </summary>
-        /// <value>
-        /// The caption.
-        /// </value>
-        public IDictionary<int, string> Caption { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref = "Heading"/> class.
         /// </summary>
@@ -70,6 +46,30 @@ namespace BudgetExecution
             Caption = caption;
             Span = Range.Columns;
         }
+
+        /// <summary>
+        /// Gets or sets the span.
+        /// </summary>
+        /// <value>
+        /// The span.
+        /// </value>
+        public int Span { get; set; }
+
+        /// <summary>
+        /// Gets or sets from.
+        /// </summary>
+        /// <value>
+        /// From.
+        /// </value>
+        public (int Row, int Column) Anchor { get; set; }
+
+        /// <summary>
+        /// Gets or sets the caption.
+        /// </summary>
+        /// <value>
+        /// The caption.
+        /// </value>
+        public IDictionary<int, string> Caption { get; set; }
 
         /// <summary>
         /// Gets the span.
@@ -119,12 +119,12 @@ namespace BudgetExecution
             {
                 return Caption?.Any( ) == true
                     ? Caption
-                    : default( IDictionary<int, string> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<int, string> );
+                return default;
             }
         }
     }

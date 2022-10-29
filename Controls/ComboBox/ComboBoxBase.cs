@@ -1,6 +1,6 @@
-﻿// <copyright file = "ComboBoxBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -11,6 +11,13 @@ namespace BudgetExecution
 
     public abstract class ComboBoxBase : VisualComboBox
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComboBoxBase"/> class.
+        /// </summary>
+        protected ComboBoxBase( )
+        {
+        }
+
         /// <summary>
         /// Gets or sets the binding source.
         /// </summary>
@@ -34,7 +41,7 @@ namespace BudgetExecution
         /// The hover text.
         /// </value>
         public virtual string HoverText { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the filter.
         /// </summary>
@@ -42,13 +49,6 @@ namespace BudgetExecution
         /// The filter.
         /// </value>
         public virtual IDictionary<string, object> DataFilter { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ComboBoxBase"/> class.
-        /// </summary>
-        protected ComboBoxBase( )
-        {
-        }
 
         /// <summary>
         /// Get Error Dialog.

@@ -1,6 +1,6 @@
-﻿// // <copyright file = "ConnectionBase.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -18,6 +18,78 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class ConnectionBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectionBase"/> class.
+        /// </summary>
+        public ConnectionBase( )
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectionBase"/> class.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name="provider">The provider.</param>
+        public ConnectionBase( Source source, Provider provider = Provider.Access )
+        {
+            Source = source;
+            Provider = provider;
+            TableName = source.ToString( );
+            ConnectionString = GetConnectionString( provider );
+            FilePath = GetDbClientPath( provider );
+            PathExtension = Path.GetExtension( FilePath )?.Replace( ".", "" );
+            FileName = Path.GetFileNameWithoutExtension( FilePath );
+
+            if( !string.IsNullOrEmpty( PathExtension ) )
+            {
+                Extension = (EXT)Enum.Parse( typeof( EXT ), PathExtension.ToUpper( ) );
+                DbPath = DbClientPath[ Extension.ToString( ) ];
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectionBase"/> class.
+        /// </summary>
+        /// <param name="fullPath">The full path.</param>
+        public ConnectionBase( string fullPath )
+        {
+            Source = Source.External;
+            FilePath = fullPath;
+            FileName = Path.GetFileNameWithoutExtension( fullPath );
+            TableName = FileName;
+            PathExtension = Path.GetExtension( fullPath )?.Replace( ".", "" );
+
+            if( PathExtension != null )
+            {
+                Extension = (EXT)Enum.Parse( typeof( EXT ), PathExtension.ToUpper( ) );
+                Provider = (Provider)Enum.Parse( typeof( Provider ), PathExtension.ToUpper( ) );
+                DbPath = DbClientPath[ Extension.ToString( ) ];
+                ConnectionString = GetConnectionString( Provider );
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectionBase"/> class.
+        /// </summary>
+        /// <param name="fullPath">The full path.</param>
+        /// <param name="provider">The provider.</param>
+        public ConnectionBase( string fullPath, Provider provider )
+        {
+            Source = Source.External;
+            Provider = provider;
+            FilePath = fullPath;
+            FileName = Path.GetFileNameWithoutExtension( fullPath );
+            TableName = FileName;
+            PathExtension = Path.GetExtension( fullPath )?.Replace( ".", "" );
+
+            if( PathExtension != null )
+            {
+                Extension = (EXT)Enum.Parse( typeof( EXT ), PathExtension.ToUpper( ) );
+                DbPath = DbClientPath[ Extension.ToString( ) ];
+                ConnectionString = GetConnectionString( Provider );
+            }
+        }
+
         /// <summary>
         /// The connector
         /// </summary>
@@ -89,75 +161,6 @@ namespace BudgetExecution
         public virtual string ConnectionString { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectionBase"/> class.
-        /// </summary>
-        public ConnectionBase( )
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectionBase"/> class.
-        /// </summary>
-        /// <param name="source">The source.</param>
-        /// <param name="provider">The provider.</param>
-        public ConnectionBase( Source source, Provider provider = Provider.Access )
-        {
-            Source = source;
-            Provider = provider;
-            TableName = source.ToString( );
-            ConnectionString = GetConnectionString( provider );
-            FilePath = GetDbClientPath( provider );
-            PathExtension = Path.GetExtension( FilePath )?.Replace( ".", "" );
-            FileName = Path.GetFileNameWithoutExtension( FilePath );
-            if( !string.IsNullOrEmpty( PathExtension ) )
-            {
-                Extension = (EXT)Enum.Parse( typeof( EXT ), PathExtension.ToUpper( ) );
-                DbPath = DbClientPath[ Extension.ToString( ) ];
-            }
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectionBase"/> class.
-        /// </summary>
-        /// <param name="fullPath">The full path.</param>
-        public ConnectionBase( string fullPath )
-        {
-            Source = Source.External;
-            FilePath = fullPath;
-            FileName = Path.GetFileNameWithoutExtension( fullPath );
-            TableName = FileName;
-            PathExtension = Path.GetExtension( fullPath )?.Replace( ".", "" );
-            if( PathExtension != null )
-            {
-                Extension = (EXT)Enum.Parse( typeof( EXT ), PathExtension.ToUpper( ) );
-                Provider = (Provider)Enum.Parse( typeof( Provider ), PathExtension.ToUpper( ) );
-                DbPath = DbClientPath[ Extension.ToString( ) ];
-                ConnectionString = GetConnectionString( Provider );
-            }
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectionBase"/> class.
-        /// </summary>
-        /// <param name="fullPath">The full path.</param>
-        /// <param name="provider">The provider.</param>
-        public ConnectionBase( string fullPath, Provider provider )
-        {
-            Source = Source.External;
-            Provider = provider;
-            FilePath = fullPath;
-            FileName = Path.GetFileNameWithoutExtension( fullPath );
-            TableName = FileName;
-            PathExtension = Path.GetExtension( fullPath )?.Replace( ".", "" );
-            if( PathExtension != null )
-            {
-                Extension = (EXT)Enum.Parse( typeof( EXT ), PathExtension.ToUpper( ) );
-                DbPath = DbClientPath[ Extension.ToString( ) ];
-                ConnectionString = GetConnectionString( Provider );
-            }
-        }
-
-        /// <summary>
         /// Gets the file path.
         /// </summary>
         /// <param name="provider">The provider.</param>
@@ -199,7 +202,7 @@ namespace BudgetExecution
             {
                 return !string.IsNullOrEmpty( filePath ) && File.Exists( filePath )
                     ? Path.GetFullPath( filePath )
-                    : default( string );
+                    : default;
             }
             catch( Exception ex )
             {
@@ -220,13 +223,16 @@ namespace BudgetExecution
                 try
                 {
                     var _file = Path.GetExtension( filePath )?.Replace( ".", "" );
+
                     if( !string.IsNullOrEmpty( _file ) )
                     {
                         var _ext = (EXT)Enum.Parse( typeof( EXT ), _file.ToUpper( ) );
                         var _names = Enum.GetNames( typeof( EXT ) );
+
                         if( _names?.Contains( _ext.ToString( ) ) == true )
                         {
                             var _clientPath = DbClientPath[ $"{_ext}" ];
+
                             return !string.IsNullOrEmpty( _clientPath )
                                 ? _clientPath
                                 : string.Empty;
@@ -254,6 +260,7 @@ namespace BudgetExecution
                 try
                 {
                     var _connection = ConnectionPath[ provider.ToString( ) ]?.ConnectionString;
+
                     return !string.IsNullOrEmpty( _connection )
                         ? _connection?.Replace( "{FilePath}", FilePath )
                         : string.Empty;
@@ -281,13 +288,16 @@ namespace BudgetExecution
                 try
                 {
                     var _file = Path.GetExtension( filePath );
+
                     if( _file != null )
                     {
                         var _ext = (EXT)Enum.Parse( typeof( EXT ), _file.ToUpper( ) );
                         var _names = Enum.GetNames( typeof( EXT ) );
+
                         if( _names?.Contains( _ext.ToString( ) ) == true )
                         {
                             var _connectionString = ConnectionPath[ $"{_ext}" ].ConnectionString;
+
                             return !string.IsNullOrEmpty( _connectionString )
                                 ? _connectionString
                                 : string.Empty;

@@ -1,6 +1,6 @@
-﻿// <copyright file = "ToolStripDropDown.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -15,14 +15,6 @@ namespace BudgetExecution
 
     public class ToolStripDropDown : ToolStripDropDownBase, IToolbarComboBox
     {
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public MetroTip ToolTip { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolStripComboBoxEx"/> class.
         /// </summary>
@@ -82,6 +74,88 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public MetroTip ToolTip { get; set; }
+
+        /// <summary> Sets the data source. </summary>
+        /// <param name = "bindingSource" > The bindingsource. </param>
+        public void SetDataSource( BindingSource bindingSource )
+        {
+            if( bindingSource?.DataSource != null )
+            {
+                try
+                {
+                    BindingSource.DataSource = bindingSource.DataSource;
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                }
+            }
+        }
+
+        /// <summary> Called when [mouse over]. </summary>
+        /// <param name = "sender" > The sender. </param>
+        /// <param name = "e" >
+        /// The
+        /// <see cref = "EventArgs"/>
+        /// instance containing the event data.
+        /// </param>
+        public void OnMouseHover( object sender, EventArgs e )
+        {
+            try
+            {
+                var _comboBox = sender as ToolStripDropDown;
+
+                if( !string.IsNullOrEmpty( _comboBox?.HoverText ) )
+                {
+                    var _text = _comboBox?.HoverText;
+                    var _ = new MetroTip( _comboBox, _text );
+                }
+                else
+                {
+                    if( !string.IsNullOrEmpty( _comboBox?.Tag?.ToString( ) ) )
+                    {
+                        var _text = _comboBox?.Tag?.ToString( )?.SplitPascal( );
+                        var _ = new MetroTip( _comboBox, _text );
+                    }
+                }
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+            }
+        }
+
+        /// <summary> Called when [item selected]. </summary>
+        /// <param name = "sender" > The sender. </param>
+        /// <param name = "e" >
+        /// The
+        /// <see cref = "EventArgs"/>
+        /// instance containing the event data.
+        /// </param>
+        public void OnItemSelected( object sender, EventArgs e )
+        {
+            if( sender != null
+               && e != null )
+            {
+                try
+                {
+                    var _message = new Message( "NOT YET IMPLEMENTED" );
+                    _message?.ShowDialog( );
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                }
+            }
+        }
+
+        /// <summary>
         /// Gets the selected item.
         /// </summary>
         /// <returns></returns>
@@ -122,55 +196,6 @@ namespace BudgetExecution
             }
         }
 
-        /// <summary> Sets the data source. </summary>
-        /// <param name = "bindingSource" > The bindingsource. </param>
-        public void SetDataSource( BindingSource bindingSource )
-        {
-            if( bindingSource?.DataSource != null )
-            {
-                try
-                {
-                    BindingSource.DataSource = bindingSource.DataSource;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
-        /// <summary> Called when [mouse over]. </summary>
-        /// <param name = "sender" > The sender. </param>
-        /// <param name = "e" >
-        /// The
-        /// <see cref = "EventArgs"/>
-        /// instance containing the event data.
-        /// </param>
-        public void OnMouseHover( object sender, EventArgs e )
-        {
-            try
-            {
-                var _comboBox = sender as ToolStripDropDown;
-                if( !string.IsNullOrEmpty( _comboBox?.HoverText ) )
-                {
-                    var _text = _comboBox?.HoverText;
-                    var _ = new MetroTip( _comboBox, _text );
-                }
-                else
-                {
-                    if( !string.IsNullOrEmpty( _comboBox?.Tag?.ToString( ) ) )
-                    {
-                        var _text = _comboBox?.Tag?.ToString( )?.SplitPascal( );
-                        var _ = new MetroTip( _comboBox, _text );
-                    }
-                }
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
         /// <summary>
         /// Called when [mouse leave].
         /// </summary>
@@ -189,30 +214,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-            }
-        }
-
-        /// <summary> Called when [item selected]. </summary>
-        /// <param name = "sender" > The sender. </param>
-        /// <param name = "e" >
-        /// The
-        /// <see cref = "EventArgs"/>
-        /// instance containing the event data.
-        /// </param>
-        public void OnItemSelected( object sender, EventArgs e )
-        {
-            if( sender != null
-                && e != null )
-            {
-                try
-                {
-                    var _message = new Message( "NOT YET IMPLEMENTED" );
-                    _message?.ShowDialog( );
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
             }
         }
     }

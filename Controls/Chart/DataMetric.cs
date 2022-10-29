@@ -1,6 +1,6 @@
-﻿// <copyright file = "DataMetric.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -19,30 +19,6 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class DataMetric : MetricBase
     {
-        /// <summary>
-        /// Gets the variance.
-        /// </summary>
-        /// <value>
-        /// The variance.
-        /// </value>
-        public double Variance { get; set; }
-
-        /// <summary>
-        /// Gets the deviation.
-        /// </summary>
-        /// <value>
-        /// The deviation.
-        /// </value>
-        public double Deviation { get; set; }
-
-        /// <summary>
-        /// Gets or sets the values.
-        /// </summary>
-        /// <value>
-        /// The values.
-        /// </value>
-        public IDictionary<string, double> Values { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref = "DataMetric"/> class.
         /// </summary>
@@ -121,6 +97,30 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Gets the variance.
+        /// </summary>
+        /// <value>
+        /// The variance.
+        /// </value>
+        public double Variance { get; set; }
+
+        /// <summary>
+        /// Gets the deviation.
+        /// </summary>
+        /// <value>
+        /// The deviation.
+        /// </value>
+        public double Deviation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the values.
+        /// </summary>
+        /// <value>
+        /// The values.
+        /// </value>
+        public IDictionary<string, double> Values { get; set; }
+
+        /// <summary>
         /// Calculates the deviation.
         /// </summary>
         /// <param name = "dataRow" >
@@ -139,8 +139,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _query = dataRow
-                        ?.Where( p => p.Field<decimal>( $"{ numeric }" ) != 0 )
+                    var _query = dataRow?.Where( p => p.Field<decimal>( $"{ numeric }" ) != 0 )
                         ?.StandardDeviation( p => p.Field<decimal>( $"{ numeric }" ) );
 
                     return _query > 0
@@ -154,7 +153,7 @@ namespace BudgetExecution
                 }
             }
 
-            return default( double );
+            return default;
         }
 
         /// <summary>
@@ -175,6 +174,7 @@ namespace BudgetExecution
                && GetCount( dataRow, numeric ) > 30 )
             {
                 var _table = dataRow.CopyToDataTable( );
+
                 try
                 {
                     var _query = _table?.AsEnumerable( )
@@ -192,7 +192,7 @@ namespace BudgetExecution
                 }
             }
 
-            return default( double );
+            return default;
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<string, double> );
+                return default;
             }
         }
     }

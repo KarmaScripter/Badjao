@@ -1,6 +1,6 @@
-﻿// // <copyright file = "IDataModel.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -12,13 +12,6 @@ namespace BudgetExecution
     /// </summary>
     public interface IDataModel
     {
-        /// <summary>
-        /// Filters the data.
-        /// </summary>
-        /// <param name="where">The dictionary.</param>
-        /// <returns></returns>
-        IEnumerable<DataRow> FilterData( IDictionary<string, object> where );
-
         /// <summary>
         /// The program elements
         /// </summary>
@@ -95,6 +88,13 @@ namespace BudgetExecution
         /// The name of the data set.
         /// </value>
         string DataSetName { get; set; }
+
+        /// <summary>
+        /// Filters the data.
+        /// </summary>
+        /// <param name="where">The dictionary.</param>
+        /// <returns></returns>
+        IEnumerable<DataRow> FilterData( IDictionary<string, object> where );
 
         /// <summary>
         /// Gets the column ordinals.

@@ -1,6 +1,6 @@
-﻿// <copyright file = "ButtonBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -40,7 +40,7 @@ namespace BudgetExecution
         /// The tool tip.
         /// </value>
         public virtual MetroTip ToolTip { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the filter.
         /// </summary>
@@ -186,7 +186,7 @@ namespace BudgetExecution
                 Fail( ex );
             }
         }
-        
+
         /// <summary>
         /// Sets the tag.
         /// </summary>
@@ -248,8 +248,8 @@ namespace BudgetExecution
             try
             {
                 if( sender is VisualButton _button
-                    && _button != null
-                    && ToolTip?.Active == true )
+                   && _button != null
+                   && ToolTip?.Active == true )
                 {
                     ToolTip.RemoveAll( );
                 }

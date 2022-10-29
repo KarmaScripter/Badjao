@@ -1,6 +1,6 @@
-﻿// // <copyright file = "ConversionForm.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -42,11 +42,6 @@ namespace BudgetExecution
         private int Selected;
 
         /// <summary>
-        /// 
-        /// </summary>
-        private delegate void UpdateStatusDelegate( );
-
-        /// <summary>
         /// The updater
         /// </summary>
         private UpdateStatusDelegate Updater;
@@ -68,6 +63,11 @@ namespace BudgetExecution
             InitializeComponent( );
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        private delegate void UpdateStatusDelegate( );
+
         // ***************************************************************************************************************************
         // ****************************************************     METHODS   ********************************************************
         // ***************************************************************************************************************************
@@ -79,6 +79,7 @@ namespace BudgetExecution
         {
             AccessConnect = new AccessConnect( AccessPath.Text );
             var tables = AccessConnect.GetTableNames( );
+
             foreach( var s in tables )
             {
                 CheckTableNames.Items.Add( s );
@@ -92,6 +93,7 @@ namespace BudgetExecution
         private List<string> GetSelectedTables( )
         {
             var result = new List<string>( );
+
             for( var i = 0; i < CheckTableNames.Items.Count; i++ )
             {
                 if( CheckTableNames.GetItemChecked( i ) )
@@ -111,6 +113,7 @@ namespace BudgetExecution
         {
             Count++;
             lblstatus.Text = Count + "/" + Selected;
+
             if( Count >= Selected )
             {
                 MessageBox.Show( "Operation completed" );
@@ -123,17 +126,20 @@ namespace BudgetExecution
         private void Convert( )
         {
             var tables = GetSelectedTables( );
+
             if( tables.Count == 0 )
             {
                 return;
             }
 
             var db = new AccessConversion( );
+
             for( var i = 0; i < tables.Count; i++ )
             {
                 var table = tables[ i ];
                 db.CreateTable( table );
                 var dt = AccessConnect.GetTable( table );
+
                 for( var j = 0; j < dt.Rows.Count; j++ )
                 {
                     var word = dt.Rows[ j ][ "word" ].ToString( );

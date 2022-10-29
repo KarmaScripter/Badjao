@@ -1,6 +1,6 @@
-﻿// <copyright file = "SizeConfig.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+//  Copyright (c) Terry Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
@@ -13,12 +13,19 @@ namespace BudgetExecution
     public class SizeConfig
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref = "SizeConfig"/> class.
+        /// </summary>
+        public SizeConfig( )
+        {
+        }
+
+        /// <summary>
         /// Gets the size of the normal form.
         /// </summary>
         /// <value>
         /// The size of the normal form.
         /// </value>
-        public static readonly Size FormNormal = new Size( 1200, 750 );
+        public static readonly Size FormNormal = new ( 1200, 750 );
 
         /// <summary>
         /// Gets the maximum size of the form.
@@ -26,7 +33,7 @@ namespace BudgetExecution
         /// <value>
         /// The maximum size of the form.
         /// </value>
-        public static readonly Size FormMaximum = new Size( 1500, 820 );
+        public static readonly Size FormMaximum = new ( 1500, 820 );
 
         /// <summary>
         /// Gets the minimum size of the form.
@@ -34,47 +41,47 @@ namespace BudgetExecution
         /// <value>
         /// The minimum size of the form.
         /// </value>
-        public static readonly Size FormMinimum = new Size( 600, 400 );
+        public static readonly Size FormMinimum = new ( 600, 400 );
 
         /// <summary>
         /// The dialog size normal
         /// </summary>
-        public static readonly Size DialogNormal = new Size( 680, 530 );
+        public static readonly Size DialogNormal = new ( 680, 530 );
 
         /// <summary>
         /// The form size maximum
         /// </summary>
-        public static readonly Size DialogMinimum = new Size( 300, 300 );
+        public static readonly Size DialogMinimum = new ( 300, 300 );
 
         /// <summary>
         /// The form size minimum
         /// </summary>
-        public static readonly Size DialogMaximum = new Size( 800, 800 );
+        public static readonly Size DialogMaximum = new ( 800, 800 );
 
         /// <summary>
         /// The column configuration size
         /// </summary>
-        public static readonly Size ContextMenuNormal = new Size( 250, 350 );
+        public static readonly Size ContextMenuNormal = new ( 250, 350 );
 
         /// <summary>
         /// The small
         /// </summary>
-        public static readonly Size ImageSmall = new Size( 12, 12 );
+        public static readonly Size ImageSmall = new ( 12, 12 );
 
         /// <summary>
         /// The medium
         /// </summary>
-        public static readonly Size ImageMedium = new Size( 16, 16 );
+        public static readonly Size ImageMedium = new ( 16, 16 );
 
         /// <summary>
         /// The large
         /// </summary>
-        public static readonly Size ImageLarge = new Size( 20, 20 );
+        public static readonly Size ImageLarge = new ( 20, 20 );
 
         /// <summary>
         /// The largest
         /// </summary>
-        public static readonly Size ImageHuge = new Size( 250, 250 );
+        public static readonly Size ImageHuge = new ( 250, 250 );
 
         /// <summary>
         /// Gets or sets the size of the client.
@@ -109,13 +116,6 @@ namespace BudgetExecution
         public int Width { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref = "SizeConfig"/> class.
-        /// </summary>
-        public SizeConfig( )
-        {
-        }
-
-        /// <summary>
         /// Sets the color.
         /// </summary>
         /// <param name = "width" >
@@ -137,7 +137,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( Size );
+                return default;
             }
         }
 
@@ -152,7 +152,7 @@ namespace BudgetExecution
         public static Size GetSize( Size size )
         {
             if( size.Width > -1
-                && size.Height > -1 )
+               && size.Height > -1 )
             {
                 try
                 {
@@ -164,7 +164,7 @@ namespace BudgetExecution
                 }
             }
 
-            return default( Size );
+            return default;
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace BudgetExecution
         public static void OnSizeChanged( object sender, EventArgs e )
         {
             if( sender != null
-                && e != null )
+               && e != null )
             {
                 try
                 {
