@@ -149,17 +149,17 @@ namespace BudgetExecution
         /// Filters the data.
         /// </summary>
         /// <param name = "dataRows" > </param>
-        /// <param name="dict">The dictionary.</param>
+        /// <param name="where">The dictionary.</param>
         /// <returns></returns>
         public IEnumerable<DataRow> FilterData( IEnumerable<DataRow> dataRows,
-            IDictionary<string, object> dict )
+            IDictionary<string, object> where )
         {
-            if( dict?.Any( ) == true
+            if( where?.Any( ) == true
                && dataRows?.Any( ) == true )
             {
                 try
                 {
-                    var _criteria = dict.ToCriteria( );
+                    var _criteria = where.ToCriteria( );
                     var _dataTable = dataRows.CopyToDataTable( );
                     var _data = _dataTable.Select( _criteria );
 

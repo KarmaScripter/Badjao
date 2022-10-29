@@ -9,7 +9,6 @@ namespace BudgetExecution
     using System.Data;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using BudgetExecution;
 
     /// <summary>
     /// 
@@ -59,8 +58,8 @@ namespace BudgetExecution
             {
                 try
                 {
-                    DataSet = new DataSet( $"{Provider}" );
-                    DataTable = new DataTable( $"{Source}" );
+                    DataSet = new DataSet( $"{ Provider }" );
+                    DataTable = new DataTable( $"{ Source }" );
                     DataSet.Tables.Add( DataTable );
                     using var _adapter = Query.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable.TableName );
@@ -91,8 +90,8 @@ namespace BudgetExecution
             {
                 try
                 {
-                    DataSet = new DataSet( $"{Provider}" );
-                    DataTable = new DataTable( $"{Source}" );
+                    DataSet = new DataSet( $"{ Provider }" );
+                    DataTable = new DataTable( $"{ Source }" );
                     DataSet.Tables.Add( DataTable );
                     using var _adapter = Query.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable?.TableName );
@@ -128,7 +127,7 @@ namespace BudgetExecution
                         if( column != null
                            && string.IsNullOrEmpty( column.Caption ) )
                         {
-                            var _caption = column.ColumnName.SplitPascal( );
+                            var _caption = column.ColumnName?.SplitPascal( );
                             column.Caption = _caption;
                         }
                     }
@@ -150,8 +149,8 @@ namespace BudgetExecution
             {
                 try
                 {
-                    DataSet = new DataSet( $"{Provider}" );
-                    DataTable = new DataTable( $"{Source}" );
+                    DataSet = new DataSet( $"{ Provider }" );
+                    DataTable = new DataTable( $"{ Source }" );
                     DataSet.Tables.Add( DataTable );
                     using var _adapter = Query?.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable.TableName );
