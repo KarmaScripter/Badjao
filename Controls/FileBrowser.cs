@@ -14,6 +14,7 @@ namespace BudgetExecution
     using System.Linq;
     using CheckState = MetroSet_UI.Enums.CheckState;
 
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public partial class FileBrowser
     {
         /// <summary>
@@ -326,7 +327,7 @@ namespace BudgetExecution
                     Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory ),
                     Environment.GetFolderPath( Environment.SpecialFolder.Personal ),
                     Environment.GetFolderPath( Environment.SpecialFolder.Recent ),
-                    @"C:\Users\teppler\source\repos\Badjao\Resources\Docs",
+                    @"C:\Users\terry\source\repos\Badjao\Resources\Docs",
                     _current
                 };
 
