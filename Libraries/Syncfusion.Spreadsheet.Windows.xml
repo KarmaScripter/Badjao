@@ -19963,14 +19963,14 @@
             Event raised when ok button is clicked
             </summary>
             <param name="sender">The Source</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.GetPasswordForm.cancel_Click(System.Object,System.EventArgs)">
             <summary>
             Event raised when Cancel button is clicked
             </summary>
             <param name="sender">The Source</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.GetPasswordForm.WireEvents">
             <summary>
@@ -20220,7 +20220,7 @@
             Event raised when the cancel Button is Clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.ProtectWorkbookForm.WireEvents">
             <summary>
@@ -20339,7 +20339,7 @@
             Event raised when the ListBoxItem is double clicked
             </summary>
             <param name="sender">The Source of the Event.</param>
-            <param name="e">The <see cref="!:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.UnHideForm.OnApplySettings">
             <summary>
@@ -20680,35 +20680,35 @@
             Event Raised when the CancelEdit Button is Clicked
             </summary>
             <param name="sender">The Soruce.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.EndEditButton_Click(System.Object,System.EventArgs)">
             <summary>
             Event Raised When the EndEdit Button is Clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.CloseButton_Click(System.Object,System.EventArgs)">
             <summary>
             Event Raised when the Close Button is Clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.Editor_PreviewKeyDown(System.Object,System.Windows.Forms.PreviewKeyDownEventArgs)">
             <summary>
             Event Raised When the Key is Pressed when the Editor TextBox in Focus
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.Input.KeyEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.KeyEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.NameRanges_SelectionChanged(System.Object,System.EventArgs)">
             <summary>
             Event raised when the Selection is changed in the DataGrid
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.UpdateRefersToTextBox">
             <summary>
@@ -20720,70 +20720,70 @@
             Event Raised when the Double click operation is performed on the DataGrid
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.NameRanges_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
             <summary>
             Event Raised when the DataGrid is clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.NameswithoutErrors_Click(System.Object,System.EventArgs)">
             <summary>
             Event Raised when the NamesWithOutErrors Menu Item is Clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.NameswithErrors_Click(System.Object,System.EventArgs)">
             <summary>
             Event Raised When the NamesWithErrors MenuItem is Clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.ScopedtoWorksheet_Click(System.Object,System.EventArgs)">
             <summary>
             Event Raised when ScopedtoWorksheet MenuItem is Clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.ScopedtoWorkbook_Click(System.Object,System.EventArgs)">
             <summary>
             Event Raised when the ScopedtoWorkbook Menu Item is Clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.ClearFilter_Click(System.Object,System.EventArgs)">
             <summary>
             Event Raised When the ClearFilter MenuItem is Clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.FilterButton_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
             <summary>
             Event Raised When the Filter Button is clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.DeleteButton_Click(System.Object,System.EventArgs)">
             <summary>
             Event Raised When the Delete Button is clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.EditButton_Click(System.Object,System.EventArgs)">
             <summary>
             Event Raised when the Edit Button is Clicked
             </summary>
             <param name="sender">The Source.</param>
-            <param name="e">The <see cref="!:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.Commands.NameManagerForm.NewButton_Click(System.Object,System.EventArgs)">
             <summary>
@@ -21808,7 +21808,7 @@
             <summary>
             Determines the pressed position of pointer of the FillSeriesController
             </summary>
-            <param name="e">The <see cref="!:System.Windows.Input.MouseEventArgs"/> that contains the event data</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseEventArgs"/> that contains the event data</param>
             <returns>True or False</returns>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.FillSeriesController.IsPasswordProtected(Syncfusion.XlsIO.IRange)">
@@ -21822,7 +21822,7 @@
             <summary>
             Determines the released position of pointer of the FillSeriesController
             </summary>
-            <param name="e">The <see cref="!:System.Windows.Input.MouseEventArgs"/> that contains the event data</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseEventArgs"/> that contains the event data</param>
             <returns>True or False</returns>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.FillSeriesController.ShowFillOptionPopup(System.Double,System.Double)">
@@ -21911,7 +21911,7 @@
             <summary>
             Determines the state of the mouse position and the selected range of the FillSeries
             </summary>
-            <param name="e">The <see cref="!:System.Windows.Input.MouseEventArgs"/> that contains the event data</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseEventArgs"/> that contains the event data</param>
             <returns>True or False</returns>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.FillSeriesController.FillOptionChanged(System.String)">
@@ -22775,7 +22775,7 @@
             Implement this method to add class handling for this event.         
             </summary>
             <remarks>Occurs when a key pressed within the element from this class</remarks>
-            <param name="e">The <see cref="!:System.Windows.Input.KeyEventArgs"/> that contains the event data.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.KeyEventArgs"/> that contains the event data.</param>
             <param name="sender"></param>
         </member>
         <member name="M:Syncfusion.Windows.Forms.Spreadsheet.GraphicCells.GraphicCellControl.Dispose">

@@ -317,7 +317,7 @@ namespace BudgetExecution
                                 r.Field<string>( "TABLE_NAME" ).Contains( "FilterDatabase" ) )
                             ?.Select( r => r )?.CopyToDataTable( );
 
-                        _sheetName = _dataTable.Rows[ 0 ][ "TABLE_NAME" ].ToString( );
+                        _sheetName = _dataTable?.Rows[ 0 ][ "TABLE_NAME" ].ToString( );
                     }
 
                     using var _command = new OleDbCommand( );

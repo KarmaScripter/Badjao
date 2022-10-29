@@ -43,6 +43,11 @@
             Initializes a new instance of the <see cref="T:Syncfusion.DataSource.GroupResultComparer"/> class.
             </summary>
         </member>
+        <member name="P:Syncfusion.DataSource.GroupResultComparer.SortDirection">
+            <summary>
+            Gets or sets the direction for sorting.
+            </summary>
+        </member>
         <member name="M:Syncfusion.DataSource.GroupResultComparer.Compare(Syncfusion.DataSource.Extensions.GroupResult,Syncfusion.DataSource.Extensions.GroupResult)">
             <summary>
             Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
@@ -59,11 +64,6 @@
             Greater than zero
             <paramref name="x"/> is greater than <paramref name="y"/>.
             </returns>
-        </member>
-        <member name="P:Syncfusion.DataSource.GroupResultComparer.SortDirection">
-            <summary>
-            Gets or sets the direction for sorting.
-            </summary>
         </member>
         <member name="M:Syncfusion.DataSource.SortingComparer.#ctor(System.Collections.ObjectModel.ObservableCollection{Syncfusion.DataSource.SortDescriptor},System.Globalization.CultureInfo,System.Collections.Generic.IComparer{System.Object},System.Func{System.Object,System.String,System.Object})">
             <summary>
@@ -114,6 +114,35 @@
             </summary>
             <param name="groupList"> The <see cref="T:Syncfusion.DataSource.GroupList"/>.</param>
             <param name="source"> List of objects</param>
+        </member>
+        <member name="E:Syncfusion.DataSource.DisplayItems.PropertyChanged">
+            <summary>
+            Occurs when the property is changed for the data objects on the collection. 
+            </summary>
+        </member>
+        <member name="E:Syncfusion.DataSource.DisplayItems.CollectionChanged">
+            <summary>
+            Occurs when an item is added or removed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DisplayItems.Count">
+            <summary>
+            Gets the total number of display items
+            </summary>
+            <returns>Returns the integer value.</returns>
+        </member>
+        <member name="P:Syncfusion.DataSource.DisplayItems.IsReadOnly">
+            <summary>
+            Gets a value indicating whether <see cref="T:Syncfusion.DataSource.DisplayItems"/> is read only or not
+            </summary>
+            <returns>Returns the boolean value.</returns>
+        </member>
+        <member name="P:Syncfusion.DataSource.DisplayItems.Item(System.Int32)">
+            <summary>
+            Return the display item in the index
+            </summary>
+            <param name="index">Index of the display item</param>
+            <returns>display item</returns>
         </member>
         <member name="M:Syncfusion.DataSource.DisplayItems.IndexOf(System.Object)">
             <summary>
@@ -183,35 +212,6 @@
             Dispose the instances, if parameter is true.
             </summary>
             <param name="disposing">Represents the boolean value for disposing objects.</param>
-        </member>
-        <member name="E:Syncfusion.DataSource.DisplayItems.PropertyChanged">
-            <summary>
-            Occurs when the property is changed for the data objects on the collection. 
-            </summary>
-        </member>
-        <member name="E:Syncfusion.DataSource.DisplayItems.CollectionChanged">
-            <summary>
-            Occurs when an item is added or removed.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DisplayItems.Count">
-            <summary>
-            Gets the total number of display items
-            </summary>
-            <returns>Returns the integer value.</returns>
-        </member>
-        <member name="P:Syncfusion.DataSource.DisplayItems.IsReadOnly">
-            <summary>
-            Gets a value indicating whether <see cref="T:Syncfusion.DataSource.DisplayItems"/> is read only or not
-            </summary>
-            <returns>Returns the boolean value.</returns>
-        </member>
-        <member name="P:Syncfusion.DataSource.DisplayItems.Item(System.Int32)">
-            <summary>
-            Return the display item in the index
-            </summary>
-            <param name="index">Index of the display item</param>
-            <returns>display item</returns>
         </member>
         <member name="M:Syncfusion.DataSource.DisplayItemsEnumerator.#ctor(Syncfusion.DataSource.GroupList,System.Collections.Generic.IList{System.Object})">
             <summary>
@@ -734,186 +734,6 @@
             <param name="items">Represents the enumerable items.</param>
             <returns>Returns the collection.</returns>
         </member>
-        <member name="T:Syncfusion.DataSource.FilterType">
-            <summary>
-            Specifies the FilterType to be used in LINQ methods.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.LessThan">
-            <summary>
-            Performs LessThan operation.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.LessThanOrEqual">
-            <summary>
-            Performs LessThan Or Equal operation.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.Equals">
-            <summary>
-            Checks Equals on the operands.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.NotEquals">
-            <summary>
-            Checks for Not Equals on the operands.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.GreaterThanOrEqual">
-            <summary>
-            Checks for Greater Than or Equal on the operands.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.GreaterThan">
-            <summary>
-            Checks for Greater Than on the operands.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.StartsWith">
-            <summary>
-            Checks for StartsWith on the string operands.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.EndsWith">
-            <summary>
-            Checks for EndsWith on the string operands.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.Contains">
-            <summary>
-            Checks for Contains on the string operands.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.Undefined">
-            <summary>
-            Returns invalid type
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterType.Between">
-            <summary>
-            Checks for Between two date on the operands.
-            </summary>
-        </member>
-        <member name="T:Syncfusion.DataSource.FilterBehavior">
-            <summary>
-            Specifies the Filter Behavior for the filter predicates.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterBehavior.StronglyTyped">
-            <summary>
-            Parses only StronglyTyped values.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.FilterBehavior.StringTyped">
-            <summary>
-            Parses all values by converting them as string.
-            </summary>
-        </member>
-        <member name="T:Syncfusion.DataSource.ColumnFilter">
-            <summary>
-            Specifies the Filter Behavior for the filter predicates.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.ColumnFilter.Value">
-            <summary>
-            Parses only StronglyTyped values.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.ColumnFilter.DisplayText">
-            <summary>
-            Parses all values by converting them as string.
-            </summary>
-        </member>
-        <member name="T:Syncfusion.DataSource.SortColumn">
-            <summary>
-            Representing the class that contains the columns that represents sorting, which contains 
-            the column name that is sorted and sort direction.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.DataSource.SortColumn.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.SortColumn"/> class.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.SortColumn.ColumnName">
-            <summary>
-            Gets or sets the column name.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.SortColumn.SortDirection">
-            <summary>
-            Gets or sets the sorting direction.
-            </summary>
-        </member>
-        <member name="T:Syncfusion.DataSource.GroupContext">
-            <summary>
-            Class that contains the information of the group like child groups, items count, key, details of the group, etc.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.DataSource.GroupContext.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.GroupContext"/> class.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.GroupContext.ChildGroups">
-            <summary>
-            Gets or sets the child groups.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.GroupContext.Count">
-            <summary>
-            Gets or sets the item count.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.GroupContext.Details">
-            <summary>
-            Gets or sets the enumerable collection.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.GroupContext.Key">
-            <summary>
-            Gets the key value.
-            </summary>
-        </member>
-        <member name="T:Syncfusion.DataSource.DynamicClass">
-            <summary>
-            Defines the dynamic class.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.DataSource.DynamicClass.ToString">
-            <summary>
-            Returns the string that contains the properties and their values in the class.
-            </summary>
-            <returns>The string that contains the properties and their values in the class.</returns>
-        </member>
-        <member name="T:Syncfusion.DataSource.DynamicProperty">
-            <summary>
-            Class that creates the dynamic property for the given name and type.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.DataSource.DynamicProperty.#ctor(System.String,System.Type)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.DynamicProperty"/> class.
-            </summary>
-            <param name="name">Represents the property name.</param>
-            <param name="type">Represents the type of the property.</param>
-        </member>
-        <member name="P:Syncfusion.DataSource.DynamicProperty.Name">
-            <summary>
-            Gets the property name.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DynamicProperty.Type">
-            <summary>
-            Gets the property type.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.DataSource.Signature.#ctor(System.Collections.Generic.IEnumerable{Syncfusion.DataSource.DynamicProperty})">
-            <summary>
-            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.Signature"/> class.
-            </summary>
-            <param name="properties">Represents the enumerable properties.</param>
-        </member>
         <member name="T:Syncfusion.DataSource.Extensions.NullableHelperInternal">
             <summary>
             A framework independent utility class for the new Nullable type in .NET Framework 2.0
@@ -921,7 +741,7 @@
         </member>
         <member name="M:Syncfusion.DataSource.Extensions.NullableHelperInternal.#ctor">
             <summary>
-            Prevents a default instance of the <see cref="T:Syncfusion.DataSource.Extensions.NullableHelperInternal"/> class from being created.
+            Prevents a default instance of the <see cref="T:Syncfusion.DataSource.Extensions.NullableHelperInternal" /> class from being created.
             </summary>
         </member>
         <member name="M:Syncfusion.DataSource.Extensions.NullableHelperInternal.ChangeType(System.Object,System.Type)">
@@ -1001,6 +821,12 @@
         <member name="M:Syncfusion.DataSource.Extensions.ValueConvert.#ctor">
             <summary>
             Prevents a default instance of the <see cref="T:Syncfusion.DataSource.Extensions.ValueConvert"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.Extensions.ValueConvert.AllowFormatValueTrimEnd">
+            <summary>
+            Gets or sets a value indicating whether <see cref="M:Syncfusion.DataSource.Extensions.ValueConvert.FormatValue(System.Object,System.Type,System.String,System.Globalization.CultureInfo,System.Globalization.NumberFormatInfo)"/> should trim whitespace characters from
+            the end of the formatted text.
             </summary>
         </member>
         <member name="M:Syncfusion.DataSource.Extensions.ValueConvert.ChangeType(System.Object,System.Type,System.IFormatProvider)">
@@ -1159,12 +985,6 @@
             <param name="value">Represents the value for an object.</param>
             <returns>Returns the formatted string value.</returns>
         </member>
-        <member name="P:Syncfusion.DataSource.Extensions.ValueConvert.AllowFormatValueTrimEnd">
-            <summary>
-            Gets or sets a value indicating whether <see cref="M:Syncfusion.DataSource.Extensions.ValueConvert.FormatValue(System.Object,System.Type,System.String,System.Globalization.CultureInfo,System.Globalization.NumberFormatInfo)"/> should trim whitespace characters from
-            the end of the formatted text.
-            </summary>
-        </member>
         <member name="T:Syncfusion.DataSource.Extensions.PropertyInfoExtensions">
             <summary>
             Class that provides the extension methods for the property info.
@@ -1210,14 +1030,6 @@
             </summary>
             <param name="type">Represents the type of the property.</param>
         </member>
-        <member name="M:Syncfusion.DataSource.Extensions.PropertyInfoCollection.Find(System.String,System.Boolean)">
-            <summary>
-            Finds the property info of the given column name in the property info collection.
-            </summary>
-            <param name="columnName">The column name for which the property info is to be obtained.</param>
-            <param name="matchCase">A boolean value indicating whether to consider the casing or not.</param>
-            <returns>The property info of the given column name.</returns>
-        </member>
         <member name="P:Syncfusion.DataSource.Extensions.PropertyInfoCollection.Empty">
             <summary>
             Gets the empty collection.
@@ -1227,6 +1039,14 @@
             <summary>
             Gets the property type.
             </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.PropertyInfoCollection.Find(System.String,System.Boolean)">
+            <summary>
+            Finds the property info of the given column name in the property info collection.
+            </summary>
+            <param name="columnName">The column name for which the property info is to be obtained.</param>
+            <param name="matchCase">A boolean value indicating whether to consider the casing or not.</param>
+            <returns>The property info of the given column name.</returns>
         </member>
         <member name="T:Syncfusion.DataSource.Extensions.QueryableExtensions">
             <summary>
@@ -2558,32 +2378,6 @@
             Initializes a new instance of the <see cref="T:Syncfusion.DataSource.Extensions.GroupResult"/> class.
             </summary>
         </member>
-        <member name="M:Syncfusion.DataSource.Extensions.GroupResult.ToString">
-            <summary>
-            Returns the result of the group, which contains the key and the items count in the group.
-            </summary>
-            <returns>The result of the group, which contains the key and the items count in the group.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.GroupResult.Expand">
-            <summary>
-            Expands the group. 
-            </summary>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.GroupResult.Collapse">
-            <summary>
-            Collapses the group.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.GroupResult.GetChangedItems(Syncfusion.DataSource.Extensions.GroupResult,System.Boolean,System.Collections.Generic.List{System.Object})">
-            <summary>
-            Adds list of group and records in changesItems, that are coming into the view when expanding or that are going out of the view when collapsing. 
-            Based on changed Items count the rows will be added or removed in ListView. 
-            </summary>
-            <param name="group">Denotes the group.</param>
-            <param name="canAddSubItems">Indicates whether sub group or items can be added in changedItems. Will be passed as true if group in expanded state. </param>
-            <param name="changedItems">Indicates the list of changed items.</param>
-            <returns>Returns the list of changed items.</returns>
-        </member>
         <member name="E:Syncfusion.DataSource.Extensions.GroupResult.PropertyChanged">
             <summary>
             Occurs when the property is changed for the data objects on the collection. 
@@ -2618,6 +2412,32 @@
              <summary>
             Gets the level of grouping.
              </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.GroupResult.ToString">
+            <summary>
+            Returns the result of the group, which contains the key and the items count in the group.
+            </summary>
+            <returns>The result of the group, which contains the key and the items count in the group.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.GroupResult.Expand">
+            <summary>
+            Expands the group. 
+            </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.GroupResult.Collapse">
+            <summary>
+            Collapses the group.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.GroupResult.GetChangedItems(Syncfusion.DataSource.Extensions.GroupResult,System.Boolean,System.Collections.Generic.List{System.Object})">
+            <summary>
+            Adds list of group and records in changesItems, that are coming into the view when expanding or that are going out of the view when collapsing. 
+            Based on changed Items count the rows will be added or removed in ListView. 
+            </summary>
+            <param name="group">Denotes the group.</param>
+            <param name="canAddSubItems">Indicates whether sub group or items can be added in changedItems. Will be passed as true if group in expanded state. </param>
+            <param name="changedItems">Indicates the list of changed items.</param>
+            <returns>Returns the list of changed items.</returns>
         </member>
         <member name="T:Syncfusion.DataSource.Extensions.NamespaceDoc">
             <summary>
@@ -2746,6 +2566,338 @@
             </summary>
             <param name="type">Represents the type which is to be determined.</param>
             <returns>Returns the generic type arguments.</returns>
+        </member>
+        <member name="T:Syncfusion.DataSource.Extensions.DataSetExtensions">
+            <summary>
+            Extension class that helps for sorting, grouping and filter operations of the data table.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.Extensions.DataSetExtensions.pattern">
+            <summary>
+            The string pattern.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.EscapeSpecialChars(System.String)">
+            <summary>
+            Method to skip special characters from given string.
+            </summary>
+            <param name="value">The string value.</param>
+            <returns>Returns the string without special characters.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.Predicate(System.String,System.String,System.Object,Syncfusion.DataSource.FilterType)">
+            <summary>
+            Creates the filter predicate based on the property, value and filter type.
+            </summary>
+            <param name="thisString">The string value.</param>
+            <param name="property">The property name.</param>
+            <param name="value">The value which is used to create the filter predicate.</param>
+            <param name="filterType">The filter type.</param>
+            <returns>Returns the predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.AndPredicate(System.String)">
+            <summary>
+            Creates the And filter predicate.
+            </summary>
+            <param name="thisString">The string value.</param>
+            <returns>Returns the predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.OrderBy(System.String,System.String)">
+            <summary>
+            Creates the ascending sorting string based on the property name.
+            </summary>
+            <param name="thisString">The string value.</param>
+            <param name="propertyName">The property name.</param>
+            <returns>Returns the ascending sorting string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.OrderByDescending(System.String,System.String)">
+            <summary>
+            Creates the descending sorting string based on the property name.
+            </summary>
+            <param name="thisString">The string value.</param>
+            <param name="propertyName">The property name.</param>
+            <returns>Returns the descending sorting string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.ThenBy(System.String,System.String)">
+            <summary>
+            Format the ascending order string based on the property name.
+            </summary>
+            <param name="thisString">The string value.</param>
+            <param name="propertyName">The property name.</param>
+            <returns>Returns the ascending order string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.ThenByDescending(System.String,System.String)">
+            <summary>
+            Creates the descending order string based on the property name.
+            </summary>
+            <param name="thisString">The string value.</param>
+            <param name="propertyName">The property name.</param>
+            <returns>Returns the descending order string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.OrPredicate(System.String)">
+            <summary>
+            Creates the OR filter predicate string.
+            </summary>
+            <param name="thisString">The string value.</param>
+            <returns>Returns the OR predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.Equals(System.String,System.Object)">
+            <summary>
+            Creates the predicate string for equal operator.
+            </summary>
+            <param name="property">The property name.</param>
+            <param name="value">The value to compare.</param>
+            <returns>Returns the equal operator predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.NotEquals(System.String,System.Object)">
+            <summary>
+            Creates the predicate string for not equal operator.
+            </summary>
+            <param name="property">The property name.</param>
+            <param name="value">The value to compare.</param>
+            <returns>Returns the not equal operator predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.GreaterThan(System.String,System.Object)">
+            <summary>
+            Creates the predicate string for greater than operator.
+            </summary>
+            <param name="property">The property name.</param>
+            <param name="value">The value to compare.</param>
+            <returns>Returns the greater than operator predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.LessThan(System.String,System.Object)">
+            <summary>
+            Creates the predicate string for less than operator.
+            </summary>
+            <param name="property">The property name.</param>
+            <param name="value">The value to compare.</param>
+            <returns>Returns the less than operator predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.GreaterThanOrEquals(System.String,System.Object)">
+            <summary>
+            Creates the predicate string for greater than or equal operator.
+            </summary>
+            <param name="property">The property name.</param>
+            <param name="value">The value to compare.</param>
+            <returns>Returns the greater than or equal operator predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.LessThanOrEquals(System.String,System.Object)">
+            <summary>
+            Creates the predicate string for less than or equal operator.
+            </summary>
+            <param name="property">The property name.</param>
+            <param name="value">The value to compare.</param>
+            <returns>Returns the less than or equal operator predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.StartsWith(System.String,System.Object)">
+            <summary>
+            Creates the predicate string for starts with operator.
+            </summary>
+            <param name="property">The property name.</param>
+            <param name="value">The value to compare.</param>
+            <returns>Returns the starts with operator predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.EndsWith(System.String,System.Object)">
+            <summary>
+            Creates the predicate string for ends with operator.
+            </summary>
+            <param name="property">The property name.</param>
+            <param name="value">The value to compare.</param>
+            <returns>Returns the ends with operator predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.Contains(System.String,System.Object)">
+            <summary>
+            Creates the predicate string for contains operator.
+            </summary>
+            <param name="property">The property name.</param>
+            <param name="value">The value to compare.</param>
+            <returns>Returns the contains operator predicate string.</returns>
+        </member>
+        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.EscapeLikeValue(System.String)">
+            <summary>
+            Insert [ wildcard ] in LIKE Queries.
+            </summary>
+            <param name="property">The property name.</param>
+            <returns>Returns the string.</returns>
+        </member>
+        <member name="T:Syncfusion.DataSource.FilterType">
+            <summary>
+            Specifies the FilterType to be used in LINQ methods.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.LessThan">
+            <summary>
+            Performs LessThan operation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.LessThanOrEqual">
+            <summary>
+            Performs LessThan Or Equal operation.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.Equals">
+            <summary>
+            Checks Equals on the operands.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.NotEquals">
+            <summary>
+            Checks for Not Equals on the operands.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.GreaterThanOrEqual">
+            <summary>
+            Checks for Greater Than or Equal on the operands.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.GreaterThan">
+            <summary>
+            Checks for Greater Than on the operands.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.StartsWith">
+            <summary>
+            Checks for StartsWith on the string operands.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.EndsWith">
+            <summary>
+            Checks for EndsWith on the string operands.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.Contains">
+            <summary>
+            Checks for Contains on the string operands.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.Undefined">
+            <summary>
+            Returns invalid type
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterType.Between">
+            <summary>
+            Checks for Between two date on the operands.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.DataSource.FilterBehavior">
+            <summary>
+            Specifies the Filter Behavior for the filter predicates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterBehavior.StronglyTyped">
+            <summary>
+            Parses only StronglyTyped values.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.FilterBehavior.StringTyped">
+            <summary>
+            Parses all values by converting them as string.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.DataSource.ColumnFilter">
+            <summary>
+            Specifies the Filter Behavior for the filter predicates.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.ColumnFilter.Value">
+            <summary>
+            Parses only StronglyTyped values.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.DataSource.ColumnFilter.DisplayText">
+            <summary>
+            Parses all values by converting them as string.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.DataSource.SortColumn">
+            <summary>
+            Representing the class that contains the columns that represents sorting, which contains 
+            the column name that is sorted and sort direction.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.SortColumn.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.SortColumn"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.SortColumn.ColumnName">
+            <summary>
+            Gets or sets the column name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.SortColumn.SortDirection">
+            <summary>
+            Gets or sets the sorting direction.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.DataSource.GroupContext">
+            <summary>
+            Class that contains the information of the group like child groups, items count, key, details of the group, etc.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.GroupContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.GroupContext"/> class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.GroupContext.ChildGroups">
+            <summary>
+            Gets or sets the child groups.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.GroupContext.Count">
+            <summary>
+            Gets or sets the item count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.GroupContext.Details">
+            <summary>
+            Gets or sets the enumerable collection.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.GroupContext.Key">
+            <summary>
+            Gets the key value.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.DataSource.DynamicClass">
+            <summary>
+            Defines the dynamic class.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.DynamicClass.ToString">
+            <summary>
+            Returns the string that contains the properties and their values in the class.
+            </summary>
+            <returns>The string that contains the properties and their values in the class.</returns>
+        </member>
+        <member name="T:Syncfusion.DataSource.DynamicProperty">
+            <summary>
+            Class that creates the dynamic property for the given name and type.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.DynamicProperty.#ctor(System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.DynamicProperty"/> class.
+            </summary>
+            <param name="name">Represents the property name.</param>
+            <param name="type">Represents the type of the property.</param>
+        </member>
+        <member name="P:Syncfusion.DataSource.DynamicProperty.Name">
+            <summary>
+            Gets the property name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DynamicProperty.Type">
+            <summary>
+            Gets the property type.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.Signature.#ctor(System.Collections.Generic.IEnumerable{Syncfusion.DataSource.DynamicProperty})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.Signature"/> class.
+            </summary>
+            <param name="properties">Represents the enumerable properties.</param>
         </member>
         <member name="T:Syncfusion.DataSource.GroupList">
             <summary>
@@ -3009,38 +3161,6 @@
             and key selector based on which grouping for a property is processed. 
             </summary>
         </member>
-        <member name="T:Syncfusion.DataSource.GroupDescription">
-            <summary>
-            Represents a class that defines the basic methods and properties for grouping the data in the 
-            collection view.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.DataSource.GroupDescription.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.GroupDescription"/> class.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.DataSource.GroupDescription.ShouldSerializeGroupNames">
-            <summary>
-            Determines whether to serialize group names or not.
-            </summary>
-            <returns>Returns the boolean value.</returns>
-        </member>
-        <member name="E:Syncfusion.DataSource.GroupDescription.PropertyChanged">
-            <summary>
-            Occurs when the property is changed for the data objects on the collection. 
-            </summary>
-        </member>
-        <member name="E:Syncfusion.DataSource.GroupDescription.System#ComponentModel#INotifyPropertyChanged#PropertyChanged">
-            <summary>
-            Occurs when the property is changed for the data objects on the collection. 
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.GroupDescription.GroupNames">
-            <summary>
-            Gets the group names. 
-            </summary>
-        </member>
         <member name="M:Syncfusion.DataSource.GroupDescriptor.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Syncfusion.DataSource.GroupDescriptor"/> class.
@@ -3076,13 +3196,45 @@
             </summary>
             <value>IComparer of GroupResult.</value>
         </member>
+        <member name="T:Syncfusion.DataSource.GroupDescription">
+            <summary>
+            Represents a class that defines the basic methods and properties for grouping the data in the 
+            collection view.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.GroupDescription.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.GroupDescription"/> class.
+            </summary>
+        </member>
+        <member name="E:Syncfusion.DataSource.GroupDescription.PropertyChanged">
+            <summary>
+            Occurs when the property is changed for the data objects on the collection. 
+            </summary>
+        </member>
+        <member name="E:Syncfusion.DataSource.GroupDescription.System#ComponentModel#INotifyPropertyChanged#PropertyChanged">
+            <summary>
+            Occurs when the property is changed for the data objects on the collection. 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.GroupDescription.GroupNames">
+            <summary>
+            Gets the group names. 
+            </summary>
+        </member>
+        <member name="M:Syncfusion.DataSource.GroupDescription.ShouldSerializeGroupNames">
+            <summary>
+            Determines whether to serialize group names or not.
+            </summary>
+            <returns>Returns the boolean value.</returns>
+        </member>
         <member name="T:Syncfusion.DataSource.PropertyChangingEventHandler">
             <summary>
             Represents the method that will handle the INotifyPropertyChanging.PropertyChanging
             event of an INotifyPropertyChanging interface.
             </summary>
             <param name="sender">The source of the event.</param>
-            <param name="e">An <see cref="T:Syncfusion.Data.Portable.PropertyChangingEventCriteria">PropertyChangingEventArgs</see> that contains the event data.</param>
+            <param name="e">An <see cref="T:Syncfusion.Data.Portable.PropertyChangingEventArgs">PropertyChangingEventArgs</see> that contains the event data.</param>
         </member>
         <member name="T:Syncfusion.DataSource.INotifyPropertyChanging">
             <summary>
@@ -3116,6 +3268,16 @@
             Initializes a new instance of the <see cref="T:Syncfusion.DataSource.Nullable`1"/> struct.
             </summary>
             <param name="value">Represents the generic value.</param>
+        </member>
+        <member name="P:Syncfusion.DataSource.Nullable`1.HasValue">
+            <summary>
+            Gets a value indicating whether object has a value. 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.Nullable`1.Value">
+            <summary>
+            Gets the generic type value.
+            </summary>
         </member>
         <member name="M:Syncfusion.DataSource.Nullable`1.op_Implicit(`0)~Syncfusion.DataSource.Nullable{`0}">
             <summary>
@@ -3160,16 +3322,6 @@
             Override method to convert the specified value into string value.
             </summary>
             <returns>Returns the string value accordingly.</returns>
-        </member>
-        <member name="P:Syncfusion.DataSource.Nullable`1.HasValue">
-            <summary>
-            Gets a value indicating whether object has a value. 
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.Nullable`1.Value">
-            <summary>
-            Gets the generic type value.
-            </summary>
         </member>
         <member name="T:Syncfusion.DataSource.Nullable">
             <summary>
@@ -3278,6 +3430,121 @@
             Initializes a new instance of the <see cref="T:Syncfusion.DataSource.DataSource"/> class.
             </summary>
         </member>
+        <member name="E:Syncfusion.DataSource.DataSource.SourcePropertyChanged">
+            <summary>
+            Occurs when source property Changed
+            </summary>
+        </member>
+        <member name="E:Syncfusion.DataSource.DataSource.SourceCollectionChanged">
+            <summary>
+            Occurs when source collection changed
+            </summary>
+        </member>
+        <member name="E:Syncfusion.DataSource.DataSource.FilterChanged">
+            <summary>
+            Occurs when filter changed
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.CanRemove">
+            <summary>
+            Gets a value indicating whether object can be removed from source
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.CanAddNew">
+            <summary>
+            Gets a value indicating whether new object can be added or not
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.IsEditingItem">
+            <summary>
+            Gets a value indicating whether is in editing or not 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.CurrentEditItem">
+            <summary>
+            Gets current editing item 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.CanCancelEdit">
+            <summary>
+            Gets a value indicating whether editing can be cancelled or not 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.CurrentAddItem">
+            <summary>
+            Gets or sets the currently added item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.IsAddingNew">
+            <summary>
+            Gets a value indicating whether adding new object or not
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.IsDynamicBound">
+            <summary>
+            Gets or sets a value indicating whether this instance is dynamic bound.
+            </summary>
+            <value>
+            <b>true</b> if this instance is dynamic bound; otherwise, <b>false</b>.
+            </value>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.FilterPredicates">
+            <summary>
+            Gets or sets the filter predicates.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.AutoExpandGroups">
+            <summary>
+            Gets or sets a value indicating whether groups has to expand automatically or not.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.DisplayItems">
+            <summary>
+            Gets the list of items to be displayed 
+            </summary>
+            <value>The display items.</value>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.Filter">
+            <summary>
+            Gets or sets the filter for the underlying collection
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.GroupDescriptors">
+            <summary>
+            Gets the collection of group descriptors.
+            </summary>
+            <value>The group descriptor.</value>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.Groups">
+            <summary>
+            Gets the list of groups 
+            </summary>
+            <value>The Group List.</value>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.Source">
+            <summary>
+            Gets or sets the Source of the <see cref="T:Syncfusion.DataSource.DataSource"/>.
+            </summary>
+            <value>The source.</value>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.Items">
+            <summary>
+            Gets the list of items. Contains filtered data 
+            </summary>
+            <value>The List of items.</value>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.LiveDataUpdateMode">
+            <summary>
+            Gets or sets the live data update mode of the <see cref="T:Syncfusion.DataSource.DataSource"/>.
+            </summary>
+            <value>The live data update mode.</value>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.SortDescriptors">
+            <summary>
+            Gets the collection of sort descriptors. 
+            </summary>
+            <value>The collection of sort descriptor.</value>
+        </member>
         <member name="M:Syncfusion.DataSource.DataSource.GetAdjustedIndexWithSourceCollection(System.Object,System.Int32)">
             <summary>
             This method handle the adjusted index for source collection.
@@ -3287,9 +3554,45 @@
             <returns>Returns Records index for the given item.</returns>
             <remarks>This method handle the adjusted index for source collection when view.filter applied the records</remarks>
         </member>
+        <member name="P:Syncfusion.DataSource.DataSource.SortComparer">
+            <summary>
+            Gets or sets the SortComparer.This will be considered when comparer in <see cref="T:Syncfusion.DataSource.SortDescriptor"/> is null.
+            </summary>
+            <value>IComparer of object.</value>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.SourceType">
+            <summary>
+            Gets or sets the source type of the underlying source
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.GroupComparer">
+            <summary>
+            Gets or sets the GroupComparer.This will be considered when  comparer in <see cref="T:Syncfusion.DataSource.GroupDescriptor"/> is null.
+            </summary>
+            <value>IComparer of GroupResult.</value>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.IsGrouping">
+            <summary>
+            Gets a value indicating whether the source have grouped.
+            </summary>
+            <value>A boolean value that indicates whether the source have grouped.</value>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.IsInSuspend">
+            <summary>
+            Gets or sets a value indicating whether the view is suspended from updates. 
+            </summary>
+        </member>
+        <member name="P:Syncfusion.DataSource.DataSource.IsLegacyDataTable">
+            <summary>
+            Gets a value indicating whether the underlying data object is <see cref="T:System.Data.DataTable"/>.
+            </summary>
+            <value>
+            <b>True</b> if the underlying data object is DataTable, otherwise <b>false</b>.
+            </value>
+        </member>
         <member name="M:Syncfusion.DataSource.DataSource.RefreshFilter">
             <summary>
-            Refresh the <see cref="T:Syncfusion.DataSource.DataSource"/>. Raises the <see cref="!:Syncfusion.Data.DataSource.SfDataSource.FilterChanged"/> Event 
+            Refresh the <see cref="T:Syncfusion.DataSource.DataSource"/>. Raises the <see cref="E:Syncfusion.DataSource.DataSource.FilterChanged"/> Event 
             </summary>
         </member>
         <member name="M:Syncfusion.DataSource.DataSource.Refresh">
@@ -3427,157 +3730,6 @@
             <param name="sender">The original sender of the event.</param>
             <param name="e">The <see cref="T:System.ComponentModel.ListChangedEventArgs"/> that contains the event data.</param>
         </member>
-        <member name="E:Syncfusion.DataSource.DataSource.SourcePropertyChanged">
-            <summary>
-            Occurs when source property Changed
-            </summary>
-        </member>
-        <member name="E:Syncfusion.DataSource.DataSource.SourceCollectionChanged">
-            <summary>
-            Occurs when source collection changed
-            </summary>
-        </member>
-        <member name="E:Syncfusion.DataSource.DataSource.FilterChanged">
-            <summary>
-            Occurs when filter changed
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.CanRemove">
-            <summary>
-            Gets a value indicating whether object can be removed from source
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.CanAddNew">
-            <summary>
-            Gets a value indicating whether new object can be added or not
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.IsEditingItem">
-            <summary>
-            Gets a value indicating whether is in editing or not 
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.CurrentEditItem">
-            <summary>
-            Gets current editing item 
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.CanCancelEdit">
-            <summary>
-            Gets a value indicating whether editing can be cancelled or not 
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.CurrentAddItem">
-            <summary>
-            Gets or sets the currently added item.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.IsAddingNew">
-            <summary>
-            Gets a value indicating whether adding new object or not
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.IsDynamicBound">
-            <summary>
-            Gets or sets a value indicating whether this instance is dynamic bound.
-            </summary>
-            <value>
-            <b>true</b> if this instance is dynamic bound; otherwise, <b>false</b>.
-            </value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.FilterPredicates">
-            <summary>
-            Gets or sets the filter predicates.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.AutoExpandGroups">
-            <summary>
-            Gets or sets a value indicating whether groups has to expand automatically or not.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.DisplayItems">
-            <summary>
-            Gets the list of items to be displayed 
-            </summary>
-            <value>The display items.</value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.Filter">
-            <summary>
-            Gets or sets the filter for the underlying collection
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.GroupDescriptors">
-            <summary>
-            Gets the collection of group descriptors.
-            </summary>
-            <value>The group descriptor.</value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.Groups">
-            <summary>
-            Gets the list of groups 
-            </summary>
-            <value>The Group List.</value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.Source">
-            <summary>
-            Gets or sets the Source of the <see cref="T:Syncfusion.DataSource.DataSource"/>.
-            </summary>
-            <value>The source.</value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.Items">
-            <summary>
-            Gets the list of items. Contains filtered data 
-            </summary>
-            <value>The List of items.</value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.LiveDataUpdateMode">
-            <summary>
-            Gets or sets the live data update mode of the <see cref="T:Syncfusion.DataSource.DataSource"/>.
-            </summary>
-            <value>The live data update mode.</value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.SortDescriptors">
-            <summary>
-            Gets the collection of sort descriptors. 
-            </summary>
-            <value>The collection of sort descriptor.</value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.SortComparer">
-            <summary>
-            Gets or sets the SortComparer.This will be considered when comparer in <see cref="T:Syncfusion.DataSource.SortDescriptor"/> is null.
-            </summary>
-            <value>IComparer of object.</value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.SourceType">
-            <summary>
-            Gets or sets the source type of the underlying source
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.GroupComparer">
-            <summary>
-            Gets or sets the GroupComparer.This will be considered when  comparer in <see cref="T:Syncfusion.DataSource.GroupDescriptor"/> is null.
-            </summary>
-            <value>IComparer of GroupResult.</value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.IsGrouping">
-            <summary>
-            Gets a value indicating whether the source have grouped.
-            </summary>
-            <value>A boolean value that indicates whether the source have grouped.</value>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.IsInSuspend">
-            <summary>
-            Gets or sets a value indicating whether the view is suspended from updates. 
-            </summary>
-        </member>
-        <member name="P:Syncfusion.DataSource.DataSource.IsLegacyDataTable">
-            <summary>
-            Gets a value indicating whether the underlying data object is <see cref="T:System.Data.DataTable"/>.
-            </summary>
-            <value>
-            <b>True</b> if the underlying data object is DataTable, otherwise <b>false</b>.
-            </value>
-        </member>
         <member name="M:Syncfusion.DataSource.DataSource.DeferHelper.#ctor(Syncfusion.DataSource.DataSource)">
             <summary>
             Initializes a new instance of the <see cref="T:Syncfusion.DataSource.DataSource.DeferHelper"/> class.
@@ -3598,7 +3750,7 @@
         </member>
         <member name="M:Syncfusion.DataSource.DataTableDataSource.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.DataTableDataSource"/> class.
+            Initializes a new instance of the <see cref="T:Syncfusion.DataSource.DataTableDataSource" /> class.
             </summary>
         </member>
         <member name="M:Syncfusion.DataSource.DataTableDataSource.RefreshFilter">
@@ -3691,158 +3843,6 @@
             Gets the sort string based on the property and sorting direction.
             </summary>
             <returns>Returns the sort string.</returns>
-        </member>
-        <member name="T:Syncfusion.DataSource.Extensions.DataSetExtensions">
-            <summary>
-            Extension class that helps for sorting, grouping and filter operations of the data table.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.DataSource.Extensions.DataSetExtensions.pattern">
-            <summary>
-            The string pattern.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.EscapeSpecialChars(System.String)">
-            <summary>
-            Method to skip special characters from given string.
-            </summary>
-            <param name="value">The string value.</param>
-            <returns>Returns the string without special characters.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.Predicate(System.String,System.String,System.Object,Syncfusion.DataSource.FilterType)">
-            <summary>
-            Creates the filter predicate based on the property, value and filter type.
-            </summary>
-            <param name="thisString">The string value.</param>
-            <param name="property">The property name.</param>
-            <param name="value">The value which is used to create the filter predicate.</param>
-            <param name="filterType">The filter type.</param>
-            <returns>Returns the predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.AndPredicate(System.String)">
-            <summary>
-            Creates the And filter predicate.
-            </summary>
-            <param name="thisString">The string value.</param>
-            <returns>Returns the predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.OrderBy(System.String,System.String)">
-            <summary>
-            Creates the ascending sorting string based on the property name.
-            </summary>
-            <param name="thisString">The string value.</param>
-            <param name="propertyName">The property name.</param>
-            <returns>Returns the ascending sorting string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.OrderByDescending(System.String,System.String)">
-            <summary>
-            Creates the descending sorting string based on the property name.
-            </summary>
-            <param name="thisString">The string value.</param>
-            <param name="propertyName">The property name.</param>
-            <returns>Returns the descending sorting string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.ThenBy(System.String,System.String)">
-            <summary>
-            Format the ascending order string based on the property name.
-            </summary>
-            <param name="thisString">The string value.</param>
-            <param name="propertyName">The property name.</param>
-            <returns>Returns the ascending order string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.ThenByDescending(System.String,System.String)">
-            <summary>
-            Creates the descending order string based on the property name.
-            </summary>
-            <param name="thisString">The string value.</param>
-            <param name="propertyName">The property name.</param>
-            <returns>Returns the descending order string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.OrPredicate(System.String)">
-            <summary>
-            Creates the OR filter predicate string.
-            </summary>
-            <param name="thisString">The string value.</param>
-            <returns>Returns the OR predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.Equals(System.String,System.Object)">
-            <summary>
-            Creates the predicate string for equal operator.
-            </summary>
-            <param name="property">The property name.</param>
-            <param name="value">The value to compare.</param>
-            <returns>Returns the equal operator predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.NotEquals(System.String,System.Object)">
-            <summary>
-            Creates the predicate string for not equal operator.
-            </summary>
-            <param name="property">The property name.</param>
-            <param name="value">The value to compare.</param>
-            <returns>Returns the not equal operator predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.GreaterThan(System.String,System.Object)">
-            <summary>
-            Creates the predicate string for greater than operator.
-            </summary>
-            <param name="property">The property name.</param>
-            <param name="value">The value to compare.</param>
-            <returns>Returns the greater than operator predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.LessThan(System.String,System.Object)">
-            <summary>
-            Creates the predicate string for less than operator.
-            </summary>
-            <param name="property">The property name.</param>
-            <param name="value">The value to compare.</param>
-            <returns>Returns the less than operator predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.GreaterThanOrEquals(System.String,System.Object)">
-            <summary>
-            Creates the predicate string for greater than or equal operator.
-            </summary>
-            <param name="property">The property name.</param>
-            <param name="value">The value to compare.</param>
-            <returns>Returns the greater than or equal operator predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.LessThanOrEquals(System.String,System.Object)">
-            <summary>
-            Creates the predicate string for less than or equal operator.
-            </summary>
-            <param name="property">The property name.</param>
-            <param name="value">The value to compare.</param>
-            <returns>Returns the less than or equal operator predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.StartsWith(System.String,System.Object)">
-            <summary>
-            Creates the predicate string for starts with operator.
-            </summary>
-            <param name="property">The property name.</param>
-            <param name="value">The value to compare.</param>
-            <returns>Returns the starts with operator predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.EndsWith(System.String,System.Object)">
-            <summary>
-            Creates the predicate string for ends with operator.
-            </summary>
-            <param name="property">The property name.</param>
-            <param name="value">The value to compare.</param>
-            <returns>Returns the ends with operator predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.Contains(System.String,System.Object)">
-            <summary>
-            Creates the predicate string for contains operator.
-            </summary>
-            <param name="property">The property name.</param>
-            <param name="value">The value to compare.</param>
-            <returns>Returns the contains operator predicate string.</returns>
-        </member>
-        <member name="M:Syncfusion.DataSource.Extensions.DataSetExtensions.EscapeLikeValue(System.String)">
-            <summary>
-            Insert [ wildcard ] in LIKE Queries.
-            </summary>
-            <param name="property">The property name.</param>
-            <returns>Returns the string.</returns>
         </member>
     </members>
 </doc>

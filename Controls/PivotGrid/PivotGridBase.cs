@@ -46,7 +46,8 @@ namespace BudgetExecution
         /// <param name="bindingList">
         /// The binding source.
         /// </param>
-        public virtual void SetDataSource<T1>( T1 bindingList ) where T1 : IBindingList
+        public virtual void SetDataSource<T1>( T1 bindingList )
+            where T1 : IBindingList
         {
             try
             {
@@ -84,7 +85,8 @@ namespace BudgetExecution
         /// The dictionary.
         /// </param>
         public virtual void SetDataSource<T1, T2>( T1 bindingList, T2 dict )
-            where T1 : IBindingList where T2 : IDictionary<string, object>
+            where T1 : IBindingList
+            where T2 : IDictionary<string, object>
         {
             try
             {
@@ -129,7 +131,8 @@ namespace BudgetExecution
         /// </summary>
         /// <typeparam name="T1"></typeparam>
         /// <param name="data">The data.</param>
-        public virtual void SetDataSource<T1>( IEnumerable<T1> data ) where T1 : IEnumerable<T1>
+        public virtual void SetDataSource<T1>( IEnumerable<T1> data )
+            where T1 : IEnumerable<T1>
         {
             if( data?.Any( ) == true )
             {
@@ -151,7 +154,8 @@ namespace BudgetExecution
         /// <param name="data">The data.</param>
         /// <param name="dict">The dictionary.</param>
         public virtual void SetDataSource<T1>( IEnumerable<T1> data,
-            IDictionary<string, object> dict ) where T1 : IEnumerable<T1>
+            IDictionary<string, object> dict )
+            where T1 : IEnumerable<T1>
         {
             if( data?.Any( ) == true )
             {
@@ -188,7 +192,8 @@ namespace BudgetExecution
         /// <param name="field">The field.</param>
         /// <param name="filter">The dictionary.</param>
         public virtual void SetDataSource<T1, T2, T3>( IEnumerable<T1> data, T2 field, T3 filter )
-            where T1 : IEnumerable<T1> where T2 : struct
+            where T1 : IEnumerable<T1>
+            where T2 : struct
         {
             if( data?.Any( ) == true
                && Enum.IsDefined( typeof( Field ), field ) )
@@ -252,7 +257,8 @@ namespace BudgetExecution
         /// <param name="data">The data.</param>
         /// <param name="dict">The dictionary.</param>
         public virtual void SetDataSource<T1, T2>( IEnumerable<T1> data, T2 dict )
-            where T1 : IEnumerable<T1> where T2 : IDictionary<string, object>
+            where T1 : IEnumerable<T1>
+            where T2 : IDictionary<string, object>
         {
             if( data?.Any( ) == true
                && dict?.Any( ) == true )
@@ -289,7 +295,9 @@ namespace BudgetExecution
         /// <param name="field">The field.</param>
         /// <param name="filter">The filter.</param>
         public virtual void SetDataSource<T1, T2>( IEnumerable<T1> data, T2 field,
-            object filter = null ) where T1 : IEnumerable<T1> where T2 : struct
+            object filter = null )
+            where T1 : IEnumerable<T1>
+            where T2 : struct
         {
             if( data?.Any( ) == true
                && Enum.IsDefined( typeof( Field ), field ) )

@@ -4173,15 +4173,6 @@
             <param name="search"></param>
             <param name="keyword"></param>
         </member>
-        <member name="M:Syncfusion.Windows.Forms.PivotAnalysis.DesignerActionSupportList.GetSortedActionItems">
-            <summary>
-            Returns the collection of <see cref="T:System.ComponentModel.Design.DesignerActionItem"/> objects contained in the list.
-            </summary>
-            <returns>
-            A <see cref="T:System.ComponentModel.Design.DesignerActionItem"/> array that contains the items in this list.
-            </returns>
-            <override/>
-        </member>
         <member name="T:Syncfusion.Windows.Forms.PivotAnalysis.PivotGridThemedRenderer">
             <summary>
             Renderer class for painting and drawing operations for visual style based theme.

@@ -111,6 +111,11 @@
             You can add and remove library functions.
             </summary>
         </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.IgnoreValueChanged">
+            <summary>
+            Field that turns on/off processing of the ICalcData.ValueChanged event.
+            </summary>
+        </member>
         <member name="F:Syncfusion.Calculate.CalcEngine.machineepsilon">
             <summary>
             Used to store the value as double
@@ -122,6 +127,21 @@
             </summary>
         </member>
         <member name="F:Syncfusion.Calculate.CalcEngine.minrealnumber">
+            <summary>
+            Used to store the value as double
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.ACC">
+            <summary>
+            Used to store the number
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.BIGNO">
+            <summary>
+            Used to store the big number as double
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.BIGNI">
             <summary>
             Used to store the value as double
             </summary>
@@ -156,26 +176,6 @@
             This field holds equivalent double value of 1904(DateTime).
             </summary>
         </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.IgnoreValueChanged">
-            <summary>
-            Field that turns on/off processing of the ICalcData.ValueChanged event.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.ACC">
-            <summary>
-            Used to store the number
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.BIGNO">
-            <summary>
-            Used to store the big number as double
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.BIGNI">
-            <summary>
-            Used to store the value as double
-            </summary>
-        </member>
         <member name="F:Syncfusion.Calculate.CalcEngine.UseDate1904">
             <summary>
             This field will be set as true, if the 1904 date system is enabled in Excel.
@@ -197,6 +197,41 @@
             </summary>
             <param name="ParentObject">The ICalcData from the underlying grid.</param>
         </member>
+        <member name="T:Syncfusion.Calculate.CalcEngine.LibraryFunction">
+            <summary>
+            Delegate used to define functions that you add to the function library.
+            </summary>
+            <returns>Resultant value.</returns>
+        </member>
+        <member name="E:Syncfusion.Calculate.CalcEngine.FormulaParsing">
+            <summary>
+            Occurs whenever a string needs to be tested to determine whether it should be treated as a formula string and parsed,
+            or be treated as a non-formula string. This event allows for preprocessing the unparsed formula.
+            </summary>
+            <remarks>This event may be raised more than once in the processing of a string into a formula.
+            </remarks>
+        </member>
+        <member name="E:Syncfusion.Calculate.CalcEngine.UnknownFunction">
+            <summary>
+            Occurs whenever an unknown function is encountered during the parsing of a formula.
+            </summary>
+            <remarks>This event may be raised more than once in the parsing of a formula.
+            </remarks>
+        </member>
+        <member name="E:Syncfusion.Calculate.CalcEngine.UpdateNamedRange">
+            <summary>
+            Occurs whenever an UpdateNamedRange function is encountered during the parsing of a formula.
+            </summary>
+            <remarks>This event may be raised more than once in the parsing of a formula.
+            </remarks>
+        </member>
+        <member name="E:Syncfusion.Calculate.CalcEngine.FormulaComputed">
+            <summary>
+            Occurs when the formula computes the values.
+            </summary>
+            <remarks>This event may be raised more than once in the computation of a formula.
+            </remarks>
+        </member>
         <member name="F:Syncfusion.Calculate.CalcEngine.IsArrayFormula">
             <summary>
             Gets or sets whether the formula is array formula or not. 
@@ -212,6 +247,394 @@
             Gets or sets the instance of <see cref="F:Syncfusion.Calculate.CalcEngine.LinearRegression"/>
             </summary>
         </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.TreatStringsAsZero">
+            <summary>
+            Gets of sets whether the CalcEngine treats nonempty strings as zeros when they are
+            encountered during calculations.
+            </summary>
+            <remarks>
+            The default value is true meaning that if a nonempty string is encountered during an arithmetic operation, it will be treated as zero.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.IsAreaCalculation">
+            <summary>
+            This property is used to return the cell ranges for print area calculation.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.MaximumRecursiveCalls">
+            <summary>
+            Specifies the maximum number of recursive calls that can be used to compute a cellvalue.
+            </summary>
+            <remarks>This property comes into play when you have a calculated formula cell that depends on
+            another calculated formula that depends on another calculated formula and so on. If the number of
+            'depends on another formula' exceeds MaximumRecursiveCalls, you will see a Too Complex message
+            displayed in the cell. The default value is 100, but you can set it higher or lower depending upon
+            your expected needs. The purpose of the limit is to avoid a circular reference locking up your
+            application.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.CalculatingSuspended">
+            <summary>
+            Indicates whether formulas are immediately calculated as dependent cells are changed.
+            </summary>
+            <remarks>Use this property to suspend calculations while a series of changes 
+            are made to dependent cells either by the user or programmatically. When the changes are 
+            complete, set this property to False, and then call Engine.RecalculateRange to recalculate
+            the affected range. See the sample in GridCellFormulaModel.CalculatingSuspended.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.LibraryFunctions">
+            <summary>
+            A read-only property that gets a collection holding the current library functions.
+            </summary>
+            <remarks>
+            This property gives you direct access to all library functions.
+            The function name serves as the hash key and the function delegate
+            serves as the hash value.
+            The function name should contain only letters, digits or an underscore.
+            You should use the <see cref="M:Syncfusion.Calculate.CalcEngine.AddFunction(System.String,Syncfusion.Calculate.CalcEngine.LibraryFunction)"/> method to add functions
+            to this collection. Do not use the Add method inherited from Hashtable.
+            The reason is that the hash key needs to be strictly upper case even though
+            formula syntax is case insensitive with respect to functions names.
+            Using the AddFunction method makes sure the hash key is properly set.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.UseNoAmpersandQuotes">
+            <summary>
+            A property that gets/sets whether strings concatenated using the '&amp;' operator should be
+            returned inside double quote marks.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ExceptionThrown">
+            <summary>
+            A property that is used to identify whether the exception thrown or not while calculating the value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.LibraryComputationException">
+            <summary>
+            Gets any Exception raised during the computation of a library function
+            provided RethrowLibraryComputationExceptions is set true.
+            </summary>
+            <remarks>
+            Use the <see cref="M:Syncfusion.Calculate.CalcEngine.ClearLibraryComputationException"/> method to set this property
+            to null to indicate that there is no pending library exception within the engine.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.RethrowLibraryComputationExceptions">
+            <summary>
+            Gets / sets whether the engine Rethrows any exception
+            raised during the computation of a library function.
+            </summary>
+            <remarks>The default value is false.</remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ExcelLikeComputations">
+            <summary>
+            A property that gets or sets the calculations of the <see cref="T:Syncfusion.Calculate.CalcEngine"/> computations to mimic the computations of Excel.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.MaxStackDepth">
+            <summary>
+            Gets or sets the maximum calculation stack depth.
+            </summary>
+            <remarks>
+            The default is 50. This is the number of recursive calls that can be made during calculations.</remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ReservedWordOperators">
+            <summary>
+            Gets or sets a string array that hold the reserved strings
+            that will be used for the OR, AND, XOR, IF, THEN, ELSE and NOT logical operators.
+            </summary>
+            <example>Here is the code that you can use to define this string array. This code
+            shows the default strings that are used. Note that the string must include a leading
+            and trailing blank, and must be lower case. In formulas that use these operators,
+            the formulas themselves are case agnostic.
+            <code lang="C#">
+            engine.ReservedWordOperators = new string[]
+            {
+            	" or ",     //0
+                " and ",    //1
+                " xor ",    //2
+                " if ",     //3
+                " then ",   //4
+                " else ",   //5
+                " not "     //6
+            };
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.FormulaCharacter">
+            <summary>
+            A static property that gets/sets character by which string starts with, can be treated as formula.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.CurrentRowNotationEnabled">
+            <summary>
+            Enables / disables using row = 0 in formulas to represent the current row.
+            </summary>
+            <remarks> 
+            When this property is set True, entering zero as a row in a formula is
+            interpreted to be the current row. Using the current row notation allows
+            you to sort a column in the grid and maintain the relative formula. 
+            After sorting, you do have to call engine.RecalculateRange to allow the
+            relative formulas to reset themselves. 
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ActiveFunctionName">
+            <summary>
+            Below property is used to find the active function name.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ActiveCell">
+            <summary>
+            Gets the cell that is being calculated by the Engine.
+            </summary>
+            <remarks> You can use this properly within your custom functions to
+            identify the item in the ICalcData object being computed.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.AllowShortCircuitIFs">
+            <summary>
+            Gets or sets whether IF function calculations should specifically avoid
+            computing the non-used alternative.
+            </summary>
+            <remarks>
+            The default value is false for code legacy consistency. When AllowShortCircuitIFs
+            is set true, only the necessary alternative of an IF function is computed. To support
+            this behavior, a change in how nested IF function calculations are done is necessary.
+            The default way of calculating nested functions is inside-out, with the inner most
+            functions being computed to a value before the next outer function is evaluated. To
+            support short circuiting IF functions, nested IF functions need to be computed from
+            the outside-in to know what alternative needs to be evaluated. This outside-in calculation
+            pattern only applies to IF functions, and only when AllowShortCircuitIFs is true.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.AlwaysComputeDuringRefresh">
+            <summary>
+            Gets or sets whether FormulaInfo.calcID is tested before
+            computing a formula during a call to <see cref="M:Syncfusion.Calculate.CalcEngine.Refresh(System.String)"/>
+            </summary>
+            <remarks>When a value changes, then the Refresh method is called on any other
+            formula that had a dependency on the changed value. During the Refresh call,
+            the default behavior is to recompute all formulas (AlwaysComputeDuringRefresh = true).
+            If you are using <see cref="M:Syncfusion.Calculate.CalcEngine.UpdateCalcID"/> to strictly control when new values
+            should be used, then you should set this property to false. For example, if you are
+            only using <see cref="M:Syncfusion.Calculate.CalcEngine.PullUpdatedValue(System.Int32,System.Int32,System.Int32)"/> exclusively to retrieve computed values,
+            then setting AlwaysComputeDuringRefresh = false
+            may be more efficient as it will only recompute the value once during the calculations.</remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.UseFormulaValues">
+            <summary>
+            A property that gets/sets whether Formula returns its FormulaValue instead of repeated calculation
+            </summary>
+            <remarks>Use this property to return the FormulaValue when a cell contain more depency cells.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.CheckDanglingStack">
+            <summary>
+            Gets or sets whether Invalid Formula is returned when the calculation stack is not fully exhausted during a calculation.
+            </summary>
+            <remarks>
+            If you enter a formula like "=(1+2)(9+8)", Essential Calculate will compute this formula as 17, ignoring the dangling
+            3 value on its calculation stack. If you want this situation flagged as a Invalid Formula, set this CheckDanglingStack property
+            to true. The default value is false for backward compatibility purposes.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ColumnMaxCount">
+            <summary>
+            Used with row ranges to possibly provide the upperlimit on the number of columns in the ICalcData object.
+            </summary>
+            <remarks>
+            Essential Calculate supports column ranges of the form 2:4 as in =SUM(2:4) to represent all cells in rows
+            2, 3 and 4 from a ICalcData object. To get a value for the number of columns, the CalcEngine first checks to
+            see if the ICalcData object supports the ISheetData interface. If this interface is supported, the column
+            count used to determine the range is obtained through this interface. If the ICalcData object does not support
+            ISupportColumnCount, then the value of ColumnMaxCount is used provided ColumnMaxCount > 0. If not, the fixed value 50
+            is used.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.EnsureIFCallDuringShortCircuit">
+            <summary>
+            Gets or sets whether the IF function implementation is called when <see cref="P:Syncfusion.Calculate.CalcEngine.AllowShortCircuitIFs"/> is true.
+            The default behavior is to not call the IF Function code in the library, but instead, work directly with the
+            IF clauses.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ForceRefreshCall">
+            <summary>
+            Gets or sets whether <see cref="M:Syncfusion.Calculate.CalcEngine.Refresh(System.String)"/> must be called on every cells whenever
+            the <see cref="E:Syncfusion.Calculate.ICalcData.ValueChanged"/> is triggered.
+            The default value is false.
+            </summary>
+            <remarks>
+            When a value changes, then the Refresh method is called recursively every time
+            the grid_ValuChanged is called. Setting this ForceRefreshCall to false will call
+            Refresh for only those cells where the calculated value is actually modified.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.FormulaInfoTable">
+            <summary>
+            A read-only property that gets the collection of FormulaInfo objects being used by the CalcEngine.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.GetValueFromArgPreserveLeadingZeros">
+            <summary>
+            Gets or sets whether leading zeros are preserved in a call to <see cref="M:Syncfusion.Calculate.CalcEngine.GetValueFromArg(System.String)"/>.
+            </summary>
+            <remarks>
+            If the value of arg is "0123" or a cell reference like A1 where A1 holds 0123, then the default behavior
+            is for GetValueFromArg(arg) to return 123, stripping away any leading zeros. If you want calls to
+            GetValueFromArg to preserve the leading zeros, then set GetValueFromArgPreserveLeadingZeros to true.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.IterationMaxCount">
+            <summary>
+            Gets or sets the maximum number of iterative calls that can be made on a cell. <see cref="P:Syncfusion.Calculate.CalcEngine.ThrowCircularException"/>
+            will be set to true when you set IterationMaxCount to any value other than zero.
+            </summary>
+            <remarks>
+            Essential Calculate supports an iterative process to solve equations of the
+            form x=f(x). Here you should think of x as being a cell reference like B2 for example. Setting
+            IterationMaxCount to some value other than zero allows the engine to iteratively compute
+            f(x) using the previous iteration's calculated value for x. The initial value is either 0
+            or the last saved value for a formula in that cell (if the calculation has been performed previously).
+            The iterations continue until either the iteration count exceeds IterationMaxCount, or two
+            successive iteration return values have a relative difference less than IterationMaxTolerance.
+            For example, to have an initial value of 1, you can enter a formula   =1   into the cell, and then
+            enter the self referencing formula into the same cell. This will make the iterative calculations start
+            at 1 instead of 0.
+            <see cref="P:Syncfusion.Calculate.CalcEngine.ThrowCircularException"/> must be set to true in order for the Iterative Calculation
+            support to function For this reason, ThrowCircularException will be automatically set to true
+            when you set a non-zero value to IterationMaxCount.
+            The default value is 0 indicating that iterative calculation support is turned off.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.IterationMaxTolerance">
+            <summary>
+            Gets or sets the success tolerance used by the CalcEngine's iterative calculation support.
+            </summary>
+            <remarks>
+            Essential Calculate supports an iterative process to solve equations of the
+            form x=f(x). Here you should think of x as being a cell reference like B2 for example. Setting
+            IterationMaxCount to some value other than zero allows the engine to iteratively compute
+            f(x) using the previous iteration's calculated value for x. The initial value is either 0
+            or the last saved value for a formula in that cell (if the calculation has been performed previously).
+            The iterations continue until either the iteration count exceeds IterationMaxCount, or two
+            successive iteration return values have a relative difference less than IterationMaxTolerance.
+            The default value is 0.001.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.LockDependencies">
+            <summary>
+            A property that gets / sets whether a changed value should trigger dependent changes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.RowMaxCount">
+            <summary>
+            Used with column ranges to possibly provide the upperlimit on the number of rows in the ICalcData object.
+            </summary>
+            <remarks>
+            Essential Calculate supports column ranges of the form A:D as in =SUM(A:D) to represent all cells in columns
+            A, B, C and D from a ICalcData object. To get a value for the number of rows, the CalcEngine first checks to
+            see if the ICalcData object supports the ISheetData interface. If this interface is supported, the row
+            count used to determine the range is obtained through this interface. If the ICalcData object does not support
+            ISupportRowCount, then the value of RowMaxCount is used provided RowMaxCount > 0. If not, the fixed value 50
+            is used.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.SupportLogicalOperators">
+            <summary>
+            Gets or sets whether OR, AND, XOR and IF THEN ELSE logical
+            operators are supported.
+            </summary>
+            <remarks>
+            The default value is false for backward compatibility.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.SupportRangeOperands">
+             <summary>
+             Gets or sets whether ranges can be used as binary operands.
+             </summary>
+             <remarks>
+             If this property is true, Essential Calculate recognizes ranges such
+             as B1:B5 and A4:E4 as operands of binary operators. So, if you
+             set the formula  = A1:A5 + B1:B5  into cell C4, the calculation
+             will retrieve the values in A4 and B4 to be used in place of the
+             corresponding ranges A1:A5 and B1:B5. Note that such ranges must
+             either have one column wide or one row tall. This fact is used to
+             make the corresponding lookup determined by where the host cell that holds
+             the formula is located. This host cell
+             must either be in the same row or column as some cell in range.
+            
+             The default value is false.
+             </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.SupportsSheetRanges">
+             <summary>
+             Gets or sets whether sheet range notation is supported.
+             </summary>
+             <remarks>
+             Excel supports sheet range notation such as
+             = SUM( sheet1:sheet3!A1 ) + Sum( sheet1:sheet3!B1:B4 ).
+             For backward compatibility with earlier versions that did
+             not support this sheet range notation, you can set
+             this SupportsSheetRanges false.
+            
+             This implementation replaces a sheet range (sheet1:sheet3!B1:B4) with
+             list of ranges (sheet1!B1:B4,sheet2!B1:B4,sheet3!B1:B4).
+             </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ThrowCircularException">
+            <summary>
+            Gets / sets whether the CalcQuick should throw an exception when a circular calculation is encountered.
+            </summary>
+            <remarks>If this property is True, the CalcQuick will throw an exception
+            when it detects a circular calculation. If ThrowCircularException is False, then
+            no exception is thrown and the calculation will loop recursively until Engine.MaximumRecursiveCalls
+            is exceeded.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.UseDependencies">
+            <summary>
+            A property that gets / sets whether the CalcEngine should track dependencies.
+            </summary>
+            <remarks>If you are using the CalEngine in a manner where you always
+            call PullUpdatedValue to access the computations, then setting UseDependencies
+            to False will make things more efficient as any requested computed value will
+            be fully computed every time it is retrieved. In this situation, the CalcEngine
+            does not need to track dependencies.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ValidPrecedingChars">
+            <summary>
+            For internal use.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.PreserveFormula">
+            <summary>
+            Gets or sets a value indicating whether [preserve formula].
+            </summary>
+            <value><c>true</c> if [preserve formula]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ParseArgumentSeparator">
+            <summary>
+            A static property that gets/sets character to be recognized by the parsing code as the delimiter for arguments in a named formula's argument list
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ParseDecimalSeparator">
+            <summary>
+            A static property that gets/sets the character to be recognized by the parsing engine as decimal separator for numbers.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ParseDateTimeSeparator">
+            <summary>
+            A static property that gets/sets the character to be recognized by the parsing engine as decimal separator for date.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.ErrorStrings">
+            <summary>
+            A property that gets/sets list of # error strings recognized by Excel.
+            </summary>
+        </member>
         <member name="F:Syncfusion.Calculate.CalcEngine.already_registered">
             <summary>
             Used to store the registed values
@@ -221,6 +644,46 @@
             <summary>
             The list of error strings which are used within the Essential Calculate internally. Users can make changes to this internal error strings.
             Default settings by assigning the new strings to the corresponding position.ReloadErrorStrings should be invoked to reset or modify the internal error strings.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Calculate.CalcEngine.FormulaArgumentType">
+            <summary>
+            Specifies the options for checking the formula error strings.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.None">
+            <summary>
+            Formula contains null arguments. For Example:PI,RANDOM...etc
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.Range">
+            <summary>
+            Formula contains range argument. For example:MEDIAN,...etc 
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.TwoTextWithNumber">
+            <summary>
+            Formula contains two text arguments with Number argument. For example:FIND,SEARCH...etc
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.TextWithNumber">
+            <summary>
+            Formula contains number and text arguments. For example:LEFT,RIGHT...etc
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.Numbers">
+            <summary>
+            Formula contains number arguments only. For example:ABS,ROUND,ROUNDDOWN,LOG...etc
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.Text">
+            <summary>
+            Formula contains text arguments only. For example:ARABIC,CLEAN...etc
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.Date">
+            <summary>
+            Formula contains Date argument. For example:DISC,...etc
             </summary>
         </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.FormulaErrorStringCheck(System.String,Syncfusion.Calculate.CalcEngine.FormulaArgumentType)">
@@ -397,6 +860,99 @@
             </summary>
             <param name="sheetName">Name of the sheet.</param>
             <param name="model">The ICalcData object.</param>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.DependentCells">
+            <summary>
+            A read-only property that gets a mapping between a cell and a list of formula cells that depend on it.
+            </summary>
+            <remarks>
+            The key is the given cell, and the value is a ArrayList of cells containing
+            formulas that reference this cell.
+            </remarks>
+            <example> Here is code that will list formula cells affected by changing the given cell.
+            <code lang="C#">
+            public void DisplayAllAffectedCells()
+            {
+            	CalcEngine engine = ((GridFormulaCellModel)this.gridControl1.CellModels["FormulaCell"]).Engine;
+            	foreach(object o in engine.DependentCells.Keys)
+            	{
+            		string s1 = o as string;
+            		Console.Write(s1 + " affects ");
+            		ArrayList ht = (ArrayList) engine.DependentCells[s1];
+            		foreach(object o1 in ht)
+            		{
+            			string s2 = o1 as string;
+            			Console.Write(s2 + " ");
+            		}
+            		Console.WriteLine("");
+            	}
+            }
+            </code>
+            <code lang="VB">
+            	Public Sub DisplayAllAffectedCells()
+            		Dim engine As GridCalcEngine = CType(Me.gridControl1.CellModels("FormulaCell"), GridFormulaCellModel).Engine
+            		Dim o As Object
+            		For Each o In  engine.DependentCells.Keys
+            			Dim s1 As String = CStr(o)
+            			Console.Write((s1 + " affects "))
+            			Dim ht As ArrayList = CType(engine.DependentCells(s1), ArrayList)
+            			Dim o1 As Object
+            			For Each o1 In  ht
+            				Dim s2 As String = CStr(o1)
+            				Console.Write((s2 + " "))
+            			Next o1
+            			Console.WriteLine("")
+            		Next o
+            	End Sub 'DisplayAllAffectedCells
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.DependentFormulaCells">
+             <summary>
+             A read-only property that gets a mapping between a formula cell and a list of cells upon which it depends.
+             </summary>
+             <remarks>
+             The key is the given formula cell and the value is a Hashtable of cells that this
+             formula cell references.
+             </remarks>
+             <example> Here is code that will lists formula cells affected by changing a given cell:
+             <code lang="C#">
+            		public void DisplayAllFormulaDependencies()
+            		{
+            			GridCalcEngine engine = ((GridFormulaCellModel)this.gridControl1.CellModels["FormulaCell"]).Engine;
+            			foreach(object o in engine.DependentFormulaCells.Keys)
+            			{
+            				string s1 = o as string;
+            				Console.Write(s1 + " depends upon ");
+            				Hashtable ht = (Hashtable) engine.DependentFormulaCells[s1];
+            				foreach(object o1 in ht.Keys)
+            				{
+            					string s2 = o1 as string;
+            					Console.Write(s2 + " ");
+            				}
+            				Console.WriteLine("");
+            			}
+            		}
+             </code>
+             <code lang="VB">
+            		Public Sub DisplayAllFormulaDependencies()
+            			Dim engine As GridCalcEngine = CType(Me.gridControl1.CellModels("FormulaCell"), GridFormulaCellModel).Engine
+            
+            			Dim o As Object
+            			For Each o In  engine.DependentFormulaCells.Keys
+            				Dim s1 As String = CStr(o)
+            				Console.Write((s1 + " depends upon "))
+            				Dim ht As Hashtable = CType(engine.DependentFormulaCells(s1), Hashtable)
+            				Dim o1 As Object
+            				For Each o1 In  ht.Keys
+            					Dim s2 As String = CStr(o1)
+            					Console.Write((s2 + " "))
+            				Next o1
+            				Console.WriteLine("")
+            			Next o
+            		End Sub 'DisplayAllFormulaDependencies
+             </code>
+             </example>
         </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.UpdateDependenciesAndCell(System.String)">
             <summary>
@@ -1053,6 +1609,12 @@
             <param name="formula">formula</param>
             <returns></returns>
         </member>
+        <member name="M:Syncfusion.Calculate.CalcEngine.LenComparer.Compare(System.Object,System.Object)">
+            <summary>
+            Compares 2 strings based on their length.
+            </summary>
+            <returns>0, if both strings are equal; positive value if second string is greater; neagative value if first string is greater.</returns>
+        </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.ComputeDate(System.String)">
             <summary>
             Returns the number of days since 01 Jan 1900.
@@ -1237,6 +1799,11 @@
             </summary>
             <param name="argList"> Start date, end date and unit.</param>
             <returns>The number of days, months, or years between two dates.</returns>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.WeekEndType">
+            <summary>
+            Gets the weekend type
+            </summary>
         </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.BaseToBase(System.String,System.Int32,System.Int32)">
             <summary>
@@ -1659,6 +2226,33 @@
             </summary>
             <param name="argList">arguments list</param>
             <returns></returns>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.UseDatesInCalculations">
+            <summary>
+            Gets or sets whether dates can be used as operands in calculations. The default value is false.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.RethrowParseExceptions">
+            <summary>
+            Gets / sets whether the engine throws an exception when
+            parsing fails with an unknown function error.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.NativeFormats">
+            <summary>
+            The List holds the formats of a Chinese Language.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.EnableLookupTableCaching">
+            <summary>
+            Gets or sets whether lookup tables used in the VLookUp and HLookUp functions are cached.
+            </summary>
+            <remarks>
+            Depending upon your use case, caching look up tables can greatly speed up calculations involving HLookUp
+            and VLookUp. If you make multiple calls to these functions passing in the same look up tables, and if these
+            look up tables are relatively static (don't dynamically change as the look ups are taking place), then caching
+            these tables will likely improve performance.
+            </remarks>
         </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.LookupCachingClearAll">
             <summary>
@@ -2203,6 +2797,11 @@
             <param name="range">Value and number of digits.</param>
             <returns>Truncated value.</returns>
         </member>
+        <member name="M:Syncfusion.Calculate.CalcEngine.PerformArithmeticCalculation(System.String,System.Boolean@,System.Int32@,System.Double[]@,System.String@)">
+            <summary>
+            To Peroform arithmetic operations of range.
+            </summary>
+        </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.PerformSumproductArithmetic(System.String)">
             <summary>
             To Peroform SumProduct default arithmetic operations.
@@ -2656,7 +3255,7 @@
             <summary>
             Sums the cells specified by some criteria.
             </summary>
-            <param name="argList">The criteria range, the dict, and the sum range.</param>
+            <param name="argList">The criteria range, the criteria, and the sum range.</param>
             <returns>A string holding the sum.</returns>
         </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.FindRowColIndex(System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
@@ -2784,7 +3383,7 @@
             <summary>
              Returns the Calculated Floor value for the given Input.
             </summary>
-            <param name="Double Values"></param>
+            <param name="Double ValuesValues"></param>
         </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.ComputeFormulaText(System.String)">
             <summary>
@@ -3108,6 +3707,11 @@
             <param name="arg">arguments</param>
             <returns></returns>
         </member>
+        <member name="P:Syncfusion.Calculate.CalcEngine.NamedRanges">
+            <summary>
+            A property that gets/sets the current named ranges.
+            </summary>
+        </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.AddNamedRange(System.String,System.String)">
             <summary>
             Adds a named range to the NamedRanges collection.
@@ -3249,7 +3853,7 @@
             </summary>
             <param name="s"> CellRange</param>
             <param name="op">Tokens("=",">",">=")</param>
-            <param name="dict">The criteria used to determine which cells to add.</param>
+            <param name="criteria">The criteria used to determine which cells to add.</param>
             <returns> true criteria match or false.</returns>
         </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.ComputeChidist(System.String)">
@@ -3406,22 +4010,22 @@
             <summary>
             Counts the cells specified by some criteria.
             </summary>
-            <param name="argList">The criteria range, the dict.</param>
+            <param name="argList">The criteria range, the criteria.</param>
             <returns>Number of cells meeting the criteria.</returns>
         </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.ComputeCountIFFunctions(System.String,System.Boolean)">
             <summary>
             Calculates the CountIF and CountIFS formula
             </summary>
-            <param name="argList"> The criteria range, the dict</param>
+            <param name="argList"> The criteria range, the criteria</param>
             <param name="isCountif"> If true, calculate CountIF formula. Else calculate CountIFS formula.</param>
             <returns>Number of cells meeting the criteria.</returns>
         </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.ComputeCOUNTIFS(System.String)">
             <summary>
-            The COUNTIFS function applies criteria to cells across multiple ranges and counts the number of times all dict are met.
+            The COUNTIFS function applies criteria to cells across multiple ranges and counts the number of times all criteria are met.
             </summary>
-            <param name="argList">The criteria range, the dict.</param>
+            <param name="argList">The criteria range, the criteria.</param>
             <returns>Number of cells meeting the criteria</returns>
         </member>
         <member name="M:Syncfusion.Calculate.CalcEngine.ComputeCovar(System.String)">
@@ -4801,605 +5405,6 @@
             <param name="argList">XML content</param>
             <returns>value</returns>
         </member>
-        <member name="E:Syncfusion.Calculate.CalcEngine.FormulaParsing">
-            <summary>
-            Occurs whenever a string needs to be tested to determine whether it should be treated as a formula string and parsed,
-            or be treated as a non-formula string. This event allows for preprocessing the unparsed formula.
-            </summary>
-            <remarks>This event may be raised more than once in the processing of a string into a formula.
-            </remarks>
-        </member>
-        <member name="E:Syncfusion.Calculate.CalcEngine.UnknownFunction">
-            <summary>
-            Occurs whenever an unknown function is encountered during the parsing of a formula.
-            </summary>
-            <remarks>This event may be raised more than once in the parsing of a formula.
-            </remarks>
-        </member>
-        <member name="E:Syncfusion.Calculate.CalcEngine.UpdateNamedRange">
-            <summary>
-            Occurs whenever an UpdateNamedRange function is encountered during the parsing of a formula.
-            </summary>
-            <remarks>This event may be raised more than once in the parsing of a formula.
-            </remarks>
-        </member>
-        <member name="E:Syncfusion.Calculate.CalcEngine.FormulaComputed">
-            <summary>
-            Occurs when the formula computes the values.
-            </summary>
-            <remarks>This event may be raised more than once in the computation of a formula.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.TreatStringsAsZero">
-            <summary>
-            Gets of sets whether the CalcEngine treats nonempty strings as zeros when they are
-            encountered during calculations.
-            </summary>
-            <remarks>
-            The default value is true meaning that if a nonempty string is encountered during an arithmetic operation, it will be treated as zero.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.IsAreaCalculation">
-            <summary>
-            This property is used to return the cell ranges for print area calculation.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.MaximumRecursiveCalls">
-            <summary>
-            Specifies the maximum number of recursive calls that can be used to compute a cellvalue.
-            </summary>
-            <remarks>This property comes into play when you have a calculated formula cell that depends on
-            another calculated formula that depends on another calculated formula and so on. If the number of
-            'depends on another formula' exceeds MaximumRecursiveCalls, you will see a Too Complex message
-            displayed in the cell. The default value is 100, but you can set it higher or lower depending upon
-            your expected needs. The purpose of the limit is to avoid a circular reference locking up your
-            application.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.CalculatingSuspended">
-            <summary>
-            Indicates whether formulas are immediately calculated as dependent cells are changed.
-            </summary>
-            <remarks>Use this property to suspend calculations while a series of changes 
-            are made to dependent cells either by the user or programmatically. When the changes are 
-            complete, set this property to False, and then call Engine.RecalculateRange to recalculate
-            the affected range. See the sample in GridCellFormulaModel.CalculatingSuspended.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.LibraryFunctions">
-            <summary>
-            A read-only property that gets a collection holding the current library functions.
-            </summary>
-            <remarks>
-            This property gives you direct access to all library functions.
-            The function name serves as the hash key and the function delegate
-            serves as the hash value.
-            The function name should contain only letters, digits or an underscore.
-            You should use the <see cref="M:Syncfusion.Calculate.CalcEngine.AddFunction(System.String,Syncfusion.Calculate.CalcEngine.LibraryFunction)"/> method to add functions
-            to this collection. Do not use the Add method inherited from Hashtable.
-            The reason is that the hash key needs to be strictly upper case even though
-            formula syntax is case insensitive with respect to functions names.
-            Using the AddFunction method makes sure the hash key is properly set.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.UseNoAmpersandQuotes">
-            <summary>
-            A property that gets/sets whether strings concatenated using the '&amp;' operator should be
-            returned inside double quote marks.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ExceptionThrown">
-            <summary>
-            A property that is used to identify whether the exception thrown or not while calculating the value.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.LibraryComputationException">
-            <summary>
-            Gets any Exception raised during the computation of a library function
-            provided RethrowLibraryComputationExceptions is set true.
-            </summary>
-            <remarks>
-            Use the <see cref="M:Syncfusion.Calculate.CalcEngine.ClearLibraryComputationException"/> method to set this property
-            to null to indicate that there is no pending library exception within the engine.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.RethrowLibraryComputationExceptions">
-            <summary>
-            Gets / sets whether the engine Rethrows any exception
-            raised during the computation of a library function.
-            </summary>
-            <remarks>The default value is false.</remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ExcelLikeComputations">
-            <summary>
-            A property that gets or sets the calculations of the <see cref="T:Syncfusion.Calculate.CalcEngine"/> computations to mimic the computations of Excel.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.MaxStackDepth">
-            <summary>
-            Gets or sets the maximum calculation stack depth.
-            </summary>
-            <remarks>
-            The default is 50. This is the number of recursive calls that can be made during calculations.</remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ReservedWordOperators">
-            <summary>
-            Gets or sets a string array that hold the reserved strings
-            that will be used for the OR, AND, XOR, IF, THEN, ELSE and NOT logical operators.
-            </summary>
-            <example>Here is the code that you can use to define this string array. This code
-            shows the default strings that are used. Note that the string must include a leading
-            and trailing blank, and must be lower case. In formulas that use these operators,
-            the formulas themselves are case agnostic.
-            <code lang="C#">
-            engine.ReservedWordOperators = new string[]
-            {
-            	" or ",     //0
-                " and ",    //1
-                " xor ",    //2
-                " if ",     //3
-                " then ",   //4
-                " else ",   //5
-                " not "     //6
-            };
-            </code>
-            </example>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.FormulaCharacter">
-            <summary>
-            A static property that gets/sets character by which string starts with, can be treated as formula.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.CurrentRowNotationEnabled">
-            <summary>
-            Enables / disables using row = 0 in formulas to represent the current row.
-            </summary>
-            <remarks> 
-            When this property is set True, entering zero as a row in a formula is
-            interpreted to be the current row. Using the current row notation allows
-            you to sort a column in the grid and maintain the relative formula. 
-            After sorting, you do have to call engine.RecalculateRange to allow the
-            relative formulas to reset themselves. 
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ActiveFunctionName">
-            <summary>
-            Below property is used to find the active function name.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ActiveCell">
-            <summary>
-            Gets the cell that is being calculated by the Engine.
-            </summary>
-            <remarks> You can use this properly within your custom functions to
-            identify the item in the ICalcData object being computed.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.AllowShortCircuitIFs">
-            <summary>
-            Gets or sets whether IF function calculations should specifically avoid
-            computing the non-used alternative.
-            </summary>
-            <remarks>
-            The default value is false for code legacy consistency. When AllowShortCircuitIFs
-            is set true, only the necessary alternative of an IF function is computed. To support
-            this behavior, a change in how nested IF function calculations are done is necessary.
-            The default way of calculating nested functions is inside-out, with the inner most
-            functions being computed to a value before the next outer function is evaluated. To
-            support short circuiting IF functions, nested IF functions need to be computed from
-            the outside-in to know what alternative needs to be evaluated. This outside-in calculation
-            pattern only applies to IF functions, and only when AllowShortCircuitIFs is true.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.AlwaysComputeDuringRefresh">
-            <summary>
-            Gets or sets whether FormulaInfo.calcID is tested before
-            computing a formula during a call to <see cref="M:Syncfusion.Calculate.CalcEngine.Refresh(System.String)"/>
-            </summary>
-            <remarks>When a value changes, then the Refresh method is called on any other
-            formula that had a dependency on the changed value. During the Refresh call,
-            the default behavior is to recompute all formulas (AlwaysComputeDuringRefresh = true).
-            If you are using <see cref="M:Syncfusion.Calculate.CalcEngine.UpdateCalcID"/> to strictly control when new values
-            should be used, then you should set this property to false. For example, if you are
-            only using <see cref="M:Syncfusion.Calculate.CalcEngine.PullUpdatedValue(System.Int32,System.Int32,System.Int32)"/> exclusively to retrieve computed values,
-            then setting AlwaysComputeDuringRefresh = false
-            may be more efficient as it will only recompute the value once during the calculations.</remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.UseFormulaValues">
-            <summary>
-            A property that gets/sets whether Formula returns its FormulaValue instead of repeated calculation
-            </summary>
-            <remarks>Use this property to return the FormulaValue when a cell contain more depency cells.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.CheckDanglingStack">
-            <summary>
-            Gets or sets whether Invalid Formula is returned when the calculation stack is not fully exhausted during a calculation.
-            </summary>
-            <remarks>
-            If you enter a formula like "=(1+2)(9+8)", Essential Calculate will compute this formula as 17, ignoring the dangling
-            3 value on its calculation stack. If you want this situation flagged as a Invalid Formula, set this CheckDanglingStack property
-            to true. The default value is false for backward compatibility purposes.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ColumnMaxCount">
-            <summary>
-            Used with row ranges to possibly provide the upperlimit on the number of columns in the ICalcData object.
-            </summary>
-            <remarks>
-            Essential Calculate supports column ranges of the form 2:4 as in =SUM(2:4) to represent all cells in rows
-            2, 3 and 4 from a ICalcData object. To get a value for the number of columns, the CalcEngine first checks to
-            see if the ICalcData object supports the ISheetData interface. If this interface is supported, the column
-            count used to determine the range is obtained through this interface. If the ICalcData object does not support
-            ISupportColumnCount, then the value of ColumnMaxCount is used provided ColumnMaxCount > 0. If not, the fixed value 50
-            is used.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.EnsureIFCallDuringShortCircuit">
-            <summary>
-            Gets or sets whether the IF function implementation is called when <see cref="P:Syncfusion.Calculate.CalcEngine.AllowShortCircuitIFs"/> is true.
-            The default behavior is to not call the IF Function code in the library, but instead, work directly with the
-            IF clauses.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ForceRefreshCall">
-            <summary>
-            Gets or sets whether <see cref="M:Syncfusion.Calculate.CalcEngine.Refresh(System.String)"/> must be called on every cells whenever
-            the <see cref="E:Syncfusion.Calculate.ICalcData.ValueChanged"/> is triggered.
-            The default value is false.
-            </summary>
-            <remarks>
-            When a value changes, then the Refresh method is called recursively every time
-            the grid_ValuChanged is called. Setting this ForceRefreshCall to false will call
-            Refresh for only those cells where the calculated value is actually modified.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.FormulaInfoTable">
-            <summary>
-            A read-only property that gets the collection of FormulaInfo objects being used by the CalcEngine.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.GetValueFromArgPreserveLeadingZeros">
-            <summary>
-            Gets or sets whether leading zeros are preserved in a call to <see cref="M:Syncfusion.Calculate.CalcEngine.GetValueFromArg(System.String)"/>.
-            </summary>
-            <remarks>
-            If the value of arg is "0123" or a cell reference like A1 where A1 holds 0123, then the default behavior
-            is for GetValueFromArg(arg) to return 123, stripping away any leading zeros. If you want calls to
-            GetValueFromArg to preserve the leading zeros, then set GetValueFromArgPreserveLeadingZeros to true.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.IterationMaxCount">
-            <summary>
-            Gets or sets the maximum number of iterative calls that can be made on a cell. <see cref="P:Syncfusion.Calculate.CalcEngine.ThrowCircularException"/>
-            will be set to true when you set IterationMaxCount to any value other than zero.
-            </summary>
-            <remarks>
-            Essential Calculate supports an iterative process to solve equations of the
-            form x=f(x). Here you should think of x as being a cell reference like B2 for example. Setting
-            IterationMaxCount to some value other than zero allows the engine to iteratively compute
-            f(x) using the previous iteration's calculated value for x. The initial value is either 0
-            or the last saved value for a formula in that cell (if the calculation has been performed previously).
-            The iterations continue until either the iteration count exceeds IterationMaxCount, or two
-            successive iteration return values have a relative difference less than IterationMaxTolerance.
-            For example, to have an initial value of 1, you can enter a formula   =1   into the cell, and then
-            enter the self referencing formula into the same cell. This will make the iterative calculations start
-            at 1 instead of 0.
-            <see cref="P:Syncfusion.Calculate.CalcEngine.ThrowCircularException"/> must be set to true in order for the Iterative Calculation
-            support to function For this reason, ThrowCircularException will be automatically set to true
-            when you set a non-zero value to IterationMaxCount.
-            The default value is 0 indicating that iterative calculation support is turned off.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.IterationMaxTolerance">
-            <summary>
-            Gets or sets the success tolerance used by the CalcEngine's iterative calculation support.
-            </summary>
-            <remarks>
-            Essential Calculate supports an iterative process to solve equations of the
-            form x=f(x). Here you should think of x as being a cell reference like B2 for example. Setting
-            IterationMaxCount to some value other than zero allows the engine to iteratively compute
-            f(x) using the previous iteration's calculated value for x. The initial value is either 0
-            or the last saved value for a formula in that cell (if the calculation has been performed previously).
-            The iterations continue until either the iteration count exceeds IterationMaxCount, or two
-            successive iteration return values have a relative difference less than IterationMaxTolerance.
-            The default value is 0.001.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.LockDependencies">
-            <summary>
-            A property that gets / sets whether a changed value should trigger dependent changes.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.RowMaxCount">
-            <summary>
-            Used with column ranges to possibly provide the upperlimit on the number of rows in the ICalcData object.
-            </summary>
-            <remarks>
-            Essential Calculate supports column ranges of the form A:D as in =SUM(A:D) to represent all cells in columns
-            A, B, C and D from a ICalcData object. To get a value for the number of rows, the CalcEngine first checks to
-            see if the ICalcData object supports the ISheetData interface. If this interface is supported, the row
-            count used to determine the range is obtained through this interface. If the ICalcData object does not support
-            ISupportRowCount, then the value of RowMaxCount is used provided RowMaxCount > 0. If not, the fixed value 50
-            is used.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.SupportLogicalOperators">
-            <summary>
-            Gets or sets whether OR, AND, XOR and IF THEN ELSE logical
-            operators are supported.
-            </summary>
-            <remarks>
-            The default value is false for backward compatibility.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.SupportRangeOperands">
-             <summary>
-             Gets or sets whether ranges can be used as binary operands.
-             </summary>
-             <remarks>
-             If this property is true, Essential Calculate recognizes ranges such
-             as B1:B5 and A4:E4 as operands of binary operators. So, if you
-             set the formula  = A1:A5 + B1:B5  into cell C4, the calculation
-             will retrieve the values in A4 and B4 to be used in place of the
-             corresponding ranges A1:A5 and B1:B5. Note that such ranges must
-             either have one column wide or one row tall. This fact is used to
-             make the corresponding lookup determined by where the host cell that holds
-             the formula is located. This host cell
-             must either be in the same row or column as some cell in range.
-            
-             The default value is false.
-             </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.SupportsSheetRanges">
-             <summary>
-             Gets or sets whether sheet range notation is supported.
-             </summary>
-             <remarks>
-             Excel supports sheet range notation such as
-             = SUM( sheet1:sheet3!A1 ) + Sum( sheet1:sheet3!B1:B4 ).
-             For backward compatibility with earlier versions that did
-             not support this sheet range notation, you can set
-             this SupportsSheetRanges false.
-            
-             This implementation replaces a sheet range (sheet1:sheet3!B1:B4) with
-             list of ranges (sheet1!B1:B4,sheet2!B1:B4,sheet3!B1:B4).
-             </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ThrowCircularException">
-            <summary>
-            Gets / sets whether the CalcQuick should throw an exception when a circular calculation is encountered.
-            </summary>
-            <remarks>If this property is True, the CalcQuick will throw an exception
-            when it detects a circular calculation. If ThrowCircularException is False, then
-            no exception is thrown and the calculation will loop recursively until Engine.MaximumRecursiveCalls
-            is exceeded.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.UseDependencies">
-            <summary>
-            A property that gets / sets whether the CalcEngine should track dependencies.
-            </summary>
-            <remarks>If you are using the CalEngine in a manner where you always
-            call PullUpdatedValue to access the computations, then setting UseDependencies
-            to False will make things more efficient as any requested computed value will
-            be fully computed every time it is retrieved. In this situation, the CalcEngine
-            does not need to track dependencies.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ValidPrecedingChars">
-            <summary>
-            For internal use.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.PreserveFormula">
-            <summary>
-            Gets or sets a value indicating whether [preserve formula].
-            </summary>
-            <value><c>true</c> if [preserve formula]; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ParseArgumentSeparator">
-            <summary>
-            A static property that gets/sets character to be recognized by the parsing code as the delimiter for arguments in a named formula's argument list
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ParseDecimalSeparator">
-            <summary>
-            A static property that gets/sets the character to be recognized by the parsing engine as decimal separator for numbers.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ParseDateTimeSeparator">
-            <summary>
-            A static property that gets/sets the character to be recognized by the parsing engine as decimal separator for date.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.ErrorStrings">
-            <summary>
-            A property that gets/sets list of # error strings recognized by Excel.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.DependentCells">
-            <summary>
-            A read-only property that gets a mapping between a cell and a list of formula cells that depend on it.
-            </summary>
-            <remarks>
-            The key is the given cell, and the value is a ArrayList of cells containing
-            formulas that reference this cell.
-            </remarks>
-            <example> Here is code that will list formula cells affected by changing the given cell.
-            <code lang="C#">
-            public void DisplayAllAffectedCells()
-            {
-            	CalcEngine engine = ((GridFormulaCellModel)this.gridControl1.CellModels["FormulaCell"]).Engine;
-            	foreach(object o in engine.DependentCells.Keys)
-            	{
-            		string s1 = o as string;
-            		Console.Write(s1 + " affects ");
-            		ArrayList ht = (ArrayList) engine.DependentCells[s1];
-            		foreach(object o1 in ht)
-            		{
-            			string s2 = o1 as string;
-            			Console.Write(s2 + " ");
-            		}
-            		Console.WriteLine("");
-            	}
-            }
-            </code>
-            <code lang="VB">
-            	Public Sub DisplayAllAffectedCells()
-            		Dim engine As GridCalcEngine = CType(Me.gridControl1.CellModels("FormulaCell"), GridFormulaCellModel).Engine
-            		Dim o As Object
-            		For Each o In  engine.DependentCells.Keys
-            			Dim s1 As String = CStr(o)
-            			Console.Write((s1 + " affects "))
-            			Dim ht As ArrayList = CType(engine.DependentCells(s1), ArrayList)
-            			Dim o1 As Object
-            			For Each o1 In  ht
-            				Dim s2 As String = CStr(o1)
-            				Console.Write((s2 + " "))
-            			Next o1
-            			Console.WriteLine("")
-            		Next o
-            	End Sub 'DisplayAllAffectedCells
-            </code>
-            </example>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.DependentFormulaCells">
-             <summary>
-             A read-only property that gets a mapping between a formula cell and a list of cells upon which it depends.
-             </summary>
-             <remarks>
-             The key is the given formula cell and the value is a Hashtable of cells that this
-             formula cell references.
-             </remarks>
-             <example> Here is code that will lists formula cells affected by changing a given cell:
-             <code lang="C#">
-            		public void DisplayAllFormulaDependencies()
-            		{
-            			GridCalcEngine engine = ((GridFormulaCellModel)this.gridControl1.CellModels["FormulaCell"]).Engine;
-            			foreach(object o in engine.DependentFormulaCells.Keys)
-            			{
-            				string s1 = o as string;
-            				Console.Write(s1 + " depends upon ");
-            				Hashtable ht = (Hashtable) engine.DependentFormulaCells[s1];
-            				foreach(object o1 in ht.Keys)
-            				{
-            					string s2 = o1 as string;
-            					Console.Write(s2 + " ");
-            				}
-            				Console.WriteLine("");
-            			}
-            		}
-             </code>
-             <code lang="VB">
-            		Public Sub DisplayAllFormulaDependencies()
-            			Dim engine As GridCalcEngine = CType(Me.gridControl1.CellModels("FormulaCell"), GridFormulaCellModel).Engine
-            
-            			Dim o As Object
-            			For Each o In  engine.DependentFormulaCells.Keys
-            				Dim s1 As String = CStr(o)
-            				Console.Write((s1 + " depends upon "))
-            				Dim ht As Hashtable = CType(engine.DependentFormulaCells(s1), Hashtable)
-            				Dim o1 As Object
-            				For Each o1 In  ht.Keys
-            					Dim s2 As String = CStr(o1)
-            					Console.Write((s2 + " "))
-            				Next o1
-            				Console.WriteLine("")
-            			Next o
-            		End Sub 'DisplayAllFormulaDependencies
-             </code>
-             </example>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.WeekEndType">
-            <summary>
-            Gets the weekend type
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.UseDatesInCalculations">
-            <summary>
-            Gets or sets whether dates can be used as operands in calculations. The default value is false.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.RethrowParseExceptions">
-            <summary>
-            Gets / sets whether the engine throws an exception when
-            parsing fails with an unknown function error.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.NativeFormats">
-            <summary>
-            The List holds the formats of a Chinese Language.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.EnableLookupTableCaching">
-            <summary>
-            Gets or sets whether lookup tables used in the VLookUp and HLookUp functions are cached.
-            </summary>
-            <remarks>
-            Depending upon your use case, caching look up tables can greatly speed up calculations involving HLookUp
-            and VLookUp. If you make multiple calls to these functions passing in the same look up tables, and if these
-            look up tables are relatively static (don't dynamically change as the look ups are taking place), then caching
-            these tables will likely improve performance.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcEngine.NamedRanges">
-            <summary>
-            A property that gets/sets the current named ranges.
-            </summary>
-        </member>
-        <member name="T:Syncfusion.Calculate.CalcEngine.LibraryFunction">
-            <summary>
-            Delegate used to define functions that you add to the function library.
-            </summary>
-            <returns>Resultant value.</returns>
-        </member>
-        <member name="T:Syncfusion.Calculate.CalcEngine.FormulaArgumentType">
-            <summary>
-            Specifies the options for checking the formula error strings.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.None">
-            <summary>
-            Formula contains null arguments. For Example:PI,RANDOM...etc
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.Range">
-            <summary>
-            Formula contains range argument. For example:MEDIAN,...etc 
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.TwoTextWithNumber">
-            <summary>
-            Formula contains two text arguments with Number argument. For example:FIND,SEARCH...etc
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.TextWithNumber">
-            <summary>
-            Formula contains number and text arguments. For example:LEFT,RIGHT...etc
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.Numbers">
-            <summary>
-            Formula contains number arguments only. For example:ABS,ROUND,ROUNDDOWN,LOG...etc
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.Text">
-            <summary>
-            Formula contains text arguments only. For example:ARABIC,CLEAN...etc
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Calculate.CalcEngine.FormulaArgumentType.Date">
-            <summary>
-            Formula contains Date argument. For example:DISC,...etc
-            </summary>
-        </member>
-        <member name="M:Syncfusion.Calculate.CalcEngine.LenComparer.Compare(System.Object,System.Object)">
-            <summary>
-            Compares 2 strings based on their length.
-            </summary>
-            <returns>0, if both strings are equal; positive value if second string is greater; neagative value if first string is greater.</returns>
-        </member>
         <member name="T:Syncfusion.Calculate.UpdateExternalFormulaEventHandler">
             <summary>
             Event delegate for ExternalFormulaEventArgs event.
@@ -5535,7 +5540,7 @@
         </member>
         <member name="M:Syncfusion.Calculate.FormulaComputedEventArgs.#ctor(System.String,System.String,System.String,System.Boolean)">
             <summary>
-            Initializes a new instance of the <see cref="T:Syncfusion.Calculate.FormulaComputedEventCriteria">FormulaComputedEventArgs</see> class.
+            Initializes a new instance of the <see cref="T:Syncfusion.Calculate.FormulaComputedEventArgs">FormulaComputedEventArgs</see> class.
             </summary>
             <param name="formula">Currently calculated formula.</param>
             <param name="computedValue">The CalculatedValue for the formula.</param>
@@ -5749,93 +5754,6 @@
             </code>
             </example>
         </member>
-        <member name="T:Syncfusion.Calculate.ISheetData">
-            <summary>
-            Used in conjunction with <see cref="P:Syncfusion.Calculate.CalcEngine.RowMaxCount"/>.
-            </summary>
-            <remarks>
-            Essential Calculate supports column ranges of the form A:D as in =SUM(A:D) to represent all cells in columns
-            A, B, C and D from a ICalcData object. To get a value for the number of rows, the CalcEngine first checks to
-            see if the ICalcData object supports the ISheetData interface. If this interface is supported, the row
-            count used to determine the range is obtained through this interface. If the ICalcData object does not support
-            ISheetData, then the value of <see cref="P:Syncfusion.Calculate.CalcEngine.RowMaxCount"/> is used provided RowMaxCount &gt; 0.
-            and the index of  first and last rows and columns
-            is used.
-            </remarks>
-        </member>
-        <member name="T:Syncfusion.Calculate.ICalcData">
-            <summary>
-            ICalcData defines the minimal interface that a data object must support in order to use
-            this formula engine.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.Calculate.ICalcData.GetValueRowCol(System.Int32,System.Int32)">
-            <summary>
-            A method that gets the data value from the specified row and column.
-            </summary>
-            <param name="row">1-based index specifying the row index of the requested value.
-            </param>
-            <param name="col">1-based index specifying the column index of the requested data.</param>
-            <returns>The data value at the given row and column index.</returns>
-        </member>
-        <member name="M:Syncfusion.Calculate.ICalcData.SetValueRowCol(System.Object,System.Int32,System.Int32)">
-            <summary>
-            A method that sets the data value to the specified row and column.
-            </summary>
-            <param name="value">The value.</param>
-            <param name="row">One-based index specifying the row index of the value.</param>
-            <param name="col">One-based index specifying the column index of the value.</param>
-        </member>
-        <member name="M:Syncfusion.Calculate.ICalcData.WireParentObject">
-            <summary>
-            A method that wires the ParentObject after the CalcEngine object is created or when a
-            RegisterGridAsSheet call is made.
-            </summary>
-            <remarks>This method is a callback to the ParentObject so it can have a chance
-            to subscribe to any change events it may need to implement ValueChanged properly.
-            </remarks>
-        </member>
-        <member name="E:Syncfusion.Calculate.ICalcData.ValueChanged">
-            <summary>
-            Event for value changed
-            </summary>
-        </member>
-        <member name="M:Syncfusion.Calculate.ISheetData.GetFirstRow">
-            <summary>
-            Get the idex of the first row in UsedRange
-            </summary>
-            <returns> index of first row</returns>
-        </member>
-        <member name="M:Syncfusion.Calculate.ISheetData.GetLastRow">
-            <summary>
-            get the index of the last row in UsedRange
-            </summary>
-            <returns>index of last row</returns>
-        </member>
-        <member name="M:Syncfusion.Calculate.ISheetData.GetRowCount">
-            <summary>
-            Gets the row count.
-            </summary>
-            <returns>Number of rows</returns>
-        </member>
-        <member name="M:Syncfusion.Calculate.ISheetData.GetFirstColumn">
-            <summary>
-            Gets the first column index.
-            </summary>
-            <returns>Index of first column</returns>
-        </member>
-        <member name="M:Syncfusion.Calculate.ISheetData.GetLastColumn">
-            <summary>
-            Gets the last column index / column count.
-            </summary>
-            <returns>Index of last column</returns>
-        </member>
-        <member name="M:Syncfusion.Calculate.ISheetData.GetColumnCount">
-            <summary>
-            Gets the column count.
-            </summary>
-            <returns>Number of columns</returns>
-        </member>
         <member name="F:Syncfusion.Calculate.CalcQuickBase.ignoreChanges">
             <summary>
             Returns the value as false
@@ -5857,10 +5775,133 @@
             <param name="resetStaticMembers">
             Indicates whether the static members of the CalcEngine class will be cleared.</param>
         </member>
+        <member name="E:Syncfusion.Calculate.CalcQuickBase.ValueChanged">
+            <summary>
+            For internal CalcQuick use only.
+            </summary>
+        </member>
+        <member name="E:Syncfusion.Calculate.CalcQuickBase.ValueSet">
+            <summary>
+            Occurs when one of the FormulaInfo objects being
+            maintained by the CalcQuick instance has changed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.AutoCalc">
+            <summary>
+            A property that gets/sets the auto calculation mode of the CalcQuick.
+            </summary>
+            <remarks>
+            By default, the CalcQuick will not update other values when you change
+            a FormulaInfo object. By default, you explicitly call SetDirty()
+            of the CalcQuick instance to force calculations to be done the next time
+            they are required. Setting AutoCalc to True tells the CalcQuick to maintain
+            the dependency information necessary to automatically update
+            dependent formulas when values that affect these formulas change.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.CheckKeys">
+            <summary>
+            Gets or sets whether formulas should be checked for syntax during key substitutions. Default is true.
+            </summary>
+            <remarks>
+            Prior to version 4.4, no syntax checking was performed during the initial parsing process of substituting
+            for keys (variable names enclosed in square brackets). This early syntax checking support has been added to
+            catch cases where a keys was not preceded (or followed) properly in the formula. This CheckKeys property
+            is available for backward compatibility. To maintain the exact parsing algorithm found in versions
+            prior to 4.4, set this property to false.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.ControlModifiedFlags">
+            <summary>
+            Maintains a set of modified flags indicating whether
+            any control has had a value changed.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.DataStore">
+            <summary>
+            Maintains a collection of FormulaInfo objects.
+            </summary>
+            <remarks>
+             This Hashtable serves as the data store for the
+             CalcQuick instance. The keys are the strings used
+             to identify formulas and the values are FormulaInfo
+             objects that hold the information on each formula or value.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.DisposeEngineResource">
+            <summary>
+            Determines whether the CalcEngine object of this CalcQuick should be disposed on disposing this object.
+            <para/>Default value is true.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.Engine">
+            <summary>
+            A read-only property that gets the reference to the CalcEngine object being used by this CalcQuick instance.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.FormulaCharacter">
+            <summary>
+            A property that gets/sets character by which string starts with, are treated as
+            formulas when indexing a CalcQuick object.
+            </summary>
+            <remarks>If you use the technique of indexing the CalcQuick object
+            to set a varaible value, then you indicate that the value should be a
+            formula by starting the string with this character. If you do not want
+            to require your formulas to start with this character, then you will not
+            be able to use the indexing technique. Instead, you will have to call
+            ParseAndCompute directly to handle formulas not starting with this
+            character.</remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.KeyToRowsMap">
+            <summary>
+            Maintains a mapping between the string key and the row
+            used in a CalcSheet to identify a FormulaInfo object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.KeyToVectors">
+            <summary>
+            Maintains a mapping between the string key and a
+            vector of numbers entered using a brace expression.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.NameToControlMap">
+            <summary>
+            Maintains a mapping between the string key and the control
+            which is being used to identify a FormulaInfo object.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.RowsToKeyMap">
+            <summary>
+            Maintains a mapping between the row used in a CalcSheet
+            and the string key used to identify a FormulaInfo object.
+            </summary>
+        </member>
         <member name="M:Syncfusion.Calculate.CalcQuickBase.ResetKeys">
             <summary>
             A method to reset all the keys registered with CalcQuickBase object.
             </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.Item(System.String)">
+            <summary>
+            Gets / sets formula values for CalcQuick.
+            </summary>
+            <param name="key">The indexer used to identify the formula.</param>
+            <remarks>
+            Using an indexer on the CalcQuick instance is the primary method
+            of setting a value to be used in a CalcQuick object. The string
+            used as the indexer is the key that you use to reference this formula
+            value in other formulas used in this CalcQuick instance.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcQuickBase.ThrowCircularException">
+            <summary>
+            Gets / sets whether the CalcQuick should throw an exception when a circular calculation is encountered.
+            </summary>
+            <remarks>If this property is True, the CalcQuick will throw an exception
+            when it detects a circular calculation. If ThrowCircularException is False, then
+            no exception is thrown and the calculation will loop recursively until Engine.MaximumRecursiveCalls
+            is exceeded.
+            </remarks>
         </member>
         <member name="M:Syncfusion.Calculate.CalcQuickBase.CreateEngine">
             <summary>
@@ -6007,129 +6048,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="E:Syncfusion.Calculate.CalcQuickBase.ValueChanged">
-            <summary>
-            For internal CalcQuick use only.
-            </summary>
-        </member>
-        <member name="E:Syncfusion.Calculate.CalcQuickBase.ValueSet">
-            <summary>
-            Occurs when one of the FormulaInfo objects being
-            maintained by the CalcQuick instance has changed.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.AutoCalc">
-            <summary>
-            A property that gets/sets the auto calculation mode of the CalcQuick.
-            </summary>
-            <remarks>
-            By default, the CalcQuick will not update other values when you change
-            a FormulaInfo object. By default, you explicitly call SetDirty()
-            of the CalcQuick instance to force calculations to be done the next time
-            they are required. Setting AutoCalc to True tells the CalcQuick to maintain
-            the dependency information necessary to automatically update
-            dependent formulas when values that affect these formulas change.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.CheckKeys">
-            <summary>
-            Gets or sets whether formulas should be checked for syntax during key substitutions. Default is true.
-            </summary>
-            <remarks>
-            Prior to version 4.4, no syntax checking was performed during the initial parsing process of substituting
-            for keys (variable names enclosed in square brackets). This early syntax checking support has been added to
-            catch cases where a keys was not preceded (or followed) properly in the formula. This CheckKeys property
-            is available for backward compatibility. To maintain the exact parsing algorithm found in versions
-            prior to 4.4, set this property to false.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.ControlModifiedFlags">
-            <summary>
-            Maintains a set of modified flags indicating whether
-            any control has had a value changed.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.DataStore">
-            <summary>
-            Maintains a collection of FormulaInfo objects.
-            </summary>
-            <remarks>
-             This Hashtable serves as the data store for the
-             CalcQuick instance. The keys are the strings used
-             to identify formulas and the values are FormulaInfo
-             objects that hold the information on each formula or value.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.DisposeEngineResource">
-            <summary>
-            Determines whether the CalcEngine object of this CalcQuick should be disposed on disposing this object.
-            <para/>Default value is true.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.Engine">
-            <summary>
-            A read-only property that gets the reference to the CalcEngine object being used by this CalcQuick instance.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.FormulaCharacter">
-            <summary>
-            A property that gets/sets character by which string starts with, are treated as
-            formulas when indexing a CalcQuick object.
-            </summary>
-            <remarks>If you use the technique of indexing the CalcQuick object
-            to set a varaible value, then you indicate that the value should be a
-            formula by starting the string with this character. If you do not want
-            to require your formulas to start with this character, then you will not
-            be able to use the indexing technique. Instead, you will have to call
-            ParseAndCompute directly to handle formulas not starting with this
-            character.</remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.KeyToRowsMap">
-            <summary>
-            Maintains a mapping between the string key and the row
-            used in a CalcSheet to identify a FormulaInfo object.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.KeyToVectors">
-            <summary>
-            Maintains a mapping between the string key and a
-            vector of numbers entered using a brace expression.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.NameToControlMap">
-            <summary>
-            Maintains a mapping between the string key and the control
-            which is being used to identify a FormulaInfo object.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.RowsToKeyMap">
-            <summary>
-            Maintains a mapping between the row used in a CalcSheet
-            and the string key used to identify a FormulaInfo object.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.Item(System.String)">
-            <summary>
-            Gets / sets formula values for CalcQuick.
-            </summary>
-            <param name="key">The indexer used to identify the formula.</param>
-            <remarks>
-            Using an indexer on the CalcQuick instance is the primary method
-            of setting a value to be used in a CalcQuick object. The string
-            used as the indexer is the key that you use to reference this formula
-            value in other formulas used in this CalcQuick instance.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcQuickBase.ThrowCircularException">
-            <summary>
-            Gets / sets whether the CalcQuick should throw an exception when a circular calculation is encountered.
-            </summary>
-            <remarks>If this property is True, the CalcQuick will throw an exception
-            when it detects a circular calculation. If ThrowCircularException is False, then
-            no exception is thrown and the calculation will loop recursively until Engine.MaximumRecursiveCalls
-            is exceeded.
-            </remarks>
-        </member>
         <member name="T:Syncfusion.Calculate.QuickValueSetEventHandler">
             <summary>
             An event handler that represents the method to handle the <see cref="T:Syncfusion.Calculate.QuickValueSetEventHandler"/> event.
@@ -6231,6 +6149,62 @@
             <summary>
             Constructor used during serialization.
             </summary>
+        </member>
+        <member name="E:Syncfusion.Calculate.CalcSheet.CalculatedValueChanged">
+            <summary>
+            This event is raised in SetValueRowCol.
+            </summary>
+        </member>
+        <member name="E:Syncfusion.Calculate.CalcSheet.ValueChanged">
+            <summary>
+            This event should be raised by the implementer of ICalcData whenever a value changes.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcSheet.CalculationsSuspended">
+            <summary>
+            Gets / sets a flag that indicates whether to compute dependent values
+            as cells change.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcSheet.ColCount">
+            <summary>
+            A read-only property that gets the column count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcSheet.Delimter">
+            <summary>
+            Gets / sets the field delimiter for the
+            WriteSheetToFile method.
+            </summary>
+            <remarks>The default value is tab.</remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcSheet.Engine">
+            <summary>
+            A read-only property that gets the CalcEngine object used by this CalcSheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcSheet.LockSheetChanges">
+            <summary>
+            Enables or disables saving changes within the CalcSheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcSheet.Name">
+            <summary>
+            A property that gets / sets the name used to refer to this sheet.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcSheet.RowCount">
+            <summary>
+            A read-only property that gets the row count.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcSheet.Item(System.Int32,System.Int32)">
+            <summary>
+            Gets / sets a value through the ICalcData.GetValueRowCol
+            and ICalcData.SetValueRowCol implementation methods.
+            </summary>
+            <param name="row">The row index.</param>
+            <param name="col">The column index.</param>
         </member>
         <member name="M:Syncfusion.Calculate.CalcSheet.CreateSheetFromFile(System.String)">
             <summary>
@@ -6376,62 +6350,6 @@
             This method serializes computed values instead of formulas. To
             write a file containing formulas, use the WriteSheetToFile method.</remarks>
         </member>
-        <member name="E:Syncfusion.Calculate.CalcSheet.CalculatedValueChanged">
-            <summary>
-            This event is raised in SetValueRowCol.
-            </summary>
-        </member>
-        <member name="E:Syncfusion.Calculate.CalcSheet.ValueChanged">
-            <summary>
-            This event should be raised by the implementer of ICalcData whenever a value changes.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcSheet.CalculationsSuspended">
-            <summary>
-            Gets / sets a flag that indicates whether to compute dependent values
-            as cells change.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcSheet.ColCount">
-            <summary>
-            A read-only property that gets the column count.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcSheet.Delimter">
-            <summary>
-            Gets / sets the field delimiter for the
-            WriteSheetToFile method.
-            </summary>
-            <remarks>The default value is tab.</remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcSheet.Engine">
-            <summary>
-            A read-only property that gets the CalcEngine object used by this CalcSheet.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcSheet.LockSheetChanges">
-            <summary>
-            Enables or disables saving changes within the CalcSheet.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcSheet.Name">
-            <summary>
-            A property that gets / sets the name used to refer to this sheet.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcSheet.RowCount">
-            <summary>
-            A read-only property that gets the row count.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcSheet.Item(System.Int32,System.Int32)">
-            <summary>
-            Gets / sets a value through the ICalcData.GetValueRowCol
-            and ICalcData.SetValueRowCol implementation methods.
-            </summary>
-            <param name="row">The row index.</param>
-            <param name="col">The column index.</param>
-        </member>
         <member name="T:Syncfusion.Calculate.CalcWorkbook">
             <summary>
             CalcWorkbook holds a collection of <see cref="T:Syncfusion.Calculate.CalcSheet"/> objects.
@@ -6455,6 +6373,42 @@
             </summary>
             <param name="info">An object that holds all the data needed to serialize or deserialize this instance.</param>
             <param name="context">Describes the source and destination of the serialized stream specified by info. </param>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcWorkbook.CalcSheetList">
+            <summary>
+            Gets or sets an Arraylist of CalcSheet objects used in this workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcWorkbook.calcSheets">
+            <summary>
+            Array of CalcSheets objects used in this workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcWorkbook.Engine">
+            <summary>
+            Gets/Sets the CalcEngine object.
+            </summary>
+            <remarks>
+            The setter only sets once, and only if InitCalcWorkbook has been called
+            with a zero CalcSheet count.
+            </remarks>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcWorkbook.SheetCount">
+            <summary>
+            Number of CalcSheets in this workbook.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcWorkbook.Item(System.String)">
+            <summary>
+            Gets / sets a CalcSheet object with the given name.
+            </summary>
+            <param name="sheetName">The sheet name.</param>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcWorkbook.Item(System.Int32)">
+            <summary>
+            Gets / sets a CalcSheet object with the given index.
+            </summary>
+            <param name="sheetIndex">The sheet index.</param>
         </member>
         <member name="M:Syncfusion.Calculate.CalcWorkbook.CalculateAll">
             <summary>
@@ -6494,42 +6448,6 @@
             </summary>
             <param name="fileName">The pathname of the file to be written.</param>
         </member>
-        <member name="P:Syncfusion.Calculate.CalcWorkbook.CalcSheetList">
-            <summary>
-            Gets or sets an Arraylist of CalcSheet objects used in this workbook.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcWorkbook.calcSheets">
-            <summary>
-            Array of CalcSheets objects used in this workbook.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcWorkbook.Engine">
-            <summary>
-            Gets/Sets the CalcEngine object.
-            </summary>
-            <remarks>
-            The setter only sets once, and only if InitCalcWorkbook has been called
-            with a zero CalcSheet count.
-            </remarks>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcWorkbook.SheetCount">
-            <summary>
-            Number of CalcSheets in this workbook.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcWorkbook.Item(System.String)">
-            <summary>
-            Gets / sets a CalcSheet object with the given name.
-            </summary>
-            <param name="sheetName">The sheet name.</param>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcWorkbook.Item(System.Int32)">
-            <summary>
-            Gets / sets a CalcSheet object with the given index.
-            </summary>
-            <param name="sheetIndex">The sheet index.</param>
-        </member>
         <member name="T:Syncfusion.Calculate.CalcSheetList">
             <summary>
             Wrapper ArrayList that holds a collection of CalcSheets.
@@ -6546,6 +6464,18 @@
             </summary>
             <param name="list">list of CalcSheets</param>
             <param name="parentWorkBook">The Workbook</param>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcSheetList.Item(System.Int32)">
+            <summary>
+            Gets or sets the CalcSheet at the given index.
+            </summary>
+            <param name="i">The sheet index.</param>
+        </member>
+        <member name="P:Syncfusion.Calculate.CalcSheetList.Item(System.String)">
+            <summary>
+            Gets or sets the CalcSheet with a given name.
+            </summary>
+            <param name="sheetName">The sheet name.</param>
         </member>
         <member name="M:Syncfusion.Calculate.CalcSheetList.Add(System.Object)">
             <summary>
@@ -6589,18 +6519,6 @@
             </summary>
             <returns>Returns a CalcSheet[].</returns>
         </member>
-        <member name="P:Syncfusion.Calculate.CalcSheetList.Item(System.Int32)">
-            <summary>
-            Gets or sets the CalcSheet at the given index.
-            </summary>
-            <param name="i">The sheet index.</param>
-        </member>
-        <member name="P:Syncfusion.Calculate.CalcSheetList.Item(System.String)">
-            <summary>
-            Gets or sets the CalcSheet with a given name.
-            </summary>
-            <param name="sheetName">The sheet name.</param>
-        </member>
         <member name="T:Syncfusion.Calculate.ArrayParser">
             <summary>
             Performs the parsing operation of Array formulas.
@@ -6616,6 +6534,17 @@
             The operators which are involved in array formula. If these operators are not
             present in formula, then formula must be returned without parsing.
             </summary>
+        </member>
+        <member name="T:Syncfusion.Calculate.ArrayParser.ArrayDelegate">
+            <summary>
+            Delegate defined to access the method GetArrayRecordPosition for
+            getting position of the cell.
+            </summary>
+            <param name="row">Row index of the cell.</param>
+            <param name="col">Column index of the cell.</param>
+            <param name="height">The height required for the selected range.</param>
+            <param name="width">The width required for the selected range.</param>
+            <returns>The method containing the four integer parameters.</returns>
         </member>
         <member name="F:Syncfusion.Calculate.ArrayParser.length">
             <summary>
@@ -6844,7 +6773,7 @@
             </summary>
             <param name="s1">CellRange</param>
             <param name="op">Tokens("=",">",">=")</param>
-            <param name="dict">The criteria used to determine which cells to add.</param>
+            <param name="criteria">The criteria used to determine which cells to add.</param>
             <param name="isNumber">the parsed criteria is number is set as true.otherwise false.</param>
             <param name="computedLevel">Computational level.</param>
             <param name="count">The length of parsed range.</param>
@@ -6854,17 +6783,6 @@
             <summary>
             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
             </summary>
-        </member>
-        <member name="T:Syncfusion.Calculate.ArrayParser.ArrayDelegate">
-            <summary>
-            Delegate defined to access the method GetArrayRecordPosition for
-            getting position of the cell.
-            </summary>
-            <param name="row">Row index of the cell.</param>
-            <param name="col">Column index of the cell.</param>
-            <param name="height">The height required for the selected range.</param>
-            <param name="width">The width required for the selected range.</param>
-            <returns>The method containing the four integer parameters.</returns>
         </member>
         <member name="M:Syncfusion.Calculate.Utilities.IsSecurityPermissionAvailable">
             <summary>
@@ -6966,24 +6884,6 @@
             <param name="right">Right column index  of this range.</param>
             <remarks>The range values must be one-based indexes.</remarks>
         </member>
-        <member name="M:Syncfusion.Calculate.RangeInfo.Cells(System.Int32,System.Int32,System.Int32,System.Int32)">
-            <summary>
-            A method to retrieve a range based on the numeric arguments passed in.
-            </summary>
-            <param name="top">Top row index of this range.</param>
-            <param name="left">Left column index of this range.</param>
-            <param name="bottom">Bottom row index of this range.</param>
-            <param name="right">Right column index  of this range.</param>
-            <returns>A RangeInfo object.</returns>
-            <remarks>The range values must be one-based indexes.</remarks>
-        </member>
-        <member name="M:Syncfusion.Calculate.RangeInfo.GetAlphaLabel(System.Int32)">
-            <summary>
-            GetAlphaLabel is a method that retrieves a string value for the column whose numerical index is passed in.
-            </summary>
-            <param name="col"> Number index such as 1, 5, 27.</param>
-            <returns>Corresponding alphabets label like A, E, AA.</returns>
-        </member>
         <member name="P:Syncfusion.Calculate.RangeInfo.Bottom">
             <summary>
             A property that gets/sets the bottom row index of this range.
@@ -7003,6 +6903,111 @@
             <summary>
             A property that gets/sets the top row index of this range.
             </summary>
+        </member>
+        <member name="M:Syncfusion.Calculate.RangeInfo.Cells(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            A method to retrieve a range based on the numeric arguments passed in.
+            </summary>
+            <param name="top">Top row index of this range.</param>
+            <param name="left">Left column index of this range.</param>
+            <param name="bottom">Bottom row index of this range.</param>
+            <param name="right">Right column index  of this range.</param>
+            <returns>A RangeInfo object.</returns>
+            <remarks>The range values must be one-based indexes.</remarks>
+        </member>
+        <member name="M:Syncfusion.Calculate.RangeInfo.GetAlphaLabel(System.Int32)">
+            <summary>
+            GetAlphaLabel is a method that retrieves a string value for the column whose numerical index is passed in.
+            </summary>
+            <param name="col"> Number index such as 1, 5, 27.</param>
+            <returns>Corresponding alphabets label like A, E, AA.</returns>
+        </member>
+        <member name="T:Syncfusion.Calculate.ICalcData">
+            <summary>
+            ICalcData defines the minimal interface that a data object must support in order to use
+            this formula engine.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Calculate.ICalcData.GetValueRowCol(System.Int32,System.Int32)">
+            <summary>
+            A method that gets the data value from the specified row and column.
+            </summary>
+            <param name="row">1-based index specifying the row index of the requested value.
+            </param>
+            <param name="col">1-based index specifying the column index of the requested data.</param>
+            <returns>The data value at the given row and column index.</returns>
+        </member>
+        <member name="M:Syncfusion.Calculate.ICalcData.SetValueRowCol(System.Object,System.Int32,System.Int32)">
+            <summary>
+            A method that sets the data value to the specified row and column.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="row">One-based index specifying the row index of the value.</param>
+            <param name="col">One-based index specifying the column index of the value.</param>
+        </member>
+        <member name="M:Syncfusion.Calculate.ICalcData.WireParentObject">
+            <summary>
+            A method that wires the ParentObject after the CalcEngine object is created or when a
+            RegisterGridAsSheet call is made.
+            </summary>
+            <remarks>This method is a callback to the ParentObject so it can have a chance
+            to subscribe to any change events it may need to implement ValueChanged properly.
+            </remarks>
+        </member>
+        <member name="E:Syncfusion.Calculate.ICalcData.ValueChanged">
+            <summary>
+            Event for value changed
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Calculate.ISheetData">
+            <summary>
+            Used in conjunction with <see cref="P:Syncfusion.Calculate.CalcEngine.RowMaxCount"/>.
+            </summary>
+            <remarks>
+            Essential Calculate supports column ranges of the form A:D as in =SUM(A:D) to represent all cells in columns
+            A, B, C and D from a ICalcData object. To get a value for the number of rows, the CalcEngine first checks to
+            see if the ICalcData object supports the ISheetData interface. If this interface is supported, the row
+            count used to determine the range is obtained through this interface. If the ICalcData object does not support
+            ISheetData, then the value of <see cref="P:Syncfusion.Calculate.CalcEngine.RowMaxCount"/> is used provided RowMaxCount > 0.
+            and the index of  first and last rows and columns
+            is used.
+            </remarks>
+        </member>
+        <member name="M:Syncfusion.Calculate.ISheetData.GetFirstRow">
+            <summary>
+            Get the idex of the first row in UsedRange
+            </summary>
+            <returns> index of first row</returns>
+        </member>
+        <member name="M:Syncfusion.Calculate.ISheetData.GetLastRow">
+            <summary>
+            get the index of the last row in UsedRange
+            </summary>
+            <returns>index of last row</returns>
+        </member>
+        <member name="M:Syncfusion.Calculate.ISheetData.GetRowCount">
+            <summary>
+            Gets the row count.
+            </summary>
+            <returns>Number of rows</returns>
+        </member>
+        <member name="M:Syncfusion.Calculate.ISheetData.GetFirstColumn">
+            <summary>
+            Gets the first column index.
+            </summary>
+            <returns>Index of first column</returns>
+        </member>
+        <member name="M:Syncfusion.Calculate.ISheetData.GetLastColumn">
+            <summary>
+            Gets the last column index / column count.
+            </summary>
+            <returns>Index of last column</returns>
+        </member>
+        <member name="M:Syncfusion.Calculate.ISheetData.GetColumnCount">
+            <summary>
+            Gets the column count.
+            </summary>
+            <returns>Number of columns</returns>
         </member>
         <member name="T:Syncfusion.Calculate.LinearRegression">
             <summary>

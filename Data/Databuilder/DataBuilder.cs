@@ -12,6 +12,9 @@ namespace BudgetExecution
 
     /// <summary> </summary>
     /// <seealso cref = "DataModel" />
+    [ SuppressMessage( "ReSharper", "ClassCanBeSealed.Global" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     public class DataBuilder : DataModel, IDataModel
     {
         /// <summary>
@@ -178,7 +181,8 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _query = dataRows?.Where( p => p.Field<string>( name ).Equals( value ) )
+                    var _query = dataRows
+                        ?.Where( p => p.Field<string>( name ).Equals( value ) )
                         ?.Select( p => p );
 
                     return _query?.Any( ) == true
@@ -203,8 +207,8 @@ namespace BudgetExecution
         /// <param name="name">The field.</param>
         /// <param name="value">The filter.</param>
         /// <returns></returns>
-        public static IDictionary<string, IEnumerable<string>> CreateSeries(
-            IEnumerable<DataRow> dataRows, string name, string value )
+        public static IDictionary<string, IEnumerable<string>> CreateSeries( IEnumerable<DataRow> dataRows, 
+            string name, string value )
         {
             if( dataRows?.Any( ) == true
                && !string.IsNullOrEmpty( name )

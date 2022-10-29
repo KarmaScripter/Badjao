@@ -10,8 +10,7 @@
     <PackageIcon>BudExNinja.png</PackageIcon>
     <AnalysisLevel>latest-recommended</AnalysisLevel>
     <LangVersion>10</LangVersion>
-    <TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
-    <SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>BudgetExecution</RootNamespace>
     <Authors>Terry D. Eppler</Authors>
     <Company>US EPA</Company>
@@ -68,83 +67,137 @@
     <Reference Include="SQLite.Designer">
       <HintPath>Lib\SQLite.Designer.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Calculate.Base">
-      <HintPath>Libraries\Syncfusion.Calculate.Base.dll</HintPath>
+    <Reference Include="Syncfusion.BulletGraph.Windows">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.BulletGraph.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Calculate.Windows">
-      <HintPath>Libraries\Syncfusion.Calculate.Windows.dll</HintPath>
+    <Reference Include="Syncfusion.Calculate.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Calculate.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Chart.Base">
-      <HintPath>Libraries\Syncfusion.Chart.Base.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Chart.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Chart.Windows">
-      <HintPath>Libraries\Syncfusion.Chart.Windows.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Chart.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Compression.Base">
-      <HintPath>Libraries\Syncfusion.Compression.Base.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.WinForms">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Core.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Data.WinForms">
-      <HintPath>Libraries\Syncfusion.Data.WinForms.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Data.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.DataSource.WinForms">
-      <HintPath>Libraries\Syncfusion.DataSource.WinForms.dll</HintPath>
+    <Reference Include="Syncfusion.Diagram.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Diagram.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Diagram.Windows">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Diagram.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.DocIO.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Edit.Windows">
-      <HintPath>Libraries\Syncfusion.Edit.Windows.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Edit.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Gauge.Windows">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Gauge.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Grouping.Windows">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Grid.Grouping.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Grid.Windows">
-      <HintPath>Libraries\Syncfusion.Grid.Windows.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Grid.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing">
-      <HintPath>Libraries\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.GridCommon.WinForms">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.GridCommon.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Office2016Theme.WinForms">
-      <HintPath>Libraries\Syncfusion.Office2016Theme.WinForms.dll</HintPath>
+    <Reference Include="Syncfusion.GridHelperClasses.Windows">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.GridHelperClasses.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Office2019Theme.WinForms">
-      <HintPath>Libraries\Syncfusion.Office2019Theme.WinForms.dll</HintPath>
+    <Reference Include="Syncfusion.Grouping.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Grouping.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.HTMLUI.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.HTMLUI.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.HTMLUI.Windows">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.HTMLUI.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Linq.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Linq.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Maps.Windows">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Maps.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.OfficeChart.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.OfficeChart.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Pdf.Base">
-      <HintPath>Libraries\Syncfusion.Pdf.Base.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Pdf.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.PdfViewer.Windows">
-      <HintPath>Libraries\Syncfusion.PdfViewer.Windows.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.PdfViewer.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.PivotAnalysis.Base">
-      <HintPath>Libraries\Syncfusion.PivotAnalysis.Base.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.PivotAnalysis.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.PivotAnalysis.Windows">
       <HintPath>Libraries\Syncfusion.PivotAnalysis.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.PivotChart.Windows">
-      <HintPath>Libraries\Syncfusion.PivotChart.Windows.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.PivotChart.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.PivotConverter.Windows">
-      <HintPath>Libraries\Syncfusion.PivotConverter.Windows.dll</HintPath>
+    <Reference Include="Syncfusion.Presentation.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Presentation.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Schedule.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Schedule.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Schedule.Windows">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Schedule.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Scripting.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Scripting.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBarcode.Windows">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.SfBarcode.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.WinForms">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.SfDataGrid.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfInput.WinForms">
-      <HintPath>Libraries\Syncfusion.SfInput.WinForms.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.SfInput.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.WinForms">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.SfListView.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSmithChart.WinForms">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.SfSmithChart.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.Base">
-      <HintPath>Libraries\Syncfusion.Shared.Base.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Shared.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.Windows">
-      <HintPath>Libraries\Syncfusion.Shared.Windows.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Shared.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SpellChecker.Base">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.SpellChecker.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Spreadsheet.Windows">
-      <HintPath>Libraries\Syncfusion.Spreadsheet.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SpreadsheetHelper.Windows">
-      <HintPath>Libraries\Syncfusion.SpreadsheetHelper.Windows.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Spreadsheet.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Tools.Base">
-      <HintPath>Libraries\Syncfusion.Tools.Base.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Tools.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Tools.Windows">
-      <HintPath>Libraries\Syncfusion.Tools.Windows.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.Tools.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.TreeMap.Windows">
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.TreeMap.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.XlsIO.Base">
-      <HintPath>Libraries\Syncfusion.XlsIO.Base.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\20.3.0.47\precompiledassemblies\netcoreapp3.1\Syncfusion.XlsIO.Base.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity">
       <HintPath>Libraries\System.Data.Entity.dll</HintPath>
@@ -154,9 +207,6 @@
     </Reference>
     <Reference Include="System.Data.Linq">
       <HintPath>Libraries\System.Data.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.OleDb">
-      <HintPath>Libraries\System.Data.OleDb.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SqlClient">
       <HintPath>Libraries\System.Data.SqlClient.dll</HintPath>
@@ -185,6 +235,9 @@
     <Folder Include="Data\Database\SqlCe\" />
     <Folder Include="Data\Database\SqlServer\" />
     <Folder Include="Data\Database\SQLite\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">

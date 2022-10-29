@@ -14,13 +14,9 @@ namespace BudgetExecution
     using VisualPlus.Enumerators;
 
     [ SuppressMessage( "ReSharper", "UnusedParameter.Global" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     public partial class Error : MetroForm
     {
-        /// <summary>
-        /// The application setting
-        /// </summary>
-        public virtual NameValueCollection Setting { get; set; } = ConfigurationManager.AppSettings;
-
         /// <summary>
         /// Gets or sets the exception.
         /// </summary>

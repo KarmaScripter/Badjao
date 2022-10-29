@@ -1897,15 +1897,6 @@
             Gets or sets the searching options.
             </summary>
         </member>
-        <member name="M:Syncfusion.Windows.Forms.PivotChart.DesignerActionSupportList.GetSortedActionItems">
-            <summary>
-            Returns the collection of <see cref="T:System.ComponentModel.Design.DesignerActionItem"/> objects contained in the list.
-            </summary>
-            <returns>
-            A <see cref="T:System.ComponentModel.Design.DesignerActionItem"/> array that contains the items in this list.
-            </returns>
-            override
-        </member>
         <member name="M:Syncfusion.Windows.Forms.PivotChart.DesignerActionSupportList.OnSearch">
             <summary>
             Searches the online URL links.
@@ -1968,13 +1959,6 @@
             <summary>
             Gets or sets source of data for PivotChart. This object should be either an IEnumerable list, or a DataTable.
             </summary>
-        </member>
-        <member name="M:Syncfusion.Windows.Forms.PivotChart.PivotChartControlChooseDataSourceActionList.GetSortedActionItems">
-            <summary> 
-            Returns the collection of <see cref="T:System.ComponentModel.Design.DesignerActionItem"/>.
-            objects contained in the list.
-            </summary>
-            <returns>A System.ComponentModel.Design.DesignerActionItem array that contains the items in this list.</returns>
         </member>
         <member name="T:Syncfusion.Windows.Forms.PivotChart.PivotItemSortedEventHandler">
             <summary>

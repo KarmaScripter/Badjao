@@ -10756,37 +10756,6 @@
             </summary>
             <param name="IsReadOnly"></param>
         </member>
-        <member name="T:Syncfusion.Windows.Shared.ITextInputLayoutSelector">
-            <summary>
-            Represents SfTextInputLayout's InputView type.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Windows.Shared.ITextInputLayoutSelector.IsDropDownOpen">
-            <summary>
-            Boolean value that used to set InputView's drop down state.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Windows.Shared.ITextInputLayoutSelector.IsTextInputLayoutChild">
-            <summary>
-            Boolean value that indicates the parent is SfTextInputLayout or not.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.Windows.Shared.ITextInputLayoutSelector.GetSelectedItems">
-            <summary>
-            Method used to get selected items of InputView.
-            </summary>
-            <returns>Returns IEnumerable collection, that represents items selected in InputView.</returns>
-        </member>
-        <member name="T:Syncfusion.Windows.Shared.ITextInputLayoutNotification">
-            <summary>
-            Represents <see cref="T:Syncfusion.Windows.Shared.ITextInputLayoutNotification"/> class, which holds the members to notify the SfTextInputView when its InputView properties get changed.
-            </summary>
-        </member>
-        <member name="M:Syncfusion.Windows.Shared.ITextInputLayoutNotification.OnSelectedItemsChanged">
-            <summary>
-            Method used to notify when the selected items of InputView (SfTextBoxExt) get changed.
-            </summary>
-        </member>
         <member name="T:Syncfusion.Windows.Shared.MenuAdv">
             <summary>
             MenuAdv class
@@ -14471,6 +14440,37 @@
             <property name="flag" value="Finished" />
             <summary>
             Gets Clear button object.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.Windows.Shared.ITextInputLayoutSelector">
+            <summary>
+            Represents SfTextInputLayout's InputView type.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Windows.Shared.ITextInputLayoutSelector.IsDropDownOpen">
+            <summary>
+            Boolean value that used to set InputView's drop down state.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Windows.Shared.ITextInputLayoutSelector.IsTextInputLayoutChild">
+            <summary>
+            Boolean value that indicates the parent is SfTextInputLayout or not.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Windows.Shared.ITextInputLayoutSelector.GetSelectedItems">
+            <summary>
+            Method used to get selected items of InputView.
+            </summary>
+            <returns>Returns IEnumerable collection, that represents items selected in InputView.</returns>
+        </member>
+        <member name="T:Syncfusion.Windows.Shared.ITextInputLayoutNotification">
+            <summary>
+            Represents <see cref="T:Syncfusion.Windows.Shared.ITextInputLayoutNotification"/> class, which holds the members to notify the SfTextInputView when its InputView properties get changed.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Windows.Shared.ITextInputLayoutNotification.OnSelectedItemsChanged">
+            <summary>
+            Method used to notify when the selected items of InputView (SfTextBoxExt) get changed.
             </summary>
         </member>
         <member name="T:Syncfusion.Windows.Shared.BoolNegationConverter">
@@ -50269,6 +50269,14 @@
             </summary>
             <param name="mainElement">The main element.</param>
             <param name="fake">The fake border.</param>
+        </member>
+        <member name="M:Syncfusion.Windows.Shared.DrawingUtils.GetScreenShot(System.IntPtr,System.Windows.Size)">
+            <summary>
+            Gets the screen shot.
+            </summary>
+            <param name="winHandle">The handle of the window, from which screenshot have to be made.</param>
+            <param name="bounds">The bounds of the screenshot.</param>
+            <returns>Bitmap from select object.</returns>
         </member>
         <member name="M:Syncfusion.Windows.Shared.DrawingUtils.GetDrawingGroup(System.Windows.UIElement,System.Windows.Point)">
             <summary>
