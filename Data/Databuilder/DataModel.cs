@@ -207,7 +207,9 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _query = dataRows?.Select( p => p.Field<string>( column ) )?.Distinct( );
+                    var _query = dataRows
+                        ?.Select( p => p.Field<string>( column ) )
+                        ?.Distinct( );
 
                     return _query?.Any( ) == true
                         ? _query

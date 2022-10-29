@@ -54,9 +54,13 @@ dkms.conf
 # Databases
 *.db
 *.accdb
+*.laccdb
 *.mdf
+*.ldf
 *.sdf
 /Data/Database/Access/DataModels/Data.laccdb
 /Data/Database/SqlServer/DataModels/Data_log.ldf
 /.vs/Badjao/FileContentIndex
 /.vs
+Data/Database/Access/DataModels/Data.accdb
+Data/Database/SQLite/DataModels/Data.db

@@ -226,7 +226,6 @@ namespace BudgetExecution
                         for( var i = 0; i < _columns?.Count; i++ )
                         {
                             var _columnName = _columns[ i ].ColumnName;
-
                             if( !string.IsNullOrEmpty( _columnName )
                                && _columns[ i ]?.DataType == typeof( string ) )
                             {
