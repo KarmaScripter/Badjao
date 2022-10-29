@@ -85,7 +85,8 @@ namespace BudgetExecution
         /// </summary>
         /// <typeparam name="T1">The type of the 1.</typeparam>
         /// <param name="bindingSource">The binding source.</param>
-        public void SetDataSource<T1>( T1 bindingSource ) where T1 : IBindingList
+        public void SetDataSource<T1>( T1 bindingSource )
+            where T1 : IBindingList
         {
             try
             {
@@ -116,7 +117,8 @@ namespace BudgetExecution
         /// <param name="bindingList">The binding list.</param>
         /// <param name="dict">The dictionary.</param>
         public void SetDataSource<T1, T2>( T1 bindingList, T2 dict )
-            where T1 : IBindingList where T2 : IDictionary<string, object>
+            where T1 : IBindingList
+            where T2 : IDictionary<string, object>
         {
             try
             {
@@ -219,7 +221,8 @@ namespace BudgetExecution
         /// <param name="field">The field.</param>
         /// <param name="filter">The filter.</param>
         public void SetDataSource<T1, T2, T3>( IEnumerable<T1> data, T2 field, T3 filter )
-            where T1 : IEnumerable<DataRow> where T2 : struct
+            where T1 : IEnumerable<DataRow>
+            where T2 : struct
         {
             if( data?.Any( ) == true
                && Enum.IsDefined( typeof( Field ), field ) )
@@ -283,7 +286,8 @@ namespace BudgetExecution
         /// <param name="data">The data.</param>
         /// <param name="dict">The dictionary.</param>
         public void SetDataSource<T1, T2>( IEnumerable<T1> data, T2 dict )
-            where T1 : IEnumerable<DataRow> where T2 : IDictionary<string, object>
+            where T1 : IEnumerable<DataRow> 
+            where T2 : IDictionary<string, object>
         {
             if( data?.Any( ) == true
                && dict?.Any( ) == true )
@@ -320,7 +324,8 @@ namespace BudgetExecution
         /// <param name="field">The field.</param>
         /// <param name="filter">The filter.</param>
         public void SetDataSource<T1, T2>( IEnumerable<T1> data, T2 field, object filter = null )
-            where T1 : IEnumerable<DataRow> where T2 : struct
+            where T1 : IEnumerable<DataRow> 
+            where T2 : struct
         {
             if( data?.Any( ) == true
                && Enum.IsDefined( typeof( Field ), field ) )
