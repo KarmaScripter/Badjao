@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -18,6 +18,70 @@ namespace BudgetExecution
     /// <seealso />
     public abstract class BindingModelBase : ChartDataBindModel
     {
+        /// <summary>
+        /// Gets the data.
+        /// </summary>
+        /// <value>
+        /// The data.
+        /// </value>
+        public virtual IEnumerable<DataRow> Data { get; set; }
+
+        /// <summary>
+        /// Gets the binding model.
+        /// </summary>
+        /// <value>
+        /// The binding model.
+        /// </value>
+        public virtual ChartDataBindModel ChartData { get; set; }
+
+        /// <summary>
+        /// Gets or sets the axis label model.
+        /// </summary>
+        /// <value>
+        /// The axis label model.
+        /// </value>
+        public virtual ChartDataBindAxisLabelModel AxisLabelModel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the metric.
+        /// </summary>
+        /// <value>
+        /// The metric.
+        /// </value>
+        public virtual DataMetric DataMetric { get; set; }
+
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
+        public virtual STAT Stat { get; set; }
+
+        /// <summary>
+        /// Gets the series data.
+        /// </summary>
+        /// <value>
+        /// The series data.
+        /// </value>
+        public virtual IDictionary<string, double> SeriesData { get; set; }
+
+        /// <summary>
+        /// Gets or sets the series values.
+        /// </summary>
+        /// <value>
+        /// The series values.
+        /// </value>
+        public virtual IEnumerable<double> Values { get; set; }
+
+        /// <summary>
+        /// Gets or sets the series categories.
+        /// </summary>
+        /// <value>
+        /// The series categories.
+        /// </value>
+        public virtual IEnumerable<string> Categories { get; set; }
+
         /// <summary>
         /// Initializes a new instance
         /// of the <see cref="BindingModelBase" /> class.
@@ -88,70 +152,6 @@ namespace BudgetExecution
             Categories = SeriesData.Keys;
             ChartData.Changed += OnChanged;
         }
-
-        /// <summary>
-        /// Gets the data.
-        /// </summary>
-        /// <value>
-        /// The data.
-        /// </value>
-        public virtual IEnumerable<DataRow> Data { get; set; }
-
-        /// <summary>
-        /// Gets the binding model.
-        /// </summary>
-        /// <value>
-        /// The binding model.
-        /// </value>
-        public virtual ChartDataBindModel ChartData { get; set; }
-
-        /// <summary>
-        /// Gets or sets the axis label model.
-        /// </summary>
-        /// <value>
-        /// The axis label model.
-        /// </value>
-        public virtual ChartDataBindAxisLabelModel AxisLabelModel { get; set; }
-
-        /// <summary>
-        /// Gets or sets the metric.
-        /// </summary>
-        /// <value>
-        /// The metric.
-        /// </value>
-        public virtual DataMetric DataMetric { get; set; }
-
-        /// <summary>
-        /// Gets the value.
-        /// </summary>
-        /// <value>
-        /// The value.
-        /// </value>
-        public virtual STAT Stat { get; set; }
-
-        /// <summary>
-        /// Gets the series data.
-        /// </summary>
-        /// <value>
-        /// The series data.
-        /// </value>
-        public virtual IDictionary<string, double> SeriesData { get; set; }
-
-        /// <summary>
-        /// Gets or sets the series values.
-        /// </summary>
-        /// <value>
-        /// The series values.
-        /// </value>
-        public virtual IEnumerable<double> Values { get; set; }
-
-        /// <summary>
-        /// Gets or sets the series categories.
-        /// </summary>
-        /// <value>
-        /// The series categories.
-        /// </value>
-        public virtual IEnumerable<string> Categories { get; set; }
 
         /// <summary>
         /// Called when [changed].

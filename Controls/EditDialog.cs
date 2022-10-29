@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -18,6 +18,22 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public partial class EditDialog : EditBase
     {
+        /// <summary>
+        /// Gets or sets the current.
+        /// </summary>
+        /// <value>
+        /// The current.
+        /// </value>
+        public DataRow Current { get; set; }
+
+        /// <summary>
+        /// Gets or sets the frames.
+        /// </summary>
+        /// <value>
+        /// The frames.
+        /// </value>
+        public IEnumerable<Frame> Frames { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="EditDialog"/> class.
         /// </summary>
@@ -97,22 +113,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Gets or sets the current.
-        /// </summary>
-        /// <value>
-        /// The current.
-        /// </value>
-        public DataRow Current { get; set; }
-
-        /// <summary>
-        /// Gets or sets the frames.
-        /// </summary>
-        /// <value>
-        /// The frames.
-        /// </value>
-        public IEnumerable<Frame> Frames { get; set; }
-
-        /// <summary>
         /// Called when [load].
         /// </summary>
         /// <param name="sender">The sender.</param>
@@ -147,42 +147,50 @@ namespace BudgetExecution
                     {
                         case ToolType.CopyButton:
                         case ToolType.EditRecordButton:
+
                         {
                             DataTab.Text = "Edit Data";
                             ActiveTab = DataTab;
                             SelectButton.Text = "Save";
                             CloseButton.Text = "Exit";
                             SqlTab.TabVisible = false;
+
                             break;
                         }
 
                         case ToolType.DeleteRecordButton:
+
                         {
                             DataTab.Text = "Delete Data";
                             ActiveTab = DataTab;
                             SelectButton.Text = "Delete";
                             CloseButton.Text = "Exit";
                             SqlTab.TabVisible = false;
+
                             break;
                         }
 
                         case ToolType.EditSqlButton:
+
                         {
                             SqlTab.Text = "SQL Editor";
                             ActiveTab = SqlTab;
                             SelectButton.Text = "Save";
                             CloseButton.Text = "Exit";
                             DataTab.TabVisible = false;
+
                             break;
                         }
 
                         default:
+
                         {
                             DataTab.Text = "Edit Data";
                             ActiveTab = DataTab;
                             SelectButton.Text = "Save";
                             CloseButton.Text = "Exit";
                             SqlTab.TabVisible = false;
+
                             break;
                         }
                     }
@@ -272,7 +280,9 @@ namespace BudgetExecution
                     {
                         case >= 43:
                         case < 43 and >= 35:
+
                             FrameTable.Location = new Point( 12, 25 );
+
                             break;
 
                         case < 35 and >= 28:
@@ -280,7 +290,9 @@ namespace BudgetExecution
                         case < 21 and >= 14:
                         case < 14 and > 7:
                         case <= 7:
+
                             FrameTable.Location = new Point( 12, 81 );
+
                             break;
                     }
                 }
@@ -346,6 +358,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -382,6 +395,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }

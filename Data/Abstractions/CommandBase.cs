@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -16,6 +16,39 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class CommandBase
     {
+        /// <summary>
+        /// The command
+        /// </summary>
+        public DbCommand Command { get; set; }
+
+        /// <summary>
+        /// The connection builder
+        /// </summary>
+        public IConnectionBuilder ConnectionBuilder { get; set; }
+
+        /// <summary>
+        /// The provider
+        /// </summary>
+        public Provider Provider { get; set; }
+
+        /// <summary>
+        /// The source
+        /// </summary>
+        public Source Source { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type of the command.
+        /// </summary>
+        /// <value>
+        /// The type of the command.
+        /// </value>
+        public SQL CommandType { get; set; }
+
+        /// <summary>
+        /// The SQL statement
+        /// </summary>
+        public ISqlStatement SqlStatement { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandBase"/> class.
         /// </summary>
@@ -112,39 +145,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// The command
-        /// </summary>
-        public DbCommand Command { get; set; }
-
-        /// <summary>
-        /// The connection builder
-        /// </summary>
-        public IConnectionBuilder ConnectionBuilder { get; set; }
-
-        /// <summary>
-        /// The provider
-        /// </summary>
-        public Provider Provider { get; set; }
-
-        /// <summary>
-        /// The source
-        /// </summary>
-        public Source Source { get; set; }
-
-        /// <summary>
-        /// Gets or sets the type of the command.
-        /// </summary>
-        /// <value>
-        /// The type of the command.
-        /// </value>
-        public SQL CommandType { get; set; }
-
-        /// <summary>
-        /// The SQL statement
-        /// </summary>
-        public ISqlStatement SqlStatement { get; set; }
-
-        /// <summary>
         /// Sets the command.
         /// </summary>
         /// <param name="sqlStatement">The SQL statement.</param>
@@ -158,16 +158,19 @@ namespace BudgetExecution
                     switch( sqlStatement.Provider )
                     {
                         case Provider.SQLite:
+
                         {
                             return GetSQLiteCommand( sqlStatement );
                         }
 
                         case Provider.SqlCe:
+
                         {
                             return GetSQLiteCommand( sqlStatement );
                         }
 
                         case Provider.SqlServer:
+
                         {
                             return GetSQLiteCommand( sqlStatement );
                         }
@@ -176,11 +179,13 @@ namespace BudgetExecution
                         case Provider.CSV:
                         case Provider.Access:
                         case Provider.OleDb:
+
                         {
                             return GetOleDbCommand( sqlStatement );
                         }
 
                         default:
+
                         {
                             return default;
                         }
@@ -189,6 +194,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -215,6 +221,7 @@ namespace BudgetExecution
                     {
                         case SQL.SELECTALL:
                         case SQL.SELECT:
+
                         {
                             var _sql = sqlStatement?.GetSelectStatement( );
 
@@ -224,26 +231,34 @@ namespace BudgetExecution
                         }
 
                         case SQL.INSERT:
+
                         {
                             var _sql = sqlStatement?.GetInsertStatement( );
+
                             return new SQLiteCommand( _sql, _connection );
                         }
 
                         case SQL.UPDATE:
+
                         {
                             var _sql = sqlStatement?.GetUpdateStatement( );
+
                             return new SQLiteCommand( _sql, _connection );
                         }
 
                         case SQL.DELETE:
+
                         {
                             var _sql = sqlStatement?.GetDeleteStatement( );
+
                             return new SQLiteCommand( _sql, _connection );
                         }
 
                         default:
+
                         {
                             var _sql = sqlStatement?.GetSelectStatement( );
+
                             return new SQLiteCommand( _sql, _connection );
                         }
                     }
@@ -251,6 +266,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -278,6 +294,7 @@ namespace BudgetExecution
                         {
                             case SQL.SELECTALL:
                             case SQL.SELECT:
+
                             {
                                 var _sql = sqlStatement?.GetSelectStatement( );
 
@@ -287,6 +304,7 @@ namespace BudgetExecution
                             }
 
                             case SQL.INSERT:
+
                             {
                                 var _sql = sqlStatement?.GetInsertStatement( );
 
@@ -296,6 +314,7 @@ namespace BudgetExecution
                             }
 
                             case SQL.UPDATE:
+
                             {
                                 var _sql = sqlStatement?.GetUpdateStatement( );
 
@@ -305,6 +324,7 @@ namespace BudgetExecution
                             }
 
                             case SQL.DELETE:
+
                             {
                                 var _sql = sqlStatement?.GetDeleteStatement( );
 
@@ -314,6 +334,7 @@ namespace BudgetExecution
                             }
 
                             default:
+
                             {
                                 var _sql = sqlStatement?.GetSelectStatement( );
 
@@ -327,6 +348,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -355,32 +377,42 @@ namespace BudgetExecution
                         {
                             case SQL.SELECTALL:
                             case SQL.SELECT:
+
                             {
                                 var _sql = sqlStatement?.GetSelectStatement( );
+
                                 return new SqlCommand( _sql, _connection );
                             }
 
                             case SQL.INSERT:
+
                             {
                                 var _sql = sqlStatement?.GetInsertStatement( );
+
                                 return new SqlCommand( _sql, _connection );
                             }
 
                             case SQL.UPDATE:
+
                             {
                                 var _sql = sqlStatement?.GetUpdateStatement( );
+
                                 return new SqlCommand( _sql, _connection );
                             }
 
                             case SQL.DELETE:
+
                             {
                                 var _sql = sqlStatement?.GetDeleteStatement( );
+
                                 return new SqlCommand( _sql, _connection );
                             }
 
                             default:
+
                             {
                                 var _sql = sqlStatement?.GetSelectStatement( );
+
                                 return new SqlCommand( _sql, _connection );
                             }
                         }
@@ -389,6 +421,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -415,32 +448,42 @@ namespace BudgetExecution
                     {
                         case SQL.SELECTALL:
                         case SQL.SELECT:
+
                         {
                             var _sql = sqlStatement?.GetSelectStatement( );
+
                             return new OleDbCommand( _sql, _connection );
                         }
 
                         case SQL.INSERT:
+
                         {
                             var _sql = sqlStatement?.GetInsertStatement( );
+
                             return new OleDbCommand( _sql, _connection );
                         }
 
                         case SQL.UPDATE:
+
                         {
                             var _sql = sqlStatement.GetUpdateStatement( );
+
                             return new OleDbCommand( _sql, _connection );
                         }
 
                         case SQL.DELETE:
+
                         {
                             var _sql = sqlStatement?.GetDeleteStatement( );
+
                             return new OleDbCommand( _sql, _connection );
                         }
 
                         default:
+
                         {
                             var _sql = sqlStatement?.GetSelectStatement( );
+
                             return new OleDbCommand( _sql, _connection );
                         }
                     }
@@ -448,6 +491,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }

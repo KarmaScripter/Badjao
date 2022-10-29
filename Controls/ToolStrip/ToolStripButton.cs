@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -120,261 +120,324 @@ namespace BudgetExecution
                     switch( _button?.ToolType )
                     {
                         case ToolType.FirstButton:
+
                         {
                             BindingSource?.MoveFirst( );
+
                             break;
                         }
 
                         case ToolType.PreviousButton:
+
                         {
                             BindingSource?.MovePrevious( );
+
                             break;
                         }
 
                         case ToolType.NextButton:
+
                         {
                             BindingSource?.MoveNext( );
+
                             break;
                         }
 
                         case ToolType.LastButton:
+
                         {
                             BindingSource?.MoveLast( );
+
                             break;
                         }
 
                         case ToolType.ExcelButton:
+
                         {
                             using var _excelForm = new ExcelForm( );
                             _excelForm?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.PdfButton:
+
                         {
                             using var _message = new PdfForm( );
                             _message?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.PrintButton:
+
                         {
                             using var _message = new Message( "NOT YET IMPLEMENTED!" );
                             _message?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.AddRecordButton:
+
                         {
                             using var _dataConfig = new EditDialog( _button.ToolType );
                             _dataConfig.BindingSource = BindingSource;
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.AddButton:
+
                         {
                             using var _dataConfig = new EditDialog( _button.ToolType );
                             _dataConfig.BindingSource = BindingSource;
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.AddTableButton:
                         case ToolType.AddDatabaseButton:
                         case ToolType.AddColumnButton:
+
                         {
                             using var _dataConfig =
                                 new DefinitionDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.BindingSource = BindingSource;
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.EditColumnButton:
+
                         {
                             using var _dataConfig =
                                 new DefinitionDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.BindingSource = BindingSource;
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.DeleteColumnButton:
+
                         {
                             using var _dataConfig =
                                 new DefinitionDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.BindingSource = BindingSource;
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.DeleteTableButton:
+
                         {
                             using var _dataConfig =
                                 new DefinitionDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.BindingSource = BindingSource;
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.DeleteDatabaseButton:
+
                         {
                             using var _dataConfig =
                                 new DefinitionDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.BindingSource = BindingSource;
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.DeleteRecordButton:
+
                         {
                             using var _dataConfig =
                                 new EditDialog( _button.ToolType, BindingSource );
 
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.DeleteButton:
+
                         {
                             using var _dataConfig =
                                 new EditDialog( _button.ToolType, BindingSource );
 
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.RefreshButton:
+
                         {
                             using var _message = new Message( "NOT YET IMPLEMENTED!" );
                             _message?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.ExitButton:
+
                         {
                             var _message = new Message( "NOT YET IMPLEMENTED!" );
                             _message?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.ExportButton:
+
                         {
                             var _message = new Message( "NOT YET IMPLEMENTED!" );
                             _message?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.ImportButton:
+
                         {
                             var _message = new Message( "NOT YET IMPLEMENTED!" );
                             _message?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.FilterDataButton:
+
                         {
                             using var _dataConfig = new LookupDialog( );
                             _dataConfig.BindingSource = BindingSource;
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.EditSqlButton:
+
                         {
                             using var _dataConfig =
                                 new EditDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.Current = BindingSource.GetCurrentDataRow( );
                             _dataConfig.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.EditButton:
+
                         {
                             using var _dataConfig =
                                 new EditDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.Current = BindingSource.GetCurrentDataRow( );
                             _dataConfig.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.EditRecordButton:
+
                         {
                             using var _dataConfig =
                                 new EditDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.Current = BindingSource.GetCurrentDataRow( );
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.CopyButton:
+
                         {
                             using var _dataConfig =
                                 new EditDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.Current = BindingSource.GetCurrentDataRow( );
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.UpdateButton:
+
                         {
                             using var _dataConfig =
                                 new EditDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.Current = BindingSource.GetCurrentDataRow( );
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.InsertButton:
+
                         {
                             using var _dataConfig =
                                 new EditDialog( _button.ToolType, BindingSource );
 
                             _dataConfig.Current = BindingSource.GetCurrentDataRow( );
                             _dataConfig?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.CalculatorButton:
+
                         {
                             using var _calculator = new CalculationForm( );
                             _calculator?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.CalendarButton:
+
                         {
                             using var _form = new CalendarForm( );
                             _form?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.BrowseButton:
+
                         {
                             using var _browser = new FileBrowser( );
                             _browser?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.HomeButton:
+
                         {
                             using var _form = new MainForm( );
                             _form?.ShowDialog( );
+
                             break;
                         }
 
                         case ToolType.ChartButton:
+
                         {
                             if( BindingSource?.DataSource != null )
                             {
@@ -392,9 +455,11 @@ namespace BudgetExecution
                         }
 
                         default:
+
                         {
                             var _message = new Message( "NOT YET IMPLEMENTED!" );
                             _message?.ShowDialog( );
+
                             break;
                         }
                     }
@@ -431,6 +496,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }

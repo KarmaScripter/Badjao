@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -14,6 +14,38 @@ namespace BudgetExecution
 
     public class ListBox : ListBoxBase
     {
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public override BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public override MetroTip ToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hover text.
+        /// </summary>
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public override string HoverText { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public override IDictionary<string, object> DataFilter { get; set; }
+
         /// <summary>
         /// Initializes a new instance
         /// of the <see cref="ListBox"/> class.
@@ -138,38 +170,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Gets or sets the binding source.
-        /// </summary>
-        /// <value>
-        /// The binding source.
-        /// </value>
-        public override BindingSource BindingSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public override MetroTip ToolTip { get; set; }
-
-        /// <summary>
-        /// Gets or sets the hover text.
-        /// </summary>
-        /// <value>
-        /// The hover text.
-        /// </value>
-        public override string HoverText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the filter.
-        /// </summary>
-        /// <value>
-        /// The filter.
-        /// </value>
-        public override IDictionary<string, object> DataFilter { get; set; }
-
-        /// <summary>
         /// Sets the color of the border.
         /// </summary>
         /// <param name="color">The color.</param>
@@ -235,22 +235,26 @@ namespace BudgetExecution
                 switch( hoverColor )
                 {
                     case true:
+
                     {
                         Border.Color = Color.FromArgb( 64, 64, 64 );
                         Border.Thickness = 1;
                         Border.HoverColor = Color.FromArgb( 64, 64, 64 );
                         Border.HoverVisible = true;
                         Border.Type = ShapeTypes.Rounded;
+
                         break;
                     }
 
                     case false:
+
                     {
                         Border.Color = Color.FromArgb( 15, 15, 15 );
                         Border.Thickness = 1;
                         Border.HoverColor = Color.FromArgb( 15, 15, 15 );
                         Border.HoverVisible = false;
                         Border.Type = ShapeTypes.Rounded;
+
                         break;
                     }
                 }

@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -11,6 +11,31 @@ namespace BudgetExecution
 
     public abstract class Rotator : Carousel
     {
+        /// <summary>
+        /// Gets or sets the size of the image.
+        /// </summary>
+        /// <value>
+        /// The size of the image.
+        /// </value>
+        public Size ImageSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets the provider path.
+        /// </summary>
+        /// <value>
+        /// The provider path.
+        /// </value>
+        public string ProviderPath { get; set; } = ConfigurationManager.AppSettings[ "DbPath" ];
+
+        /// <summary>
+        /// Gets or sets the provider path.
+        /// </summary>
+        /// <value>
+        /// The provider path.
+        /// </value>
+        public string FunctionalityPath { get; set; } =
+            ConfigurationManager.AppSettings[ "FunctionalityPath" ];
+
         protected Rotator( )
         {
             // Basic Carousel Properties
@@ -45,30 +70,5 @@ namespace BudgetExecution
             // User Properties
             ImageSize = new Size( 250, 250 );
         }
-
-        /// <summary>
-        /// Gets or sets the size of the image.
-        /// </summary>
-        /// <value>
-        /// The size of the image.
-        /// </value>
-        public Size ImageSize { get; set; }
-
-        /// <summary>
-        /// Gets or sets the provider path.
-        /// </summary>
-        /// <value>
-        /// The provider path.
-        /// </value>
-        public string ProviderPath { get; set; } = ConfigurationManager.AppSettings[ "DbPath" ];
-
-        /// <summary>
-        /// Gets or sets the provider path.
-        /// </summary>
-        /// <value>
-        /// The provider path.
-        /// </value>
-        public string FunctionalityPath { get; set; } =
-            ConfigurationManager.AppSettings[ "FunctionalityPath" ];
     }
 }

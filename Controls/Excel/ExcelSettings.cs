@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -21,32 +21,6 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class ExcelSettings
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public enum BorderSide
-        {
-            /// <summary>
-            /// The top
-            /// </summary>
-            Top,
-
-            /// <summary>
-            /// The bottom
-            /// </summary>
-            Bottom,
-
-            /// <summary>
-            /// The left
-            /// </summary>
-            Left,
-
-            /// <summary>
-            /// The right
-            /// </summary>
-            Right
-        };
-
         /// <summary>
         /// Gets or sets the index.
         /// </summary>
@@ -211,6 +185,32 @@ namespace BudgetExecution
         public virtual int ZoomLevel { get; set; } = 100;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public enum BorderSide
+        {
+            /// <summary>
+            /// The top
+            /// </summary>
+            Top,
+
+            /// <summary>
+            /// The bottom
+            /// </summary>
+            Bottom,
+
+            /// <summary>
+            /// The left
+            /// </summary>
+            Left,
+
+            /// <summary>
+            /// The right
+            /// </summary>
+            Right
+        };
+
+        /// <summary>
         /// Sets the file path.
         /// </summary>
         /// <param name="filePath">The file path.</param>
@@ -226,6 +226,7 @@ namespace BudgetExecution
                 catch( Exception e )
                 {
                     Console.WriteLine( e );
+
                     throw;
                 }
             }
@@ -247,6 +248,7 @@ namespace BudgetExecution
                 catch( Exception e )
                 {
                     Console.WriteLine( e );
+
                     throw;
                 }
             }
@@ -277,6 +279,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -298,18 +301,21 @@ namespace BudgetExecution
                     switch( extension?.ToUpper( ) )
                     {
                         case ".XLS":
+
                         {
                             return @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + filePath
                                 + ";Extended Properties=\"Excel 8.0;HDR=YES;\"";
                         }
 
                         case ".XLSX":
+
                         {
                             return @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + filePath
                                 + ";Extended Properties=\"Excel 12.0;HDR=YES;\"";
                         }
 
                         default:
+
                         {
                             return @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + filePath
                                 + ";Extended Properties=\"Excel 12.0;HDR=YES;\"";
@@ -319,6 +325,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return string.Empty;
                 }
             }

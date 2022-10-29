@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -16,6 +16,105 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class QueryBase
     {
+        /// <summary>
+        /// Gets the source.
+        /// </summary>
+        public virtual Source Source { get; set; }
+
+        /// <summary>
+        /// Gets the Provider
+        /// </summary>
+        public virtual Provider Provider { get; set; }
+
+        public virtual SQL CommandType { get; set; }
+
+        /// <summary>
+        /// Gets the arguments.
+        /// </summary>
+        /// <value>
+        /// The arguments.
+        /// </value>
+        public virtual IDictionary<string, object> Criteria { get; set; }
+
+        /// <summary>
+        /// Gets the connection manager.
+        /// </summary>
+        /// <value>
+        /// The connection manager.
+        /// </value>
+        public virtual IConnectionBuilder ConnectionBuilder { get; set; }
+
+        /// <summary>
+        /// Gets the SQL statement.
+        /// </summary>
+        /// <value>
+        /// The SQL statement.
+        /// </value>
+        public virtual ISqlStatement SqlStatement { get; set; }
+
+        /// <summary>
+        /// Gets the connector.
+        /// </summary>
+        /// <value>
+        /// The connector.
+        /// </value>
+        public virtual IConnectionFactory ConnectionFactory { get; set; }
+
+        /// <summary>
+        /// Gets the commander.
+        /// </summary>
+        /// <value>
+        /// The commander.
+        /// </value>
+        public virtual ICommandBuilder CommandBuilder { get; set; }
+
+        /// <summary>
+        /// Gets or sets the connection.
+        /// </summary>
+        /// <value>
+        /// The connection.
+        /// </value>
+        public virtual DbConnection DataConnection { get; set; }
+
+        /// <summary>
+        /// Gets the command.
+        /// </summary>
+        /// <value>
+        /// The command.
+        /// </value>
+        public virtual DbCommand DataCommand { get; set; }
+
+        /// <summary>
+        /// Gets the adapter.
+        /// </summary>
+        /// <value>
+        /// The adapter.
+        /// </value>
+        public virtual DbDataAdapter DataAdapter { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is disposed.
+        /// </summary>
+        /// <value>
+        /// <c>
+        /// true
+        /// </c>
+        /// if this instance is disposed; otherwise,
+        /// <c>
+        /// false
+        /// </c>
+        /// .
+        /// </value>
+        public virtual bool IsDisposed { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Data reader.
+        /// </summary>
+        /// <value>
+        /// The Data reader.
+        /// </value>
+        public virtual DbDataReader DataReader { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryBase"/> class.
         /// </summary>
@@ -210,105 +309,6 @@ namespace BudgetExecution
             CommandBuilder = new CommandBuilder( sqlStatement );
         }
 
-        /// <summary>
-        /// Gets the source.
-        /// </summary>
-        public virtual Source Source { get; set; }
-
-        /// <summary>
-        /// Gets the Provider
-        /// </summary>
-        public virtual Provider Provider { get; set; }
-
-        public virtual SQL CommandType { get; set; }
-
-        /// <summary>
-        /// Gets the arguments.
-        /// </summary>
-        /// <value>
-        /// The arguments.
-        /// </value>
-        public virtual IDictionary<string, object> Criteria { get; set; }
-
-        /// <summary>
-        /// Gets the connection manager.
-        /// </summary>
-        /// <value>
-        /// The connection manager.
-        /// </value>
-        public virtual IConnectionBuilder ConnectionBuilder { get; set; }
-
-        /// <summary>
-        /// Gets the SQL statement.
-        /// </summary>
-        /// <value>
-        /// The SQL statement.
-        /// </value>
-        public virtual ISqlStatement SqlStatement { get; set; }
-
-        /// <summary>
-        /// Gets the connector.
-        /// </summary>
-        /// <value>
-        /// The connector.
-        /// </value>
-        public virtual IConnectionFactory ConnectionFactory { get; set; }
-
-        /// <summary>
-        /// Gets the commander.
-        /// </summary>
-        /// <value>
-        /// The commander.
-        /// </value>
-        public virtual ICommandBuilder CommandBuilder { get; set; }
-
-        /// <summary>
-        /// Gets or sets the connection.
-        /// </summary>
-        /// <value>
-        /// The connection.
-        /// </value>
-        public virtual DbConnection DataConnection { get; set; }
-
-        /// <summary>
-        /// Gets the command.
-        /// </summary>
-        /// <value>
-        /// The command.
-        /// </value>
-        public virtual DbCommand DataCommand { get; set; }
-
-        /// <summary>
-        /// Gets the adapter.
-        /// </summary>
-        /// <value>
-        /// The adapter.
-        /// </value>
-        public virtual DbDataAdapter DataAdapter { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is disposed.
-        /// </summary>
-        /// <value>
-        /// <c>
-        /// true
-        /// </c>
-        /// if this instance is disposed; otherwise,
-        /// <c>
-        /// false
-        /// </c>
-        /// .
-        /// </value>
-        public virtual bool IsDisposed { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Data reader.
-        /// </summary>
-        /// <value>
-        /// The Data reader.
-        /// </value>
-        public virtual DbDataReader DataReader { get; set; }
-
         /// <inheritdoc/>
         /// <summary>
         /// Gets the adapter.
@@ -328,32 +328,42 @@ namespace BudgetExecution
                         case Provider.CSV:
                         case Provider.OleDb:
                         case Provider.Access:
+
                         {
                             var _builder = new AdapterBuilder( CommandBuilder );
+
                             return _builder?.GetAdapter( ) as OleDbDataAdapter;
                         }
 
                         case Provider.SQLite:
+
                         {
                             var _builder = new AdapterBuilder( CommandBuilder );
+
                             return _builder?.GetAdapter( ) as SQLiteDataAdapter;
                         }
 
                         case Provider.SqlCe:
+
                         {
                             var _builder = new AdapterBuilder( CommandBuilder );
+
                             return _builder?.GetAdapter( ) as SqlCeDataAdapter;
                         }
 
                         case Provider.SqlServer:
+
                         {
                             var _builder = new AdapterBuilder( CommandBuilder );
+
                             return _builder?.GetAdapter( ) as SqlDataAdapter;
                         }
 
                         default:
+
                         {
                             var _builder = new AdapterBuilder( CommandBuilder );
+
                             return _builder?.GetAdapter( ) as OleDbDataAdapter;
                         }
                     }
@@ -361,6 +371,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }

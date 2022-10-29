@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -47,15 +47,6 @@ namespace BudgetExecution
         private readonly Regex _value = new ( @"\(N(\'.*\')\)" );
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="SqlServerConverter" />
-        /// class.
-        /// </summary>
-        public SqlServerConverter( )
-        {
-        }
-
-        /// <summary>
         /// Gets or sets a value indicating whether this instance is active.
         /// </summary>
         /// <value>
@@ -65,6 +56,15 @@ namespace BudgetExecution
         /// .
         /// </value>
         private bool IsActive { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="SqlServerConverter" />
+        /// class.
+        /// </summary>
+        public SqlServerConverter( )
+        {
+        }
 
         /// <summary>
         /// Cancels the conversion.
@@ -247,6 +247,7 @@ namespace BudgetExecution
                 {
                     _log.Error( "unexpected exception", ex );
                     tx.Rollback( );
+
                     throw;
                 }
             }
@@ -272,25 +273,30 @@ namespace BudgetExecution
             switch( dt )
             {
                 case DbType.Int32:
+
                 {
                     switch( val )
                     {
                         case short s:
+
                         {
                             return (int)s;
                         }
 
                         case byte b:
+
                         {
                             return (int)b;
                         }
 
                         case long l:
+
                         {
                             return (int)l;
                         }
 
                         case decimal val1:
+
                         {
                             return (int)val1;
                         }
@@ -300,25 +306,30 @@ namespace BudgetExecution
                 }
 
                 case DbType.Int16:
+
                 {
                     switch( val )
                     {
                         case int i:
+
                         {
                             return (short)i;
                         }
 
                         case byte b:
+
                         {
                             return (short)b;
                         }
 
                         case long l:
+
                         {
                             return (short)l;
                         }
 
                         case decimal val1:
+
                         {
                             return (short)val1;
                         }
@@ -328,19 +339,24 @@ namespace BudgetExecution
                 }
 
                 case DbType.Int64:
+
                 {
                     switch( val )
                     {
                         case int i:
+
                             return (long)i;
 
                         case short s:
+
                             return (long)s;
 
                         case byte b:
+
                             return (long)b;
 
                         case decimal val1:
+
                             return (long)val1;
                     }
 
@@ -348,13 +364,16 @@ namespace BudgetExecution
                 }
 
                 case DbType.Single:
+
                 {
                     switch( val )
                     {
                         case double d:
+
                             return (float)d;
 
                         case decimal val1:
+
                             return (float)val1;
                     }
 
@@ -362,16 +381,20 @@ namespace BudgetExecution
                 }
 
                 case DbType.Double:
+
                 {
                     switch( val )
                     {
                         case float f:
+
                             return (double)f;
 
                         case double d:
+
                             return d;
 
                         case decimal val1:
+
                             return (double)val1;
                     }
 
@@ -379,6 +402,7 @@ namespace BudgetExecution
                 }
 
                 case DbType.String:
+
                 {
                     if( val is Guid guid )
                     {
@@ -389,13 +413,16 @@ namespace BudgetExecution
                 }
 
                 case DbType.Guid:
+
                 {
                     switch( val )
                     {
                         case string s:
+
                             return ParseStringAsGuid( s );
 
                         case byte[ ] bytes:
+
                             return ParseBlobAsGuid( bytes );
                     }
 
@@ -405,9 +432,11 @@ namespace BudgetExecution
                 case DbType.Binary:
                 case DbType.Boolean:
                 case DbType.DateTime:
+
                     break;
 
                 default:
+
                 {
                     _log.Error( "argument exception - illegal database type" );
 
@@ -431,6 +460,7 @@ namespace BudgetExecution
             switch( blob.Count( ) )
             {
                 case 16:
+
                 {
                     data = new byte[ 16 ];
 
@@ -443,6 +473,7 @@ namespace BudgetExecution
                 }
 
                 case 17:
+
                 {
                     data = new byte[ 16 ];
 
@@ -518,6 +549,7 @@ namespace BudgetExecution
             _stringBuilder.Append( ')' );
             _command.CommandText = _stringBuilder.ToString( );
             _command.CommandType = CommandType.Text;
+
             return _command;
         }
 
@@ -560,36 +592,46 @@ namespace BudgetExecution
             switch( columnSchema.ColumnType )
             {
                 case "tinyint":
+
                     return DbType.Byte;
 
                 case "int":
+
                     return DbType.Int32;
 
                 case "smallint":
+
                     return DbType.Int16;
 
                 case "bigint":
+
                     return DbType.Int64;
 
                 case "bit":
+
                     return DbType.Boolean;
 
                 case "nvarchar":
                 case "varchar":
                 case "text":
                 case "ntext":
+
                     return DbType.String;
 
                 case "float":
+
                     return DbType.Double;
 
                 case "real":
+
                     return DbType.Single;
 
                 case "blob":
+
                     return DbType.Binary;
 
                 case "numeric":
+
                     return DbType.Double;
 
                 case "timestamp":
@@ -597,28 +639,36 @@ namespace BudgetExecution
                 case "datetime2":
                 case "date":
                 case "time":
+
                     return DbType.DateTime;
 
                 case "nchar":
                 case "char":
+
                     return DbType.String;
 
                 case "uniqueidentifier":
                 case "guid":
+
                     return DbType.Guid;
 
                 case "xml":
+
                     return DbType.String;
 
                 case "sqlvariant":
+
                     return DbType.Object;
 
                 case "integer":
+
                     return DbType.Int64;
 
                 default:
+
                     _log.Error( "illegal db type found" );
                     var _message = "Illegal type (" + columnSchema.ColumnType + ")";
+
                     throw new ApplicationException( _message );
             }
         }
@@ -644,6 +694,7 @@ namespace BudgetExecution
             }
 
             _stringBuilder.Append( " FROM " + ts.TableSchemaName + "." + "[" + ts.TableName + "]" );
+
             return _stringBuilder.ToString( );
         }
 
@@ -681,6 +732,7 @@ namespace BudgetExecution
                     catch( Exception ex )
                     {
                         _log.Error( "AddSQLiteTable failed", ex );
+
                         throw;
                     }
 
@@ -706,6 +758,7 @@ namespace BudgetExecution
                         catch( Exception ex )
                         {
                             _log.Error( "AddSQLiteView failed", ex );
+
                             throw;
                         }
 
@@ -868,6 +921,7 @@ namespace BudgetExecution
             }
 
             var query = _stringBuilder.ToString( );
+
             return query;
         }
 
@@ -907,6 +961,7 @@ namespace BudgetExecution
             }
 
             _stringBuilder.Append( ')' );
+
             return _stringBuilder.ToString( );
         }
 
@@ -945,11 +1000,15 @@ namespace BudgetExecution
                 switch( column.ColumnType )
                 {
                     case "int":
+
                         _stringBuilder.Append( "integer" );
+
                         break;
 
                     default:
+
                         _stringBuilder.Append( column.ColumnType );
+
                         break;
                 }
 
@@ -978,14 +1037,18 @@ namespace BudgetExecution
             switch( string.IsNullOrEmpty( _default ) )
             {
                 case false when _default.ToUpper( ).Contains( "GETDATE" ):
+
                     _log.Debug( "converted SQL Server GETDATE() to CURRENTTIMESTAMP for column ["
                         + column.ColumnName + "]" );
 
                     _stringBuilder.Append( " DEFAULT (CURRENTTIMESTAMP)" );
+
                     break;
 
                 case false when IsValidDefaultValue( _default ):
+
                     _stringBuilder.Append( " DEFAULT " + _default );
+
                     break;
             }
 
@@ -1035,6 +1098,7 @@ namespace BudgetExecution
         private bool IsSingleQuoted( string value )
         {
             value = value.Trim( );
+
             return value.StartsWith( "'" ) && value.EndsWith( "'" );
         }
 
@@ -1333,6 +1397,7 @@ namespace BudgetExecution
                 if( p.Trim( ).Contains( "unique" ) )
                 {
                     res.IsUnique = true;
+
                     break;
                 }
             }
@@ -1394,6 +1459,7 @@ namespace BudgetExecution
             _builder.PageSize = 4096;
             _builder.UseUTF16Encoding = true;
             var _connectionString = _builder.ConnectionString;
+
             return _connectionString;
         }
 
@@ -1421,6 +1487,7 @@ namespace BudgetExecution
                     catch( Exception ex )
                     {
                         _log.Error( "AddTableTriggers failed", ex );
+
                         throw;
                     }
                 }
@@ -1509,8 +1576,10 @@ namespace BudgetExecution
                     switch( _dataType )
                     {
                         case "timestamp":
+
                         {
                             _dataType = "blob";
+
                             break;
                         }
 
@@ -1519,66 +1588,86 @@ namespace BudgetExecution
                         case "date":
                         case "datetime2":
                         case "time":
+
                         {
                             _dataType = "datetime";
+
                             break;
                         }
 
                         case "decimal":
                         case "money":
                         case "smallmoney":
+
                         {
                             _dataType = "numeric";
+
                             break;
                         }
 
                         case "binary":
                         case "varbinary":
                         case "image":
+
                         {
                             _dataType = "blob";
+
                             break;
                         }
 
                         case "tinyint":
+
                         {
                             _dataType = "smallint";
+
                             break;
                         }
 
                         case "bigint":
+
                         {
                             _dataType = "integer";
+
                             break;
                         }
 
                         case "sqlvariant":
+
                         {
                             _dataType = "blob";
+
                             break;
                         }
 
                         case "xml":
+
                         {
                             _dataType = "varchar";
+
                             break;
                         }
 
                         case "uniqueidentifier":
+
                         {
                             _dataType = "guid";
+
                             break;
                         }
 
                         case "ntext":
+
                         {
                             _dataType = "text";
+
                             break;
                         }
 
                         case "nchar":
+
                         {
                             _dataType = "char";
+
                             break;
                         }
                     }
@@ -1640,6 +1729,7 @@ namespace BudgetExecution
                             if( csc.ColumnName == _columnName )
                             {
                                 csc.IsCaseSensitive = _isCaseSensitive;
+
                                 break;
                             }
                         }

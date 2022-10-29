@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -223,32 +223,42 @@ namespace BudgetExecution
                     switch( side )
                     {
                         case BorderSide.Top:
+
                         {
                             _range.Style.Border.Top.Style = style;
+
                             break;
                         }
 
                         case BorderSide.Bottom:
+
                         {
                             _range.Style.Border.Bottom.Style = style;
+
                             break;
                         }
 
                         case BorderSide.Right:
+
                         {
                             _range.Style.Border.Right.Style = style;
+
                             break;
                         }
 
                         case BorderSide.Left:
+
                         {
                             _range.Style.Border.Left.Style = style;
+
                             break;
                         }
 
                         default:
+
                         {
                             _range.Style.Border.BorderAround( ExcelBorderStyle.None );
+
                             break;
                         }
                     }

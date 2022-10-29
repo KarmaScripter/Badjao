@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -11,13 +11,6 @@ namespace BudgetExecution
 
     public abstract class CheckBoxBase : VisualCheckBox
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CheckBoxBase"/> class.
-        /// </summary>
-        protected CheckBoxBase( )
-        {
-        }
-
         /// <summary>
         /// Gets or sets the tool tip.
         /// </summary>
@@ -41,6 +34,13 @@ namespace BudgetExecution
         /// The filter.
         /// </value>
         public virtual IDictionary<string, object> DataFilter { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckBoxBase"/> class.
+        /// </summary>
+        protected CheckBoxBase( )
+        {
+        }
 
         /// <summary>
         /// Called when [mouse over].

@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -17,32 +17,6 @@ namespace BudgetExecution
     /// <seealso cref="SpreadsheetRibbon" />
     public class RibbonBase : SpreadsheetRibbon
     {
-        /// <summary>
-        /// Initializes a new instance
-        /// of the <see cref="RibbonBase"/> class.
-        /// </summary>
-        public RibbonBase( )
-        {
-            EnableRibbonCustomization = true;
-            Margin = new Padding( 3 );
-            Padding = new Padding( 1 );
-            Font = new Font( "Roboto", 9 );
-            ForeColor = Color.Black;
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            BorderStyle = ToolStripBorderStyle.None;
-            RibbonStyle = RibbonStyle.Office2010;
-            OfficeColorScheme = ToolStripEx.ColorScheme.Black;
-            TitleFont = new Font( "Roboto", 9 );
-
-            // Office Menu Properties
-            OfficeMenu.BackColor = Color.FromArgb( 15, 15, 15 );
-            OfficeMenu.Font = new Font( "Roboto", 9 );
-            OfficeMenu.AutoSize = true;
-            OfficeMenu.LayoutStyle = ToolStripLayoutStyle.Flow;
-            ShowQuickItemsDropDownButton = false;
-            Ribbon.ScaleMenuButtonImage = true;
-        }
-
         /// <summary>
         /// Gets or sets the grid.
         /// </summary>
@@ -74,6 +48,32 @@ namespace BudgetExecution
         /// The binding source.
         /// </value>
         public virtual BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance
+        /// of the <see cref="RibbonBase"/> class.
+        /// </summary>
+        public RibbonBase( )
+        {
+            EnableRibbonCustomization = true;
+            Margin = new Padding( 3 );
+            Padding = new Padding( 1 );
+            Font = new Font( "Roboto", 9 );
+            ForeColor = Color.Black;
+            BackColor = Color.FromArgb( 15, 15, 15 );
+            BorderStyle = ToolStripBorderStyle.None;
+            RibbonStyle = RibbonStyle.Office2010;
+            OfficeColorScheme = ToolStripEx.ColorScheme.Black;
+            TitleFont = new Font( "Roboto", 9 );
+
+            // Office Menu Properties
+            OfficeMenu.BackColor = Color.FromArgb( 15, 15, 15 );
+            OfficeMenu.Font = new Font( "Roboto", 9 );
+            OfficeMenu.AutoSize = true;
+            OfficeMenu.LayoutStyle = ToolStripLayoutStyle.Flow;
+            ShowQuickItemsDropDownButton = false;
+            Ribbon.ScaleMenuButtonImage = true;
+        }
 
         /// <summary>
         /// Get Error Dialog.

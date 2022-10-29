@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -17,6 +17,19 @@ namespace BudgetExecution
     /// <seealso cref="ToolStripBase" />
     public class ToolStrip : ToolStripBase, IToolStrip
     {
+        /// <summary>
+        /// Gets or sets the numeric.
+        /// </summary>
+        /// <value>
+        /// The numeric.
+        /// </value>
+        public Numeric Numeric { get; set; }
+
+        /// <summary>
+        /// The image path
+        /// </summary>
+        public virtual string ImageDirectory { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolStrip"/> class.
         /// </summary>
@@ -56,19 +69,6 @@ namespace BudgetExecution
             ThemeStyle.HoverItemForeColor = Color.White;
             Buttons = GetButtons( );
         }
-
-        /// <summary>
-        /// Gets or sets the numeric.
-        /// </summary>
-        /// <value>
-        /// The numeric.
-        /// </value>
-        public Numeric Numeric { get; set; }
-
-        /// <summary>
-        /// The image path
-        /// </summary>
-        public virtual string ImageDirectory { get; set; }
 
         /// <summary>
         /// Gets or sets the field.

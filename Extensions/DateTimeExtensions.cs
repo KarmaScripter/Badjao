@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -27,6 +27,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return false;
             }
         }
@@ -44,11 +45,13 @@ namespace BudgetExecution
             try
             {
                 var _timeSpan = new TimeSpan( days, 0, 0, 0 );
+
                 return DateTime.Now.Subtract( _timeSpan );
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -66,11 +69,13 @@ namespace BudgetExecution
             try
             {
                 var _timeSpan = new TimeSpan( days, 0, 0, 0 );
+
                 return DateTime.Now.Add( _timeSpan );
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -88,11 +93,13 @@ namespace BudgetExecution
             try
             {
                 var _timeSpan = new TimeSpan( hours, 0, 0 );
+
                 return DateTime.Now.Subtract( _timeSpan );
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -110,11 +117,13 @@ namespace BudgetExecution
             try
             {
                 var _timeSpan = new TimeSpan( hours, 0, 0 );
+
                 return DateTime.Now.Add( _timeSpan );
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -132,11 +141,13 @@ namespace BudgetExecution
             try
             {
                 var _timeSpan = new TimeSpan( 0, minutes, 0 );
+
                 return DateTime.Now.Subtract( _timeSpan );
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -154,11 +165,13 @@ namespace BudgetExecution
             try
             {
                 var _timeSpan = new TimeSpan( 0, minutes, 0 );
+
                 return DateTime.Now.Add( _timeSpan );
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -176,11 +189,13 @@ namespace BudgetExecution
             try
             {
                 var _timeSpan = new TimeSpan( 0, 0, seconds );
+
                 return DateTime.Now.Subtract( _timeSpan );
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -198,11 +213,13 @@ namespace BudgetExecution
             try
             {
                 var _timeSpan = new TimeSpan( 0, 0, seconds );
+
                 return DateTime.Now.Add( _timeSpan );
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -226,6 +243,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return false;
             }
         }
@@ -246,6 +264,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return false;
             }
         }
@@ -272,6 +291,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return false;
             }
         }
@@ -312,6 +332,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return 0;
             }
         }
@@ -351,6 +372,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return 0;
             }
         }
@@ -371,11 +393,13 @@ namespace BudgetExecution
             try
             {
                 var _timeSpan = startDate.Subtract( endDate );
+
                 return _timeSpan;
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -438,9 +462,11 @@ namespace BudgetExecution
                 case 12 when dateTime.Day == 24 && _friday:
                 case 12 when dateTime.Day == 25 && !_weekend:
                 case 12 when dateTime.Day == 26 && _monday:
+
                     return true;
 
                 default:
+
                     return false;
             }
         }

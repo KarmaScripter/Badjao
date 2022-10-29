@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -17,16 +17,6 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public partial class EditBase : MetroForm
     {
-        /// <summary>
-        /// Initializes a new instance 
-        /// of the <see cref="EditBase"/> class.
-        /// </summary>
-        public EditBase( )
-        {
-            InitializeComponent( );
-            Text = string.Empty;
-        }
-
         /// <summary>
         /// Gets or sets the source.
         /// </summary>
@@ -180,6 +170,16 @@ namespace BudgetExecution
         public virtual IEnumerable<string> DataTypes { get; set; }
 
         /// <summary>
+        /// Initializes a new instance 
+        /// of the <see cref="EditBase"/> class.
+        /// </summary>
+        public EditBase( )
+        {
+            InitializeComponent( );
+            Text = string.Empty;
+        }
+
+        /// <summary>
         /// Gets the data types.
         /// </summary>
         /// <param name="provider">The provider.</param>
@@ -203,6 +203,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -340,6 +341,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -386,6 +388,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -423,6 +426,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -463,6 +467,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }

@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -18,6 +18,76 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class ConnectionBase
     {
+        /// <summary>
+        /// The connector
+        /// </summary>
+        public virtual ConnectionStringSettingsCollection ConnectionPath { get; } =
+            ConfigurationManager.ConnectionStrings;
+
+        /// <summary>
+        /// Gets the client path.
+        /// </summary>
+        /// <value>
+        /// The client path.
+        /// </value>
+        public virtual NameValueCollection DbClientPath { get; } = ConfigurationManager.AppSettings;
+
+        /// <summary>
+        /// Gets or sets the connection.
+        /// </summary>
+        /// <value>
+        /// The connection.
+        /// </value>
+        public virtual DbConnection Connection { get; set; }
+
+        /// <summary>
+        /// The provider path
+        /// </summary>
+        public virtual string DbPath { get; set; }
+
+        /// <summary>
+        /// The source
+        /// </summary>
+        public virtual Source Source { get; set; }
+
+        /// <summary>
+        /// The provider
+        /// </summary>
+        public virtual Provider Provider { get; set; }
+
+        /// <summary>
+        /// The file extension
+        /// </summary>
+        public virtual EXT Extension { get; set; }
+
+        /// <summary>
+        /// Gets or sets the path extension.
+        /// </summary>
+        /// <value>
+        /// The path extension.
+        /// </value>
+        public virtual string PathExtension { get; set; }
+
+        /// <summary>
+        /// The file path
+        /// </summary>
+        public virtual string FilePath { get; set; }
+
+        /// <summary>
+        /// The file name
+        /// </summary>
+        public virtual string FileName { get; set; }
+
+        /// <summary>
+        /// The table name
+        /// </summary>
+        public virtual string TableName { get; set; }
+
+        /// <summary>
+        /// The connection string
+        /// </summary>
+        public virtual string ConnectionString { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionBase"/> class.
         /// </summary>
@@ -91,76 +161,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// The connector
-        /// </summary>
-        public virtual ConnectionStringSettingsCollection ConnectionPath { get; } =
-            ConfigurationManager.ConnectionStrings;
-
-        /// <summary>
-        /// Gets the client path.
-        /// </summary>
-        /// <value>
-        /// The client path.
-        /// </value>
-        public virtual NameValueCollection DbClientPath { get; } = ConfigurationManager.AppSettings;
-
-        /// <summary>
-        /// Gets or sets the connection.
-        /// </summary>
-        /// <value>
-        /// The connection.
-        /// </value>
-        public virtual DbConnection Connection { get; set; }
-
-        /// <summary>
-        /// The provider path
-        /// </summary>
-        public virtual string DbPath { get; set; }
-
-        /// <summary>
-        /// The source
-        /// </summary>
-        public virtual Source Source { get; set; }
-
-        /// <summary>
-        /// The provider
-        /// </summary>
-        public virtual Provider Provider { get; set; }
-
-        /// <summary>
-        /// The file extension
-        /// </summary>
-        public virtual EXT Extension { get; set; }
-
-        /// <summary>
-        /// Gets or sets the path extension.
-        /// </summary>
-        /// <value>
-        /// The path extension.
-        /// </value>
-        public virtual string PathExtension { get; set; }
-
-        /// <summary>
-        /// The file path
-        /// </summary>
-        public virtual string FilePath { get; set; }
-
-        /// <summary>
-        /// The file name
-        /// </summary>
-        public virtual string FileName { get; set; }
-
-        /// <summary>
-        /// The table name
-        /// </summary>
-        public virtual string TableName { get; set; }
-
-        /// <summary>
-        /// The connection string
-        /// </summary>
-        public virtual string ConnectionString { get; set; }
-
-        /// <summary>
         /// Gets the file path.
         /// </summary>
         /// <param name="provider">The provider.</param>
@@ -185,6 +185,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return string.Empty;
                 }
             }
@@ -207,6 +208,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return string.Empty;
             }
         }

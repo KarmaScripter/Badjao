@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -10,52 +10,6 @@ namespace BudgetExecution
 
     public class PictureBox : PictureBase, IPictureBox
     {
-        /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="PictureBox" />
-        /// class.
-        /// </summary>
-        public PictureBox( )
-        {
-            Size = new Size( 60, 40 );
-            Anchor = AnchorStyles.Left | AnchorStyles.Top;
-            Location = new Point( 1, 1 );
-            BackColor = Color.Transparent;
-            Margin = new Padding( 3 );
-            Padding = new Padding( 1 );
-            SizeMode = PictureBoxSizeMode.StretchImage;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="PictureBox" />
-        /// class.
-        /// </summary>
-        /// <param name="size">The size.</param>
-        /// <param name="location">The location.</param>
-        public PictureBox( Size size, Point location )
-            : this( )
-        {
-            Size = size;
-            Location = location;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="PictureBox" />
-        /// class.
-        /// </summary>
-        /// <param name="image">The image.</param>
-        public PictureBox( Image image )
-            : this( )
-        {
-        }
-
-        public PictureBox( string path )
-            : this( )
-        {
-        }
-
         /// <summary>
         /// Gets or sets the tool tip.
         /// </summary>
@@ -103,5 +57,51 @@ namespace BudgetExecution
         /// The image list.
         /// </value>
         public ImageList ImageList { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="PictureBox" />
+        /// class.
+        /// </summary>
+        public PictureBox( )
+        {
+            Size = new Size( 60, 40 );
+            Anchor = AnchorStyles.Left | AnchorStyles.Top;
+            Location = new Point( 1, 1 );
+            BackColor = Color.Transparent;
+            Margin = new Padding( 3 );
+            Padding = new Padding( 1 );
+            SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="PictureBox" />
+        /// class.
+        /// </summary>
+        /// <param name="size">The size.</param>
+        /// <param name="location">The location.</param>
+        public PictureBox( Size size, Point location )
+            : this( )
+        {
+            Size = size;
+            Location = location;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="PictureBox" />
+        /// class.
+        /// </summary>
+        /// <param name="image">The image.</param>
+        public PictureBox( Image image )
+            : this( )
+        {
+        }
+
+        public PictureBox( string path )
+            : this( )
+        {
+        }
     }
 }

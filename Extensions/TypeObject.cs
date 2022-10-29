@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -34,11 +34,13 @@ namespace BudgetExecution
                     using var stream = new MemoryStream( );
                     _serializer.WriteObject( stream, type );
                     var json = _encoding.GetString( stream.ToArray( ) );
+
                     return json;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -65,11 +67,13 @@ namespace BudgetExecution
                     using var _stream = new MemoryStream( );
                     _serializer.WriteObject( _stream, type );
                     var json = _encoding.GetString( _stream.ToArray( ) );
+
                     return json;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -95,11 +99,13 @@ namespace BudgetExecution
                     _serializer?.Serialize( _writer, type );
                     var _string = _writer?.GetStringBuilder( )?.ToString( );
                     using var _reader = new StringReader( _string );
+
                     return _reader?.ReadToEnd( ) ?? string.Empty;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }

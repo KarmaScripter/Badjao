@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -217,22 +217,26 @@ namespace BudgetExecution
                 switch( hoverColor )
                 {
                     case true:
+
                     {
                         Border.Color = Color.FromArgb( 64, 64, 64 );
                         Border.Thickness = 1;
                         Border.HoverColor = SystemColors.WindowFrame;
                         Border.HoverVisible = true;
                         Border.Type = ShapeTypes.Rounded;
+
                         break;
                     }
 
                     case false:
+
                     {
                         Border.Color = Color.FromArgb( 15, 15, 15 );
                         Border.Thickness = 1;
                         Border.HoverColor = Color.SteelBlue;
                         Border.HoverVisible = false;
                         Border.Type = ShapeTypes.Rounded;
+
                         break;
                     }
                 }

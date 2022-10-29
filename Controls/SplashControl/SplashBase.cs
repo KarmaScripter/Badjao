@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -14,19 +14,6 @@ namespace BudgetExecution
 
     public abstract class SplashBase : SplashPanel
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SplashBase"/> class.
-        /// </summary>
-        /// <remarks>
-        /// The default value for the <see cref="P:Syncfusion.Windows.Forms.Tools.SplashPanel.TimerInterval" /> is set to
-        /// 5000 milli seconds.
-        /// The splash panel has animation turned and by default will appear in the
-        /// middle of the screen.
-        /// </remarks>
-        public SplashBase( )
-        {
-        }
-
         /// <summary>
         /// Gets or sets the binding source.
         /// </summary>
@@ -66,6 +53,19 @@ namespace BudgetExecution
         /// The hover text.
         /// </value>
         public virtual string HoverText { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SplashBase"/> class.
+        /// </summary>
+        /// <remarks>
+        /// The default value for the <see cref="P:Syncfusion.Windows.Forms.Tools.SplashPanel.TimerInterval" /> is set to
+        /// 5000 milli seconds.
+        /// The splash panel has animation turned and by default will appear in the
+        /// middle of the screen.
+        /// </remarks>
+        public SplashBase( )
+        {
+        }
 
         /// <summary>
         /// Sets the size.

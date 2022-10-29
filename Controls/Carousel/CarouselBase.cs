@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -15,13 +15,6 @@ namespace BudgetExecution
 
     public abstract class CarouselBase : Carousel
     {
-        /// <summary>Initializes a new instance of the class.
-        /// 	<see cref="CarouselBase" />
-        /// </summary>
-        protected CarouselBase( )
-        {
-        }
-
         /// <summary>
         /// Gets or sets the binding source.
         /// </summary>
@@ -61,6 +54,13 @@ namespace BudgetExecution
         /// The hover text.
         /// </value>
         public virtual string HoverText { get; set; }
+
+        /// <summary>Initializes a new instance of the class.
+        /// 	<see cref="CarouselBase" />
+        /// </summary>
+        protected CarouselBase( )
+        {
+        }
 
         /// <summary>
         /// Sets the size.

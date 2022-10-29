@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -18,6 +18,89 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "PublicConstructorInAbstractClass" ) ]
     public abstract class SqlBase
     {
+        /// <summary>
+        /// The extension
+        /// </summary>
+        public virtual EXT Extension { get; set; }
+
+        /// <summary>
+        /// The source
+        /// </summary>
+        public virtual Source Source { get; set; }
+
+        /// <summary>
+        /// The provider
+        /// </summary>
+        public virtual Provider Provider { get; set; }
+
+        /// <summary>
+        /// The command type
+        /// </summary>
+        public virtual SQL CommandType { get; set; }
+
+        /// <summary>
+        /// The arguments
+        /// </summary>
+        public virtual IDictionary<string, object> Criteria { get; set; }
+
+        /// <summary>
+        /// Gets or sets the updates.
+        /// </summary>
+        /// <value>
+        /// The updates.
+        /// </value>
+        public virtual IDictionary<string, object> Updates { get; set; }
+
+        /// <summary>
+        /// Gets or sets the columns.
+        /// </summary>
+        /// <value>
+        /// The columns.
+        /// </value>
+        public virtual IEnumerable<string> Columns { get; set; }
+
+        /// <summary>
+        /// Gets or sets the numerics.
+        /// </summary>
+        /// <value>
+        /// The numerics.
+        /// </value>
+        public virtual IEnumerable<string> Numerics { get; set; }
+
+        /// <summary>
+        /// Gets or sets the groups.
+        /// </summary>
+        /// <value>
+        /// The groups.
+        /// </value>
+        public virtual IEnumerable<string> Groups { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the table.
+        /// </summary>
+        /// <value>
+        /// The name of the table.
+        /// </value>
+        public virtual string TableName { get; set; }
+
+        /// <summary>
+        /// The provider path
+        /// </summary>
+        public virtual string DbPath { get; set; }
+
+        /// <summary>
+        /// The file name
+        /// </summary>
+        public virtual string FileName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the select statement.
+        /// </summary>
+        /// <value>
+        /// The select statement.
+        /// </value>
+        public virtual string CommandText { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SqlBase"/> class.
         /// </summary>
@@ -130,89 +213,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// The extension
-        /// </summary>
-        public virtual EXT Extension { get; set; }
-
-        /// <summary>
-        /// The source
-        /// </summary>
-        public virtual Source Source { get; set; }
-
-        /// <summary>
-        /// The provider
-        /// </summary>
-        public virtual Provider Provider { get; set; }
-
-        /// <summary>
-        /// The command type
-        /// </summary>
-        public virtual SQL CommandType { get; set; }
-
-        /// <summary>
-        /// The arguments
-        /// </summary>
-        public virtual IDictionary<string, object> Criteria { get; set; }
-
-        /// <summary>
-        /// Gets or sets the updates.
-        /// </summary>
-        /// <value>
-        /// The updates.
-        /// </value>
-        public virtual IDictionary<string, object> Updates { get; set; }
-
-        /// <summary>
-        /// Gets or sets the columns.
-        /// </summary>
-        /// <value>
-        /// The columns.
-        /// </value>
-        public virtual IEnumerable<string> Columns { get; set; }
-
-        /// <summary>
-        /// Gets or sets the numerics.
-        /// </summary>
-        /// <value>
-        /// The numerics.
-        /// </value>
-        public virtual IEnumerable<string> Numerics { get; set; }
-
-        /// <summary>
-        /// Gets or sets the groups.
-        /// </summary>
-        /// <value>
-        /// The groups.
-        /// </value>
-        public virtual IEnumerable<string> Groups { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the table.
-        /// </summary>
-        /// <value>
-        /// The name of the table.
-        /// </value>
-        public virtual string TableName { get; set; }
-
-        /// <summary>
-        /// The provider path
-        /// </summary>
-        public virtual string DbPath { get; set; }
-
-        /// <summary>
-        /// The file name
-        /// </summary>
-        public virtual string FileName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the select statement.
-        /// </summary>
-        /// <value>
-        /// The select statement.
-        /// </value>
-        public virtual string CommandText { get; set; }
-
-        /// <summary>
         /// Sets the select statement.
         /// </summary>
         public virtual string GetSelectStatement( )
@@ -230,11 +230,13 @@ namespace BudgetExecution
                     }
 
                     var _cols = _columns.TrimEnd( ", ".ToCharArray( ) );
+
                     return $"SELECT {_cols} FROM {Source} WHERE {Criteria.ToCriteria( )};";
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -243,9 +245,11 @@ namespace BudgetExecution
                 switch( Columns )
                 {
                     case null when Criteria?.Any( ) == true:
+
                         return $"SELECT * FROM {Source} WHERE {Criteria.ToCriteria( )};";
 
                     case null when Criteria == null:
+
                         return $"SELECT * FROM {Source};";
                 }
             }
@@ -265,11 +269,13 @@ namespace BudgetExecution
                 try
                 {
                     var _criteria = where.ToCriteria( );
+
                     return $"SELECT * FROM {Source} WHERE {_criteria};";
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return string.Empty;
                 }
             }
@@ -301,11 +307,13 @@ namespace BudgetExecution
 
                     var _criteria = where.ToCriteria( );
                     var _columns = _cols.TrimEnd( ", ".ToCharArray( ) );
+
                     return $"SELECT {_columns} FROM {Source} WHERE {_criteria} ;";
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return string.Empty;
                 }
             }
@@ -355,6 +363,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return string.Empty;
                 }
             }
@@ -381,6 +390,7 @@ namespace BudgetExecution
                     switch( updates.Count )
                     {
                         case 1:
+
                         {
                             foreach( var kvp in updates )
                             {
@@ -391,6 +401,7 @@ namespace BudgetExecution
                         }
 
                         case > 1:
+
                         {
                             foreach( var kvp in updates )
                             {
@@ -403,11 +414,13 @@ namespace BudgetExecution
 
                     var _criteria = where.ToCriteria( );
                     var _values = _update.TrimEnd( ", ".ToCharArray( ) );
+
                     return $"{ SQL.UPDATE } { Source } SET { _values } WHERE { _criteria };";
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return string.Empty;
                 }
             }
@@ -432,6 +445,7 @@ namespace BudgetExecution
                     switch( updates.Count )
                     {
                         case 1:
+
                         {
                             foreach( var kvp in updates )
                             {
@@ -443,6 +457,7 @@ namespace BudgetExecution
                         }
 
                         case > 1:
+
                         {
                             foreach( var kvp in updates )
                             {
@@ -462,6 +477,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return string.Empty;
                 }
             }
@@ -481,11 +497,13 @@ namespace BudgetExecution
                 try
                 {
                     var _criteria = where.ToCriteria( );
+
                     return $"{SQL.DELETE} FROM {Source} WHERE {_criteria};";
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return string.Empty;
                 }
             }

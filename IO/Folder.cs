@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -61,6 +61,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -84,6 +85,7 @@ namespace BudgetExecution
                 catch( IOException ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -102,12 +104,16 @@ namespace BudgetExecution
                 switch( string.IsNullOrEmpty( fullName ) )
                 {
                     case false when !Directory.Exists( fullName ):
+
                         DirectoryInfo?.MoveTo( fullName );
+
                         break;
 
                     case false when Directory.Exists( fullName ):
+
                         Directory.CreateDirectory( fullName );
                         DirectoryInfo?.MoveTo( fullName );
+
                         break;
                 }
             }
@@ -191,6 +197,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -211,6 +218,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }

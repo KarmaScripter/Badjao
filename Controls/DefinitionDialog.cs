@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -18,6 +18,14 @@ namespace BudgetExecution
     /// <seealso cref="EditBase" />
     public partial class DefinitionDialog : EditBase
     {
+        /// <summary>
+        /// Gets or sets the sqlite data types.
+        /// </summary>
+        /// <value>
+        /// The sqlite data types.
+        /// </value>
+        public override IEnumerable<string> DataTypes { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DefinitionDialog"/> class.
         /// </summary>
@@ -62,14 +70,6 @@ namespace BudgetExecution
             Columns = DataTable.GetColumnNames( );
             DataTypes = GetDataTypes( Provider );
         }
-
-        /// <summary>
-        /// Gets or sets the sqlite data types.
-        /// </summary>
-        /// <value>
-        /// The sqlite data types.
-        /// </value>
-        public override IEnumerable<string> DataTypes { get; set; }
 
         /// <summary>
         /// Called when [visible].
@@ -178,6 +178,7 @@ namespace BudgetExecution
                     switch( ToolType )
                     {
                         case ToolType.AddColumnButton:
+
                         {
                             EditColumnTabPage.Text = "Add Column";
                             ActiveTab = EditColumnTabPage;
@@ -192,10 +193,12 @@ namespace BudgetExecution
                             DeleteTableTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
                             CreateTableTabPage.TabVisible = false;
+
                             break;
                         }
 
                         case ToolType.AddDatabaseButton:
+
                         {
                             CreateTableTabPage.Text = "Add Database";
                             ActiveTab = CreateTableTabPage;
@@ -204,10 +207,12 @@ namespace BudgetExecution
                             EditColumnTabPage.TabVisible = false;
                             DeleteTableTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
+
                             break;
                         }
 
                         case ToolType.AddTableButton:
+
                         {
                             CreateTableTabPage.Text = "Add Table";
                             ActiveTab = CreateTableTabPage;
@@ -223,10 +228,12 @@ namespace BudgetExecution
                             EditColumnTabPage.TabVisible = false;
                             DeleteTableTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
+
                             break;
                         }
 
                         case ToolType.EditColumnButton:
+
                         {
                             EditColumnTabPage.Text = "Rename Column";
                             ActiveTab = EditColumnTabPage;
@@ -241,36 +248,43 @@ namespace BudgetExecution
                             CreateTableTabPage.TabVisible = false;
                             DeleteTableTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
+
                             break;
                         }
 
                         case ToolType.DeleteColumnButton:
+
                         {
                             DeleteColumnTabPage.Text = "Delete Column";
                             ActiveTab = DeleteColumnTabPage;
                             CreateTableTabPage.TabVisible = false;
                             DeleteTableTabPage.TabVisible = false;
                             EditColumnTabPage.TabVisible = false;
+
                             break;
                         }
 
                         case ToolType.DeleteTableButton:
+
                         {
                             DeleteTableTabPage.Text = "Delete Table";
                             ActiveTab = DeleteTableTabPage;
                             CreateTableTabPage.TabVisible = false;
                             EditColumnTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
+
                             break;
                         }
 
                         case ToolType.DeleteDatabaseButton:
+
                         {
                             DeleteTableTabPage.Text = "Delete Database";
                             ActiveTab = DeleteTableTabPage;
                             CreateTableTabPage.TabVisible = false;
                             EditColumnTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
+
                             break;
                         }
                     }
@@ -309,6 +323,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }

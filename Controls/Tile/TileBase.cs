@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -17,14 +17,6 @@ namespace BudgetExecution
     /// <seealso cref="HubTile" />
     public abstract class TileBase : HubTile
     {
-        /// <summary>
-        /// Initializes a new instance of the
-        ///  <see cref="TileBase"/> class.
-        /// </summary>
-        protected TileBase( )
-        {
-        }
-
         /// <summary>
         /// Gets or sets the binding source.
         /// </summary>
@@ -69,6 +61,14 @@ namespace BudgetExecution
         /// The color of the hover.
         /// </value>
         public virtual Color HoverColor { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the
+        ///  <see cref="TileBase"/> class.
+        /// </summary>
+        protected TileBase( )
+        {
+        }
 
         /// <summary>
         /// Sets the location.

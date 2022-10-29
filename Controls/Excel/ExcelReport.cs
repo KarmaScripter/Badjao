@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -38,11 +38,13 @@ namespace BudgetExecution
                 {
                     using var _dataSet = new DataSet( );
                     _dataSet?.Tables?.Add( ListToDataTable( data ) );
+
                     return CreateExcelDocument( _dataSet, path );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return false;
                 }
             }
@@ -68,11 +70,13 @@ namespace BudgetExecution
                     _dataSet.Tables.Add( dataTable );
                     var _document = CreateExcelDocument( _dataSet, path );
                     _dataSet.Tables.Remove( dataTable );
+
                     return _document;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -100,11 +104,13 @@ namespace BudgetExecution
                     }
 
                     Trace.WriteLine( "Successfully created: " + fileName );
+
                     return true;
                 }
                 catch( Exception ex )
                 {
                     Trace.WriteLine( "Failed, exception thrown: " + ex.Message );
+
                     return false;
                 }
             }
@@ -151,6 +157,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -180,6 +187,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -254,11 +262,13 @@ namespace BudgetExecution
 
                 var _first = (char)( 'A' + columnIndex / 26 - 1 );
                 var _second = (char)( 'A' + columnIndex % 26 );
+
                 return $"{_first}{_second}";
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -418,6 +428,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return false;
             }
         }

@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -15,14 +15,6 @@ namespace BudgetExecution
     public class ToolFactory
     {
         /// <summary>
-        /// Initializes a new instance
-        /// of the <see cref="ToolFactory"/> class.
-        /// </summary>
-        public ToolFactory( )
-        {
-        }
-
-        /// <summary>
         /// Gets or sets the image directory.
         /// </summary>
         /// <value>
@@ -31,16 +23,26 @@ namespace BudgetExecution
         public static string ImageDirectory { get; } =
             ConfigurationManager.AppSettings[ "ToolStrip" ];
 
+        /// <summary>
+        /// Initializes a new instance
+        /// of the <see cref="ToolFactory"/> class.
+        /// </summary>
+        public ToolFactory( )
+        {
+        }
+
         public static ToolSeparator CreateSeparator( )
         {
             try
             {
                 var _separator = new ToolSeparator( );
+
                 return _separator;
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -67,6 +69,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -93,6 +96,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -119,6 +123,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -145,6 +150,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -171,6 +177,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -197,6 +204,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -223,6 +231,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -249,6 +258,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -275,6 +285,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -301,6 +312,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -327,6 +339,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -353,6 +366,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -379,6 +393,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -393,11 +408,13 @@ namespace BudgetExecution
             try
             {
                 var _label = new ToolStripLabel( );
+
                 return _label;
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -412,11 +429,13 @@ namespace BudgetExecution
             try
             {
                 var _comboBox = new ToolStripComboBoxEx( );
+
                 return _comboBox;
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -431,11 +450,13 @@ namespace BudgetExecution
             try
             {
                 var _progress = new ToolStripProgressBar( );
+
                 return _progress;
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -450,11 +471,13 @@ namespace BudgetExecution
             try
             {
                 var _textBox = new ToolStripTextBox( );
+
                 return _textBox;
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }

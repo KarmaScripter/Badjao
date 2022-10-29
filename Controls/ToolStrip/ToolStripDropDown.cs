@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -15,6 +15,14 @@ namespace BudgetExecution
 
     public class ToolStripDropDown : ToolStripDropDownBase, IToolbarComboBox
     {
+        /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public MetroTip ToolTip { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolStripComboBoxEx"/> class.
         /// </summary>
@@ -72,14 +80,6 @@ namespace BudgetExecution
             BindingSource.DataSource = data?.ToList( );
             BindingSource.DataMember = filter;
         }
-
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public MetroTip ToolTip { get; set; }
 
         /// <summary> Sets the data source. </summary>
         /// <param name = "bindingSource" > The bindingsource. </param>
@@ -170,6 +170,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return null;
                 }
             }

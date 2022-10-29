@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -11,61 +11,6 @@ namespace BudgetExecution
     /// </summary>
     public class TextItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TextItem"/> class.
-        /// </summary>
-        public TextItem( )
-        {
-            HeaderFont = new Font( "Roboto", 10, FontStyle.Regular );
-            HeaderAlignment = ContentAlignment.TopLeft;
-            HeaderForeColor = Color.FromArgb( 0, 120, 212 );
-            BodyFont = new Font( "Roboto", 9, FontStyle.Regular );
-            BodyAlignment = ContentAlignment.MiddleLeft;
-            BodyForeColor = Color.LightSteelBlue;
-            FooterFont = new Font( "Roboto", 8, FontStyle.Regular );
-            FooterAlignment = ContentAlignment.BottomLeft;
-            FooterForeColor = Color.LightSteelBlue;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TextItem"/> class.
-        /// </summary>
-        /// <param name="bodyText">The body text.</param>
-        public TextItem( string bodyText )
-            : this( )
-        {
-            HeaderText = string.Empty;
-            BodyText = bodyText;
-            FooterText = string.Empty;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TextItem"/> class.
-        /// </summary>
-        /// <param name="headerText">The header text.</param>
-        /// <param name="bodyText">The body text.</param>
-        public TextItem( string headerText, string bodyText )
-            : this( )
-        {
-            HeaderText = headerText;
-            BodyText = bodyText;
-            FooterText = string.Empty;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TextItem"/> class.
-        /// </summary>
-        /// <param name="headerText">The header text.</param>
-        /// <param name="bodyText">The body text.</param>
-        /// <param name="footerText">The footer text.</param>
-        public TextItem( string headerText, string bodyText, string footerText )
-            : this( )
-        {
-            HeaderText = headerText;
-            BodyText = bodyText;
-            FooterText = footerText;
-        }
-
         /// <summary>
         /// Gets or sets the header text.
         /// </summary>
@@ -185,5 +130,60 @@ namespace BudgetExecution
         /// The color of the footer back.
         /// </value>
         public Color FooterBackColor { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextItem"/> class.
+        /// </summary>
+        public TextItem( )
+        {
+            HeaderFont = new Font( "Roboto", 10, FontStyle.Regular );
+            HeaderAlignment = ContentAlignment.TopLeft;
+            HeaderForeColor = Color.FromArgb( 0, 120, 212 );
+            BodyFont = new Font( "Roboto", 9, FontStyle.Regular );
+            BodyAlignment = ContentAlignment.MiddleLeft;
+            BodyForeColor = Color.LightSteelBlue;
+            FooterFont = new Font( "Roboto", 8, FontStyle.Regular );
+            FooterAlignment = ContentAlignment.BottomLeft;
+            FooterForeColor = Color.LightSteelBlue;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextItem"/> class.
+        /// </summary>
+        /// <param name="bodyText">The body text.</param>
+        public TextItem( string bodyText )
+            : this( )
+        {
+            HeaderText = string.Empty;
+            BodyText = bodyText;
+            FooterText = string.Empty;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextItem"/> class.
+        /// </summary>
+        /// <param name="headerText">The header text.</param>
+        /// <param name="bodyText">The body text.</param>
+        public TextItem( string headerText, string bodyText )
+            : this( )
+        {
+            HeaderText = headerText;
+            BodyText = bodyText;
+            FooterText = string.Empty;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextItem"/> class.
+        /// </summary>
+        /// <param name="headerText">The header text.</param>
+        /// <param name="bodyText">The body text.</param>
+        /// <param name="footerText">The footer text.</param>
+        public TextItem( string headerText, string bodyText, string footerText )
+            : this( )
+        {
+            HeaderText = headerText;
+            BodyText = bodyText;
+            FooterText = footerText;
+        }
     }
 }

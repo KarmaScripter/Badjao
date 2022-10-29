@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -20,6 +20,14 @@ namespace BudgetExecution
     /// <seealso cref="ICommandFactory" />
     public class CommandFactory : CommandBuilder
     {
+        /// <summary>
+        /// Gets or sets the connection.
+        /// </summary>
+        /// <value>
+        /// The connection.
+        /// </value>
+        public DbConnection Connection { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandFactory"/> class.
         /// </summary>
@@ -52,14 +60,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Gets or sets the connection.
-        /// </summary>
-        /// <value>
-        /// The connection.
-        /// </value>
-        public DbConnection Connection { get; set; }
-
-        /// <summary>
         /// Gets the create table command.
         /// </summary>
         /// <param name="tableName">Name of the table.</param>
@@ -81,6 +81,7 @@ namespace BudgetExecution
                         switch( Provider )
                         {
                             case Provider.SQLite:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SQLiteCommand( _sql )
@@ -88,6 +89,7 @@ namespace BudgetExecution
                             }
 
                             case Provider.SqlCe:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql )
@@ -95,6 +97,7 @@ namespace BudgetExecution
                             }
 
                             case Provider.SqlServer:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCommand( _sql )
@@ -105,6 +108,7 @@ namespace BudgetExecution
                             case Provider.CSV:
                             case Provider.Access:
                             case Provider.OleDb:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new OleDbCommand( _sql )
@@ -116,6 +120,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -144,6 +149,7 @@ namespace BudgetExecution
                     switch( Provider )
                     {
                         case Provider.SQLite:
+
                         {
                             return !string.IsNullOrEmpty( _sql )
                                 ? new SQLiteCommand( _sql )
@@ -151,6 +157,7 @@ namespace BudgetExecution
                         }
 
                         case Provider.SqlServer:
+
                         {
                             return !string.IsNullOrEmpty( _sql )
                                 ? new SqlCommand( _sql )
@@ -161,6 +168,7 @@ namespace BudgetExecution
                         case Provider.CSV:
                         case Provider.Access:
                         case Provider.OleDb:
+
                         {
                             return !string.IsNullOrEmpty( _sql )
                                 ? new OleDbCommand( _sql )
@@ -171,6 +179,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -198,6 +207,7 @@ namespace BudgetExecution
                         switch( Provider )
                         {
                             case Provider.SQLite:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SQLiteCommand( _sql )
@@ -205,6 +215,7 @@ namespace BudgetExecution
                             }
 
                             case Provider.SqlCe:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql )
@@ -212,6 +223,7 @@ namespace BudgetExecution
                             }
 
                             case Provider.SqlServer:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCommand( _sql )
@@ -222,6 +234,7 @@ namespace BudgetExecution
                             case Provider.CSV:
                             case Provider.Access:
                             case Provider.OleDb:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new OleDbCommand( _sql )
@@ -233,6 +246,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -263,6 +277,7 @@ namespace BudgetExecution
                         switch( Provider )
                         {
                             case Provider.SQLite:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SQLiteCommand( _sql )
@@ -270,6 +285,7 @@ namespace BudgetExecution
                             }
 
                             case Provider.SqlCe:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql )
@@ -277,6 +293,7 @@ namespace BudgetExecution
                             }
 
                             case Provider.SqlServer:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCommand( _sql )
@@ -287,6 +304,7 @@ namespace BudgetExecution
                             case Provider.CSV:
                             case Provider.Access:
                             case Provider.OleDb:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new OleDbCommand( _sql )
@@ -298,6 +316,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -327,6 +346,7 @@ namespace BudgetExecution
                         switch( Provider )
                         {
                             case Provider.SQLite:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SQLiteCommand( _sql )
@@ -334,6 +354,7 @@ namespace BudgetExecution
                             }
 
                             case Provider.SqlCe:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql )
@@ -341,6 +362,7 @@ namespace BudgetExecution
                             }
 
                             case Provider.SqlServer:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCommand( _sql )
@@ -351,6 +373,7 @@ namespace BudgetExecution
                             case Provider.CSV:
                             case Provider.Access:
                             case Provider.OleDb:
+
                             {
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new OleDbCommand( _sql )
@@ -362,6 +385,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -385,16 +409,19 @@ namespace BudgetExecution
                     switch( Provider )
                     {
                         case Provider.SQLite:
+
                         {
                             return new SQLiteCommand( _sql );
                         }
 
                         case Provider.SqlCe:
+
                         {
                             return new SqlCeCommand( _sql );
                         }
 
                         case Provider.SqlServer:
+
                         {
                             return new SqlCommand( _sql );
                         }
@@ -403,11 +430,13 @@ namespace BudgetExecution
                         case Provider.CSV:
                         case Provider.Access:
                         case Provider.OleDb:
+
                         {
                             return new OleDbCommand( _sql );
                         }
 
                         default:
+
                         {
                             return new OleDbCommand( _sql );
                         }
@@ -416,6 +445,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -436,6 +466,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return string.Empty;
             }
         }
@@ -453,6 +484,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return string.Empty;
             }
         }
@@ -470,6 +502,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return string.Empty;
             }
         }

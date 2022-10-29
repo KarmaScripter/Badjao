@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -14,13 +14,6 @@ namespace BudgetExecution
     /// </summary>
     public class AlignConfig
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref = "ColorConfig"/> class.
-        /// </summary>
-        public AlignConfig( )
-        {
-        }
-
         /// <summary>
         /// Gets the left align.
         /// </summary>
@@ -95,6 +88,13 @@ namespace BudgetExecution
         public static readonly ContentAlignment ContentBottom = ContentAlignment.BottomRight;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref = "ColorConfig"/> class.
+        /// </summary>
+        public AlignConfig( )
+        {
+        }
+
+        /// <summary>
         /// Sets the color.
         /// </summary>
         /// <param name = "alignment" >
@@ -113,6 +113,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -136,6 +137,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -157,6 +159,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -178,6 +181,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }

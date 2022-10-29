@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -13,6 +13,38 @@ namespace BudgetExecution
 
     public class ImageList : ImageListBase
     {
+        /// <summary>
+        /// Gets or sets the image source.
+        /// </summary>
+        /// <value>
+        /// The image source.
+        /// </value>
+        public ImageDirectory ImageSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the image.
+        /// </summary>
+        /// <value>
+        /// The image.
+        /// </value>
+        public Image Image { get; set; }
+
+        /// <summary>
+        /// Gets or sets the file names.
+        /// </summary>
+        /// <value>
+        /// The file names.
+        /// </value>
+        public IEnumerable<string> FileNames { get; set; }
+
+        /// <summary>
+        /// Gets or sets the file names.
+        /// </summary>
+        /// <value>
+        /// The file names.
+        /// </value>
+        public IEnumerable<string> FilePaths { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref = "ImageList"/> class.
         /// </summary>
@@ -50,38 +82,6 @@ namespace BudgetExecution
             ImageSize = size;
             Images.Add( new Bitmap( path ) );
         }
-
-        /// <summary>
-        /// Gets or sets the image source.
-        /// </summary>
-        /// <value>
-        /// The image source.
-        /// </value>
-        public ImageDirectory ImageSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the image.
-        /// </summary>
-        /// <value>
-        /// The image.
-        /// </value>
-        public Image Image { get; set; }
-
-        /// <summary>
-        /// Gets or sets the file names.
-        /// </summary>
-        /// <value>
-        /// The file names.
-        /// </value>
-        public IEnumerable<string> FileNames { get; set; }
-
-        /// <summary>
-        /// Gets or sets the file names.
-        /// </summary>
-        /// <value>
-        /// The file names.
-        /// </value>
-        public IEnumerable<string> FilePaths { get; set; }
 
         /// <summary>
         /// Adds the specified image.

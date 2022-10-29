@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -14,14 +14,6 @@ namespace BudgetExecution
     /// </summary>
     public class ColorConfig
     {
-        /// <summary>
-        /// Initializes a new instance
-        ///  of the <see cref = "ColorConfig"/> class.
-        /// </summary>
-        public ColorConfig( )
-        {
-        }
-
         /// <summary>
         /// The gray border
         /// </summary>
@@ -88,6 +80,14 @@ namespace BudgetExecution
         public static readonly Color HoverBlue = Color.FromArgb( 50, 93, 129 );
 
         /// <summary>
+        /// Initializes a new instance
+        ///  of the <see cref = "ColorConfig"/> class.
+        /// </summary>
+        public ColorConfig( )
+        {
+        }
+
+        /// <summary>
         /// Gets the color.
         /// </summary>
         /// <param name = "color" >
@@ -106,6 +106,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return Color.Empty;
             }
         }
@@ -126,6 +127,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return ExcelFillStyle.None;
             }
         }
@@ -147,6 +149,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return ExcelFillGradientType.None;
             }
         }
@@ -167,6 +170,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return ExcelFillType.UnknownGradient;
             }
         }
@@ -187,6 +191,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return ExcelGradientStyle.Horizontal;
             }
         }

@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -16,6 +16,11 @@ namespace BudgetExecution
     /// <seealso cref="IElement" />
     public class Element : DataUnit, IElement
     {
+        /// <summary>
+        /// The default
+        /// </summary>
+        public static readonly IElement Default = new Element( );
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Element"/> class.
         /// </summary>
@@ -99,11 +104,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// The default
-        /// </summary>
-        public static readonly IElement Default = new Element( );
-
-        /// <summary>
         /// Determines whether the specified element is match.
         /// </summary>
         /// <param name="dataUnit">The element.</param>
@@ -124,6 +124,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return false;
                 }
             }
@@ -171,6 +172,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return false;
             }
 

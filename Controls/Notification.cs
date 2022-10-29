@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -22,6 +22,27 @@ namespace BudgetExecution
         /// The current foreground window
         /// </summary>
         private IntPtr _currentForegroundWindow;
+
+        /// <summary>
+        /// The open notifications
+        /// </summary>
+        public static readonly List<Notification> OpenNotifications = new ( );
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [allow focus].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [allow focus]; otherwise, <c>false</c>.
+        /// </value>
+        public bool AllowFocus { get; set; }
+
+        /// <summary>
+        /// Gets the animator.
+        /// </summary>
+        /// <value>
+        /// The animator.
+        /// </value>
+        public FormAnimator Animator { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Notification"/> class.
@@ -63,27 +84,6 @@ namespace BudgetExecution
             Title.Click += ( s, e ) => Close( );
             Timer.Tick += OnTimerTick;
         }
-
-        /// <summary>
-        /// The open notifications
-        /// </summary>
-        public static readonly List<Notification> OpenNotifications = new ( );
-
-        /// <summary>
-        /// Gets or sets a value indicating whether [allow focus].
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if [allow focus]; otherwise, <c>false</c>.
-        /// </value>
-        public bool AllowFocus { get; set; }
-
-        /// <summary>
-        /// Gets the animator.
-        /// </summary>
-        /// <value>
-        /// The animator.
-        /// </value>
-        public FormAnimator Animator { get; }
 
         /// <summary>
         /// Displays the control to the user.

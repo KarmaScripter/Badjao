@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -169,6 +169,7 @@ namespace BudgetExecution
         {
             var _column = index;
             _column[ 3 ] += offset;
+
             return _column;
         }
 
@@ -180,6 +181,7 @@ namespace BudgetExecution
         {
             var row = index;
             row[ 2 ] += offset;
+
             return row;
         }
 
@@ -192,6 +194,7 @@ namespace BudgetExecution
             var _column = index;
             _column[ 1 ] += offset;
             _column[ 3 ] += offset;
+
             return _column;
         }
 
@@ -204,6 +207,7 @@ namespace BudgetExecution
             var _row = index;
             _row[ 0 ] += offset;
             _row[ 2 ] += offset;
+
             return _row;
         }
 

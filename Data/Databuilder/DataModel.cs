@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -20,6 +20,11 @@ namespace BudgetExecution
     /// <seealso cref="ModelBase" />
     public class DataModel : ModelBase
     {
+        /// <summary>
+        /// The program elements
+        /// </summary>
+        public IDictionary<string, IEnumerable<string>> DataElements { get; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DataModel"/> class.
         /// </summary>
@@ -190,11 +195,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// The program elements
-        /// </summary>
-        public IDictionary<string, IEnumerable<string>> DataElements { get; }
-
-        /// <summary>
         /// Gets the values.
         /// </summary>
         /// <param name="dataRows">The dataRows.</param>
@@ -216,6 +216,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -241,7 +242,7 @@ namespace BudgetExecution
                 try
                 {
                     var _query = dataRows
-                        ?.Where( p => p.Field<string>( $"{ name }" ).Equals( value ) )
+                        ?.Where( p => p.Field<string>( $"{ name }" )!.Equals( value ) )
                         ?.Select( p => p.Field<string>( $"{ name }" ) )?.Distinct( );
 
                     return _query?.Any( ) == true
@@ -251,6 +252,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -279,6 +281,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -324,11 +327,13 @@ namespace BudgetExecution
                     _dataAdapter.Fill( _dataSet, "excelData" );
                     using var _table = _dataSet.Tables[ "ExcelData" ];
                     _connection.Close( );
+
                     return _table;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -376,9 +381,9 @@ namespace BudgetExecution
 
                             var _dataRow = _table.Rows?.Add( );
 
-                            foreach( var cell in _excelRange )
+                            foreach( var _cell in _excelRange )
                             {
-                                _dataRow[ cell.Start.Column - 1 ] = cell?.Text;
+                                _dataRow[ _cell.Start.Column - 1 ] = _cell?.Text;
                             }
                         }
 
@@ -390,6 +395,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -429,6 +435,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }

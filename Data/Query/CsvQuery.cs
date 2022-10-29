@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -19,6 +19,14 @@ namespace BudgetExecution
     /// <seealso cref = "Query"/>
     public class CsvQuery : Query
     {
+        /// <summary>
+        /// Gets the provider.
+        /// </summary>
+        /// <value>
+        /// The provider.
+        /// </value>
+        public new Provider Provider { get; set; } = Provider.CSV;
+
         /// <summary>
         /// Initializes a new instance of the <see cref = "CsvQuery"/> class.
         /// </summary>
@@ -148,14 +156,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Gets the provider.
-        /// </summary>
-        /// <value>
-        /// The provider.
-        /// </value>
-        public new Provider Provider { get; set; } = Provider.CSV;
-
-        /// <summary>
         /// Saves the file.
         /// </summary>
         /// <param name = "workBook" >
@@ -229,11 +229,13 @@ namespace BudgetExecution
 
                     using var _dataAdapter = new OleDbDataAdapter( _sql, _connection );
                     _dataAdapter.Fill( _dataSet );
+
                     return _dataSet.Tables[ 0 ];
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -285,11 +287,13 @@ namespace BudgetExecution
 
                     using var _dataAdapter = new OleDbDataAdapter( _sql, _connection );
                     _dataAdapter.Fill( _dataSet );
+
                     return _dataSet.Tables[ 0 ];
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -402,11 +406,13 @@ namespace BudgetExecution
                 try
                 {
                     var _fileInfo = new FileInfo( filePath );
+
                     return new ExcelPackage( _fileInfo );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -444,6 +450,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }

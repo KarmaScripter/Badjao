@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -53,6 +53,7 @@ namespace BudgetExecution
         {
             var _sql = "CREATE TABLE " + name + " (word varchar(200), image text)";
             using var _cmd = new SQLiteCommand( _sql, _connection );
+
             return _cmd.ExecuteNonQuery( );
         }
 
@@ -69,6 +70,7 @@ namespace BudgetExecution
             using var _cmd = new SQLiteCommand( _sql, _connection );
             _cmd.Parameters.AddWithValue( "@word", word );
             _cmd.Parameters.AddWithValue( "@image", image );
+
             return _cmd.ExecuteNonQuery( );
         }
     }

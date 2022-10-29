@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -14,6 +14,30 @@ namespace BudgetExecution
 
     public class SyncTipBase : SfToolTip
     {
+        /// <summary>
+        /// Gets or sets the tip text.
+        /// </summary>
+        /// <value>
+        /// The tip text.
+        /// </value>
+        public virtual TextItem TipText { get; set; } = new ( );
+
+        /// <summary>
+        /// Gets or sets the tip information.
+        /// </summary>
+        /// <value>
+        /// The tip information.
+        /// </value>
+        public virtual ToolTipInfo TipInfo { get; set; } = new ( );
+
+        /// <summary>
+        /// Gets or sets the tip item.
+        /// </summary>
+        /// <value>
+        /// The tip item.
+        /// </value>
+        public virtual ToolTipInfo.ToolTipItem TipItem { get; set; }
+
         /// <summary>
         /// Initializes a new instance
         /// of the <see cref="MetroTip"/> class.
@@ -82,30 +106,6 @@ namespace BudgetExecution
             : this( )
         {
         }
-
-        /// <summary>
-        /// Gets or sets the tip text.
-        /// </summary>
-        /// <value>
-        /// The tip text.
-        /// </value>
-        public virtual TextItem TipText { get; set; } = new ( );
-
-        /// <summary>
-        /// Gets or sets the tip information.
-        /// </summary>
-        /// <value>
-        /// The tip information.
-        /// </value>
-        public virtual ToolTipInfo TipInfo { get; set; } = new ( );
-
-        /// <summary>
-        /// Gets or sets the tip item.
-        /// </summary>
-        /// <value>
-        /// The tip item.
-        /// </value>
-        public virtual ToolTipInfo.ToolTipItem TipItem { get; set; }
 
         /// <summary>
         /// Sets the common tool information properties.

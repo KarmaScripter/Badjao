@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -14,6 +14,37 @@ namespace BudgetExecution
     /// </summary>
     public class Grid : ExcelCellBase, IGrid
     {
+        /// <summary>
+        /// The range
+        /// </summary>
+        public ExcelRange Range { get; set; }
+
+        /// <summary>
+        /// The workSheet
+        /// </summary>
+        public ExcelWorksheet Worksheet { get; set; }
+
+        /// <summary>
+        /// The address
+        /// </summary>
+        public ExcelAddress Address { get; set; }
+
+        /// <summary>
+        /// Gets or sets from.
+        /// </summary>
+        /// <value>
+        /// From.
+        /// </value>
+        public ( int Row, int Column ) From { get; set; }
+
+        /// <summary>
+        /// Gets or sets to.
+        /// </summary>
+        /// <value>
+        /// To.
+        /// </value>
+        public ( int Row, int Column ) To { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref = "Grid"/> class.
         /// </summary>
@@ -155,37 +186,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// The range
-        /// </summary>
-        public ExcelRange Range { get; set; }
-
-        /// <summary>
-        /// The workSheet
-        /// </summary>
-        public ExcelWorksheet Worksheet { get; set; }
-
-        /// <summary>
-        /// The address
-        /// </summary>
-        public ExcelAddress Address { get; set; }
-
-        /// <summary>
-        /// Gets or sets from.
-        /// </summary>
-        /// <value>
-        /// From.
-        /// </value>
-        public ( int Row, int Column ) From { get; set; }
-
-        /// <summary>
-        /// Gets or sets to.
-        /// </summary>
-        /// <value>
-        /// To.
-        /// </value>
-        public ( int Row, int Column ) To { get; set; }
-
-        /// <summary>
         /// Gets the address.
         /// </summary>
         /// <returns>
@@ -201,6 +201,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -221,6 +222,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -241,6 +243,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -262,6 +265,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return -1;
             }
         }
@@ -282,6 +286,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -302,6 +307,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -322,6 +328,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default( (int, int) );
             }
         }
@@ -342,6 +349,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default( (int, int) );
             }
         }

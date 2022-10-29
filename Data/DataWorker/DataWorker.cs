@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -13,10 +13,6 @@ namespace BudgetExecution
     /// <seealso cref="System.ComponentModel.BackgroundWorker" />
     public class DataWorker : BackgroundWorker
     {
-        public DataWorker( )
-        {
-        }
-
         /// <summary>
         /// Gets or sets the unit builder.
         /// </summary>
@@ -32,5 +28,9 @@ namespace BudgetExecution
         /// The binding source.
         /// </value>
         public BindingSource BindingSource { get; set; }
+
+        public DataWorker( )
+        {
+        }
     }
 }

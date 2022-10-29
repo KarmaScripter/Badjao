@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -83,16 +83,19 @@ namespace BudgetExecution
                     switch( Provider )
                     {
                         case Provider.SQLite:
+
                         {
                             return new SQLiteConnection( _connectionString );
                         }
 
                         case Provider.SqlCe:
+
                         {
                             return new SqlCeConnection( _connectionString );
                         }
 
                         case Provider.SqlServer:
+
                         {
                             return new SqlConnection( _connectionString );
                         }
@@ -101,6 +104,7 @@ namespace BudgetExecution
                         case Provider.CSV:
                         case Provider.Access:
                         case Provider.OleDb:
+
                         {
                             return new OleDbConnection( _connectionString );
                         }
@@ -109,6 +113,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }

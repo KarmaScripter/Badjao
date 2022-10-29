@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -19,6 +19,38 @@ namespace BudgetExecution
     /// <seealso/>
     public class DataGrid : DataGridView, IDataGrid
     {
+        /// <summary>
+        /// Gets or sets the hover text.
+        /// </summary>
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public string HoverText { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public MetroTip ToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public IDictionary<string, object> DataFilter { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the
         /// <see cref="DataGrid" />
@@ -128,38 +160,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Gets or sets the hover text.
-        /// </summary>
-        /// <value>
-        /// The hover text.
-        /// </value>
-        public string HoverText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tool tip.
-        /// </summary>
-        /// <value>
-        /// The tool tip.
-        /// </value>
-        public MetroTip ToolTip { get; set; }
-
-        /// <summary>
-        /// Gets or sets the binding source.
-        /// </summary>
-        /// <value>
-        /// The binding source.
-        /// </value>
-        public BindingSource BindingSource { get; set; }
-
-        /// <summary>
-        /// Gets or sets the filter.
-        /// </summary>
-        /// <value>
-        /// The filter.
-        /// </value>
-        public IDictionary<string, object> DataFilter { get; set; }
-
-        /// <summary>
         /// Sets the binding source.
         /// </summary>
         /// <param name="dataRows">The data.</param>
@@ -241,6 +241,7 @@ namespace BudgetExecution
                     catch( Exception ex )
                     {
                         Fail( ex );
+
                         return default;
                     }
                 }
@@ -259,11 +260,13 @@ namespace BudgetExecution
             {
                 using var _message = new Message( "Not Yet Implemented." );
                 _message?.ShowDialog( );
+
                 return default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }

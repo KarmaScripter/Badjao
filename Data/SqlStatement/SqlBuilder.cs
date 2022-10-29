@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -15,29 +15,6 @@ namespace BudgetExecution
     /// </summary>
     public class SqlBuilder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SqlBuilder"/> class.
-        /// </summary>
-        public SqlBuilder( )
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SqlBuilder"/> class.
-        /// </summary>
-        /// <param name="source">The source.</param>
-        /// <param name = "ext" > </param>
-        /// <param name="commandType">Type of the command.</param>
-        public SqlBuilder( Source source, SQL commandType, EXT ext )
-        {
-            Source = source;
-            CommandType = commandType;
-            Extension = ext;
-            DirectoryPath = GetSqlDirectoryPath( );
-            Files = Directory.GetFiles( DirectoryPath );
-            Commands = GetCommands( );
-        }
-
         /// <summary>
         /// The source
         /// </summary>
@@ -80,6 +57,29 @@ namespace BudgetExecution
         public IDictionary<string, string> Commands { get; set; }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SqlBuilder"/> class.
+        /// </summary>
+        public SqlBuilder( )
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SqlBuilder"/> class.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name = "ext" > </param>
+        /// <param name="commandType">Type of the command.</param>
+        public SqlBuilder( Source source, SQL commandType, EXT ext )
+        {
+            Source = source;
+            CommandType = commandType;
+            Extension = ext;
+            DirectoryPath = GetSqlDirectoryPath( );
+            Files = Directory.GetFiles( DirectoryPath );
+            Commands = GetCommands( );
+        }
+
+        /// <summary>
         /// Gets the command text.
         /// </summary>
         /// <param name="commandName">Name of the command.</param>
@@ -97,6 +97,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return string.Empty;
                 }
             }
@@ -129,6 +130,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return string.Empty;
                 }
             }

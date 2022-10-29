@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -16,6 +16,27 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "UnusedParameter.Global" ) ]
     public partial class Error : MetroForm
     {
+        /// <summary>
+        /// The application setting
+        /// </summary>
+        public virtual NameValueCollection Setting { get; set; } = ConfigurationManager.AppSettings;
+
+        /// <summary>
+        /// Gets or sets the exception.
+        /// </summary>
+        /// <value>
+        /// The exception.
+        /// </value>
+        public virtual Exception Exception { get; set; }
+
+        /// <summary>
+        /// Gets or sets the icon path.
+        /// </summary>
+        /// <value>
+        /// The icon path.
+        /// </value>
+        public virtual string IconPath { get; set; }
+
         /// <summary>
         /// Initializes a new instance of
         /// the <see cref="Error"/> class.
@@ -87,27 +108,6 @@ namespace BudgetExecution
             Exception = null;
             TextBox.Text = message;
         }
-
-        /// <summary>
-        /// The application setting
-        /// </summary>
-        public virtual NameValueCollection Setting { get; set; } = ConfigurationManager.AppSettings;
-
-        /// <summary>
-        /// Gets or sets the exception.
-        /// </summary>
-        /// <value>
-        /// The exception.
-        /// </value>
-        public virtual Exception Exception { get; set; }
-
-        /// <summary>
-        /// Gets or sets the icon path.
-        /// </summary>
-        /// <value>
-        /// The icon path.
-        /// </value>
-        public virtual string IconPath { get; set; }
 
         /// <summary>
         /// Sets the text.

@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -18,22 +18,6 @@ namespace BudgetExecution
     /// <seealso cref="Settings" />
     public class BudgetForm
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BudgetForm"/> class.
-        /// </summary>
-        public BudgetForm( )
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BudgetForm"/> class.
-        /// </summary>
-        /// <param name="form">The form.</param>
-        public BudgetForm( MetroForm form )
-        {
-            Form = form;
-        }
-
         /// <summary>
         /// The caption height
         /// </summary>
@@ -143,6 +127,22 @@ namespace BudgetExecution
             ConfigurationManager.AppSettings;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="BudgetForm"/> class.
+        /// </summary>
+        public BudgetForm( )
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BudgetForm"/> class.
+        /// </summary>
+        /// <param name="form">The form.</param>
+        public BudgetForm( MetroForm form )
+        {
+            Form = form;
+        }
+
+        /// <summary>
         /// Gets the field.
         /// </summary>
         /// <param name="field">The field.</param>
@@ -158,6 +158,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Settings.Fail( ex );
+
                     return default;
                 }
             }

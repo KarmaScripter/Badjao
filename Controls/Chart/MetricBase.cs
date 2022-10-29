@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -16,6 +16,73 @@ namespace BudgetExecution
     /// </summary>
     public abstract class MetricBase
     {
+        /// <summary>
+        /// Gets the source.
+        /// </summary>
+        public Source Source { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the table.
+        /// </summary>
+        /// <value>
+        /// The name of the table.
+        /// </value>
+        public string TableName { get; set; }
+
+        /// <summary>
+        /// The numeric
+        /// </summary>
+        public Numeric Numeric { get; set; }
+
+        /// <summary>
+        /// Gets or sets the data member.
+        /// </summary>
+        /// <value>
+        /// The data member.
+        /// </value>
+        public string DataMember { get; set; }
+
+        /// <summary>
+        /// The dataRow
+        /// </summary>
+        public IEnumerable<DataRow> Data { get; set; }
+
+        /// <summary>
+        /// The count
+        /// </summary>
+        public int Count { get; set; }
+
+        /// <summary>
+        /// The total
+        /// </summary>
+        public double Total { get; set; }
+
+        /// <summary>
+        /// The average
+        /// </summary>
+        public double Average { get; set; }
+
+        /// <summary>
+        /// Gets or sets the categories.
+        /// </summary>
+        /// <value>
+        /// The categories.
+        /// </value>
+        public IEnumerable<string> Categories { get; set; }
+
+        /// <summary>
+        /// Gets or sets the amounts.
+        /// </summary>
+        /// <value>
+        /// The amounts.
+        /// </value>
+        public IDictionary<string, double> Amounts { get; set; }
+
+        /// <summary>
+        /// The statistics
+        /// </summary>
+        public IDictionary<string, double> Statistics { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MetricBase"/> class.
         /// </summary>
@@ -120,73 +187,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Gets the source.
-        /// </summary>
-        public Source Source { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the table.
-        /// </summary>
-        /// <value>
-        /// The name of the table.
-        /// </value>
-        public string TableName { get; set; }
-
-        /// <summary>
-        /// The numeric
-        /// </summary>
-        public Numeric Numeric { get; set; }
-
-        /// <summary>
-        /// Gets or sets the data member.
-        /// </summary>
-        /// <value>
-        /// The data member.
-        /// </value>
-        public string DataMember { get; set; }
-
-        /// <summary>
-        /// The dataRow
-        /// </summary>
-        public IEnumerable<DataRow> Data { get; set; }
-
-        /// <summary>
-        /// The count
-        /// </summary>
-        public int Count { get; set; }
-
-        /// <summary>
-        /// The total
-        /// </summary>
-        public double Total { get; set; }
-
-        /// <summary>
-        /// The average
-        /// </summary>
-        public double Average { get; set; }
-
-        /// <summary>
-        /// Gets or sets the categories.
-        /// </summary>
-        /// <value>
-        /// The categories.
-        /// </value>
-        public IEnumerable<string> Categories { get; set; }
-
-        /// <summary>
-        /// Gets or sets the amounts.
-        /// </summary>
-        /// <value>
-        /// The amounts.
-        /// </value>
-        public IDictionary<string, double> Amounts { get; set; }
-
-        /// <summary>
-        /// The statistics
-        /// </summary>
-        public IDictionary<string, double> Statistics { get; set; }
-
-        /// <summary>
         /// Gets the codes.
         /// </summary>
         /// <param name="dataRow">The data row.</param>
@@ -215,6 +215,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -244,6 +245,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return 0;
                 }
             }
@@ -303,6 +305,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return 0.0d;
                 }
             }

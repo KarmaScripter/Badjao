@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -16,40 +16,6 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MergeIntoPattern" ) ]
     public class Workbook : ExcelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Workbook"/> class.
-        /// </summary>
-        public Workbook( )
-        {
-            FileInfo = new FileInfo( FilePath );
-            Excel = new ExcelPackage( FileInfo );
-            Workbook = Excel.Workbook;
-        }
-
-        public Workbook( DataTable dataTable )
-            : this( )
-        {
-            Data = dataTable.AsEnumerable( );
-            Worksheet = Workbook.Worksheets.Add( dataTable.TableName );
-            Worksheet.View.ShowGridLines = false;
-            Worksheet.View.ZoomScale = ZoomLevel;
-            Worksheet.View.PageLayoutView = true;
-            Worksheet.View.ShowHeaders = true;
-            Worksheet.DefaultRowHeight = RowHeight;
-            Worksheet.DefaultColWidth = ColumnWidth;
-            Worksheet.PrinterSettings.ShowHeaders = false;
-            Worksheet.PrinterSettings.ShowGridLines = false;
-            Worksheet.PrinterSettings.LeftMargin = LeftMargin;
-            Worksheet.PrinterSettings.RightMargin = RightMargin;
-            Worksheet.PrinterSettings.TopMargin = TopMargin;
-            Worksheet.PrinterSettings.BottomMargin = BottomMargin;
-            Worksheet.PrinterSettings.HorizontalCentered = true;
-            Worksheet.PrinterSettings.VerticalCentered = true;
-            Worksheet.PrinterSettings.FitToPage = true;
-            Worksheet.HeaderFooter.AlignWithMargins = true;
-            Worksheet.HeaderFooter.ScaleWithDocument = true;
-        }
-
         /// <summary>
         /// The font color
         /// </summary>
@@ -100,6 +66,40 @@ namespace BudgetExecution
         /// The footer image.
         /// </value>
         public Image FooterImage { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Workbook"/> class.
+        /// </summary>
+        public Workbook( )
+        {
+            FileInfo = new FileInfo( FilePath );
+            Excel = new ExcelPackage( FileInfo );
+            Workbook = Excel.Workbook;
+        }
+
+        public Workbook( DataTable dataTable )
+            : this( )
+        {
+            Data = dataTable.AsEnumerable( );
+            Worksheet = Workbook.Worksheets.Add( dataTable.TableName );
+            Worksheet.View.ShowGridLines = false;
+            Worksheet.View.ZoomScale = ZoomLevel;
+            Worksheet.View.PageLayoutView = true;
+            Worksheet.View.ShowHeaders = true;
+            Worksheet.DefaultRowHeight = RowHeight;
+            Worksheet.DefaultColWidth = ColumnWidth;
+            Worksheet.PrinterSettings.ShowHeaders = false;
+            Worksheet.PrinterSettings.ShowGridLines = false;
+            Worksheet.PrinterSettings.LeftMargin = LeftMargin;
+            Worksheet.PrinterSettings.RightMargin = RightMargin;
+            Worksheet.PrinterSettings.TopMargin = TopMargin;
+            Worksheet.PrinterSettings.BottomMargin = BottomMargin;
+            Worksheet.PrinterSettings.HorizontalCentered = true;
+            Worksheet.PrinterSettings.VerticalCentered = true;
+            Worksheet.PrinterSettings.FitToPage = true;
+            Worksheet.HeaderFooter.AlignWithMargins = true;
+            Worksheet.HeaderFooter.ScaleWithDocument = true;
+        }
 
         /// <summary>
         /// Sets the header format.

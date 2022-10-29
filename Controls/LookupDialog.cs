@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -10,21 +10,6 @@ namespace BudgetExecution
 
     public partial class LookupDialog : EditBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LookupDialog"/> class.
-        /// </summary>
-        public LookupDialog( )
-        {
-            InitializeComponent( );
-            GroupBoxes = GetGroupBoxes( );
-            RadioButtons = GetRadioButtons( );
-            TabControl.TabPanelBackColor = Color.FromArgb( 15, 15, 15 );
-            Load += OnLoad;
-            CloseButton.Click += OnCloseButtonClicked;
-            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
-            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
-        }
-
         /// <summary>
         /// Gets the table prefix.
         /// </summary>
@@ -48,6 +33,21 @@ namespace BudgetExecution
         /// The value prefix.
         /// </value>
         public string ValuePrefix { get; } = " Values : ";
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LookupDialog"/> class.
+        /// </summary>
+        public LookupDialog( )
+        {
+            InitializeComponent( );
+            GroupBoxes = GetGroupBoxes( );
+            RadioButtons = GetRadioButtons( );
+            TabControl.TabPanelBackColor = Color.FromArgb( 15, 15, 15 );
+            Load += OnLoad;
+            CloseButton.Click += OnCloseButtonClicked;
+            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
+            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
+        }
 
         /// <summary>
         /// Called when [load].

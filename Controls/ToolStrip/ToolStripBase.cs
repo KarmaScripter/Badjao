@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -13,13 +13,6 @@ namespace BudgetExecution
 
     public abstract class ToolStripBase : ToolStripEx
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ToolStripBase"/> class.
-        /// </summary>
-        protected ToolStripBase( )
-        {
-        }
-
         /// <summary>
         /// Gets or sets the binding source.
         /// </summary>
@@ -243,6 +236,13 @@ namespace BudgetExecution
         /// The home button.
         /// </value>
         public virtual ToolStripButton HomeButton { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolStripBase"/> class.
+        /// </summary>
+        protected ToolStripBase( )
+        {
+        }
 
         /// <summary>
         /// Creates the text box.

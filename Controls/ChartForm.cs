@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -11,6 +11,14 @@ namespace BudgetExecution
 
     public partial class ChartForm : MetroForm
     {
+        /// <summary>
+        /// Gets or sets the chart.
+        /// </summary>
+        /// <value>
+        /// The chart.
+        /// </value>
+        public Chart Chart { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartForm"/> class.
         /// </summary>
@@ -63,13 +71,5 @@ namespace BudgetExecution
             Chart.SetPoints( );
             Controls.Add( Chart );
         }
-
-        /// <summary>
-        /// Gets or sets the chart.
-        /// </summary>
-        /// <value>
-        /// The chart.
-        /// </value>
-        public Chart Chart { get; set; }
     }
 }

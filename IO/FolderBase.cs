@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 // ReSharper disable All
 
@@ -18,31 +18,6 @@ namespace BudgetExecution
     /// </summary>
     public abstract class FolderBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FolderBase"/> class.
-        /// </summary>
-        public FolderBase( )
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FolderBase"/> class.
-        /// </summary>
-        /// <param name="input">The input.</param>
-        public FolderBase( string input )
-        {
-            Buffer = input;
-            FullPath = Path.GetFullPath( input );
-            DirectoryInfo = new DirectoryInfo( FullPath );
-            Name = Path.GetDirectoryName( input );
-            FullName = DirectoryInfo.FullName;
-            Created = DirectoryInfo.CreationTime;
-            Modified = DirectoryInfo.LastWriteTime;
-            HasParent = DirectoryInfo.Parent != null;
-            HasSubFiles = Directory.GetFiles( input ).Length > 0;
-            HasSubFolders = Directory.GetDirectories( input ).Length > 0;
-        }
-
         /// <summary>
         /// Gets or sets the buffer.
         /// </summary>
@@ -128,6 +103,31 @@ namespace BudgetExecution
         public virtual FileSecurity FileSecurity { get; set; }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="FolderBase"/> class.
+        /// </summary>
+        public FolderBase( )
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FolderBase"/> class.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        public FolderBase( string input )
+        {
+            Buffer = input;
+            FullPath = Path.GetFullPath( input );
+            DirectoryInfo = new DirectoryInfo( FullPath );
+            Name = Path.GetDirectoryName( input );
+            FullName = DirectoryInfo.FullName;
+            Created = DirectoryInfo.CreationTime;
+            Modified = DirectoryInfo.LastWriteTime;
+            HasParent = DirectoryInfo.Parent != null;
+            HasSubFiles = Directory.GetFiles( input ).Length > 0;
+            HasSubFolders = Directory.GetDirectories( input ).Length > 0;
+        }
+
+        /// <summary>
         /// Gets the files.
         /// </summary>
         /// <returns></returns>
@@ -146,6 +146,7 @@ namespace BudgetExecution
                 catch( IOException ex )
                 {
                     Fail( ex );
+
                     return default( IEnumerable<string> );
                 }
             }
@@ -172,6 +173,7 @@ namespace BudgetExecution
                 catch( IOException ex )
                 {
                     Fail( ex );
+
                     return default( IEnumerable<FileInfo> );
                 }
             }
@@ -196,6 +198,7 @@ namespace BudgetExecution
             catch( IOException ex )
             {
                 Fail( ex );
+
                 return default( IEnumerable<string> );
             }
         }
@@ -219,6 +222,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default( IEnumerable<DirectoryInfo> );
                 }
             }
@@ -238,6 +242,7 @@ namespace BudgetExecution
                    && Directory.Exists( Buffer ) )
                 {
                     var _file = new DirectoryInfo( Buffer );
+
                     return _file?.Parent;
                 }
 
@@ -246,6 +251,7 @@ namespace BudgetExecution
             catch( IOException ex )
             {
                 Fail( ex );
+
                 return default( DirectoryInfo );
             }
         }

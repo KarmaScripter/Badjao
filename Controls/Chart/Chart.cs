@@ -1,6 +1,6 @@
-//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -358,6 +358,7 @@ namespace BudgetExecution
                         case ChartSeriesType.Pyramid:
                         case ChartSeriesType.Funnel:
                         case ChartSeriesType.Pie:
+
                         {
                             foreach( var kvp in DataValues )
                             {
@@ -379,6 +380,7 @@ namespace BudgetExecution
                         }
 
                         default:
+
                         {
                             foreach( var kvp in DataValues )
                             {

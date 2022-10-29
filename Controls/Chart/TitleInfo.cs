@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -16,6 +16,22 @@ namespace BudgetExecution
     /// <seealso cref="ITitleInfo" />
     public class TitleInfo : ITitleInfo
     {
+        /// <summary>
+        /// Gets the main.
+        /// </summary>
+        /// <value>
+        /// The main.
+        /// </value>
+        public string Main { get; }
+
+        /// <summary>
+        /// Gets the axis.
+        /// </summary>
+        /// <value>
+        /// The axis.
+        /// </value>
+        public string Axis { get; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TitleInfo"/> class.
         /// </summary>
@@ -62,22 +78,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Gets the main.
-        /// </summary>
-        /// <value>
-        /// The main.
-        /// </value>
-        public string Main { get; }
-
-        /// <summary>
-        /// Gets the axis.
-        /// </summary>
-        /// <value>
-        /// The axis.
-        /// </value>
-        public string Axis { get; }
-
-        /// <summary>
         /// Sets the main title.
         /// </summary>
         /// <returns></returns>
@@ -92,6 +92,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -114,6 +115,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -137,11 +139,13 @@ namespace BudgetExecution
                     _title.Visible = true;
                     _title.Font = new Font( "Roboto", 9 );
                     _title.BackColor = Color.FromArgb( 15, 15, 15 );
+
                     return _title;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -165,11 +169,13 @@ namespace BudgetExecution
                     _title.Visible = true;
                     _title.Font = new Font( "Roboto", 9 );
                     _title.BackColor = Color.FromArgb( 15, 15, 15 );
+
                     return _title;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -196,11 +202,13 @@ namespace BudgetExecution
                     _title.Font = font;
                     _title.ForeColor = color;
                     _title.BackColor = Color.FromArgb( 15, 15, 15 );
+
                     return _title;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -227,11 +235,13 @@ namespace BudgetExecution
                     _title.Font = font;
                     _title.ForeColor = color;
                     _title.BackColor = Color.FromArgb( 15, 15, 15 );
+
                     return _title;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -263,6 +273,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }

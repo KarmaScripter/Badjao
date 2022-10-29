@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -47,6 +47,7 @@ namespace BudgetExecution
                         switch( provider )
                         {
                             case Provider.SQLite:
+
                             {
                                 var _sqlite = new List<SQLiteParameter>( );
 
@@ -67,6 +68,7 @@ namespace BudgetExecution
                             }
 
                             case Provider.SqlCe:
+
                             {
                                 var _sqlce = new List<SqlCeParameter>( );
 
@@ -89,6 +91,7 @@ namespace BudgetExecution
                             case Provider.OleDb:
                             case Provider.Excel:
                             case Provider.Access:
+
                             {
                                 var _oledb = new List<OleDbParameter>( );
 
@@ -109,6 +112,7 @@ namespace BudgetExecution
                             }
 
                             case Provider.SqlServer:
+
                             {
                                 var _sqlserver = new List<SqlParameter>( );
 
@@ -135,6 +139,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -177,6 +182,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -196,6 +202,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
+
                 return default;
             }
         }
@@ -224,6 +231,7 @@ namespace BudgetExecution
                     catch( Exception ex )
                     {
                         Fail( ex );
+
                         return default;
                     }
                 }
@@ -256,6 +264,7 @@ namespace BudgetExecution
                     catch( Exception ex )
                     {
                         Fail( ex );
+
                         return 0.0;
                     }
                 }
@@ -288,6 +297,7 @@ namespace BudgetExecution
                     catch( Exception ex )
                     {
                         Fail( ex );
+
                         return default;
                     }
                 }
@@ -329,6 +339,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }
@@ -369,6 +380,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return false;
                 }
             }
@@ -412,6 +424,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
+
                     return default;
                 }
             }

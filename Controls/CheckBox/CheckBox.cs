@@ -1,6 +1,6 @@
-﻿//  <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-//  Copyright (c) Terry Eppler. All rights reserved.
-//  </copyright>
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -16,6 +16,14 @@ namespace BudgetExecution
     /// <seealso cref="BudgetExecution.CheckBoxBase" />
     public class CheckBox : CheckBoxBase
     {
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public BindingSource BindingSource { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckBox"/> class.
         /// </summary>
@@ -45,14 +53,6 @@ namespace BudgetExecution
             MouseHover += OnMouseOver;
             MouseLeave += OnMouseLeave;
         }
-
-        /// <summary>
-        /// Gets or sets the binding source.
-        /// </summary>
-        /// <value>
-        /// The binding source.
-        /// </value>
-        public BindingSource BindingSource { get; set; }
 
         /// <summary>
         /// Called when [mouse over].
