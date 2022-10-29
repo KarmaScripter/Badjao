@@ -65,7 +65,8 @@ namespace BudgetExecution
         /// <param name="dataTable">The data table.</param>
         public BindingModel( DataTable dataTable )
         {
-            BindingSource = new BindingSource { DataSource = dataTable };
+            BindingSource = new BindingSource( ) ;
+            BindingSource.DataSource = dataTable;
             Data = dataTable.AsEnumerable( );
             BindingList = Data.ToBindingList( );
             Source = (Source)Enum.Parse( typeof( Source ), dataTable.TableName );
@@ -95,11 +96,10 @@ namespace BudgetExecution
         {
             TableName = tableName;
 
-            BindingSource = new BindingSource
-            {
-                DataSource = dataSet,
-                DataMember = tableName
-            };
+            BindingSource = new BindingSource( );
+
+            BindingSource.DataSource = dataSet;
+            BindingSource.DataMember = tableName;
 
             DataTable = dataSet.Tables[ tableName ];
             DataSource = BindingSource.DataSource;
@@ -121,7 +121,8 @@ namespace BudgetExecution
         /// <param name="dataRows">The data rows.</param>
         public BindingModel( IEnumerable<DataRow> dataRows )
         {
-            BindingSource = new BindingSource { DataSource = dataRows.CopyToDataTable( ) };
+            BindingSource = new BindingSource( ) ;
+            BindingSource.DataSource = dataRows.CopyToDataTable( );
             Data = dataRows;
             BindingList = dataRows.ToBindingList( );
             Source = (Source)Enum.Parse( typeof( Source ), DataTable?.TableName );

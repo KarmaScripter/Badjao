@@ -203,13 +203,13 @@ namespace BudgetExecution
         {
             try
             {
-                var _cell = new Cell
-                {
-                    CellReference = cellReference,
-                    DataType = CellValues.String
-                };
+                var _cell = new Cell( );
 
-                var _cellValue = new CellValue { Text = cellStringValue };
+                _cell.CellReference = cellReference;
+                _cell.DataType = CellValues.String;
+
+                var _cellValue = new CellValue( ) ;
+                _cellValue.Text = cellStringValue;
                 _cell.Append( _cellValue );
                 excelRow.Append( _cell );
             }
@@ -234,8 +234,10 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _cell = new Cell { CellReference = cellReference };
-                    var _cellValue = new CellValue { Text = cellStringValue };
+                    var _cell = new Cell( ) ;
+                    _cell.CellReference = cellReference;
+                    var _cellValue = new CellValue( ) ;
+                    _cellValue.Text = cellStringValue;
                     _cell.Append( _cellValue );
                     excelRow.Append( _cell );
                 }
@@ -367,7 +369,8 @@ namespace BudgetExecution
                     }
 
                     uint _rowIndex = 1;
-                    var _row = new Row { RowIndex = _rowIndex };
+                    var _row = new Row( ) ;
+                    _row.RowIndex = _rowIndex;
                     _data?.Append( _row );
 
                     for( var colinx = 0; colinx < _columns; colinx++ )
@@ -382,7 +385,8 @@ namespace BudgetExecution
                     foreach( DataRow _dataRow in dataTable.Rows )
                     {
                         ++_rowIndex;
-                        var _excelRow = new Row { RowIndex = _rowIndex };
+                        var _excelRow = new Row( ) ;
+                        _excelRow.RowIndex = _rowIndex;
                         _data?.Append( _excelRow );
 
                         for( var i = 0; i < _columns; i++ )

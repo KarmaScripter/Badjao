@@ -15,6 +15,7 @@ namespace BudgetExecution
     /// 
     /// </summary>
     /// <seealso cref="ToolStripBase" />
+    [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     public class ToolStrip : ToolStripBase, IToolStrip
     {
         /// <summary>

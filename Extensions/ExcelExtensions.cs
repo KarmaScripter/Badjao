@@ -62,7 +62,8 @@ namespace BudgetExecution
 
             foreach( var _worksheet in excelPackage.Workbook.Worksheets )
             {
-                var _table = new DataTable { TableName = _worksheet?.Name };
+                var _table = new DataTable( ) ;
+                _table.TableName = _worksheet?.Name;
                 var _start = 1;
 
                 if( header > 0 )

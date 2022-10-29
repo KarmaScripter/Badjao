@@ -19,8 +19,8 @@ namespace BudgetExecution
         /// </summary>
         public ToolStripLabel( )
         {
-            Margin = new Padding( 5, 5, 5, 5 );
-            Padding = new Padding( 0 );
+            Margin = new Padding( 1, 1, 1, 1 );
+            Padding = new Padding( 1, 1, 1, 1 );
             Size = new Size( 150, 23 );
             ForeColor = Color.White;
             BackColor = Color.FromArgb( 45, 45, 45 );

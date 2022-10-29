@@ -42,12 +42,11 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _chartFont = new ChartFontInfo
-                    {
-                        FontStyle = font.Style,
-                        FontFamilyTemplate = font.FontFamily,
-                        Size = font.Size
-                    };
+                    var _chartFont = new ChartFontInfo( );
+
+                    _chartFont.FontStyle = font.Style;
+                    _chartFont.FontFamilyTemplate = font.FontFamily;
+                    _chartFont.Size = font.Size;
 
                     return _chartFont;
                 }
@@ -81,12 +80,11 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var chart = new ChartFontInfo
-                    {
-                        FontStyle = style,
-                        Facename = family,
-                        Size = size
-                    };
+                    var chart = new ChartFontInfo( );
+
+                    chart.FontStyle = style;
+                    chart.Facename = family;
+                    chart.Size = size;
 
                     return chart;
                 }
@@ -136,12 +134,11 @@ namespace BudgetExecution
         {
             try
             {
-                var style = new ChartLineInfo
-                {
-                    Alignment = PenAlignment.Center,
-                    Width = width,
-                    Color = color
-                };
+                var style = new ChartLineInfo( );
+
+                style.Alignment = PenAlignment.Center;
+                style.Width = width;
+                style.Color = color;
 
                 return style;
             }

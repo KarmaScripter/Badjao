@@ -159,11 +159,10 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _dialog = new SaveFileDialog
-                    {
-                        Filter = "Excel files (*.xlsx)|*.xlsx",
-                        FilterIndex = 1
-                    };
+                    var _dialog = new SaveFileDialog( );
+
+                    _dialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+                    _dialog.FilterIndex = 1;
 
                     if( _dialog?.ShowDialog( ) == DialogResult.OK )
                     {
@@ -238,14 +237,13 @@ namespace BudgetExecution
             {
                 var _fileName = "";
 
-                var dialog = new OpenFileDialog
-                {
-                    Title = "Excel File Dialog",
-                    InitialDirectory = @"c:\",
-                    Filter = "All files (*.*)|*.*|All files (*.*)|*.*",
-                    FilterIndex = 2,
-                    RestoreDirectory = true
-                };
+                var dialog = new OpenFileDialog( );
+
+                dialog.Title = "Excel File Dialog";
+                dialog.InitialDirectory = @"c:\";
+                dialog.Filter = "All files (*.*)|*.*|All files (*.*)|*.*";
+                dialog.FilterIndex = 2;
+                dialog.RestoreDirectory = true;
 
                 if( dialog.ShowDialog( ) == DialogResult.OK )
                 {

@@ -28,8 +28,8 @@ namespace BudgetExecution
         /// </summary>
         public ToolStripDropDown( )
         {
-            Margin = new Padding( 5, 5, 5, 5 );
-            Padding = new Padding( 0 );
+            Margin = new Padding( 1, 1, 1, 1 );
+            Padding = new Padding( 1, 1, 1, 1 );
             Size = new Size( 200, 24 );
             DropDownStyle = ComboBoxStyle.DropDownList;
             AllowDrop = true;

@@ -20,8 +20,8 @@ namespace BudgetExecution
         /// </summary>
         public ToolStripButton( )
         {
-            Margin = new Padding( 5, 5, 5, 5 );
-            Padding = new Padding( 0 );
+            Margin = new Padding( 1, 1, 1, 1 );
+            Padding = new Padding( 1 );
             DisplayStyle = ToolStripItemDisplayStyle.Image;
             BackColor = Color.FromArgb( 15, 15, 15 );
             ForeColor = Color.LightSteelBlue;

@@ -57,11 +57,12 @@ namespace BudgetExecution
 
                 foreach( DataGridViewColumn _column in dataGridView.Columns )
                 {
-                    _table.Columns.Add( new DataColumn
-                    {
-                        ColumnName = _column.Name,
-                        DataType = _column.ValueType
-                    } );
+                    var column = new DataColumn( );
+
+                    column.ColumnName = _column.Name;
+                    column.DataType = _column.ValueType;
+
+                    _table.Columns.Add( column );
                 }
 
                 foreach( DataGridViewRow row in dataGridView.Rows )

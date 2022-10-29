@@ -35,13 +35,12 @@ namespace BudgetExecution
         /// <returns></returns>
         public static TriggerSchema GenerateInsertTrigger( ForeignKeySchema foreignKey )
         {
-            var _schema = new TriggerSchema
-            {
-                Name = MakeTriggerName( foreignKey, "fki" ),
-                Type = TriggerType.Before,
-                Event = TriggerEvent.Insert,
-                Table = foreignKey.TableName
-            };
+            var _schema = new TriggerSchema( );
+
+            _schema.Name = MakeTriggerName( foreignKey, "fki" );
+            _schema.Type = TriggerType.Before;
+            _schema.Event = TriggerEvent.Insert;
+            _schema.Table = foreignKey.TableName;
 
             var _columnName = string.Empty;
 
@@ -66,13 +65,12 @@ namespace BudgetExecution
         /// <returns></returns>
         public static TriggerSchema GenerateUpdateTrigger( ForeignKeySchema foreignKey )
         {
-            var _schema = new TriggerSchema
-            {
-                Name = MakeTriggerName( foreignKey, "fku" ),
-                Type = TriggerType.Before,
-                Event = TriggerEvent.Update,
-                Table = foreignKey.TableName
-            };
+            var _schema = new TriggerSchema( );
+
+            _schema.Name = MakeTriggerName( foreignKey, "fku" );
+            _schema.Type = TriggerType.Before;
+            _schema.Event = TriggerEvent.Update;
+            _schema.Table = foreignKey.TableName;
 
             var _schemaName = _schema.Name;
             var _empty = string.Empty;
@@ -98,13 +96,12 @@ namespace BudgetExecution
         /// <returns></returns>
         public static TriggerSchema GenerateDeleteTrigger( ForeignKeySchema foreignKey )
         {
-            var _schema = new TriggerSchema
-            {
-                Name = MakeTriggerName( foreignKey, "fkd" ),
-                Type = TriggerType.Before,
-                Event = TriggerEvent.Delete,
-                Table = foreignKey.ForeignTableName
-            };
+            var _schema = new TriggerSchema( );
+
+            _schema.Name = MakeTriggerName( foreignKey, "fkd" );
+            _schema.Type = TriggerType.Before;
+            _schema.Event = TriggerEvent.Delete;
+            _schema.Table = foreignKey.ForeignTableName;
 
             var _schemaName = _schema.Name;
 

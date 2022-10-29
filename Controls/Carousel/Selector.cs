@@ -46,7 +46,8 @@ namespace BudgetExecution
                     {
                         var _name = Path.GetFileNameWithoutExtension( _paths[ i ] );
                         using var _stream = File.Open( _paths[ i ], FileMode.Open );
-                        var _bitmap = new Bitmap( _stream ) { Tag = _name };
+                        var _bitmap = new Bitmap( _stream ) ;
+                        _bitmap.Tag = _name;
                         _list.ImageSize = ImageSize;
                         _list?.Images?.Add( _bitmap );
                     }
@@ -81,7 +82,8 @@ namespace BudgetExecution
                     {
                         var _name = Path.GetFileNameWithoutExtension( _paths[ i ] );
                         using var _stream = File.Open( _paths[ i ], FileMode.Open );
-                        var _img = new Bitmap( _stream ) { Tag = _name };
+                        var _img = new Bitmap( _stream ) ;
+                        _img.Tag = _name;
                         _list.ImageSize = size;
                         _list?.Images?.Add( _img );
                     }
@@ -111,7 +113,8 @@ namespace BudgetExecution
                 {
                     using var _stream = File.Open( _list[ i ], FileMode.Open );
                     using var _img = new Bitmap( _stream );
-                    var _carouselImage = new CarouselImage { ItemImage = _img };
+                    var _carouselImage = new CarouselImage( ) ;
+                    _carouselImage.ItemImage = _img;
                     _carouselImages.Add( _carouselImage );
                 }
 
@@ -137,7 +140,8 @@ namespace BudgetExecution
 
                 for( var i = 0; i < images?.Count( ); i++ )
                 {
-                    var _carouselImage = new CarouselImage { ItemImage = _list[ i ] };
+                    var _carouselImage = new CarouselImage( ) ;
+                    _carouselImage.ItemImage = _list[ i ];
                     ImageListCollection.Add( _carouselImage );
                     _carouselImages.Add( _carouselImage );
                 }
@@ -171,7 +175,8 @@ namespace BudgetExecution
                     {
                         using var _stream = File.Open( _list[ i ], FileMode.Open );
                         using var _image = new Bitmap( _stream );
-                        var _carouselImage = new CarouselImage { ItemImage = _image };
+                        var _carouselImage = new CarouselImage( ) ;
+                        _carouselImage.ItemImage = _image;
                         _carouselImages.Add( _carouselImage );
                     }
                 }

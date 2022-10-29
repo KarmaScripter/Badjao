@@ -262,11 +262,10 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var data = new Dictionary<string, string>
-                    {
-                        [ "Main" ] = main,
-                        [ "Axis" ] = axis
-                    };
+                    var data = new Dictionary<string, string>( );
+
+                    data[ "Main" ] = main;
+                    data[ "Axis" ] = axis;
 
                     return data;
                 }

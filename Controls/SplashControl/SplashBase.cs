@@ -12,6 +12,7 @@ namespace BudgetExecution
     using System.Windows.Forms;
     using Syncfusion.Windows.Forms.Tools;
 
+    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class SplashBase : SplashPanel
     {
         /// <summary>
@@ -58,7 +59,8 @@ namespace BudgetExecution
         /// Initializes a new instance of the <see cref="SplashBase"/> class.
         /// </summary>
         /// <remarks>
-        /// The default value for the <see cref="P:Syncfusion.Windows.Forms.Tools.SplashPanel.TimerInterval" /> is set to
+        /// The default value for the
+        /// <see cref="P:Syncfusion.Windows.Forms.Tools.SplashPanel.TimerInterval" /> is set to
         /// 5000 milli seconds.
         /// The splash panel has animation turned and by default will appear in the
         /// middle of the screen.

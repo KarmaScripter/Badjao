@@ -53,11 +53,10 @@ namespace BudgetExecution
 
                                 for( var i = 0; i < _columns?.Count; i++ )
                                 {
-                                    var _parameter = new SQLiteParameter
-                                    {
-                                        SourceColumn = _columns[ i ].ColumnName,
-                                        Value = _values[ i ]
-                                    };
+                                    var _parameter = new SQLiteParameter( );
+
+                                    _parameter.SourceColumn = _columns[ i ].ColumnName;
+                                    _parameter.Value = _values[ i ];
 
                                     _sqlite.Add( _parameter );
                                 }
@@ -74,11 +73,10 @@ namespace BudgetExecution
 
                                 for( var i = 0; i < _columns?.Count; i++ )
                                 {
-                                    var _parameter = new SqlCeParameter
-                                    {
-                                        SourceColumn = _columns[ i ].ColumnName,
-                                        Value = _values[ i ]
-                                    };
+                                    var _parameter = new SqlCeParameter( );
+
+                                    _parameter.SourceColumn = _columns[ i ].ColumnName;
+                                    _parameter.Value = _values[ i ];
 
                                     _sqlce.Add( _parameter );
                                 }
@@ -97,11 +95,10 @@ namespace BudgetExecution
 
                                 for( var i = 0; i < _columns?.Count; i++ )
                                 {
-                                    var parameter = new OleDbParameter
-                                    {
-                                        SourceColumn = _columns[ i ].ColumnName,
-                                        Value = _values[ i ]
-                                    };
+                                    var parameter = new OleDbParameter( );
+
+                                    parameter.SourceColumn = _columns[ i ].ColumnName;
+                                    parameter.Value = _values[ i ];
 
                                     _oledb.Add( parameter );
                                 }
@@ -118,11 +115,10 @@ namespace BudgetExecution
 
                                 for( var i = 0; i < _columns?.Count; i++ )
                                 {
-                                    var _parameter = new SqlParameter
-                                    {
-                                        SourceColumn = _columns[ i ].ColumnName,
-                                        Value = _values[ i ]
-                                    };
+                                    var _parameter = new SqlParameter( );
+
+                                    _parameter.SourceColumn = _columns[ i ].ColumnName;
+                                    _parameter.Value = _values[ i ];
 
                                     _sqlserver.Add( _parameter );
                                 }
@@ -409,10 +405,11 @@ namespace BudgetExecution
 
                         if( _names.Contains( _name ) )
                         {
-                            return new Dictionary<string, object>
-                            {
-                                [ _name ] = int.Parse( _dictionary[ _name ].ToString( ) )
-                            };
+                            var key = new Dictionary<string, object>( );
+
+                            key[ _name ] = int.Parse( _dictionary[ _name ].ToString( ) );
+
+                            return key;
                         }
 
                         if( !_names.Contains( _name ) )

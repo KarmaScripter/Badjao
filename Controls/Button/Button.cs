@@ -259,15 +259,14 @@ namespace BudgetExecution
             {
                 TextImageRelation = TextImageRelation.ImageBeforeText;
 
-                TextStyle = new TextStyle
-                {
-                    TextLineAlignment = StringAlignment.Center,
-                    TextAlignment = StringAlignment.Center,
-                    Hover = hover,
-                    Enabled = normal,
-                    Disabled = normal,
-                    Pressed = normal
-                };
+                TextStyle = new TextStyle( );
+
+                TextStyle.TextLineAlignment = StringAlignment.Center;
+                TextStyle.TextAlignment = StringAlignment.Center;
+                TextStyle.Hover = hover;
+                TextStyle.Enabled = normal;
+                TextStyle.Disabled = normal;
+                TextStyle.Pressed = normal;
             }
             catch( Exception ex )
             {

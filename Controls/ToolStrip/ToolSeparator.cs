@@ -18,8 +18,8 @@ namespace BudgetExecution
         /// </summary>
         public ToolSeparator( )
         {
-            Margin = new Padding( 1, 0, 1, 0 );
-            Padding = new Padding( 1, 5, 1, 5 );
+            Margin = new Padding( 1, 1, 1, 1 );
+            Padding = new Padding( 1, 1, 1, 1 );
             ForeColor = Color.Black;
             Font = new Font( "Roboto", 9 );
             Width = 3;

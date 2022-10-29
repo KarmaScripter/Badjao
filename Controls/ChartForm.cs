@@ -39,7 +39,8 @@ namespace BudgetExecution
             ToolStrip.Office12Mode = true;
             ToolStrip.BindingSource = bindingSource;
             ToolStrip.BindingSource.DataSource = bindingSource.DataSource;
-            Chart = new Chart( bindingSource ) { Dock = DockStyle.Fill };
+            Chart = new Chart( bindingSource ) ;
+            Chart.Dock = DockStyle.Fill;
             Chart.SetPoints( );
             Controls.Add( Chart );
         }
@@ -51,11 +52,13 @@ namespace BudgetExecution
         public ChartForm( DataTable dataTable )
             : this( )
         {
-            BindingSource = new BindingSource { DataSource = dataTable };
+            BindingSource = new BindingSource( ) ;
+            BindingSource.DataSource = dataTable;
             ToolStrip.Office12Mode = true;
             ToolStrip.BindingSource = BindingSource;
             ToolStrip.BindingSource.DataSource = BindingSource.DataSource;
-            Chart = new Chart( dataTable ) { Dock = DockStyle.Fill };
+            Chart = new Chart( dataTable ) ;
+            Chart.Dock = DockStyle.Fill;
             Chart.SetPoints( );
             Controls.Add( Chart );
         }
@@ -64,10 +67,12 @@ namespace BudgetExecution
             : this( )
         {
             ToolStrip.Office12Mode = true;
-            BindingSource = new BindingSource { DataSource = dataRows.CopyToDataTable( ) };
+            BindingSource = new BindingSource( ) ;
+            BindingSource.DataSource = dataRows.CopyToDataTable( );
             ToolStrip.BindingSource = BindingSource;
             ToolStrip.BindingSource.DataSource = BindingSource.DataSource;
-            Chart = new Chart( dataRows ) { Dock = DockStyle.Fill };
+            Chart = new Chart( dataRows ) ;
+            Chart.Dock = DockStyle.Fill;
             Chart.SetPoints( );
             Controls.Add( Chart );
         }

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Mdm5uIM9NBuv8xsMDyPQvHDg3v4y3pW/ohZzb1FMWgY81/6geNsU8wp+INMebsXR419PnOrqEE00mKB3vpFtkQ==",
+  "dgSpecHash": "SEhPKi0y7B0f15gFe6VHjEqFcqrBpEZMuXGadsMjTgYwWVSo/51GXG96XsKZNtKFmxCSqDHU2aBS3cpUmGjoKw==",
   "success": true,
   "projectFilePath": "C:\\Users\\terry\\source\\repos\\Badjao\\Badjao.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\terry\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.27\\microsoft.windows.sdk.net.ref.10.0.22621.27.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -242,11 +242,10 @@ namespace BudgetExecution
         {
             try
             {
-                var _dialog = new OpenFileDialog
-                {
-                    CheckFileExists = true,
-                    CheckPathExists = true
-                };
+                var _dialog = new OpenFileDialog( );
+
+                _dialog.CheckFileExists = true;
+                _dialog.CheckPathExists = true;
 
                 return _dialog.FileName;
             }

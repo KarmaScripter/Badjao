@@ -5,12 +5,20 @@
 namespace BudgetExecution
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Windows.Forms;
     using Syncfusion.Windows.Forms;
     using Syncfusion.Windows.Forms.Tools;
 
+    [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
+    [ SuppressMessage( "ReSharper", "ClassCanBeSealed.Global" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public partial class CalculationForm : MetroForm
     {
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="CalculationForm"/> class.
+        /// </summary>
         public CalculationForm( )
         {
             InitializeComponent( );
@@ -18,6 +26,13 @@ namespace BudgetExecution
             Calculator.ValueCalculated += OnCalculationValueChanged;
         }
 
+        /// <summary>
+        /// Called when [calculation value changed].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The
+        /// <see cref="CalculatorValueCalculatedEventArgs"/>
+        /// instance containing the event data.</param>
         public void OnCalculationValueChanged( object sender, CalculatorValueCalculatedEventArgs e )
         {
             if( sender != null )

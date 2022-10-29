@@ -296,7 +296,8 @@ namespace BudgetExecution
                     {
                         var _name = Path.GetFileNameWithoutExtension( _paths[ i ] );
                         using var _stream = File.Open( _paths[ i ], FileMode.Open );
-                        var _img = new Bitmap( _stream ) { Tag = _name };
+                        var _img = new Bitmap( _stream ) ;
+                        _img.Tag = _name;
                         _list.ImageSize = size;
                         _list?.Images?.Add( _img );
                     }
@@ -329,7 +330,8 @@ namespace BudgetExecution
                     {
                         using var _stream = File.Open( _list[ i ], FileMode.Open );
                         using var _img = new Bitmap( _stream );
-                        var _carouselImage = new CarouselImage { ItemImage = _img };
+                        var _carouselImage = new CarouselImage( ) ;
+                        _carouselImage.ItemImage = _img;
                         _carouselImages.Add( _carouselImage );
                     }
                 }

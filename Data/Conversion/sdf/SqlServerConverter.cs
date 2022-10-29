@@ -804,11 +804,10 @@ namespace BudgetExecution
 
                 if( handler != null )
                 {
-                    var updated = new ViewSchema
-                    {
-                        ViewName = vs.ViewName,
-                        ViewSql = vs.ViewSql
-                    };
+                    var updated = new ViewSchema( );
+
+                    updated.ViewName = vs.ViewName;
+                    updated.ViewSql = vs.ViewSql;
 
                     var sql = handler( updated );
 
@@ -1228,11 +1227,10 @@ namespace BudgetExecution
                 }
             }
 
-            var _databaseSchema = new DatabaseSchema
-            {
-                Tables = _tables,
-                Views = views
-            };
+            var _databaseSchema = new DatabaseSchema( );
+
+            _databaseSchema.Tables = _tables;
+            _databaseSchema.Views = views;
 
             return _databaseSchema;
         }
@@ -1362,15 +1360,14 @@ namespace BudgetExecution
 
             while( reader.Read( ) )
             {
-                var fkc = new ForeignKeySchema
-                {
-                    ColumnName = (string)reader[ "ColumnName" ],
-                    ForeignTableName = (string)reader[ "ForeignTableName" ],
-                    ForeignColumnName = (string)reader[ "ForeignColumnName" ],
-                    CascadeOnDelete = (string)reader[ "DeleteRule" ] == "CASCADE",
-                    IsNullable = (string)reader[ "IsNullable" ] == "YES",
-                    TableName = ts.TableName
-                };
+                var fkc = new ForeignKeySchema( );
+
+                fkc.ColumnName = (string)reader[ "ColumnName" ];
+                fkc.ForeignTableName = (string)reader[ "ForeignTableName" ];
+                fkc.ForeignColumnName = (string)reader[ "ForeignColumnName" ];
+                fkc.CascadeOnDelete = (string)reader[ "DeleteRule" ] == "CASCADE";
+                fkc.IsNullable = (string)reader[ "IsNullable" ] == "YES";
+                fkc.TableName = ts.TableName;
 
                 ts.ForeignKeys.Add( fkc );
             }
@@ -1387,7 +1384,8 @@ namespace BudgetExecution
         /// index [" + indexname + "]</exception>
         private IndexSchema BuildIndexSchema( string indexname, string desc, string keys )
         {
-            var res = new IndexSchema { IndexName = indexname };
+            var res = new IndexSchema( ) ;
+            res.IndexName = indexname;
             var descparts = desc.Split( ',' );
 
             for( var i = 0; i < descparts.Length; i++ )
@@ -1449,7 +1447,8 @@ namespace BudgetExecution
         /// <returns></returns>
         private string CreateSQLiteConnectionString( string path, string password )
         {
-            var _builder = new SQLiteConnectionStringBuilder { DataSource = path };
+            var _builder = new SQLiteConnectionStringBuilder( ) ;
+            _builder.DataSource = path;
 
             if( password != null )
             {
@@ -1523,12 +1522,11 @@ namespace BudgetExecution
         private protected TableSchema CreateTableSchema( SqlConnection conn, string tablename,
             string schema )
         {
-            var res = new TableSchema
-            {
-                TableName = tablename,
-                TableSchemaName = schema,
-                Columns = new List<ColumnSchema>( )
-            };
+            var res = new TableSchema( );
+
+            res.TableName = tablename;
+            res.TableSchemaName = schema;
+            res.Columns = new List<ColumnSchema>( );
 
             using( var _command = new SqlCommand(
                       @"SELECT COLUMNNAME, COLUMNDEFAULT, ISNULLABLE, DATATYPE,  "
@@ -1679,15 +1677,14 @@ namespace BudgetExecution
 
                     _columnDefault = FixDefaultValueString( _columnDefault );
 
-                    var _schema = new ColumnSchema
-                    {
-                        ColumnName = _columnName,
-                        ColumnType = _dataType,
-                        Length = _length,
-                        IsNullable = _isNullable,
-                        IsIdentity = _isIdentity,
-                        DefaultValue = AdjustDefaultValue( _columnDefault )
-                    };
+                    var _schema = new ColumnSchema( );
+
+                    _schema.ColumnName = _columnName;
+                    _schema.ColumnType = _dataType;
+                    _schema.Length = _length;
+                    _schema.IsNullable = _isNullable;
+                    _schema.IsIdentity = _isIdentity;
+                    _schema.DefaultValue = AdjustDefaultValue( _columnDefault );
 
                     res.Columns.Add( _schema );
                 }

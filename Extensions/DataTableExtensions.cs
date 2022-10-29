@@ -19,6 +19,7 @@ namespace BudgetExecution
     /// <summary>
     /// 
     /// </summary>
+    [ SuppressMessage( "ReSharper", "AssignNullToNotNullAttribute" ) ]
     public static class DataTableExtensions
     {
         /// <summary>
@@ -37,15 +38,17 @@ namespace BudgetExecution
         {
             try
             {
-                var _xml = new XDocument { Declaration = new XDeclaration( "1.0", "utf-8", "" ) };
+                var _xml = new XDocument( );
+                _xml.Declaration = new XDeclaration( "1.0", "utf-8", "" );
                 _xml.Add( new XElement( rootName ) );
 
                 foreach( DataRow _dataRow in dataTable.Rows )
                 {
                     var _element = new XElement( dataTable.TableName );
 
-                    foreach( DataColumn col in dataTable.Columns )
+                    for( var i = 0; i < dataTable.Columns.Count; i++ )
                     {
+                        var col = dataTable.Columns[ i ];
                         var _row = _dataRow?[ col ]?.ToString( )?.Trim( ' ' );
                         var _node = new XElement( col.ColumnName, _row );
                         _element.Add( new XElement( _node ) );
@@ -147,7 +150,8 @@ namespace BudgetExecution
                     var _connectionString = ConnectionString[ "Excel" ].ConnectionString;
                     var _sql = "SELECT * FROM [" + sheetName + "$]";
                     using var _adapter = new OleDbDataAdapter( _sql, _connectionString );
-                    var _table = new DataTable { TableName = sheetName };
+                    var _table = new DataTable( ) ;
+                    _table.TableName = sheetName;
                     _adapter?.FillSchema( _table, SchemaType.Source );
                     _adapter.Fill( _table, _table.TableName );
 
@@ -249,7 +253,8 @@ namespace BudgetExecution
 
                     foreach( var _row in dataTable.AsEnumerable( ) )
                     {
-                        if( _row?.HasPrimaryKey( ) == true )
+                        if( _row?.HasPrimaryKey( ) == true 
+                           && _row[ 0 ] != null )
                         {
                             _list.Add( int.Parse( _row[ 0 ].ToString( ) ) );
                         }

@@ -406,14 +406,13 @@ namespace BudgetExecution
             {
                 var _fname = "";
 
-                var fdlg = new OpenFileDialog
-                {
-                    Title = "Excel File Dialog",
-                    InitialDirectory = @"c:\",
-                    Filter = "All files (*.*)|*.*|All files (*.*)|*.*",
-                    FilterIndex = 2,
-                    RestoreDirectory = true
-                };
+                var fdlg = new OpenFileDialog( );
+
+                fdlg.Title = "Excel File Dialog";
+                fdlg.InitialDirectory = @"c:\";
+                fdlg.Filter = "All files (*.*)|*.*|All files (*.*)|*.*";
+                fdlg.FilterIndex = 2;
+                fdlg.RestoreDirectory = true;
 
                 if( fdlg.ShowDialog( ) == DialogResult.OK )
                 {

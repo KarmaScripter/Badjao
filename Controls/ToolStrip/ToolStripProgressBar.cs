@@ -9,6 +9,7 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Windows.Forms;
 
+    [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     public class ToolStripProgressBar : ToolStripProgressBase
     {
         /// <summary>
@@ -18,7 +19,8 @@ namespace BudgetExecution
         /// </summary>
         public ToolStripProgressBar( )
         {
-            Margin = new Padding( 5, 5, 5, 5 );
+            Margin = new Padding( 1, 1, 1, 1 );
+            Padding = new Padding( 1, 1, 1, 1 );
             Size = new Size( 200, 22 );
             ForeColor = SystemColors.Highlight;
             BackColor = SystemColors.Control;

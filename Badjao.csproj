@@ -4,16 +4,23 @@
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
     <StartupObject>BudgetExecution.Program</StartupObject>
-    <ApplicationIcon>Resources\Images\Ninja\BudExNinjaGrey.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Images\Ninja\ico\BudExNinja.ico</ApplicationIcon>
     <Nullable>disable</Nullable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>BudExNinja.png</PackageIcon>
     <AnalysisLevel>latest-recommended</AnalysisLevel>
     <LangVersion>10</LangVersion>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
+    <RootNamespace>BudgetExecution</RootNamespace>
+    <Authors>Terry D. Eppler</Authors>
+    <Company>US EPA</Company>
+    <Product>Badjao</Product>
+    <RepositoryUrl>https://github.com/KarmaScripter/Badjao</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Resources\Images\Ninja\BudExNinjaGrey.ico" />
+    <Content Include="Resources\Images\Ninja\ico\BudExNinja.ico" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="C1.Win.4.8">
@@ -188,6 +195,10 @@
     <Compile Update="Controls\CalendarForm.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -200,8 +211,5 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ReferencePathWithRefAssemblies Update="C:\Users\teppler\source\compilers\cs\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Data.DataSetExtensions.dll" />
   </ItemGroup>
 </Project>

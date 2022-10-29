@@ -103,10 +103,9 @@ namespace BudgetExecution
                         ColumnListBox?.Items.Add( c.HeaderText, c.Visible );
                     }
 
-                    var _columnConfiguration = new ColumnConfiguration( Grid )
-                    {
-                        Location = Grid.PointToScreen( new Point( e.X, e.Y ) )
-                    };
+                    var _columnConfiguration = new ColumnConfiguration( Grid );
+
+                    _columnConfiguration.Location = Grid.PointToScreen( new Point( e.X, e.Y ) );
 
                     _columnConfiguration?.ShowDialog( );
                     _columnConfiguration.TopMost = true;
@@ -143,12 +142,11 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _controlHost = new ToolStripControlHost( this )
-                    {
-                        AutoSize = true,
-                        Margin = Padding.Empty,
-                        Padding = Padding.Empty
-                    };
+                    var _controlHost = new ToolStripControlHost( this );
+
+                    _controlHost.AutoSize = true;
+                    _controlHost.Margin = Padding.Empty;
+                    _controlHost.Padding = Padding.Empty;
 
                     return _controlHost;
                 }

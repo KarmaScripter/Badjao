@@ -14,6 +14,9 @@ namespace BudgetExecution
     /// </summary>
     /// <seealso cref="System.Windows.Forms.ToolStripTextBox" />
     /// <seealso cref="IToolStripTextBox" />
+    [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
+    [ SuppressMessage( "ReSharper", "ClassCanBeSealed.Global" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class ToolStripTextBox : ToolStripTextBase, IToolStripTextBox
     {
         /// <summary>
@@ -22,8 +25,8 @@ namespace BudgetExecution
         /// </summary>
         public ToolStripTextBox( )
         {
-            Margin = new Padding( 5, 5, 5, 5 );
-            Padding = new Padding( 0 );
+            Margin = new Padding( 1, 1, 1, 1 );
+            Padding = new Padding( 1, 1, 1, 1 );
             Size = new Size( 150, 23 );
             BackColor = Color.FromArgb( 15, 15, 15 );
             ForeColor = Color.FromArgb( 141, 139, 138 );

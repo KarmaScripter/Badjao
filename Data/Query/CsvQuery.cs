@@ -167,11 +167,10 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _fileDialog = new SaveFileDialog
-                    {
-                        Filter = "CSV files (*.csv)|*.csv",
-                        FilterIndex = 1
-                    };
+                    var _fileDialog = new SaveFileDialog( );
+
+                    _fileDialog.Filter = "CSV files (*.csv)|*.csv";
+                    _fileDialog.FilterIndex = 1;
 
                     if( _fileDialog.ShowDialog( ) == DialogResult.OK )
                     {
@@ -431,14 +430,13 @@ namespace BudgetExecution
             {
                 var _fileName = "";
 
-                var _fileDialog = new OpenFileDialog
-                {
-                    Title = "CSV File Dialog",
-                    InitialDirectory = @"c:\",
-                    Filter = "All files (*.*)|*.*|All files (*.*)|*.*",
-                    FilterIndex = 2,
-                    RestoreDirectory = true
-                };
+                var _fileDialog = new OpenFileDialog( );
+
+                _fileDialog.Title = "CSV File Dialog";
+                _fileDialog.InitialDirectory = @"c:\";
+                _fileDialog.Filter = "All files (*.*)|*.*|All files (*.*)|*.*";
+                _fileDialog.FilterIndex = 2;
+                _fileDialog.RestoreDirectory = true;
 
                 if( _fileDialog.ShowDialog( ) == DialogResult.OK )
                 {
