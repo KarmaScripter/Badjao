@@ -35,7 +35,7 @@ namespace BudgetExecution
             {
                 var _dataTable = GetDataTable( );
                 var  _data = _dataTable?.AsEnumerable( );
-                return _data?.Any( ) == true
+                return ( _data?.Any( ) == true )
                     ? _data
                     : default;
             }
@@ -59,12 +59,12 @@ namespace BudgetExecution
                     DataSet = new DataSet( $"{ Provider }" );
                     DataTable = new DataTable( $"{ Source }" );
                     DataSet.Tables.Add( DataTable );
-                    using var _adapter = Query.GetAdapter( );
+                    var _adapter = Query.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable.TableName );
                     SetColumnCaptions( DataTable );
-                    return DataTable?.Rows?.Count > 0
+                    return ( DataTable?.Rows?.Count > 0 )
                         ? DataTable
-                        : default;
+                        : default( DataTable );
                 }
                 catch( Exception ex )
                 {
@@ -92,7 +92,7 @@ namespace BudgetExecution
                     using var _adapter = Query.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable?.TableName );
                     SetColumnCaptions( DataTable );
-                    return DataTable?.Rows?.Count > 0
+                    return ( DataTable?.Rows?.Count > 0 )
                         ? DataSet
                         : default;
                 }
@@ -122,7 +122,7 @@ namespace BudgetExecution
                            && string.IsNullOrEmpty( column.Caption ) )
                         {
                             var _caption = column.ColumnName?.SplitPascal( );
-                            column.Caption = !string.IsNullOrEmpty( _caption )
+                            column.Caption = ( !string.IsNullOrEmpty( _caption ) )
                                 ? _caption
                                 : string.Empty;
                         }
@@ -158,11 +158,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( DataColumnCollection );
                 }
             }
 
-            return default;
+            return default( DataColumnCollection );
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IEnumerable<int> );
                 }
             }
 

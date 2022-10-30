@@ -75,24 +75,24 @@
             // 
             // TabControl
             // 
-            this.TabControl.ActiveTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TabControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TabControl.ActiveTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.TabControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.TabControl.BeforeTouchSize = new System.Drawing.Size(1368, 488);
             this.TabControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TabControl.CanOverrideStyle = true;
-            this.TabControl.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TabControl.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.TabControl.Controls.Add(this.LookupTabPage);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TabControl.FixedSingleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TabControl.FixedSingleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.TabControl.FocusOnTabClick = false;
-            this.TabControl.InactiveCloseButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TabControl.InactiveTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TabControl.InactiveCloseButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.TabControl.InactiveTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.TabControl.ItemSize = new System.Drawing.Size(158, 23);
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
             this.TabControl.Size = new System.Drawing.Size(1368, 488);
             this.TabControl.TabIndex = 8;
-            this.TabControl.TabPanelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TabControl.TabPanelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.TabControl.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
             this.TabControl.ThemeName = "TabRendererMetro";
             this.TabControl.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
@@ -111,18 +111,19 @@
             // 
             // LookupTabPage
             // 
-            this.LookupTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.LookupTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.LookupTabPage.Controls.Add(this.TableGroupBox);
             this.LookupTabPage.Controls.Add(this.ValueGroupBox);
             this.LookupTabPage.Controls.Add(this.ColumnGroupBox);
             this.LookupTabPage.Controls.Add(this.ProviderGroupBox);
             this.LookupTabPage.ForeColor = System.Drawing.Color.LightSteelBlue;
+            this.LookupTabPage.Image = null;
             this.LookupTabPage.ImageSize = new System.Drawing.Size(12, 12);
             this.LookupTabPage.Location = new System.Drawing.Point(0, 22);
             this.LookupTabPage.Name = "LookupTabPage";
             this.LookupTabPage.ShowCloseButton = true;
             this.LookupTabPage.Size = new System.Drawing.Size(1368, 466);
-            this.LookupTabPage.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.LookupTabPage.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.LookupTabPage.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.LookupTabPage.TabIndex = 2;
             this.LookupTabPage.Text = "  Look Up";
@@ -130,12 +131,12 @@
             // 
             // TableGroupBox
             // 
-            this.TableGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TableGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TableGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TableGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TableGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TableGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TableGroupBox.BindingSource = null;
-            this.TableGroupBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.TableGroupBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TableGroupBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TableGroupBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.TableGroupBox.Border.HoverVisible = true;
             this.TableGroupBox.Border.Rounding = 6;
             this.TableGroupBox.Border.Thickness = 1;
@@ -144,10 +145,11 @@
             this.TableGroupBox.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.TableGroupBox.Controls.Add(this.TableListBox);
             this.TableGroupBox.DataFilter = null;
-            this.TableGroupBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.TableGroupBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TableGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.TableGroupBox.HeaderText = null;
             this.TableGroupBox.HoverText = null;
+            this.TableGroupBox.Image = null;
             this.TableGroupBox.Location = new System.Drawing.Point(712, 44);
             this.TableGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.TableGroupBox.Name = "TableGroupBox";
@@ -173,11 +175,11 @@
             // TableListBox
             // 
             this.TableListBox.AlternateColors = true;
-            this.TableListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TableListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TableListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TableListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TableListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TableListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TableListBox.BindingSource = null;
-            this.TableListBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TableListBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TableListBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.TableListBox.Border.HoverVisible = true;
             this.TableListBox.Border.Rounding = 6;
@@ -185,17 +187,19 @@
             this.TableListBox.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.TableListBox.Border.Visible = true;
             this.TableListBox.DataFilter = null;
-            this.TableListBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.TableListBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TableListBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.TableListBox.HoverText = null;
-            this.TableListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.TableListBox.ImageList = null;
+            this.TableListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.TableListBox.ItemHeight = 30;
             this.TableListBox.ItemLineAlignment = System.Drawing.StringAlignment.Center;
-            this.TableListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TableListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TableListBox.ItemSelected = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(39)))), ((int)(((byte)(70)))));
             this.TableListBox.Location = new System.Drawing.Point(15, 38);
             this.TableListBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.TableListBox.Name = "TableListBox";
+            this.TableListBox.Padding = new System.Windows.Forms.Padding(1);
             this.TableListBox.Size = new System.Drawing.Size(388, 139);
             this.TableListBox.TabIndex = 1;
             this.TableListBox.Text = "Tables";
@@ -229,9 +233,9 @@
             // 
             // ValueGroupBox
             // 
-            this.ValueGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.ValueGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ValueGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ValueGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ValueGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ValueGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ValueGroupBox.BindingSource = null;
             this.ValueGroupBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ValueGroupBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
@@ -243,10 +247,11 @@
             this.ValueGroupBox.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.ValueGroupBox.Controls.Add(this.ValueListBox);
             this.ValueGroupBox.DataFilter = null;
-            this.ValueGroupBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.ValueGroupBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ValueGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ValueGroupBox.HeaderText = null;
             this.ValueGroupBox.HoverText = null;
+            this.ValueGroupBox.Image = null;
             this.ValueGroupBox.Location = new System.Drawing.Point(712, 259);
             this.ValueGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ValueGroupBox.Name = "ValueGroupBox";
@@ -272,11 +277,11 @@
             // ValueListBox
             // 
             this.ValueListBox.AlternateColors = true;
-            this.ValueListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ValueListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ValueListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ValueListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ValueListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ValueListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ValueListBox.BindingSource = null;
-            this.ValueListBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ValueListBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ValueListBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.ValueListBox.Border.HoverVisible = true;
             this.ValueListBox.Border.Rounding = 6;
@@ -284,17 +289,19 @@
             this.ValueListBox.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.ValueListBox.Border.Visible = true;
             this.ValueListBox.DataFilter = null;
-            this.ValueListBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.ValueListBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ValueListBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ValueListBox.HoverText = null;
-            this.ValueListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.ValueListBox.ImageList = null;
+            this.ValueListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ValueListBox.ItemHeight = 30;
             this.ValueListBox.ItemLineAlignment = System.Drawing.StringAlignment.Center;
-            this.ValueListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ValueListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ValueListBox.ItemSelected = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(39)))), ((int)(((byte)(70)))));
             this.ValueListBox.Location = new System.Drawing.Point(15, 38);
             this.ValueListBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ValueListBox.Name = "ValueListBox";
+            this.ValueListBox.Padding = new System.Windows.Forms.Padding(1);
             this.ValueListBox.Size = new System.Drawing.Size(388, 139);
             this.ValueListBox.TabIndex = 2;
             this.ValueListBox.Text = "listBox1";
@@ -310,9 +317,9 @@
             // ColumnGroupBox
             // 
             this.ColumnGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ColumnGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.ColumnGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ColumnGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ColumnGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ColumnGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ColumnGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ColumnGroupBox.BindingSource = null;
             this.ColumnGroupBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ColumnGroupBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
@@ -324,10 +331,11 @@
             this.ColumnGroupBox.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.ColumnGroupBox.Controls.Add(this.ColumnListBox);
             this.ColumnGroupBox.DataFilter = null;
-            this.ColumnGroupBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.ColumnGroupBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ColumnGroupBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ColumnGroupBox.HeaderText = null;
             this.ColumnGroupBox.HoverText = null;
+            this.ColumnGroupBox.Image = null;
             this.ColumnGroupBox.Location = new System.Drawing.Point(177, 259);
             this.ColumnGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ColumnGroupBox.Name = "ColumnGroupBox";
@@ -354,11 +362,11 @@
             // 
             this.ColumnListBox.AlternateColors = true;
             this.ColumnListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ColumnListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ColumnListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ColumnListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ColumnListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ColumnListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ColumnListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ColumnListBox.BindingSource = null;
-            this.ColumnListBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ColumnListBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ColumnListBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.ColumnListBox.Border.HoverVisible = true;
             this.ColumnListBox.Border.Rounding = 6;
@@ -366,9 +374,10 @@
             this.ColumnListBox.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.ColumnListBox.Border.Visible = true;
             this.ColumnListBox.DataFilter = null;
-            this.ColumnListBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.ColumnListBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ColumnListBox.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ColumnListBox.HoverText = null;
+            this.ColumnListBox.ImageList = null;
             this.ColumnListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ColumnListBox.ItemHeight = 30;
             this.ColumnListBox.ItemLineAlignment = System.Drawing.StringAlignment.Center;
@@ -377,6 +386,7 @@
             this.ColumnListBox.Location = new System.Drawing.Point(20, 38);
             this.ColumnListBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ColumnListBox.Name = "ColumnListBox";
+            this.ColumnListBox.Padding = new System.Windows.Forms.Padding(1);
             this.ColumnListBox.Size = new System.Drawing.Size(348, 139);
             this.ColumnListBox.TabIndex = 2;
             this.ColumnListBox.Text = "listBox1";
@@ -391,9 +401,9 @@
             // 
             // ProviderGroupBox
             // 
-            this.ProviderGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ProviderGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ProviderGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ProviderGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ProviderGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ProviderGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ProviderGroupBox.BindingSource = null;
             this.ProviderGroupBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ProviderGroupBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
@@ -407,10 +417,11 @@
             this.ProviderGroupBox.Controls.Add(this.SqlServerRadioButton);
             this.ProviderGroupBox.Controls.Add(this.SqliteRadioButton);
             this.ProviderGroupBox.DataFilter = null;
-            this.ProviderGroupBox.Font = new System.Drawing.Font("Roboto", 9F);
+            this.ProviderGroupBox.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ProviderGroupBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ProviderGroupBox.HeaderText = "";
             this.ProviderGroupBox.HoverText = null;
+            this.ProviderGroupBox.Image = null;
             this.ProviderGroupBox.Location = new System.Drawing.Point(180, 44);
             this.ProviderGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ProviderGroupBox.Name = "ProviderGroupBox";
@@ -442,7 +453,7 @@
             this.AccessRadioButton.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.AccessRadioButton.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             this.AccessRadioButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.AccessRadioButton.Font = new System.Drawing.Font("Roboto", 8F);
+            this.AccessRadioButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AccessRadioButton.Group = 1;
             this.AccessRadioButton.HoverText = null;
             this.AccessRadioButton.Location = new System.Drawing.Point(135, 146);
@@ -466,7 +477,7 @@
             this.SqlServerRadioButton.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.SqlServerRadioButton.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             this.SqlServerRadioButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.SqlServerRadioButton.Font = new System.Drawing.Font("Roboto", 8F);
+            this.SqlServerRadioButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SqlServerRadioButton.Group = 1;
             this.SqlServerRadioButton.HoverText = null;
             this.SqlServerRadioButton.Location = new System.Drawing.Point(135, 99);
@@ -490,7 +501,7 @@
             this.SqliteRadioButton.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.SqliteRadioButton.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             this.SqliteRadioButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.SqliteRadioButton.Font = new System.Drawing.Font("Roboto", 8F);
+            this.SqliteRadioButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SqliteRadioButton.Group = 1;
             this.SqliteRadioButton.HoverText = null;
             this.SqliteRadioButton.Location = new System.Drawing.Point(135, 54);
@@ -537,7 +548,7 @@
             this.groupBox7.Controls.Add(this.listBox5);
             this.groupBox7.Controls.Add(this.listBox6);
             this.groupBox7.DataFilter = null;
-            this.groupBox7.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox7.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox7.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox7.HeaderText = null;
             this.groupBox7.HoverText = null;
@@ -580,9 +591,10 @@
             this.listBox5.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.listBox5.Border.Visible = true;
             this.listBox5.DataFilter = null;
-            this.listBox5.Font = new System.Drawing.Font("Roboto", 9F);
+            this.listBox5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox5.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.listBox5.HoverText = null;
+            this.listBox5.ImageList = null;
             this.listBox5.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.listBox5.ItemHeight = 30;
             this.listBox5.ItemLineAlignment = System.Drawing.StringAlignment.Center;
@@ -591,6 +603,7 @@
             this.listBox5.Location = new System.Drawing.Point(15, 40);
             this.listBox5.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.listBox5.Name = "listBox5";
+            this.listBox5.Padding = new System.Windows.Forms.Padding(1);
             this.listBox5.Size = new System.Drawing.Size(348, 140);
             this.listBox5.TabIndex = 2;
             this.listBox5.Text = "listBox3";
@@ -619,9 +632,10 @@
             this.listBox6.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.listBox6.Border.Visible = true;
             this.listBox6.DataFilter = null;
-            this.listBox6.Font = new System.Drawing.Font("Roboto", 9F);
+            this.listBox6.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox6.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.listBox6.HoverText = null;
+            this.listBox6.ImageList = null;
             this.listBox6.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.listBox6.ItemHeight = 30;
             this.listBox6.ItemLineAlignment = System.Drawing.StringAlignment.Center;
@@ -630,6 +644,7 @@
             this.listBox6.Location = new System.Drawing.Point(15, 40);
             this.listBox6.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.listBox6.Name = "listBox6";
+            this.listBox6.Padding = new System.Windows.Forms.Padding(1);
             this.listBox6.Size = new System.Drawing.Size(348, 140);
             this.listBox6.TabIndex = 1;
             this.listBox6.Text = "listBox4";
@@ -661,7 +676,7 @@
             this.groupBox8.Controls.Add(this.visualLabel5);
             this.groupBox8.Controls.Add(this.visualTextBox3);
             this.groupBox8.DataFilter = null;
-            this.groupBox8.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox8.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox8.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox8.HeaderText = null;
             this.groupBox8.HoverText = null;
@@ -739,7 +754,7 @@
             this.visualComboBox3.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
             this.visualComboBox3.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.visualComboBox3.Watermark.Active = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.visualComboBox3.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualComboBox3.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.visualComboBox3.Watermark.Inactive = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
             this.visualComboBox3.Watermark.Text = "Watermark text";
             this.visualComboBox3.Watermark.Visible = false;
@@ -828,11 +843,11 @@
             this.visualTextBox3.ButtonColor.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.visualTextBox3.ButtonColor.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.visualTextBox3.ButtonColor.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.visualTextBox3.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualTextBox3.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.visualTextBox3.ButtonIndent = 3;
             this.visualTextBox3.ButtonText = "visualButton";
             this.visualTextBox3.ButtonVisible = false;
-            this.visualTextBox3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualTextBox3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.visualTextBox3.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.visualTextBox3.Image = null;
             this.visualTextBox3.ImageSize = new System.Drawing.Size(16, 16);
@@ -855,7 +870,7 @@
             this.visualTextBox3.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
             this.visualTextBox3.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.visualTextBox3.Watermark.Active = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.visualTextBox3.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualTextBox3.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.visualTextBox3.Watermark.Inactive = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
             this.visualTextBox3.Watermark.Text = "Watermark text";
             this.visualTextBox3.Watermark.Visible = false;
@@ -864,13 +879,13 @@
             // SelectButton
             // 
             this.SelectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SelectButton.BackColor = System.Drawing.Color.Transparent;
-            this.SelectButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.SelectButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.SelectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.SelectButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.SelectButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.SelectButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.SelectButton.BackColorState.Pressed = System.Drawing.Color.SteelBlue;
             this.SelectButton.BindingSource = null;
-            this.SelectButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.SelectButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.SelectButton.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.SelectButton.Border.HoverVisible = true;
             this.SelectButton.Border.Rounding = 6;
@@ -879,7 +894,7 @@
             this.SelectButton.Border.Visible = true;
             this.SelectButton.DataFilter = null;
             this.SelectButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.SelectButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.SelectButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SelectButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.SelectButton.HoverText = "Not Yet Implemented!";
             this.SelectButton.Image = null;
@@ -888,6 +903,7 @@
             this.SelectButton.Margin = new System.Windows.Forms.Padding(0);
             this.SelectButton.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.SelectButton.Name = "SelectButton";
+            this.SelectButton.Padding = new System.Windows.Forms.Padding(1);
             this.SelectButton.Size = new System.Drawing.Size(140, 55);
             this.SelectButton.TabIndex = 7;
             this.SelectButton.Text = "Select";
@@ -904,13 +920,13 @@
             // RefreshButton
             // 
             this.RefreshButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.RefreshButton.BackColor = System.Drawing.Color.Transparent;
-            this.RefreshButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.RefreshButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.RefreshButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.RefreshButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.RefreshButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.RefreshButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.RefreshButton.BackColorState.Pressed = System.Drawing.Color.SteelBlue;
             this.RefreshButton.BindingSource = null;
-            this.RefreshButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.RefreshButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.RefreshButton.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.RefreshButton.Border.HoverVisible = true;
             this.RefreshButton.Border.Rounding = 6;
@@ -919,7 +935,7 @@
             this.RefreshButton.Border.Visible = true;
             this.RefreshButton.DataFilter = null;
             this.RefreshButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.RefreshButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.RefreshButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RefreshButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.RefreshButton.HoverText = "Not Yet Implemented!";
             this.RefreshButton.Image = null;
@@ -928,6 +944,7 @@
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(0);
             this.RefreshButton.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Padding = new System.Windows.Forms.Padding(1);
             this.RefreshButton.Size = new System.Drawing.Size(140, 55);
             this.RefreshButton.TabIndex = 5;
             this.RefreshButton.Text = "Clear";
@@ -944,13 +961,13 @@
             // CloseButton
             // 
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
-            this.CloseButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CloseButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CloseButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CloseButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.CloseButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.CloseButton.BackColorState.Pressed = System.Drawing.Color.SteelBlue;
             this.CloseButton.BindingSource = null;
-            this.CloseButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.CloseButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.CloseButton.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.CloseButton.Border.HoverVisible = true;
             this.CloseButton.Border.Rounding = 6;
@@ -959,7 +976,7 @@
             this.CloseButton.Border.Visible = true;
             this.CloseButton.DataFilter = null;
             this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.CloseButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.CloseButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.CloseButton.HoverText = "Close Window";
             this.CloseButton.Image = null;
@@ -968,6 +985,7 @@
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseButton.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Padding = new System.Windows.Forms.Padding(1);
             this.CloseButton.Size = new System.Drawing.Size(140, 55);
             this.CloseButton.TabIndex = 6;
             this.CloseButton.Text = "Close";
@@ -998,7 +1016,7 @@
             this.groupBox2.Border.Visible = true;
             this.groupBox2.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.groupBox2.DataFilter = null;
-            this.groupBox2.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.HeaderText = null;
             this.groupBox2.HoverText = null;
@@ -1041,7 +1059,7 @@
             this.groupBox3.Border.Visible = true;
             this.groupBox3.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.groupBox3.DataFilter = null;
-            this.groupBox3.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.HeaderText = null;
             this.groupBox3.HoverText = null;
@@ -1084,7 +1102,7 @@
             this.groupBox4.Border.Visible = true;
             this.groupBox4.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.groupBox4.DataFilter = null;
-            this.groupBox4.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox4.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.HeaderText = null;
             this.groupBox4.HoverText = null;
@@ -1125,7 +1143,7 @@
             this.groupBox9.Border.Visible = true;
             this.groupBox9.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.groupBox9.DataFilter = null;
-            this.groupBox9.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox9.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox9.ForeColor = System.Drawing.Color.White;
             this.groupBox9.HeaderText = null;
             this.groupBox9.HoverText = null;
@@ -1155,13 +1173,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.CaptionAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CaptionFont = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CaptionFont = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1368, 588);
             this.ControlBox = false;
@@ -1169,11 +1187,11 @@
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.CloseButton);
-            this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Name = "LookupDialog";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

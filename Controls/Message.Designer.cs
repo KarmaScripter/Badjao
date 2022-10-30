@@ -61,16 +61,16 @@ namespace BudgetExecution
             this.TextBox.Border.Thickness = 1;
             this.TextBox.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.TextBox.Border.Visible = true;
-            this.TextBox.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TextBox.ForeColor = System.Drawing.Color.White;
-            this.TextBox.Location = new System.Drawing.Point(86, 120);
+            this.TextBox.Location = new System.Drawing.Point(86, 90);
             this.TextBox.MaxLength = 2147483647;
             this.TextBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
             this.TextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both;
             this.TextBox.ShowSelectionMargin = false;
-            this.TextBox.Size = new System.Drawing.Size(526, 232);
+            this.TextBox.Size = new System.Drawing.Size(526, 245);
             this.TextBox.TabIndex = 8;
             this.TextBox.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
             this.TextBox.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -85,9 +85,9 @@ namespace BudgetExecution
             this.OpenButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenButton.BackColor = System.Drawing.Color.Transparent;
-            this.OpenButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.OpenButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.OpenButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.OpenButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.OpenButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.OpenButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.OpenButton.BackColorState.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(93)))), ((int)(((byte)(129)))));
             this.OpenButton.BindingSource = null;
             this.OpenButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
@@ -99,7 +99,7 @@ namespace BudgetExecution
             this.OpenButton.Border.Visible = true;
             this.OpenButton.DataFilter = null;
             this.OpenButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.OpenButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.OpenButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenButton.ForeColor = System.Drawing.Color.SteelBlue;
             this.OpenButton.HoverText = null;
             this.OpenButton.Image = null;
@@ -108,6 +108,7 @@ namespace BudgetExecution
             this.OpenButton.Margin = new System.Windows.Forms.Padding(0);
             this.OpenButton.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.OpenButton.Name = "OpenButton";
+            this.OpenButton.Padding = new System.Windows.Forms.Padding(1);
             this.OpenButton.Size = new System.Drawing.Size(124, 57);
             this.OpenButton.TabIndex = 9;
             this.OpenButton.Text = "Open";
@@ -145,9 +146,9 @@ namespace BudgetExecution
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseButton.BackColor = System.Drawing.Color.Transparent;
-            this.CloseButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CloseButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CloseButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.CloseButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CloseButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CloseButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.CloseButton.BackColorState.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(93)))), ((int)(((byte)(129)))));
             this.CloseButton.BindingSource = null;
             this.CloseButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
@@ -159,7 +160,7 @@ namespace BudgetExecution
             this.CloseButton.Border.Visible = true;
             this.CloseButton.DataFilter = null;
             this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CloseButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.CloseButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CloseButton.ForeColor = System.Drawing.Color.SteelBlue;
             this.CloseButton.HoverText = null;
             this.CloseButton.Image = null;
@@ -168,6 +169,7 @@ namespace BudgetExecution
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseButton.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Padding = new System.Windows.Forms.Padding(1);
             this.CloseButton.Size = new System.Drawing.Size(127, 57);
             this.CloseButton.TabIndex = 10;
             this.CloseButton.Text = "Close";
@@ -185,19 +187,20 @@ namespace BudgetExecution
             // 
             this.Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Label.BindingSource = null;
             this.Label.DataFilter = null;
-            this.Label.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Label.ForeColor = System.Drawing.Color.SteelBlue;
             this.Label.HoverText = null;
-            this.Label.Location = new System.Drawing.Point(86, 80);
+            this.Label.Location = new System.Drawing.Point(86, 67);
             this.Label.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.Label.Name = "Label";
             this.Label.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.Label.Outline = false;
-            this.Label.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.Label.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Label.OutlineLocation = new System.Drawing.Point(0, 0);
+            this.Label.Padding = new System.Windows.Forms.Padding(1);
             this.Label.ReflectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Label.ReflectionSpacing = 0;
             this.Label.ShadowColor = System.Drawing.Color.Black;
@@ -224,6 +227,7 @@ namespace BudgetExecution
             this.PictureBox.DataFilter = null;
             this.PictureBox.Field = BudgetExecution.Field.RpioActivityCode;
             this.PictureBox.HoverText = null;
+            this.PictureBox.ImageList = null;
             this.PictureBox.Location = new System.Drawing.Point(3, 3);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Numeric = BudgetExecution.Numeric.NS;
@@ -238,14 +242,14 @@ namespace BudgetExecution
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.BorderColor = System.Drawing.Color.SteelBlue;
             this.CancelButton = this.CloseButton;
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.CaptionBarHeight = 1;
-            this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CaptionFont = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CaptionFont = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CaptionForeColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(688, 450);
             this.Controls.Add(this.TextBox);
@@ -254,11 +258,11 @@ namespace BudgetExecution
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.OpenButton);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.MinimizeBox = false;
             this.Name = "Message";
             this.ShowIcon = false;

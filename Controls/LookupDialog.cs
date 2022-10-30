@@ -6,8 +6,10 @@ namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
 
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public partial class LookupDialog : EditBase
     {
         /// <summary>
@@ -42,7 +44,7 @@ namespace BudgetExecution
             InitializeComponent( );
             GroupBoxes = GetGroupBoxes( );
             RadioButtons = GetRadioButtons( );
-            TabControl.TabPanelBackColor = Color.FromArgb( 15, 15, 15 );
+            TabControl.TabPanelBackColor = Color.FromArgb( 20, 20, 20 );
             Load += OnLoad;
             CloseButton.Click += OnCloseButtonClicked;
             TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;

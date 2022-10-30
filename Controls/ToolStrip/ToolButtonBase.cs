@@ -15,6 +15,7 @@ namespace BudgetExecution
     /// <seealso cref="System.Windows.Forms.ToolStripButton" />
     [ Serializable ]
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
+    [ SuppressMessage( "ReSharper", "MergeConditionalExpression" ) ]
     public class ToolButtonBase : System.Windows.Forms.ToolStripButton
     {
         /// <summary>
@@ -73,7 +74,7 @@ namespace BudgetExecution
         {
             try
             {
-                Tag = tag != null
+                Tag = ( tag != null )
                     ? tag
                     : null;
             }
@@ -127,7 +128,7 @@ namespace BudgetExecution
         {
             try
             {
-                HoverText = !string.IsNullOrEmpty( text )
+                HoverText = ( !string.IsNullOrEmpty( text ) )
                     ? text
                     : string.Empty;
             }

@@ -304,7 +304,6 @@ namespace BudgetExecution
                    & !string.IsNullOrEmpty( SelectedColumn ) )
                 {
                     FormFilter.Add( SelectedColumn, SelectedValue );
-
                     _query = $"SELECT * FROM {SelectedTable} "
                         + $"WHERE {SelectedColumn} = '{SelectedValue}';";
                 }

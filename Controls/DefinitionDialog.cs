@@ -62,39 +62,15 @@ namespace BudgetExecution
         /// <param name="toolType">Type of the tool.</param>
         /// <param name="bindingSource">The binding source.</param>
         public DefinitionDialog( ToolType toolType, BindingSource bindingSource )
-            : this( )
+            : this( toolType )
         {
-            Provider = Provider.Access;
-            ToolType = toolType;
             BindingSource = bindingSource;
             DataTable = (DataTable)bindingSource.DataSource;
             BindingSource.DataSource = DataTable;
             Source = (Source)Enum.Parse( typeof( Source ), DataTable.TableName );
-            DataModel = new DataBuilder( Source, Provider );
             Columns = DataTable.GetColumnNames( );
-            DataTypes = GetDataTypes( Provider );
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DefinitionDialog"/> class.
-        /// </summary>
-        /// <param name="toolType">Type of the tool.</param>
-        /// <param name="bindingSource">The binding source.</param>
-        /// <param name="tableName">Name of the table.</param>
-        public DefinitionDialog( ToolType toolType, BindingSource bindingSource, string tableName )
-            : this( toolType, bindingSource )
-        {
-            Provider = Provider.Access;
-            ToolType = toolType;
-            BindingSource = bindingSource;
-            Source = (Source)Enum.Parse( typeof( Source ), tableName );
-            DataModel = new DataBuilder( Source, Provider );
-            DataTable = DataModel.DataTable;
-            Columns = DataTable.GetColumnNames( );
-            BindingSource.DataSource = DataTable;
-            DataTypes = GetDataTypes( Provider );
-        }
-
+        
         /// <summary>
         /// Called when [visible].
         /// </summary>
@@ -110,6 +86,7 @@ namespace BudgetExecution
                 PopulateComboBoxes( );
                 SetActiveTab( );
                 CloseButton.Text = "Exit";
+                DataTypes = GetDataTypes( Provider );
             }
             catch( Exception ex )
             {
@@ -127,12 +104,11 @@ namespace BudgetExecution
                 var _names = Enum.GetNames( typeof( Source ) );
                 for( var i = 0; i < _names?.Length; i++ )
                 {
-                    var name = _names[ i ];
-                    if( name != "NS" )
+                    if( _names[ i ] != "NS" )
                     {
-                        EditColumnTableNameListBox.Items.Add( name );
-                        DeleteColumnTableListBox.Items.Add( name );
-                        DeleteTableTablesListBox.Items.Add( name );
+                        EditColumnTableNameListBox.Items.Add( _names[ i ] );
+                        DeleteColumnTableListBox.Items.Add( _names[ i ] );
+                        DeleteTableTablesListBox.Items.Add( _names[ i ] );
                     }
                 }
             }
@@ -158,11 +134,10 @@ namespace BudgetExecution
                     var _types = DataTypes.ToArray( );
                     for( var i = 0; i < _types?.Length; i++ )
                     {
-                        var name = _types[ i ];
-                        if ( !string.IsNullOrEmpty( name ) )
+                        if ( !string.IsNullOrEmpty( _types[ i ] ) )
                         {
-                            EditColumnDataTypeComboBox.Items.Add( name );
-                            CreateTableDataTypeComboBox.Items.Add( name );
+                            EditColumnDataTypeComboBox.Items.Add( _types[ i ] );
+                            CreateTableDataTypeComboBox.Items.Add( _types[ i ] );
                         }
                     }
                 }
@@ -176,7 +151,7 @@ namespace BudgetExecution
         /// <summary>
         /// Called when [provider button checked].
         /// </summary>
-        /// <param name="sender">The sender.</param>
+        /// <param name="sender">The sender.</param> 
         public virtual void OnProviderButtonChecked( object sender )
         {
             if( sender is RadioButton button )
@@ -314,7 +289,8 @@ namespace BudgetExecution
 
                     foreach( TabPageAdv page in TabControl.TabPages )
                     {
-                        if( page != null )
+                        if( page != null 
+                           && !string.IsNullOrEmpty( page.Name ))
                         {
                             _tabPages.Add( page.Name, page );
                         }

@@ -116,7 +116,7 @@
             // 
             // HeaderLabel
             // 
-            this.HeaderLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.HeaderLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.HeaderLabel.BindingSource = null;
             this.HeaderLabel.DataFilter = null;
             this.HeaderLabel.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -127,7 +127,7 @@
             this.HeaderLabel.Name = "HeaderLabel";
             this.HeaderLabel.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.HeaderLabel.Outline = false;
-            this.HeaderLabel.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.HeaderLabel.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.HeaderLabel.OutlineLocation = new System.Drawing.Point(0, 0);
             this.HeaderLabel.Padding = new System.Windows.Forms.Padding(1);
             this.HeaderLabel.ReflectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -136,7 +136,7 @@
             this.HeaderLabel.ShadowDirection = 315;
             this.HeaderLabel.ShadowLocation = new System.Drawing.Point(0, 0);
             this.HeaderLabel.ShadowOpacity = 100;
-            this.HeaderLabel.Size = new System.Drawing.Size(988, 65);
+            this.HeaderLabel.Size = new System.Drawing.Size(968, 65);
             this.HeaderLabel.TabIndex = 22;
             this.HeaderLabel.TextAlignment = System.Drawing.StringAlignment.Center;
             this.HeaderLabel.TextLineAlignment = System.Drawing.StringAlignment.Far;
@@ -151,9 +151,9 @@
             // 
             // DataGridGroupBox
             // 
-            this.DataGridGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.DataGridGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.DataGridGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.DataGridGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.DataGridGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.DataGridGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.DataGridGroupBox.BindingSource = null;
             this.DataGridGroupBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.DataGridGroupBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
@@ -176,7 +176,7 @@
             this.DataGridGroupBox.Padding = new System.Windows.Forms.Padding(1);
             this.DataGridGroupBox.Separator = true;
             this.DataGridGroupBox.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.DataGridGroupBox.Size = new System.Drawing.Size(968, 557);
+            this.DataGridGroupBox.Size = new System.Drawing.Size(968, 568);
             this.DataGridGroupBox.TabIndex = 21;
             this.DataGridGroupBox.TextAlignment = System.Drawing.StringAlignment.Near;
             this.DataGridGroupBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -193,7 +193,7 @@
             // 
             // GridPanel
             // 
-            this.GridPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.GridPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.GridPanel.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.GridPanel.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.GridPanel.BindingSource = null;
@@ -213,7 +213,7 @@
             this.GridPanel.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.GridPanel.Name = "GridPanel";
             this.GridPanel.Padding = new System.Windows.Forms.Padding(1);
-            this.GridPanel.Size = new System.Drawing.Size(942, 497);
+            this.GridPanel.Size = new System.Drawing.Size(942, 489);
             this.GridPanel.TabIndex = 23;
             this.GridPanel.Text = "layout1";
             this.GridPanel.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
@@ -282,7 +282,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.DataGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGrid.Size = new System.Drawing.Size(942, 497);
+            this.DataGrid.Size = new System.Drawing.Size(942, 489);
             this.DataGrid.TabIndex = 0;
             this.DataGrid.ToolTip = null;
             // 
@@ -401,7 +401,7 @@
             this.ToolStrip.Label = this.Label;
             this.ToolStrip.LastButton = this.LastButton;
             this.ToolStrip.LauncherStyle = Syncfusion.Windows.Forms.Tools.LauncherStyle.Office12;
-            this.ToolStrip.Location = new System.Drawing.Point(0, 715);
+            this.ToolStrip.Location = new System.Drawing.Point(0, 698);
             this.ToolStrip.Margin = new System.Windows.Forms.Padding(1);
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.NextButton = this.NextButton;
@@ -416,7 +416,7 @@
             this.ToolStrip.Separators = null;
             this.ToolStrip.ShowCaption = true;
             this.ToolStrip.ShowLauncher = true;
-            this.ToolStrip.Size = new System.Drawing.Size(1388, 48);
+            this.ToolStrip.Size = new System.Drawing.Size(1388, 64);
             this.ToolStrip.TabIndex = 0;
             this.ToolStrip.TextBox = this.TextBox;
             this.ToolStrip.ThemeName = "Office2016DarkGray";
@@ -447,7 +447,7 @@
             this.CalculatorButton.Margin = new System.Windows.Forms.Padding(1);
             this.CalculatorButton.Name = "CalculatorButton";
             this.CalculatorButton.Padding = new System.Windows.Forms.Padding(1);
-            this.CalculatorButton.Size = new System.Drawing.Size(26, 30);
+            this.CalculatorButton.Size = new System.Drawing.Size(26, 46);
             this.CalculatorButton.ToolTip = this.ToolTip;
             this.CalculatorButton.ToolType = BudgetExecution.ToolType.CalculatorButton;
             // 
@@ -467,7 +467,7 @@
             this.ChartButton.Margin = new System.Windows.Forms.Padding(1);
             this.ChartButton.Name = "ChartButton";
             this.ChartButton.Padding = new System.Windows.Forms.Padding(1);
-            this.ChartButton.Size = new System.Drawing.Size(26, 30);
+            this.ChartButton.Size = new System.Drawing.Size(26, 46);
             this.ChartButton.ToolTip = this.ToolTip;
             this.ChartButton.ToolType = BudgetExecution.ToolType.ChartButton;
             // 
@@ -487,7 +487,7 @@
             this.DeleteRecordButton.Margin = new System.Windows.Forms.Padding(1);
             this.DeleteRecordButton.Name = "DeleteRecordButton";
             this.DeleteRecordButton.Padding = new System.Windows.Forms.Padding(1);
-            this.DeleteRecordButton.Size = new System.Drawing.Size(26, 30);
+            this.DeleteRecordButton.Size = new System.Drawing.Size(26, 46);
             this.DeleteRecordButton.ToolTip = this.ToolTip;
             this.DeleteRecordButton.ToolType = BudgetExecution.ToolType.DeleteRecordButton;
             // 
@@ -507,7 +507,7 @@
             this.DropDown.Name = "DropDown";
             this.DropDown.Numeric = BudgetExecution.Numeric.Accepted;
             this.DropDown.Padding = new System.Windows.Forms.Padding(1);
-            this.DropDown.Size = new System.Drawing.Size(152, 30);
+            this.DropDown.Size = new System.Drawing.Size(152, 46);
             this.DropDown.Style = Syncfusion.Windows.Forms.Tools.ToolStripExStyle.Office2016Black;
             this.DropDown.Tag = "Make Selection";
             this.DropDown.ToolTipText = "Make Selection";
@@ -528,7 +528,7 @@
             this.EditButton.Margin = new System.Windows.Forms.Padding(1);
             this.EditButton.Name = "EditButton";
             this.EditButton.Padding = new System.Windows.Forms.Padding(1);
-            this.EditButton.Size = new System.Drawing.Size(26, 30);
+            this.EditButton.Size = new System.Drawing.Size(26, 46);
             this.EditButton.ToolTip = this.ToolTip;
             this.EditButton.ToolType = BudgetExecution.ToolType.EditRecordButton;
             // 
@@ -548,7 +548,7 @@
             this.FirstButton.Margin = new System.Windows.Forms.Padding(1);
             this.FirstButton.Name = "FirstButton";
             this.FirstButton.Padding = new System.Windows.Forms.Padding(1);
-            this.FirstButton.Size = new System.Drawing.Size(26, 30);
+            this.FirstButton.Size = new System.Drawing.Size(26, 46);
             this.FirstButton.ToolTip = this.ToolTip;
             this.FirstButton.ToolType = BudgetExecution.ToolType.FirstButton;
             // 
@@ -568,7 +568,7 @@
             this.HomeButton.Margin = new System.Windows.Forms.Padding(1);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Padding = new System.Windows.Forms.Padding(1);
-            this.HomeButton.Size = new System.Drawing.Size(26, 30);
+            this.HomeButton.Size = new System.Drawing.Size(26, 46);
             this.HomeButton.ToolTip = this.ToolTip;
             this.HomeButton.ToolType = BudgetExecution.ToolType.HomeButton;
             // 
@@ -578,7 +578,7 @@
             this.Separator1.Margin = new System.Windows.Forms.Padding(1);
             this.Separator1.Name = "Separator1";
             this.Separator1.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator1.Size = new System.Drawing.Size(6, 30);
+            this.Separator1.Size = new System.Drawing.Size(6, 46);
             // 
             // Label
             // 
@@ -592,7 +592,7 @@
             this.Label.Margin = new System.Windows.Forms.Padding(1);
             this.Label.Name = "Label";
             this.Label.Padding = new System.Windows.Forms.Padding(1);
-            this.Label.Size = new System.Drawing.Size(38, 30);
+            this.Label.Size = new System.Drawing.Size(38, 46);
             this.Label.Tag = "";
             this.Label.Text = "Data ";
             this.Label.ToolTip = this.ToolTip;
@@ -603,7 +603,7 @@
             this.Separator2.Margin = new System.Windows.Forms.Padding(1);
             this.Separator2.Name = "Separator2";
             this.Separator2.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator2.Size = new System.Drawing.Size(6, 30);
+            this.Separator2.Size = new System.Drawing.Size(6, 46);
             // 
             // TextBox
             // 
@@ -616,7 +616,7 @@
             this.TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.TextBox.Name = "TextBox";
             this.TextBox.Padding = new System.Windows.Forms.Padding(1);
-            this.TextBox.Size = new System.Drawing.Size(148, 30);
+            this.TextBox.Size = new System.Drawing.Size(132, 46);
             this.TextBox.Tag = "";
             this.TextBox.ToolTip = this.ToolTip;
             // 
@@ -626,7 +626,7 @@
             this.Separator3.Margin = new System.Windows.Forms.Padding(1);
             this.Separator3.Name = "Separator3";
             this.Separator3.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator3.Size = new System.Drawing.Size(6, 30);
+            this.Separator3.Size = new System.Drawing.Size(6, 46);
             // 
             // Separator4
             // 
@@ -634,7 +634,7 @@
             this.Separator4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Separator4.Name = "Separator4";
             this.Separator4.Padding = new System.Windows.Forms.Padding(1, 5, 1, 5);
-            this.Separator4.Size = new System.Drawing.Size(6, 32);
+            this.Separator4.Size = new System.Drawing.Size(6, 48);
             // 
             // Separator5
             // 
@@ -642,7 +642,7 @@
             this.Separator5.Margin = new System.Windows.Forms.Padding(1);
             this.Separator5.Name = "Separator5";
             this.Separator5.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator5.Size = new System.Drawing.Size(6, 30);
+            this.Separator5.Size = new System.Drawing.Size(6, 46);
             // 
             // PreviousButton
             // 
@@ -660,7 +660,7 @@
             this.PreviousButton.Margin = new System.Windows.Forms.Padding(1);
             this.PreviousButton.Name = "PreviousButton";
             this.PreviousButton.Padding = new System.Windows.Forms.Padding(1);
-            this.PreviousButton.Size = new System.Drawing.Size(26, 30);
+            this.PreviousButton.Size = new System.Drawing.Size(26, 46);
             this.PreviousButton.ToolTip = this.ToolTip;
             this.PreviousButton.ToolType = BudgetExecution.ToolType.PreviousButton;
             // 
@@ -670,7 +670,7 @@
             this.Separator6.Margin = new System.Windows.Forms.Padding(1);
             this.Separator6.Name = "Separator6";
             this.Separator6.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator6.Size = new System.Drawing.Size(6, 30);
+            this.Separator6.Size = new System.Drawing.Size(6, 46);
             // 
             // NextButton
             // 
@@ -688,7 +688,7 @@
             this.NextButton.Margin = new System.Windows.Forms.Padding(1);
             this.NextButton.Name = "NextButton";
             this.NextButton.Padding = new System.Windows.Forms.Padding(1);
-            this.NextButton.Size = new System.Drawing.Size(26, 30);
+            this.NextButton.Size = new System.Drawing.Size(26, 46);
             this.NextButton.ToolTip = this.ToolTip;
             this.NextButton.ToolType = BudgetExecution.ToolType.NextButton;
             // 
@@ -698,7 +698,7 @@
             this.Separator7.Margin = new System.Windows.Forms.Padding(1);
             this.Separator7.Name = "Separator7";
             this.Separator7.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator7.Size = new System.Drawing.Size(6, 30);
+            this.Separator7.Size = new System.Drawing.Size(6, 46);
             // 
             // LastButton
             // 
@@ -716,7 +716,7 @@
             this.LastButton.Margin = new System.Windows.Forms.Padding(1);
             this.LastButton.Name = "LastButton";
             this.LastButton.Padding = new System.Windows.Forms.Padding(1);
-            this.LastButton.Size = new System.Drawing.Size(26, 30);
+            this.LastButton.Size = new System.Drawing.Size(26, 46);
             this.LastButton.ToolTip = this.ToolTip;
             this.LastButton.ToolType = BudgetExecution.ToolType.LastButton;
             // 
@@ -726,7 +726,7 @@
             this.Separator8.Margin = new System.Windows.Forms.Padding(1);
             this.Separator8.Name = "Separator8";
             this.Separator8.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator8.Size = new System.Drawing.Size(6, 30);
+            this.Separator8.Size = new System.Drawing.Size(6, 46);
             // 
             // FilterDataButton
             // 
@@ -744,7 +744,7 @@
             this.FilterDataButton.Margin = new System.Windows.Forms.Padding(1);
             this.FilterDataButton.Name = "FilterDataButton";
             this.FilterDataButton.Padding = new System.Windows.Forms.Padding(1);
-            this.FilterDataButton.Size = new System.Drawing.Size(26, 30);
+            this.FilterDataButton.Size = new System.Drawing.Size(26, 46);
             this.FilterDataButton.ToolTip = this.ToolTip;
             this.FilterDataButton.ToolType = BudgetExecution.ToolType.FilterDataButton;
             // 
@@ -754,7 +754,7 @@
             this.Separator9.Margin = new System.Windows.Forms.Padding(1);
             this.Separator9.Name = "Separator9";
             this.Separator9.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator9.Size = new System.Drawing.Size(6, 30);
+            this.Separator9.Size = new System.Drawing.Size(6, 46);
             // 
             // Separator11
             // 
@@ -762,7 +762,7 @@
             this.Separator11.Margin = new System.Windows.Forms.Padding(1);
             this.Separator11.Name = "Separator11";
             this.Separator11.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator11.Size = new System.Drawing.Size(6, 30);
+            this.Separator11.Size = new System.Drawing.Size(6, 46);
             // 
             // EditColumnButton
             // 
@@ -780,7 +780,7 @@
             this.EditColumnButton.Margin = new System.Windows.Forms.Padding(1);
             this.EditColumnButton.Name = "EditColumnButton";
             this.EditColumnButton.Padding = new System.Windows.Forms.Padding(1);
-            this.EditColumnButton.Size = new System.Drawing.Size(26, 30);
+            this.EditColumnButton.Size = new System.Drawing.Size(26, 46);
             this.EditColumnButton.Text = "toolStripButton4";
             this.EditColumnButton.ToolTip = this.ToolTip;
             this.EditColumnButton.ToolType = BudgetExecution.ToolType.EditColumnButton;
@@ -791,7 +791,7 @@
             this.Separator10.Margin = new System.Windows.Forms.Padding(1);
             this.Separator10.Name = "Separator10";
             this.Separator10.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator10.Size = new System.Drawing.Size(6, 30);
+            this.Separator10.Size = new System.Drawing.Size(6, 46);
             // 
             // AddColumnButton
             // 
@@ -809,7 +809,7 @@
             this.AddColumnButton.Margin = new System.Windows.Forms.Padding(1);
             this.AddColumnButton.Name = "AddColumnButton";
             this.AddColumnButton.Padding = new System.Windows.Forms.Padding(1);
-            this.AddColumnButton.Size = new System.Drawing.Size(26, 30);
+            this.AddColumnButton.Size = new System.Drawing.Size(26, 46);
             this.AddColumnButton.Text = "toolStripButton1";
             this.AddColumnButton.ToolTip = this.ToolTip;
             this.AddColumnButton.ToolType = BudgetExecution.ToolType.AddColumnButton;
@@ -820,7 +820,7 @@
             this.Separator12.Margin = new System.Windows.Forms.Padding(1);
             this.Separator12.Name = "Separator12";
             this.Separator12.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator12.Size = new System.Drawing.Size(6, 30);
+            this.Separator12.Size = new System.Drawing.Size(6, 46);
             // 
             // DeleteColumnButton
             // 
@@ -838,7 +838,7 @@
             this.DeleteColumnButton.Margin = new System.Windows.Forms.Padding(1);
             this.DeleteColumnButton.Name = "DeleteColumnButton";
             this.DeleteColumnButton.Padding = new System.Windows.Forms.Padding(1);
-            this.DeleteColumnButton.Size = new System.Drawing.Size(26, 30);
+            this.DeleteColumnButton.Size = new System.Drawing.Size(26, 46);
             this.DeleteColumnButton.ToolTip = this.ToolTip;
             this.DeleteColumnButton.ToolType = BudgetExecution.ToolType.DeleteColumnButton;
             // 
@@ -848,7 +848,7 @@
             this.Separator27.Margin = new System.Windows.Forms.Padding(1);
             this.Separator27.Name = "Separator27";
             this.Separator27.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator27.Size = new System.Drawing.Size(6, 30);
+            this.Separator27.Size = new System.Drawing.Size(6, 46);
             // 
             // Separator19
             // 
@@ -856,7 +856,7 @@
             this.Separator19.Margin = new System.Windows.Forms.Padding(1);
             this.Separator19.Name = "Separator19";
             this.Separator19.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator19.Size = new System.Drawing.Size(6, 30);
+            this.Separator19.Size = new System.Drawing.Size(6, 46);
             // 
             // CopyButton
             // 
@@ -874,7 +874,7 @@
             this.CopyButton.Margin = new System.Windows.Forms.Padding(1);
             this.CopyButton.Name = "CopyButton";
             this.CopyButton.Padding = new System.Windows.Forms.Padding(1);
-            this.CopyButton.Size = new System.Drawing.Size(26, 30);
+            this.CopyButton.Size = new System.Drawing.Size(26, 46);
             this.CopyButton.Text = "toolStripButton5";
             this.CopyButton.ToolTip = this.ToolTip;
             this.CopyButton.ToolType = BudgetExecution.ToolType.CopyButton;
@@ -885,7 +885,7 @@
             this.Separator20.Margin = new System.Windows.Forms.Padding(1);
             this.Separator20.Name = "Separator20";
             this.Separator20.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator20.Size = new System.Drawing.Size(6, 30);
+            this.Separator20.Size = new System.Drawing.Size(6, 46);
             // 
             // AddTableButton
             // 
@@ -903,7 +903,7 @@
             this.AddTableButton.Margin = new System.Windows.Forms.Padding(1);
             this.AddTableButton.Name = "AddTableButton";
             this.AddTableButton.Padding = new System.Windows.Forms.Padding(1);
-            this.AddTableButton.Size = new System.Drawing.Size(26, 30);
+            this.AddTableButton.Size = new System.Drawing.Size(26, 46);
             this.AddTableButton.ToolTip = this.ToolTip;
             this.AddTableButton.ToolType = BudgetExecution.ToolType.AddTableButton;
             // 
@@ -913,7 +913,7 @@
             this.Separator21.Margin = new System.Windows.Forms.Padding(1);
             this.Separator21.Name = "Separator21";
             this.Separator21.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator21.Size = new System.Drawing.Size(6, 30);
+            this.Separator21.Size = new System.Drawing.Size(6, 46);
             // 
             // DeleteTableButton
             // 
@@ -931,7 +931,7 @@
             this.DeleteTableButton.Margin = new System.Windows.Forms.Padding(1);
             this.DeleteTableButton.Name = "DeleteTableButton";
             this.DeleteTableButton.Padding = new System.Windows.Forms.Padding(1);
-            this.DeleteTableButton.Size = new System.Drawing.Size(26, 30);
+            this.DeleteTableButton.Size = new System.Drawing.Size(26, 46);
             this.DeleteTableButton.ToolTip = this.ToolTip;
             this.DeleteTableButton.ToolType = BudgetExecution.ToolType.DeleteTableButton;
             // 
@@ -941,7 +941,7 @@
             this.Separator22.Margin = new System.Windows.Forms.Padding(1);
             this.Separator22.Name = "Separator22";
             this.Separator22.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator22.Size = new System.Drawing.Size(6, 30);
+            this.Separator22.Size = new System.Drawing.Size(6, 46);
             // 
             // RefreshButton
             // 
@@ -958,7 +958,7 @@
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(1);
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Padding = new System.Windows.Forms.Padding(1);
-            this.RefreshButton.Size = new System.Drawing.Size(23, 30);
+            this.RefreshButton.Size = new System.Drawing.Size(23, 46);
             this.RefreshButton.ToolTip = this.ToolTip;
             this.RefreshButton.ToolType = BudgetExecution.ToolType.RefreshButton;
             // 
@@ -968,7 +968,7 @@
             this.Separator24.Margin = new System.Windows.Forms.Padding(1);
             this.Separator24.Name = "Separator24";
             this.Separator24.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator24.Size = new System.Drawing.Size(6, 30);
+            this.Separator24.Size = new System.Drawing.Size(6, 46);
             // 
             // VerifyButton
             // 
@@ -986,7 +986,7 @@
             this.VerifyButton.Margin = new System.Windows.Forms.Padding(1);
             this.VerifyButton.Name = "VerifyButton";
             this.VerifyButton.Padding = new System.Windows.Forms.Padding(1);
-            this.VerifyButton.Size = new System.Drawing.Size(26, 30);
+            this.VerifyButton.Size = new System.Drawing.Size(26, 46);
             this.VerifyButton.ToolTip = this.ToolTip;
             this.VerifyButton.ToolType = BudgetExecution.ToolType.VerifyButton;
             // 
@@ -996,7 +996,7 @@
             this.Separator23.Margin = new System.Windows.Forms.Padding(1);
             this.Separator23.Name = "Separator23";
             this.Separator23.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator23.Size = new System.Drawing.Size(6, 30);
+            this.Separator23.Size = new System.Drawing.Size(6, 46);
             // 
             // SaveButton
             // 
@@ -1014,7 +1014,7 @@
             this.SaveButton.Margin = new System.Windows.Forms.Padding(1);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Padding = new System.Windows.Forms.Padding(1);
-            this.SaveButton.Size = new System.Drawing.Size(26, 30);
+            this.SaveButton.Size = new System.Drawing.Size(26, 46);
             this.SaveButton.ToolTip = this.ToolTip;
             this.SaveButton.ToolType = BudgetExecution.ToolType.SaveButton;
             // 
@@ -1024,7 +1024,7 @@
             this.Separator25.Margin = new System.Windows.Forms.Padding(1);
             this.Separator25.Name = "Separator25";
             this.Separator25.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator25.Size = new System.Drawing.Size(6, 30);
+            this.Separator25.Size = new System.Drawing.Size(6, 46);
             // 
             // EditSqlButton
             // 
@@ -1042,7 +1042,7 @@
             this.EditSqlButton.Margin = new System.Windows.Forms.Padding(1);
             this.EditSqlButton.Name = "EditSqlButton";
             this.EditSqlButton.Padding = new System.Windows.Forms.Padding(1);
-            this.EditSqlButton.Size = new System.Drawing.Size(26, 30);
+            this.EditSqlButton.Size = new System.Drawing.Size(26, 46);
             this.EditSqlButton.ToolTip = this.ToolTip;
             this.EditSqlButton.ToolType = BudgetExecution.ToolType.EditSqlButton;
             // 
@@ -1052,7 +1052,7 @@
             this.Separator13.Margin = new System.Windows.Forms.Padding(1);
             this.Separator13.Name = "Separator13";
             this.Separator13.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator13.Size = new System.Drawing.Size(6, 30);
+            this.Separator13.Size = new System.Drawing.Size(6, 46);
             // 
             // ExcelButton
             // 
@@ -1070,7 +1070,7 @@
             this.ExcelButton.Margin = new System.Windows.Forms.Padding(1);
             this.ExcelButton.Name = "ExcelButton";
             this.ExcelButton.Padding = new System.Windows.Forms.Padding(1);
-            this.ExcelButton.Size = new System.Drawing.Size(26, 30);
+            this.ExcelButton.Size = new System.Drawing.Size(26, 46);
             this.ExcelButton.ToolTip = this.ToolTip;
             this.ExcelButton.ToolType = BudgetExecution.ToolType.ExcelButton;
             // 
@@ -1080,7 +1080,7 @@
             this.Separator14.Margin = new System.Windows.Forms.Padding(1);
             this.Separator14.Name = "Separator14";
             this.Separator14.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator14.Size = new System.Drawing.Size(6, 30);
+            this.Separator14.Size = new System.Drawing.Size(6, 46);
             // 
             // BrowseButton
             // 
@@ -1097,7 +1097,7 @@
             this.BrowseButton.Margin = new System.Windows.Forms.Padding(1);
             this.BrowseButton.Name = "BrowseButton";
             this.BrowseButton.Padding = new System.Windows.Forms.Padding(1);
-            this.BrowseButton.Size = new System.Drawing.Size(23, 30);
+            this.BrowseButton.Size = new System.Drawing.Size(23, 46);
             this.BrowseButton.ToolTip = this.ToolTip;
             this.BrowseButton.ToolType = BudgetExecution.ToolType.BrowseButton;
             // 
@@ -1107,7 +1107,7 @@
             this.Separator15.Margin = new System.Windows.Forms.Padding(1);
             this.Separator15.Name = "Separator15";
             this.Separator15.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator15.Size = new System.Drawing.Size(6, 30);
+            this.Separator15.Size = new System.Drawing.Size(6, 46);
             // 
             // Separator18
             // 
@@ -1115,7 +1115,7 @@
             this.Separator18.Margin = new System.Windows.Forms.Padding(1);
             this.Separator18.Name = "Separator18";
             this.Separator18.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator18.Size = new System.Drawing.Size(6, 30);
+            this.Separator18.Size = new System.Drawing.Size(6, 46);
             // 
             // Separator26
             // 
@@ -1123,7 +1123,7 @@
             this.Separator26.Margin = new System.Windows.Forms.Padding(1);
             this.Separator26.Name = "Separator26";
             this.Separator26.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator26.Size = new System.Drawing.Size(6, 30);
+            this.Separator26.Size = new System.Drawing.Size(6, 46);
             // 
             // CalendarButton
             // 
@@ -1140,7 +1140,7 @@
             this.CalendarButton.Margin = new System.Windows.Forms.Padding(1);
             this.CalendarButton.Name = "CalendarButton";
             this.CalendarButton.Padding = new System.Windows.Forms.Padding(1);
-            this.CalendarButton.Size = new System.Drawing.Size(23, 30);
+            this.CalendarButton.Size = new System.Drawing.Size(23, 46);
             this.CalendarButton.Text = "toolStripButton1";
             this.CalendarButton.ToolTip = this.ToolTip;
             this.CalendarButton.ToolType = BudgetExecution.ToolType.CalendarButton;
@@ -1151,14 +1151,14 @@
             this.Separator29.Margin = new System.Windows.Forms.Padding(1);
             this.Separator29.Name = "Separator29";
             this.Separator29.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator29.Size = new System.Drawing.Size(6, 30);
+            this.Separator29.Size = new System.Drawing.Size(6, 46);
             // 
             // ProgressBar
             // 
             this.ProgressBar.Margin = new System.Windows.Forms.Padding(1);
             this.ProgressBar.Name = "ProgressBar";
             this.ProgressBar.Padding = new System.Windows.Forms.Padding(1);
-            this.ProgressBar.Size = new System.Drawing.Size(102, 30);
+            this.ProgressBar.Size = new System.Drawing.Size(102, 46);
             // 
             // Separator28
             // 
@@ -1166,15 +1166,15 @@
             this.Separator28.Margin = new System.Windows.Forms.Padding(1);
             this.Separator28.Name = "Separator28";
             this.Separator28.Padding = new System.Windows.Forms.Padding(1);
-            this.Separator28.Size = new System.Drawing.Size(6, 30);
+            this.Separator28.Size = new System.Drawing.Size(6, 46);
             // 
             // ColumnGroupBox
             // 
             this.ColumnGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ColumnGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ColumnGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ColumnGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ColumnGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ColumnGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ColumnGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ColumnGroupBox.BindingSource = null;
             this.ColumnGroupBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ColumnGroupBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
@@ -1191,13 +1191,13 @@
             this.ColumnGroupBox.HeaderText = null;
             this.ColumnGroupBox.HoverText = null;
             this.ColumnGroupBox.Image = null;
-            this.ColumnGroupBox.Location = new System.Drawing.Point(1022, 294);
+            this.ColumnGroupBox.Location = new System.Drawing.Point(1022, 301);
             this.ColumnGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ColumnGroupBox.Name = "ColumnGroupBox";
             this.ColumnGroupBox.Padding = new System.Windows.Forms.Padding(1);
             this.ColumnGroupBox.Separator = true;
             this.ColumnGroupBox.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ColumnGroupBox.Size = new System.Drawing.Size(337, 174);
+            this.ColumnGroupBox.Size = new System.Drawing.Size(337, 158);
             this.ColumnGroupBox.TabIndex = 16;
             this.ColumnGroupBox.TextAlignment = System.Drawing.StringAlignment.Near;
             this.ColumnGroupBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1215,9 +1215,9 @@
             // ColumnListBox
             // 
             this.ColumnListBox.AlternateColors = true;
-            this.ColumnListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ColumnListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ColumnListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ColumnListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ColumnListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ColumnListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ColumnListBox.BindingSource = null;
             this.ColumnListBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ColumnListBox.Border.HoverColor = System.Drawing.Color.SteelBlue;
@@ -1231,16 +1231,16 @@
             this.ColumnListBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ColumnListBox.HoverText = null;
             this.ColumnListBox.ImageList = null;
-            this.ColumnListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ColumnListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ColumnListBox.ItemHeight = 30;
             this.ColumnListBox.ItemLineAlignment = System.Drawing.StringAlignment.Center;
-            this.ColumnListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ColumnListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ColumnListBox.ItemSelected = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(39)))), ((int)(((byte)(70)))));
             this.ColumnListBox.Location = new System.Drawing.Point(6, 35);
             this.ColumnListBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ColumnListBox.Name = "ColumnListBox";
             this.ColumnListBox.Padding = new System.Windows.Forms.Padding(1);
-            this.ColumnListBox.Size = new System.Drawing.Size(325, 124);
+            this.ColumnListBox.Size = new System.Drawing.Size(325, 108);
             this.ColumnListBox.TabIndex = 1;
             this.ColumnListBox.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
             this.ColumnListBox.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1255,9 +1255,9 @@
             // 
             this.ValueGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ValueGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ValueGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ValueGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ValueGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ValueGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ValueGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ValueGroupBox.BindingSource = null;
             this.ValueGroupBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ValueGroupBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
@@ -1274,13 +1274,13 @@
             this.ValueGroupBox.HeaderText = null;
             this.ValueGroupBox.HoverText = null;
             this.ValueGroupBox.Image = null;
-            this.ValueGroupBox.Location = new System.Drawing.Point(1022, 474);
+            this.ValueGroupBox.Location = new System.Drawing.Point(1022, 496);
             this.ValueGroupBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ValueGroupBox.Name = "ValueGroupBox";
             this.ValueGroupBox.Padding = new System.Windows.Forms.Padding(1);
             this.ValueGroupBox.Separator = true;
             this.ValueGroupBox.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ValueGroupBox.Size = new System.Drawing.Size(337, 180);
+            this.ValueGroupBox.Size = new System.Drawing.Size(337, 158);
             this.ValueGroupBox.TabIndex = 17;
             this.ValueGroupBox.TextAlignment = System.Drawing.StringAlignment.Near;
             this.ValueGroupBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1298,9 +1298,9 @@
             // ValueListBox
             // 
             this.ValueListBox.AlternateColors = true;
-            this.ValueListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ValueListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ValueListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ValueListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ValueListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ValueListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ValueListBox.BindingSource = null;
             this.ValueListBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ValueListBox.Border.HoverColor = System.Drawing.Color.SteelBlue;
@@ -1314,16 +1314,16 @@
             this.ValueListBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ValueListBox.HoverText = null;
             this.ValueListBox.ImageList = null;
-            this.ValueListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ValueListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ValueListBox.ItemHeight = 30;
             this.ValueListBox.ItemLineAlignment = System.Drawing.StringAlignment.Center;
-            this.ValueListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ValueListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ValueListBox.ItemSelected = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(39)))), ((int)(((byte)(70)))));
             this.ValueListBox.Location = new System.Drawing.Point(6, 39);
             this.ValueListBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ValueListBox.Name = "ValueListBox";
             this.ValueListBox.Padding = new System.Windows.Forms.Padding(1);
-            this.ValueListBox.Size = new System.Drawing.Size(325, 125);
+            this.ValueListBox.Size = new System.Drawing.Size(325, 108);
             this.ValueListBox.TabIndex = 2;
             this.ValueListBox.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
             this.ValueListBox.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1338,9 +1338,9 @@
             // 
             this.TableGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TableGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TableGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TableGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TableGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TableGroupBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TableGroupBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TableGroupBox.BindingSource = null;
             this.TableGroupBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TableGroupBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
@@ -1363,7 +1363,7 @@
             this.TableGroupBox.Padding = new System.Windows.Forms.Padding(1);
             this.TableGroupBox.Separator = true;
             this.TableGroupBox.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TableGroupBox.Size = new System.Drawing.Size(337, 191);
+            this.TableGroupBox.Size = new System.Drawing.Size(337, 158);
             this.TableGroupBox.TabIndex = 15;
             this.TableGroupBox.TextAlignment = System.Drawing.StringAlignment.Near;
             this.TableGroupBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1381,9 +1381,9 @@
             // TableListBox
             // 
             this.TableListBox.AlternateColors = true;
-            this.TableListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TableListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TableListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TableListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TableListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TableListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TableListBox.BindingSource = null;
             this.TableListBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TableListBox.Border.HoverColor = System.Drawing.Color.SteelBlue;
@@ -1397,16 +1397,16 @@
             this.TableListBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.TableListBox.HoverText = null;
             this.TableListBox.ImageList = null;
-            this.TableListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.TableListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.TableListBox.ItemHeight = 30;
             this.TableListBox.ItemLineAlignment = System.Drawing.StringAlignment.Center;
-            this.TableListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TableListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TableListBox.ItemSelected = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(39)))), ((int)(((byte)(70)))));
             this.TableListBox.Location = new System.Drawing.Point(6, 35);
             this.TableListBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.TableListBox.Name = "TableListBox";
             this.TableListBox.Padding = new System.Windows.Forms.Padding(1);
-            this.TableListBox.Size = new System.Drawing.Size(325, 153);
+            this.TableListBox.Size = new System.Drawing.Size(325, 108);
             this.TableListBox.TabIndex = 2;
             this.TableListBox.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
             this.TableListBox.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1437,15 +1437,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.CaptionAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CaptionButtonHoverColor = System.Drawing.Color.DarkRed;
-            this.CaptionFont = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CaptionFont = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.ClientSize = new System.Drawing.Size(1388, 763);
+            this.ClientSize = new System.Drawing.Size(1388, 762);
             this.Controls.Add(this.HeaderLabel);
             this.Controls.Add(this.DataGridGroupBox);
             this.Controls.Add(this.ToolStrip);
@@ -1458,7 +1458,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.MinimizeBox = false;
             this.Name = "DataGridForm";
             this.ShowIcon = false;

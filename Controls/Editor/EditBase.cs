@@ -14,9 +14,22 @@ namespace BudgetExecution
     using Syncfusion.Windows.Forms;
     using Syncfusion.Windows.Forms.Tools;
 
-    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="Syncfusion.Windows.Forms.MetroForm" />
+    [SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public partial class EditBase : MetroForm
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditBase"/> class.
+        /// </summary>
+        public EditBase( )
+        {
+            InitializeComponent( );
+            Text = string.Empty;
+        }
+
         /// <summary>
         /// Gets or sets the source.
         /// </summary>
@@ -50,10 +63,10 @@ namespace BudgetExecution
         public virtual ToolType ToolType { get; set; }
 
         /// <summary>
-        /// Gets or sets the current tab.
+        /// Gets or sets the active tab.
         /// </summary>
         /// <value>
-        /// The current tab.
+        /// The active tab.
         /// </value>
         public virtual TabPageAdv ActiveTab { get; set; }
 
@@ -162,22 +175,12 @@ namespace BudgetExecution
         public virtual IEnumerable<TextBox> TextBoxes { get; set; }
 
         /// <summary>
-        /// Gets or sets the sqlite data types.
+        /// Gets or sets the data types.
         /// </summary>
         /// <value>
-        /// The sqlite data types.
+        /// The data types.
         /// </value>
         public virtual IEnumerable<string> DataTypes { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance 
-        /// of the <see cref="EditBase"/> class.
-        /// </summary>
-        public EditBase( )
-        {
-            InitializeComponent( );
-            Text = string.Empty;
-        }
 
         /// <summary>
         /// Gets the data types.
@@ -190,12 +193,12 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _query = "SELECT DISTINCT SchemaTypes.TypeName" + " FROM SchemaTypes"
-                        + $" WHERE SchemaTypes.Provider = '{provider}'";
+                    var _query = "SELECT DISTINCT SchemaTypes.TypeName" 
+                        + " FROM SchemaTypes"
+                        + $" WHERE SchemaTypes.Database = '{ provider }'";
 
                     var _model = new DataBuilder( Source.SchemaTypes, Provider.Access, _query );
                     var _data = _model.DataTable.GetUniqueFieldValues( "TypeName" );
-
                     return _data?.Length > 0
                         ? _data
                         : default( IEnumerable<string> );
@@ -203,7 +206,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -341,7 +343,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -388,7 +389,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -426,7 +426,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -467,7 +466,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -476,7 +474,7 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Get Error Dialog.
+        /// Fails the specified ex.
         /// </summary>
         /// <param name="ex">The ex.</param>
         protected static void Fail( Exception ex )

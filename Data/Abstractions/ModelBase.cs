@@ -10,23 +10,21 @@ namespace BudgetExecution
     using System.Linq;
     using BudgetExecution;
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <seealso cref="DataAccess" />
+    /// <summary> </summary>
+    /// <seealso cref = "DataAccess"/>
     public abstract class ModelBase : DataAccess
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ModelBase"/> class.
+        /// Initializes a new instance of the
+        /// <see cref = "ModelBase"/>
+        /// class.
         /// </summary>
         protected ModelBase( )
         {
         }
 
-        /// <summary>
-        /// Gets the column ordinals.
-        /// </summary>
-        /// <returns></returns>
+        /// <summary> Gets the column ordinals. </summary>
+        /// <returns> </returns>
         public virtual IEnumerable<int> GetOrdinals( )
         {
             if( DataTable?.Columns?.Count > 0 )
@@ -51,7 +49,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -59,10 +56,8 @@ namespace BudgetExecution
             return default;
         }
 
-        /// <summary>
-        /// Gets the fields.
-        /// </summary>
-        /// <returns></returns>
+        /// <summary> Gets the fields. </summary>
+        /// <returns> </returns>
         public IDictionary<string, Type> GetSchema( )
         {
             if( DataTable?.Columns?.Count > 0 )
@@ -92,7 +87,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -100,10 +94,8 @@ namespace BudgetExecution
             return default;
         }
 
-        /// <summary>
-        /// Gets the elements.
-        /// </summary>
-        /// <returns></returns>
+        /// <summary> Gets the elements. </summary>
+        /// <returns> </returns>
         public IEnumerable<IElement> GetElements( )
         {
             if( Record != null )
@@ -137,7 +129,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -145,12 +136,10 @@ namespace BudgetExecution
             return default;
         }
 
-        /// <summary>
-        /// Filters the data.
-        /// </summary>
+        /// <summary> Filters the data. </summary>
         /// <param name = "dataRows" > </param>
-        /// <param name="where">The dictionary.</param>
-        /// <returns></returns>
+        /// <param name = "where" > The dictionary. </param>
+        /// <returns> </returns>
         public IEnumerable<DataRow> FilterData( IEnumerable<DataRow> dataRows,
             IDictionary<string, object> where )
         {
@@ -162,7 +151,6 @@ namespace BudgetExecution
                     var _criteria = where.ToCriteria( );
                     var _dataTable = dataRows.CopyToDataTable( );
                     var _data = _dataTable.Select( _criteria );
-
                     return _data?.Length > 0
                         ? _data
                         : default( IEnumerable<DataRow> );
@@ -170,7 +158,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -178,10 +165,8 @@ namespace BudgetExecution
             return default;
         }
 
-        /// <summary>
-        /// Gets the columns.
-        /// </summary>
-        /// <returns></returns>
+        /// <summary> Gets the columns. </summary>
+        /// <returns> </returns>
         public IEnumerable<DataColumn> GetDataColumns( DataTable dataTable )
         {
             if( dataTable?.Columns?.Count > 0 )
@@ -210,7 +195,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -218,10 +202,8 @@ namespace BudgetExecution
             return default;
         }
 
-        /// <summary>
-        /// Gets the columns.
-        /// </summary>
-        /// <returns></returns>
+        /// <summary> Gets the columns. </summary>
+        /// <returns> </returns>
         public IEnumerable<DataColumn> GetDataColumns( )
         {
             if( DataTable?.Columns?.Count > 0 )
@@ -253,7 +235,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }

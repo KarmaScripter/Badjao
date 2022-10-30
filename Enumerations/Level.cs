@@ -9,7 +9,7 @@ namespace BudgetExecution
         /// <summary>
         /// The ns
         /// </summary>
-        NS = 0,
+        Treasury = 0,
 
         /// <summary>
         /// The appropriation
@@ -17,14 +17,14 @@ namespace BudgetExecution
         Appropriation = 1,
 
         /// <summary>
-        /// The rpio
-        /// </summary>
-        RPIO = 2,
-
-        /// <summary>
         /// The allowance holder
         /// </summary>
         AllowanceHolder = 3,
+        
+        /// <summary>
+        /// The rpio
+        /// </summary>
+        RPIO = 2,
 
         /// <summary>
         /// The program area
@@ -32,9 +32,9 @@ namespace BudgetExecution
         ProgramArea = 4,
 
         /// <summary>
-        /// The progream project
+        /// The program project
         /// </summary>
-        ProgreamProject = 5,
+        ProgramProject = 5,
 
         /// <summary>
         /// The program results code

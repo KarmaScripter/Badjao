@@ -117,27 +117,27 @@
             // 
             // TabControl
             // 
-            this.TabControl.ActiveTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TabControl.ActiveTabFont = new System.Drawing.Font("Roboto", 9F);
-            this.TabControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TabControl.ActiveTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.TabControl.ActiveTabFont = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TabControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.TabControl.BeforeTouchSize = new System.Drawing.Size(1362, 522);
             this.TabControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TabControl.BorderWidth = 1;
             this.TabControl.CanOverrideStyle = true;
-            this.TabControl.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TabControl.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.TabControl.Controls.Add(this.DataTab);
             this.TabControl.Controls.Add(this.SqlTab);
-            this.TabControl.FixedSingleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TabControl.FixedSingleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.TabControl.FocusOnTabClick = false;
-            this.TabControl.InactiveCloseButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.TabControl.InactiveTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TabControl.InactiveCloseButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.TabControl.InactiveTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.TabControl.ItemSize = new System.Drawing.Size(158, 23);
             this.TabControl.Location = new System.Drawing.Point(2, 7);
             this.TabControl.Margin = new System.Windows.Forms.Padding(1);
             this.TabControl.Name = "TabControl";
             this.TabControl.Size = new System.Drawing.Size(1362, 522);
             this.TabControl.TabIndex = 8;
-            this.TabControl.TabPanelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.TabControl.TabPanelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.TabControl.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
             this.TabControl.ThemeName = "TabRendererMetro";
             this.TabControl.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
@@ -156,7 +156,9 @@
             // 
             // DataTab
             // 
+            this.DataTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.DataTab.Controls.Add(this.FrameTable);
+            this.DataTab.Image = null;
             this.DataTab.ImageSize = new System.Drawing.Size(14, 14);
             this.DataTab.Location = new System.Drawing.Point(0, 22);
             this.DataTab.Margin = new System.Windows.Forms.Padding(1);
@@ -164,7 +166,7 @@
             this.DataTab.Padding = new System.Windows.Forms.Padding(1);
             this.DataTab.ShowCloseButton = true;
             this.DataTab.Size = new System.Drawing.Size(1362, 500);
-            this.DataTab.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.DataTab.TabBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.DataTab.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.DataTab.TabIndex = 8;
             this.DataTab.Text = "  Edit Mode";
@@ -172,7 +174,7 @@
             // 
             // FrameTable
             // 
-            this.FrameTable.BackColor = System.Drawing.Color.Transparent;
+            this.FrameTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.FrameTable.ColumnCount = 7;
             this.FrameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28476F));
             this.FrameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28476F));
@@ -248,7 +250,7 @@
             // Frame1
             // 
             this.Frame1.BackColor = System.Drawing.Color.Transparent;
-            this.Frame1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame1.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame1.Index = 1;
             this.Frame1.Location = new System.Drawing.Point(2, 2);
@@ -261,7 +263,7 @@
             // Frame2
             // 
             this.Frame2.BackColor = System.Drawing.Color.Transparent;
-            this.Frame2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame2.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame2.Index = 2;
             this.Frame2.Location = new System.Drawing.Point(192, 2);
@@ -274,7 +276,7 @@
             // Frame3
             // 
             this.Frame3.BackColor = System.Drawing.Color.Transparent;
-            this.Frame3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame3.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame3.Index = 3;
             this.Frame3.Location = new System.Drawing.Point(382, 2);
@@ -287,7 +289,7 @@
             // Frame4
             // 
             this.Frame4.BackColor = System.Drawing.Color.Transparent;
-            this.Frame4.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame4.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame4.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame4.Index = 4;
             this.Frame4.Location = new System.Drawing.Point(573, 2);
@@ -300,7 +302,7 @@
             // Frame5
             // 
             this.Frame5.BackColor = System.Drawing.Color.Transparent;
-            this.Frame5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame5.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame5.Index = 5;
             this.Frame5.Location = new System.Drawing.Point(764, 2);
@@ -313,7 +315,7 @@
             // Frame6
             // 
             this.Frame6.BackColor = System.Drawing.Color.Transparent;
-            this.Frame6.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame6.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame6.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame6.Index = 6;
             this.Frame6.Location = new System.Drawing.Point(955, 2);
@@ -326,7 +328,7 @@
             // Frame7
             // 
             this.Frame7.BackColor = System.Drawing.Color.Transparent;
-            this.Frame7.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame7.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame7.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame7.Index = 7;
             this.Frame7.Location = new System.Drawing.Point(1145, 2);
@@ -339,7 +341,7 @@
             // Frame8
             // 
             this.Frame8.BackColor = System.Drawing.Color.Transparent;
-            this.Frame8.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame8.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame8.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame8.Index = 8;
             this.Frame8.Location = new System.Drawing.Point(2, 58);
@@ -352,7 +354,7 @@
             // Frame9
             // 
             this.Frame9.BackColor = System.Drawing.Color.Transparent;
-            this.Frame9.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame9.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame9.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame9.Index = 9;
             this.Frame9.Location = new System.Drawing.Point(192, 58);
@@ -365,7 +367,7 @@
             // Frame10
             // 
             this.Frame10.BackColor = System.Drawing.Color.Transparent;
-            this.Frame10.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame10.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame10.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame10.Index = 10;
             this.Frame10.Location = new System.Drawing.Point(382, 58);
@@ -378,7 +380,7 @@
             // Frame11
             // 
             this.Frame11.BackColor = System.Drawing.Color.Transparent;
-            this.Frame11.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame11.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame11.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame11.Index = 11;
             this.Frame11.Location = new System.Drawing.Point(573, 58);
@@ -391,7 +393,7 @@
             // Frame12
             // 
             this.Frame12.BackColor = System.Drawing.Color.Transparent;
-            this.Frame12.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame12.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame12.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame12.Index = 12;
             this.Frame12.Location = new System.Drawing.Point(764, 58);
@@ -404,7 +406,7 @@
             // Frame13
             // 
             this.Frame13.BackColor = System.Drawing.Color.Transparent;
-            this.Frame13.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame13.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame13.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame13.Index = 13;
             this.Frame13.Location = new System.Drawing.Point(955, 58);
@@ -417,7 +419,7 @@
             // Frame14
             // 
             this.Frame14.BackColor = System.Drawing.Color.Transparent;
-            this.Frame14.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame14.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame14.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame14.Index = 14;
             this.Frame14.Location = new System.Drawing.Point(1145, 58);
@@ -430,7 +432,7 @@
             // Frame36
             // 
             this.Frame36.BackColor = System.Drawing.Color.Transparent;
-            this.Frame36.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame36.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame36.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame36.Index = 36;
             this.Frame36.Location = new System.Drawing.Point(2, 282);
@@ -443,7 +445,7 @@
             // Frame37
             // 
             this.Frame37.BackColor = System.Drawing.Color.Transparent;
-            this.Frame37.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame37.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame37.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame37.Index = 37;
             this.Frame37.Location = new System.Drawing.Point(192, 282);
@@ -456,7 +458,7 @@
             // Frame38
             // 
             this.Frame38.BackColor = System.Drawing.Color.Transparent;
-            this.Frame38.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame38.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame38.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame38.Index = 38;
             this.Frame38.Location = new System.Drawing.Point(382, 282);
@@ -469,7 +471,7 @@
             // Frame39
             // 
             this.Frame39.BackColor = System.Drawing.Color.Transparent;
-            this.Frame39.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame39.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame39.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame39.Index = 39;
             this.Frame39.Location = new System.Drawing.Point(573, 282);
@@ -482,7 +484,7 @@
             // Frame40
             // 
             this.Frame40.BackColor = System.Drawing.Color.Transparent;
-            this.Frame40.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame40.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame40.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame40.Index = 40;
             this.Frame40.Location = new System.Drawing.Point(764, 282);
@@ -495,7 +497,7 @@
             // Frame41
             // 
             this.Frame41.BackColor = System.Drawing.Color.Transparent;
-            this.Frame41.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame41.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame41.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame41.Index = 41;
             this.Frame41.Location = new System.Drawing.Point(955, 282);
@@ -508,7 +510,7 @@
             // Frame42
             // 
             this.Frame42.BackColor = System.Drawing.Color.Transparent;
-            this.Frame42.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame42.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame42.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame42.Index = 42;
             this.Frame42.Location = new System.Drawing.Point(1145, 282);
@@ -521,7 +523,7 @@
             // Frame43
             // 
             this.Frame43.BackColor = System.Drawing.Color.Transparent;
-            this.Frame43.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame43.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame43.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame43.Index = 43;
             this.Frame43.Location = new System.Drawing.Point(2, 340);
@@ -534,7 +536,7 @@
             // Frame45
             // 
             this.Frame45.BackColor = System.Drawing.Color.Transparent;
-            this.Frame45.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame45.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame45.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame45.Index = 45;
             this.Frame45.Location = new System.Drawing.Point(382, 340);
@@ -547,7 +549,7 @@
             // Frame46
             // 
             this.Frame46.BackColor = System.Drawing.Color.Transparent;
-            this.Frame46.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame46.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame46.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame46.Index = 46;
             this.Frame46.Location = new System.Drawing.Point(573, 340);
@@ -560,7 +562,7 @@
             // Frame47
             // 
             this.Frame47.BackColor = System.Drawing.Color.Transparent;
-            this.Frame47.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame47.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame47.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame47.Index = 47;
             this.Frame47.Location = new System.Drawing.Point(764, 340);
@@ -573,7 +575,7 @@
             // Frame48
             // 
             this.Frame48.BackColor = System.Drawing.Color.Transparent;
-            this.Frame48.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame48.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame48.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame48.Index = 48;
             this.Frame48.Location = new System.Drawing.Point(955, 340);
@@ -586,7 +588,7 @@
             // Frame49
             // 
             this.Frame49.BackColor = System.Drawing.Color.Transparent;
-            this.Frame49.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame49.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame49.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame49.Index = 49;
             this.Frame49.Location = new System.Drawing.Point(1145, 340);
@@ -599,7 +601,7 @@
             // frame25
             // 
             this.frame25.BackColor = System.Drawing.Color.Transparent;
-            this.frame25.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frame25.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.frame25.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.frame25.Index = 25;
             this.frame25.Location = new System.Drawing.Point(573, 170);
@@ -612,7 +614,7 @@
             // frame22
             // 
             this.frame22.BackColor = System.Drawing.Color.Transparent;
-            this.frame22.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frame22.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.frame22.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.frame22.Index = 22;
             this.frame22.Location = new System.Drawing.Point(2, 170);
@@ -625,7 +627,7 @@
             // frame23
             // 
             this.frame23.BackColor = System.Drawing.Color.Transparent;
-            this.frame23.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frame23.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.frame23.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.frame23.Index = 23;
             this.frame23.Location = new System.Drawing.Point(192, 170);
@@ -638,7 +640,7 @@
             // frame24
             // 
             this.frame24.BackColor = System.Drawing.Color.Transparent;
-            this.frame24.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frame24.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.frame24.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.frame24.Index = 24;
             this.frame24.Location = new System.Drawing.Point(382, 170);
@@ -651,7 +653,7 @@
             // frame26
             // 
             this.frame26.BackColor = System.Drawing.Color.Transparent;
-            this.frame26.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frame26.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.frame26.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.frame26.Index = 26;
             this.frame26.Location = new System.Drawing.Point(764, 170);
@@ -664,7 +666,7 @@
             // frame27
             // 
             this.frame27.BackColor = System.Drawing.Color.Transparent;
-            this.frame27.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frame27.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.frame27.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.frame27.Index = 27;
             this.frame27.Location = new System.Drawing.Point(955, 170);
@@ -677,7 +679,7 @@
             // frame28
             // 
             this.frame28.BackColor = System.Drawing.Color.Transparent;
-            this.frame28.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frame28.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.frame28.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.frame28.Index = 28;
             this.frame28.Location = new System.Drawing.Point(1145, 170);
@@ -690,7 +692,7 @@
             // Frame29
             // 
             this.Frame29.BackColor = System.Drawing.Color.Transparent;
-            this.Frame29.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame29.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame29.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame29.Index = 29;
             this.Frame29.Location = new System.Drawing.Point(2, 226);
@@ -703,7 +705,7 @@
             // Frame30
             // 
             this.Frame30.BackColor = System.Drawing.Color.Transparent;
-            this.Frame30.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame30.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame30.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame30.Index = 30;
             this.Frame30.Location = new System.Drawing.Point(192, 226);
@@ -716,7 +718,7 @@
             // Frame31
             // 
             this.Frame31.BackColor = System.Drawing.Color.Transparent;
-            this.Frame31.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame31.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame31.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame31.Index = 31;
             this.Frame31.Location = new System.Drawing.Point(382, 226);
@@ -729,7 +731,7 @@
             // Frame32
             // 
             this.Frame32.BackColor = System.Drawing.Color.Transparent;
-            this.Frame32.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame32.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame32.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame32.Index = 31;
             this.Frame32.Location = new System.Drawing.Point(573, 226);
@@ -742,7 +744,7 @@
             // Frame33
             // 
             this.Frame33.BackColor = System.Drawing.Color.Transparent;
-            this.Frame33.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame33.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame33.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame33.Index = 33;
             this.Frame33.Location = new System.Drawing.Point(764, 226);
@@ -755,7 +757,7 @@
             // Frame34
             // 
             this.Frame34.BackColor = System.Drawing.Color.Transparent;
-            this.Frame34.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame34.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame34.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame34.Index = 34;
             this.Frame34.Location = new System.Drawing.Point(955, 226);
@@ -768,7 +770,7 @@
             // Frame35
             // 
             this.Frame35.BackColor = System.Drawing.Color.Transparent;
-            this.Frame35.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame35.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame35.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame35.Index = 35;
             this.Frame35.Location = new System.Drawing.Point(1145, 226);
@@ -781,7 +783,7 @@
             // Frame15
             // 
             this.Frame15.BackColor = System.Drawing.Color.Transparent;
-            this.Frame15.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame15.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame15.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame15.Index = 15;
             this.Frame15.Location = new System.Drawing.Point(2, 114);
@@ -794,7 +796,7 @@
             // Frame16
             // 
             this.Frame16.BackColor = System.Drawing.Color.Transparent;
-            this.Frame16.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame16.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame16.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame16.Index = 16;
             this.Frame16.Location = new System.Drawing.Point(192, 114);
@@ -807,7 +809,7 @@
             // Frame17
             // 
             this.Frame17.BackColor = System.Drawing.Color.Transparent;
-            this.Frame17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame17.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame17.Index = 17;
             this.Frame17.Location = new System.Drawing.Point(382, 114);
@@ -820,7 +822,7 @@
             // Frame18
             // 
             this.Frame18.BackColor = System.Drawing.Color.Transparent;
-            this.Frame18.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame18.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame18.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame18.Index = 18;
             this.Frame18.Location = new System.Drawing.Point(573, 114);
@@ -833,7 +835,7 @@
             // Frame19
             // 
             this.Frame19.BackColor = System.Drawing.Color.Transparent;
-            this.Frame19.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame19.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame19.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame19.Index = 19;
             this.Frame19.Location = new System.Drawing.Point(764, 114);
@@ -846,7 +848,7 @@
             // Frame20
             // 
             this.Frame20.BackColor = System.Drawing.Color.Transparent;
-            this.Frame20.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame20.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame20.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame20.Index = 20;
             this.Frame20.Location = new System.Drawing.Point(955, 114);
@@ -859,7 +861,7 @@
             // Frame21
             // 
             this.Frame21.BackColor = System.Drawing.Color.Transparent;
-            this.Frame21.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame21.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame21.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame21.Index = 21;
             this.Frame21.Location = new System.Drawing.Point(1145, 114);
@@ -872,7 +874,7 @@
             // Frame44
             // 
             this.Frame44.BackColor = System.Drawing.Color.Transparent;
-            this.Frame44.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Frame44.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Frame44.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Frame44.Index = 44;
             this.Frame44.Location = new System.Drawing.Point(192, 340);
@@ -885,6 +887,7 @@
             // SqlTab
             // 
             this.SqlTab.Controls.Add(this.SqlEditor);
+            this.SqlTab.Image = null;
             this.SqlTab.ImageSize = new System.Drawing.Size(14, 14);
             this.SqlTab.Location = new System.Drawing.Point(0, 22);
             this.SqlTab.Name = "SqlTab";
@@ -901,27 +904,24 @@
             this.SqlEditor.AllowZoom = false;
             this.SqlEditor.AlwaysShowScrollers = true;
             this.SqlEditor.BackColor = System.Drawing.Color.LightGray;
-            this.SqlEditor.BackgroundColor = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.LightGray);
             this.SqlEditor.BookmarkTooltipBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.SqlEditor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SqlEditor.CanOverrideStyle = true;
             this.SqlEditor.ChangedLinesMarkingLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(98)))));
             this.SqlEditor.CodeSnipptSize = new System.Drawing.Size(100, 100);
-            this.SqlEditor.ColumnGuidesMeasuringFont = new System.Drawing.Font("Source Code Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SqlEditor.ColumnGuidesMeasuringFont = new System.Drawing.Font("Source Code Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SqlEditor.Configurator = config1;
             this.SqlEditor.ContextChoiceBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.SqlEditor.ContextChoiceBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(166)))), ((int)(((byte)(50)))));
             this.SqlEditor.ContextChoiceForeColor = System.Drawing.Color.White;
-            this.SqlEditor.ContextPromptBackgroundBrush = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30))))));
             this.SqlEditor.ContextPromptBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.SqlEditor.ContextTooltipBackgroundBrush = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30))))));
             this.SqlEditor.ContextTooltipBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.SqlEditor.CurrentLineHighlightColor = System.Drawing.Color.SteelBlue;
             this.SqlEditor.IndentBlockHighlightingColor = System.Drawing.Color.SteelBlue;
             this.SqlEditor.IndentLineColor = System.Drawing.Color.SteelBlue;
             this.SqlEditor.IndicatorMarginBackColor = System.Drawing.Color.Empty;
             this.SqlEditor.LineNumbersColor = System.Drawing.Color.CornflowerBlue;
-            this.SqlEditor.LineNumbersFont = new System.Drawing.Font("Source Code Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SqlEditor.LineNumbersFont = new System.Drawing.Font("Source Code Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SqlEditor.Location = new System.Drawing.Point(149, 33);
             this.SqlEditor.Name = "SqlEditor";
             this.SqlEditor.RenderRightToLeft = false;
@@ -929,6 +929,7 @@
             this.SqlEditor.ScrollPosition = new System.Drawing.Point(0, 0);
             this.SqlEditor.ScrollVisualStyle = Syncfusion.Windows.Forms.ScrollBarCustomDrawStyles.Office2016;
             this.SqlEditor.SelectionTextColor = System.Drawing.Color.White;
+            this.SqlEditor.ShowEndOfLine = false;
             this.SqlEditor.Size = new System.Drawing.Size(1040, 421);
             this.SqlEditor.StatusBarSettings.CoordsPanel.Width = 150;
             this.SqlEditor.StatusBarSettings.EncodingPanel.Width = 100;
@@ -944,7 +945,7 @@
             this.SqlEditor.Text = "This is text";
             this.SqlEditor.ThemeName = "Office2016Black";
             this.SqlEditor.ThemeStyle.BookmarkMarginBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.SqlEditor.ThemeStyle.LineNumberFont = new System.Drawing.Font("Source Code Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SqlEditor.ThemeStyle.LineNumberFont = new System.Drawing.Font("Source Code Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SqlEditor.ThemeStyle.UserMarginBackColor = System.Drawing.Color.Black;
             this.SqlEditor.ThemeStyle.UserMarginBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.SqlEditor.UserMarginBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -1008,7 +1009,7 @@
             this.groupBox7.Controls.Add(this.listBox5);
             this.groupBox7.Controls.Add(this.listBox6);
             this.groupBox7.DataFilter = null;
-            this.groupBox7.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox7.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox7.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox7.HeaderText = null;
             this.groupBox7.HoverText = null;
@@ -1051,9 +1052,10 @@
             this.listBox5.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.listBox5.Border.Visible = true;
             this.listBox5.DataFilter = null;
-            this.listBox5.Font = new System.Drawing.Font("Roboto", 9F);
+            this.listBox5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox5.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.listBox5.HoverText = null;
+            this.listBox5.ImageList = null;
             this.listBox5.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.listBox5.ItemHeight = 30;
             this.listBox5.ItemLineAlignment = System.Drawing.StringAlignment.Center;
@@ -1062,6 +1064,7 @@
             this.listBox5.Location = new System.Drawing.Point(15, 40);
             this.listBox5.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.listBox5.Name = "listBox5";
+            this.listBox5.Padding = new System.Windows.Forms.Padding(1);
             this.listBox5.Size = new System.Drawing.Size(348, 140);
             this.listBox5.TabIndex = 2;
             this.listBox5.Text = "listBox3";
@@ -1090,9 +1093,10 @@
             this.listBox6.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.listBox6.Border.Visible = true;
             this.listBox6.DataFilter = null;
-            this.listBox6.Font = new System.Drawing.Font("Roboto", 9F);
+            this.listBox6.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox6.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.listBox6.HoverText = null;
+            this.listBox6.ImageList = null;
             this.listBox6.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.listBox6.ItemHeight = 30;
             this.listBox6.ItemLineAlignment = System.Drawing.StringAlignment.Center;
@@ -1101,6 +1105,7 @@
             this.listBox6.Location = new System.Drawing.Point(15, 40);
             this.listBox6.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.listBox6.Name = "listBox6";
+            this.listBox6.Padding = new System.Windows.Forms.Padding(1);
             this.listBox6.Size = new System.Drawing.Size(348, 140);
             this.listBox6.TabIndex = 1;
             this.listBox6.Text = "listBox4";
@@ -1132,7 +1137,7 @@
             this.groupBox8.Controls.Add(this.visualLabel5);
             this.groupBox8.Controls.Add(this.visualTextBox3);
             this.groupBox8.DataFilter = null;
-            this.groupBox8.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox8.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox8.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox8.HeaderText = null;
             this.groupBox8.HoverText = null;
@@ -1210,7 +1215,7 @@
             this.visualComboBox3.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
             this.visualComboBox3.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.visualComboBox3.Watermark.Active = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.visualComboBox3.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualComboBox3.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.visualComboBox3.Watermark.Inactive = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
             this.visualComboBox3.Watermark.Text = "Watermark text";
             this.visualComboBox3.Watermark.Visible = false;
@@ -1299,11 +1304,11 @@
             this.visualTextBox3.ButtonColor.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.visualTextBox3.ButtonColor.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.visualTextBox3.ButtonColor.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.visualTextBox3.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualTextBox3.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.visualTextBox3.ButtonIndent = 3;
             this.visualTextBox3.ButtonText = "visualButton";
             this.visualTextBox3.ButtonVisible = false;
-            this.visualTextBox3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualTextBox3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.visualTextBox3.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.visualTextBox3.Image = null;
             this.visualTextBox3.ImageSize = new System.Drawing.Size(16, 16);
@@ -1326,7 +1331,7 @@
             this.visualTextBox3.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
             this.visualTextBox3.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.visualTextBox3.Watermark.Active = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.visualTextBox3.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualTextBox3.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.visualTextBox3.Watermark.Inactive = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
             this.visualTextBox3.Watermark.Text = "Watermark text";
             this.visualTextBox3.Watermark.Visible = false;
@@ -1335,13 +1340,13 @@
             // SelectButton
             // 
             this.SelectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SelectButton.BackColor = System.Drawing.Color.Transparent;
-            this.SelectButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.SelectButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.SelectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.SelectButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.SelectButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.SelectButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.SelectButton.BackColorState.Pressed = System.Drawing.Color.SteelBlue;
             this.SelectButton.BindingSource = null;
-            this.SelectButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.SelectButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.SelectButton.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.SelectButton.Border.HoverVisible = true;
             this.SelectButton.Border.Rounding = 6;
@@ -1350,7 +1355,7 @@
             this.SelectButton.Border.Visible = true;
             this.SelectButton.DataFilter = null;
             this.SelectButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.SelectButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.SelectButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SelectButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.SelectButton.HoverText = "Not Yet Implemented!";
             this.SelectButton.Image = null;
@@ -1359,6 +1364,7 @@
             this.SelectButton.Margin = new System.Windows.Forms.Padding(0);
             this.SelectButton.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.SelectButton.Name = "SelectButton";
+            this.SelectButton.Padding = new System.Windows.Forms.Padding(1);
             this.SelectButton.Size = new System.Drawing.Size(140, 55);
             this.SelectButton.TabIndex = 7;
             this.SelectButton.Text = "Select";
@@ -1375,9 +1381,9 @@
             // RefreshButton
             // 
             this.RefreshButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.RefreshButton.BackColor = System.Drawing.Color.Transparent;
-            this.RefreshButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.RefreshButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.RefreshButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.RefreshButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.RefreshButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.RefreshButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.RefreshButton.BackColorState.Pressed = System.Drawing.Color.SteelBlue;
             this.RefreshButton.BindingSource = null;
@@ -1390,7 +1396,7 @@
             this.RefreshButton.Border.Visible = true;
             this.RefreshButton.DataFilter = null;
             this.RefreshButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.RefreshButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.RefreshButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RefreshButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.RefreshButton.HoverText = "Not Yet Implemented!";
             this.RefreshButton.Image = null;
@@ -1399,6 +1405,7 @@
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(0);
             this.RefreshButton.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Padding = new System.Windows.Forms.Padding(1);
             this.RefreshButton.Size = new System.Drawing.Size(140, 55);
             this.RefreshButton.TabIndex = 5;
             this.RefreshButton.Text = "Clear";
@@ -1415,9 +1422,9 @@
             // CloseButton
             // 
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
-            this.CloseButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CloseButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.CloseButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.CloseButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.CloseButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.CloseButton.BackColorState.Pressed = System.Drawing.Color.SteelBlue;
             this.CloseButton.BindingSource = null;
@@ -1430,7 +1437,7 @@
             this.CloseButton.Border.Visible = true;
             this.CloseButton.DataFilter = null;
             this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.CloseButton.Font = new System.Drawing.Font("Roboto", 9F);
+            this.CloseButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.CloseButton.HoverText = "Close Window";
             this.CloseButton.Image = null;
@@ -1439,6 +1446,7 @@
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseButton.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Padding = new System.Windows.Forms.Padding(1);
             this.CloseButton.Size = new System.Drawing.Size(140, 55);
             this.CloseButton.TabIndex = 6;
             this.CloseButton.Text = "Close";
@@ -1469,7 +1477,7 @@
             this.groupBox2.Border.Visible = true;
             this.groupBox2.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.groupBox2.DataFilter = null;
-            this.groupBox2.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.HeaderText = null;
             this.groupBox2.HoverText = null;
@@ -1512,7 +1520,7 @@
             this.groupBox3.Border.Visible = true;
             this.groupBox3.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.groupBox3.DataFilter = null;
-            this.groupBox3.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.HeaderText = null;
             this.groupBox3.HoverText = null;
@@ -1555,7 +1563,7 @@
             this.groupBox4.Border.Visible = true;
             this.groupBox4.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.groupBox4.DataFilter = null;
-            this.groupBox4.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox4.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.HeaderText = null;
             this.groupBox4.HoverText = null;
@@ -1596,7 +1604,7 @@
             this.groupBox9.Border.Visible = true;
             this.groupBox9.BoxStyle = VisualPlus.Toolkit.Controls.Layout.VisualGroupBox.GroupBoxStyle.Default;
             this.groupBox9.DataFilter = null;
-            this.groupBox9.Font = new System.Drawing.Font("Roboto", 9F);
+            this.groupBox9.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox9.ForeColor = System.Drawing.Color.White;
             this.groupBox9.HeaderText = null;
             this.groupBox9.HoverText = null;
@@ -1626,13 +1634,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.CaptionAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.CaptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CaptionFont = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaptionButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CaptionFont = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1368, 588);
             this.ControlBox = false;
@@ -1640,11 +1648,11 @@
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.CloseButton);
-            this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Name = "EditDialog";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.ShowIcon = false;
@@ -1660,7 +1668,6 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }

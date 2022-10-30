@@ -23,13 +23,13 @@ namespace BudgetExecution
             OpenButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             OpenButton.Text = "Open";
             OpenButton.ForeColor = Color.SteelBlue;
-            OpenButton.BackColor = Color.FromArgb( 15, 15, 15 );
+            OpenButton.BackColor = Color.FromArgb( 20, 20, 20 );
             CloseButton.Text = "Close";
             CloseButton.ForeColor = Color.SteelBlue;
-            CloseButton.BackColor = Color.FromArgb( 15, 15, 15 );
+            CloseButton.BackColor = Color.FromArgb( 20, 20, 20 );
             CloseButton.Click += OnCloseButtonClick;
             OpenButton.Click += OnOpenButtonClick;
-            BackColor = Color.FromArgb( 15, 15, 15 );
+            BackColor = Color.FromArgb( 20, 20, 20 );
         }
 
         /// <summary>
