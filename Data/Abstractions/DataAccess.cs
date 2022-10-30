@@ -34,8 +34,7 @@ namespace BudgetExecution
             try
             {
                 var _dataTable = GetDataTable( );
-                IEnumerable<DataRow> _data = _dataTable?.AsEnumerable( );
-
+                var  _data = _dataTable?.AsEnumerable( );
                 return _data?.Any( ) == true
                     ? _data
                     : default;
@@ -43,7 +42,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -64,7 +62,6 @@ namespace BudgetExecution
                     using var _adapter = Query.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable.TableName );
                     SetColumnCaptions( DataTable );
-
                     return DataTable?.Rows?.Count > 0
                         ? DataTable
                         : default;
@@ -72,7 +69,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -96,7 +92,6 @@ namespace BudgetExecution
                     using var _adapter = Query.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable?.TableName );
                     SetColumnCaptions( DataTable );
-
                     return DataTable?.Rows?.Count > 0
                         ? DataSet
                         : default;
@@ -104,7 +99,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -128,7 +122,9 @@ namespace BudgetExecution
                            && string.IsNullOrEmpty( column.Caption ) )
                         {
                             var _caption = column.ColumnName?.SplitPascal( );
-                            column.Caption = _caption;
+                            column.Caption = !string.IsNullOrEmpty( _caption )
+                                ? _caption
+                                : string.Empty;
                         }
                     }
                 }
@@ -155,7 +151,6 @@ namespace BudgetExecution
                     using var _adapter = Query?.GetAdapter( );
                     _adapter?.Fill( DataSet, DataTable.TableName );
                     SetColumnCaptions( DataTable );
-
                     return DataTable?.Columns?.Count > 0
                         ? DataTable.Columns
                         : default;
@@ -163,7 +158,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -185,15 +179,13 @@ namespace BudgetExecution
                 {
                     var _table = dataRows?.CopyToDataTable( );
                     var _values = _table?.GetPrimaryKeyValues( );
-
-                    return _values?.Any( ) == true
+                    return ( _values?.Any( ) == true )
                         ? _values.ToArray( )
                         : default( IEnumerable<int> );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }

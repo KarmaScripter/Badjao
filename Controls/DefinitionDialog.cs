@@ -52,6 +52,7 @@ namespace BudgetExecution
         public DefinitionDialog( ToolType toolType )
             : this( )
         {
+            Provider = Provider.Access;
             ToolType = toolType;
         }
 
@@ -63,27 +64,33 @@ namespace BudgetExecution
         public DefinitionDialog( ToolType toolType, BindingSource bindingSource )
             : this( )
         {
+            Provider = Provider.Access;
             ToolType = toolType;
             BindingSource = bindingSource;
             DataTable = (DataTable)bindingSource.DataSource;
             BindingSource.DataSource = DataTable;
-            Provider = Provider.Access;
             Source = (Source)Enum.Parse( typeof( Source ), DataTable.TableName );
             DataModel = new DataBuilder( Source, Provider );
             Columns = DataTable.GetColumnNames( );
             DataTypes = GetDataTypes( Provider );
         }
-        
-        public DefinitionDialog( ToolType toolType, string tableName )
-            : this( toolType )
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DefinitionDialog"/> class.
+        /// </summary>
+        /// <param name="toolType">Type of the tool.</param>
+        /// <param name="bindingSource">The binding source.</param>
+        /// <param name="tableName">Name of the table.</param>
+        public DefinitionDialog( ToolType toolType, BindingSource bindingSource, string tableName )
+            : this( toolType, bindingSource )
         {
-            ToolType = toolType;
-            Source = (Source)Enum.Parse( typeof( Source ), tableName );
             Provider = Provider.Access;
+            ToolType = toolType;
+            BindingSource = bindingSource;
+            Source = (Source)Enum.Parse( typeof( Source ), tableName );
             DataModel = new DataBuilder( Source, Provider );
             DataTable = DataModel.DataTable;
             Columns = DataTable.GetColumnNames( );
-            BindingSource = new BindingSource( );
             BindingSource.DataSource = DataTable;
             DataTypes = GetDataTypes( Provider );
         }
@@ -118,11 +125,9 @@ namespace BudgetExecution
             try
             {
                 var _names = Enum.GetNames( typeof( Source ) );
-
-                for( var i = 0; i < _names.Length; i++ )
+                for( var i = 0; i < _names?.Length; i++ )
                 {
                     var name = _names[ i ];
-
                     if( name != "NS" )
                     {
                         EditColumnTableNameListBox.Items.Add( name );
@@ -150,9 +155,10 @@ namespace BudgetExecution
                     CreateTableDataTypeComboBox.SelectedText = string.Empty;
                     EditColumnDataTypeComboBox.Items.Clear( );
                     CreateTableDataTypeComboBox.Items.Clear( );
-
-                    foreach( var name in DataTypes )
+                    var _types = DataTypes.ToArray( );
+                    for( var i = 0; i < _types?.Length; i++ )
                     {
+                        var name = _types[ i ];
                         if ( !string.IsNullOrEmpty( name ) )
                         {
                             EditColumnDataTypeComboBox.Items.Add( name );
@@ -178,7 +184,6 @@ namespace BudgetExecution
                 try
                 {
                     var _name = button.Tag?.ToString( );
-
                     if ( !string.IsNullOrEmpty( _name ) )
                     {
                         Provider = (Provider)Enum.Parse( typeof( Provider ), _name );
@@ -212,9 +217,7 @@ namespace BudgetExecution
                             Provider = Provider.Access;
                             EditColumnAccessRadioButton.Checked = true;
                             EditColumnAccessRadioButton.CheckedChanged += OnProviderButtonChecked;
-                            EditColumnSqlServerRadioButton.CheckedChanged +=
-                                OnProviderButtonChecked;
-
+                            EditColumnSqlServerRadioButton.CheckedChanged += OnProviderButtonChecked;
                             EditColumnSqliteRadioButton.CheckedChanged += OnProviderButtonChecked;
                             DeleteTableTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
@@ -240,9 +243,7 @@ namespace BudgetExecution
                             CreateTableAccessRadioButton.Checked = true;
                             CreateTableAccessRadioButton.Checked = true;
                             CreateTableAccessRadioButton.CheckedChanged += OnProviderButtonChecked;
-                            CreateTableSqlServerRadioButton.CheckedChanged +=
-                                OnProviderButtonChecked;
-
+                            CreateTableSqlRadioButton.CheckedChanged += OnProviderButtonChecked;
                             CreateTableSqliteRadioButton.CheckedChanged += OnProviderButtonChecked;
                             EditColumnTabPage.TabVisible = false;
                             DeleteTableTabPage.TabVisible = false;
@@ -256,9 +257,7 @@ namespace BudgetExecution
                             Provider = Provider.Access;
                             EditColumnAccessRadioButton.Checked = true;
                             EditColumnAccessRadioButton.CheckedChanged += OnProviderButtonChecked;
-                            EditColumnSqlServerRadioButton.CheckedChanged +=
-                                OnProviderButtonChecked;
-
+                            EditColumnSqlServerRadioButton.CheckedChanged += OnProviderButtonChecked;
                             EditColumnSqliteRadioButton.CheckedChanged += OnProviderButtonChecked;
                             CreateTableTabPage.TabVisible = false;
                             DeleteTableTabPage.TabVisible = false;
@@ -313,11 +312,11 @@ namespace BudgetExecution
                 {
                     var _tabPages = new Dictionary<string, TabPageAdv>( );
 
-                    foreach( TabPageAdv tabpage in TabControl.TabPages )
+                    foreach( TabPageAdv page in TabControl.TabPages )
                     {
-                        if( tabpage != null )
+                        if( page != null )
                         {
-                            _tabPages.Add( tabpage.Name, tabpage );
+                            _tabPages.Add( page.Name, page );
                         }
                     }
 

@@ -6,12 +6,14 @@ namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.IO;
     using System.Windows.Forms;
     using System.Linq;
+    using static System.Configuration.ConfigurationManager;
+    using static System.Environment;
+    using static System.IO.Directory;
     using CheckState = MetroSet_UI.Enums.CheckState;
 
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
@@ -87,10 +89,7 @@ namespace BudgetExecution
             PictureBox.Image = GetImage( );
             FilePaths = GetListViewPaths( );
             FileDialog.DefaultExt = FileExtension;
-
-            FileDialog.InitialDirectory =
-                Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory );
-
+            FileDialog.InitialDirectory = GetFolderPath( SpecialFolder.DesktopDirectory );
             FileDialog.CheckFileExists = true;
             CloseButton.Click += OnCloseButtonClicked;
             FileList.SelectedValueChanged += OnPathSelected;
@@ -130,23 +129,20 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _path = ConfigurationManager.AppSettings[ "Extensions" ];
-                    var _files = Directory.GetFiles( _path );
-
+                    var _path = AppSettings[ "Extensions" ];
+                    var _files = GetFiles( _path );
                     if( _files?.Any( ) == true )
                     {
                         var _extension = FileExtension.TrimStart( '.' ).ToUpper( );
                         var _file = _files.Where( f => f.Contains( _extension ) )?.First( );
                         using var stream = File.Open( _file, FileMode.Open );
                         var _img = Image.FromStream( stream );
-
                         return new Bitmap( _img, 22, 22 );
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default( Bitmap );
                 }
             }
@@ -205,31 +201,45 @@ namespace BudgetExecution
 
                     foreach( var path in InitialDirPaths )
                     {
-                        var _first = Directory.GetFiles( path )
+                        var _first = GetFiles( path )
                             ?.Where( f => f.EndsWith( FileExtension ) )
-                            ?.Select( f => Path.GetFullPath( f ) )?.ToList( );
+                            ?.Select( f => Path.GetFullPath( f ) )
+                            ?.ToList( );
 
                         _list.AddRange( _first );
-                        var _dirs = Directory.GetDirectories( path );
+                        var _dirs = GetDirectories( path );
 
                         foreach( var dir in _dirs )
                         {
                             if( !dir.Contains( "My " ) )
                             {
-                                var _second = Directory.GetFiles( dir )
+                                var _second = GetFiles( dir )
                                     ?.Where( s => s.EndsWith( FileExtension ) )
-                                    ?.Select( s => Path.GetFullPath( s ) )?.ToList( );
+                                    ?.Select( s => Path.GetFullPath( s ) )
+                                    ?.ToList( );
 
-                                _list.AddRange( _second );
-                                var _subdir = Directory.GetDirectories( dir );
-
-                                foreach( var sub in _subdir )
+                                if( _second?.Any( ) == true )
                                 {
-                                    var _last = Directory.GetFiles( sub )
-                                        ?.Where( l => l.EndsWith( FileExtension ) )
-                                        ?.Select( l => Path.GetFullPath( l ) )?.ToList( );
+                                    _list.AddRange( _second );
+                                }
 
-                                    _list.AddRange( _last );
+                                var _subdir = GetDirectories( dir );
+
+                                for( var i = 0; i < _subdir.Length; i++ )
+                                {
+                                    var sub = _subdir[ i ];
+                                    if( !string.IsNullOrEmpty( sub ) )
+                                    {
+                                        var _last = GetFiles( sub )
+                                            ?.Where( l => l.EndsWith( FileExtension ) )
+                                            ?.Select( l => Path.GetFullPath( l ) )
+                                            ?.ToList( );
+
+                                        if( _last?.Any( ) == true )
+                                        {
+                                            _list.AddRange( _last );
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -242,7 +252,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -307,7 +316,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -320,14 +328,13 @@ namespace BudgetExecution
         {
             try
             {
-                var _current = Environment.CurrentDirectory;
-
+                var _current = CurrentDirectory;
                 var _list = new List<string>
                 {
-                    Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory ),
-                    Environment.GetFolderPath( Environment.SpecialFolder.Personal ),
-                    Environment.GetFolderPath( Environment.SpecialFolder.Recent ),
-                    @"C:\Users\terry\source\repos\Badjao\Resources\Docs",
+                    GetFolderPath( SpecialFolder.DesktopDirectory ),
+                    GetFolderPath( SpecialFolder.Personal ),
+                    GetFolderPath( SpecialFolder.Recent ),
+                    @"C:\Users\terry\source\repos\Badjao\Resources\Documents",
                     _current
                 };
 
@@ -338,7 +345,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -375,9 +381,10 @@ namespace BudgetExecution
                 if( filePaths?.Any( ) == true )
                 {
                     FileList.Items.Clear( );
-
-                    foreach( var path in filePaths )
+                    var _paths = filePaths.ToArray( );
+                    for( var i = 0; i < _paths.Length; i++ )
                     {
+                        var path = _paths[ i ];
                         if( !string.IsNullOrEmpty( path ) )
                         {
                             FileList?.Items.Add( path );
