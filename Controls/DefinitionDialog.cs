@@ -7,6 +7,7 @@ namespace BudgetExecution
     using System;
     using System.Collections.Generic;
     using System.Data;
+    using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Linq;
     using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace BudgetExecution
     /// 
     /// </summary>
     /// <seealso cref="EditBase" />
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public partial class DefinitionDialog : EditBase
     {
         /// <summary>
@@ -64,10 +66,25 @@ namespace BudgetExecution
             ToolType = toolType;
             BindingSource = bindingSource;
             DataTable = (DataTable)bindingSource.DataSource;
+            BindingSource.DataSource = DataTable;
             Provider = Provider.Access;
             Source = (Source)Enum.Parse( typeof( Source ), DataTable.TableName );
             DataModel = new DataBuilder( Source, Provider );
             Columns = DataTable.GetColumnNames( );
+            DataTypes = GetDataTypes( Provider );
+        }
+        
+        public DefinitionDialog( ToolType toolType, string tableName )
+            : this( toolType )
+        {
+            ToolType = toolType;
+            Source = (Source)Enum.Parse( typeof( Source ), tableName );
+            Provider = Provider.Access;
+            DataModel = new DataBuilder( Source, Provider );
+            DataTable = DataModel.DataTable;
+            Columns = DataTable.GetColumnNames( );
+            BindingSource = new BindingSource( );
+            BindingSource.DataSource = DataTable;
             DataTypes = GetDataTypes( Provider );
         }
 
@@ -84,7 +101,7 @@ namespace BudgetExecution
                 SetRadioButtonProperties( );
                 PopulateTableListBoxItems( );
                 PopulateComboBoxes( );
-                SetActivetTab( );
+                SetActiveTab( );
                 CloseButton.Text = "Exit";
             }
             catch( Exception ex )
@@ -102,8 +119,10 @@ namespace BudgetExecution
             {
                 var _names = Enum.GetNames( typeof( Source ) );
 
-                foreach( var name in _names )
+                for( var i = 0; i < _names.Length; i++ )
                 {
+                    var name = _names[ i ];
+
                     if( name != "NS" )
                     {
                         EditColumnTableNameListBox.Items.Add( name );
@@ -134,8 +153,11 @@ namespace BudgetExecution
 
                     foreach( var name in DataTypes )
                     {
-                        EditColumnDataTypeComboBox.Items.Add( name );
-                        CreateTableDataTypeComboBox.Items.Add( name );
+                        if ( !string.IsNullOrEmpty( name ) )
+                        {
+                            EditColumnDataTypeComboBox.Items.Add( name );
+                            CreateTableDataTypeComboBox.Items.Add( name );
+                        }
                     }
                 }
                 catch( Exception ex )
@@ -155,7 +177,13 @@ namespace BudgetExecution
             {
                 try
                 {
-                    Provider = (Provider)Enum.Parse( typeof( Provider ), button.Tag.ToString( ) );
+                    var _name = button.Tag?.ToString( );
+
+                    if ( !string.IsNullOrEmpty( _name ) )
+                    {
+                        Provider = (Provider)Enum.Parse( typeof( Provider ), _name );
+                    }
+
                     DataTypes = GetDataTypes( Provider );
                     PopulateComboBoxes( );
                 }
@@ -169,7 +197,7 @@ namespace BudgetExecution
         /// <summary>
         /// Sets the activet tab.
         /// </summary>
-        public void SetActivetTab( )
+        public void SetActiveTab( )
         {
             if( Enum.IsDefined( typeof( ToolType ), ToolType ) )
             {
@@ -178,14 +206,12 @@ namespace BudgetExecution
                     switch( ToolType )
                     {
                         case ToolType.AddColumnButton:
-
                         {
                             EditColumnTabPage.Text = "Add Column";
                             ActiveTab = EditColumnTabPage;
                             Provider = Provider.Access;
                             EditColumnAccessRadioButton.Checked = true;
                             EditColumnAccessRadioButton.CheckedChanged += OnProviderButtonChecked;
-
                             EditColumnSqlServerRadioButton.CheckedChanged +=
                                 OnProviderButtonChecked;
 
@@ -193,12 +219,9 @@ namespace BudgetExecution
                             DeleteTableTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
                             CreateTableTabPage.TabVisible = false;
-
                             break;
                         }
-
                         case ToolType.AddDatabaseButton:
-
                         {
                             CreateTableTabPage.Text = "Add Database";
                             ActiveTab = CreateTableTabPage;
@@ -207,12 +230,9 @@ namespace BudgetExecution
                             EditColumnTabPage.TabVisible = false;
                             DeleteTableTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
-
                             break;
                         }
-
                         case ToolType.AddTableButton:
-
                         {
                             CreateTableTabPage.Text = "Add Table";
                             ActiveTab = CreateTableTabPage;
@@ -220,7 +240,6 @@ namespace BudgetExecution
                             CreateTableAccessRadioButton.Checked = true;
                             CreateTableAccessRadioButton.Checked = true;
                             CreateTableAccessRadioButton.CheckedChanged += OnProviderButtonChecked;
-
                             CreateTableSqlServerRadioButton.CheckedChanged +=
                                 OnProviderButtonChecked;
 
@@ -228,19 +247,15 @@ namespace BudgetExecution
                             EditColumnTabPage.TabVisible = false;
                             DeleteTableTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
-
                             break;
                         }
-
                         case ToolType.EditColumnButton:
-
                         {
-                            EditColumnTabPage.Text = "Rename Column";
+                            EditColumnTabPage.Text = "Edit Column";
                             ActiveTab = EditColumnTabPage;
                             Provider = Provider.Access;
                             EditColumnAccessRadioButton.Checked = true;
                             EditColumnAccessRadioButton.CheckedChanged += OnProviderButtonChecked;
-
                             EditColumnSqlServerRadioButton.CheckedChanged +=
                                 OnProviderButtonChecked;
 
@@ -248,43 +263,33 @@ namespace BudgetExecution
                             CreateTableTabPage.TabVisible = false;
                             DeleteTableTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
-
                             break;
                         }
-
                         case ToolType.DeleteColumnButton:
-
                         {
                             DeleteColumnTabPage.Text = "Delete Column";
                             ActiveTab = DeleteColumnTabPage;
                             CreateTableTabPage.TabVisible = false;
                             DeleteTableTabPage.TabVisible = false;
                             EditColumnTabPage.TabVisible = false;
-
                             break;
                         }
-
                         case ToolType.DeleteTableButton:
-
                         {
                             DeleteTableTabPage.Text = "Delete Table";
                             ActiveTab = DeleteTableTabPage;
                             CreateTableTabPage.TabVisible = false;
                             EditColumnTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
-
                             break;
                         }
-
                         case ToolType.DeleteDatabaseButton:
-
                         {
                             DeleteTableTabPage.Text = "Delete Database";
                             ActiveTab = DeleteTableTabPage;
                             CreateTableTabPage.TabVisible = false;
                             EditColumnTabPage.TabVisible = false;
                             DeleteColumnTabPage.TabVisible = false;
-
                             break;
                         }
                     }
@@ -323,7 +328,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }

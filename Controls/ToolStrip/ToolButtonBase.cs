@@ -14,6 +14,7 @@ namespace BudgetExecution
     /// </summary>
     /// <seealso cref="System.Windows.Forms.ToolStripButton" />
     [ Serializable ]
+    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public class ToolButtonBase : System.Windows.Forms.ToolStripButton
     {
         /// <summary>
@@ -117,30 +118,7 @@ namespace BudgetExecution
 
             return string.Empty;
         }
-
-        /// <summary>
-        /// Sets the hover text.
-        /// </summary>
-        public void SetHoverText( )
-        {
-            if( Enum.IsDefined( typeof( ToolType ), ToolType ) )
-            {
-                var _text = GetHoverText( ToolType );
-
-                if( !string.IsNullOrEmpty( _text ) )
-                {
-                    try
-                    {
-                        HoverText = _text;
-                    }
-                    catch( Exception ex )
-                    {
-                        Fail( ex );
-                    }
-                }
-            }
-        }
-
+        
         /// <summary>
         /// Sets the hover text.
         /// </summary>

@@ -37,12 +37,7 @@ namespace BudgetExecution
         /// instance containing the event data.
         /// </param>
         void OnClick( object sender, EventArgs e );
-
-        /// <summary>
-        /// Sets the hover text.
-        /// </summary>
-        void SetHoverText( );
-
+        
         /// <summary>
         /// Sets the hover text.
         /// </summary>
