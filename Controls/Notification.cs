@@ -7,15 +7,20 @@ namespace BudgetExecution
     using Syncfusion.Windows.Forms;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
+    using static System.Drawing.Region;
+    using static System.Windows.Forms.Screen;
     using static FormAnimator;
+    using static NativeMethods;
     using Point = System.Drawing.Point;
 
     /// <summary>
     /// 
     /// </summary>
     /// <seealso cref="Syncfusion.Windows.Forms.MetroForm" />
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public partial class Notification : MetroForm
     {
         /// <summary>
@@ -71,11 +76,8 @@ namespace BudgetExecution
             Title.Text = title;
             Message.Text = body;
             Animator = new FormAnimator( this, animation, direction, 500 );
-
-            Region = Region.FromHrgn(
-                NativeMethods.CreateRoundRectRgn( 0, 0, Width - 5, Height - 5, 20,
-                    20 ) );
-
+            Region = FromHrgn( CreateRoundRectRgn( 0, 0, Width - 5, 
+                Height - 5, 20, 20 ) );
             Activated += OnActivated;
             Shown += OnShown;
             FormClosed += OnClosed;
@@ -90,7 +92,7 @@ namespace BudgetExecution
         /// </summary>
         public new void Show( )
         {
-            _currentForegroundWindow = NativeMethods.GetForegroundWindow( );
+            _currentForegroundWindow = GetForegroundWindow( );
             base.Show( );
         }
 
@@ -109,14 +111,12 @@ namespace BudgetExecution
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void OnLoad( object sender, EventArgs e )
         {
-            Location = new Point( Screen.PrimaryScreen.WorkingArea.Width - Width,
-                Screen.PrimaryScreen.WorkingArea.Height - Height );
-
+            Location = new Point( PrimaryScreen.WorkingArea.Width - Width,
+                PrimaryScreen.WorkingArea.Height - Height );
             foreach( var _form in OpenNotifications )
             {
                 _form.Top -= Height;
             }
-
             OpenNotifications.Add( this );
             Timer.Start( );
         }
@@ -130,7 +130,7 @@ namespace BudgetExecution
         {
             if( !AllowFocus )
             {
-                NativeMethods.SetForegroundWindow( _currentForegroundWindow );
+                SetForegroundWindow( _currentForegroundWindow );
             }
         }
 
