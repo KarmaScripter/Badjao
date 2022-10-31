@@ -10,7 +10,7 @@
     <PackageIcon>BudExNinja.png</PackageIcon>
     <AnalysisLevel>latest-recommended</AnalysisLevel>
     <LangVersion>10</LangVersion>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <RootNamespace>BudgetExecution</RootNamespace>
     <Authors>Terry D. Eppler</Authors>
     <Company>US EPA</Company>
