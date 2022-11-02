@@ -14,7 +14,6 @@ namespace BudgetExecution
     using static System.Windows.Forms.Screen;
     using static FormAnimator;
     using static NativeMethods;
-    using Point = System.Drawing.Point;
 
     /// <summary>
     /// 
@@ -70,14 +69,13 @@ namespace BudgetExecution
             : this( )
         {
             InitializeComponent( );
-            BackColor = Color.FromArgb( 10, 10, 10 );
+            BackColor = Color.FromArgb( 20, 20, 20 );
             Load += OnLoad;
             Timer.Interval = duration * 1000;
             Title.Text = title;
             Message.Text = body;
             Animator = new FormAnimator( this, animation, direction, 500 );
-            Region = FromHrgn( CreateRoundRectRgn( 0, 0, Width - 5, 
-                Height - 5, 20, 20 ) );
+            Region = FromHrgn( CreateRoundRectRgn( 0, 0, Width - 5, Height - 5, 20, 20 ) );
             Activated += OnActivated;
             Shown += OnShown;
             FormClosed += OnClosed;

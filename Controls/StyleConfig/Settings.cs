@@ -72,7 +72,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -97,7 +96,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return new Size( 1, 1 );
             }
         }
@@ -118,7 +116,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return Size.Empty;
             }
         }
@@ -168,7 +165,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return Color.Empty;
             }
         }
@@ -189,7 +185,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return string.Empty;
             }
         }
@@ -199,8 +194,8 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="anchor">The anchor.</param>
         /// <returns></returns>
-        public static AnchorStyles ReAnchor(
-            AnchorStyles anchor = AnchorStyles.Left | AnchorStyles.Top )
+        public static AnchorStyles ReAnchor( AnchorStyles anchor =
+            AnchorStyles.Left | AnchorStyles.Top )
         {
             try
             {
@@ -211,7 +206,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return AnchorStyles.None;
             }
         }
@@ -232,7 +226,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return DockStyle.None;
             }
         }
@@ -254,7 +247,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return Point.Empty;
             }
         }
@@ -278,7 +270,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -293,7 +284,8 @@ namespace BudgetExecution
         /// <param name="size">The size.</param>
         /// <param name="style">The style.</param>
         /// <returns></returns>
-        public static Font GetFont( string family = "Roboto", int size = 9,
+        public static Font GetFont( string family = "Roboto",
+            int size = 9,
             FontStyle style = FontStyle.Regular )
         {
             try
@@ -306,7 +298,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -327,7 +318,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -350,7 +340,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return BorderStyle.None;
             }
         }
@@ -373,7 +362,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -389,8 +377,8 @@ namespace BudgetExecution
         /// </param>
         /// <returns>
         /// </returns>
-        public static StringAlignment GetStringAlignment(
-            StringAlignment alignment = StringAlignment.Center )
+        public static StringAlignment GetStringAlignment( StringAlignment alignment =
+            StringAlignment.Center )
         {
             try
             {
@@ -401,7 +389,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -414,8 +401,8 @@ namespace BudgetExecution
         /// </param>
         /// <returns>
         /// </returns>
-        public static HorizontalAlignment GetHorizontalAlignment(
-            HorizontalAlignment alignment = HorizontalAlignment.Center )
+        public static HorizontalAlignment GetHorizontalAlignment( HorizontalAlignment alignment =
+            HorizontalAlignment.Center )
         {
             try
             {
@@ -426,7 +413,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
