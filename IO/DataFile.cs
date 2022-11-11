@@ -11,6 +11,7 @@ namespace BudgetExecution
     using System.Linq;
     using System.Text.RegularExpressions;
     using System.Windows.Forms;
+    using static System.IO.Directory;
 
     /// <summary>
     /// 
@@ -51,9 +52,9 @@ namespace BudgetExecution
         public void Transfer( DirectoryInfo folder )
         {
             if( folder != null
-               && !Directory.Exists( folder.FullName ) )
+               && !Exists( folder.FullName ) )
             {
-                Directory.CreateDirectory( folder.FullName );
+                CreateDirectory( folder.FullName );
             }
 
             try
@@ -90,21 +91,17 @@ namespace BudgetExecution
                 {
                     using var _stream = File.Open( search, FileMode.Open );
                     using var _reader = new StreamReader( _stream );
-
                     if( _reader != null )
                     {
                         var _text = _reader?.ReadLine( );
                         var _result = false;
-
                         while( _text == string.Empty )
                         {
                             if( Regex.IsMatch( _text, search ) )
                             {
                                 _result = true;
-
                                 break;
                             }
-
                             _text = _reader.ReadLine( );
                         }
 
@@ -117,7 +114,6 @@ namespace BudgetExecution
             catch( IOException ex )
             {
                 Fail( ex );
-
                 return false;
             }
         }
@@ -134,15 +130,11 @@ namespace BudgetExecution
                 try
                 {
                     var _input = Path.GetFullPath( Buffer );
-
                     if( !string.IsNullOrEmpty( _input )
                        && File.Exists( _input ) )
                     {
-                        IEnumerable<string> _enumerable =
-                            Directory.GetDirectories( _input, pattern );
-
+                        IEnumerable<string> _enumerable = GetDirectories( _input, pattern );
                         var _list = new List<FileInfo>( );
-
                         foreach( var file in _enumerable )
                         {
                             _list.Add( new FileInfo( file ) );
@@ -156,7 +148,6 @@ namespace BudgetExecution
                 catch( IOException ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -175,13 +166,12 @@ namespace BudgetExecution
                 try
                 {
                     return CheckParent( )
-                        ? Directory.GetParent( Buffer )?.FullName
+                        ? GetParent( Buffer )?.FullName
                         : string.Empty;
                 }
                 catch( IOException ex )
                 {
                     Fail( ex );
-
                     return string.Empty;
                 }
             }
@@ -206,7 +196,6 @@ namespace BudgetExecution
             catch( IOException ex )
             {
                 Fail( ex );
-
                 return string.Empty;
             }
         }
@@ -229,7 +218,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -243,16 +231,13 @@ namespace BudgetExecution
             try
             {
                 var _dialog = new OpenFileDialog( );
-
                 _dialog.CheckFileExists = true;
                 _dialog.CheckPathExists = true;
-
                 return _dialog.FileName;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return string.Empty;
             }
         }
