@@ -130,6 +130,11 @@ namespace BudgetExecution
         Expenditures,
 
         /// <summary>
+        /// The full time equivalents
+        /// </summary>
+        FullTimeEquivalents,
+
+        /// <summary>
         /// The headquarters authority
         /// </summary>
         HeadquartersAuthority,
@@ -503,6 +508,11 @@ namespace BudgetExecution
         /// The program projects
         /// </summary>
         ProgramProjects,
+
+        /// <summary>
+        /// The program descriptions
+        /// </summary>
+        ProgramDescriptions,
 
         /// <summary>
         /// The projects
