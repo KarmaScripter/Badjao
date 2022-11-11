@@ -356,7 +356,7 @@ namespace BudgetExecution
                 {
                     var _timeString = dataRow[ $"{ date }" ]?.ToString( );
                     return DateTime.Parse( _timeString ) != null
-                        ? dataRow[ $"{date}" ]?.ToString( )
+                        ? dataRow[ $"{ date }" ]?.ToString( )
                         : string.Empty;
                 }
                 catch( Exception ex )
