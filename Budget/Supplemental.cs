@@ -1,5 +1,5 @@
-﻿// <copyright file = "Supplementals.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -44,7 +44,7 @@ namespace BudgetExecution
         /// Gets the code.
         /// </summary>
         public string Code { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the type.
         /// </summary>
@@ -60,24 +60,24 @@ namespace BudgetExecution
         /// The boc.
         /// </value>
         public IElement BOC { get; set; }
-        
+
         /// <summary>
         /// Gets the Data builder.
         /// </summary>
         /// <returns>
         /// </returns>
-        public IDataModel GetBuilder()
+        public IDataModel GetBuilder( )
         {
             try
             {
-                return Data?.Any( ) == true 
+                return Data?.Any( ) == true
                     ? new DataBuilder( Source, Data )
-                    : default( DataBuilder );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDataModel );
+                return default;
             }
         }
 
@@ -86,13 +86,13 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        public virtual IElement GetName()
+        public virtual IElement GetName( )
         {
             try
             {
                 return Enum.IsDefined( typeof( AwardType ), Type )
                     ? new Element( Record, Field.Type )
-                    : default( Element );
+                    : default;
             }
             catch( Exception ex )
             {

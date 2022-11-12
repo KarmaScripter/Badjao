@@ -73,7 +73,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -93,7 +92,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -109,7 +107,6 @@ namespace BudgetExecution
                 try
                 {
                     var _data = Input.GetPrimaryKey( );
-
                     return !string.IsNullOrEmpty( _data.Key )
                         ? new Key( _data )
                         : default( IKey );
@@ -117,7 +114,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -154,7 +150,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -177,7 +172,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return false;
             }
         }
@@ -208,7 +202,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }

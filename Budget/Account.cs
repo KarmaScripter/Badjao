@@ -126,10 +126,10 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( Account );
+                return default;
             }
         }
-        
+
         /// <summary>
         /// Converts to dictionary.
         /// </summary>
@@ -141,12 +141,12 @@ namespace BudgetExecution
             {
                 return Data?.Any( ) == true
                     ? Data
-                    : default( IDictionary<string, object> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<string, object> );
+                return default;
             }
         }
     }

@@ -1,5 +1,5 @@
-﻿// <copyright file = "FullTimeEquivalent.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -31,7 +31,7 @@ namespace BudgetExecution
         /// Initializes a new instance of the
         /// <see cref = "T:BudgetExecution.FullTimeEquivalent"/> class.
         /// </summary>
-        public FullTimeEquivalent()
+        public FullTimeEquivalent( )
         {
         }
 
@@ -73,24 +73,24 @@ namespace BudgetExecution
             ID = new Key( Record, PrimaryKey.AllocationsId );
             Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
         }
-        
+
         /// <summary>
         /// Gets the ProgramResultCodes identifier.
         /// </summary>
         /// <returns>
         /// </returns>
-        public override IKey GetId()
+        public override IKey GetId( )
         {
             try
             {
                 return ID.Index > 0
                     ? ID
-                    : default( IKey );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IKey );
+                return default;
             }
         }
     }

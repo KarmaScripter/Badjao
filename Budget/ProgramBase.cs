@@ -1,5 +1,5 @@
-﻿// <copyright file = "ProgramBase.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -22,7 +22,7 @@ namespace BudgetExecution
         /// Gets the code.
         /// </summary>
         public string Code { get; set; }
-        
+
         /// <summary>
         /// Gets the record.
         /// </summary>
@@ -38,7 +38,7 @@ namespace BudgetExecution
         /// The arguments.
         /// </value>
         public IDictionary<string, object> Data { get; set; }
-        
+
         /// <summary>
         /// Gets the definition.
         /// </summary>

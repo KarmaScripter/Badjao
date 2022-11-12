@@ -119,7 +119,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return string.Empty;
             }
         }
@@ -142,7 +141,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return false;
                 }
             }
@@ -171,7 +169,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return false;
                 }
             }
@@ -190,7 +187,6 @@ namespace BudgetExecution
                 try
                 {
                     var _key = (PrimaryKey)Enum.Parse( typeof( PrimaryKey ), keyName );
-
                     PrimaryKey = Enum.IsDefined( typeof( PrimaryKey ), _key )
                         ? PrimaryKey
                         : PrimaryKey.NS;
@@ -222,7 +218,6 @@ namespace BudgetExecution
                             dataRow[ 0 ].ToString( ) );
 
                         var _names = dataRow.Table?.GetColumnNames( );
-
                         PrimaryKey = _names?.Contains( _field.ToString( ) ) == true
                             ? _field
                             : PrimaryKey.NS;
@@ -267,7 +262,6 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
-
                     PrimaryKey = _names?.Contains( keyName.ToString( ) ) == true
                         ? keyName
                         : PrimaryKey.NS;
@@ -310,7 +304,6 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow?.Table?.GetColumnNames( );
-
                     Index = _names?.Contains( key.ToString( ) ) == true
                         ? int.Parse( dataRow[ $"{key}" ].ToString( ) )
                         : (int)PrimaryKey.NS;

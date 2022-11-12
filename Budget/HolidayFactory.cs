@@ -1,5 +1,5 @@
-﻿// <copyright file = "HolidayFactory.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -13,7 +13,7 @@ namespace BudgetExecution
     /// <summary>
     /// 
     /// </summary>
-    [SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" )]
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class HolidayFactory : IFederalHoliday
     {
         /// <summary>
@@ -123,7 +123,7 @@ namespace BudgetExecution
         /// <summary>
         /// 
         /// </summary>
-        public HolidayFactory()
+        public HolidayFactory( )
         {
         }
 
@@ -168,12 +168,12 @@ namespace BudgetExecution
 
                 return _holiday.Any( )
                     ? _holiday
-                    : default( Dictionary<string, DateTime> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<string, DateTime> );
+                return default;
             }
         }
 
@@ -198,12 +198,12 @@ namespace BudgetExecution
 
                 return _holiday.Any( )
                     ? _holiday
-                    : default( Dictionary<string, DateTime> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<string, DateTime> );
+                return default;
             }
         }
 
@@ -212,18 +212,18 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        public IDictionary<string, object> ToDictionary()
+        public IDictionary<string, object> ToDictionary( )
         {
             try
             {
                 return Args.Count > 0
                     ? Args
-                    : default( IDictionary<string, object> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<string, object> );
+                return default;
             }
         }
 

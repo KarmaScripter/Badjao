@@ -134,7 +134,7 @@ namespace BudgetExecution
 
             return default;
         }
-        
+
         /// <summary>
         /// Converts to dictionary.
         /// </summary>

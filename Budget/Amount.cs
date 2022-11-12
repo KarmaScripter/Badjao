@@ -30,7 +30,7 @@ namespace BudgetExecution
         /// The delta
         /// </summary>
         public double Delta { get; set; }
-        
+
         /// <summary>
         /// The funding
         /// </summary>

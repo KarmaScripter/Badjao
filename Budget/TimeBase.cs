@@ -277,7 +277,7 @@ namespace BudgetExecution
                 try
                 {
                     var value = dataRow[ $"{ date }" ]?.ToString( );
-                    return DateTime.Parse( value ) != null
+                    return value != null
                         ? DateTime.Parse( value )
                         : default;
                 }
@@ -355,7 +355,7 @@ namespace BudgetExecution
                 try
                 {
                     var _timeString = dataRow[ $"{ date }" ]?.ToString( );
-                    return DateTime.Parse( _timeString ) != null
+                    return !string.IsNullOrEmpty( _timeString )
                         ? dataRow[ $"{ date }" ]?.ToString( )
                         : string.Empty;
                 }

@@ -1,5 +1,5 @@
-﻿// <copyright file = "ActivityCodes.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -51,7 +51,7 @@ namespace BudgetExecution
         /// The dataRow.
         /// </value>
         public DataRow Record { get; set; }
-        
+
         /// <summary>
         /// Gets the arguments.
         /// </summary>
@@ -94,7 +94,7 @@ namespace BudgetExecution
             ID = new Key( Record, PrimaryKey.ActivityCodesId );
             Name = Record?[ $"{ Field.ActivityName }" ].ToString( );
             Code = Record?[ $"{ Field.ActivityCode }" ].ToString( );
-            Data = Record?.ToDictionary();
+            Data = Record?.ToDictionary( );
         }
 
         /// <inheritdoc/>
@@ -113,7 +113,7 @@ namespace BudgetExecution
             ID = new Key( Record, PrimaryKey.ActivityCodesId );
             Name = dataRow[ $"{ Field.ActivityName }" ].ToString( );
             Code = dataRow[ $"{ Field.ActivityCode }" ].ToString( );
-            Data = dataRow?.ToDictionary();
+            Data = dataRow?.ToDictionary( );
         }
 
         /// <summary>
@@ -128,9 +128,9 @@ namespace BudgetExecution
             ID = new Key( Record, PrimaryKey.ActivityCodesId );
             Name = new Element( Record, Field.Name ).Name;
             Code = new Element( Record, Field.Code ).Code;
-            Data = Record?.ToDictionary();
+            Data = Record?.ToDictionary( );
         }
-        
+
         /// <summary>
         /// Sets the arguments.
         /// </summary>
@@ -145,19 +145,16 @@ namespace BudgetExecution
             {
                 try
                 {
-                    return new Dictionary<string, object>
-                    {
-                        [ $"{Field.Code}" ] = code
-                    };
+                    return new Dictionary<string, object> { [ $"{Field.Code}" ] = code };
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default( IDictionary<string, object> );
+                    return default;
                 }
             }
 
-            return default( IDictionary<string, object> );
+            return default;
         }
 
         /// <summary>
@@ -165,18 +162,18 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        public IDictionary<string, object> ToDictionary()
+        public IDictionary<string, object> ToDictionary( )
         {
             try
             {
-                return ( Data?.Any( ) == true )
+                return Data?.Any( ) == true
                     ? Data
-                    : default( IDictionary<string, object> );
+                    : default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<string, object> );
+                return default;
             }
         }
     }

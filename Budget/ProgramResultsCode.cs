@@ -232,7 +232,7 @@ namespace BudgetExecution
             AhCode = dataRow[ $"{ Field.AhCode }" ].ToString( );
             FundCode = dataRow[ $"{ Field.FundCode }" ].ToString( );
             OrgCode = dataRow[ $"{ Field.OrgCode }" ].ToString( );
-            RcCode =dataRow[ $"{ Field.RcCode }" ].ToString( );
+            RcCode = dataRow[ $"{ Field.RcCode }" ].ToString( );
             BocCode = dataRow[ $"{ Field.BocCode }" ].ToString( );
             AccountCode = dataRow[ $"{ Field.AccountCode }" ].ToString( );
             ActivityCode = dataRow[ $"{ Field.ActivityCode }" ].ToString( );
@@ -262,7 +262,7 @@ namespace BudgetExecution
             Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
             Data = Record?.ToDictionary( );
         }
-        
+
         /// <summary>
         /// Converts to dictionary.
         /// </summary>

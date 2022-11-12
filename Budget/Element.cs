@@ -124,7 +124,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return false;
                 }
             }
@@ -172,7 +171,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return false;
             }
 
@@ -193,7 +191,6 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
-
                     Name = _names?.Contains( columnName ) == true
                         ? columnName
                         : dataRow.Table.TableName;
@@ -239,7 +236,6 @@ namespace BudgetExecution
                 try
                 {
                     var _columnNames = dataRow.Table?.GetColumnNames( );
-
                     Name = _columnNames?.Contains( field.ToString( ) ) == true
                         ? field.ToString( )
                         : dataRow.Table.TableName;
@@ -263,7 +259,6 @@ namespace BudgetExecution
                 try
                 {
                     var _input = (Field)Enum.Parse( typeof( Field ), fieldName );
-
                     Field = !Enum.IsDefined( typeof( Field ), _input )
                         ? (Field)Enum.Parse( typeof( Field ), fieldName )
                         : default;
@@ -336,7 +331,6 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
-
                     Field = _names?.Contains( field.ToString( ) ) == true
                         ? field
                         : default;
@@ -381,7 +375,6 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
-
                     Value = _names?.Contains( columnName ) == true
                         ? dataRow[ columnName ]?.ToString( )
                         : string.Empty;
@@ -406,7 +399,6 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
-
                     Value = _names?.Contains( field.ToString( ) ) == true
                         ? dataRow[ $"{field}" ]?.ToString( )
                         : string.Empty;

@@ -48,13 +48,11 @@ namespace BudgetExecution
                 {
                     var _name = dataUnit.Name;
                     var _value = dataUnit.Value;
-
                     return _value.Equals( Value ) && _name.Equals( Name );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return false;
                 }
             }
@@ -77,13 +75,11 @@ namespace BudgetExecution
                 {
                     var _name = element.Name;
                     var _value = element.Value;
-
                     return _value.Equals( Value ) && _name.Equals( Name );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return false;
                 }
             }
@@ -106,13 +102,11 @@ namespace BudgetExecution
                 {
                     var _name = dict.Keys.First( );
                     var _value = dict[ _name ];
-
                     return _value.Equals( Value ) && _name.Equals( Name );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return false;
                 }
             }

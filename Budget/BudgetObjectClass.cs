@@ -21,10 +21,11 @@ namespace BudgetExecution
     /// <seealso cref = "IProgram"/>
     /// <seealso cref = "IBudgetObjectClass"/>
     /// <seealso cref = "ISource"/>
-    /// <seealso cref = "IDataBuilder"/>
+    /// <seealso cref = "IDataModel"/>
     /// <seealso cref = "IBudgetObjectClass"/>
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
+    [ SuppressMessage( "ReSharper", "ConvertIfStatementToSwitchStatement" ) ]
     public class BudgetObjectClass : Element, IBudgetObjectClass, ISource
     {
         /// <summary>
@@ -166,8 +167,8 @@ namespace BudgetExecution
         {
             Record = dataRow;
             ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
-            Name = dataRow[ $"{ Field.ActivityName }" ].ToString( );
-            Code = dataRow[ $"{ Field.ActivityCode }" ].ToString( );
+            Name = dataRow[ $"{ Field.BocName }" ].ToString( );
+            Code = dataRow[ $"{ Field.BocCode }" ].ToString( );
             Data = Record?.ToDictionary( );
 
             if ( Name != null )
@@ -292,7 +293,7 @@ namespace BudgetExecution
 
             return default;
         }
-        
+
         /// <summary>
         /// Gets the budget object class category.
         /// </summary>

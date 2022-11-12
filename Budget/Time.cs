@@ -1,5 +1,5 @@
-﻿// <copyright file = "IsTime.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -16,15 +16,15 @@ namespace BudgetExecution
     /// <seealso cref="TimeBase" />
     /// <seealso cref="ITime" />
     /// <seealso cref="TimeBase" />
-    [SuppressMessage( "ReSharper", "AutoPropertyCanBeMadeGetOnly.Global" )]
-    [SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" )]
-    [SuppressMessage( "ReSharper", "ArrangeModifiersOrder" )]
+    [ SuppressMessage( "ReSharper", "AutoPropertyCanBeMadeGetOnly.Global" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
+    [ SuppressMessage( "ReSharper", "ArrangeModifiersOrder" ) ]
     public class Time : TimeBase, ITime
     {
         /// <summary>
         /// The default
         /// </summary>
-        public static readonly Time Default = new Time( EventDate.NS );
+        public static readonly Time Default = new ( EventDate.NS );
 
         /// <summary>
         /// Gets the date.
@@ -119,7 +119,7 @@ namespace BudgetExecution
             Name = GetDate( dataRow, column.ColumnName );
             Day = SetDay( dataRow, dataRow[ column ]?.ToString( ) );
         }
-        
+
         /// <summary>
         /// Gets the name.
         /// </summary>
@@ -143,7 +143,7 @@ namespace BudgetExecution
         /// Gets the value.
         /// </summary>
         /// <returns></returns>
-        public string GetValue()
+        public string GetValue( )
         {
             try
             {
@@ -162,7 +162,7 @@ namespace BudgetExecution
         /// Gets the date.
         /// </summary>
         /// <returns></returns>
-        public EventDate GetEventDate()
+        public EventDate GetEventDate( )
         {
             try
             {

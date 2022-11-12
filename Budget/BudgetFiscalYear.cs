@@ -177,7 +177,7 @@ namespace BudgetExecution
             {
                 var _holidays = new Dictionary<Field, DateTime>( );
                 var _factory = new HolidayFactory( Record );
-                _holidays.Add( Field.NewYears, 
+                _holidays.Add( Field.NewYears,
                     DateTime.Parse( _factory?.NewYearsDay?.Value?.ToString( ) ) );
 
                 _holidays.Add( Field.MartinLutherKing,
@@ -192,7 +192,9 @@ namespace BudgetExecution
                 _holidays.Add( Field.Veterans,
                     DateTime.Parse( _factory?.VeteransDay?.Value?.ToString( ) ) );
 
-                _holidays.Add( Field.Labor, DateTime.Parse( _factory?.LaborDay?.Value?.ToString( ) ) );
+                _holidays.Add( Field.Labor,
+                    DateTime.Parse( _factory?.LaborDay?.Value?.ToString( ) ) );
+
                 _holidays.Add( Field.Independence,
                     DateTime.Parse( _factory?.IndependenceDay?.Value?.ToString( ) ) );
 

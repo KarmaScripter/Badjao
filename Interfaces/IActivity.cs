@@ -7,7 +7,7 @@ namespace BudgetExecution
     /// <summary>
     /// 
     /// </summary>
-    public interface IActivity : IElement
+    public interface IActivity 
     {
         /// <summary>
         /// Gets the activity.
