@@ -16,6 +16,7 @@ namespace BudgetExecution
     /// </summary>
     /// <seealso cref="ToolStripBase" />
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class ToolStrip : ToolStripBase, IToolStrip
     {
         /// <summary>
@@ -52,7 +53,7 @@ namespace BudgetExecution
             BorderStyle = ToolStripBorderStyle.StaticEdge;
             CanApplyTheme = true;
             CanOverrideStyle = true;
-            ImageScalingSize = new Size( 20, 20 );
+            ImageScalingSize = new Size( 16, 16 );
             Office12Mode = true;
             LauncherStyle = LauncherStyle.Office12;
             ShowLauncher = true;
