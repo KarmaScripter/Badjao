@@ -1,0 +1,23 @@
+{
+  "runtimeOptions": {
+    "tfm": "net7.0",
+    "frameworks": [
+      {
+        "name": "Microsoft.NETCore.App",
+        "version": "7.0.0-rc.2.22472.3"
+      },
+      {
+        "name": "Microsoft.WindowsDesktop.App",
+        "version": "7.0.0-rc.2.22472.13"
+      }
+    ],
+    "additionalProbingPaths": [
+      "C:\\Users\\terry\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\terry\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\WPF\\20.3.0.47\\ToolboxNuGetPackages"
+    ],
+    "configProperties": {
+      "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
+    }
+  }
+}
