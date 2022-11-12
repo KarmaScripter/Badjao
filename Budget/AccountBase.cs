@@ -13,6 +13,7 @@ namespace BudgetExecution
     /// 
     /// </summary>
     [ SuppressMessage( "ReSharper", "MemberCanBeMadeStatic.Global" ) ]
+    [ SuppressMessage( "ReSharper", "PropertyCanBeMadeInitOnly.Global" ) ]
     public abstract class AccountBase : Element
     {
         /// <summary>
@@ -29,7 +30,7 @@ namespace BudgetExecution
         /// <value>
         /// The NPM code.
         /// </value>
-        public IElement NpmCode { get; set; }
+        public string NpmCode { get; set; }
         
         /// <summary>
         /// Gets the program project code.
@@ -37,7 +38,7 @@ namespace BudgetExecution
         /// <value>
         /// The program project code.
         /// </value>
-        public IElement ProgramProjectCode { get; set; }
+        public string ProgramProjectCode { get; set; }
 
         /// <summary>
         /// Gets the program area code.
@@ -45,7 +46,7 @@ namespace BudgetExecution
         /// <value>
         /// The program area code.
         /// </value>
-        public IElement ProgramAreaCode { get; set; }
+        public string ProgramAreaCode { get; set; }
 
         /// <summary>
         /// Gets the goal code.
@@ -53,7 +54,7 @@ namespace BudgetExecution
         /// <value>
         /// The goal code.
         /// </value>
-        public IElement GoalCode { get; set; }
+        public string GoalCode { get; set; }
 
         /// <summary>
         /// Gets the objective code.
@@ -61,7 +62,7 @@ namespace BudgetExecution
         /// <value>
         /// The objective code.
         /// </value>
-        public IElement ObjectiveCode { get; set; }
+        public string ObjectiveCode { get; set; }
 
         /// <summary>
         /// Gets the activity code.
@@ -69,7 +70,7 @@ namespace BudgetExecution
         /// <value>
         /// The activity code.
         /// </value>
-        public IElement ActivityCode { get; set; }
+        public string ActivityCode { get; set; }
 
         /// <summary>
         /// Gets the arguments.
@@ -113,7 +114,7 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        public IKey GetId()
+        public IKey GetId( )
         {
             try
             {

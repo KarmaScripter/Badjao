@@ -9,6 +9,7 @@ namespace BudgetExecution
     using System.Data;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using BudgetExecution.Budget;
 
     /// <summary>
     /// Object classes are categories in a classification system that presents

@@ -14,7 +14,7 @@ namespace BudgetExecution
     /// 
     /// </summary>
     [ SuppressMessage( "ReSharper", "ConvertToConstant.Local" ) ]
-    public class ProgramProject : DescriptionBase, IProgramProject, ISource
+    public class ProgramProject : DescriptionBase, ISource
     {
         /// <summary>
         /// The source
@@ -134,115 +134,7 @@ namespace BudgetExecution
 
             return default;
         }
-
-        /// <summary>
-        /// Gets the definition.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IElement GetDefinition( )
-        {
-            try
-            {
-                return Definition ?? default( IElement );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the laws.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IElement GetLaws( )
-        {
-            try
-            {
-                return Laws ?? default( IElement );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the title.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IElement GetTitle( )
-        {
-            try
-            {
-                return Title ?? default( IElement );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the narrative.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IElement GetNarrative( )
-        {
-            try
-            {
-                return Narrative ?? default( IElement );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the program area code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IElement GetProgramAreaCode( )
-        {
-            try
-            {
-                return ProgramAreaCode ?? default( IElement );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the name of the program area.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IElement GetProgramAreaName( )
-        {
-            try
-            {
-                return ProgramAreaName ?? default( IElement );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Default;
-            }
-        }
-
+        
         /// <summary>
         /// Converts to dictionary.
         /// </summary>
@@ -260,36 +152,6 @@ namespace BudgetExecution
             {
                 Fail( ex );
                 return default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the program project.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IProgramProject GetProgramProject( )
-        {
-            return MemberwiseClone( ) as ProgramProject;
-        }
-
-        /// <summary>
-        /// Gets the source.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public Source GetSource( )
-        {
-            try
-            {
-                return Enum.IsDefined( typeof( Source ), Source )
-                    ? Source
-                    : Source.NS;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Source.NS;
             }
         }
     }

@@ -8,6 +8,7 @@ namespace BudgetExecution
     using System.Data;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using BudgetExecution.Budget;
 
     /// <summary>
     /// 

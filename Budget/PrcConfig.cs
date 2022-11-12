@@ -6,6 +6,7 @@ namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;
+    using BudgetExecution.Budget;
 
     /// <summary>
     /// 

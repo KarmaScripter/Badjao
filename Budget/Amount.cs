@@ -12,6 +12,8 @@ namespace BudgetExecution
     /// 
     /// </summary>
     /// <seealso cref="IAmount" />
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
+    [ SuppressMessage( "ReSharper", "AssignNullToNotNullAttribute" ) ]
     public class Amount : DataUnit, IAmount
     {
         /// <summary>
@@ -28,6 +30,16 @@ namespace BudgetExecution
         /// The delta
         /// </summary>
         public double Delta { get; set; }
+        
+        /// <summary>
+        /// The funding
+        /// </summary>
+        public double Funding { get; set; }
+
+        /// <summary>
+        /// The numeric
+        /// </summary>
+        public Numeric Numeric { get; set; } = Numeric.Amount;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Amount"/> class.
@@ -69,21 +81,11 @@ namespace BudgetExecution
         /// <param name="numeric">The numeric.</param>
         public Amount( DataRow dataRow, Numeric numeric = Numeric.Amount )
         {
-            Funding = double.Parse( dataRow[ $"{numeric}" ].ToString( ) );
+            Funding = double.Parse( dataRow[ $"{ numeric }" ]?.ToString( ) );
             Numeric = numeric;
             Initial = Funding;
             Delta = Initial - Funding;
         }
-
-        /// <summary>
-        /// The funding
-        /// </summary>
-        public double Funding { get; set; }
-
-        /// <summary>
-        /// The numeric
-        /// </summary>
-        public Numeric Numeric { get; set; } = Numeric.Amount;
 
         /// <summary>
         /// Gets the numeric.
@@ -100,7 +102,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -120,7 +121,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return 0;
             }
         }
@@ -140,7 +140,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return Default.Funding;
             }
         }
@@ -215,7 +214,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return false;
                 }
             }
@@ -247,7 +245,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return false;
                 }
             }

@@ -174,7 +174,7 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        public IProgramProject GetProgramProject( )
+        public IElement GetProgramProject( )
         {
             try
             {
@@ -186,7 +186,7 @@ namespace BudgetExecution
                 
                 var _sqlStatement = new SqlStatement( Source.ProgramProjects, Provider.SQLite, _dict, SQL.SELECT );
                 using var _query = new Query(  _sqlStatement );
-                return new ProgramProject( _query ) ?? default( ProgramProject );
+                return new ProgramProject( _query );
             }
             catch( Exception ex )
             {
