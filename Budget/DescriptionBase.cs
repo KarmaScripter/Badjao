@@ -7,10 +7,12 @@ namespace BudgetExecution
     using System;
     using System.Collections.Generic;
     using System.Data;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// 
     /// </summary>
+    [ SuppressMessage( "ReSharper", "PropertyCanBeMadeInitOnly.Global" ) ]
     public abstract class DescriptionBase : Element, IProgram
     {
         /// <summary>
@@ -52,15 +54,7 @@ namespace BudgetExecution
         /// The title.
         /// </value>
         public IElement Title { get; set; }
-
-        /// <summary>
-        /// Gets the narrative.
-        /// </summary>
-        /// <value>
-        /// The narrative.
-        /// </value>
-        public IElement Narrative { get; set; }
-
+        
         /// <summary>
         /// Gets the program area code.
         /// </summary>

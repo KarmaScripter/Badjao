@@ -44,7 +44,6 @@ namespace BudgetExecution
             Title = new Element( Record, Field.Title );
             Definition = new Element( Record, Field.Definition );
             Laws = new Element( Record, Field.Laws );
-            Narrative = new Element( Record, Field.Narrative );
             ProgramAreaCode = new Element( Record, Field.ProgramAreaCode );
             ProgramAreaName = new Element( Record, Field.ProgramAreaName );
             Data = Record?.ToDictionary( );
@@ -65,7 +64,6 @@ namespace BudgetExecution
             Title = new Element( Record, Field.Title );
             Definition = new Element( Record, Field.Definition );
             Laws = new Element( Record, Field.Laws );
-            Narrative = new Element( Record, Field.Narrative );
             ProgramAreaCode = new Element( Record, Field.ProgramAreaCode );
             ProgramAreaName = new Element( Record, Field.ProgramAreaName );
             Data = Record?.ToDictionary( );
@@ -86,7 +84,6 @@ namespace BudgetExecution
             Title = new Element( Record, Field.Title );
             Definition = new Element( Record, Field.Definition );
             Laws = new Element( Record, Field.Laws );
-            Narrative = new Element( Record, Field.Narrative );
             ProgramAreaCode = new Element( Record, Field.ProgramAreaCode );
             ProgramAreaName = new Element( Record, Field.ProgramAreaName );
             Data = Record?.ToDictionary( );
@@ -107,7 +104,6 @@ namespace BudgetExecution
             Title = new Element( Record, Field.Title );
             Definition = new Element( Record, Field.Definition );
             Laws = new Element( Record, Field.Laws );
-            Narrative = new Element( Record, Field.Narrative );
             ProgramAreaCode = new Element( Record, Field.ProgramAreaCode );
             ProgramAreaName = new Element( Record, Field.ProgramAreaName );
             Data = Record?.ToDictionary( );

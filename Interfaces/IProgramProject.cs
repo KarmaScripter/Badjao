@@ -14,6 +14,6 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        IProgramProject GetProgramProject();
+        IProgramProject ProgramProject { get; set; };
     }
 }
