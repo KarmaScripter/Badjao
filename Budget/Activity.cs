@@ -9,7 +9,6 @@ namespace BudgetExecution
     using System.Data;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using BudgetExecution.Budget;
 
     /// <summary>
     /// Generally, an organized set of activities directed toward a common purpose or
@@ -78,9 +77,9 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( query )?.Record;
             ID = new Key( Record, PrimaryKey.ActivityCodesId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
-            Data = Record?.ToDictionary();
+            Name = Record[ $"{ Field.ActivityName }" ].ToString( );
+            Code = Record[ $"{ Field.ActivityCode }" ].ToString( );
+            Data = Record?.ToDictionary( );
         }
 
         /// <summary>
@@ -93,8 +92,8 @@ namespace BudgetExecution
         {
             Record = builder?.Record;
             ID = new Key( Record, PrimaryKey.ActivityCodesId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            Name = Record?[ $"{ Field.ActivityName }" ].ToString( );
+            Code = Record?[ $"{ Field.ActivityCode }" ].ToString( );
             Data = Record?.ToDictionary();
         }
 
@@ -112,9 +111,9 @@ namespace BudgetExecution
         {
             Record = dataRow;
             ID = new Key( Record, PrimaryKey.ActivityCodesId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
-            Data = Record?.ToDictionary();
+            Name = dataRow[ $"{ Field.ActivityName }" ].ToString( );
+            Code = dataRow[ $"{ Field.ActivityCode }" ].ToString( );
+            Data = dataRow?.ToDictionary();
         }
 
         /// <summary>
@@ -178,44 +177,6 @@ namespace BudgetExecution
             {
                 Fail( ex );
                 return default( IDictionary<string, object> );
-            }
-        }
-        
-        /// <summary>
-        /// Gets the activity.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IActivity GetActivity()
-        {
-            try
-            {
-                return (Activity)MemberwiseClone( );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( IActivity );
-            }
-        }
-
-        /// <summary>
-        /// Gets the source.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public Source GetSource()
-        {
-            try
-            {
-                return Enum.IsDefined( typeof( Source ), Source )
-                    ? Source
-                    : Source.NS;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Source.NS;
             }
         }
     }

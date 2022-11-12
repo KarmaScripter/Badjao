@@ -7,13 +7,13 @@ namespace BudgetExecution
     using System;
     using System.Data;
     using System.Diagnostics.CodeAnalysis;
-    using BudgetExecution.Budget;
 
     /// <summary>
     /// 
     /// </summary>
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
+    [ SuppressMessage( "ReSharper", "PropertyCanBeMadeInitOnly.Global" ) ]
     public abstract class PrcBase : DataUnit
     {
         /// <summary>
@@ -22,7 +22,7 @@ namespace BudgetExecution
         /// <value>
         /// The dataRow.
         /// </value>
-        public DataRow Record { get; set; }
+        public virtual DataRow Record { get; set; }
 
         /// <summary>
         /// Gets or sets the ProgramResultCodes identifier.
@@ -38,7 +38,7 @@ namespace BudgetExecution
         /// <value>
         /// The budget level.
         /// </value>
-        public IElement BudgetLevel { get; set; }
+        public virtual string BudgetLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the bfy.
@@ -46,7 +46,7 @@ namespace BudgetExecution
         /// <value>
         /// The bfy.
         /// </value>
-        public IElement BFY { get; set; }
+        public virtual string BFY { get; set; }
 
         /// <summary>
         /// Gets or sets the rpio code.
@@ -54,7 +54,7 @@ namespace BudgetExecution
         /// <value>
         /// The rpio code.
         /// </value>
-        public IElement RpioCode { get; set; }
+        public virtual string RpioCode { get; set; }
 
         /// <summary>
         /// Gets or sets the fund code.
@@ -62,7 +62,7 @@ namespace BudgetExecution
         /// <value>
         /// The fund code.
         /// </value>
-        public IElement FundCode { get; set; }
+        public virtual string FundCode { get; set; }
 
         /// <summary>
         /// Gets or sets the ah code.
@@ -70,7 +70,7 @@ namespace BudgetExecution
         /// <value>
         /// The ah code.
         /// </value>
-        public IElement AhCode { get; set; }
+        public virtual string AhCode { get; set; }
 
         /// <summary>
         /// Gets or sets the org code.
@@ -78,7 +78,7 @@ namespace BudgetExecution
         /// <value>
         /// The org code.
         /// </value>
-        public IElement OrgCode { get; set; }
+        public virtual string OrgCode { get; set; }
 
         /// <summary>
         /// Gets or sets the account code.
@@ -86,23 +86,7 @@ namespace BudgetExecution
         /// <value>
         /// The account code.
         /// </value>
-        public IElement AccountCode { get; set; }
-
-        /// <summary>
-        /// Gets or sets the boc code.
-        /// </summary>
-        /// <value>
-        /// The boc code.
-        /// </value>
-        public IElement BocCode { get; set; }
-
-        /// <summary>
-        /// Gets or sets the rc code.
-        /// </summary>
-        /// <value>
-        /// The rc code.
-        /// </value>
-        public IElement RcCode { get; set; }
+        public virtual string AccountCode { get; set; }
 
         /// <summary>
         /// Gets or sets the activity code.
@@ -110,7 +94,39 @@ namespace BudgetExecution
         /// <value>
         /// The activity code.
         /// </value>
-        public IElement ActivityCode { get; set; }
+        public virtual string ActivityCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the boc code.
+        /// </summary>
+        /// <value>
+        /// The boc code.
+        /// </value>
+        public virtual string BocCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rc code.
+        /// </summary>
+        /// <value>
+        /// The rc code.
+        /// </value>
+        public virtual string RcCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the activity code.
+        /// </summary>
+        /// <value>
+        /// The activity code.
+        /// </value>
+        public virtual string ProgramProjectCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the program area code.
+        /// </summary>
+        /// <value>
+        /// The program area code.
+        /// </value>
+        public virtual string ProgramAreaCode { get; set; }
 
         /// <summary>
         /// Sets the field.
@@ -159,192 +175,6 @@ namespace BudgetExecution
             {
                 Fail( ex );
                 return default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the budget lwvel.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetLevel( )
-        {
-            try
-            {
-                return !string.IsNullOrEmpty( BudgetLevel?.Value?.ToString( ) )
-                    ? BudgetLevel
-                    : default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the bfy.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetBFY( )
-        {
-            try
-            {
-                return !string.IsNullOrEmpty( BFY?.Value?.ToString( ) )
-                    ? BFY
-                    : default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the rpio code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetRpioCode( )
-        {
-            try
-            {
-                return !string.IsNullOrEmpty( RpioCode?.Value?.ToString( ) )
-                    ? RpioCode
-                    : default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the ah code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetAhCode( )
-        {
-            try
-            {
-                return AhCode ?? Element.Default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the fund code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetFundCode( )
-        {
-            try
-            {
-                return FundCode ?? Element.Default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the org code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetOrgCode( )
-        {
-            try
-            {
-                return OrgCode ?? Element.Default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the account code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetAccountCode( )
-        {
-            try
-            {
-                return AccountCode ?? Element.Default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the rc code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetRcCode( )
-        {
-            try
-            {
-                return  RcCode ?? Element.Default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the boc code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetBocCode( )
-        {
-            try
-            {
-                return BocCode ?? Element.Default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the activity code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetActivityCode( )
-        {
-            try
-            {
-                return ActivityCode ?? Element.Default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
             }
         }
     }

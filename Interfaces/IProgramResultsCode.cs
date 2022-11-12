@@ -14,90 +14,100 @@ namespace BudgetExecution
         /// Gets the identifier.
         /// </summary>
         /// <returns></returns>
-        IKey GetId();
+        IKey GetId( );
 
         /// <summary>
         /// Gets the budget level.
         /// </summary>
         /// <returns>
         /// </returns>
-        IBudgetLevel GetBudgetLevel();
+        string BudgetLevel { get; set; }
 
         /// <summary>
         /// Gets the resource planning office.
         /// </summary>
         /// <returns>
         /// </returns>
-        IResourcePlanningOffice GetResourcePlanningOffice();
+        string RpioCode  { get; set; }
 
         /// <summary>
         /// Gets the budget fiscal year.
         /// </summary>
         /// <returns>
         /// </returns>
-        IBudgetFiscalYear GetBudgetFiscalYear();
+        string BFY { get; set; }
 
         /// <summary>
         /// Gets the allowance holder.
         /// </summary>
         /// <returns>
         /// </returns>
-        IAllowanceHolder GetAllowanceHolder();
+        string AhCode  { get; set; }
 
         /// <summary>
         /// Gets the fund.
         /// </summary>
         /// <returns>
         /// </returns>
-        IFund GetFund();
+        string FundCode  { get; set; }
 
         /// <summary>
         /// Gets the organization.
         /// </summary>
         /// <returns>
         /// </returns>
-        IOrganization GetOrganization();
+        string OrgCode  { get; set; }
 
         /// <summary>
         /// Gets the account.
         /// </summary>
         /// <returns>
         /// </returns>
-        IAccount GetAccount();
+        string AccountCode { get; set; }
 
         /// <summary>
-        /// Gets the amount.
+        /// Gets or sets the activity code.
         /// </summary>
-        /// <returns>
-        /// </returns>
-        IAmount GetAmount();
+        /// <value>
+        /// The activity code.
+        /// </value>
+        string ActivityCode { get; set; }
 
         /// <summary>
         /// Gets the responsibility center.
         /// </summary>
         /// <returns>
         /// </returns>
-        IResponsibilityCenter GetResponsibilityCenter();
+        string RcCode { get; set; }
 
         /// <summary>
         /// Gets the budget object class.
         /// </summary>
         /// <returns>
         /// </returns>
-        IBudgetObjectClass GetBudgetObjectClass();
+        string BocCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the program project code.
+        /// </summary>
+        /// <value>
+        /// The program project code.
+        /// </value>
+        string ProgramProjectCode { get; set; }
 
         /// <summary>
         /// Gets the program area.
         /// </summary>
         /// <returns>
         /// </returns>
-        IProgramArea GetProgramArea();
+        string ProgramAreaCode { get; set; }
 
         /// <summary>
-        /// Gets the program results code.
+        /// Gets or sets the amount.
         /// </summary>
-        /// <returns>
-        /// </returns>
-        IProgramResultsCode GetProgramResultsCode();
+        /// <value>
+        /// The amount.
+        /// </value>
+        double Amount { get; set; }
     }
 }

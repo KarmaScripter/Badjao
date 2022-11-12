@@ -9,7 +9,6 @@ namespace BudgetExecution
     using System.Data;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using BudgetExecution.Budget;
 
     /// <summary>
     /// Object classes are categories in a classification system that presents
@@ -90,8 +89,8 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( Source, SetArgs( boc ) )?.Record;
             ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
-            Name = new Element( Record, Field.BudgetObjectClassName ).Name;
-            Code = new Element( Record, Field.BudgetObjectClassCode ).Code;
+            Name = Record[ $"{ Field.BocName }" ].ToString( );
+            Code = Record[ $"{ Field.BocCode }" ].ToString( );
             Category = boc;
             Data = Record?.ToDictionary( );
         }
@@ -107,10 +106,14 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( Source, SetArgs( code ) )?.Record;
             ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
-            Name = new Element( Record, Field.BudgetObjectClassName ).Name;
-            Code = new Element( Record, Field.BudgetObjectClassCode ).Code;
-            Category = (BOC)Enum.Parse( typeof( BOC ), Name );
+            Name = Record[ $"{ Field.BocName }" ].ToString( );
+            Code = Record[ $"{ Field.BocCode }" ].ToString( );
             Data = Record?.ToDictionary( );
+
+            if ( Name != null )
+            {
+                Category = (BOC)Enum.Parse( typeof( BOC ), Name );
+            }
         }
 
         /// <summary>
@@ -123,10 +126,14 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( query )?.Record;
             ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
-            Name = new Element( Record, Field.BudgetObjectClassName ).Name;
-            Code = new Element( Record, Field.BudgetObjectClassCode ).Code;
-            Category = (BOC)Enum.Parse( typeof( BOC ), Name );
+            Name = Record[ $"{ Field.BocName }" ].ToString( );
+            Code = Record[ $"{ Field.BocCode }" ].ToString( );
             Data = Record?.ToDictionary( );
+
+            if ( Name != null )
+            {
+                Category = (BOC)Enum.Parse( typeof( BOC ), Name );
+            }
         }
 
         /// <summary>
@@ -139,10 +146,14 @@ namespace BudgetExecution
         {
             Record = builder?.Record;
             ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
-            Name = new Element( Record, Field.BudgetObjectClassName ).Name;
-            Code = new Element( Record, Field.BudgetObjectClassCode ).Code;
-            Category = (BOC)Enum.Parse( typeof( BOC ), Name );
+            Name = Record?[ $"{ Field.BocName }" ].ToString( );
+            Code = Record?[ $"{ Field.BocCode }" ].ToString( );
             Data = Record?.ToDictionary( );
+
+            if ( Name != null )
+            {
+                Category = (BOC)Enum.Parse( typeof( BOC ), Name );
+            }
         }
 
         /// <summary>
@@ -155,10 +166,14 @@ namespace BudgetExecution
         {
             Record = dataRow;
             ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
-            Name = new Element( Record, Field.BudgetObjectClassName ).Name;
-            Code = new Element( Record, Field.BudgetObjectClassCode ).Code;
-            Category = (BOC)Enum.Parse( typeof( BOC ), Name );
+            Name = dataRow[ $"{ Field.ActivityName }" ].ToString( );
+            Code = dataRow[ $"{ Field.ActivityCode }" ].ToString( );
             Data = Record?.ToDictionary( );
+
+            if ( Name != null )
+            {
+                Category = (BOC)Enum.Parse( typeof( BOC ), Name );
+            }
         }
 
         /// <summary>
@@ -193,9 +208,9 @@ namespace BudgetExecution
         {
             try
             {
-                var amount = prc?.GetAmount( );
-                return amount?.Funding > -1
-                    ? amount.Funding
+                var _amount = prc.Amount;
+                return _amount > -1
+                    ? _amount.Funding
                     : 0;
             }
             catch( Exception ex )
@@ -221,7 +236,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    return new Dictionary<string, object> { [ $"{Field.Code}" ] = code };
+                    return new Dictionary<string, object> { [ $"{ Field.Code }" ] = code };
                 }
                 catch( Exception ex )
                 {
@@ -235,7 +250,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    return new Dictionary<string, object> { [ $"{Field.Name}" ] = code };
+                    return new Dictionary<string, object> { [ $"{ Field.Name }" ] = code };
                 }
                 catch( Exception ex )
                 {
@@ -277,17 +292,7 @@ namespace BudgetExecution
 
             return default;
         }
-
-        /// <summary>
-        /// Gets the budget object class.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IBudgetObjectClass GetBudgetObjectClass( )
-        {
-            return MemberwiseClone( ) as BudgetObjectClass;
-        }
-
+        
         /// <summary>
         /// Gets the budget object class category.
         /// </summary>

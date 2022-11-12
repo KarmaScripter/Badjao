@@ -41,13 +41,14 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( query )?.Record;
             ID = new Key( Record, PrimaryKey.AccountsId );
-            Code = new Element( Record, Field.Code ).Code;
-            NpmCode = new Element( Record, Field.NpmCode );
-            ProgramProjectCode = new Element( Record, Field.ProgramProjectCode );
-            ProgramAreaCode = new Element( Record, Field.ProgramAreaCode );
-            GoalCode = new Element( Record, Field.GoalCode );
-            ObjectiveCode = new Element( Record, Field.ObjectiveCode );
-            ActivityCode = new Element( Record, Field.ActivityCode );
+            Code = Record[ $"{ Field.AccountCode }" ].ToString( );
+            NpmCode = Record[ $"{ Field.NpmCode }" ].ToString( );
+            ProgramProjectCode = Record[ $"{ Field.ProgramProjectCode }" ].ToString( );
+            ActivityCode = Record[ $"{ Field.ActivityCode }" ].ToString( );
+            ProgramAreaCode = Record[ $"{ Field.ProgramAreaCode }" ].ToString( );
+            GoalCode = Record[ $"{ Field.GoalCode }" ].ToString( );
+            ObjectiveCode = Record[ $"{ Field.ObjectiveCode }" ].ToString( );
+            ActivityCode = Record[ $"{ Field.ActivityCode }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
@@ -61,13 +62,13 @@ namespace BudgetExecution
         {
             Record = dataBuilder?.Record;
             ID = new Key( Record, PrimaryKey.AccountsId );
-            Code = new Element( Record, Field.Code ).Code;
-            NpmCode = new Element( Record, Field.NpmCode );
-            ProgramProjectCode = new Element( Record, Field.ProgramProjectCode );
-            ProgramAreaCode = new Element( Record, Field.ProgramAreaCode );
-            GoalCode = new Element( Record, Field.GoalCode );
-            ObjectiveCode = new Element( Record, Field.ObjectiveCode );
-            ActivityCode = new Element( Record, Field.ActivityCode );
+            Code = Record?[ $"{ Field.AccountCode }" ].ToString( );
+            NpmCode = Record?[ $"{ Field.NpmCode }" ].ToString( );
+            ProgramProjectCode = Record?[ $"{ Field.ProgramProjectCode }" ].ToString( );
+            ActivityCode = Record[ $"{ Field.ActivityCode }" ].ToString( );
+            ProgramAreaCode = Record?[ $"{ Field.ProgramAreaCode }" ].ToString( );
+            GoalCode = Record?[ $"{ Field.GoalCode }" ].ToString( );
+            ObjectiveCode = Record?[ $"{ Field.ObjectiveCode }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
@@ -81,13 +82,13 @@ namespace BudgetExecution
         {
             Record = dataRow;
             ID = new Key( Record, PrimaryKey.AccountsId );
-            Code = new Element( Record, Field.Code ).Code;
-            NpmCode = new Element( Record, Field.NpmCode );
-            ProgramProjectCode = new Element( Record, Field.ProgramProjectCode );
-            ProgramAreaCode = new Element( Record, Field.ProgramAreaCode );
-            GoalCode = new Element( Record, Field.GoalCode );
-            ObjectiveCode = new Element( Record, Field.ObjectiveCode );
-            ActivityCode = new Element( Record, Field.ActivityCode );
+            Code = Record[ $"{ Field.AccountCode }" ].ToString( );
+            NpmCode = Record[ $"{ Field.NpmCode }" ].ToString( );
+            ProgramProjectCode = Record[ $"{ Field.ProgramProjectCode }" ].ToString( );
+            ActivityCode = Record[ $"{ Field.ActivityCode }" ].ToString( );
+            ProgramAreaCode = Record[ $"{ Field.ProgramAreaCode }" ].ToString( );
+            GoalCode = Record[ $"{ Field.GoalCode }" ].ToString( );
+            ObjectiveCode = Record[ $"{ Field.ObjectiveCode }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
@@ -101,13 +102,13 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( Source, GetArgs( code ) )?.Record;
             ID = new Key( Record, PrimaryKey.AccountsId );
-            Code = new Element( Record, Field.Code ).Code;
-            NpmCode = new Element( Record, Field.NpmCode );
-            ProgramProjectCode = new Element( Record, Field.ProgramProjectCode );
-            ProgramAreaCode = new Element( Record, Field.ProgramAreaCode );
-            GoalCode = new Element( Record, Field.GoalCode );
-            ObjectiveCode = new Element( Record, Field.ObjectiveCode );
-            ActivityCode = new Element( Record, Field.ActivityCode );
+            Code = Record[ $"{ Field.AccountCode }" ].ToString( );
+            NpmCode = Record[ $"{ Field.NpmCode }" ].ToString( );
+            ProgramProjectCode = Record[ $"{ Field.ProgramProjectCode }" ].ToString( );
+            ActivityCode = Record[ $"{ Field.ActivityCode }" ].ToString( );
+            ProgramAreaCode = Record[ $"{ Field.ProgramAreaCode }" ].ToString( );
+            GoalCode = Record[ $"{ Field.GoalCode }" ].ToString( );
+            ObjectiveCode = Record[ $"{ Field.ObjectiveCode }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
@@ -116,7 +117,7 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        public IAccount GetAccount( )
+        public Account GetAccount( )
         {
             try
             {
@@ -125,178 +126,10 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IAccount );
+                return default( Account );
             }
         }
-
-        /// <summary>
-        /// Gets the activity
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IActivity GetActivity( )
-        {
-            if( !string.IsNullOrEmpty( ActivityCode?.Value.ToString( ) ) )
-            {
-                try
-                {
-                    var _dictionary = new Dictionary<string, object>
-                    {
-                        [ $"{Field.ActivityCode}" ] = ActivityCode.Value
-                    };
-
-                    var _connection =
-                        new ConnectionBuilder( Source.ActivityCodes, Provider.SQLite );
-
-                    var _statement = new SqlStatement( Source.Goals, Provider.SQLite, _dictionary,
-                        SQL.SELECT );
-
-                    using var _query = new Query( _statement );
-                    return new Activity( _query ) ?? default( Activity );
-                }
-                catch( SystemException ex )
-                {
-                    Fail( ex );
-                    return default( IActivity );
-                }
-            }
-
-            return default( IActivity );
-        }
-
-        /// <summary>
-        /// Gets the national program code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public INationalProgram GetNationalProgram( )
-        {
-            try
-            {
-                var _dictionary = new Dictionary<string, object>
-                {
-                    [ $"{Field.NpmCode}" ] = NpmCode
-                };
-
-                var _connection = new ConnectionBuilder( Source.NationalPrograms, Provider.SQLite );
-                var _statement = new SqlStatement( Source.Goals, Provider.SQLite, _dictionary,
-                    SQL.SELECT );
-
-                using var _query = new Query( _statement );
-                return new NationalProgram( _query ) ?? default( NationalProgram );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( INationalProgram );
-            }
-        }
-
-        /// <summary>
-        /// Gets the goal code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IGoal GetGoal( )
-        {
-            try
-            {
-                var _dictionary = new Dictionary<string, object> { [ $"{Field.Code}" ] = GoalCode };
-                var _connection = new ConnectionBuilder( Source.Goals, Provider.SQLite );
-                var _statement = new SqlStatement( Source.Goals, Provider.SQLite, _dictionary,
-                    SQL.SELECT );
-
-                using var _query = new Query( _statement );
-                return new Goal( _query ) ?? default( Goal );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( IGoal );
-            }
-        }
-
-        /// <summary>
-        /// Gets the objective code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IObjective GetObjective( )
-        {
-            try
-            {
-                var _dictionary = new Dictionary<string, object>
-                {
-                    [ $"{Field.Code}" ] = ObjectiveCode
-                };
-
-                var _statement = new SqlStatement( Source.Objectives, Provider.SQLite, _dictionary,
-                    SQL.SELECT );
-
-                using var _query = new Query( _statement );
-                return new Objective( _query ) ?? default( Objective );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( IObjective );
-            }
-        }
-
-        /// <summary>
-        /// Gets the program project code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IProgramProject GetProgramProject( )
-        {
-            try
-            {
-                var _dictionary = new Dictionary<string, object>
-                {
-                    [ $"{Field.Code}" ] = ProgramProjectCode
-                };
-
-                var _statement = new SqlStatement( Source.ProgramProjects, Provider.SQLite,
-                    _dictionary, SQL.SELECT );
-
-                using var _query = new Query( _statement );
-                return new ProgramProject( _query ) ?? default( ProgramProject );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( IProgramProject );
-            }
-        }
-
-        /// <summary>
-        /// Gets the program area code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IProgramArea GetProgramArea( )
-        {
-            try
-            {
-                var _dictionary = new Dictionary<string, object>
-                {
-                    [ $"{Field.Code}" ] = ProgramAreaCode
-                };
-
-                var _statement = new SqlStatement( Source.ProgramAreas, Provider.SQLite,
-                    _dictionary, SQL.SELECT );
-
-                using var _query = new Query( _statement );
-                return new ProgramArea( _query ) ?? default( ProgramArea );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( IProgramArea );
-            }
-        }
-
+        
         /// <summary>
         /// Converts to dictionary.
         /// </summary>

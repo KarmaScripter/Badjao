@@ -11,13 +11,13 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        IBudgetObjectClass GetBudgetObjectClass();
+        string Code { get; set; }
 
         /// <summary>
         /// Gets the budget object class category.
         /// </summary>
         /// <returns>
         /// </returns>
-        BOC GetBudgetObjectClassCategory();
+        BOC GetBudgetObjectClassCategory( );
     }
 }

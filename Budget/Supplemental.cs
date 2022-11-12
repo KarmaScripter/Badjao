@@ -8,7 +8,6 @@ namespace BudgetExecution
     using System.Collections.Immutable;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using BudgetExecution.Budget;
 
     /// <summary>
     /// Budget authority provided in an appropriations act in addition to regular or

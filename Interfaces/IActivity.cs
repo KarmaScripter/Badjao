@@ -14,6 +14,6 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        IActivity GetActivity();
+        string Code { get; set; }
     }
 }

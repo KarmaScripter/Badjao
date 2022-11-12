@@ -7,55 +7,55 @@ namespace BudgetExecution
     /// <summary>
     /// 
     /// </summary>
-    public interface IAccount : IElement
+    public interface IAccount
     {
         /// <summary>
         /// Gets the account.
         /// </summary>
         /// <returns>
         /// </returns>
-        IAccount GetAccount();
+        string Code { get; set; }
 
         /// <summary>
         /// Gets the activity
         /// </summary>
         /// <returns>
         /// </returns>
-        IActivity GetActivity();
+        string ActivityCode { get; set; }
 
         /// <summary>
         /// Gets the national program code.
         /// </summary>
         /// <returns>
         /// </returns>
-        INationalProgram GetNationalProgram();
+        string NpmCode { get; set; }
 
         /// <summary>
         /// Gets the goal code.
         /// </summary>
         /// <returns>
         /// </returns>
-        IGoal GetGoal();
+        string GoalCode { get; set; }
 
         /// <summary>
         /// Gets the objective code.
         /// </summary>
         /// <returns>
         /// </returns>
-        IObjective GetObjective();
+        string ObjectiveCode { get; set; }
 
         /// <summary>
         /// Gets the program project code.
         /// </summary>
         /// <returns>
         /// </returns>
-        IProgramProject GetProgramProject();
+        string ProgramProjectCode { get; set; }
 
         /// <summary>
         /// Gets the program area code.
         /// </summary>
         /// <returns>
         /// </returns>
-        IProgramArea GetProgramArea();
+        string ProgramAreaCode { get; set; }
     }
 }

@@ -29,6 +29,8 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBeProtected.Global" ) ]
     [ SuppressMessage( "ReSharper", "AutoPropertyCanBeMadeGetOnly.Global" ) ]
+    [ SuppressMessage( "ReSharper", "PropertyCanBeMadeInitOnly.Global" ) ]
+    [ SuppressMessage( "ReSharper", "AssignNullToNotNullAttribute" ) ]
     public class ProgramResultsCode : PrcConfig, IProgramResultsCode
     {
         /// <summary>
@@ -45,7 +47,103 @@ namespace BudgetExecution
         /// <value>
         /// The amount.
         /// </value>
-        public IAmount Amount { get; set; }
+        public double Amount { get; set; }
+
+        /// <summary>
+        /// Gets or sets the budget level.
+        /// </summary>
+        /// <value>
+        /// The budget level.
+        /// </value>
+        public override string BudgetLevel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bfy.
+        /// </summary>
+        /// <value>
+        /// The bfy.
+        /// </value>
+        public override string BFY { get; set; }
+
+        /// <summary>
+        /// Gets or sets the fund code.
+        /// </summary>
+        /// <value>
+        /// The fund code.
+        /// </value>
+        public override string FundCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rpio code.
+        /// </summary>
+        /// <value>
+        /// The rpio code.
+        /// </value>
+        public override string RpioCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ah code.
+        /// </summary>
+        /// <value>
+        /// The ah code.
+        /// </value>
+        public override string AhCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the org code.
+        /// </summary>
+        /// <value>
+        /// The org code.
+        /// </value>
+        public override string OrgCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the account code.
+        /// </summary>
+        /// <value>
+        /// The account code.
+        /// </value>
+        public override string AccountCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the activity code.
+        /// </summary>
+        /// <value>
+        /// The activity code.
+        /// </value>
+        public override string ActivityCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rc code.
+        /// </summary>
+        /// <value>
+        /// The rc code.
+        /// </value>
+        public override string RcCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the boc code.
+        /// </summary>
+        /// <value>
+        /// The boc code.
+        /// </value>
+        public override string BocCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the activity code.
+        /// </summary>
+        /// <value>
+        /// The activity code.
+        /// </value>
+        public override string ProgramProjectCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the program area code.
+        /// </summary>
+        /// <value>
+        /// The program area code.
+        /// </value>
+        public override string ProgramAreaCode { get; set; }
 
         /// <summary>
         /// Gets the arguments.
@@ -80,19 +178,18 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( query )?.Record;
             ID = new Key( Record, PrimaryKey.AllocationsId );
-            BudgetLevel = new Element( Record, Field.BudgetLevel );
-            BFY = new Element( Record, Field.BFY );
-            RpioCode = new Element( Record, Field.RpioCode );
-            AhCode = new Element( Record, Field.AhCode );
-            FundCode = new Element( Record, Field.FundCode );
-            OrgCode = new Element( Record, Field.OrgCode );
-            RcCode = new Element( Record, Field.RcCode );
-            BocCode = new Element( Record, Field.BocCode );
-            AccountCode = new Element( Record, Field.AccountCode );
-            ActivityCode = new Element( Record, Field.ActivityCode );
-            Amount = new Amount( Record, Numeric.Amount );
+            BudgetLevel = Record[ $"{ Field.BudgetLevel }" ].ToString( );
+            BFY = Record[ $"{ Field.BFY }" ].ToString( );
+            RpioCode = Record[ $"{ Field.RpioCode }" ].ToString( );
+            AhCode = Record[ $"{ Field.AhCode }" ].ToString( );
+            FundCode = Record[ $"{ Field.FundCode }" ].ToString( );
+            OrgCode = Record[ $"{ Field.OrgCode }" ].ToString( );
+            RcCode = Record[ $"{ Field.RcCode }" ].ToString( );
+            BocCode = Record[ $"{ Field.BocCode }" ].ToString( );
+            AccountCode = Record[ $"{ Field.AccountCode }" ].ToString( );
+            ActivityCode = Record[ $"{ Field.ActivityCode }" ].ToString( );
+            Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
             Data = Record?.ToDictionary( );
-            Elements = GetElements( );
         }
 
         /// <summary>
@@ -105,19 +202,18 @@ namespace BudgetExecution
         {
             Record = builder?.Record;
             ID = new Key( Record, PrimaryKey.AllocationsId );
-            BudgetLevel = new Element( Record, Field.BudgetLevel );
-            BFY = new Element( Record, Field.BFY );
-            RpioCode = new Element( Record, Field.RpioCode );
-            AhCode = new Element( Record, Field.AhCode );
-            FundCode = new Element( Record, Field.FundCode );
-            OrgCode = new Element( Record, Field.OrgCode );
-            RcCode = new Element( Record, Field.RcCode );
-            BocCode = new Element( Record, Field.BocCode );
-            AccountCode = new Element( Record, Field.AccountCode );
-            ActivityCode = new Element( Record, Field.ActivityCode );
-            Amount = new Amount( Record, Numeric.Amount );
+            BudgetLevel = Record?[ $"{ Field.BudgetLevel }" ].ToString( );
+            BFY = Record?[ $"{ Field.BFY }" ].ToString( );
+            RpioCode = Record?[ $"{ Field.RpioCode }" ].ToString( );
+            AhCode = Record?[ $"{ Field.AhCode }" ].ToString( );
+            FundCode = Record?[ $"{ Field.FundCode }" ].ToString( );
+            OrgCode = Record?[ $"{ Field.OrgCode }" ].ToString( );
+            RcCode = Record?[ $"{ Field.RcCode }" ].ToString( );
+            BocCode = Record?[ $"{ Field.BocCode }" ].ToString( );
+            AccountCode = Record?[ $"{ Field.AccountCode }" ].ToString( );
+            ActivityCode = Record?[ $"{ Field.ActivityCode }" ].ToString( );
+            Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
             Data = Record?.ToDictionary( );
-            Elements = GetElements( );
         }
 
         /// <summary>
@@ -130,19 +226,18 @@ namespace BudgetExecution
         {
             Record = dataRow;
             ID = new Key( Record, PrimaryKey.AllocationsId );
-            BudgetLevel = new Element( Record, Field.BudgetLevel );
-            BFY = new Element( Record, Field.BFY );
-            RpioCode = new Element( Record, Field.RpioCode );
-            AhCode = new Element( Record, Field.AhCode );
-            FundCode = new Element( Record, Field.FundCode );
-            OrgCode = new Element( Record, Field.OrgCode );
-            RcCode = new Element( Record, Field.RcCode );
-            BocCode = new Element( Record, Field.BocCode );
-            AccountCode = new Element( Record, Field.AccountCode );
-            ActivityCode = new Element( Record, Field.ActivityCode );
-            Amount = new Amount( Record, Numeric.Amount );
+            BudgetLevel = dataRow[ $"{ Field.BudgetLevel }" ].ToString( );
+            BFY = dataRow[ $"{ Field.BFY }" ].ToString( );
+            RpioCode = dataRow[ $"{ Field.RpioCode }" ].ToString( );
+            AhCode = dataRow[ $"{ Field.AhCode }" ].ToString( );
+            FundCode = dataRow[ $"{ Field.FundCode }" ].ToString( );
+            OrgCode = dataRow[ $"{ Field.OrgCode }" ].ToString( );
+            RcCode =dataRow[ $"{ Field.RcCode }" ].ToString( );
+            BocCode = dataRow[ $"{ Field.BocCode }" ].ToString( );
+            AccountCode = dataRow[ $"{ Field.AccountCode }" ].ToString( );
+            ActivityCode = dataRow[ $"{ Field.ActivityCode }" ].ToString( );
+            Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
             Data = Record?.ToDictionary( );
-            Elements = GetElements( );
         }
 
         /// <summary>
@@ -154,119 +249,20 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( Source, dict )?.Record;
             ID = new Key( Record, PrimaryKey.AllocationsId );
-            BudgetLevel = new Element( Record, Field.BudgetLevel );
-            BFY = new Element( Record, Field.BFY );
-            RpioCode = new Element( Record, Field.RpioCode );
-            AhCode = new Element( Record, Field.AhCode );
-            FundCode = new Element( Record, Field.FundCode );
-            OrgCode = new Element( Record, Field.OrgCode );
-            RcCode = new Element( Record, Field.RcCode );
-            BocCode = new Element( Record, Field.BocCode );
-            AccountCode = new Element( Record, Field.AccountCode );
-            ActivityCode = new Element( Record, Field.ActivityCode );
-            Amount = new Amount( Record, Numeric.Amount );
+            BudgetLevel = Record[ $"{ Field.BudgetLevel }" ].ToString( );
+            BFY = Record[ $"{ Field.BFY }" ].ToString( );
+            RpioCode = Record[ $"{ Field.RpioCode }" ].ToString( );
+            AhCode = Record[ $"{ Field.AhCode }" ].ToString( );
+            FundCode = Record[ $"{ Field.FundCode }" ].ToString( );
+            OrgCode = Record[ $"{ Field.OrgCode }" ].ToString( );
+            RcCode = Record[ $"{ Field.RcCode }" ].ToString( );
+            BocCode = Record[ $"{ Field.BocCode }" ].ToString( );
+            AccountCode = Record[ $"{ Field.AccountCode }" ].ToString( );
+            ActivityCode = Record[ $"{ Field.ActivityCode }" ].ToString( );
+            Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
             Data = Record?.ToDictionary( );
-            Elements = GetElements( );
         }
-
-        /// <summary>
-        /// Gets the program project.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IElement GetProgramProject( )
-        {
-            try
-            {
-                var _account = GetAccount( );
-                var _dict = new Dictionary<string, object>
-                {
-                    [ $"{ Field.Code }" ] = _account?.GetProgramProject( )?.Code
-                };
-                
-                var _sqlStatement = new SqlStatement( Source.ProgramProjects, Provider.SQLite, _dict, SQL.SELECT );
-                using var _query = new Query(  _sqlStatement );
-                return new ProgramProject( _query );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the program area.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IProgramArea GetProgramArea( )
-        {
-            try
-            {
-                return !string.IsNullOrEmpty( GetAccount( ).ToString( ) )
-                    ? GetAccount( ).GetProgramArea( )
-                    : default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the program results code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IProgramResultsCode GetProgramResultsCode( )
-        {
-            try
-            {
-                return MemberwiseClone( ) as ProgramResultsCode;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the elements.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IEnumerable<IElement> GetElements( )
-        {
-            try
-            {
-                var _elements = new List<IElement>
-                {
-                    BudgetLevel,
-                    BFY,
-                    RpioCode,
-                    FundCode,
-                    AhCode,
-                    OrgCode,
-                    AccountCode,
-                    BocCode,
-                    RcCode,
-                    ActivityCode
-                };
-
-                return _elements?.Any( ) == true
-                    ? _elements
-                    : default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default;
-            }
-        }
-
+        
         /// <summary>
         /// Converts to dictionary.
         /// </summary>
@@ -278,45 +274,6 @@ namespace BudgetExecution
             {
                 return Data?.Any( ) == true
                     ? Data
-                    : default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the amount.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IAmount GetAmount( )
-        {
-            try
-            {
-                return Amount?.Funding > -1
-                    ? Amount
-                    : default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default;
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public Source GetSource( )
-        {
-            try
-            {
-                return Enum.IsDefined( typeof( Source ), Source )
-                    ? Source
                     : default;
             }
             catch( Exception ex )

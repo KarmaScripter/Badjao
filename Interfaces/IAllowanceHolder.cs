@@ -7,13 +7,13 @@ namespace BudgetExecution
     /// <summary>
     /// 
     /// </summary>
-    public interface IAllowanceHolder : IElement
+    public interface IAllowanceHolder 
     {
         /// <summary>
         /// Gets the allowance holder.
         /// </summary>
         /// <returns>
         /// </returns>
-        IAllowanceHolder GetAllowanceHolder();
+        string Code { get; set; }
     }
 }
