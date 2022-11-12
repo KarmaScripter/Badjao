@@ -19,7 +19,8 @@ namespace BudgetExecution
     /// </summary>
     /// <seealso cref = "ProgramResultsCode"/>
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
-    public class FullTimeEquivalent : ProgramResultsCode, IFullTimeEquivalent
+    [ SuppressMessage( "ReSharper", "AssignNullToNotNullAttribute" ) ]
+    public class FullTimeEquivalent : ProgramResultsCode
     {
         /// <summary>
         /// The source
@@ -44,7 +45,7 @@ namespace BudgetExecution
             : base( query )
         {
             ID = new Key( Record, PrimaryKey.AllocationsId );
-            Amount = new Amount( Record, Numeric.Amount );
+            Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
         }
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace BudgetExecution
             : base( builder )
         {
             ID = new Key( Record, PrimaryKey.AllocationsId );
-            Amount = new Amount( Record, Numeric.Amount );
+            Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace BudgetExecution
             : base( dataRow )
         {
             ID = new Key( Record, PrimaryKey.AllocationsId );
-            Amount = new Amount( Record, Numeric.Amount );
+            Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
         }
         
         /// <summary>
@@ -90,26 +91,6 @@ namespace BudgetExecution
             {
                 Fail( ex );
                 return default( IKey );
-            }
-        }
-
-        /// <summary>
-        /// Gets the amount.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public override IAmount GetAmount()
-        {
-            try
-            {
-                return Amount.Funding > -1.0
-                    ? Amount
-                    : default( IAmount );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( IAmount );
             }
         }
     }

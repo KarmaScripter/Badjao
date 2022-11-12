@@ -210,7 +210,7 @@ namespace BudgetExecution
             {
                 var _amount = prc.Amount;
                 return _amount > -1
-                    ? _amount.Funding
+                    ? _amount
                     : 0;
             }
             catch( Exception ex )

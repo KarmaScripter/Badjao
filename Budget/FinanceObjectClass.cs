@@ -125,7 +125,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    return new Dictionary<string, object> { [ $"{Field.Code}" ] = code };
+                    return new Dictionary<string, object> { [ $"{ Field.Code }" ] = code };
                 }
                 catch( Exception ex )
                 {
