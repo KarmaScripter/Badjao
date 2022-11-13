@@ -21,8 +21,8 @@ namespace BudgetExecution
             Margin = new Padding( 1, 1, 1, 1 );
             Padding = new Padding( 1, 1, 1, 1 );
             ForeColor = Color.Black;
-            Font = new Font( "Roboto", 9 );
-            Width = 3;
+            Font = new Font( "Roboto", 8 );
+            Width = 1;
         }
 
         /// <summary>

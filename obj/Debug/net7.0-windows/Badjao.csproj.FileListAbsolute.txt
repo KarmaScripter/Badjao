@@ -174,3 +174,4 @@ C:\Users\terry\source\repos\Badjao\obj\Debug\net7.0-windows\refint\Badjao.dll
 C:\Users\terry\source\repos\Badjao\obj\Debug\net7.0-windows\Badjao.pdb
 C:\Users\terry\source\repos\Badjao\obj\Debug\net7.0-windows\Badjao.genruntimeconfig.cache
 C:\Users\terry\source\repos\Badjao\obj\Debug\net7.0-windows\ref\Badjao.dll
+C:\Users\terry\source\repos\Badjao\bin\Debug\net7.0-windows\Properties\Resources.resx
