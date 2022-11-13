@@ -76,7 +76,7 @@ namespace BudgetExecution
             // TextBoxLayout
             // 
             this.TextBoxLayout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.TextBoxLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.TextBoxLayout.BackColor = System.Drawing.Color.Transparent;
             this.TextBoxLayout.ColumnCount = 3;
             this.TextBoxLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.55012F));
             this.TextBoxLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.99126F));
@@ -98,7 +98,7 @@ namespace BudgetExecution
             // 
             // CheckBoxLayout
             // 
-            this.CheckBoxLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CheckBoxLayout.BackColor = System.Drawing.Color.Transparent;
             this.CheckBoxLayout.ColumnCount = 1;
             this.CheckBoxLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.CheckBoxLayout.Controls.Add(this.LibraryRadioButton, 0, 11);
@@ -409,7 +409,7 @@ namespace BudgetExecution
             // 
             // PdfRadioButton
             // 
-            this.PdfRadioButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.PdfRadioButton.BackgroundColor = System.Drawing.Color.Transparent;
             this.PdfRadioButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.PdfRadioButton.Checked = false;
             this.PdfRadioButton.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -494,7 +494,7 @@ namespace BudgetExecution
             // 
             // FoundLabel
             // 
-            this.FoundLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.FoundLabel.BackColor = System.Drawing.Color.Transparent;
             this.FoundLabel.BindingSource = null;
             this.FoundLabel.DataFilter = null;
             this.FoundLabel.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -533,6 +533,7 @@ namespace BudgetExecution
             // 
             // TopTablePanel
             // 
+            this.TopTablePanel.BackColor = System.Drawing.Color.Transparent;
             this.TopTablePanel.ColumnCount = 3;
             this.TopTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
             this.TopTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.61539F));
@@ -549,7 +550,7 @@ namespace BudgetExecution
             // 
             // Header
             // 
-            this.Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.Header.BackColor = System.Drawing.Color.Transparent;
             this.Header.BindingSource = null;
             this.Header.DataFilter = null;
             this.Header.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -604,7 +605,7 @@ namespace BudgetExecution
             // 
             // MessageLabel
             // 
-            this.MessageLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.MessageLabel.BackColor = System.Drawing.Color.Transparent;
             this.MessageLabel.BindingSource = null;
             this.MessageLabel.DataFilter = null;
             this.MessageLabel.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -639,7 +640,7 @@ namespace BudgetExecution
             // 
             // SelectButton
             // 
-            this.SelectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.SelectButton.BackColor = System.Drawing.Color.Transparent;
             this.SelectButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.SelectButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.SelectButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -679,7 +680,7 @@ namespace BudgetExecution
             // 
             // CloseButton
             // 
-            this.CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
             this.CloseButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.CloseButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.CloseButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));

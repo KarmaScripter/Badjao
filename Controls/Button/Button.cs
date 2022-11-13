@@ -75,9 +75,9 @@ namespace BudgetExecution
             Text = string.Empty;
 
             // BackColor SeriesConfiguration
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            BackColorState.Disabled = Color.FromArgb( 15, 15, 15 );
-            BackColorState.Enabled = Color.FromArgb( 15, 15, 15 );
+            BackColor = Color.Transparent;
+            BackColorState.Disabled = Color.Transparent;
+            BackColorState.Enabled = Color.Transparent;
             BackColorState.Hover = Color.FromArgb( 40, 40, 40 );
             BackColorState.Pressed = Color.SteelBlue;
 

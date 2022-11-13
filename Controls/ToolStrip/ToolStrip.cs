@@ -20,59 +20,6 @@ namespace BudgetExecution
     public class ToolStrip : ToolStripBase, IToolStrip
     {
         /// <summary>
-        /// Gets or sets the numeric.
-        /// </summary>
-        /// <value>
-        /// The numeric.
-        /// </value>
-        public Numeric Numeric { get; set; }
-
-        /// <summary>
-        /// The image path
-        /// </summary>
-        public virtual string ImageDirectory { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ToolStrip"/> class.
-        /// </summary>
-        public ToolStrip( )
-        {
-            Margin = new Padding( 1, 1, 1, 1 );
-            Padding = new Padding( 1, 1, 1, 1 );
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            ForeColor = Color.Black;
-            Font = new Font( "Roboto", 8 );
-            ShowCaption = true;
-            CaptionFont = new Font( "Roboto", 8 );
-            CaptionStyle = CaptionStyle.Top;
-            CaptionAlignment = CaptionAlignment.Near;
-            CaptionTextStyle = CaptionTextStyle.Plain;
-            Text = "";
-            Anchor = AnchorStyles.Top | AnchorStyles.Left;
-            Dock = DockStyle.Bottom;
-            BorderStyle = ToolStripBorderStyle.StaticEdge;
-            CanApplyTheme = true;
-            CanOverrideStyle = true;
-            ImageScalingSize = new Size( 16, 16 );
-            Office12Mode = true;
-            LauncherStyle = LauncherStyle.Office12;
-            ShowLauncher = true;
-            GripStyle = ToolStripGripStyle.Hidden;
-            VisualStyle = ToolStripExStyle.Office2016DarkGray;
-            OfficeColorScheme = ColorScheme.Black;
-            ThemeStyle.BackColor = Color.Transparent;
-            ThemeStyle.ArrowColor = Color.SteelBlue;
-            ThemeStyle.BottomToolStripBackColor =  Color.Transparent;
-            ThemeStyle.CaptionBackColor = Color.FromArgb( 28, 28, 28 );
-            ThemeStyle.CaptionForeColor = Color.Black;
-            ThemeStyle.ComboBoxStyle.BorderColor = Color.FromArgb( 65, 65, 65 );
-            ThemeStyle.ComboBoxStyle.HoverBorderColor = Color.SteelBlue;
-            ThemeStyle.HoverItemBackColor = Color.SteelBlue;
-            ThemeStyle.HoverItemForeColor = Color.White;
-            Buttons = GetButtons( );
-        }
-
-        /// <summary>
         /// Gets or sets the field.
         /// </summary>
         /// <value>
@@ -103,6 +50,59 @@ namespace BudgetExecution
         /// The size of the image.
         /// </value>
         public Size ImageSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets the numeric.
+        /// </summary>
+        /// <value>
+        /// The numeric.
+        /// </value>
+        public Numeric Numeric { get; set; }
+
+        /// <summary>
+        /// The image path
+        /// </summary>
+        public virtual string ImageDirectory { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolStrip"/> class.
+        /// </summary>
+        public ToolStrip( )
+        {
+            Margin = new Padding( 1, 1, 1, 1 );
+            Padding = new Padding( 1, 1, 1, 1 );
+            BackColor = Color.Transparent;
+            ForeColor = Color.Black;
+            Font = new Font( "Roboto", 8 );
+            ShowCaption = true;
+            CaptionFont = new Font( "Roboto", 8 );
+            CaptionStyle = CaptionStyle.Top;
+            CaptionAlignment = CaptionAlignment.Near;
+            CaptionTextStyle = CaptionTextStyle.Plain;
+            Text = "";
+            Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            Dock = DockStyle.Bottom;
+            BorderStyle = ToolStripBorderStyle.StaticEdge;
+            CanApplyTheme = true;
+            CanOverrideStyle = true;
+            ImageScalingSize = new Size( 16, 18 );
+            Office12Mode = true;
+            LauncherStyle = LauncherStyle.Office12;
+            ShowLauncher = true;
+            GripStyle = ToolStripGripStyle.Hidden;
+            VisualStyle = ToolStripExStyle.Office2016DarkGray;
+            OfficeColorScheme = ColorScheme.Black;
+            ThemeStyle.BackColor = Color.Transparent;
+            ThemeStyle.ArrowColor = Color.SteelBlue;
+            ThemeStyle.BottomToolStripBackColor =  Color.Transparent;
+            ThemeStyle.CaptionBackColor = Color.FromArgb( 28, 28, 28 );
+            ThemeStyle.CaptionForeColor = Color.Black;
+            ThemeStyle.ComboBoxStyle.BorderColor = Color.FromArgb( 65, 65, 65 );
+            ThemeStyle.ComboBoxStyle.HoverBorderColor = Color.SteelBlue;
+            ThemeStyle.HoverItemBackColor = Color.SteelBlue;
+            ThemeStyle.HoverItemForeColor = Color.White;
+            Buttons = GetButtons( );
+        }
 
         /// <summary>
         /// Gets the buttons.

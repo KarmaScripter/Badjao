@@ -23,6 +23,7 @@ namespace BudgetExecution
             ForeColor = Color.Black;
             Font = new Font( "Roboto", 8 );
             Width = 1;
+            Height = 42;
         }
 
         /// <summary>

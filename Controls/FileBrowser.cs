@@ -82,7 +82,7 @@ namespace BudgetExecution
             InitializeComponent( );
             Size = new Size( 700, 480 );
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            BackColor = Color.FromArgb( 15, 15, 15 );
+            BackColor = Color.FromArgb( 20, 20, 20 );
             InitialDirPaths = GetInitialDirPaths( );
             RadioButtons = GetRadioButtons( );
             FileExtension = "xlsx";
@@ -91,6 +91,7 @@ namespace BudgetExecution
             FileDialog.DefaultExt = FileExtension;
             FileDialog.InitialDirectory = GetFolderPath( SpecialFolder.DesktopDirectory );
             FileDialog.CheckFileExists = true;
+            FileList.BackColor = Color.Transparent;
             CloseButton.Click += OnCloseButtonClicked;
             FileList.SelectedValueChanged += OnPathSelected;
             Load += OnLoaded;

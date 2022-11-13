@@ -32,6 +32,7 @@ namespace BudgetExecution
             MouseLeave += OnMouseLeave;
             Click += OnClick;
             Text = string.Empty;
+            Size = new Size( 25, 42 );
         }
 
         /// <summary>

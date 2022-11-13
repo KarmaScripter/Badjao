@@ -195,7 +195,7 @@ namespace BudgetExecution
                 {
                     if( name != "NS" )
                     {
-                        ToolStrip.DropDown.Items.Add( name );
+                        ToolStrip.DropDown?.Items.Add( name );
                     }
                 }
             }

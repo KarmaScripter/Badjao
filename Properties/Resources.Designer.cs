@@ -253,16 +253,6 @@ namespace BudgetExecution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DataSearch {
-            get {
-                object obj = ResourceManager.GetObject("DataSearch", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap DataSetIcon {
             get {
                 object obj = ResourceManager.GetObject("DataSetIcon", resourceCulture);
