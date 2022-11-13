@@ -24,9 +24,9 @@ namespace BudgetExecution
             Margin = new Padding( 1, 1, 1, 1 );
             Padding = new Padding( 1 );
             DisplayStyle = ToolStripItemDisplayStyle.Image;
-            BackColor = Color.FromArgb( 20, 20, 20 );
+            BackColor =  Color.Transparent;
             ForeColor = Color.LightSteelBlue;
-            Font = new Font( "Roboto", 9 );
+            Font = new Font( "Roboto", 8 );
             AutoToolTip = false;
             MouseHover += OnMouseHover;
             MouseLeave += OnMouseLeave;

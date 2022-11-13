@@ -41,9 +41,9 @@ namespace BudgetExecution
             Padding = new Padding( 1, 1, 1, 1 );
             BackColor = Color.FromArgb( 15, 15, 15 );
             ForeColor = Color.Black;
-            Font = new Font( "Roboto", 9 );
+            Font = new Font( "Roboto", 8 );
             ShowCaption = true;
-            CaptionFont = new Font( "Roboto", 9 );
+            CaptionFont = new Font( "Roboto", 8 );
             CaptionStyle = CaptionStyle.Top;
             CaptionAlignment = CaptionAlignment.Near;
             CaptionTextStyle = CaptionTextStyle.Plain;
@@ -60,9 +60,9 @@ namespace BudgetExecution
             GripStyle = ToolStripGripStyle.Hidden;
             VisualStyle = ToolStripExStyle.Office2016DarkGray;
             OfficeColorScheme = ColorScheme.Black;
-            ThemeStyle.BackColor = Color.FromArgb( 15, 15, 15 );
+            ThemeStyle.BackColor = Color.Transparent;
             ThemeStyle.ArrowColor = Color.SteelBlue;
-            ThemeStyle.BottomToolStripBackColor = Color.FromArgb( 28, 28, 28 );
+            ThemeStyle.BottomToolStripBackColor =  Color.Transparent;
             ThemeStyle.CaptionBackColor = Color.FromArgb( 28, 28, 28 );
             ThemeStyle.CaptionForeColor = Color.Black;
             ThemeStyle.ComboBoxStyle.BorderColor = Color.FromArgb( 65, 65, 65 );
