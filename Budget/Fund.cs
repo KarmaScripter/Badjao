@@ -17,6 +17,7 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "ConvertToConstant.Local" ) ]
     [ SuppressMessage( "ReSharper", "AssignNullToNotNullAttribute" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBeMadeStatic.Local" ) ]
+    [ SuppressMessage( "ReSharper", "AutoPropertyCanBeMadeGetOnly.Global" ) ]
     public class Fund : Element, IFund, ISource
     {
         /// <summary>
@@ -46,7 +47,7 @@ namespace BudgetExecution
         /// <value>
         /// The treasury symbol.
         /// </value>
-        public IElement TreasurySymbol { get; set; }
+        public string TreasurySymbol { get; set; }
 
         /// <summary>
         /// Gets the title.
@@ -54,7 +55,7 @@ namespace BudgetExecution
         /// <value>
         /// The title.
         /// </value>
-        public IElement Title { get; set; }
+        public string Title { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref = "Fund"/> class.
@@ -73,10 +74,10 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( Source, GetArgs( fundCode ) )?.Record;
             ID = new Key( Record, PrimaryKey.FundsId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
-            Title = new Element( Record, Field.Title );
-            TreasurySymbol = new Element( Record, Field.TreasurySymbol );
+            Name = Record[ $"{ Field.Name }" ].ToString( );
+            Code = Record[ $"{ Field.Code }" ].ToString( );
+            Title = Record[ $"{ Field.Title }" ].ToString( );
+            TreasurySymbol = Record[ $"{ Field.TreasurySymbol }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
@@ -90,10 +91,10 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( Source, GetArgs( code ) )?.Record;
             ID = new Key( Record, PrimaryKey.FundsId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
-            Title = new Element( Record, Field.Title );
-            TreasurySymbol = new Element( Record, Field.TreasurySymbol );
+            Name = Record[ $"{ Field.Name }" ].ToString( );
+            Code = Record[ $"{ Field.Code }" ].ToString( );
+            Title = Record[ $"{ Field.Title }" ].ToString( );
+            TreasurySymbol = Record[ $"{ Field.TreasurySymbol }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
@@ -107,10 +108,10 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( query )?.Record;
             ID = new Key( Record, PrimaryKey.FundsId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
-            Title = new Element( Record, Field.Title );
-            TreasurySymbol = new Element( Record, Field.TreasurySymbol );
+            Name = Record[ $"{ Field.Name }" ].ToString( );
+            Code = Record[ $"{ Field.Code }" ].ToString( );
+            Title = Record[ $"{ Field.Title }" ].ToString( );
+            TreasurySymbol = Record[ $"{ Field.TreasurySymbol }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
@@ -124,29 +125,29 @@ namespace BudgetExecution
         {
             Record = builder?.Record;
             ID = new Key( Record, PrimaryKey.FundsId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
-            Title = new Element( Record, Field.Title );
-            TreasurySymbol = new Element( Record, Field.TreasurySymbol );
+            Name = Record[ $"{ Field.Name }" ].ToString( );
+            Code = Record[ $"{ Field.Code }" ].ToString( );
+            Title = Record[ $"{ Field.Title }" ].ToString( );
+            TreasurySymbol = Record[ $"{ Field.TreasurySymbol }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref = "Fund"/> class.
         /// </summary>
-        /// <param name = "data" >
+        /// <param name = "dataRow" >
         /// The Data.
         /// </param>
-        public Fund( DataRow data )
+        public Fund( DataRow dataRow )
             : this( )
         {
-            Record = data;
+            Record = dataRow;
             ID = new Key( Record, PrimaryKey.FundsId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
-            Title = new Element( Record, Field.Title );
-            TreasurySymbol = new Element( Record, Field.TreasurySymbol );
-            Data = Record?.ToDictionary( );
+            Name = dataRow[ $"{ Field.Name }" ].ToString( );
+            Code = dataRow[ $"{ Field.Code }" ].ToString( );
+            Title = dataRow[ $"{ Field.Title }" ].ToString( );
+            TreasurySymbol = dataRow[ $"{ Field.TreasurySymbol }" ].ToString( );
+            Data = dataRow?.ToDictionary( );
         }
 
         /// <summary>
@@ -160,12 +161,12 @@ namespace BudgetExecution
             {
                 return Data?.Any( ) == true
                     ? Data
-                    : default;
+                    : default( IDictionary<string, object> );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDictionary<string, object> );
             }
         }
 
@@ -203,11 +204,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IDictionary<string, object> );
                 }
             }
 
-            return default;
+            return default( IDictionary<string, object> );
         }
 
         /// <summary>
@@ -224,51 +225,15 @@ namespace BudgetExecution
             {
                 return Enum.IsDefined( typeof( FundCode ), fundCode )
                     ? new Dictionary<string, object> { [ "FundCode" ] = fundCode.ToString( ) }
-                    : default;
+                    : default( Dictionary<string, object> );
             }
             catch( SystemException ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDictionary<string, object> );
             }
         }
-
-        /// <summary>
-        /// Gets the fund title.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IElement GetTitle( )
-        {
-            try
-            {
-                return Title ?? default( IElement );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the treasury symbol.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IElement GetTreasurySymbol( )
-        {
-            try
-            {
-                return TreasurySymbol ?? default( IElement );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Default;
-            }
-        }
-
+        
         /// <summary>
         /// Gets the fund.
         /// </summary>
@@ -283,27 +248,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
-            }
-        }
-
-        /// <summary>
-        /// Gets the source.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public Source GetSource( )
-        {
-            try
-            {
-                return Enum.IsDefined( typeof( Source ), Source )
-                    ? Source
-                    : Source.NS;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Source.NS;
+                return default( IFund );
             }
         }
     }

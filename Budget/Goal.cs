@@ -62,8 +62,8 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( query )?.Record;
             ID = new Key( Record, PrimaryKey.GoalsId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
         }
 
@@ -78,8 +78,8 @@ namespace BudgetExecution
         {
             Record = builder?.Record;
             ID = new Key( Record, PrimaryKey.GoalsId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
         }
 
@@ -94,8 +94,8 @@ namespace BudgetExecution
         {
             Record = dataRow;
             ID = new Key( Record, PrimaryKey.GoalsId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
         }
 
@@ -109,8 +109,8 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( Source, GetArgs( code ) )?.Record;
             ID = new Key( Record, PrimaryKey.GoalsId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
         }
 
@@ -125,12 +125,12 @@ namespace BudgetExecution
             {
                 return Data?.Any( ) == true
                     ? Data
-                    : default;
+                    : default( IDictionary<string, object> );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDictionary<string, object> );
             }
         }
 
@@ -153,11 +153,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IDictionary<string, object> );
                 }
             }
 
-            return default;
+            return default( IDictionary<string, object> );
         }
 
         /// <summary>
@@ -180,11 +180,11 @@ namespace BudgetExecution
                 catch( SystemException ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IDictionary<string, object> );
                 }
             }
 
-            return default;
+            return default( IDictionary<string, object> );
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IGoal );
             }
         }
 

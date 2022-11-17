@@ -41,7 +41,7 @@ namespace BudgetExecution
         /// <value>
         /// The bbfy.
         /// </value>
-        public IElement FirstYear { get; set; }
+        public string FirstYear { get; set; }
 
         /// <summary>
         /// Gets or sets the ebfy.
@@ -49,7 +49,7 @@ namespace BudgetExecution
         /// <value>
         /// The ebfy.
         /// </value>
-        public IElement LastYear { get; set; }
+        public string LastYear { get; set; }
 
         /// <summary>
         /// Gets or sets the expiring year.
@@ -57,7 +57,7 @@ namespace BudgetExecution
         /// <value>
         /// The expiring year.
         /// </value>
-        public IElement ExpiringYear { get; set; }
+        public string ExpiringYear { get; set; }
 
         /// <summary>
         /// Gets or sets the input year.
@@ -65,7 +65,7 @@ namespace BudgetExecution
         /// <value>
         /// The input year.
         /// </value>
-        public IElement InputYear { get; set; }
+        public string InputYear { get; set; }
 
         /// <summary>
         /// Gets or sets the start date.
@@ -73,7 +73,7 @@ namespace BudgetExecution
         /// <value>
         /// The start date.
         /// </value>
-        public IElement StartDate { get; set; }
+        public string StartDate { get; set; }
 
         /// <summary>
         /// Gets or sets the end date.
@@ -81,7 +81,7 @@ namespace BudgetExecution
         /// <value>
         /// The end date.
         /// </value>
-        public IElement EndDate { get; set; }
+        public string EndDate { get; set; }
 
         /// <summary>
         /// Gets or sets the cancellation date.
@@ -89,7 +89,7 @@ namespace BudgetExecution
         /// <value>
         /// The cancellation date.
         /// </value>
-        public IElement CancellationDate { get; set; }
+        public string CancellationDate { get; set; }
 
         /// <summary>
         /// Gets or sets the arguments.
@@ -121,7 +121,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( bool );
             }
         }
 
@@ -145,16 +145,16 @@ namespace BudgetExecution
                     var bfy = new Dictionary<string, object> { [ $"{Field.BBFY}" ] = year };
                     return bfy.Any( )
                         ? bfy
-                        : default;
+                        : default( Dictionary<string, object> );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IDictionary<string, object> );
                 }
             }
 
-            return default;
+            return default( IDictionary<string, object> );
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace BudgetExecution
                             _year?.Add( $"{Field.EBFY}", ( CurrentYear + 1 ).ToString( ) );
                             return _year.Any( )
                                 ? _year
-                                : default;
+                                : default( Dictionary<string, object> );
                         }
                         case BFY.CarryOver:
                         {
@@ -189,18 +189,18 @@ namespace BudgetExecution
                             _year?.Add( $"{Field.EBFY}", CurrentYear.ToString( ) );
                             return _year?.Any( ) == true
                                 ? _year
-                                : default;
+                                : default( Dictionary<string, object> );
                         }
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IDictionary<string, object> );
                 }
             }
 
-            return default;
+            return default( IDictionary<string, object> );
         }
 
         /// <summary>
@@ -214,12 +214,12 @@ namespace BudgetExecution
             {
                 return Record != null
                     ? Record.ToDictionary( )
-                    : default;
+                    : default( IDictionary<string, object> );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDictionary<string, object> );
             }
         }
     }

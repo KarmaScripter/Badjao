@@ -705,7 +705,7 @@
             this.TextBox.Margin = new System.Windows.Forms.Padding(1);
             this.TextBox.Name = "TextBox";
             this.TextBox.Padding = new System.Windows.Forms.Padding(1);
-            this.TextBox.Size = new System.Drawing.Size(116, 26);
+            this.TextBox.Size = new System.Drawing.Size(114, 26);
             this.TextBox.Tag = "";
             this.TextBox.ToolTip = null;
             // 

@@ -134,7 +134,7 @@ namespace BudgetExecution
                     var _date = (EventDate)Enum.Parse( typeof( EventDate ), name );
                     return Enum.IsDefined( typeof( EventDate ), _date )
                         ? _date
-                        : default;
+                        : default( EventDate );
                 }
                 catch( Exception ex )
                 {
@@ -223,12 +223,12 @@ namespace BudgetExecution
             {
                 return !string.IsNullOrEmpty( value )
                     ? DateTime.Parse( value )
-                    : default;
+                    : default( DateTime );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( DateTime );
             }
         }
 
@@ -251,16 +251,16 @@ namespace BudgetExecution
                     return _names?.Contains( column ) == true
                         && !string.IsNullOrEmpty( _timeString )
                             ? DateTime.Parse( _timeString )
-                            : default;
+                            : default( DateTime );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( DateTime );
                 }
             }
 
-            return default;
+            return default( DateTime );
         }
 
         /// <summary>
@@ -279,16 +279,16 @@ namespace BudgetExecution
                     var value = dataRow[ $"{ date }" ]?.ToString( );
                     return value != null
                         ? DateTime.Parse( value )
-                        : default;
+                        : default( DateTime );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( DateTime );
                 }
             }
 
-            return default;
+            return default( DateTime );
         }
 
         /// <summary>

@@ -51,7 +51,7 @@ namespace BudgetExecution
         /// <value>
         /// The type.
         /// </value>
-        public IElement Type { get; set; }
+        public string Type { get; set; }
 
         /// <summary>
         /// Gets or sets the boc.
@@ -59,7 +59,7 @@ namespace BudgetExecution
         /// <value>
         /// The boc.
         /// </value>
-        public IElement BOC { get; set; }
+        public string BOC { get; set; }
 
         /// <summary>
         /// Gets the Data builder.
@@ -72,33 +72,14 @@ namespace BudgetExecution
             {
                 return Data?.Any( ) == true
                     ? new DataBuilder( Source, Data )
-                    : default;
+                    : default( DataBuilder );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDataModel );
             }
         }
 
-        /// <summary>
-        /// Gets the name.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IElement GetName( )
-        {
-            try
-            {
-                return Enum.IsDefined( typeof( AwardType ), Type )
-                    ? new Element( Record, Field.Type )
-                    : default;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Element.Default;
-            }
-        }
     }
 }

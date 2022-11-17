@@ -66,8 +66,8 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( query )?.Record;
             ID = new Key( Record, PrimaryKey.ResponsibilityCentersId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.RcCode ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
             RC = (RC)Enum.Parse( typeof( RC ), Name );
         }
@@ -81,8 +81,8 @@ namespace BudgetExecution
         {
             Record = builder?.Record;
             ID = new Key( Record, PrimaryKey.ResponsibilityCentersId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.RcCode ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
             RC = (RC)Enum.Parse( typeof( RC ), Name );
         }
@@ -97,8 +97,8 @@ namespace BudgetExecution
         {
             Record = data;
             ID = new Key( Record, PrimaryKey.ResponsibilityCentersId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.RcCode ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
             RC = (RC)Enum.Parse( typeof( RC ), Name );
         }
@@ -112,8 +112,8 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( Source, SetArgs( rcCode ) )?.Record;
             ID = new Key( Record, PrimaryKey.ResponsibilityCentersId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.RcCode ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
             RC = (RC)Enum.Parse( typeof( RC ), Name );
         }
@@ -137,11 +137,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IDictionary<string, object> );
                 }
             }
 
-            return default;
+            return default( IDictionary<string, object> );
         }
 
         /// <summary>
@@ -155,12 +155,12 @@ namespace BudgetExecution
             {
                 return Data?.Any( ) == true
                     ? Data
-                    : default;
+                    : default( IDictionary<string, object> );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDictionary<string, object> );
             }
         }
 
@@ -178,7 +178,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IResponsibilityCenter );
             }
         }
     }

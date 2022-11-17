@@ -35,6 +35,6 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        BudgetLevel GetBudgetLevel();
+        IBudgetLevel GetBudgetLevel();
     }
 }

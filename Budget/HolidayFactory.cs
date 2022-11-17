@@ -14,6 +14,8 @@ namespace BudgetExecution
     /// 
     /// </summary>
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
+    [ SuppressMessage( "ReSharper", "AutoPropertyCanBeMadeGetOnly.Global" ) ]
+    [ SuppressMessage( "ReSharper", "AutoPropertyCanBeMadeGetOnly.Global" ) ]
     public class HolidayFactory : IFederalHoliday
     {
         /// <summary>
@@ -38,7 +40,7 @@ namespace BudgetExecution
         /// <value>
         /// The new years.
         /// </value>
-        public IElement NewYearsDay { get; set; }
+        public DateOnly NewYearsDay { get; set; }
 
         /// <summary>
         /// Gets the martin luther king.
@@ -46,7 +48,7 @@ namespace BudgetExecution
         /// <value>
         /// The martin luther king.
         /// </value>
-        public IElement MartinLutherKingDay { get; set; }
+        public DateOnly MartinLutherKingDay { get; set; }
 
         /// <summary>
         /// Gets the presidents.
@@ -54,7 +56,7 @@ namespace BudgetExecution
         /// <value>
         /// The presidents.
         /// </value>
-        public IElement PresidentsDay { get; set; }
+        public DateOnly PresidentsDay { get; set; }
 
         /// <summary>
         /// Gets the memorial.
@@ -62,7 +64,7 @@ namespace BudgetExecution
         /// <value>
         /// The memorial.
         /// </value>
-        public IElement MemorialDay { get; set; }
+        public DateOnly MemorialDay { get; set; }
 
         /// <summary>
         /// Gets or sets the Juneteenth day.
@@ -70,7 +72,7 @@ namespace BudgetExecution
         /// <value>
         /// The Juneteenth day.
         /// </value>
-        public IElement JuneteenthDay { get; set; }
+        public DateOnly JuneteenthDay { get; set; }
 
         /// <summary>
         /// Gets the veterans.
@@ -78,7 +80,7 @@ namespace BudgetExecution
         /// <value>
         /// The veterans.
         /// </value>
-        public IElement VeteransDay { get; set; }
+        public DateOnly VeteransDay { get; set; }
 
         /// <summary>
         /// Gets the labor.
@@ -86,7 +88,7 @@ namespace BudgetExecution
         /// <value>
         /// The labor.
         /// </value>
-        public IElement LaborDay { get; set; }
+        public DateOnly LaborDay { get; set; }
 
         /// <summary>
         /// Gets the independence.
@@ -94,7 +96,7 @@ namespace BudgetExecution
         /// <value>
         /// The independence.
         /// </value>
-        public IElement IndependenceDay { get; set; }
+        public DateOnly IndependenceDay { get; set; }
 
         /// <summary>
         /// Gets the columbus.
@@ -102,7 +104,7 @@ namespace BudgetExecution
         /// <value>
         /// The columbus.
         /// </value>
-        public IElement ColumbusDay { get; set; }
+        public DateOnly ColumbusDay { get; set; }
 
         /// <summary>
         /// Gets the thanksgiving.
@@ -110,7 +112,7 @@ namespace BudgetExecution
         /// <value>
         /// The thanksgiving.
         /// </value>
-        public IElement ThanksgivingDay { get; set; }
+        public DateOnly ThanksgivingDay { get; set; }
 
         /// <summary>
         /// Gets the christmas.
@@ -118,7 +120,7 @@ namespace BudgetExecution
         /// <value>
         /// The christmas.
         /// </value>
-        public IElement ChristmasDay { get; set; }
+        public DateOnly ChristmasDay { get; set; }
 
         /// <summary>
         /// 
@@ -134,16 +136,17 @@ namespace BudgetExecution
         public HolidayFactory( DataRow dataRow )
         {
             Record = dataRow;
-            NewYearsDay = new Element( Record, Field.NewYears );
-            MartinLutherKingDay = new Element( Record, Field.MartinLutherKing );
-            PresidentsDay = new Element( Record, Field.Presidents );
-            MemorialDay = new Element( Record, Field.Memorial );
-            VeteransDay = new Element( Record, Field.Veterans );
-            LaborDay = new Element( Record, Field.Labor );
-            IndependenceDay = new Element( Record, Field.Independence );
-            ColumbusDay = new Element( Record, Field.Columbus );
-            ThanksgivingDay = new Element( Record, Field.Thanksgiving );
-            ChristmasDay = new Element( Record, Field.Christmas );
+            NewYearsDay = DateOnly.Parse( dataRow[ $"{ Field.NewYears }" ].ToString( ) );
+            MartinLutherKingDay = 
+                DateOnly.Parse( dataRow[ $"{Field.MartinLutherKing }" ].ToString( ) );
+            PresidentsDay = DateOnly.Parse( dataRow[ $"{ Field.Presidents }" ].ToString( ) );
+            MemorialDay = DateOnly.Parse( dataRow[ $"{ Field.Memorial }" ].ToString( ) );
+            VeteransDay = DateOnly.Parse( dataRow[ $"{ Field.Veterans }" ].ToString( ) );
+            LaborDay = DateOnly.Parse( dataRow[ $"{ Field.Labor }" ].ToString( ) );
+            IndependenceDay = DateOnly.Parse( dataRow[ $"{ Field.Independence }" ].ToString( ) );
+            ColumbusDay = DateOnly.Parse( dataRow[ $"{ Field.Columbus }" ].ToString( ) );
+            ThanksgivingDay = DateOnly.Parse( dataRow[ $"{ Field.Thanksgiving }" ].ToString( ) );
+            ChristmasDay = DateOnly.Parse( dataRow[ $"{ Field.Christmas}" ].ToString( ) );
             Args = Record?.ToDictionary( );
         }
 
@@ -168,12 +171,12 @@ namespace BudgetExecution
 
                 return _holiday.Any( )
                     ? _holiday
-                    : default;
+                    : default( Dictionary<string, DateTime> );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDictionary<string, DateTime> );
             }
         }
 
@@ -198,12 +201,12 @@ namespace BudgetExecution
 
                 return _holiday.Any( )
                     ? _holiday
-                    : default;
+                    : default( Dictionary<string, DateTime> );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDictionary<string, DateTime> );
             }
         }
 
@@ -218,12 +221,12 @@ namespace BudgetExecution
             {
                 return Args.Count > 0
                     ? Args
-                    : default;
+                    : default( IDictionary<string, object> );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDictionary<string, object> );
             }
         }
 

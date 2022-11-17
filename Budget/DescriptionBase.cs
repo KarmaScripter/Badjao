@@ -37,7 +37,7 @@ namespace BudgetExecution
         /// <value>
         /// The definition.
         /// </value>
-        public IElement Definition { get; set; }
+        public string Definition { get; set; }
 
         /// <summary>
         /// Gets the laws.
@@ -45,7 +45,7 @@ namespace BudgetExecution
         /// <value>
         /// The laws.
         /// </value>
-        public IElement Laws { get; set; }
+        public string Laws { get; set; }
 
         /// <summary>
         /// Gets the title.
@@ -53,7 +53,7 @@ namespace BudgetExecution
         /// <value>
         /// The title.
         /// </value>
-        public IElement Title { get; set; }
+        public string Title { get; set; }
 
         /// <summary>
         /// Gets the program area code.
@@ -61,7 +61,7 @@ namespace BudgetExecution
         /// <value>
         /// The program area code.
         /// </value>
-        public IElement ProgramAreaCode { get; set; }
+        public string ProgramAreaCode { get; set; }
 
         /// <summary>
         /// Gets the name of the program area.
@@ -69,6 +69,6 @@ namespace BudgetExecution
         /// <value>
         /// The name of the program area.
         /// </value>
-        public IElement ProgramAreaName { get; set; }
+        public string ProgramAreaName { get; set; }
     }
 }

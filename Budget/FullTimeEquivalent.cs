@@ -25,7 +25,7 @@ namespace BudgetExecution
         /// <summary>
         /// The source
         /// </summary>
-        public new Source Source { get; } =  Source.FullTimeEquivalents;
+        public Source Source { get; set; } =  Source.FullTimeEquivalents;
 
         /// <summary>
         /// Initializes a new instance of the
@@ -71,7 +71,7 @@ namespace BudgetExecution
             : base( dataRow )
         {
             ID = new Key( Record, PrimaryKey.AllocationsId );
-            Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
+            Amount = double.Parse( dataRow[ $"{ Numeric.Amount }" ].ToString( ) );
         }
 
         /// <summary>
@@ -85,12 +85,12 @@ namespace BudgetExecution
             {
                 return ID.Index > 0
                     ? ID
-                    : default;
+                    : default( IKey );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IKey );
             }
         }
     }

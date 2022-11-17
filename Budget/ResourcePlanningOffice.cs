@@ -62,8 +62,8 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( query )?.Record;
             ID = new Key( Record, PrimaryKey.ResourcePlanningOfficesId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
         }
 
@@ -78,8 +78,8 @@ namespace BudgetExecution
         {
             Record = builder?.Record;
             ID = new Key( Record, PrimaryKey.ResourcePlanningOfficesId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
         }
 
@@ -95,8 +95,8 @@ namespace BudgetExecution
         {
             Record = dataRow;
             ID = new Key( Record, PrimaryKey.ResourcePlanningOfficesId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
         }
 
@@ -112,8 +112,8 @@ namespace BudgetExecution
         {
             Record = new DataBuilder( Source, SetArgs( rpioCode ) )?.Record;
             ID = new Key( Record, PrimaryKey.ResourcePlanningOfficesId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            Name = Record[ $"{ Field.Name }" ].ToString(  );
+            Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
         }
 
@@ -136,11 +136,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IDictionary<string, object> );
                 }
             }
 
-            return default;
+            return default( IDictionary<string, object> );
         }
 
         /// <summary>
@@ -154,12 +154,12 @@ namespace BudgetExecution
             {
                 return Data?.Any( ) == true
                     ? Data
-                    : default;
+                    : default( IDictionary<string, object> );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDictionary<string, object> );
             }
         }
 

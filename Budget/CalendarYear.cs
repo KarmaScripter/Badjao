@@ -30,7 +30,7 @@ namespace BudgetExecution
         /// <value>
         /// The work days.
         /// </value>
-        public virtual IElement WorkDays { get; set; }
+        public virtual double WorkDays { get; set; }
 
         /// <summary>
         /// Gets or sets the week days.
@@ -38,7 +38,7 @@ namespace BudgetExecution
         /// <value>
         /// The week days.
         /// </value>
-        public virtual IElement WeekDays { get; set; }
+        public virtual double WeekDays { get; set; }
 
         /// <summary>
         /// Gets or sets the week ends.
@@ -46,7 +46,7 @@ namespace BudgetExecution
         /// <value>
         /// The week ends.
         /// </value>
-        public virtual IElement WeekEnds { get; set; }
+        public virtual double WeekEnds { get; set; }
 
         /// <summary>
         /// Gets the current date.
