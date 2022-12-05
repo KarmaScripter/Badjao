@@ -14,7 +14,7 @@ namespace BudgetExecution
     /// </summary>
     [ SuppressMessage( "ReSharper", "MemberCanBeMadeStatic.Global" ) ]
     [ SuppressMessage( "ReSharper", "PropertyCanBeMadeInitOnly.Global" ) ]
-    public abstract class AccountBase : Element
+    public abstract class AccountBase 
     {
         /// <summary>
         /// Gets the Data.
@@ -23,6 +23,12 @@ namespace BudgetExecution
         /// The Data.
         /// </value>
         public DataRow Record { get; set; }
+
+        public int ID { get; set; }
+
+        public string Code { get; set; }
+
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets the NPM code.
@@ -106,24 +112,45 @@ namespace BudgetExecution
             return default( IDictionary<string, object> );
         }
 
-        /// <summary>
-        /// Gets the account identifier.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IKey GetId( )
+        public int GetId( DataRow dataRow )
         {
             try
             {
-                return ID.Index > 0
-                    ? ID
-                    : default( IKey );
+                return dataRow != null
+                    ? int.Parse( dataRow[ 0 ].ToString(  ) )
+                    : -1;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IKey );
+                return default( int );
             }
+        }
+
+        public int GetId( DataRow dataRow, PrimaryKey primaryKey )
+        {
+            try
+            {
+                return Enum.IsDefined( typeof( PrimaryKey ), primaryKey ) && dataRow != null
+                    ? int.Parse( dataRow[ $"{ primaryKey }" ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
+            }
+        }
+        
+        /// <summary>
+        /// Get Error Dialog.
+        /// </summary>
+        /// <param name="ex">The ex.</param>
+        protected static void Fail( Exception ex )
+        {
+            using var _error = new Error( ex );
+            _error?.SetText( );
+            _error?.ShowDialog( );
         }
     }
 }

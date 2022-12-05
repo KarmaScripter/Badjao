@@ -49,6 +49,12 @@ namespace BudgetExecution
         /// </value>
         public double Amount { get; set; }
 
+        public override int ID { get; set; }
+
+        public override string Code { get; set; }
+
+        public override string Name { get; set; }
+
         /// <summary>
         /// Gets or sets the budget level.
         /// </summary>
@@ -177,7 +183,7 @@ namespace BudgetExecution
         public ProgramResultsCode( IQuery query )
         {
             Record = new DataBuilder( query )?.Record;
-            ID = new Key( Record, PrimaryKey.AllocationsId );
+            ID = GetId( Record, PrimaryKey.StatusOfFundsId );
             BudgetLevel = Record[ $"{ Field.BudgetLevel }" ].ToString( );
             BFY = Record[ $"{ Field.BFY }" ].ToString( );
             RpioCode = Record[ $"{ Field.RpioCode }" ].ToString( );
@@ -201,7 +207,7 @@ namespace BudgetExecution
         public ProgramResultsCode( IDataModel builder )
         {
             Record = builder?.Record;
-            ID = new Key( Record, PrimaryKey.AllocationsId );
+            ID = GetId( Record, PrimaryKey.StatusOfFundsId );
             BudgetLevel = Record?[ $"{ Field.BudgetLevel }" ].ToString( );
             BFY = Record?[ $"{ Field.BFY }" ].ToString( );
             RpioCode = Record?[ $"{ Field.RpioCode }" ].ToString( );
@@ -225,7 +231,7 @@ namespace BudgetExecution
         public ProgramResultsCode( DataRow dataRow )
         {
             Record = dataRow;
-            ID = new Key( Record, PrimaryKey.AllocationsId );
+            ID = GetId( Record, PrimaryKey.StatusOfFundsId );
             BudgetLevel = dataRow[ $"{ Field.BudgetLevel }" ].ToString( );
             BFY = dataRow[ $"{ Field.BFY }" ].ToString( );
             RpioCode = dataRow[ $"{ Field.RpioCode }" ].ToString( );
@@ -248,7 +254,7 @@ namespace BudgetExecution
         public ProgramResultsCode( IDictionary<string, object> dict )
         {
             Record = new DataBuilder( Source, dict )?.Record;
-            ID = new Key( Record, PrimaryKey.AllocationsId );
+            ID = GetId( Record, PrimaryKey.StatusOfFundsId );
             BudgetLevel = Record[ $"{ Field.BudgetLevel }" ].ToString( );
             BFY = Record[ $"{ Field.BFY }" ].ToString( );
             RpioCode = Record[ $"{ Field.RpioCode }" ].ToString( );
@@ -280,6 +286,36 @@ namespace BudgetExecution
             {
                 Fail( ex );
                 return default( IDictionary<string, object> );
+            }
+        }
+        
+        public override int GetId( DataRow dataRow )
+        {
+            try
+            {
+                return dataRow != null
+                    ? int.Parse( dataRow[ 0 ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
+            }
+        }
+        
+        public override int GetId( DataRow dataRow, PrimaryKey primaryKey )
+        {
+            try
+            {
+                return Enum.IsDefined( typeof( PrimaryKey ), primaryKey ) && dataRow != null
+                    ? int.Parse( dataRow[ $"{ primaryKey }" ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
             }
         }
     }

@@ -1,5 +1,5 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
+﻿// <copyright file = "ConnectionBuilder.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -79,23 +79,19 @@ namespace BudgetExecution
                 try
                 {
                     var _connectionString = ConnectionPath[ $"{Provider}" ]?.ConnectionString;
-
                     switch( Provider )
                     {
                         case Provider.SQLite:
-
                         {
                             return new SQLiteConnection( _connectionString );
                         }
 
                         case Provider.SqlCe:
-
                         {
                             return new SqlCeConnection( _connectionString );
                         }
 
                         case Provider.SqlServer:
-
                         {
                             return new SqlConnection( _connectionString );
                         }
@@ -104,7 +100,6 @@ namespace BudgetExecution
                         case Provider.CSV:
                         case Provider.Access:
                         case Provider.OleDb:
-
                         {
                             return new OleDbConnection( _connectionString );
                         }
@@ -113,12 +108,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( DbConnection );
                 }
             }
 
-            return default;
+            return default( DbConnection );
         }
     }
 }

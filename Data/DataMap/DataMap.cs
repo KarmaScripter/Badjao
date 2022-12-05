@@ -1,5 +1,5 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
+﻿// <copyright file = "DataMap.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -73,7 +73,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default( IDictionary<string, object> );
             }
         }
@@ -93,9 +92,59 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default( IDictionary<string, object> );
             }
+        }
+
+        /// <summary>
+        /// Determines whether [has primary key].
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if [has primary key]; otherwise, <c>false</c>.
+        /// </returns>
+        public bool HasPrimaryKey( )
+        {
+            try
+            {
+                return Input?.HasPrimaryKey( ) == true;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether this instance has elements.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance has elements; otherwise, <c>false</c>.
+        /// </returns>
+        public bool HasElements( )
+        {
+            if( Input?.Any( ) == true )
+            {
+                try
+                {
+                    var _fields = Enum.GetNames( typeof( Field ) );
+                    foreach( var kvp in Input )
+                    {
+                        if( !string.IsNullOrEmpty( kvp.Key )
+                           && _fields?.Contains( kvp.Key ) == true )
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                    return default( bool );
+                }
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -109,7 +158,6 @@ namespace BudgetExecution
                 try
                 {
                     var _data = Input.GetPrimaryKey( );
-
                     return !string.IsNullOrEmpty( _data.Key )
                         ? new Key( _data )
                         : default( IKey );
@@ -117,7 +165,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default( IKey );
                 }
             }
@@ -137,7 +184,6 @@ namespace BudgetExecution
                 {
                     var _output = new List<IElement>( );
                     var _fields = Enum.GetNames( typeof( Field ) );
-
                     foreach( var kvp in Output )
                     {
                         if( !string.IsNullOrEmpty( kvp.Key )
@@ -154,66 +200,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default( IEnumerable<IElement> );
                 }
             }
 
             return default( IEnumerable<IElement> );
-        }
-
-        /// <summary>
-        /// Determines whether [has primary key].
-        /// </summary>
-        /// <returns>
-        ///   <c>true</c> if [has primary key]; otherwise, <c>false</c>.
-        /// </returns>
-        public bool HasPrimaryKey( )
-        {
-            try
-            {
-                return Input?.HasPrimaryKey( ) == true;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Determines whether this instance has elements.
-        /// </summary>
-        /// <returns>
-        ///   <c>true</c> if this instance has elements; otherwise, <c>false</c>.
-        /// </returns>
-        public bool HasElements( )
-        {
-            if( Input?.Any( ) == true )
-            {
-                try
-                {
-                    var _fields = Enum.GetNames( typeof( Field ) );
-
-                    foreach( var kvp in Input )
-                    {
-                        if( !string.IsNullOrEmpty( kvp.Key )
-                           && _fields?.Contains( kvp.Key ) == true )
-                        {
-                            return true;
-                        }
-                    }
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-
-                    return default( bool );
-                }
-            }
-
-            return false;
         }
     }
 }

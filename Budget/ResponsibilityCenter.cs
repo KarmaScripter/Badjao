@@ -13,12 +13,23 @@ namespace BudgetExecution
     /// <summary>
     /// 
     /// </summary>
-    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
+    /// <seealso cref="BudgetExecution.Element" />
+    /// <seealso cref="BudgetExecution.IResponsibilityCenter" />
+    /// <seealso cref="BudgetExecution.ISource" />
+    [SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBeMadeStatic.Local" ) ]
     [ SuppressMessage( "ReSharper", "ConvertToConstant.Local" ) ]
     public class ResponsibilityCenter : Element, IResponsibilityCenter, ISource
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public int ID { get; set; }
+
         /// <summary>
         /// The source
         /// </summary>
@@ -50,7 +61,7 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref="ResponsibilityCenter"/> class.
+        /// <see cref="ResponsibilityCenter" /> class.
         /// </summary>
         public ResponsibilityCenter( )
         {
@@ -58,14 +69,14 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref="ResponsibilityCenter"/> class.
+        /// <see cref="ResponsibilityCenter" /> class.
         /// </summary>
         /// <param name="query">The query.</param>
         public ResponsibilityCenter( IQuery query )
             : this( )
         {
             Record = new DataBuilder( query )?.Record;
-            ID = new Key( Record, PrimaryKey.ResponsibilityCentersId );
+            ID = GetId( Record, PrimaryKey.ResponsibilityCentersId );
             Name = Record[ $"{ Field.Name }" ].ToString(  );
             Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
@@ -74,13 +85,13 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref="ResponsibilityCenter"/> class.
+        /// <see cref="ResponsibilityCenter" /> class.
         /// </summary>
         /// <param name="builder">The builder.</param>
         public ResponsibilityCenter( IDataModel builder )
         {
             Record = builder?.Record;
-            ID = new Key( Record, PrimaryKey.ResponsibilityCentersId );
+            ID = GetId( Record, PrimaryKey.ResponsibilityCentersId );
             Name = Record[ $"{ Field.Name }" ].ToString(  );
             Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
@@ -89,14 +100,14 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref="ResponsibilityCenter"/> class.
+        /// <see cref="ResponsibilityCenter" /> class.
         /// </summary>
         /// <param name="data">The Data.</param>
         public ResponsibilityCenter( DataRow data )
             : this( )
         {
             Record = data;
-            ID = new Key( Record, PrimaryKey.ResponsibilityCentersId );
+            ID = GetId( Record, PrimaryKey.ResponsibilityCentersId );
             Name = Record[ $"{ Field.Name }" ].ToString(  );
             Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
@@ -104,14 +115,14 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResponsibilityCenter"/> class.
+        /// Initializes a new instance of the <see cref="ResponsibilityCenter" /> class.
         /// </summary>
         /// <param name="rcCode">The rcCode.</param>
         public ResponsibilityCenter( string rcCode )
             : this( )
         {
             Record = new DataBuilder( Source, SetArgs( rcCode ) )?.Record;
-            ID = new Key( Record, PrimaryKey.ResponsibilityCentersId );
+            ID = GetId( Record, PrimaryKey.ResponsibilityCentersId );
             Name = Record[ $"{ Field.Name }" ].ToString(  );
             Code = Record[ $"{ Field.Code }" ].ToString(  );
             Data = Record?.ToDictionary( );
@@ -121,18 +132,15 @@ namespace BudgetExecution
         /// <summary>
         /// Sets the arguments.
         /// </summary>
-        /// <param name = "code" >
-        /// The code.
-        /// </param>
-        /// <returns>
-        /// </returns>
+        /// <param name="code">The code.</param>
+        /// <returns></returns>
         private IDictionary<string, object> SetArgs( string code )
         {
             if( !string.IsNullOrEmpty( code ) )
             {
                 try
                 {
-                    return new Dictionary<string, object> { [ $"{Field.Code}" ] = code };
+                    return new Dictionary<string, object> { [ $"{ Field.Code }" ] = code };
                 }
                 catch( Exception ex )
                 {
@@ -147,8 +155,7 @@ namespace BudgetExecution
         /// <summary>
         /// Converts to dictionary.
         /// </summary>
-        /// <returns>
-        /// </returns>
+        /// <returns></returns>
         public IDictionary<string, object> ToDictionary( )
         {
             try
@@ -167,8 +174,7 @@ namespace BudgetExecution
         /// <summary>
         /// Gets the responsibility center.
         /// </summary>
-        /// <returns>
-        /// </returns>
+        /// <returns></returns>
         public IResponsibilityCenter GetResponsibilityCenter( )
         {
             try

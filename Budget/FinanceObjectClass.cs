@@ -41,6 +41,27 @@ namespace BudgetExecution
         public DataRow Record { get; set; }
 
         /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public int ID { get; set; }
+
+        /// <summary>
+        /// Gets the code.
+        /// </summary>
+        public override string Code { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public override string Name { get; set; }
+
+        /// <summary>
         /// Gets or sets the data.
         /// </summary>
         /// <value>
@@ -70,7 +91,7 @@ namespace BudgetExecution
         public FinanceObjectClass( IQuery query )
         {
             Record = new DataBuilder( query )?.Record;
-            ID = new Key( Record, PrimaryKey.FinanceObjectClassesId );
+            ID = GetId( Record, PrimaryKey.FinanceObjectClassesId );
             Name = Record[ $"{ Field.Name }" ].ToString( );
             Code = Record[ $"{ Field.Code }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -83,7 +104,7 @@ namespace BudgetExecution
         public FinanceObjectClass( IDataModel builder )
         {
             Record = builder?.Record;
-            ID = new Key( Record, PrimaryKey.FinanceObjectClassesId );
+            ID = GetId( Record, PrimaryKey.FinanceObjectClassesId );
             Name = Record[ $"{ Field.Name }" ].ToString( );
             Code = Record[ $"{ Field.Code }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -96,7 +117,7 @@ namespace BudgetExecution
         public FinanceObjectClass( DataRow dataRow )
         {
             Record = dataRow;
-            ID = new Key( Record, PrimaryKey.FinanceObjectClassesId );
+            ID = GetId( Record, PrimaryKey.FinanceObjectClassesId );
             Name = dataRow[ $"{ Field.Name }" ].ToString( );
             Code = dataRow[ $"{ Field.Code }" ].ToString( );
             Data = dataRow?.ToDictionary( );
@@ -109,7 +130,7 @@ namespace BudgetExecution
         public FinanceObjectClass( string focCode )
         {
             Record = new DataBuilder( Source, GetArgs( focCode ) )?.Record;
-            ID = new Key( Record, PrimaryKey.FinanceObjectClassesId );
+            ID = GetId( Record, PrimaryKey.FinanceObjectClassesId );
             Name = Record[ $"{ Field.Name }" ].ToString( );
             Code = Record[ $"{ Field.Code }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -173,5 +194,36 @@ namespace BudgetExecution
                 return default( FinanceObjectClass );
             }
         }
+
+        protected override int GetId( DataRow dataRow )
+        {
+            try
+            {
+                return dataRow != null
+                    ? int.Parse( dataRow[ 0 ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
+            }
+        }
+
+        protected override int GetId( DataRow dataRow, PrimaryKey primaryKey )
+        {
+            try
+            {
+                return Enum.IsDefined( typeof( PrimaryKey ), primaryKey ) && dataRow != null
+                    ? int.Parse( dataRow[ $"{ primaryKey }" ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
+            }
+        }
+
     }
 }

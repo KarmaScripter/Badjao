@@ -11,7 +11,7 @@ namespace BudgetExecution
 
     /// <summary>
     /// Budget authority provided in an appropriations act in addition to regular or
-    /// continuing appropriations already provided. Supplementals appropriations
+    /// continuing appropriations already provided. Supplemental appropriations
     /// generally are made to cover emergencies, such as disaster relief, or other
     /// needs deemed too urgent to be postponed until the enactment of next year's
     /// regular appropriations act.
@@ -38,12 +38,14 @@ namespace BudgetExecution
         /// <value>
         /// The ProgramResultCodes identifier.
         /// </value>
-        public IKey Index { get; set; }
+        public override int ID { get; set; }
 
         /// <summary>
         /// Gets the code.
         /// </summary>
-        public string Code { get; set; }
+        public override string Code { get; set; }
+
+        public override string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the type.
@@ -70,7 +72,7 @@ namespace BudgetExecution
         {
             try
             {
-                return Data?.Any( ) == true
+                return ( Data?.Any( ) == true )
                     ? new DataBuilder( Source, Data )
                     : default( DataBuilder );
             }
@@ -80,6 +82,5 @@ namespace BudgetExecution
                 return default( IDataModel );
             }
         }
-
     }
 }

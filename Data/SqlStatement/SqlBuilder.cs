@@ -1,5 +1,5 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
+﻿// <copyright file = "SqlBuilder.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -7,12 +7,14 @@ namespace BudgetExecution
     using System;
     using System.Collections.Generic;
     using System.Configuration;
+    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Linq;
 
     /// <summary>
     /// 
     /// </summary>
+    [ SuppressMessage( "ReSharper", "AutoPropertyCanBeMadeGetOnly.Global" ) ]
     public class SqlBuilder
     {
         /// <summary>
@@ -80,32 +82,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Gets the command text.
-        /// </summary>
-        /// <param name="commandName">Name of the command.</param>
-        /// <returns></returns>
-        public string GetCommandText( string commandName )
-        {
-            if( !string.IsNullOrEmpty( commandName )
-               && Commands?.Any( ) == true
-               && Commands.Keys?.Contains( commandName ) == true )
-            {
-                try
-                {
-                    return Commands[ commandName ];
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-
-                    return string.Empty;
-                }
-            }
-
-            return string.Empty;
-        }
-
-        /// <summary>
         /// Gets the SQL directory path.
         /// </summary>
         /// <returns></returns>
@@ -115,22 +91,20 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _path = ConfigurationManager.AppSettings[ $"{Extension}" ];
+                    var _path = ConfigurationManager.AppSettings[ $"{ Extension }" ];
                     var _index = _path.LastIndexOf( @"\" );
                     var _size = _path.Length;
                     var _end = _size - _index;
-                    var _folder = $@"\{CommandType}";
+                    var _folder = $@"\{ CommandType }";
                     var _remove = _path?.Remove( _index, _end );
-                    var _dirpath = _remove + _folder;
-
-                    return Directory.Exists( _dirpath )
-                        ? _dirpath
+                    var _dirPath = _remove + _folder;
+                    return ( Directory.Exists( _dirPath ) )
+                        ? _dirPath
                         : string.Empty;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return string.Empty;
                 }
             }
@@ -148,11 +122,9 @@ namespace BudgetExecution
                && Files?.Any( ) == true )
             {
                 var _repository = new Dictionary<string, string>( );
-
                 foreach( var file in Files )
                 {
                     string _output;
-
                     using( var _stream = File.OpenText( file ) )
                     {
                         _output = _stream.ReadToEnd( );
@@ -170,7 +142,57 @@ namespace BudgetExecution
                     : default( IDictionary<string, string> );
             }
 
-            return default;
+            return default( IDictionary<string, string> );
+        }
+
+        /// <summary>
+        /// Gets the command text.
+        /// </summary>
+        /// <param name="commandName">Name of the command.</param>
+        /// <returns></returns>
+        public string GetCommandText( string commandName )
+        {
+            if( !string.IsNullOrEmpty( commandName )
+               && Commands?.Any( ) == true
+               && Commands.Keys?.Contains( commandName ) == true )
+            {
+                try
+                {
+                    return Commands[ commandName ];
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                    return string.Empty;
+                }
+            }
+
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Gets the command text.
+        /// </summary>
+        /// <param name="sqlCommand">Name of the command.</param>
+        /// <returns></returns>
+        public string GetCommandText( SQL sqlCommand )
+        {
+            if( Enum.IsDefined( typeof( SQL ), sqlCommand )
+               && Commands?.Any( ) == true
+               && Commands.Keys?.Contains( $"{ sqlCommand }" ) == true )
+            {
+                try
+                {
+                    return Commands[ $"{ sqlCommand }" ];
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                    return string.Empty;
+                }
+            }
+
+            return string.Empty;
         }
 
         /// <summary>

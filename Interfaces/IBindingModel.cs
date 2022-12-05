@@ -1,6 +1,6 @@
-// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
-// </copyright>
+// // <copyright file = "IBindingModel.cs" company = "Terry D. Eppler">
+// // Copyright (c) Terry D. Eppler. All rights reserved.
+// // </copyright>
 
 namespace BudgetExecution
 {
@@ -173,15 +173,53 @@ namespace BudgetExecution
         /// <summary>
         /// Gets the source model.
         /// </summary>
-        /// <returns></returns>
+        /// <param name="">
+        /// 
+        /// </param>
+        /// <returns>
+        /// 
+        /// </returns>
         BindingModel GetSeriesModel( );
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>
+        /// 
+        /// </returns>
         event ListChangedEventHandler Changed;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index">
+        /// 
+        /// </param>
+        /// <returns>
+        /// 
+        /// </returns>
         double GetX( int index );
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index">
+        /// 
+        /// </param>
+        /// <returns>
+        /// double[ ]
+        /// </returns>
         double[ ] GetY( int index );
 
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <param name="">
+        /// 
+        /// </param>
+        /// <returns>
+        /// 
+        /// </returns>
         bool GetEmpty( int index );
 
         /// <summary>

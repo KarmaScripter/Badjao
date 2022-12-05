@@ -24,6 +24,24 @@ namespace BudgetExecution
         public DataRow Record { get; set; }
 
         /// <summary>
+        /// Gets the identifier.
+        /// </summary>
+        public virtual int ID { get; set; }
+
+        /// <summary>
+        /// Gets the code.
+        /// </summary>
+        public override string Code { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public override string Name { get; set; }
+
+        /// <summary>
         /// Gets the arguments.
         /// </summary>
         /// <value>

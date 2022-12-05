@@ -40,7 +40,7 @@ namespace BudgetExecution
         public Account( IQuery query )
         {
             Record = new DataBuilder( query )?.Record;
-            ID = new Key( Record, PrimaryKey.AccountsId );
+            ID = GetId( Record, PrimaryKey.AccountsId );
             Code = Record[ $"{ Field.AccountCode }" ].ToString( );
             NpmCode = Record[ $"{ Field.NpmCode }" ].ToString( );
             ProgramProjectCode = Record[ $"{ Field.ProgramProjectCode }" ].ToString( );
@@ -61,7 +61,7 @@ namespace BudgetExecution
         public Account( IDataModel dataBuilder )
         {
             Record = dataBuilder?.Record;
-            ID = new Key( Record, PrimaryKey.AccountsId );
+            ID = GetId( Record, PrimaryKey.AccountsId );
             Code = Record?[ $"{ Field.AccountCode }" ].ToString( );
             NpmCode = Record?[ $"{ Field.NpmCode }" ].ToString( );
             ProgramProjectCode = Record?[ $"{ Field.ProgramProjectCode }" ].ToString( );
@@ -81,7 +81,7 @@ namespace BudgetExecution
         public Account( DataRow dataRow )
         {
             Record = dataRow;
-            ID = new Key( Record, PrimaryKey.AccountsId );
+            ID = GetId( Record, PrimaryKey.AccountsId );
             Code = Record[ $"{ Field.AccountCode }" ].ToString( );
             NpmCode = Record[ $"{ Field.NpmCode }" ].ToString( );
             ProgramProjectCode = Record[ $"{ Field.ProgramProjectCode }" ].ToString( );
@@ -101,7 +101,7 @@ namespace BudgetExecution
         public Account( string code )
         {
             Record = new DataBuilder( Source, GetArgs( code ) )?.Record;
-            ID = new Key( Record, PrimaryKey.AccountsId );
+            ID = GetId( Record, PrimaryKey.AccountsId );
             Code = Record[ $"{ Field.AccountCode }" ].ToString( );
             NpmCode = Record[ $"{ Field.NpmCode }" ].ToString( );
             ProgramProjectCode = Record[ $"{ Field.ProgramProjectCode }" ].ToString( );

@@ -106,7 +106,7 @@ namespace BudgetExecution
                             if( !string.IsNullOrEmpty( _kvp.Key )
                                && _kvp.Value != null )
                             {
-                                _filter += $"{_kvp.Key} = { _kvp.Value } AND";
+                                _filter += $"{ _kvp.Key } = { _kvp.Value } AND";
                             }
                         }
 

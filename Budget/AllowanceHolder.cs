@@ -47,6 +47,7 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     [ SuppressMessage( "ReSharper", "ConvertToConstant.Local" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Local" ) ]
+    [ SuppressMessage( "ReSharper", "AutoPropertyCanBeMadeGetOnly.Global" ) ]
     public class AllowanceHolder : Element, IAllowanceHolder, ISource
     {
         /// <summary>
@@ -61,6 +62,27 @@ namespace BudgetExecution
         /// The dict.
         /// </value>
         public DataRow Record { get; set; }
+
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public int ID { get; set; }
+
+        /// <summary>
+        /// Gets the code.
+        /// </summary>
+        public override string Code { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public override string Name { get; set; }
 
         /// <summary>
         /// Gets the arguments.
@@ -88,7 +110,7 @@ namespace BudgetExecution
         public AllowanceHolder( DataBuilder dataBuilder )
         {
             Record = dataBuilder?.Record;
-            ID = new Key( Record, PrimaryKey.AllowanceHoldersId );
+            ID = GetId( Record, PrimaryKey.AllowanceHoldersId );
             Name = Record?[ $"{ Field.ActivityName }" ].ToString( );
             Code = Record?[ $"{ Field.ActivityCode }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -104,7 +126,7 @@ namespace BudgetExecution
         public AllowanceHolder( IQuery query )
         {
             Record = new DataBuilder( query )?.Record;
-            ID = new Key( Record, PrimaryKey.AllowanceHoldersId );
+            ID = GetId( Record, PrimaryKey.AllowanceHoldersId );
             Name = Record[ $"{ Field.ActivityName }" ].ToString( );
             Code = Record[ $"{ Field.ActivityCode }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -121,7 +143,7 @@ namespace BudgetExecution
             : this( )
         {
             Record = data;
-            ID = new Key( Record, PrimaryKey.AllowanceHoldersId );
+            ID = GetId( Record, PrimaryKey.AllowanceHoldersId );
             Name = Record[ $"{ Field.ActivityName }" ].ToString( );
             Code = Record[ $"{ Field.ActivityCode }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -137,7 +159,7 @@ namespace BudgetExecution
         public AllowanceHolder( string ahCode )
         {
             Record = new DataBuilder( Source, SetArgs( ahCode ) )?.Record;
-            ID = new Key( Record, PrimaryKey.AllowanceHoldersId );
+            ID = GetId( Record, PrimaryKey.AllowanceHoldersId );
             Name = Record[ $"{ Field.ActivityName }" ].ToString( );
             Code = Record[ $"{ Field.ActivityCode }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -188,5 +210,36 @@ namespace BudgetExecution
                 return default( IDictionary<string, object> );
             }
         }
+
+        protected override int GetId( DataRow dataRow )
+        {
+            try
+            {
+                return dataRow != null
+                    ? int.Parse( dataRow[ 0 ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
+            }
+        }
+
+        protected override int GetId( DataRow dataRow, PrimaryKey primaryKey )
+        {
+            try
+            {
+                return Enum.IsDefined( typeof( PrimaryKey ), primaryKey ) && dataRow != null
+                    ? int.Parse( dataRow[ $"{ primaryKey }" ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
+            }
+        }
+
     }
 }

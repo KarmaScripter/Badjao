@@ -1,5 +1,5 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
+﻿// <copyright file = "AdapterBuilder.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -17,7 +17,6 @@ namespace BudgetExecution
     /// 
     /// </summary>
     /// <seealso cref="DbDataAdapter" />
-    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class AdapterBuilder : DbDataAdapter
     {
         /// <summary>
@@ -134,7 +133,6 @@ namespace BudgetExecution
                     switch( Provider )
                     {
                         case Provider.SQLite:
-
                         {
                             var _adapter = new SQLiteDataAdapter( CommandText,
                                 Connection as SQLiteConnection );
@@ -143,7 +141,6 @@ namespace BudgetExecution
                         }
 
                         case Provider.SqlCe:
-
                         {
                             var _adapter = new SqlCeDataAdapter( CommandText,
                                 Connection as SqlCeConnection );
@@ -152,7 +149,6 @@ namespace BudgetExecution
                         }
 
                         case Provider.SqlServer:
-
                         {
                             var _adapter = new SqlDataAdapter( CommandText,
                                 Connection as SqlConnection );
@@ -164,11 +160,9 @@ namespace BudgetExecution
                         case Provider.CSV:
                         case Provider.Access:
                         case Provider.OleDb:
-
                         {
                             var _connection = Connection as OleDbConnection;
                             var _adapter = new OleDbDataAdapter( CommandText, _connection );
-
                             return _adapter;
                         }
                     }
@@ -176,12 +170,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( DbDataAdapter );
                 }
             }
 
-            return default;
+            return default( DbDataAdapter );
         }
 
         /// <summary>

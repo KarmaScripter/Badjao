@@ -13,10 +13,12 @@ namespace BudgetExecution
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref = "CalendarYear"/>
-    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
+    /// <seealso cref="BudgetExecution.CalendarYear" />
+    /// <seealso cref="CalendarYear" />
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ] 
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBeMadeStatic.Global" ) ]
+    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class FiscalYear : CalendarYear
     {
         /// <summary>
@@ -25,7 +27,7 @@ namespace BudgetExecution
         /// <value>
         /// The bfy.
         /// </value>
-        public BFY BFY { get; set; }
+        public virtual BFY BFY { get; set; }
 
         /// <summary>
         /// Gets or sets the fiscal year identifier.
@@ -33,7 +35,7 @@ namespace BudgetExecution
         /// <value>
         /// The fiscal year identifier.
         /// </value>
-        public IKey FiscalYearId { get; set; }
+        public virtual int ID { get; set; }
 
         /// <summary>
         /// Gets or sets the bbfy.
@@ -41,7 +43,7 @@ namespace BudgetExecution
         /// <value>
         /// The bbfy.
         /// </value>
-        public string FirstYear { get; set; }
+        public virtual string FirstYear { get; set; }
 
         /// <summary>
         /// Gets or sets the ebfy.
@@ -49,7 +51,7 @@ namespace BudgetExecution
         /// <value>
         /// The ebfy.
         /// </value>
-        public string LastYear { get; set; }
+        public virtual string LastYear { get; set; }
 
         /// <summary>
         /// Gets or sets the expiring year.
@@ -57,7 +59,7 @@ namespace BudgetExecution
         /// <value>
         /// The expiring year.
         /// </value>
-        public string ExpiringYear { get; set; }
+        public virtual string ExpiringYear { get; set; }
 
         /// <summary>
         /// Gets or sets the input year.
@@ -65,7 +67,7 @@ namespace BudgetExecution
         /// <value>
         /// The input year.
         /// </value>
-        public string InputYear { get; set; }
+        public virtual string InputYear { get; set; }
 
         /// <summary>
         /// Gets or sets the start date.
@@ -73,7 +75,7 @@ namespace BudgetExecution
         /// <value>
         /// The start date.
         /// </value>
-        public string StartDate { get; set; }
+        public virtual DateOnly StartDate { get; set; }
 
         /// <summary>
         /// Gets or sets the end date.
@@ -81,7 +83,7 @@ namespace BudgetExecution
         /// <value>
         /// The end date.
         /// </value>
-        public string EndDate { get; set; }
+        public virtual DateOnly EndDate { get; set; }
 
         /// <summary>
         /// Gets or sets the cancellation date.
@@ -89,7 +91,7 @@ namespace BudgetExecution
         /// <value>
         /// The cancellation date.
         /// </value>
-        public string CancellationDate { get; set; }
+        public virtual DateOnly CancellationDate { get; set; }
 
         /// <summary>
         /// Gets or sets the arguments.

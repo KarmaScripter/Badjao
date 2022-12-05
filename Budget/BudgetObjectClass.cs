@@ -58,6 +58,27 @@ namespace BudgetExecution
         public DataRow Record { get; set; }
 
         /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public int ID { get; set; }
+
+        /// <summary>
+        /// Gets the code.
+        /// </summary>
+        public override string Code { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public override string Name { get; set; }
+
+        /// <summary>
         /// Gets the arguments.
         /// </summary>
         /// <value>
@@ -90,7 +111,7 @@ namespace BudgetExecution
             : this( )
         {
             Record = new DataBuilder( Source, SetArgs( boc ) )?.Record;
-            ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
+            ID = GetId( Record, PrimaryKey.BudgetObjectClassesId );
             Name = Record[ $"{ Field.BocName }" ].ToString( );
             Code = Record[ $"{ Field.BocCode }" ].ToString( );
             Category = boc;
@@ -107,7 +128,7 @@ namespace BudgetExecution
             : this( )
         {
             Record = new DataBuilder( Source, SetArgs( code ) )?.Record;
-            ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
+            ID = GetId( Record, PrimaryKey.BudgetObjectClassesId );
             Name = Record[ $"{ Field.BocName }" ].ToString( );
             Code = Record[ $"{ Field.BocCode }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -127,7 +148,7 @@ namespace BudgetExecution
         public BudgetObjectClass( IQuery query )
         {
             Record = new DataBuilder( query )?.Record;
-            ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
+            ID = GetId( Record, PrimaryKey.BudgetObjectClassesId );
             Name = Record[ $"{ Field.BocName }" ].ToString( );
             Code = Record[ $"{ Field.BocCode }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -147,7 +168,7 @@ namespace BudgetExecution
         public BudgetObjectClass( IDataModel builder )
         {
             Record = builder?.Record;
-            ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
+            ID = GetId( Record, PrimaryKey.BudgetObjectClassesId );
             Name = Record?[ $"{ Field.BocName }" ].ToString( );
             Code = Record?[ $"{ Field.BocCode }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -167,7 +188,7 @@ namespace BudgetExecution
         public BudgetObjectClass( DataRow dataRow )
         {
             Record = dataRow;
-            ID = new Key( Record, PrimaryKey.BudgetObjectClassesId );
+            ID = GetId( Record, PrimaryKey.BudgetObjectClassesId );
             Name = dataRow[ $"{ Field.BocName }" ].ToString( );
             Code = dataRow[ $"{ Field.BocCode }" ].ToString( );
             Data = Record?.ToDictionary( );
@@ -293,6 +314,36 @@ namespace BudgetExecution
             }
 
             return default( IDictionary<string, object> );
+        }
+
+        protected override int GetId( DataRow dataRow )
+        {
+            try
+            {
+                return dataRow != null
+                    ? int.Parse( dataRow[ 0 ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
+            }
+        }
+
+        protected override int GetId( DataRow dataRow, PrimaryKey primaryKey )
+        {
+            try
+            {
+                return Enum.IsDefined( typeof( PrimaryKey ), primaryKey ) && dataRow != null
+                    ? int.Parse( dataRow[ $"{ primaryKey }" ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
+            }
         }
 
         /// <summary>

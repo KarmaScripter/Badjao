@@ -25,12 +25,28 @@ namespace BudgetExecution
         public virtual DataRow Record { get; set; }
 
         /// <summary>
+        /// Gets or sets the code.
+        /// </summary>
+        /// <value>
+        /// The code.
+        /// </value>
+        public virtual string Code { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public override string Name { get; set; }
+
+        /// <summary>
         /// Gets or sets the ProgramResultCodes identifier.
         /// </summary>
         /// <value>
         /// The ProgramResultCodes identifier.
         /// </value>
-        public IKey ID { get; set; }
+        public virtual int ID { get; set; }
 
         /// <summary>
         /// Gets or sets the budget level.
@@ -156,26 +172,6 @@ namespace BudgetExecution
             }
 
             return default( string );
-        }
-
-        /// <summary>
-        /// Gets the ProgramResultCodes identifier.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public virtual IKey GetId( )
-        {
-            try
-            {
-                return ID.Index > 0
-                    ? ID
-                    : default( IKey );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return default( IKey );
-            }
         }
     }
 }

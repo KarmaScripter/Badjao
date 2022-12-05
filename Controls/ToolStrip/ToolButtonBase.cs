@@ -121,6 +121,42 @@ namespace BudgetExecution
         }
         
         /// <summary>
+        /// Gets the hover text from the ToolType of button.
+        /// </summary>
+        public string GetHoverText( )
+        {
+            if( Enum.IsDefined( typeof( ToolType ), ToolType ) )
+            {
+                try
+                {
+                    return ToolType switch
+                    {
+                        ToolType.FirstButton => "First Record",
+                        ToolType.PreviousButton => "Previous Record",
+                        ToolType.NextButton => "Next Record",
+                        ToolType.LastButton => "Last Record",
+                        ToolType.EditButton => "Edit Record",
+                        ToolType.AddButton => "Add Record",
+                        ToolType.DeleteButton => "Delete Record",
+                        ToolType.SaveButton => "Save Record",
+                        ToolType.RefreshButton => "Reset Filters",
+                        ToolType.ExcelButton => "Excel Export",
+                        ToolType.CalculatorButton => "Calculator",
+                        ToolType.ChartButton => "Visualizations",
+                        ToolType.HomeButton => "Main Menu",
+                        _ => string.Empty
+                    };
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                }
+            }
+
+            return string.Empty;
+        }
+
+        /// <summary>
         /// Sets the hover text.
         /// </summary>
         /// <param name="text">The text.</param>

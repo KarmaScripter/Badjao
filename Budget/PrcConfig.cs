@@ -6,6 +6,7 @@ namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;
+    using System.Data;
 
     /// <summary>
     /// 
@@ -18,18 +19,33 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        public override IKey GetId( )
+        public virtual int GetId( DataRow dataRow )
         {
             try
             {
-                return ID.Index > 0
-                    ? ID
-                    : Key.Default;
+                return dataRow != null
+                    ? int.Parse( dataRow[ 0 ].ToString(  ) )
+                    : -1;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return Key.Default;
+                return default( int );
+            }
+        }
+
+        public virtual int GetId( DataRow dataRow, PrimaryKey primaryKey )
+        {
+            try
+            {
+                return Enum.IsDefined( typeof( PrimaryKey ), primaryKey ) && dataRow != null
+                    ? int.Parse( dataRow[ $"{ primaryKey }" ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
             }
         }
     }

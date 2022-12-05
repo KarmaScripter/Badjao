@@ -1,5 +1,5 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
+﻿// <copyright file = "DataModel.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -207,23 +207,19 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _query = dataRows
-                        ?.Select( p => p.Field<string>( column ) )
-                        ?.Distinct( );
-
+                    var _query = dataRows?.Select( p => p.Field<string>( column ) )?.Distinct( );
                     return _query?.Any( ) == true
                         ? _query
-                        : default;
+                        : default( IEnumerable<string> );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( IEnumerable<string> );
                 }
             }
 
-            return default;
+            return default( IEnumerable<string> );
         }
 
         /// <summary>
@@ -237,29 +233,27 @@ namespace BudgetExecution
             string value )
         {
             if( dataRows?.Any( ) == true
-               && !string.IsNullOrEmpty( name )
                && Enum.IsDefined( typeof( Field ), name )
                && !string.IsNullOrEmpty( value ) )
             {
                 try
                 {
                     var _query = dataRows
-                        ?.Where( p => p.Field<string>( $"{ name }" )!.Equals( value ) )
-                        ?.Select( p => p.Field<string>( $"{ name }" ) )?.Distinct( );
+                        ?.Where( p => p.Field<string>( $"{name}" ).Equals( value ) )
+                        ?.Select( p => p.Field<string>( $"{name}" ) )?.Distinct( );
 
                     return _query?.Any( ) == true
                         ? _query
-                        : default;
+                        : default( IEnumerable<string> );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( IEnumerable<string> );
                 }
             }
 
-            return default;
+            return default( IEnumerable<string> );
         }
 
         /// <summary>
@@ -275,20 +269,18 @@ namespace BudgetExecution
                 {
                     using var _reader = new DataTableReader( dataTable );
                     var _schema = _reader?.GetSchemaTable( );
-
                     return _schema?.Rows?.Count > 0
                         ? _schema
-                        : default;
+                        : default( DataTable );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( DataTable );
                 }
             }
 
-            return default;
+            return default( DataTable );
         }
 
         /// <summary>
@@ -311,7 +303,6 @@ namespace BudgetExecution
                     using var _dataSet = new DataSet( );
                     using var _schema = _connection?.GetSchema( );
                     var _sheetName = string.Empty;
-
                     if( _schema != null )
                     {
                         var _dataTable = _schema?.AsEnumerable( )
@@ -319,28 +310,26 @@ namespace BudgetExecution
                                 r.Field<string>( "TABLE_NAME" ).Contains( "FilterDatabase" ) )
                             ?.Select( r => r )?.CopyToDataTable( );
 
-                        _sheetName = _dataTable?.Rows[ 0 ][ "TABLE_NAME" ].ToString( );
+                        _sheetName = _dataTable.Rows[ 0 ][ "TABLE_NAME" ].ToString( );
                     }
 
                     using var _command = new OleDbCommand( );
                     _command.Connection = _connection;
-                    _command.CommandText = $"SELECT * FROM [ { _sheetName } ]";
+                    _command.CommandText = "SELECT * FROM [" + _sheetName + "]";
                     using var _dataAdapter = new OleDbDataAdapter( _command );
                     _dataAdapter.Fill( _dataSet, "excelData" );
                     using var _table = _dataSet.Tables[ "ExcelData" ];
                     _connection.Close( );
-
                     return _table;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( DataTable );
                 }
             }
 
-            return default;
+            return default( DataTable );
         }
 
         /// <summary>
@@ -361,7 +350,6 @@ namespace BudgetExecution
                     _package.Load( _stream );
                     var _worksheet = _package?.Workbook?.Worksheets?.First( );
                     var _table = new DataTable( _worksheet?.Name );
-
                     if( _worksheet?.Cells != null )
                     {
                         foreach( var _firstRowCell in _worksheet?.Cells[ 1, 1, 1,
@@ -382,27 +370,25 @@ namespace BudgetExecution
                                 _worksheet.Dimension.End.Column ];
 
                             var _dataRow = _table.Rows?.Add( );
-
-                            foreach( var _cell in _excelRange )
+                            foreach( var cell in _excelRange )
                             {
-                                _dataRow[ _cell.Start.Column - 1 ] = _cell?.Text;
+                                _dataRow[ cell.Start.Column - 1 ] = cell?.Text;
                             }
                         }
 
                         return _table?.Rows?.Count > 0
                             ? _table
-                            : default;
+                            : default( DataTable );
                     }
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( DataTable );
                 }
             }
 
-            return default;
+            return default( DataTable );
         }
 
         /// <summary>
@@ -419,7 +405,6 @@ namespace BudgetExecution
                     var _dict = new Dictionary<string, IEnumerable<string>>( );
                     var _columns = dataTable?.Columns;
                     var _rows = dataTable?.AsEnumerable( );
-
                     for( var i = 0; i < _columns?.Count; i++ )
                     {
                         if( !string.IsNullOrEmpty( _columns[ i ]?.ColumnName )
@@ -432,17 +417,16 @@ namespace BudgetExecution
 
                     return _dict?.Any( ) == true
                         ? _dict
-                        : default;
+                        : default( Dictionary<string, IEnumerable<string>> );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( IDictionary<string, IEnumerable<string>> );
                 }
             }
 
-            return default;
+            return default( IDictionary<string, IEnumerable<string>> );
         }
     }
 }

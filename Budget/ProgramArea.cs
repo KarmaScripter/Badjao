@@ -16,6 +16,7 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     [ SuppressMessage( "ReSharper", "ConvertToConstant.Local" ) ]
+    [ SuppressMessage( "ReSharper", "AutoPropertyCanBeMadeGetOnly.Global" ) ]
     public class ProgramArea : Element, IProgramArea, ISource
     {
         /// <summary>
@@ -25,6 +26,27 @@ namespace BudgetExecution
         /// The dataRow.
         /// </value>
         public DataRow Record { get; set; }
+
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public int ID { get; set; }
+
+        /// <summary>
+        /// Gets the code.
+        /// </summary>
+        public override string Code { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public override string Name { get; set; }
 
         /// <summary>
         /// Gets the arguments.
@@ -55,9 +77,9 @@ namespace BudgetExecution
         public ProgramArea( IQuery query )
         {
             Record = new DataBuilder( query )?.Record;
-            ID = new Key( Record, PrimaryKey.ProgramAreasId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            ID = GetId( Record, PrimaryKey.ProgramAreasId );
+            Name = Record[ $"{ Field.Name }" ].ToString( );
+            Code = Record[ $"{ Field.Code }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
@@ -70,9 +92,9 @@ namespace BudgetExecution
         public ProgramArea( IDataModel builder )
         {
             Record = builder?.Record;
-            ID = new Key( Record, PrimaryKey.ProgramAreasId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            ID = GetId( Record, PrimaryKey.ProgramAreasId );
+            Name = Record[ $"{ Field.Name }" ].ToString( );
+            Code = Record[ $"{ Field.Code }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
@@ -86,10 +108,10 @@ namespace BudgetExecution
             : this( )
         {
             Record = dataRow;
-            ID = new Key( Record, PrimaryKey.ProgramAreasId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
-            Data = Record?.ToDictionary( );
+            ID = GetId( dataRow, PrimaryKey.ProgramAreasId );
+            Name = dataRow[ $"{ Field.Name }" ].ToString( );
+            Code = dataRow[ $"{ Field.Code }" ].ToString( );
+            Data = dataRow?.ToDictionary( );
         }
 
         /// <summary>
@@ -101,9 +123,9 @@ namespace BudgetExecution
         public ProgramArea( string code )
         {
             Record = new DataBuilder( Source, SetArgs( code ) )?.Record;
-            ID = new Key( Record, PrimaryKey.ProgramAreasId );
-            Name = new Element( Record, Field.Name ).Name;
-            Code = new Element( Record, Field.Code ).Code;
+            ID = GetId( Record, PrimaryKey.ProgramAreasId );
+            Name = Record[ $"{ Field.Name }" ].ToString( );
+            Code = Record[ $"{ Field.Code }" ].ToString( );
             Data = Record?.ToDictionary( );
         }
 
@@ -171,24 +193,35 @@ namespace BudgetExecution
             }
         }
 
-        /// <summary>
-        /// Gets the source.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public Source GetSource( )
+        protected override int GetId( DataRow dataRow )
         {
             try
             {
-                return Enum.IsDefined( typeof( Source ), Source )
-                    ? Source
-                    : Source.NS;
+                return dataRow != null
+                    ? int.Parse( dataRow[ 0 ].ToString(  ) )
+                    : -1;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return Source.NS;
+                return default( int );
             }
         }
+
+        protected override int GetId( DataRow dataRow, PrimaryKey primaryKey )
+        {
+            try
+            {
+                return Enum.IsDefined( typeof( PrimaryKey ), primaryKey ) && dataRow != null
+                    ? int.Parse( dataRow[ $"{ primaryKey }" ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
+            }
+        }
+
     }
 }

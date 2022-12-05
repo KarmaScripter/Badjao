@@ -1,5 +1,5 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
+﻿// <copyright file = "SqlStatement.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -144,7 +144,6 @@ namespace BudgetExecution
                 try
                 {
                     var _update = CreateUpdateStatement( Updates, Criteria );
-
                     return !string.IsNullOrEmpty( _update )
                         ? _update
                         : string.Empty;
@@ -152,12 +151,11 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( string );
                 }
             }
 
-            return default;
+            return default( string );
         }
 
         /// <summary>
@@ -175,8 +173,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
-                return default;
+                return default( string );
             }
         }
 
@@ -195,8 +192,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
-                return default;
+                return default( string );
             }
         }
 
@@ -217,25 +213,18 @@ namespace BudgetExecution
                     switch( commandType )
                     {
                         case SQL.SELECT:
-
                         {
                             return CreateSelectStatement( dict );
                         }
-
                         case SQL.SELECTALL:
-
                         {
                             return CreateSelectStatement( dict );
                         }
-
                         case SQL.INSERT:
-
                         {
                             return CreateInsertStatement( dict );
                         }
-
                         case SQL.DELETE:
-
                         {
                             return CreateDeleteStatement( dict );
                         }
@@ -269,25 +258,18 @@ namespace BudgetExecution
                     switch( commandType )
                     {
                         case SQL.SELECT:
-
                         {
                             return GetCommandText( columns, where );
                         }
-
                         case SQL.SELECTALL:
-
                         {
                             return CreateSelectStatement( where );
                         }
-
                         case SQL.INSERT:
-
                         {
                             return CreateInsertStatement( where );
                         }
-
                         case SQL.DELETE:
-
                         {
                             return CreateDeleteStatement( where );
                         }
@@ -321,33 +303,23 @@ namespace BudgetExecution
                     switch( commandType )
                     {
                         case SQL.SELECT:
-
                         {
                             var _cols = updates.Keys.ToList( );
-
                             return CreateSelectStatement( _cols, where );
                         }
-
                         case SQL.SELECTALL:
-
                         {
                             return CreateSelectStatement( where );
                         }
-
                         case SQL.INSERT:
-
                         {
                             return CreateInsertStatement( where );
                         }
-
                         case SQL.UPDATE:
-
                         {
                             return CreateUpdateStatement( updates, where );
                         }
-
                         case SQL.DELETE:
-
                         {
                             return CreateDeleteStatement( where );
                         }
@@ -379,7 +351,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return string.Empty;
             }
         }

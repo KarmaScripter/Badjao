@@ -1,5 +1,5 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
+﻿// <copyright file = "Level.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -9,6 +9,8 @@ namespace BudgetExecution
         /// <summary>
         /// The ns
         /// </summary>
+        NS = -1,
+        
         Treasury = 0,
 
         /// <summary>
@@ -17,14 +19,14 @@ namespace BudgetExecution
         Appropriation = 1,
 
         /// <summary>
-        /// The allowance holder
-        /// </summary>
-        AllowanceHolder = 3,
-        
-        /// <summary>
         /// The rpio
         /// </summary>
         RPIO = 2,
+
+        /// <summary>
+        /// The allowance holder
+        /// </summary>
+        AllowanceHolder = 3,
 
         /// <summary>
         /// The program area
@@ -32,9 +34,9 @@ namespace BudgetExecution
         ProgramArea = 4,
 
         /// <summary>
-        /// The program project
+        /// The progream project
         /// </summary>
-        ProgramProject = 5,
+        ProgreamProject = 5,
 
         /// <summary>
         /// The program results code

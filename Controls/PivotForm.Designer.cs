@@ -1,6 +1,7 @@
 ﻿namespace BudgetExecution
 {
     using System.Windows.Forms;
+    using Syncfusion.Windows.Forms.Tools;
 
     partial class PivotForm
     {
@@ -71,7 +72,6 @@
             this.Separator15 = new BudgetExecution.ToolSeparator();
             this.HomeButton = new BudgetExecution.ToolStripButton();
             this.Separator16 = new BudgetExecution.ToolSeparator();
-            this.PivotChart = new BudgetExecution.PivotChart();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet)).BeginInit();
             this.ListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
@@ -193,7 +193,6 @@
             this.PivotPanel.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
             this.PivotPanel.Border.Visible = true;
             this.PivotPanel.Children = null;
-            this.PivotPanel.Controls.Add(this.PivotChart);
             this.PivotPanel.DataFilter = null;
             this.PivotPanel.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PivotPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -564,33 +563,6 @@
             this.Separator16.Padding = new System.Windows.Forms.Padding(1, 5, 1, 5);
             this.Separator16.Size = new System.Drawing.Size(6, 34);
             // 
-            // PivotChart
-            // 
-            this.PivotChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.PivotChart.BindingSource = null;
-            this.PivotChart.ChartTypes = Syncfusion.Windows.Forms.PivotChart.PivotChartTypes.Column;
-            this.PivotChart.CustomPalette = new System.Drawing.Color[] {
-            System.Drawing.Color.SteelBlue,
-            System.Drawing.Color.Red,
-            System.Drawing.Color.Green};
-            this.PivotChart.DataFilter = null;
-            this.PivotChart.DeferLayoutUpdate = false;
-            this.PivotChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PivotChart.Field = BudgetExecution.Field.RpioActivityCode;
-            this.PivotChart.Font = new System.Drawing.Font("Roboto", 9F);
-            this.PivotChart.ForeColor = System.Drawing.Color.White;
-            this.PivotChart.ItemSource = this.BindingSource;
-            this.PivotChart.Location = new System.Drawing.Point(0, 0);
-            this.PivotChart.MinimumSize = new System.Drawing.Size(300, 250);
-            this.PivotChart.Name = "PivotChart";
-            this.PivotChart.Numeric = BudgetExecution.Numeric.NS;
-            this.PivotChart.ShowLegend = true;
-            this.PivotChart.ShowPivotTableFieldList = false;
-            this.PivotChart.Size = new System.Drawing.Size(757, 476);
-            this.PivotChart.TabIndex = 0;
-            this.PivotChart.ToolTip = this.ToolTip;
-            this.PivotChart.UpdateManager = null;
-            // 
             // PivotForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -671,6 +643,5 @@
         public MetroTip ToolTip;
         public Layout ListPanel;
         public ListBox ListBox;
-        public PivotChart PivotChart;
     }
 }

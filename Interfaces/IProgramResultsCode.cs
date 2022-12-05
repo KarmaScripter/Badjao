@@ -4,6 +4,8 @@
 
 namespace BudgetExecution
 {
+    using System.Data;
+
     /// <summary>
     /// 
     /// </summary>
@@ -14,7 +16,7 @@ namespace BudgetExecution
         /// Gets the identifier.
         /// </summary>
         /// <returns></returns>
-        IKey GetId( );
+        int GetId( DataRow dataRow, PrimaryKey primaryKey );
 
         /// <summary>
         /// Gets the budget level.

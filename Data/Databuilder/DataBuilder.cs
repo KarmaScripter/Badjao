@@ -1,5 +1,5 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
+﻿// <copyright file = "DataBuilder.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -11,15 +11,12 @@ namespace BudgetExecution
     using System.Linq;
 
     /// <summary> </summary>
-    /// <seealso cref = "DataModel"/>
-    [ SuppressMessage( "ReSharper", "ClassCanBeSealed.Global" ) ]
-    [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
-    [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
+    /// <seealso cref = "DataModel" />
     public class DataBuilder : DataModel, IDataModel
     {
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref = "DataBuilder"/>
+        /// <see cref = "DataBuilder" />
         /// class.
         /// </summary>
         public DataBuilder( )
@@ -28,7 +25,7 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref = "DataBuilder"/>
+        /// <see cref = "DataBuilder" />
         /// class.
         /// </summary>
         /// <param name = "source" > The source. </param>
@@ -40,7 +37,7 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref = "DataBuilder"/>
+        /// <see cref = "DataBuilder" />
         /// class.
         /// </summary>
         /// <param name = "source" > The source. </param>
@@ -53,7 +50,7 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref = "DataBuilder"/>
+        /// <see cref = "DataBuilder" />
         /// class.
         /// </summary>
         /// <param name = "source" > The source. </param>
@@ -64,15 +61,13 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref = "DataBuilder"/>
-        /// class.
+        /// Initializes a new instance of the <see cref="DataBuilder"/> class.
         /// </summary>
-        /// <param name = "source" > The source. </param>
-        /// <param name = "provider" > The provider. </param>
-        /// <param name = "updates" > The updates. </param>
-        /// <param name = "where" > The where. </param>
-        /// <param name = "commandType" > Type of the command. </param>
+        /// <param name="source">The source.</param>
+        /// <param name="provider">The provider.</param>
+        /// <param name="updates">The updates.</param>
+        /// <param name="where">The where.</param>
+        /// <param name="commandType">Type of the command.</param>
         public DataBuilder( Source source, Provider provider, IDictionary<string, object> updates,
             IDictionary<string, object> where, SQL commandType = SQL.UPDATE )
             : base( source, provider, updates, where, commandType )
@@ -80,15 +75,13 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref = "DataBuilder"/>
-        /// class.
+        /// Initializes a new instance of the <see cref="DataBuilder"/> class.
         /// </summary>
-        /// <param name = "source" > The source. </param>
-        /// <param name = "provider" > The provider. </param>
-        /// <param name = "columns" > The columns. </param>
-        /// <param name = "where" > The criteria. </param>
-        /// <param name = "commandType" > Type of the command. </param>
+        /// <param name="source">The source.</param>
+        /// <param name="provider">The provider.</param>
+        /// <param name="columns">The columns.</param>
+        /// <param name="where">The criteria.</param>
+        /// <param name="commandType">Type of the command.</param>
         public DataBuilder( Source source, Provider provider, IEnumerable<string> columns,
             IDictionary<string, object> where, SQL commandType = SQL.SELECT )
             : base( source, provider, columns, where, commandType )
@@ -96,13 +89,11 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref = "DataBuilder"/>
-        /// class.
+        /// Initializes a new instance of the <see cref="DataBuilder"/> class.
         /// </summary>
-        /// <param name = "source" > The source. </param>
-        /// <param name = "provider" > The provider. </param>
-        /// <param name = "sqlText" > The SQL text. </param>
+        /// <param name="source">The source.</param>
+        /// <param name="provider">The provider.</param>
+        /// <param name="sqlText">The SQL text.</param>
         public DataBuilder( Source source, Provider provider, string sqlText )
             : base( source, provider, sqlText )
         {
@@ -110,7 +101,7 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref = "DataBuilder"/>
+        /// <see cref = "DataBuilder" />
         /// class.
         /// </summary>
         /// <param name = "query" > The query. </param>
@@ -120,13 +111,11 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref = "DataBuilder"/>
-        /// class.
+        /// Initializes a new instance of the <see cref="DataBuilder"/> class.
         /// </summary>
-        /// <param name = "fullPath" > The full path. </param>
-        /// <param name = "sqlText" > The SQL text. </param>
-        /// <param name = "commandType" > Type of the command. </param>
+        /// <param name="fullPath">The full path.</param>
+        /// <param name="sqlText">The SQL text.</param>
+        /// <param name="commandType">Type of the command.</param>
         public DataBuilder( string fullPath, string sqlText, SQL commandType = SQL.SELECT )
             : base( fullPath, sqlText, commandType )
         {
@@ -134,7 +123,7 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref = "DataBuilder"/>
+        /// <see cref = "DataBuilder" />
         /// class.
         /// </summary>
         /// <param name = "row" > The row. </param>
@@ -143,9 +132,11 @@ namespace BudgetExecution
             Record = row;
         }
 
-        /// <summary> Filters the data. </summary>
-        /// <param name = "where" > The dictionary. </param>
-        /// <returns> </returns>
+        /// <summary>
+        /// Filters the data.
+        /// </summary>
+        /// <param name="where">The dictionary.</param>
+        /// <returns></returns>
         public IEnumerable<DataRow> FilterData( IDictionary<string, object> where )
         {
             if( where?.Any( ) == true
@@ -162,18 +153,20 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IEnumerable<DataRow> );
                 }
             }
 
-            return default;
+            return default( IEnumerable<DataRow> );
         }
 
-        /// <summary> Filters the dataRows. </summary>
-        /// <param name = "dataRows" > The dataRows. </param>
-        /// <param name = "name" > The field. </param>
-        /// <param name = "value" > The filter. </param>
-        /// <returns> </returns>
+        /// <summary>
+        /// Filters the dataRows.
+        /// </summary>
+        /// <param name="dataRows">The dataRows.</param>
+        /// <param name="name">The field.</param>
+        /// <param name="value">The filter.</param>
+        /// <returns></returns>
         public static IEnumerable<DataRow> FilterData( IEnumerable<DataRow> dataRows, string name,
             string value )
         {
@@ -188,25 +181,27 @@ namespace BudgetExecution
 
                     return _query?.Any( ) == true
                         ? _query.ToArray( )
-                        : default;
+                        : default( DataRow[ ] );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IEnumerable<DataRow> );
                 }
             }
 
-            return default;
+            return default( IEnumerable<DataRow> );
         }
 
-        /// <summary> Gets the series. </summary>
-        /// <param name = "dataRows" > The dataRows. </param>
-        /// <param name = "name" > The field. </param>
-        /// <param name = "value" > The filter. </param>
-        /// <returns> </returns>
-        public static IDictionary<string, IEnumerable<string>> CreateSeries( IEnumerable<DataRow> dataRows, 
-            string name, string value )
+        /// <summary>
+        /// Gets the series.
+        /// </summary>
+        /// <param name="dataRows">The dataRows.</param>
+        /// <param name="name">The field.</param>
+        /// <param name="value">The filter.</param>
+        /// <returns></returns>
+        public static IDictionary<string, IEnumerable<string>> CreateSeries( 
+            IEnumerable<DataRow> dataRows, string name, string value )
         {
             if( dataRows?.Any( ) == true
                && !string.IsNullOrEmpty( name )
@@ -218,13 +213,11 @@ namespace BudgetExecution
                     var _columns = _dataTable?.Columns;
                     var _dictionary = new Dictionary<string, IEnumerable<string>>( );
                     var _values = GetValues( dataRows, name, value );
-
                     if( _values?.Any( ) == true )
                     {
                         for( var i = 0; i < _columns?.Count; i++ )
                         {
                             var _columnName = _columns[ i ].ColumnName;
-
                             if( !string.IsNullOrEmpty( _columnName )
                                && _columns[ i ]?.DataType == typeof( string ) )
                             {
@@ -234,19 +227,19 @@ namespace BudgetExecution
 
                         return _dictionary?.Any( ) == true
                             ? _dictionary
-                            : default;
+                            : default( Dictionary<string, IEnumerable<string>> );
                     }
 
-                    return default;
+                    return default( IDictionary<string, IEnumerable<string>> );
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-                    return default;
+                    return default( IDictionary<string, IEnumerable<string>> );
                 }
             }
 
-            return default;
+            return default( IDictionary<string, IEnumerable<string>> );
         }
     }
 }

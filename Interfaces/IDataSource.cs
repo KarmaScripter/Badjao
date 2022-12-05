@@ -1,6 +1,6 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
-// </copyright>
+﻿// // <copyright file = "IDataSource.cs" company = "Terry D. Eppler">
+// // Copyright (c) Terry D. Eppler. All rights reserved.
+// // </copyright>
 
 namespace BudgetExecution
 {
@@ -15,7 +15,8 @@ namespace BudgetExecution
         /// Sets the binding source.
         /// </summary>
         /// <param name="bindinglist">The bindingsource.</param>
-        void SetDataSource<T1>( T1 bindinglist ) where T1 : IBindingList;
+        void SetDataSource<T1>( T1 bindinglist )
+            where T1 : IBindingList;
 
         /// <summary>
         /// Sets the binding source.
@@ -25,13 +26,15 @@ namespace BudgetExecution
         /// <param name="bindinglist">The bindingsource.</param>
         /// <param name="dict">The dictionary.</param>
         void SetDataSource<T1, T2>( T1 bindinglist, T2 dict )
-            where T1 : IBindingList where T2 : IDictionary<string, object>;
+            where T1 : IBindingList
+            where T2 : IDictionary<string, object>;
 
         /// <summary>
         /// Sets the binding source.
         /// </summary>
         /// <param name="data">The data.</param>
-        void SetDataSource<T1>( IEnumerable<T1> data ) where T1 : IEnumerable<T1>;
+        void SetDataSource<T1>( IEnumerable<T1> data )
+            where T1 : IEnumerable<T1>;
 
         /// <summary>
         /// Sets the binding source.
@@ -52,7 +55,8 @@ namespace BudgetExecution
         /// <param name="field">The field.</param>
         /// <param name="filter">The dictionary.</param>
         void SetDataSource<T1, T2, T3>( IEnumerable<T1> data, T2 field, T3 filter )
-            where T1 : IEnumerable<T1> where T2 : struct;
+            where T1 : IEnumerable<T1>
+            where T2 : struct;
 
         /// <summary>
         /// Sets the binding source.
@@ -70,7 +74,8 @@ namespace BudgetExecution
         /// <param>The numeric.</param>
         /// <param name = "dict" > </param>
         void SetDataSource<T1, T2>( IEnumerable<T1> data, T2 dict )
-            where T1 : IEnumerable<T1> where T2 : IDictionary<string, object>;
+            where T1 : IEnumerable<T1>
+            where T2 : IDictionary<string, object>;
 
         /// <summary>
         /// Sets the binding source.
@@ -79,6 +84,7 @@ namespace BudgetExecution
         /// <param name="field">The field.</param>
         /// <param name="filter">The filter.</param>
         void SetDataSource<T1, T2>( IEnumerable<T1> data, T2 field, object filter = null )
-            where T1 : IEnumerable<T1> where T2 : struct;
+            where T1 : IEnumerable<T1>
+            where T2 : struct;
     }
 }

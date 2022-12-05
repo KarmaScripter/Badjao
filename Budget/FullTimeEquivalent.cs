@@ -25,7 +25,7 @@ namespace BudgetExecution
         /// <summary>
         /// The source
         /// </summary>
-        public Source Source { get; set; } =  Source.FullTimeEquivalents;
+        public override Source Source { get; set; } =  Source.FullTimeEquivalents;
 
         /// <summary>
         /// Initializes a new instance of the
@@ -44,7 +44,7 @@ namespace BudgetExecution
         public FullTimeEquivalent( IQuery query )
             : base( query )
         {
-            ID = new Key( Record, PrimaryKey.AllocationsId );
+            ID = GetId( Record, PrimaryKey.FinanceObjectClassesId  );
             Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
         }
 
@@ -57,7 +57,7 @@ namespace BudgetExecution
         public FullTimeEquivalent( IDataModel builder )
             : base( builder )
         {
-            ID = new Key( Record, PrimaryKey.AllocationsId );
+            ID = GetId( Record, PrimaryKey.FinanceObjectClassesId  );
             Amount = double.Parse( Record[ $"{ Numeric.Amount }" ].ToString( ) );
         }
 
@@ -70,7 +70,7 @@ namespace BudgetExecution
         public FullTimeEquivalent( DataRow dataRow )
             : base( dataRow )
         {
-            ID = new Key( Record, PrimaryKey.AllocationsId );
+            ID = GetId( Record, PrimaryKey.FinanceObjectClassesId  );
             Amount = double.Parse( dataRow[ $"{ Numeric.Amount }" ].ToString( ) );
         }
 
@@ -79,19 +79,35 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        public override IKey GetId( )
+        public override int GetId( DataRow dataRow )
         {
             try
             {
-                return ID.Index > 0
-                    ? ID
-                    : default( IKey );
+                return dataRow != null
+                    ? int.Parse( dataRow[ 0 ].ToString(  ) )
+                    : -1;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IKey );
+                return default( int );
             }
         }
+
+        public override int GetId( DataRow dataRow, PrimaryKey primaryKey )
+        {
+            try
+            {
+                return Enum.IsDefined( typeof( PrimaryKey ), primaryKey ) && dataRow != null
+                    ? int.Parse( dataRow[ $"{ primaryKey }" ].ToString(  ) )
+                    : -1;
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+                return default( int );
+            }
+        }
+
     }
 }

@@ -14,7 +14,7 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        IKey ID { get; set; }
+        int ID { get; set; }
         
         /// <summary>
         /// Gets or sets the value.

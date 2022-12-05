@@ -142,12 +142,6 @@
     <Compile Update="Controls\PictureBox\PictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\PivotChart\PivotChart.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\PivotChart\PivotChartBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Controls\PivotForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,12 +212,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Data\Adapter\AdapterBuilder.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Data\Conversion\mdb\ConversionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Data\DataWorker\DataWorker.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

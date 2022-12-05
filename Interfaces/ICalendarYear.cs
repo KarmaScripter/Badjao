@@ -25,7 +25,7 @@ namespace BudgetExecution
         /// <value>
         /// The work days.
         /// </value>
-        IElement WorkDays { get; set; }
+        double WorkDays { get; set; }
 
         /// <summary>
         /// Gets or sets the week days.
@@ -33,7 +33,7 @@ namespace BudgetExecution
         /// <value>
         /// The week days.
         /// </value>
-        IElement WeekDays { get; set; }
+        double WeekDays { get; set; }
 
         /// <summary>
         /// Gets or sets the week ends.
@@ -41,6 +41,6 @@ namespace BudgetExecution
         /// <value>
         /// The week ends.
         /// </value>
-        IElement WeekEnds { get; set; }
+        double WeekEnds { get; set; }
     }
 }

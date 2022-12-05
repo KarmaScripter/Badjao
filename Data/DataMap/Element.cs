@@ -1,5 +1,5 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
+﻿// <copyright file = "Element.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -14,8 +14,21 @@ namespace BudgetExecution
     /// 
     /// </summary>
     /// <seealso cref="IElement" />
+    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public class Element : DataUnit, IElement
     {
+        /// <summary>
+        /// Gets the code.
+        /// </summary>
+        /// <returns>
+        /// </returns>
+        public virtual string Code { get; set; }
+
+        /// <summary>
+        /// The initial
+        /// </summary>
+        public virtual string Initial { get; set; }
+
         /// <summary>
         /// The default
         /// </summary>
@@ -84,7 +97,6 @@ namespace BudgetExecution
         {
             Name = dataRow[ columnName ].ToString( );
             Value = dataRow[ columnName ];
-
             if( !string.IsNullOrEmpty( Name ) )
             {
                 Field = (Field)Enum.Parse( typeof( Field ), Name );
@@ -124,32 +136,12 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return false;
                 }
             }
 
             return false;
         }
-
-        /// <summary>
-        /// Gets the identifier.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public IKey ID { get; set; }
-
-        /// <summary>
-        /// Gets the code.
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        public string Code { get; set; }
-
-        /// <summary>
-        /// The initial
-        /// </summary>
-        public string Initial { get; set; }
 
         /// <summary>
         /// Determines whether the specified primary is match.
@@ -172,7 +164,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return false;
             }
 
@@ -193,7 +184,6 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
-
                     Name = _names?.Contains( columnName ) == true
                         ? columnName
                         : dataRow.Table.TableName;
@@ -239,7 +229,6 @@ namespace BudgetExecution
                 try
                 {
                     var _columnNames = dataRow.Table?.GetColumnNames( );
-
                     Name = _columnNames?.Contains( field.ToString( ) ) == true
                         ? field.ToString( )
                         : dataRow.Table.TableName;
@@ -263,7 +252,6 @@ namespace BudgetExecution
                 try
                 {
                     var _input = (Field)Enum.Parse( typeof( Field ), fieldName );
-
                     Field = !Enum.IsDefined( typeof( Field ), _input )
                         ? (Field)Enum.Parse( typeof( Field ), fieldName )
                         : default( Field );
@@ -290,7 +278,6 @@ namespace BudgetExecution
                 {
                     var _input = (Field)Enum.Parse( typeof( Field ), fieldName );
                     var _names = dataRow.Table?.GetColumnNames( );
-
                     if( _names?.Any( ) == true
                        && _names?.Contains( $" {_input}" ) == true )
                     {
@@ -336,7 +323,6 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
-
                     Field = _names?.Contains( field.ToString( ) ) == true
                         ? field
                         : default( Field );
@@ -381,7 +367,6 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
-
                     Value = _names?.Contains( columnName ) == true
                         ? dataRow[ columnName ]?.ToString( )
                         : string.Empty;
@@ -406,15 +391,50 @@ namespace BudgetExecution
                 try
                 {
                     var _names = dataRow.Table?.GetColumnNames( );
-
                     Value = _names?.Contains( field.ToString( ) ) == true
-                        ? dataRow[ $"{field}" ]?.ToString( )
+                        ? dataRow[ $"{ field }" ]?.ToString( )
                         : string.Empty;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
                 }
+            }
+        }
+
+        /// <summary>
+        /// Gets the identifier.
+        /// </summary>
+        /// <param name="dataRow">The data row.</param>
+        /// <returns></returns>
+        protected virtual int GetId( DataRow dataRow )
+        {
+            if( dataRow != null)
+            {
+                return int.Parse( dataRow[ 0 ].ToString( ) );
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// Gets the identifier.
+        /// </summary>
+        /// <param name="dataRow">The data row.</param>
+        /// <param name="primaryKey">The primary key.</param>
+        /// <returns></returns>
+        protected virtual int GetId( DataRow dataRow, PrimaryKey primaryKey )
+        {
+            if( dataRow != null
+               && Enum.IsDefined( typeof( PrimaryKey ), primaryKey ) )
+            {
+                return int.Parse( dataRow[ $"{ primaryKey }" ].ToString( ) );
+            }
+            else
+            {
+                return -1;
             }
         }
     }

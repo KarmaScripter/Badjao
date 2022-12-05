@@ -1,5 +1,5 @@
-﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
-// Copyright (c) Terry Eppler. All rights reserved.
+﻿// <copyright file = "ExcelQuery.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -159,10 +159,11 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _dialog = new SaveFileDialog( );
-
-                    _dialog.Filter = "Excel files (*.xlsx)|*.xlsx";
-                    _dialog.FilterIndex = 1;
+                    var _dialog = new SaveFileDialog
+                    {
+                        Filter = "Excel files (*.xlsx)|*.xlsx",
+                        FilterIndex = 1
+                    };
 
                     if( _dialog?.ShowDialog( ) == DialogResult.OK )
                     {
@@ -187,8 +188,7 @@ namespace BudgetExecution
         /// <param name="filePath">The file path.</param>
         public void WriteExcelFile( DataTable table, string filePath )
         {
-            if( table != null
-               && table.Columns.Count > 0
+            if( table?.Columns.Count > 0 
                && !string.IsNullOrEmpty( filePath ) )
             {
                 try
@@ -198,7 +198,6 @@ namespace BudgetExecution
                     var _excelWorksheet = _excelPackage?.Workbook?.Worksheets?.Add( _name );
                     var _columns = table?.Columns?.Count;
                     var _rows = table?.Rows?.Count;
-
                     for( var column = 1; column <= _columns; column++ )
                     {
                         if( _excelWorksheet != null )
@@ -228,6 +227,30 @@ namespace BudgetExecution
         }
 
         /// <summary>
+        /// Reads the excel file.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
+        /// <returns></returns>
+        private static ExcelPackage ReadExcelFile( string filePath )
+        {
+            if( !string.IsNullOrEmpty( filePath ) )
+            {
+                try
+                {
+                    var _fileInfo = new FileInfo( filePath );
+                    return new ExcelPackage( _fileInfo );
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                    return default( ExcelPackage );
+                }
+            }
+
+            return default( ExcelPackage );
+        }
+
+        /// <summary>
         /// Gets the excel file.
         /// </summary>
         /// <returns></returns>
@@ -236,14 +259,14 @@ namespace BudgetExecution
             try
             {
                 var _fileName = "";
-
-                var dialog = new OpenFileDialog( );
-
-                dialog.Title = "Excel File Dialog";
-                dialog.InitialDirectory = @"c:\";
-                dialog.Filter = "All files (*.*)|*.*|All files (*.*)|*.*";
-                dialog.FilterIndex = 2;
-                dialog.RestoreDirectory = true;
+                var dialog = new OpenFileDialog
+                {
+                    Title = "Excel File Dialog",
+                    InitialDirectory = @"c:\",
+                    Filter = "All files (*.*)|*.*|All files (*.*)|*.*",
+                    FilterIndex = 2,
+                    RestoreDirectory = true
+                };
 
                 if( dialog.ShowDialog( ) == DialogResult.OK )
                 {
@@ -255,8 +278,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
-                return default;
+                return default( string );
             }
         }
 
@@ -276,7 +298,6 @@ namespace BudgetExecution
                     _connection?.Open( );
                     var _sql = $"SELECT * FROM {sheetName}";
                     var _schema = _connection?.GetOleDbSchemaTable( OleDbSchemaGuid.Tables, null );
-
                     if( _schema?.Columns?.Count > 0
                        && !SheetExists( sheetName, _schema ) )
                     {
@@ -291,18 +312,21 @@ namespace BudgetExecution
 
                     var _adapter = new OleDbDataAdapter( _sql, _connection );
                     _adapter?.Fill( _dataSet );
-
                     return _dataSet?.Tables[ 0 ];
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( DataTable );
                 }
             }
 
-            return default;
+            return default( DataTable );
+        }
+
+        private DbConnection GetConnection( )
+        {
+            throw new NotImplementedException( );
         }
 
         /// <summary>
@@ -320,14 +344,12 @@ namespace BudgetExecution
                 {
                     var _data = new DataSet( );
                     var _sql = $"SELECT * FROM {sheetName}";
-
-                    var _connectionString = $@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={
-                        Path.GetDirectoryName( fileName )
-                    };" + @"Extended Properties='Text;HDR=YES;FMT=Delimited'";
+                    var _connectionString = $@"Provider=Microsoft.Jet.OLEDB.4.0;"
+                    + $"Data Source={Path.GetDirectoryName( fileName )} "
+                    + "Extended Properties='Text;HDR=YES;FMT=Delimited'";
 
                     var _connection = new OleDbConnection( _connectionString );
                     var _schema = _connection.GetOleDbSchemaTable( OleDbSchemaGuid.Tables, null );
-
                     if( !string.IsNullOrEmpty( sheetName ) )
                     {
                         if( !SheetExists( sheetName, _schema ) )
@@ -344,18 +366,88 @@ namespace BudgetExecution
 
                     var _dataAdapter = new OleDbDataAdapter( _sql, _connection );
                     _dataAdapter.Fill( _data );
-
                     return _data.Tables[ 0 ];
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
-                    return default;
+                    return default( DataTable );
                 }
             }
 
-            return default;
+            return default( DataTable );
+        }
+
+        /// <summary>
+        /// Exports to Data grid.
+        /// </summary>
+        /// <param name="dataGrid">The Data grid.</param>
+        private void ExportToDataGrid( DataGridView dataGrid )
+        {
+            try
+            {
+                var _filePath = ConnectionBuilder.DbPath;
+                var _stream = new FileInfo( _filePath );
+                var _application = new ExcelPackage( _stream );
+                var _workbook = _application.Workbook;
+                var _worksheet = _workbook.Worksheets[ 1 ];
+                var _range = _worksheet.SelectedRange;
+                var _rows = _range.Rows;
+                var _columns = _range.Columns;
+                dataGrid.ColumnCount = _columns;
+                dataGrid.RowCount = _rows;
+                for( var i = 1; i <= _rows; i++ )
+                {
+                    for( var j = 1; j <= _columns; j++ )
+                    {
+                        if( _range[ i, j ].Address != null
+                           && _range[ i, j ].Value != null )
+                        {
+                            dataGrid.Rows[ i - 1 ].Cells[ j - 1 ].Value = _range[ i, j ].Address;
+                        }
+                    }
+                }
+
+                Release( _range, _worksheet, _application );
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+            }
+        }
+
+        /// <summary>
+        /// Sheets the exists.
+        /// </summary>
+        /// <param name="sheetName">Name of the sheet.</param>
+        /// <param name="dataTable">The Data table.</param>
+        /// <returns></returns>
+        private bool SheetExists( string sheetName, DataTable dataTable )
+        {
+            if( !string.IsNullOrEmpty( sheetName )
+               && dataTable?.Columns.Count > 0
+               && dataTable.Rows.Count > 0 )
+            {
+                try
+                {
+                    for( var i = 0; i < dataTable.Rows.Count; i++ )
+                    {
+                        var _dataRow = dataTable.Rows[ i ];
+                        if( sheetName == _dataRow[ "TABLENAME" ].ToString( ) )
+                        {
+                            return true;
+                        }
+                    }
+
+                    return false;
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                }
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -400,111 +492,6 @@ namespace BudgetExecution
             }
 
             IsDisposed = true;
-        }
-
-        /// <summary>
-        /// Reads the excel file.
-        /// </summary>
-        /// <param name="filePath">The file path.</param>
-        /// <returns></returns>
-        private static ExcelPackage ReadExcelFile( string filePath )
-        {
-            if( !string.IsNullOrEmpty( filePath ) )
-            {
-                try
-                {
-                    var _fileInfo = new FileInfo( filePath );
-
-                    return new ExcelPackage( _fileInfo );
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-
-                    return default;
-                }
-            }
-
-            return default;
-        }
-
-        private DbConnection GetConnection( )
-        {
-            throw new NotImplementedException( );
-        }
-
-        /// <summary>
-        /// Exports to Data grid.
-        /// </summary>
-        /// <param name="dataGrid">The Data grid.</param>
-        private void ExportToDataGrid( DataGridView dataGrid )
-        {
-            try
-            {
-                var _filePath = ConnectionBuilder.DbPath;
-                var _stream = new FileInfo( _filePath );
-                var _application = new ExcelPackage( _stream );
-                var _workbook = _application.Workbook;
-                var _worksheet = _workbook.Worksheets[ 1 ];
-                var _range = _worksheet.SelectedRange;
-                var _rows = _range.Rows;
-                var _columns = _range.Columns;
-                dataGrid.ColumnCount = _columns;
-                dataGrid.RowCount = _rows;
-
-                for( var i = 1; i <= _rows; i++ )
-                {
-                    for( var j = 1; j <= _columns; j++ )
-                    {
-                        if( _range[ i, j ].Address != null
-                           && _range[ i, j ].Value != null )
-                        {
-                            dataGrid.Rows[ i - 1 ].Cells[ j - 1 ].Value = _range[ i, j ].Address;
-                        }
-                    }
-                }
-
-                Release( _range, _worksheet, _application );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
-        /// <summary>
-        /// Sheets the exists.
-        /// </summary>
-        /// <param name="sheetName">Name of the sheet.</param>
-        /// <param name="dataTable">The Data table.</param>
-        /// <returns></returns>
-        private bool SheetExists( string sheetName, DataTable dataTable )
-        {
-            if( !string.IsNullOrEmpty( sheetName )
-               && dataTable?.Columns.Count > 0
-               && dataTable.Rows.Count > 0 )
-            {
-                try
-                {
-                    for( var i = 0; i < dataTable.Rows.Count; i++ )
-                    {
-                        var _dataRow = dataTable.Rows[ i ];
-
-                        if( sheetName == _dataRow[ "TABLENAME" ].ToString( ) )
-                        {
-                            return true;
-                        }
-                    }
-
-                    return false;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-
-            return false;
         }
     }
 }

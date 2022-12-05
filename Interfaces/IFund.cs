@@ -14,14 +14,14 @@ namespace BudgetExecution
         /// </summary>
         /// <returns>
         /// </returns>
-        IElement GetTitle();
+        string Title { get; set; }
 
         /// <summary>
         /// Gets the treasury symbol.
         /// </summary>
         /// <returns>
         /// </returns>
-        IElement GetTreasurySymbol();
+        string TreasurySymbol { get; set; }
 
         /// <summary>
         /// Gets the fund.

@@ -4,6 +4,8 @@
 
 namespace BudgetExecution
 {
+    using System;
+
     public interface IFederalHoliday
     {
         /// <summary>
@@ -12,7 +14,7 @@ namespace BudgetExecution
         /// <value>
         /// The new years.
         /// </value>
-        IElement NewYearsDay { get; set; }
+        DateOnly NewYearsDay { get; set; }
 
         /// <summary>
         /// Gets or sets the martin luther king.
@@ -20,7 +22,7 @@ namespace BudgetExecution
         /// <value>
         /// The martin luther king.
         /// </value>
-        IElement MartinLutherKingDay { get; set; }
+        DateOnly MartinLutherKingDay { get; set; }
 
         /// <summary>
         /// Gets or sets the presidents.
@@ -28,7 +30,7 @@ namespace BudgetExecution
         /// <value>
         /// The presidents.
         /// </value>
-        IElement PresidentsDay { get; set; }
+        DateOnly PresidentsDay { get; set; }
 
         /// <summary>
         /// Gets or sets the memorial.
@@ -36,7 +38,7 @@ namespace BudgetExecution
         /// <value>
         /// The memorial.
         /// </value>
-        IElement MemorialDay { get; set; }
+        DateOnly MemorialDay { get; set; }
 
         /// <summary>
         /// Gets or sets the veterans.
@@ -44,7 +46,7 @@ namespace BudgetExecution
         /// <value>
         /// The veterans.
         /// </value>
-        IElement VeteransDay { get; set; }
+        DateOnly VeteransDay { get; set; }
 
         /// <summary>
         /// Gets or sets the labor.
@@ -52,7 +54,7 @@ namespace BudgetExecution
         /// <value>
         /// The labor.
         /// </value>
-        IElement LaborDay { get; set; }
+        DateOnly LaborDay { get; set; }
 
         /// <summary>
         /// Gets or sets the independence.
@@ -60,7 +62,7 @@ namespace BudgetExecution
         /// <value>
         /// The independence.
         /// </value>
-        IElement IndependenceDay { get; set; }
+        DateOnly IndependenceDay { get; set; }
 
         /// <summary>
         /// Gets or sets the columbus.
@@ -68,7 +70,7 @@ namespace BudgetExecution
         /// <value>
         /// The columbus.
         /// </value>
-        IElement ColumbusDay { get; set; }
+        DateOnly ColumbusDay { get; set; }
 
         /// <summary>
         /// Gets or sets the thanksgiving.
@@ -76,7 +78,7 @@ namespace BudgetExecution
         /// <value>
         /// The thanksgiving.
         /// </value>
-        IElement ThanksgivingDay { get; set; }
+        DateOnly ThanksgivingDay { get; set; }
 
         /// <summary>
         /// Gets or sets the christmas.
@@ -84,6 +86,6 @@ namespace BudgetExecution
         /// <value>
         /// The christmas.
         /// </value>
-        IElement ChristmasDay { get; set; }
+        DateOnly ChristmasDay { get; set; }
     }
 }
