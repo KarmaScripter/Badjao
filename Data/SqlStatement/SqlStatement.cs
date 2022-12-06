@@ -136,7 +136,7 @@ namespace BudgetExecution
         /// Gets the update statement.
         /// </summary>
         /// <returns></returns>
-        public string GetUpdateStatement( )
+        public string GetUpdateQueryText( )
         {
             if( Criteria != null
                && Updates != null )
@@ -162,7 +162,7 @@ namespace BudgetExecution
         /// Gets the insert statement.
         /// </summary>
         /// <returns></returns>
-        public string GetInsertStatement( )
+        public string GetInsertQueryText( )
         {
             try
             {
@@ -181,13 +181,13 @@ namespace BudgetExecution
         /// Gets the delete statement.
         /// </summary>
         /// <returns></returns>
-        public string GetDeleteStatement( )
+        public string GetDeleteQueryText( )
         {
             try
             {
                 return Criteria?.Any( ) == true
                     ? CreateDeleteStatement( Criteria )
-                    : $"DELETE FROM {Source}";
+                    : $"DELETE FROM { Source }";
             }
             catch( Exception ex )
             {

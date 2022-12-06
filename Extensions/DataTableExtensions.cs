@@ -20,6 +20,7 @@ namespace BudgetExecution
     /// 
     /// </summary>
     [ SuppressMessage( "ReSharper", "AssignNullToNotNullAttribute" ) ]
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public static class DataTableExtensions
     {
         /// <summary>
@@ -38,8 +39,11 @@ namespace BudgetExecution
         {
             try
             {
-                var _xml = new XDocument( );
-                _xml.Declaration = new XDeclaration( "1.0", "utf-8", "" );
+                var _xml = new XDocument
+                {
+                    Declaration = new XDeclaration( "1.0", "utf-8", "" )
+                };
+
                 _xml.Add( new XElement( rootName ) );
 
                 foreach( DataRow _dataRow in dataTable.Rows )
@@ -62,7 +66,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -150,17 +153,15 @@ namespace BudgetExecution
                     var _connectionString = ConnectionString[ "Excel" ].ConnectionString;
                     var _sql = "SELECT * FROM [" + sheetName + "$]";
                     using var _adapter = new OleDbDataAdapter( _sql, _connectionString );
-                    var _table = new DataTable( ) ;
+                    var _table = new DataTable( );
                     _table.TableName = sheetName;
                     _adapter?.FillSchema( _table, SchemaType.Source );
                     _adapter.Fill( _table, _table.TableName );
-
                     return _table;
                 }
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -198,7 +199,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return false;
             }
         }
@@ -232,7 +232,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return false;
             }
         }
@@ -253,7 +252,7 @@ namespace BudgetExecution
 
                     foreach( var _row in dataTable.AsEnumerable( ) )
                     {
-                        if( _row?.HasPrimaryKey( ) == true 
+                        if( _row?.HasPrimaryKey( ) == true
                            && _row[ 0 ] != null )
                         {
                             _list.Add( int.Parse( _row[ 0 ].ToString( ) ) );
@@ -270,7 +269,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -318,7 +316,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -341,7 +338,6 @@ namespace BudgetExecution
                         ?.Select( p => p.Field<string>( columnName ) )?.Distinct( );
 
                     var _array = _enumerable as string[ ] ?? _enumerable.ToArray( );
-
                     return _array.Any( )
                         ? _array
                         : default;
@@ -349,7 +345,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -372,7 +367,6 @@ namespace BudgetExecution
                 try
                 {
                     var _query = dataTable.Select( dict.ToCriteria( ) )?.ToList( );
-
                     return _query?.Any( ) == true
                         ? _query
                         : default( IEnumerable<DataRow> );
@@ -380,7 +374,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -405,7 +398,6 @@ namespace BudgetExecution
                 }
 
                 var _names = _fields?.OrderBy( f => f.IndexOf( f ) )?.Select( f => f )?.ToArray( );
-
                 return _names.Any( )
                     ? _names
                     : default;
@@ -413,7 +405,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -441,7 +432,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }
@@ -471,7 +461,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
