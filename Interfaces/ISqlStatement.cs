@@ -82,19 +82,19 @@ namespace BudgetExecution
         /// Gets the update statement.
         /// </summary>
         /// <returns></returns>
-        string GetUpdateQueryText( );
+        string GetUpdateText( );
 
         /// <summary>
         /// Gets the insert statement.
         /// </summary>
         /// <returns></returns>
-        string GetInsertQueryText( );
+        string GetInsertText( );
 
         /// <summary>
         /// Gets the delete statement.
         /// </summary>
         /// <returns></returns>
-        string GetDeleteQueryText( );
+        string GetDeleteText( );
 
         /// <summary>
         /// Gets the command text.

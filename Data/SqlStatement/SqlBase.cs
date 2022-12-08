@@ -16,6 +16,7 @@ namespace BudgetExecution
     /// <seealso cref="IProvider" />
     /// <seealso cref="ISource" />
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
+    [ SuppressMessage( "ReSharper", "ConvertIfStatementToSwitchStatement" ) ]
     public abstract class SqlBase
     {
         /// <summary>
@@ -151,7 +152,7 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="source">The source.</param>
         /// <param name="provider">The provider.</param>
-        /// <param name = "where" > </param>
+        /// <param name = "where"> </param>
         /// <param name = "commandType" > </param>
         protected SqlBase( Source source, Provider provider, IDictionary<string, object> where,
             SQL commandType = SQL.SELECTALL )
@@ -162,7 +163,7 @@ namespace BudgetExecution
             Provider = provider;
             TableName = source.ToString( );
             Criteria = where;
-            CommandText = $"SELECT * FROM {source} WHERE {where.ToCriteria( )}";
+            CommandText = $"SELECT * FROM { source } WHERE { where.ToCriteria( ) }";
         }
 
         protected SqlBase( Source source, Provider provider, IDictionary<string, object> updates,
@@ -222,6 +223,7 @@ namespace BudgetExecution
             {
                 try
                 {
+                    var _criteria = Criteria.ToCriteria( );
                     var _columns = string.Empty;
                     foreach( var col in Columns )
                     {
@@ -229,7 +231,7 @@ namespace BudgetExecution
                     }
 
                     var _cols = _columns.TrimEnd( ", ".ToCharArray( ) );
-                    return $"SELECT { _cols } FROM { Source } WHERE  {Criteria.ToCriteria( ) }";
+                    return $"SELECT { _cols } FROM { Source } WHERE  { _criteria }";
                 }
                 catch( Exception ex )
                 {
@@ -240,7 +242,8 @@ namespace BudgetExecution
             else if( Columns == null
                     && Criteria?.Any( ) == true )
             {
-                return $"SELECT * FROM { Source } WHERE { Criteria.ToCriteria( ) };";
+                var _criteria = Criteria.ToCriteria( );
+                return $"SELECT * FROM { Source } WHERE { _criteria };";
             }
             else if( Columns == null
                     && Criteria == null )
@@ -337,15 +340,15 @@ namespace BudgetExecution
 
                     foreach( var _numeric in numerics )
                     {
-                        _grp += $"SUM({_numeric}), ";
-                        _aggr += $"SUM({_numeric}) AS {_numeric}, ";
+                        _grp += $"SUM({ _numeric }), ";
+                        _aggr += $"SUM({ _numeric }) AS { _numeric }, ";
                     }
 
                     var _criteria = having.ToCriteria( );
                     var _columns = _cols + _aggr.TrimEnd( ", ".ToCharArray( ) );
                     var _groups = _cols + _grp.TrimEnd( ", ".ToCharArray( ) );
-                    return $"SELECT {_columns} FROM {Source} "
-                        + $"GROUP BY {_groups} HAVING {_criteria};";
+                    return $"SELECT { _columns } FROM { Source } "
+                        + $"GROUP BY { _groups } HAVING { _criteria };";
                 }
                 catch( Exception ex )
                 {
@@ -376,20 +379,20 @@ namespace BudgetExecution
                     {
                         foreach( var kvp in updates )
                         {
-                            _update += $"{kvp.Key} = '{kvp.Value}'";
+                            _update += $"{ kvp.Key } = '{ kvp.Value }'";
                         }
                     }
                     else if( updates.Count > 1 )
                     {
                         foreach( var kvp in updates )
                         {
-                            _update += $"{kvp.Key} = '{kvp.Value}', ";
+                            _update += $"{ kvp.Key } = '{ kvp.Value }', ";
                         }
                     }
 
                     var _criteria = where.ToCriteria( );
                     var _values = _update.TrimEnd( ", ".ToCharArray( ) );
-                    return $"{SQL.UPDATE} {Source} SET {_values} WHERE {_criteria};";
+                    return $"{ SQL.UPDATE } { Source } SET { _values } WHERE { _criteria };";
                 }
                 catch( Exception ex )
                 {
@@ -418,23 +421,23 @@ namespace BudgetExecution
                     {
                         foreach( var kvp in updates )
                         {
-                            _columns += $"{kvp.Key}";
-                            _values += $"{kvp.Value}";
+                            _columns += $"{ kvp.Key }";
+                            _values += $"{ kvp.Value }";
                         }
                     }
                     else if( updates.Count > 1 )
                     {
                         foreach( var kvp in updates )
                         {
-                            _columns += $"{kvp.Key}, ";
-                            _values += $"{kvp.Value}, ";
+                            _columns += $"{ kvp.Key }, ";
+                            _values += $"{ kvp.Value }, ";
                         }
                     }
 
-                    var _columnValues = $"({_columns.TrimEnd( ", ".ToCharArray( ) )})"
-                        + $" VALUES ({_values.TrimEnd( ", ".ToCharArray( ) )})";
+                    var _columnValues = $"({ _columns.TrimEnd( ", ".ToCharArray( ) ) })"
+                        + $" VALUES ({ _values.TrimEnd( ", ".ToCharArray( ) ) })";
 
-                    return $"INSERT INTO {Source} {_columnValues};";
+                    return $"INSERT INTO { Source } { _columnValues };";
                 }
                 catch( Exception ex )
                 {
@@ -458,7 +461,7 @@ namespace BudgetExecution
                 try
                 {
                     var _criteria = where.ToCriteria( );
-                    return $"{SQL.DELETE} FROM {Source} WHERE {_criteria};";
+                    return $"{ SQL.DELETE } FROM {Source} WHERE { _criteria };";
                 }
                 catch( Exception ex )
                 {

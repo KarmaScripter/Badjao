@@ -218,17 +218,17 @@ namespace BudgetExecution
                         }
                         case SQL.INSERT:
                         {
-                            var _sql = sqlStatement?.GetInsertQueryText( );
+                            var _sql = sqlStatement?.GetInsertText( );
                             return new SQLiteCommand( _sql, _connection );
                         }
                         case SQL.UPDATE:
                         {
-                            var _sql = sqlStatement?.GetUpdateQueryText( );
+                            var _sql = sqlStatement?.GetUpdateText( );
                             return new SQLiteCommand( _sql, _connection );
                         }
                         case SQL.DELETE:
                         {
-                            var _sql = sqlStatement?.GetDeleteQueryText( );
+                            var _sql = sqlStatement?.GetDeleteText( );
                             return new SQLiteCommand( _sql, _connection );
                         }
                         default:
@@ -276,21 +276,21 @@ namespace BudgetExecution
                             }
                             case SQL.INSERT:
                             {
-                                var _sql = sqlStatement?.GetInsertQueryText( );
+                                var _sql = sqlStatement?.GetInsertText( );
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql, _connection )
                                     : default( DbCommand );
                             }
                             case SQL.UPDATE:
                             {
-                                var _sql = sqlStatement?.GetUpdateQueryText( );
+                                var _sql = sqlStatement?.GetUpdateText( );
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql, _connection )
                                     : default( DbCommand );
                             }
                             case SQL.DELETE:
                             {
-                                var _sql = sqlStatement?.GetDeleteQueryText( );
+                                var _sql = sqlStatement?.GetDeleteText( );
                                 return !string.IsNullOrEmpty( _sql )
                                     ? new SqlCeCommand( _sql, _connection )
                                     : default( DbCommand );
@@ -341,17 +341,17 @@ namespace BudgetExecution
                             }
                             case SQL.INSERT:
                             {
-                                var _sql = sqlStatement?.GetInsertQueryText( );
+                                var _sql = sqlStatement?.GetInsertText( );
                                 return new SqlCommand( _sql, _connection );
                             }
                             case SQL.UPDATE:
                             {
-                                var _sql = sqlStatement?.GetUpdateQueryText( );
+                                var _sql = sqlStatement?.GetUpdateText( );
                                 return new SqlCommand( _sql, _connection );
                             }
                             case SQL.DELETE:
                             {
-                                var _sql = sqlStatement?.GetDeleteQueryText( );
+                                var _sql = sqlStatement?.GetDeleteText( );
                                 return new SqlCommand( _sql, _connection );
                             }
                             default:
@@ -397,19 +397,19 @@ namespace BudgetExecution
 
                         case SQL.INSERT:
                         {
-                            var _sql = sqlStatement?.GetInsertQueryText( );
+                            var _sql = sqlStatement?.GetInsertText( );
                             return new OleDbCommand( _sql, _connection );
                         }
 
                         case SQL.UPDATE:
                         {
-                            var _sql = sqlStatement.GetUpdateQueryText( );
+                            var _sql = sqlStatement.GetUpdateText( );
                             return new OleDbCommand( _sql, _connection );
                         }
 
                         case SQL.DELETE:
                         {
-                            var _sql = sqlStatement?.GetDeleteQueryText( );
+                            var _sql = sqlStatement?.GetDeleteText( );
                             return new OleDbCommand( _sql, _connection );
                         }
 

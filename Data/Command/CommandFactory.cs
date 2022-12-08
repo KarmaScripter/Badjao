@@ -413,7 +413,7 @@ namespace BudgetExecution
         {
             try
             {
-                return SqlStatement.GetInsertQueryText( );
+                return SqlStatement.GetInsertText( );
             }
             catch( Exception ex )
             {
@@ -430,7 +430,7 @@ namespace BudgetExecution
         {
             try
             {
-                return SqlStatement.GetUpdateQueryText( );
+                return SqlStatement.GetUpdateText( );
             }
             catch( Exception ex )
             {
@@ -447,7 +447,7 @@ namespace BudgetExecution
         {
             try
             {
-                return SqlStatement.GetDeleteQueryText( );
+                return SqlStatement.GetDeleteText( );
             }
             catch( Exception ex )
             {

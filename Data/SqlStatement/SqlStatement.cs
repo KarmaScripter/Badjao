@@ -136,7 +136,7 @@ namespace BudgetExecution
         /// Gets the update statement.
         /// </summary>
         /// <returns></returns>
-        public string GetUpdateQueryText( )
+        public string GetUpdateText( )
         {
             if( Criteria != null
                && Updates != null )
@@ -162,7 +162,7 @@ namespace BudgetExecution
         /// Gets the insert statement.
         /// </summary>
         /// <returns></returns>
-        public string GetInsertQueryText( )
+        public string GetInsertText( )
         {
             try
             {
@@ -181,7 +181,7 @@ namespace BudgetExecution
         /// Gets the delete statement.
         /// </summary>
         /// <returns></returns>
-        public string GetDeleteQueryText( )
+        public string GetDeleteText( )
         {
             try
             {
