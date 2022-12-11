@@ -6,6 +6,7 @@ namespace BudgetExecution
 {
     using System.Drawing;
     using System.Windows.Forms;
+    using MetroSet_UI.Enums;
 
     /// <summary>
     /// 
@@ -19,6 +20,9 @@ namespace BudgetExecution
         public Layout( )
         {
             // Basic Properties
+            Style = Style.Custom;
+            ThemeAuthor = "Terry D. Eppler";
+            ThemeName = "BudgetExecution";
             Size = new Size( 700, 428 );
             Location = new Point( 1, 1 );
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
@@ -28,17 +32,11 @@ namespace BudgetExecution
             Enabled = true;
             Visible = true;
 
-            // Backcolor SeriesConfiguration
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            ForeColor = Color.FromArgb( 141, 139, 138 );
-            BackColorState.Disabled = Color.FromArgb( 15, 15, 15 );
-            BackColorState.Enabled = Color.FromArgb( 15, 15, 15 );
-
-            // Border SeriesConfiguration
-            Border.Color = Color.FromArgb( 15, 15, 15 );
-            Border.Thickness = 1;
-            Border.HoverColor = Color.SteelBlue;
-            Border.HoverVisible = false;
+            // Back color SeriesConfiguration
+            BorderStyle = BorderStyle.None;
+            BackColor = Color.Transparent;
+            ForeColor = Color.LightGray;
+            BorderColor = Color.FromArgb( 0, 120, 212 );
         }
 
         public Layout( Size size, Point location )

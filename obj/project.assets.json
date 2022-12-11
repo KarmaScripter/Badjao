@@ -2,6 +2,77 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "EnvDTE/16.7.30508.193": {
+        "type": "package",
+        "dependencies": {
+          "stdole": "16.7.30508.193"
+        },
+        "compile": {
+          "lib/netstandard2.0/EnvDTE.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/EnvDTE.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MetroFramework.Design.NetCore/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "EnvDTE": "16.7.30508.193",
+          "MetroFramework.NetCore": "1.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/MetroFramework.Design.NetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/MetroFramework.Design.NetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "MetroFramework.Fonts.NetCore/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "MetroFramework.NetCore": "1.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/MetroFramework.Fonts.NetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/MetroFramework.Fonts.NetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "MetroFramework.NetCore/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/MetroFramework.NetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/MetroFramework.NetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "MetroSet_UI/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/MetroSet UI.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MetroSet UI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "Microsoft.Win32.SystemEvents/7.0.0": {
         "type": "package",
         "compile": {
@@ -21,6 +92,865 @@
           "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "stdole/16.7.30508.193": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/stdole.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/stdole.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.BulletGraph.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.BulletGraph.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.BulletGraph.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Calculate.Base/20.3.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Calculate.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Calculate.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Chart.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Chart.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Chart.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Chart.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Chart.Base": "20.3.0.60",
+          "Syncfusion.Grouping.Base": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Chart.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Chart.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Compression.Base/20.3.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Syncfusion.Compression.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Syncfusion.Compression.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Core.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Core.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Core.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Data.WinForms/20.3.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Data.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Data.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.DataSource.WinForms/20.3.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.DataSource.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.DataSource.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Diagram.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Diagram.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Diagram.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Diagram.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Diagram.Base": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Shared.Windows": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Diagram.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Diagram.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.DocIO.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.OfficeChart.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.DocIO.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.DocIO.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Edit.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Shared.Windows": "20.3.0.60",
+          "Syncfusion.Tools.Base": "20.3.0.60",
+          "Syncfusion.Tools.Windows": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Edit.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Edit.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Gauge.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Gauge.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Gauge.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Grid.Grouping.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Grid.Windows": "20.3.0.60",
+          "Syncfusion.Grouping.Base": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Shared.Windows": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Grid.Grouping.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Grid.Grouping.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Grid.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Shared.Windows": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Grid.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Grid.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.GridCommon.WinForms/20.3.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.GridCommon.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.GridCommon.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.GridExport.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "20.3.0.60",
+          "Syncfusion.Grid.Grouping.Windows": "20.3.0.60",
+          "Syncfusion.Grid.Windows": "20.3.0.60",
+          "Syncfusion.Grouping.Base": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.XlsIO.WinForms": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Gridconverter.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Gridconverter.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.GridHelperClasses.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Chart.Base": "20.3.0.60",
+          "Syncfusion.Chart.Windows": "20.3.0.60",
+          "Syncfusion.DocIO.WinForms": "20.3.0.60",
+          "Syncfusion.Grid.Grouping.Windows": "20.3.0.60",
+          "Syncfusion.Grid.Windows": "20.3.0.60",
+          "Syncfusion.GridExport.WinForms": "20.3.0.60",
+          "Syncfusion.Grouping.Base": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Pdf.WinForms": "20.3.0.60",
+          "Syncfusion.PivotAnalysis.Base": "20.3.0.60",
+          "Syncfusion.PivotTable.WinForms": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Shared.Windows": "20.3.0.60",
+          "Syncfusion.Tools.Base": "20.3.0.60",
+          "Syncfusion.Tools.Windows": "20.3.0.60",
+          "Syncfusion.XlsIO.WinForms": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.GridHelperClasses.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.GridHelperClasses.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Grouping.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Grouping.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Grouping.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.HTMLUI.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Mime.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.HTMLUI.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.HTMLUI.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.HTMLUI.windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.HTMLUI.Base": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Scripting.Base": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.HTMLUI.windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.HTMLUI.windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Licensing/20.3.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Linq.Base/20.3.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Linq.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Linq.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maps.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Shared.Windows": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Maps.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Maps.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Mime.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.MIME.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.MIME.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.OfficeChart.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0/Syncfusion.OfficeChart.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Syncfusion.OfficeChart.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Pdf.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Pdf.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Pdf.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.PdfViewer.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Pdf.WinForms": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.PdfViewer.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.PdfViewer.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.PivotAnalysis.Base/20.3.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.PivotAnalysis.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.PivotAnalysis.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.PivotChart.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Chart.Base": "20.3.0.60",
+          "Syncfusion.Chart.Windows": "20.3.0.60",
+          "Syncfusion.Grid.Windows": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Linq.Base": "20.3.0.60",
+          "Syncfusion.PivotAnalysis.Base": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Shared.Windows": "20.3.0.60",
+          "Syncfusion.Tools.Windows": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.PivotChart.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.PivotChart.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.PivotTable.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Grid.Windows": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Linq.Base": "20.3.0.60",
+          "Syncfusion.PivotAnalysis.Base": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Shared.Windows": "20.3.0.60",
+          "Syncfusion.Tools.Windows": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.PivotAnalysis.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.PivotAnalysis.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Presentation.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.OfficeChart.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Presentation.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Presentation.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Schedule.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Schedule.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Schedule.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Schedule.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Grid.Windows": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Schedule.Base": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Shared.Windows": "20.3.0.60",
+          "Syncfusion.Tools.Base": "20.3.0.60",
+          "Syncfusion.Tools.Windows": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Schedule.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Schedule.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Scripting.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Scripting.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Scripting.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.SfBarcode.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.SfBarcode.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.SfBarcode.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.SfDataGrid.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Core.WinForms": "20.3.0.60",
+          "Syncfusion.Data.WinForms": "20.3.0.60",
+          "Syncfusion.GridCommon.WinForms": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.SfInput.WinForms": "20.3.0.60",
+          "Syncfusion.SfListView.WinForms": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.SfDataGrid.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.SfDataGrid.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.SfInput.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Core.WinForms": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.SfInput.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.SfInput.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.SfListView.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Core.WinForms": "20.3.0.60",
+          "Syncfusion.DataSource.WinForms": "20.3.0.60",
+          "Syncfusion.GridCommon.WinForms": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.SfListView.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.SfListView.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.SfSmithChart.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Core.WinForms": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.SfSmithChart.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.SfSmithChart.WinForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Shared.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Shared.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Shared.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Shared.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Shared.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Shared.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.SpellChecker.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.SpellChecker.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.SpellChecker.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Spreadsheet.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "20.3.0.60",
+          "Syncfusion.Core.WinForms": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.SfInput.WinForms": "20.3.0.60",
+          "Syncfusion.SfListView.WinForms": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Tools.Windows": "20.3.0.60",
+          "Syncfusion.XlsIO.WinForms": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Spreadsheet.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Spreadsheet.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Tools.Base/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Tools.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Tools.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Tools.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Grid.Windows": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60",
+          "Syncfusion.Shared.Windows": "20.3.0.60",
+          "Syncfusion.SpellChecker.Base": "20.3.0.60",
+          "Syncfusion.Tools.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.Tools.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Tools.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.TreeMap.Windows/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Shared.Base": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.TreeMap.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.TreeMap.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.XlsIO.WinForms/20.3.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/Syncfusion.XlsIO.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.XlsIO.Base.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -186,6 +1116,80 @@
     }
   },
   "libraries": {
+    "EnvDTE/16.7.30508.193": {
+      "sha512": "BD5uEG7O10k/1ilczIdKE2vYz7A+fTHsChnKfXN+OIhdftlhH0hJrlN5aHdrqvzTZKh1PBrLqk5AswPFYHUGBQ==",
+      "type": "package",
+      "path": "envdte/16.7.30508.193",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "PackageIcon.png",
+        "envdte.16.7.30508.193.nupkg.sha512",
+        "envdte.nuspec",
+        "lib/net45/EnvDTE.dll",
+        "lib/net45/EnvDTE.xml",
+        "lib/netstandard2.0/EnvDTE.dll",
+        "lib/netstandard2.0/EnvDTE.xml"
+      ]
+    },
+    "MetroFramework.Design.NetCore/1.0.0": {
+      "sha512": "6dQCFgAjP9IvQ2M5IMYeNBkDOn5QODLe+oigv61Pg+yW4LpOOrMCooUqoroKS0jIB1ren6Y95xdguZ4t9uO6sw==",
+      "type": "package",
+      "path": "metroframework.design.netcore/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net45/MetroFramework.Design.NetCore.dll",
+        "lib/netcoreapp3.0/MetroFramework.Design.NetCore.dll",
+        "metroframework.design.netcore.1.0.0.nupkg.sha512",
+        "metroframework.design.netcore.nuspec"
+      ]
+    },
+    "MetroFramework.Fonts.NetCore/1.0.0": {
+      "sha512": "jceGiU9vT/2fc9wf4FEYwP6YQGI6b3+xwM5pGZiKiGlU0qQ+pOv4MrePLnAb8i+uyvwFcS1L5i0AReGHyEWopQ==",
+      "type": "package",
+      "path": "metroframework.fonts.netcore/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net45/MetroFramework.Fonts.NetCore.dll",
+        "lib/netcoreapp3.0/MetroFramework.Fonts.NetCore.dll",
+        "metroframework.fonts.netcore.1.0.0.nupkg.sha512",
+        "metroframework.fonts.netcore.nuspec"
+      ]
+    },
+    "MetroFramework.NetCore/1.0.0": {
+      "sha512": "N6S50mkxHy8iqvX8zKN561wbCaWYC5e+Wkpb0QfgEA2ReHupntQ8Kgxv6G64LA0JFpNAmUpj0CFTNXRe7ej7pA==",
+      "type": "package",
+      "path": "metroframework.netcore/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net45/MetroFramework.NetCore.dll",
+        "lib/netcoreapp3.0/MetroFramework.NetCore.dll",
+        "metroframework.netcore.1.0.0.nupkg.sha512",
+        "metroframework.netcore.nuspec"
+      ]
+    },
+    "MetroSet_UI/2.0.0": {
+      "sha512": "7FO1rFTiht/j+xdvyRBQOv3JL8yoKBwQrrBuA/Zbz98sNIhgpNDO977ZumAz6TTfbuIT/4waSHsFBp01cXDDIA==",
+      "type": "package",
+      "path": "metroset_ui/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "MetroSet.png",
+        "lib/net45/MetroSet UI.dll",
+        "lib/netcoreapp3.1/MetroSet UI.dll",
+        "metroset_ui.2.0.0.nupkg.sha512",
+        "metroset_ui.nuspec"
+      ]
+    },
     "Microsoft.Win32.SystemEvents/7.0.0": {
       "sha512": "2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
       "type": "package",
@@ -215,6 +1219,1438 @@
         "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "stdole/16.7.30508.193": {
+      "sha512": "BuXBjryTUyhb3Y9blTvpog1NBDkrP6QUJjY2ObJHRjHZ3IhlryMzhjc80BpLJ37ylxPI1Kr9GwkY+acUyCEdOw==",
+      "type": "package",
+      "path": "stdole/16.7.30508.193",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "PackageIcon.png",
+        "lib/net45/stdole.dll",
+        "lib/net45/stdole.xml",
+        "lib/netstandard2.0/stdole.dll",
+        "lib/netstandard2.0/stdole.xml",
+        "stdole.16.7.30508.193.nupkg.sha512",
+        "stdole.nuspec"
+      ]
+    },
+    "Syncfusion.BulletGraph.Windows/20.3.0.60": {
+      "sha512": "ZnDYNd60BWCLVUsg+WVVKgKxm9y6INmo4qOq9ZD1DYqSTfYJWxW3/3x+zHXSbqRIQ8JtyYPaF4dX1+rxRXKnGw==",
+      "type": "package",
+      "path": "syncfusion.bulletgraph.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net35/Syncfusion.BulletGraph.Windows.dll",
+        "lib/net35/Syncfusion.BulletGraph.Windows.xml",
+        "lib/net40/Syncfusion.BulletGraph.Windows.dll",
+        "lib/net40/Syncfusion.BulletGraph.Windows.xml",
+        "lib/net45/Syncfusion.BulletGraph.Windows.dll",
+        "lib/net45/Syncfusion.BulletGraph.Windows.xml",
+        "lib/net451/Syncfusion.BulletGraph.Windows.dll",
+        "lib/net451/Syncfusion.BulletGraph.Windows.xml",
+        "lib/net46/Syncfusion.BulletGraph.Windows.dll",
+        "lib/net46/Syncfusion.BulletGraph.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.BulletGraph.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.BulletGraph.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.BulletGraph.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.BulletGraph.Windows.xml",
+        "syncfusion.bulletgraph.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.bulletgraph.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Calculate.Base/20.3.0.60": {
+      "sha512": "AM3UFCzv/3BGHd0pYtpL8dKW/QGKTZu+uZkUETPpUmRxMRscmNWd08m8YejuFfE2s3FPsjrVEdKHVRgfETo5BQ==",
+      "type": "package",
+      "path": "syncfusion.calculate.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Calculate.Base.dll",
+        "lib/net20/Syncfusion.Calculate.Base.xml",
+        "lib/net35/Syncfusion.Calculate.Base.dll",
+        "lib/net35/Syncfusion.Calculate.Base.xml",
+        "lib/net40/Syncfusion.Calculate.Base.dll",
+        "lib/net40/Syncfusion.Calculate.Base.xml",
+        "lib/net45/Syncfusion.Calculate.Base.dll",
+        "lib/net45/Syncfusion.Calculate.Base.xml",
+        "lib/net451/Syncfusion.Calculate.Base.dll",
+        "lib/net451/Syncfusion.Calculate.Base.xml",
+        "lib/net46/Syncfusion.Calculate.Base.dll",
+        "lib/net46/Syncfusion.Calculate.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Calculate.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Calculate.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Calculate.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Calculate.Base.xml",
+        "syncfusion.calculate.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.calculate.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Chart.Base/20.3.0.60": {
+      "sha512": "T/18DKNETUjyJht+R6ch7lvS68I6onfr+fG8PjtLNbSzM+1pFsHjeddxErES71nV7EyHWPFeSonCXN/WpGJ5XA==",
+      "type": "package",
+      "path": "syncfusion.chart.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.Chart.Base.dll",
+        "lib/net20/Syncfusion.Chart.Base.xml",
+        "lib/net35/Syncfusion.Chart.Base.dll",
+        "lib/net35/Syncfusion.Chart.Base.xml",
+        "lib/net40/Syncfusion.Chart.Base.dll",
+        "lib/net40/Syncfusion.Chart.Base.xml",
+        "lib/net45/Syncfusion.Chart.Base.dll",
+        "lib/net45/Syncfusion.Chart.Base.xml",
+        "lib/net451/Syncfusion.Chart.Base.dll",
+        "lib/net451/Syncfusion.Chart.Base.xml",
+        "lib/net46/Syncfusion.Chart.Base.dll",
+        "lib/net46/Syncfusion.Chart.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Chart.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Chart.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Chart.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Chart.Base.xml",
+        "syncfusion.chart.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.chart.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Chart.Windows/20.3.0.60": {
+      "sha512": "JLPmXi3aOhRn6ZB2k9nQdRl81CWg48/nbvKgsPwa5aMgZwyz2WkKx78ZeFZTrHtHPRjnMHibPmC2WzJGGUrypw==",
+      "type": "package",
+      "path": "syncfusion.chart.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Chart.Windows.dll",
+        "lib/net20/Syncfusion.Chart.Windows.xml",
+        "lib/net35/Syncfusion.Chart.Windows.dll",
+        "lib/net35/Syncfusion.Chart.Windows.xml",
+        "lib/net40/Syncfusion.Chart.Windows.dll",
+        "lib/net40/Syncfusion.Chart.Windows.xml",
+        "lib/net45/Syncfusion.Chart.Windows.dll",
+        "lib/net45/Syncfusion.Chart.Windows.xml",
+        "lib/net451/Syncfusion.Chart.Windows.dll",
+        "lib/net451/Syncfusion.Chart.Windows.xml",
+        "lib/net46/Syncfusion.Chart.Windows.dll",
+        "lib/net46/Syncfusion.Chart.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Chart.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Chart.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Chart.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Chart.Windows.xml",
+        "syncfusion.chart.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.chart.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Compression.Base/20.3.0.60": {
+      "sha512": "eHEoGjHZOc6n7k1Tlt9p7Y2V4pvUFE8ZkxQ3B5X1gtOMQG8ajtlKPFEl1/D3Oy4khC0Hij/4NPas0Or8sx81ww==",
+      "type": "package",
+      "path": "syncfusion.compression.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.Compression.Base.dll",
+        "lib/net20/Syncfusion.Compression.Base.xml",
+        "lib/net35/Syncfusion.Compression.Base.dll",
+        "lib/net35/Syncfusion.Compression.Base.xml",
+        "lib/net40/Syncfusion.Compression.Base.dll",
+        "lib/net40/Syncfusion.Compression.Base.xml",
+        "lib/net45/Syncfusion.Compression.Base.dll",
+        "lib/net45/Syncfusion.Compression.Base.xml",
+        "lib/net451/Syncfusion.Compression.Base.dll",
+        "lib/net451/Syncfusion.Compression.Base.xml",
+        "lib/net46/Syncfusion.Compression.Base.dll",
+        "lib/net46/Syncfusion.Compression.Base.xml",
+        "lib/net5.0/Syncfusion.Compression.Base.dll",
+        "lib/net5.0/Syncfusion.Compression.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Compression.Base.dll",
+        "syncfusion.compression.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.compression.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Core.WinForms/20.3.0.60": {
+      "sha512": "Yc5wnc81gJ3Dtt3JHIbHMbWYpcrGyWB22amUlApDb90KaMFFelvUpKPZikl07G75L7eBO6gC/nefvQoeuFuVdw==",
+      "type": "package",
+      "path": "syncfusion.core.winforms/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/Syncfusion.Core.WinForms.dll",
+        "lib/net40/Syncfusion.Core.WinForms.xml",
+        "lib/net45/Syncfusion.Core.WinForms.dll",
+        "lib/net45/Syncfusion.Core.WinForms.xml",
+        "lib/net451/Syncfusion.Core.WinForms.dll",
+        "lib/net451/Syncfusion.Core.WinForms.xml",
+        "lib/net46/Syncfusion.Core.WinForms.dll",
+        "lib/net46/Syncfusion.Core.WinForms.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Core.WinForms.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Core.WinForms.xml",
+        "lib/netcoreapp3.1/Syncfusion.Core.WinForms.dll",
+        "lib/netcoreapp3.1/Syncfusion.Core.WinForms.xml",
+        "syncfusion.core.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.core.winforms.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Data.WinForms/20.3.0.60": {
+      "sha512": "WwLo4e79v1ETtZOxVftHngzmwJhZfI2nDbKc756cyoDD4iw6j4LBTi/IHzjPVQTTPwOueHmSIgO0ITPnAhZNVA==",
+      "type": "package",
+      "path": "syncfusion.data.winforms/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net40/Syncfusion.Data.WinForms.dll",
+        "lib/net40/Syncfusion.Data.WinForms.xml",
+        "lib/net45/Syncfusion.Data.WinForms.dll",
+        "lib/net45/Syncfusion.Data.WinForms.xml",
+        "lib/net451/Syncfusion.Data.WinForms.dll",
+        "lib/net451/Syncfusion.Data.WinForms.xml",
+        "lib/net46/Syncfusion.Data.WinForms.dll",
+        "lib/net46/Syncfusion.Data.WinForms.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Data.WinForms.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Data.WinForms.xml",
+        "lib/netcoreapp3.1/Syncfusion.Data.WinForms.dll",
+        "lib/netcoreapp3.1/Syncfusion.Data.WinForms.xml",
+        "syncfusion.data.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.data.winforms.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.DataSource.WinForms/20.3.0.60": {
+      "sha512": "mnQ2KWYi34Qq9JpgYh+1iQCE88i/6l4Hgu+1z1HN8kykIItlKhMUA670QEkr98SCKTrwEbWigLbT/kS7XWASsw==",
+      "type": "package",
+      "path": "syncfusion.datasource.winforms/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net40/Syncfusion.DataSource.WinForms.dll",
+        "lib/net40/Syncfusion.DataSource.WinForms.xml",
+        "lib/net45/Syncfusion.DataSource.WinForms.dll",
+        "lib/net45/Syncfusion.DataSource.WinForms.xml",
+        "lib/net451/Syncfusion.DataSource.WinForms.dll",
+        "lib/net451/Syncfusion.DataSource.WinForms.xml",
+        "lib/net46/Syncfusion.DataSource.WinForms.dll",
+        "lib/net46/Syncfusion.DataSource.WinForms.xml",
+        "lib/net5.0-windows7.0/Syncfusion.DataSource.WinForms.dll",
+        "lib/net5.0-windows7.0/Syncfusion.DataSource.WinForms.xml",
+        "lib/netcoreapp3.1/Syncfusion.DataSource.WinForms.dll",
+        "lib/netcoreapp3.1/Syncfusion.DataSource.WinForms.xml",
+        "syncfusion.datasource.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.datasource.winforms.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Diagram.Base/20.3.0.60": {
+      "sha512": "AgSZPGwG88d8T7ijN/+fPbfpVTif9qhSN9yD60p2zcJJGGTZyqUiTp0DYKs/tPyjV/dp2sbTuarP4KlXAv6q/w==",
+      "type": "package",
+      "path": "syncfusion.diagram.base/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.Diagram.Base.dll",
+        "lib/net20/Syncfusion.Diagram.Base.xml",
+        "lib/net35/Syncfusion.Diagram.Base.dll",
+        "lib/net35/Syncfusion.Diagram.Base.xml",
+        "lib/net40/Syncfusion.Diagram.Base.dll",
+        "lib/net40/Syncfusion.Diagram.Base.xml",
+        "lib/net45/Syncfusion.Diagram.Base.dll",
+        "lib/net45/Syncfusion.Diagram.Base.xml",
+        "lib/net451/Syncfusion.Diagram.Base.dll",
+        "lib/net451/Syncfusion.Diagram.Base.xml",
+        "lib/net46/Syncfusion.Diagram.Base.dll",
+        "lib/net46/Syncfusion.Diagram.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Diagram.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Diagram.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Diagram.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Diagram.Base.xml",
+        "syncfusion.diagram.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.diagram.base.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Diagram.Windows/20.3.0.60": {
+      "sha512": "6vOHGdqoEagkXILqDPc//c5kvj0nG81kJc/73xWe8lGTUrqytpHxF21gV0lDXYhTi/lplsy6AIvMSdYBiU0new==",
+      "type": "package",
+      "path": "syncfusion.diagram.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Diagram.Windows.dll",
+        "lib/net20/Syncfusion.Diagram.Windows.xml",
+        "lib/net35/Syncfusion.Diagram.Windows.dll",
+        "lib/net35/Syncfusion.Diagram.Windows.xml",
+        "lib/net40/Syncfusion.Diagram.Windows.dll",
+        "lib/net40/Syncfusion.Diagram.Windows.xml",
+        "lib/net45/Syncfusion.Diagram.Windows.dll",
+        "lib/net45/Syncfusion.Diagram.Windows.xml",
+        "lib/net451/Syncfusion.Diagram.Windows.dll",
+        "lib/net451/Syncfusion.Diagram.Windows.xml",
+        "lib/net46/Syncfusion.Diagram.Windows.dll",
+        "lib/net46/Syncfusion.Diagram.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Diagram.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Diagram.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Diagram.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Diagram.Windows.xml",
+        "syncfusion.diagram.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.diagram.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.DocIO.WinForms/20.3.0.60": {
+      "sha512": "R2C6Pf0kN7yZ4hPOttoL9fTdDhY3n9MbE52pVHF5e5Wl3y6UmYTV5VctN12HQXliVDpmDNNuyrPZHWp0LRjXLQ==",
+      "type": "package",
+      "path": "syncfusion.docio.winforms/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.DocIO.Base.dll",
+        "lib/net20/Syncfusion.DocIO.Base.xml",
+        "lib/net35/Syncfusion.DocIO.Base.dll",
+        "lib/net35/Syncfusion.DocIO.Base.xml",
+        "lib/net40/Syncfusion.DocIO.Base.dll",
+        "lib/net40/Syncfusion.DocIO.Base.xml",
+        "lib/net45/Syncfusion.DocIO.Base.dll",
+        "lib/net45/Syncfusion.DocIO.Base.xml",
+        "lib/net451/Syncfusion.DocIO.Base.dll",
+        "lib/net451/Syncfusion.DocIO.Base.xml",
+        "lib/net46/Syncfusion.DocIO.Base.dll",
+        "lib/net46/Syncfusion.DocIO.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.DocIO.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.DocIO.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.DocIO.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.DocIO.Base.xml",
+        "syncfusion.docio.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.docio.winforms.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Edit.Windows/20.3.0.60": {
+      "sha512": "FuVNhscyXdVtODjeWcPZPrW+427ZiD1OUJFEKzGdH51PXOAzZn3vtwcFYOmpG/lWNYgHNTqx0XnmAwRCxPXNsg==",
+      "type": "package",
+      "path": "syncfusion.edit.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Edit.Windows.dll",
+        "lib/net20/Syncfusion.Edit.Windows.xml",
+        "lib/net35/Syncfusion.Edit.Windows.dll",
+        "lib/net35/Syncfusion.Edit.Windows.xml",
+        "lib/net40/Syncfusion.Edit.Windows.dll",
+        "lib/net40/Syncfusion.Edit.Windows.xml",
+        "lib/net45/Syncfusion.Edit.Windows.dll",
+        "lib/net45/Syncfusion.Edit.Windows.xml",
+        "lib/net451/Syncfusion.Edit.Windows.dll",
+        "lib/net451/Syncfusion.Edit.Windows.xml",
+        "lib/net46/Syncfusion.Edit.Windows.dll",
+        "lib/net46/Syncfusion.Edit.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Edit.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Edit.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Edit.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Edit.Windows.xml",
+        "syncfusion.edit.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.edit.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Gauge.Windows/20.3.0.60": {
+      "sha512": "Bh3Jc+BLjk/KkvAvzQGPPpT7v5I/hIBF5CPKw0WThRoTRqIuSuR38HJgp18lpVuH6F8aHII3S9qrLiZiqx8Bcg==",
+      "type": "package",
+      "path": "syncfusion.gauge.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net35/Syncfusion.Gauge.Windows.dll",
+        "lib/net35/Syncfusion.Gauge.Windows.xml",
+        "lib/net40/Syncfusion.Gauge.Windows.dll",
+        "lib/net40/Syncfusion.Gauge.Windows.xml",
+        "lib/net45/Syncfusion.Gauge.Windows.dll",
+        "lib/net45/Syncfusion.Gauge.Windows.xml",
+        "lib/net451/Syncfusion.Gauge.Windows.dll",
+        "lib/net451/Syncfusion.Gauge.Windows.xml",
+        "lib/net46/Syncfusion.Gauge.Windows.dll",
+        "lib/net46/Syncfusion.Gauge.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Gauge.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Gauge.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Gauge.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Gauge.Windows.xml",
+        "syncfusion.gauge.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.gauge.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Grid.Grouping.Windows/20.3.0.60": {
+      "sha512": "3FW24uDji5XbkPQ31dCRIqEBisyvEWLAxAfpmQf2phckBkDeSt5ZQBsqL9dp46VoN6NMbEYHOT4XkRV6S3+InQ==",
+      "type": "package",
+      "path": "syncfusion.grid.grouping.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Grid.Grouping.Windows.dll",
+        "lib/net20/Syncfusion.Grid.Grouping.Windows.xml",
+        "lib/net35/Syncfusion.Grid.Grouping.Windows.dll",
+        "lib/net35/Syncfusion.Grid.Grouping.Windows.xml",
+        "lib/net40/Syncfusion.Grid.Grouping.Windows.dll",
+        "lib/net40/Syncfusion.Grid.Grouping.Windows.xml",
+        "lib/net45/Syncfusion.Grid.Grouping.Windows.dll",
+        "lib/net45/Syncfusion.Grid.Grouping.Windows.xml",
+        "lib/net451/Syncfusion.Grid.Grouping.Windows.dll",
+        "lib/net451/Syncfusion.Grid.Grouping.Windows.xml",
+        "lib/net46/Syncfusion.Grid.Grouping.Windows.dll",
+        "lib/net46/Syncfusion.Grid.Grouping.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Grid.Grouping.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Grid.Grouping.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Grid.Grouping.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Grid.Grouping.Windows.xml",
+        "syncfusion.grid.grouping.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.grid.grouping.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Grid.Windows/20.3.0.60": {
+      "sha512": "oPCX7BbFC0bGANx1+l0Mt8u9RM9lgzfilGreVTHr7zfBWYc+CJ0dETPwaft817DWePNJi8MAr2KoDGwSp/WUZg==",
+      "type": "package",
+      "path": "syncfusion.grid.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Grid.Windows.dll",
+        "lib/net20/Syncfusion.Grid.Windows.xml",
+        "lib/net35/Syncfusion.Grid.Windows.dll",
+        "lib/net35/Syncfusion.Grid.Windows.xml",
+        "lib/net40/Syncfusion.Grid.Windows.dll",
+        "lib/net40/Syncfusion.Grid.Windows.xml",
+        "lib/net45/Syncfusion.Grid.Windows.dll",
+        "lib/net45/Syncfusion.Grid.Windows.xml",
+        "lib/net451/Syncfusion.Grid.Windows.dll",
+        "lib/net451/Syncfusion.Grid.Windows.xml",
+        "lib/net46/Syncfusion.Grid.Windows.dll",
+        "lib/net46/Syncfusion.Grid.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Grid.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Grid.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Grid.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Grid.Windows.xml",
+        "syncfusion.grid.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.grid.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.GridCommon.WinForms/20.3.0.60": {
+      "sha512": "0dzg0retrdJYyA90W36aqw9R95rQrr+e/UFKs/FhCsMO1BtFcV/yH6JZeIjN7g7ntUUe2pJfDdhNzE/xmh3qtQ==",
+      "type": "package",
+      "path": "syncfusion.gridcommon.winforms/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net40/Syncfusion.GridCommon.WinForms.dll",
+        "lib/net40/Syncfusion.GridCommon.WinForms.xml",
+        "lib/net45/Syncfusion.GridCommon.WinForms.dll",
+        "lib/net45/Syncfusion.GridCommon.WinForms.xml",
+        "lib/net451/Syncfusion.GridCommon.WinForms.dll",
+        "lib/net451/Syncfusion.GridCommon.WinForms.xml",
+        "lib/net46/Syncfusion.GridCommon.WinForms.dll",
+        "lib/net46/Syncfusion.GridCommon.WinForms.xml",
+        "lib/net5.0-windows7.0/Syncfusion.GridCommon.WinForms.dll",
+        "lib/net5.0-windows7.0/Syncfusion.GridCommon.WinForms.xml",
+        "lib/netcoreapp3.1/Syncfusion.GridCommon.WinForms.dll",
+        "lib/netcoreapp3.1/Syncfusion.GridCommon.WinForms.xml",
+        "syncfusion.gridcommon.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.gridcommon.winforms.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.GridExport.WinForms/20.3.0.60": {
+      "sha512": "hN1hCg7zWfhOijgIpfpiQvdpcwQdQYmQJ3LK0HTfSj5giXSpcn9L0dwiV6El5bLHALKxQZy8gLX+Ar4Odhc7fA==",
+      "type": "package",
+      "path": "syncfusion.gridexport.winforms/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Gridconverter.Windows.dll",
+        "lib/net20/Syncfusion.Gridconverter.Windows.xml",
+        "lib/net35/Syncfusion.Gridconverter.Windows.dll",
+        "lib/net35/Syncfusion.Gridconverter.Windows.xml",
+        "lib/net40/Syncfusion.Gridconverter.Windows.dll",
+        "lib/net40/Syncfusion.Gridconverter.Windows.xml",
+        "lib/net45/Syncfusion.Gridconverter.Windows.dll",
+        "lib/net45/Syncfusion.Gridconverter.Windows.xml",
+        "lib/net451/Syncfusion.Gridconverter.Windows.dll",
+        "lib/net451/Syncfusion.Gridconverter.Windows.xml",
+        "lib/net46/Syncfusion.Gridconverter.Windows.dll",
+        "lib/net46/Syncfusion.Gridconverter.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Gridconverter.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Gridconverter.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Gridconverter.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Gridconverter.Windows.xml",
+        "syncfusion.gridexport.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.gridexport.winforms.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.GridHelperClasses.Windows/20.3.0.60": {
+      "sha512": "8f8E8Au/vFzdwUCz+uaXvdfGJxQC8+lACguItuX0A+o1gGdQjEoH/+DeyecGM+aUAMO3C8EwJnFvZGyE1noRuw==",
+      "type": "package",
+      "path": "syncfusion.gridhelperclasses.windows/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.GridHelperClasses.Windows.dll",
+        "lib/net20/Syncfusion.GridHelperClasses.Windows.xml",
+        "lib/net35/Syncfusion.GridHelperClasses.Windows.dll",
+        "lib/net35/Syncfusion.GridHelperClasses.Windows.xml",
+        "lib/net40/Syncfusion.GridHelperClasses.Windows.dll",
+        "lib/net40/Syncfusion.GridHelperClasses.Windows.xml",
+        "lib/net45/Syncfusion.GridHelperClasses.Windows.dll",
+        "lib/net45/Syncfusion.GridHelperClasses.Windows.xml",
+        "lib/net451/Syncfusion.GridHelperClasses.Windows.dll",
+        "lib/net451/Syncfusion.GridHelperClasses.Windows.xml",
+        "lib/net46/Syncfusion.GridHelperClasses.Windows.dll",
+        "lib/net46/Syncfusion.GridHelperClasses.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.GridHelperClasses.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.GridHelperClasses.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.GridHelperClasses.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.GridHelperClasses.Windows.xml",
+        "syncfusion.gridhelperclasses.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.gridhelperclasses.windows.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Grouping.Base/20.3.0.60": {
+      "sha512": "yImNPLF227oYayH27pX3vaKG+qAr8XLWLj6Zc15mH8HDPpQIFjb/5LqYuwj47QLBPZTASFGNCwm6h17bpD8SUw==",
+      "type": "package",
+      "path": "syncfusion.grouping.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Grouping.Base.dll",
+        "lib/net20/Syncfusion.Grouping.Base.xml",
+        "lib/net35/Syncfusion.Grouping.Base.dll",
+        "lib/net35/Syncfusion.Grouping.Base.xml",
+        "lib/net40/Syncfusion.Grouping.Base.dll",
+        "lib/net40/Syncfusion.Grouping.Base.xml",
+        "lib/net45/Syncfusion.Grouping.Base.dll",
+        "lib/net45/Syncfusion.Grouping.Base.xml",
+        "lib/net451/Syncfusion.Grouping.Base.dll",
+        "lib/net451/Syncfusion.Grouping.Base.xml",
+        "lib/net46/Syncfusion.Grouping.Base.dll",
+        "lib/net46/Syncfusion.Grouping.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Grouping.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Grouping.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Grouping.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Grouping.Base.xml",
+        "syncfusion.grouping.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.grouping.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.HTMLUI.Base/20.3.0.60": {
+      "sha512": "Xb6mbEWd9n+1FkJN3Mk2VwRtT4EuBYKQWPz4ZyN2eArKkDo4lAQzphpXEs4rpMSvU/VVGPInbW+zIeVaiQUV6w==",
+      "type": "package",
+      "path": "syncfusion.htmlui.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.HTMLUI.Base.dll",
+        "lib/net20/Syncfusion.HTMLUI.Base.xml",
+        "lib/net35/Syncfusion.HTMLUI.Base.dll",
+        "lib/net35/Syncfusion.HTMLUI.Base.xml",
+        "lib/net40/Syncfusion.HTMLUI.Base.dll",
+        "lib/net40/Syncfusion.HTMLUI.Base.xml",
+        "lib/net45/Syncfusion.HTMLUI.Base.dll",
+        "lib/net45/Syncfusion.HTMLUI.Base.xml",
+        "lib/net451/Syncfusion.HTMLUI.Base.dll",
+        "lib/net451/Syncfusion.HTMLUI.Base.xml",
+        "lib/net46/Syncfusion.HTMLUI.Base.dll",
+        "lib/net46/Syncfusion.HTMLUI.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.HTMLUI.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.HTMLUI.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.HTMLUI.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.HTMLUI.Base.xml",
+        "syncfusion.htmlui.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.htmlui.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.HTMLUI.windows/20.3.0.60": {
+      "sha512": "NykEefalGhFaJw/MWeRfQtaNzcDB8r7NddD37Rc5lJgniKi1U8l28EBRYlGY4WDvfFFMhcGsM1EtS6hNoiuhkg==",
+      "type": "package",
+      "path": "syncfusion.htmlui.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.HTMLUI.windows.dll",
+        "lib/net20/Syncfusion.HTMLUI.windows.xml",
+        "lib/net35/Syncfusion.HTMLUI.windows.dll",
+        "lib/net35/Syncfusion.HTMLUI.windows.xml",
+        "lib/net40/Syncfusion.HTMLUI.windows.dll",
+        "lib/net40/Syncfusion.HTMLUI.windows.xml",
+        "lib/net45/Syncfusion.HTMLUI.windows.dll",
+        "lib/net45/Syncfusion.HTMLUI.windows.xml",
+        "lib/net451/Syncfusion.HTMLUI.windows.dll",
+        "lib/net451/Syncfusion.HTMLUI.windows.xml",
+        "lib/net46/Syncfusion.HTMLUI.windows.dll",
+        "lib/net46/Syncfusion.HTMLUI.windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.HTMLUI.windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.HTMLUI.windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.HTMLUI.windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.HTMLUI.windows.xml",
+        "syncfusion.htmlui.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.htmlui.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Licensing/20.3.0.60": {
+      "sha512": "CqgwRK4uKKx/2i9FRzM/N+sym1PqFBeWJglcXsREEQliLaesjsb/++ebSn81MVuoKWusTFNv5TlrqThnXXeUxA==",
+      "type": "package",
+      "path": "syncfusion.licensing/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/MonoAndroid10.0/Syncfusion.Licensing.dll",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/net5.0/Syncfusion.Licensing.dll",
+        "lib/net6.0/Syncfusion.Licensing.dll",
+        "lib/netcoreapp3.1/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.20.3.0.60.nupkg.sha512",
+        "syncfusion.licensing.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Linq.Base/20.3.0.60": {
+      "sha512": "Am5UwWZFxFSapbtJWwDpFC5Lf2mwR2Y/+Me9+zjL0J+W5sDpPBa4esv5BUb4TK1yHkgfgDDYoc89OWCJs3jVHA==",
+      "type": "package",
+      "path": "syncfusion.linq.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net35/Syncfusion.Linq.Base.dll",
+        "lib/net35/Syncfusion.Linq.Base.xml",
+        "lib/net40/Syncfusion.Linq.Base.dll",
+        "lib/net40/Syncfusion.Linq.Base.xml",
+        "lib/net45/Syncfusion.Linq.Base.dll",
+        "lib/net45/Syncfusion.Linq.Base.xml",
+        "lib/net451/Syncfusion.Linq.Base.dll",
+        "lib/net451/Syncfusion.Linq.Base.xml",
+        "lib/net46/Syncfusion.Linq.Base.dll",
+        "lib/net46/Syncfusion.Linq.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Linq.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Linq.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Linq.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Linq.Base.xml",
+        "syncfusion.linq.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.linq.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Maps.Windows/20.3.0.60": {
+      "sha512": "Q4e8TDa5OT56HhC/tZBGr+nqCmLBnQRQesuZSaqv/ovfV9guQV3zbGXkYAUdntctyRHCwZTqxBsLlfKLRiSoXQ==",
+      "type": "package",
+      "path": "syncfusion.maps.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net35/Syncfusion.Maps.Windows.dll",
+        "lib/net35/Syncfusion.Maps.Windows.xml",
+        "lib/net40/Syncfusion.Maps.Windows.dll",
+        "lib/net40/Syncfusion.Maps.Windows.xml",
+        "lib/net45/Syncfusion.Maps.Windows.dll",
+        "lib/net45/Syncfusion.Maps.Windows.xml",
+        "lib/net451/Syncfusion.Maps.Windows.dll",
+        "lib/net451/Syncfusion.Maps.Windows.xml",
+        "lib/net46/Syncfusion.Maps.Windows.dll",
+        "lib/net46/Syncfusion.Maps.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Maps.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Maps.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Maps.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Maps.Windows.xml",
+        "syncfusion.maps.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.maps.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Mime.Base/20.3.0.60": {
+      "sha512": "QjqIFZzARFl+xH6DnoKBjJY+o1oUmRKAESHpgqpXwhHGbkgi+nEklF2WWq5SECc8g/9RwGJYHdRIFY3Njes57w==",
+      "type": "package",
+      "path": "syncfusion.mime.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.MIME.Base.dll",
+        "lib/net20/Syncfusion.MIME.Base.xml",
+        "lib/net35/Syncfusion.MIME.Base.dll",
+        "lib/net35/Syncfusion.MIME.Base.xml",
+        "lib/net40/Syncfusion.MIME.Base.dll",
+        "lib/net40/Syncfusion.MIME.Base.xml",
+        "lib/net45/Syncfusion.MIME.Base.dll",
+        "lib/net45/Syncfusion.MIME.Base.xml",
+        "lib/net451/Syncfusion.MIME.Base.dll",
+        "lib/net451/Syncfusion.MIME.Base.xml",
+        "lib/net46/Syncfusion.MIME.Base.dll",
+        "lib/net46/Syncfusion.MIME.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.MIME.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.MIME.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.MIME.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.MIME.Base.xml",
+        "syncfusion.mime.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.mime.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.OfficeChart.Base/20.3.0.60": {
+      "sha512": "cPyoHsX9uP2Q+QR4ApmBYmTcZeqv0cGwTVYb4PeWshcp4GOMVe36aZsm2iMuJJ3hiZoFLfrrmT/DKUoZf6Zq/w==",
+      "type": "package",
+      "path": "syncfusion.officechart.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.OfficeChart.Base.dll",
+        "lib/net20/Syncfusion.OfficeChart.Base.xml",
+        "lib/net35/Syncfusion.OfficeChart.Base.dll",
+        "lib/net35/Syncfusion.OfficeChart.Base.xml",
+        "lib/net40/Syncfusion.OfficeChart.Base.dll",
+        "lib/net40/Syncfusion.OfficeChart.Base.xml",
+        "lib/net45/Syncfusion.OfficeChart.Base.dll",
+        "lib/net45/Syncfusion.OfficeChart.Base.xml",
+        "lib/net451/Syncfusion.OfficeChart.Base.dll",
+        "lib/net451/Syncfusion.OfficeChart.Base.xml",
+        "lib/net46/Syncfusion.OfficeChart.Base.dll",
+        "lib/net46/Syncfusion.OfficeChart.Base.xml",
+        "lib/net5.0/Syncfusion.OfficeChart.Base.dll",
+        "lib/net5.0/Syncfusion.OfficeChart.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.OfficeChart.Base.dll",
+        "syncfusion.officechart.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.officechart.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Pdf.WinForms/20.3.0.60": {
+      "sha512": "2KX+De8xjD2LIqHxQsLMC2e6DTTJNyrRtnZw3Q1cO9St+wk9MnrhgnFWtzkvnDaJl4bYjYMaco7Ssg4NHn/wJw==",
+      "type": "package",
+      "path": "syncfusion.pdf.winforms/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Pdf.Base.dll",
+        "lib/net20/Syncfusion.Pdf.Base.xml",
+        "lib/net35/Syncfusion.Pdf.Base.dll",
+        "lib/net35/Syncfusion.Pdf.Base.xml",
+        "lib/net40/Syncfusion.Pdf.Base.dll",
+        "lib/net40/Syncfusion.Pdf.Base.xml",
+        "lib/net45/Syncfusion.Pdf.Base.dll",
+        "lib/net45/Syncfusion.Pdf.Base.xml",
+        "lib/net451/Syncfusion.Pdf.Base.dll",
+        "lib/net451/Syncfusion.Pdf.Base.xml",
+        "lib/net46/Syncfusion.Pdf.Base.dll",
+        "lib/net46/Syncfusion.Pdf.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Pdf.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Pdf.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Pdf.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Pdf.Base.xml",
+        "syncfusion.pdf.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.pdf.winforms.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.PdfViewer.Windows/20.3.0.60": {
+      "sha512": "3dG2T1G1JmGjc08TKaZnbzuvUiQjqmeU1UWAEMcVTPBSvOh43cGjBlzEnPVUVINTOv9gV0dwJ0S2zJ8wr0UPAQ==",
+      "type": "package",
+      "path": "syncfusion.pdfviewer.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.PdfViewer.Windows.dll",
+        "lib/net20/Syncfusion.PdfViewer.Windows.xml",
+        "lib/net35/Syncfusion.PdfViewer.Windows.dll",
+        "lib/net35/Syncfusion.PdfViewer.Windows.xml",
+        "lib/net40/Syncfusion.PdfViewer.Windows.dll",
+        "lib/net40/Syncfusion.PdfViewer.Windows.xml",
+        "lib/net45/Syncfusion.PdfViewer.Windows.dll",
+        "lib/net45/Syncfusion.PdfViewer.Windows.xml",
+        "lib/net451/Syncfusion.PdfViewer.Windows.dll",
+        "lib/net451/Syncfusion.PdfViewer.Windows.xml",
+        "lib/net46/Syncfusion.PdfViewer.Windows.dll",
+        "lib/net46/Syncfusion.PdfViewer.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.PdfViewer.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.PdfViewer.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.PdfViewer.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.PdfViewer.Windows.xml",
+        "syncfusion.pdfviewer.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.pdfviewer.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.PivotAnalysis.Base/20.3.0.60": {
+      "sha512": "2CLU0BflwvxkrLXSODLamDMlbmOyXdbKcLR+vug6O7e3V5XVcR+8Pe3ZyuIYLads0f1PTNV8l5ZIlZjXZvMgvA==",
+      "type": "package",
+      "path": "syncfusion.pivotanalysis.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net35/Syncfusion.PivotAnalysis.Base.dll",
+        "lib/net35/Syncfusion.PivotAnalysis.Base.xml",
+        "lib/net40/Syncfusion.PivotAnalysis.Base.dll",
+        "lib/net40/Syncfusion.PivotAnalysis.Base.xml",
+        "lib/net45/Syncfusion.PivotAnalysis.Base.dll",
+        "lib/net45/Syncfusion.PivotAnalysis.Base.xml",
+        "lib/net451/Syncfusion.PivotAnalysis.Base.dll",
+        "lib/net451/Syncfusion.PivotAnalysis.Base.xml",
+        "lib/net46/Syncfusion.PivotAnalysis.Base.dll",
+        "lib/net46/Syncfusion.PivotAnalysis.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.PivotAnalysis.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.PivotAnalysis.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.PivotAnalysis.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.PivotAnalysis.Base.xml",
+        "syncfusion.pivotanalysis.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.pivotanalysis.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.PivotChart.Windows/20.3.0.60": {
+      "sha512": "szZySw8yYK9M9TbVmgbhV3fGDx2nTbcuraZvqKvvubkrs+NXPkcLzIwSWgWWrnLAr96nwCRADexrH9rQCiaNvQ==",
+      "type": "package",
+      "path": "syncfusion.pivotchart.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net35/Syncfusion.PivotChart.Windows.dll",
+        "lib/net35/Syncfusion.PivotChart.Windows.xml",
+        "lib/net40/Syncfusion.PivotChart.Windows.dll",
+        "lib/net40/Syncfusion.PivotChart.Windows.xml",
+        "lib/net45/Syncfusion.PivotChart.Windows.dll",
+        "lib/net45/Syncfusion.PivotChart.Windows.xml",
+        "lib/net451/Syncfusion.PivotChart.Windows.dll",
+        "lib/net451/Syncfusion.PivotChart.Windows.xml",
+        "lib/net46/Syncfusion.PivotChart.Windows.dll",
+        "lib/net46/Syncfusion.PivotChart.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.PivotChart.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.PivotChart.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.PivotChart.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.PivotChart.Windows.xml",
+        "syncfusion.pivotchart.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.pivotchart.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.PivotTable.WinForms/20.3.0.60": {
+      "sha512": "zvxL69EaBDFXaiJG0vVMCSRQjC5bgB2K1+6NcyLXdGVQkbJgL4rY+RMYkv3ZmJVN0Os9ns6cpk+XRrJDZkd2lg==",
+      "type": "package",
+      "path": "syncfusion.pivottable.winforms/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net35/Syncfusion.PivotAnalysis.Windows.dll",
+        "lib/net35/Syncfusion.PivotAnalysis.Windows.xml",
+        "lib/net40/Syncfusion.PivotAnalysis.Windows.dll",
+        "lib/net40/Syncfusion.PivotAnalysis.Windows.xml",
+        "lib/net45/Syncfusion.PivotAnalysis.Windows.dll",
+        "lib/net45/Syncfusion.PivotAnalysis.Windows.xml",
+        "lib/net451/Syncfusion.PivotAnalysis.Windows.dll",
+        "lib/net451/Syncfusion.PivotAnalysis.Windows.xml",
+        "lib/net46/Syncfusion.PivotAnalysis.Windows.dll",
+        "lib/net46/Syncfusion.PivotAnalysis.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.PivotAnalysis.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.PivotAnalysis.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.PivotAnalysis.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.PivotAnalysis.Windows.xml",
+        "syncfusion.pivottable.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.pivottable.winforms.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Presentation.WinForms/20.3.0.60": {
+      "sha512": "b357I6IC0Gg5QTL5Zi8vY852/0tjpWc4tv2d+IXDpI4HoQKM2P56D17+qyaNo2fK/Jq5RkdYMLm6QlgvJSzm1g==",
+      "type": "package",
+      "path": "syncfusion.presentation.winforms/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Presentation.Base.dll",
+        "lib/net20/Syncfusion.Presentation.Base.xml",
+        "lib/net35/Syncfusion.Presentation.Base.dll",
+        "lib/net35/Syncfusion.Presentation.Base.xml",
+        "lib/net40/Syncfusion.Presentation.Base.dll",
+        "lib/net40/Syncfusion.Presentation.Base.xml",
+        "lib/net45/Syncfusion.Presentation.Base.dll",
+        "lib/net45/Syncfusion.Presentation.Base.xml",
+        "lib/net451/Syncfusion.Presentation.Base.dll",
+        "lib/net451/Syncfusion.Presentation.Base.xml",
+        "lib/net46/Syncfusion.Presentation.Base.dll",
+        "lib/net46/Syncfusion.Presentation.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Presentation.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Presentation.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Presentation.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Presentation.Base.xml",
+        "syncfusion.presentation.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.presentation.winforms.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Schedule.Base/20.3.0.60": {
+      "sha512": "ZUCUJ+DAdJ/Ct4GpzmIBOfT0DDkIBzNVDWL2MYp60QAl8WGDeMR1PfKoRp6MjpZ+0zGwDo+6jbsX1PEpPDd7vg==",
+      "type": "package",
+      "path": "syncfusion.schedule.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.Schedule.Base.dll",
+        "lib/net20/Syncfusion.Schedule.Base.xml",
+        "lib/net35/Syncfusion.Schedule.Base.dll",
+        "lib/net35/Syncfusion.Schedule.Base.xml",
+        "lib/net40/Syncfusion.Schedule.Base.dll",
+        "lib/net40/Syncfusion.Schedule.Base.xml",
+        "lib/net45/Syncfusion.Schedule.Base.dll",
+        "lib/net45/Syncfusion.Schedule.Base.xml",
+        "lib/net451/Syncfusion.Schedule.Base.dll",
+        "lib/net451/Syncfusion.Schedule.Base.xml",
+        "lib/net46/Syncfusion.Schedule.Base.dll",
+        "lib/net46/Syncfusion.Schedule.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Schedule.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Schedule.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Schedule.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Schedule.Base.xml",
+        "syncfusion.schedule.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.schedule.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Schedule.Windows/20.3.0.60": {
+      "sha512": "N6+bsSen5ZOw3z8bilX+9FLkwhQ31cS7Ht/oGWw9yJXC4OJ2wLUA0UcjqX4n35kcMZXJYmX/Pf4H/eknVMW10Q==",
+      "type": "package",
+      "path": "syncfusion.schedule.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Schedule.Windows.dll",
+        "lib/net20/Syncfusion.Schedule.Windows.xml",
+        "lib/net35/Syncfusion.Schedule.Windows.dll",
+        "lib/net35/Syncfusion.Schedule.Windows.xml",
+        "lib/net40/Syncfusion.Schedule.Windows.dll",
+        "lib/net40/Syncfusion.Schedule.Windows.xml",
+        "lib/net45/Syncfusion.Schedule.Windows.dll",
+        "lib/net45/Syncfusion.Schedule.Windows.xml",
+        "lib/net451/Syncfusion.Schedule.Windows.dll",
+        "lib/net451/Syncfusion.Schedule.Windows.xml",
+        "lib/net46/Syncfusion.Schedule.Windows.dll",
+        "lib/net46/Syncfusion.Schedule.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Schedule.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Schedule.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Schedule.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Schedule.Windows.xml",
+        "syncfusion.schedule.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.schedule.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Scripting.Base/20.3.0.60": {
+      "sha512": "9qwrBQZMW4qh/H2lxSjlo+UH/G2jMXzkHKSZSN28f30JtMcSKHclIHooMNLDtF+QgL3+ac3YiAVGqXrNIhjIaA==",
+      "type": "package",
+      "path": "syncfusion.scripting.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.Scripting.Base.dll",
+        "lib/net20/Syncfusion.Scripting.Base.xml",
+        "lib/net35/Syncfusion.Scripting.Base.dll",
+        "lib/net35/Syncfusion.Scripting.Base.xml",
+        "lib/net40/Syncfusion.Scripting.Base.dll",
+        "lib/net40/Syncfusion.Scripting.Base.xml",
+        "lib/net45/Syncfusion.Scripting.Base.dll",
+        "lib/net45/Syncfusion.Scripting.Base.xml",
+        "lib/net451/Syncfusion.Scripting.Base.dll",
+        "lib/net451/Syncfusion.Scripting.Base.xml",
+        "lib/net46/Syncfusion.Scripting.Base.dll",
+        "lib/net46/Syncfusion.Scripting.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Scripting.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Scripting.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Scripting.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Scripting.Base.xml",
+        "syncfusion.scripting.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.scripting.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.SfBarcode.Windows/20.3.0.60": {
+      "sha512": "vqX4FOo4dfaq8H8z9hix/ku98Jzba3Am21V+q0ObteXi5r1x3WIVmn3KWjXI812k9R+Z806H7cvJxhGwdgRRXQ==",
+      "type": "package",
+      "path": "syncfusion.sfbarcode.windows/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.SfBarcode.Windows.dll",
+        "lib/net20/Syncfusion.SfBarcode.Windows.xml",
+        "lib/net35/Syncfusion.SfBarcode.Windows.dll",
+        "lib/net35/Syncfusion.SfBarcode.Windows.xml",
+        "lib/net40/Syncfusion.SfBarcode.Windows.dll",
+        "lib/net40/Syncfusion.SfBarcode.Windows.xml",
+        "lib/net45/Syncfusion.SfBarcode.Windows.dll",
+        "lib/net45/Syncfusion.SfBarcode.Windows.xml",
+        "lib/net451/Syncfusion.SfBarcode.Windows.dll",
+        "lib/net451/Syncfusion.SfBarcode.Windows.xml",
+        "lib/net46/Syncfusion.SfBarcode.Windows.dll",
+        "lib/net46/Syncfusion.SfBarcode.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.SfBarcode.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.SfBarcode.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.SfBarcode.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.SfBarcode.Windows.xml",
+        "syncfusion.sfbarcode.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.sfbarcode.windows.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.SfDataGrid.WinForms/20.3.0.60": {
+      "sha512": "CefaVRzkbTOliLaAMGE/5ZAZ0U45BPtw8mUMi3KiAW8SCY86DvsVPiIM87ybghvqCIVyKlmpnac3DEgusLlHOg==",
+      "type": "package",
+      "path": "syncfusion.sfdatagrid.winforms/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/Syncfusion.SfDataGrid.WinForms.dll",
+        "lib/net40/Syncfusion.SfDataGrid.WinForms.xml",
+        "lib/net45/Syncfusion.SfDataGrid.WinForms.dll",
+        "lib/net45/Syncfusion.SfDataGrid.WinForms.xml",
+        "lib/net451/Syncfusion.SfDataGrid.WinForms.dll",
+        "lib/net451/Syncfusion.SfDataGrid.WinForms.xml",
+        "lib/net46/Syncfusion.SfDataGrid.WinForms.dll",
+        "lib/net46/Syncfusion.SfDataGrid.WinForms.xml",
+        "lib/net5.0-windows7.0/Syncfusion.SfDataGrid.WinForms.dll",
+        "lib/net5.0-windows7.0/Syncfusion.SfDataGrid.WinForms.xml",
+        "lib/netcoreapp3.1/Syncfusion.SfDataGrid.WinForms.dll",
+        "lib/netcoreapp3.1/Syncfusion.SfDataGrid.WinForms.xml",
+        "syncfusion.sfdatagrid.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.sfdatagrid.winforms.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.SfInput.WinForms/20.3.0.60": {
+      "sha512": "x60/M5+kAFE33HcTqvihkPVQinAHbfKsmKLHkh3BKDrXRbj784OB9XHNPPK+3DVfef/Nsh6PVCWuk3KGmsvCuA==",
+      "type": "package",
+      "path": "syncfusion.sfinput.winforms/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/Syncfusion.SfInput.WinForms.dll",
+        "lib/net40/Syncfusion.SfInput.WinForms.xml",
+        "lib/net45/Syncfusion.SfInput.WinForms.dll",
+        "lib/net45/Syncfusion.SfInput.WinForms.xml",
+        "lib/net451/Syncfusion.SfInput.WinForms.dll",
+        "lib/net451/Syncfusion.SfInput.WinForms.xml",
+        "lib/net46/Syncfusion.SfInput.WinForms.dll",
+        "lib/net46/Syncfusion.SfInput.WinForms.xml",
+        "lib/net5.0-windows7.0/Syncfusion.SfInput.WinForms.dll",
+        "lib/net5.0-windows7.0/Syncfusion.SfInput.WinForms.xml",
+        "lib/netcoreapp3.1/Syncfusion.SfInput.WinForms.dll",
+        "lib/netcoreapp3.1/Syncfusion.SfInput.WinForms.xml",
+        "syncfusion.sfinput.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.sfinput.winforms.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.SfListView.WinForms/20.3.0.60": {
+      "sha512": "SDsC/Xi3NMONM+BLUjMDXADCbBBs0qiIvXE+hQmqc7gXAjALOvvqR6stlWJI2o+K7ovC0eQuYKNv5wTvCUHVmQ==",
+      "type": "package",
+      "path": "syncfusion.sflistview.winforms/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/Syncfusion.SfListView.WinForms.dll",
+        "lib/net40/Syncfusion.SfListView.WinForms.xml",
+        "lib/net45/Syncfusion.SfListView.WinForms.dll",
+        "lib/net45/Syncfusion.SfListView.WinForms.xml",
+        "lib/net451/Syncfusion.SfListView.WinForms.dll",
+        "lib/net451/Syncfusion.SfListView.WinForms.xml",
+        "lib/net46/Syncfusion.SfListView.WinForms.dll",
+        "lib/net46/Syncfusion.SfListView.WinForms.xml",
+        "lib/net5.0-windows7.0/Syncfusion.SfListView.WinForms.dll",
+        "lib/net5.0-windows7.0/Syncfusion.SfListView.WinForms.xml",
+        "lib/netcoreapp3.1/Syncfusion.SfListView.WinForms.dll",
+        "lib/netcoreapp3.1/Syncfusion.SfListView.WinForms.xml",
+        "syncfusion.sflistview.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.sflistview.winforms.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.SfSmithChart.WinForms/20.3.0.60": {
+      "sha512": "jspiRK6KEckVKL9zkSzOvRFwmM6xf5B++8kPIfPyGQjnVRiwnsmm3ghUYixTdxg2aDF0xLNAHjC6N0Vtsyu/1w==",
+      "type": "package",
+      "path": "syncfusion.sfsmithchart.winforms/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/Syncfusion.SfSmithChart.WinForms.dll",
+        "lib/net40/Syncfusion.SfSmithChart.WinForms.xml",
+        "lib/net45/Syncfusion.SfSmithChart.WinForms.dll",
+        "lib/net45/Syncfusion.SfSmithChart.WinForms.xml",
+        "lib/net451/Syncfusion.SfSmithChart.WinForms.dll",
+        "lib/net451/Syncfusion.SfSmithChart.WinForms.xml",
+        "lib/net46/Syncfusion.SfSmithChart.WinForms.dll",
+        "lib/net46/Syncfusion.SfSmithChart.WinForms.xml",
+        "lib/net5.0-windows7.0/Syncfusion.SfSmithChart.WinForms.dll",
+        "lib/net5.0-windows7.0/Syncfusion.SfSmithChart.WinForms.xml",
+        "lib/netcoreapp3.1/Syncfusion.SfSmithChart.WinForms.dll",
+        "lib/netcoreapp3.1/Syncfusion.SfSmithChart.WinForms.xml",
+        "syncfusion.sfsmithchart.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.sfsmithchart.winforms.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Shared.Base/20.3.0.60": {
+      "sha512": "cLnJOh9GxNKZFah8QcAC7ztPf1emg+hX+JfmRANxuIjn3v8xpvGgbIMa4/R2r5l6kORbmbGhT/125LtjvQyEHg==",
+      "type": "package",
+      "path": "syncfusion.shared.base/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Shared.Base.dll",
+        "lib/net20/Syncfusion.Shared.Base.xml",
+        "lib/net35/Syncfusion.Shared.Base.dll",
+        "lib/net35/Syncfusion.Shared.Base.xml",
+        "lib/net40/Syncfusion.Shared.Base.dll",
+        "lib/net40/Syncfusion.Shared.Base.xml",
+        "lib/net45/Syncfusion.Shared.Base.dll",
+        "lib/net45/Syncfusion.Shared.Base.xml",
+        "lib/net451/Syncfusion.Shared.Base.dll",
+        "lib/net451/Syncfusion.Shared.Base.xml",
+        "lib/net46/Syncfusion.Shared.Base.dll",
+        "lib/net46/Syncfusion.Shared.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Shared.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Shared.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Shared.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Shared.Base.xml",
+        "syncfusion.shared.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.shared.base.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Shared.Windows/20.3.0.60": {
+      "sha512": "N9Giqjlg4q3B8byDVLgRN5mYPtg1pElUuUWxG0EETlxhev+ulQiJ8VyR9No1RuVxDYwhnQF1OrSd+jZjcdxAyQ==",
+      "type": "package",
+      "path": "syncfusion.shared.windows/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.Shared.Windows.dll",
+        "lib/net20/Syncfusion.Shared.Windows.xml",
+        "lib/net35/Syncfusion.Shared.Windows.dll",
+        "lib/net35/Syncfusion.Shared.Windows.xml",
+        "lib/net40/Syncfusion.Shared.Windows.dll",
+        "lib/net40/Syncfusion.Shared.Windows.xml",
+        "lib/net45/Syncfusion.Shared.Windows.dll",
+        "lib/net45/Syncfusion.Shared.Windows.xml",
+        "lib/net451/Syncfusion.Shared.Windows.dll",
+        "lib/net451/Syncfusion.Shared.Windows.xml",
+        "lib/net46/Syncfusion.Shared.Windows.dll",
+        "lib/net46/Syncfusion.Shared.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Shared.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Shared.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Shared.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Shared.Windows.xml",
+        "syncfusion.shared.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.shared.windows.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.SpellChecker.Base/20.3.0.60": {
+      "sha512": "Y17vARB+GTA2IN78M3dWuz651YDmWnD9MdAJPA2fy9HFmxxgKNlNRiTy8YZP4XWOuQw4t2O4//oBElfvbXRBJA==",
+      "type": "package",
+      "path": "syncfusion.spellchecker.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net35/Syncfusion.SpellChecker.Base.dll",
+        "lib/net35/Syncfusion.SpellChecker.Base.xml",
+        "lib/net40/Syncfusion.SpellChecker.Base.dll",
+        "lib/net40/Syncfusion.SpellChecker.Base.xml",
+        "lib/net45/Syncfusion.SpellChecker.Base.dll",
+        "lib/net45/Syncfusion.SpellChecker.Base.xml",
+        "lib/net451/Syncfusion.SpellChecker.Base.dll",
+        "lib/net451/Syncfusion.SpellChecker.Base.xml",
+        "lib/net46/Syncfusion.SpellChecker.Base.dll",
+        "lib/net46/Syncfusion.SpellChecker.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.SpellChecker.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.SpellChecker.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.SpellChecker.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.SpellChecker.Base.xml",
+        "syncfusion.spellchecker.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.spellchecker.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Spreadsheet.Windows/20.3.0.60": {
+      "sha512": "PAM1jneSBaE5AarVUnpV049wr8QU7K8RAY5jqSV2zrmxpKPeDYBMaRdppgJsBRrb5JJDsMjK3y8Tn4jAQ3mW4A==",
+      "type": "package",
+      "path": "syncfusion.spreadsheet.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/Syncfusion.Spreadsheet.Windows.dll",
+        "lib/net40/Syncfusion.Spreadsheet.Windows.xml",
+        "lib/net45/Syncfusion.Spreadsheet.Windows.dll",
+        "lib/net45/Syncfusion.Spreadsheet.Windows.xml",
+        "lib/net451/Syncfusion.Spreadsheet.Windows.dll",
+        "lib/net451/Syncfusion.Spreadsheet.Windows.xml",
+        "lib/net46/Syncfusion.Spreadsheet.Windows.dll",
+        "lib/net46/Syncfusion.Spreadsheet.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Spreadsheet.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Spreadsheet.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Spreadsheet.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Spreadsheet.Windows.xml",
+        "syncfusion.spreadsheet.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.spreadsheet.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Tools.Base/20.3.0.60": {
+      "sha512": "DODY1P7OAlP+Qe1KDZs8vEr747SbtXprgYh6K6baAO61D4ru/SHc45QeiAEyoid8edWoU9yiFzLo57NQs99MJw==",
+      "type": "package",
+      "path": "syncfusion.tools.base/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net20/Syncfusion.Tools.Base.dll",
+        "lib/net20/Syncfusion.Tools.Base.xml",
+        "lib/net35/Syncfusion.Tools.Base.dll",
+        "lib/net35/Syncfusion.Tools.Base.xml",
+        "lib/net40/Syncfusion.Tools.Base.dll",
+        "lib/net40/Syncfusion.Tools.Base.xml",
+        "lib/net45/Syncfusion.Tools.Base.dll",
+        "lib/net45/Syncfusion.Tools.Base.xml",
+        "lib/net451/Syncfusion.Tools.Base.dll",
+        "lib/net451/Syncfusion.Tools.Base.xml",
+        "lib/net46/Syncfusion.Tools.Base.dll",
+        "lib/net46/Syncfusion.Tools.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Tools.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Tools.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Tools.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Tools.Base.xml",
+        "syncfusion.tools.base.20.3.0.60.nupkg.sha512",
+        "syncfusion.tools.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Tools.Windows/20.3.0.60": {
+      "sha512": "Eyngj0y1RKxj3gvDVt4YOIwfcS1lPwbe49eQphL74qmBbxsneg4SfGcZOwmo1L39brC3QXslAehUDIipyy1KcA==",
+      "type": "package",
+      "path": "syncfusion.tools.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.Tools.Windows.dll",
+        "lib/net20/Syncfusion.Tools.Windows.xml",
+        "lib/net35/Syncfusion.Tools.Windows.dll",
+        "lib/net35/Syncfusion.Tools.Windows.xml",
+        "lib/net40/Syncfusion.Tools.Windows.dll",
+        "lib/net40/Syncfusion.Tools.Windows.xml",
+        "lib/net45/Syncfusion.Tools.Windows.dll",
+        "lib/net45/Syncfusion.Tools.Windows.xml",
+        "lib/net451/Syncfusion.Tools.Windows.dll",
+        "lib/net451/Syncfusion.Tools.Windows.xml",
+        "lib/net46/Syncfusion.Tools.Windows.dll",
+        "lib/net46/Syncfusion.Tools.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.Tools.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Tools.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.Tools.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.Tools.Windows.xml",
+        "syncfusion.tools.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.tools.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.TreeMap.Windows/20.3.0.60": {
+      "sha512": "NwyQ2PhGBP0VIBALV2N/P4KdaBek+pasdPwldDfkgwSP5IOcPIyegqLIy2OBZGAGb2QQNNtHE5l9oHrwz7KF/w==",
+      "type": "package",
+      "path": "syncfusion.treemap.windows/20.3.0.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net35/Syncfusion.TreeMap.Windows.dll",
+        "lib/net35/Syncfusion.TreeMap.Windows.xml",
+        "lib/net40/Syncfusion.TreeMap.Windows.dll",
+        "lib/net40/Syncfusion.TreeMap.Windows.xml",
+        "lib/net45/Syncfusion.TreeMap.Windows.dll",
+        "lib/net45/Syncfusion.TreeMap.Windows.xml",
+        "lib/net451/Syncfusion.TreeMap.Windows.dll",
+        "lib/net451/Syncfusion.TreeMap.Windows.xml",
+        "lib/net46/Syncfusion.TreeMap.Windows.dll",
+        "lib/net46/Syncfusion.TreeMap.Windows.xml",
+        "lib/net5.0-windows7.0/Syncfusion.TreeMap.Windows.dll",
+        "lib/net5.0-windows7.0/Syncfusion.TreeMap.Windows.xml",
+        "lib/netcoreapp3.1/Syncfusion.TreeMap.Windows.dll",
+        "lib/netcoreapp3.1/Syncfusion.TreeMap.Windows.xml",
+        "syncfusion.treemap.windows.20.3.0.60.nupkg.sha512",
+        "syncfusion.treemap.windows.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.XlsIO.WinForms/20.3.0.60": {
+      "sha512": "VLMndn5+zEcstqidckiIt7qE1A9VttVFGbnhWq9vHlUlmxXDJLOM7pCILYvoJ2GNl/rFDO+NRdz5kRBpcEVQAA==",
+      "type": "package",
+      "path": "syncfusion.xlsio.winforms/20.3.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net20/Syncfusion.XlsIO.Base.dll",
+        "lib/net20/Syncfusion.XlsIO.Base.xml",
+        "lib/net35/Syncfusion.XlsIO.Base.dll",
+        "lib/net35/Syncfusion.XlsIO.Base.xml",
+        "lib/net40/Syncfusion.XlsIO.Base.dll",
+        "lib/net40/Syncfusion.XlsIO.Base.xml",
+        "lib/net45/Syncfusion.XlsIO.Base.dll",
+        "lib/net45/Syncfusion.XlsIO.Base.xml",
+        "lib/net451/Syncfusion.XlsIO.Base.dll",
+        "lib/net451/Syncfusion.XlsIO.Base.xml",
+        "lib/net46/Syncfusion.XlsIO.Base.dll",
+        "lib/net46/Syncfusion.XlsIO.Base.xml",
+        "lib/net5.0-windows7.0/Syncfusion.XlsIO.Base.dll",
+        "lib/net5.0-windows7.0/Syncfusion.XlsIO.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.XlsIO.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.XlsIO.Base.xml",
+        "syncfusion.xlsio.winforms.20.3.0.60.nupkg.sha512",
+        "syncfusion.xlsio.winforms.nuspec",
+        "syncfusion_logo.png"
       ]
     },
     "System.Configuration.ConfigurationManager/7.0.0": {
@@ -433,6 +2869,41 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "MetroFramework.Design.NetCore >= 1.0.0",
+      "MetroFramework.Fonts.NetCore >= 1.0.0",
+      "MetroFramework.NetCore >= 1.0.0",
+      "MetroSet_UI >= 2.0.0",
+      "Syncfusion.BulletGraph.Windows >= 20.3.0.60",
+      "Syncfusion.Calculate.Base >= 20.3.0.60",
+      "Syncfusion.Chart.Windows >= 20.3.0.60",
+      "Syncfusion.Compression.Base >= 20.3.0.60",
+      "Syncfusion.Core.WinForms >= 20.3.0.60",
+      "Syncfusion.Diagram.Windows >= 20.3.0.60",
+      "Syncfusion.DocIO.WinForms >= 20.3.0.60",
+      "Syncfusion.Edit.Windows >= 20.3.0.60",
+      "Syncfusion.Gauge.Windows >= 20.3.0.60",
+      "Syncfusion.Grid.Windows >= 20.3.0.60",
+      "Syncfusion.GridHelperClasses.Windows >= 20.3.0.60",
+      "Syncfusion.Grouping.Base >= 20.3.0.60",
+      "Syncfusion.HTMLUI.Windows >= 20.3.0.60",
+      "Syncfusion.Maps.Windows >= 20.3.0.60",
+      "Syncfusion.OfficeChart.Base >= 20.3.0.60",
+      "Syncfusion.Pdf.WinForms >= 20.3.0.60",
+      "Syncfusion.PdfViewer.Windows >= 20.3.0.60",
+      "Syncfusion.PivotChart.Windows >= 20.3.0.60",
+      "Syncfusion.Presentation.WinForms >= 20.3.0.60",
+      "Syncfusion.Schedule.Windows >= 20.3.0.60",
+      "Syncfusion.SfBarcode.Windows >= 20.3.0.60",
+      "Syncfusion.SfDataGrid.Winforms >= 20.3.0.60",
+      "Syncfusion.SfInput.WinForms >= 20.3.0.60",
+      "Syncfusion.SfSmithChart.WinForms >= 20.3.0.60",
+      "Syncfusion.Shared.Base >= 20.3.0.60",
+      "Syncfusion.Shared.Windows >= 20.3.0.60",
+      "Syncfusion.Spreadsheet.Windows >= 20.3.0.60",
+      "Syncfusion.Tools.Base >= 20.3.0.60",
+      "Syncfusion.Tools.Windows >= 20.3.0.60",
+      "Syncfusion.TreeMap.Windows >= 20.3.0.60",
+      "Syncfusion.XlsIO.WinForms >= 20.3.0.60",
       "System.Data.OleDb >= 7.0.0"
     ]
   },
@@ -444,7 +2915,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\terry\\source\\repos\\Badjao\\Badjao.csproj",
-      "projectName": "Badjao",
+      "projectName": "Budget",
       "projectPath": "C:\\Users\\terry\\source\\repos\\Badjao\\Badjao.csproj",
       "packagesPath": "C:\\Users\\terry\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\terry\\source\\repos\\Badjao\\obj\\",
@@ -481,6 +2952,146 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "MetroFramework.Design.NetCore": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "MetroFramework.Fonts.NetCore": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "MetroFramework.NetCore": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "MetroSet_UI": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
+          "Syncfusion.BulletGraph.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Calculate.Base": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Chart.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Compression.Base": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Core.WinForms": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Diagram.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.DocIO.WinForms": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Edit.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Gauge.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Grid.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.GridHelperClasses.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Grouping.Base": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.HTMLUI.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Maps.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.OfficeChart.Base": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Pdf.WinForms": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.PdfViewer.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.PivotChart.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Presentation.WinForms": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Schedule.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.SfBarcode.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.SfDataGrid.Winforms": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.SfInput.WinForms": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.SfSmithChart.WinForms": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Shared.Base": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Shared.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Spreadsheet.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Tools.Base": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.Tools.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.TreeMap.Windows": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
+          "Syncfusion.XlsIO.WinForms": {
+            "target": "Package",
+            "version": "[20.3.0.60, )"
+          },
           "System.Data.OleDb": {
             "target": "Package",
             "version": "[7.0.0, )"

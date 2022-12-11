@@ -9,13 +9,15 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
+    using MetroSet_UI.Controls;
+    using MetroSet_UI.Enums;
     using VisualPlus.Toolkit.Controls.Interactivity;
 
     /// <summary>
     /// Defines the
     /// <see cref="Label" />
     /// </summary>
-    /// <seealso cref="VisualLabel" />
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class Label : LabelBase, ILabel
     {
         /// <summary>
@@ -58,10 +60,13 @@ namespace BudgetExecution
         public Label( )
         {
             // Basic Properties
+            Style = Style.Custom;
+            ThemeAuthor = "Terry D. Eppler";
+            ThemeName = "BudgetExecution";
             Size = new Size( 165, 23 );
             Location = new Point( 1, 1 );
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            ForeColor = Color.FromArgb( 141, 139, 138 );
+            BackColor = Color.Transparent;
+            ForeColor = Color.LightGray;
             Font = new Font( "Roboto", 9 );
             Margin = new Padding( 3 );
             Padding = new Padding( 1 );
@@ -69,9 +74,11 @@ namespace BudgetExecution
             Dock = DockStyle.None;
             Enabled = true;
             Visible = true;
-            TextAlignment = StringAlignment.Center;
-            TextLineAlignment = StringAlignment.Far;
-            OutlineColor = Color.FromArgb( 15, 15, 15 );
+            BorderStyle = BorderStyle.None;
+            FlatStyle = FlatStyle.Flat;
+            TextAlign = ContentAlignment.MiddleLeft;
+
+            // Event Wiring
             MouseHover += OnMouseOver;
         }
 
@@ -95,7 +102,7 @@ namespace BudgetExecution
         /// class.
         /// </summary>
         /// <param name="label">The label.</param>
-        public Label( VisualLabel label )
+        public Label( MetroSetLabel label )
             : this( label.Size, label.Location )
         {
         }
@@ -146,64 +153,7 @@ namespace BudgetExecution
         {
             BindingSource = bindingSource;
         }
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="color">The color.</param>
-        public void SetOutlineColor( Color color )
-        {
-            if( color != Color.Empty )
-            {
-                try
-                {
-                    OutlineColor = color;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Sets the text alignment.
-        /// </summary>
-        /// <param name="alignment">The alignment.</param>
-        public void SetTextAlignment( StringAlignment alignment )
-        {
-            if( Enum.IsDefined( typeof( StringAlignment ), alignment ) )
-            {
-                try
-                {
-                    TextAlignment = alignment;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Sets the line alignment.
-        /// </summary>
-        /// <param name="alignment">The alignment.</param>
-        public void SetLineAlignment( StringAlignment alignment )
-        {
-            if( Enum.IsDefined( typeof( StringAlignment ), alignment ) )
-            {
-                try
-                {
-                    TextLineAlignment = alignment;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
+        
         /// <summary>
         /// Sets the text.
         /// </summary>

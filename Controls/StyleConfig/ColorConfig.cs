@@ -72,7 +72,7 @@ namespace BudgetExecution
         /// <summary>
         /// The hover gray
         /// </summary>
-        public static readonly Color HoverGray = Color.FromArgb( 41, 41, 41 );
+        public static readonly Color HoverGray = Color.FromArgb( 70, 70, 70 );
 
         /// <summary>
         /// The hover blue
@@ -85,107 +85,7 @@ namespace BudgetExecution
         public ColorConfig( )
         {
         }
-
-        /// <summary>
-        /// Gets the color.
-        /// </summary>
-        /// <param name="color">The color.</param>
-        /// <returns></returns>
-        public static Color GetColor( Color color )
-        {
-            try
-            {
-                return color != Color.Empty
-                    ? color
-                    : Color.Empty;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return Color.Empty;
-            }
-        }
-
-        /// <summary>
-        /// Gets the excel fill style.
-        /// </summary>
-        /// <param name="fillStyle">The fillstyle.</param>
-        /// <returns></returns>
-        public static ExcelFillStyle GetExcelFillStyle( ExcelFillStyle fillStyle )
-        {
-            try
-            {
-                return Enum.IsDefined( typeof( ExcelFillStyle ), fillStyle )
-                    ? fillStyle
-                    : ExcelFillStyle.None;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return ExcelFillStyle.None;
-            }
-        }
-
-        /// <summary>
-        /// Gets the type of the excel fill gradient.
-        /// </summary>
-        /// <param name="gradient">The gradient.</param>
-        /// <returns></returns>
-        public static ExcelFillGradientType GetExcelFillGradientType( ExcelFillGradientType gradient )
-        {
-            try
-            {
-                return Enum.IsDefined( typeof( ExcelFillGradientType ), gradient )
-                    ? gradient
-                    : ExcelFillGradientType.None;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return ExcelFillGradientType.None;
-            }
-        }
-
-        /// <summary>
-        /// Gets the type of the spreadsheet fill.
-        /// </summary>
-        /// <param name="fillType">The filltype.</param>
-        /// <returns></returns>
-        public static ExcelFillType GetSpreadsheetFillType( ExcelFillType fillType )
-        {
-            try
-            {
-                return Enum.IsDefined( typeof( ExcelFillType ), fillType )
-                    ? fillType
-                    : ExcelFillType.UnknownGradient;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return ExcelFillType.UnknownGradient;
-            }
-        }
-
-        /// <summary>
-        /// Gets the spreadsheet gradient style.
-        /// </summary>
-        /// <param name="gradient">The gradient.</param>
-        /// <returns></returns>
-        public static ExcelGradientStyle GetSpreadsheetGradientStyle( ExcelGradientStyle gradient )
-        {
-            try
-            {
-                return Enum.IsDefined( typeof( ExcelGradientStyle ), gradient )
-                    ? gradient
-                    : ExcelGradientStyle.Horizontal;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-                return ExcelGradientStyle.Horizontal;
-            }
-        }
-
+        
         /// <summary>
         /// Called when [color changed].
         /// </summary>

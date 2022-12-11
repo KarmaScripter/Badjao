@@ -28,9 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Syncfusion.Windows.Forms.CaptionImage captionImage1 = new Syncfusion.Windows.Forms.CaptionImage();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.DarkmodeStyleManager = new MetroSet_UI.Components.StyleManager();
+            this.ToolTip = new BudgetExecution.MetroTip();
+            this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DarkmodeStyleManager
+            // 
+            this.DarkmodeStyleManager.CustomTheme = "C:\\Users\\terry\\AppData\\Roaming\\Microsoft\\Windows\\Templates\\ThemeFile.xml";
+            this.DarkmodeStyleManager.MetroForm = this;
+            this.DarkmodeStyleManager.Style = MetroSet_UI.Enums.Style.Custom;
+            this.DarkmodeStyleManager.ThemeAuthor = "Terry D. Eppler";
+            this.DarkmodeStyleManager.ThemeName = "BudgetExecution";
+            // 
+            // ToolTip
+            // 
+            this.ToolTip.AutoPopDelay = 5000;
+            this.ToolTip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
+            this.ToolTip.BindingSource = null;
+            this.ToolTip.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.ToolTip.ForeColor = System.Drawing.Color.White;
+            this.ToolTip.InitialDelay = 500;
+            this.ToolTip.IsDerivedStyle = true;
+            this.ToolTip.Name = null;
+            this.ToolTip.OwnerDraw = true;
+            this.ToolTip.ReshowDelay = 100;
+            this.ToolTip.Style = MetroSet_UI.Enums.Style.Custom;
+            this.ToolTip.StyleManager = null;
+            this.ToolTip.ThemeAuthor = "Terry D. Eppler";
+            this.ToolTip.ThemeName = "Budget Execution";
+            this.ToolTip.TipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ToolTip.TipText = null;
+            this.ToolTip.TipTitle = null;
             // 
             // MainForm
             // 
@@ -51,12 +84,13 @@
             this.CaptionImages.Add(captionImage1);
             this.ClientSize = new System.Drawing.Size(1388, 713);
             this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ForeColor = System.Drawing.Color.LightGray;
+            this.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -64,5 +98,8 @@
         #endregion
 
         public Selector Selector;
+        public MetroSet_UI.Components.StyleManager DarkmodeStyleManager;
+        public MetroTip ToolTip;
+        public System.Windows.Forms.BindingSource BindingSource;
     }
 }

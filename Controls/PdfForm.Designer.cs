@@ -125,7 +125,6 @@
             this.ToolTip.Name = null;
             this.ToolTip.OwnerDraw = true;
             this.ToolTip.ReshowDelay = 100;
-            this.ToolTip.Style = MetroSet_UI.Design.Style.Custom;
             this.ToolTip.StyleManager = null;
             this.ToolTip.ThemeAuthor = "Terry D. Eppler";
             this.ToolTip.ThemeName = "Budget Execution";

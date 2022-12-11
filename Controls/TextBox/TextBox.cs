@@ -5,6 +5,8 @@
 namespace BudgetExecution
 {
     using System.Drawing;
+    using System.Windows.Forms;
+    using MetroSet_UI.Enums;
 
     /// <summary>
     /// 
@@ -17,14 +19,21 @@ namespace BudgetExecution
         /// </summary>
         public TextBox( )
         {
-            BackColor = Color.FromArgb( 30, 30, 30 );
-            ForeColor = Color.LightSteelBlue;
+            // Basic Properties
+            Style = Style.Custom;
+            ThemeAuthor = "Terry D. Eppler";
+            ThemeName = "BudgetExecution";
+            BackColor = Color.FromArgb( 40, 40, 40 );
+            ForeColor = Color.LightGray;
+            BorderColor = Color.FromArgb( 0, 120, 212 );
+
+            // Disabled Color Configuration
+            DisabledBackColor = Color.Transparent;
+            DisabledBorderColor = Color.Transparent;
+            DisabledForeColor = Color.Transparent;
             Font = new Font( "Roboto", 9 );
-            BackColorState.Disabled = Color.FromArgb( 30, 30, 30 );
-            BackColorState.Enabled = Color.FromArgb( 30, 30, 30 );
-            Border.HoverColor = Color.FromArgb( 0, 120, 212 );
-            Border.Color = Color.FromArgb( 65, 65, 65 );
-            Border.HoverVisible = true;
+            HoverColor = Color.FromArgb( 50, 93, 129 );
+            TextAlign = HorizontalAlignment.Left;
         }
     }
 }

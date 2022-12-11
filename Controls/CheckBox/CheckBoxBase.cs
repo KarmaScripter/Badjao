@@ -7,9 +7,10 @@ namespace BudgetExecution
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using VisualPlus.Toolkit.Controls.Interactivity;
+    using MetroSet_UI.Controls;
 
-    public abstract class CheckBoxBase : VisualCheckBox
+    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
+    public abstract class CheckBoxBase : MetroSetCheckBox
     {
         /// <summary>
         /// Gets or sets the tool tip.

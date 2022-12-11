@@ -80,6 +80,10 @@ namespace BudgetExecution
         public FileBrowser( )
         {
             InitializeComponent( );
+            Font = new Font( "Roboto", 9 );
+            ForeColor = Color.LightSteelBlue;
+            Margin = new Padding( 3 );
+            Padding = new Padding( 1 );
             Size = new Size( 700, 480 );
             FormBorderStyle = FormBorderStyle.FixedSingle;
             BackColor = Color.FromArgb( 20, 20, 20 );
@@ -404,11 +408,10 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        public virtual void OnPathSelected( object sender, EventArgs e )
+        public virtual void OnPathSelected( object sender )
         {
             if( sender is ListBox listBox
-               && !string.IsNullOrEmpty( listBox.SelectedItem?.ToString( ) )
-               && e != null )
+               && !string.IsNullOrEmpty( listBox.SelectedItem?.ToString( ) ) )
             {
                 try
                 {

@@ -148,7 +148,6 @@ namespace BudgetExecution
             this.LibraryRadioButton.Name = "LibraryRadioButton";
             this.LibraryRadioButton.Result = null;
             this.LibraryRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.LibraryRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.LibraryRadioButton.StyleManager = null;
             this.LibraryRadioButton.TabIndex = 15;
             this.LibraryRadioButton.Tag = ".dll";
@@ -173,7 +172,6 @@ namespace BudgetExecution
             this.PowerPointRadioButton.Name = "PowerPointRadioButton";
             this.PowerPointRadioButton.Result = null;
             this.PowerPointRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.PowerPointRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.PowerPointRadioButton.StyleManager = null;
             this.PowerPointRadioButton.TabIndex = 21;
             this.PowerPointRadioButton.Tag = ".pptx";
@@ -198,7 +196,6 @@ namespace BudgetExecution
             this.ExecutableRadioButton.Name = "ExecutableRadioButton";
             this.ExecutableRadioButton.Result = null;
             this.ExecutableRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.ExecutableRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.ExecutableRadioButton.StyleManager = null;
             this.ExecutableRadioButton.TabIndex = 14;
             this.ExecutableRadioButton.Tag = ".exe";
@@ -223,7 +220,6 @@ namespace BudgetExecution
             this.TextRadioButton.Name = "TextRadioButton";
             this.TextRadioButton.Result = null;
             this.TextRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.TextRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.TextRadioButton.StyleManager = null;
             this.TextRadioButton.TabIndex = 20;
             this.TextRadioButton.Tag = ".txt";
@@ -248,7 +244,6 @@ namespace BudgetExecution
             this.SqlCeRadioButton.Name = "SqlCeRadioButton";
             this.SqlCeRadioButton.Result = null;
             this.SqlCeRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.SqlCeRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.SqlCeRadioButton.StyleManager = null;
             this.SqlCeRadioButton.TabIndex = 13;
             this.SqlCeRadioButton.Tag = ".sdf";
@@ -273,7 +268,6 @@ namespace BudgetExecution
             this.ExcelRadioButton.Name = "ExcelRadioButton";
             this.ExcelRadioButton.Result = null;
             this.ExcelRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.ExcelRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.ExcelRadioButton.StyleManager = null;
             this.ExcelRadioButton.TabIndex = 19;
             this.ExcelRadioButton.Tag = ".xlsx";
@@ -298,7 +292,6 @@ namespace BudgetExecution
             this.CsvRadioButton.Name = "CsvRadioButton";
             this.CsvRadioButton.Result = null;
             this.CsvRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.CsvRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.CsvRadioButton.StyleManager = null;
             this.CsvRadioButton.TabIndex = 18;
             this.CsvRadioButton.Tag = ".csv";
@@ -323,7 +316,6 @@ namespace BudgetExecution
             this.AccessRadioButton.Name = "AccessRadioButton";
             this.AccessRadioButton.Result = null;
             this.AccessRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.AccessRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.AccessRadioButton.StyleManager = null;
             this.AccessRadioButton.TabIndex = 17;
             this.AccessRadioButton.Tag = ".accdb";
@@ -348,7 +340,6 @@ namespace BudgetExecution
             this.SQLiteRadioButton.Name = "SQLiteRadioButton";
             this.SQLiteRadioButton.Result = null;
             this.SQLiteRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.SQLiteRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.SQLiteRadioButton.StyleManager = null;
             this.SQLiteRadioButton.TabIndex = 16;
             this.SQLiteRadioButton.Tag = ".db";
@@ -373,7 +364,6 @@ namespace BudgetExecution
             this.SqlServerRadioButton.Name = "SqlServerRadioButton";
             this.SqlServerRadioButton.Result = null;
             this.SqlServerRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.SqlServerRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.SqlServerRadioButton.StyleManager = null;
             this.SqlServerRadioButton.TabIndex = 15;
             this.SqlServerRadioButton.Tag = ".mdf";
@@ -397,8 +387,6 @@ namespace BudgetExecution
             this.WordRadioButton.Location = new System.Drawing.Point(3, 28);
             this.WordRadioButton.Name = "WordRadioButton";
             this.WordRadioButton.Result = null;
-            this.WordRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.WordRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.WordRadioButton.StyleManager = null;
             this.WordRadioButton.TabIndex = 14;
             this.WordRadioButton.Tag = ".docx";
@@ -423,7 +411,6 @@ namespace BudgetExecution
             this.PdfRadioButton.Name = "PdfRadioButton";
             this.PdfRadioButton.Result = null;
             this.PdfRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.PdfRadioButton.Style = MetroSet_UI.Design.Style.Custom;
             this.PdfRadioButton.StyleManager = null;
             this.PdfRadioButton.TabIndex = 13;
             this.PdfRadioButton.Tag = ".pdf";
@@ -434,43 +421,19 @@ namespace BudgetExecution
             // 
             // FileList
             // 
-            this.FileList.AlternateColors = true;
             this.FileList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.FileList.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.FileList.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.FileList.BindingSource = null;
-            this.FileList.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.FileList.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.FileList.Border.HoverVisible = true;
-            this.FileList.Border.Rounding = 6;
-            this.FileList.Border.Thickness = 1;
-            this.FileList.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
-            this.FileList.Border.Visible = true;
             this.FileList.DataFilter = null;
             this.FileList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FileList.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FileList.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.FileList.HorizontalScrollBar = true;
             this.FileList.HoverText = null;
-            this.FileList.ImageList = null;
-            this.FileList.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.FileList.ItemHeight = 30;
-            this.FileList.ItemLineAlignment = System.Drawing.StringAlignment.Near;
-            this.FileList.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.FileList.ItemSelected = System.Drawing.Color.SteelBlue;
             this.FileList.Location = new System.Drawing.Point(90, 4);
-            this.FileList.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.FileList.Name = "FileList";
             this.FileList.Padding = new System.Windows.Forms.Padding(1);
             this.FileList.Size = new System.Drawing.Size(480, 306);
             this.FileList.TabIndex = 3;
-            this.FileList.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.FileList.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FileList.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FileList.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FileList.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.FileList.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.FileList.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.FileList.ToolTip = this.ToolTip;
             // 
             // ToolTip
@@ -484,7 +447,6 @@ namespace BudgetExecution
             this.ToolTip.Name = null;
             this.ToolTip.OwnerDraw = true;
             this.ToolTip.ReshowDelay = 100;
-            this.ToolTip.Style = MetroSet_UI.Design.Style.Custom;
             this.ToolTip.StyleManager = null;
             this.ToolTip.ThemeAuthor = "Terry D. Eppler";
             this.ToolTip.ThemeName = "Budget Execution";
@@ -501,30 +463,10 @@ namespace BudgetExecution
             this.FoundLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.FoundLabel.HoverText = null;
             this.FoundLabel.Location = new System.Drawing.Point(4, 4);
-            this.FoundLabel.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.FoundLabel.Name = "FoundLabel";
-            this.FoundLabel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.FoundLabel.Outline = false;
-            this.FoundLabel.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.FoundLabel.OutlineLocation = new System.Drawing.Point(0, 0);
             this.FoundLabel.Padding = new System.Windows.Forms.Padding(1);
-            this.FoundLabel.ReflectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FoundLabel.ReflectionSpacing = 0;
-            this.FoundLabel.ShadowColor = System.Drawing.Color.Black;
-            this.FoundLabel.ShadowDirection = 315;
-            this.FoundLabel.ShadowLocation = new System.Drawing.Point(0, 0);
-            this.FoundLabel.ShadowOpacity = 100;
             this.FoundLabel.Size = new System.Drawing.Size(80, 23);
             this.FoundLabel.TabIndex = 4;
-            this.FoundLabel.TextAlignment = System.Drawing.StringAlignment.Near;
-            this.FoundLabel.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.FoundLabel.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.FoundLabel.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FoundLabel.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FoundLabel.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FoundLabel.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.FoundLabel.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.FoundLabel.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.FoundLabel.ToolTip = null;
             // 
             // FileDialog
@@ -558,31 +500,10 @@ namespace BudgetExecution
             this.Header.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.Header.HoverText = null;
             this.Header.Location = new System.Drawing.Point(90, 3);
-            this.Header.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.Header.Name = "Header";
-            this.Header.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.Header.Outline = false;
-            this.Header.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.Header.OutlineLocation = new System.Drawing.Point(0, 0);
-            this.Header.Padding = new System.Windows.Forms.Padding(1);
-            this.Header.ReflectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Header.ReflectionSpacing = 0;
-            this.Header.ShadowColor = System.Drawing.Color.Black;
-            this.Header.ShadowDirection = 315;
-            this.Header.ShadowLocation = new System.Drawing.Point(0, 0);
-            this.Header.ShadowOpacity = 100;
             this.Header.Size = new System.Drawing.Size(477, 49);
             this.Header.TabIndex = 0;
             this.Header.Text = "File Search";
-            this.Header.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.Header.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.Header.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.Header.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Header.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Header.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Header.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.Header.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.Header.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.Header.ToolTip = null;
             // 
             // PictureBox
@@ -612,110 +533,46 @@ namespace BudgetExecution
             this.MessageLabel.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.MessageLabel.HoverText = null;
             this.MessageLabel.Location = new System.Drawing.Point(90, 371);
-            this.MessageLabel.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.MessageLabel.Name = "MessageLabel";
-            this.MessageLabel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.MessageLabel.Outline = false;
-            this.MessageLabel.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.MessageLabel.OutlineLocation = new System.Drawing.Point(0, 0);
             this.MessageLabel.Padding = new System.Windows.Forms.Padding(1);
-            this.MessageLabel.ReflectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MessageLabel.ReflectionSpacing = 0;
-            this.MessageLabel.ShadowColor = System.Drawing.Color.Black;
-            this.MessageLabel.ShadowDirection = 315;
-            this.MessageLabel.ShadowLocation = new System.Drawing.Point(0, 0);
-            this.MessageLabel.ShadowOpacity = 100;
             this.MessageLabel.Size = new System.Drawing.Size(488, 23);
             this.MessageLabel.TabIndex = 12;
-            this.MessageLabel.TextAlignment = System.Drawing.StringAlignment.Near;
-            this.MessageLabel.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.MessageLabel.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.MessageLabel.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MessageLabel.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MessageLabel.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MessageLabel.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.MessageLabel.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.MessageLabel.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.MessageLabel.ToolTip = null;
             // 
             // SelectButton
             // 
             this.SelectButton.BackColor = System.Drawing.Color.Transparent;
-            this.SelectButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.SelectButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.SelectButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.SelectButton.BackColorState.Pressed = System.Drawing.Color.SteelBlue;
             this.SelectButton.BindingSource = null;
-            this.SelectButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.SelectButton.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.SelectButton.Border.HoverVisible = true;
-            this.SelectButton.Border.Rounding = 6;
-            this.SelectButton.Border.Thickness = 1;
-            this.SelectButton.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
-            this.SelectButton.Border.Visible = true;
             this.SelectButton.DataFilter = null;
-            this.SelectButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.SelectButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SelectButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.SelectButton.HoverText = "Select File";
-            this.SelectButton.Image = null;
             this.SelectButton.Images = null;
             this.SelectButton.Location = new System.Drawing.Point(40, 411);
             this.SelectButton.Margin = new System.Windows.Forms.Padding(0);
-            this.SelectButton.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.SelectButton.Name = "SelectButton";
             this.SelectButton.Padding = new System.Windows.Forms.Padding(1);
             this.SelectButton.Size = new System.Drawing.Size(120, 48);
             this.SelectButton.TabIndex = 11;
             this.SelectButton.Text = "Select";
-            this.SelectButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.SelectButton.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.SelectButton.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.SelectButton.TextStyle.Hover = System.Drawing.Color.White;
-            this.SelectButton.TextStyle.Pressed = System.Drawing.Color.White;
-            this.SelectButton.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.SelectButton.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.SelectButton.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.SelectButton.ToolTip = null;
             // 
             // CloseButton
             // 
             this.CloseButton.BackColor = System.Drawing.Color.Transparent;
-            this.CloseButton.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.CloseButton.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.CloseButton.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.CloseButton.BackColorState.Pressed = System.Drawing.Color.SteelBlue;
             this.CloseButton.BindingSource = null;
-            this.CloseButton.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.CloseButton.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.CloseButton.Border.HoverVisible = true;
-            this.CloseButton.Border.Rounding = 6;
-            this.CloseButton.Border.Thickness = 1;
-            this.CloseButton.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
-            this.CloseButton.Border.Visible = true;
             this.CloseButton.DataFilter = null;
-            this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.CloseButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.CloseButton.HoverText = "Close Window";
-            this.CloseButton.Image = null;
             this.CloseButton.Images = null;
             this.CloseButton.Location = new System.Drawing.Point(517, 411);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
-            this.CloseButton.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Padding = new System.Windows.Forms.Padding(1);
             this.CloseButton.Size = new System.Drawing.Size(120, 48);
             this.CloseButton.TabIndex = 10;
             this.CloseButton.Text = "Close";
-            this.CloseButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.CloseButton.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CloseButton.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.CloseButton.TextStyle.Hover = System.Drawing.Color.White;
-            this.CloseButton.TextStyle.Pressed = System.Drawing.Color.White;
-            this.CloseButton.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.CloseButton.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.CloseButton.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.CloseButton.ToolTip = null;
             // 
             // FileBrowser

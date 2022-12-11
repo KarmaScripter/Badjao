@@ -108,8 +108,7 @@ namespace BudgetExecution
         /// Called when [table ListBox selection changed].
         /// </summary>
         /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        public void OnTableListBoxSelectionChanged( object sender, EventArgs e )
+        public void OnTableListBoxSelectionChanged( object sender )
         {
             try
             {
@@ -147,8 +146,7 @@ namespace BudgetExecution
         /// Called when [column ListBox selection changed].
         /// </summary>
         /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        public void OnColumnListBoxSelectionChanged( object sender, EventArgs e )
+        public void OnColumnListBoxSelectionChanged( object sender )
         {
             try
             {

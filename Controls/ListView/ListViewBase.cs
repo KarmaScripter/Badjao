@@ -11,9 +11,10 @@ namespace BudgetExecution
     using System.Linq;
     using System.Threading;
     using System.Windows.Forms;
+    using Syncfusion.WinForms.ListView;
     using VisualPlus.Toolkit.Controls.DataManagement;
 
-    public abstract class ListViewBase : VisualListView
+    public abstract class ListViewBase : SfListView
     {
         /// <summary>
         /// Gets or sets the binding source.

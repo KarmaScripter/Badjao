@@ -10,6 +10,7 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Linq;
     using System.Windows.Forms;
+    using MetroSet_UI.Enums;
     using VisualPlus.Enumerators;
 
     public class ListBox : ListBoxBase
@@ -60,32 +61,21 @@ namespace BudgetExecution
             Margin = new Padding( 3 );
             Padding = new Padding( 1 );
             Font = new Font( "Roboto", 9 );
-            ForeColor = Color.LightSteelBlue;
+            ForeColor = Color.LightGray;
             Enabled = true;
             Visible = true;
-            AlternateColors = true;
             Text = string.Empty;
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
             // BackColor SeriesConfiguration
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            ForeColor = Color.LightSteelBlue;
-            BackColorState.Disabled = Color.FromArgb( 15, 15, 15 );
-            BackColorState.Enabled = Color.FromArgb( 15, 15, 15 );
-
-            // Border SeriesConfiguration
-            Border.Color = Color.FromArgb( 15, 15, 15 );
-            Border.Thickness = 1;
-            Border.HoverColor = Color.FromArgb( 0, 120, 212 );
-            Border.HoverVisible = true;
-
-            // Item SeriesConfiguration
-            ItemLineAlignment = StringAlignment.Center;
-            ItemAlternate = Color.FromArgb( 25, 25, 25 );
-            ItemNormal = Color.FromArgb( 15, 15, 15 );
-            ItemSelected = Color.FromArgb( 22, 39, 70 );
-            AlternateColors = true;
-            VisibleChanged += OnVisible;
+            Style = Style.Custom;
+            BackColor = Color.FromArgb( 40, 40, 40 );
+            ShowBorder = false;
+            BorderColor = Color.FromArgb( 65, 65, 65 );
+            HoveredItemBackColor = Color.FromArgb( 50, 93, 129 );
+            HoveredItemColor = Color.White;
+            ThemeAuthor = "Terry D. Eppler";
+            ThemeName = "BudgetExecution";
         }
 
         /// <summary>
@@ -179,7 +169,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    Border.Color = color;
+                    BorderColor = color;
                 }
                 catch( Exception ex )
                 {
@@ -204,67 +194,7 @@ namespace BudgetExecution
                 Fail( ex );
             }
         }
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="color">The color.</param>
-        public void SetHoverBorderColor( Color color )
-        {
-            if( color != Color.Empty )
-            {
-                try
-                {
-                    Border.HoverColor = color;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="hoverColor">if set to <c>true</c> [hoverColor].</param>
-        public void SetBorderConfiguration( bool hoverColor )
-        {
-            try
-            {
-                switch( hoverColor )
-                {
-                    case true:
-
-                    {
-                        Border.Color = Color.FromArgb( 64, 64, 64 );
-                        Border.Thickness = 1;
-                        Border.HoverColor = Color.FromArgb( 64, 64, 64 );
-                        Border.HoverVisible = true;
-                        Border.Type = ShapeTypes.Rounded;
-
-                        break;
-                    }
-
-                    case false:
-
-                    {
-                        Border.Color = Color.FromArgb( 15, 15, 15 );
-                        Border.Thickness = 1;
-                        Border.HoverColor = Color.FromArgb( 15, 15, 15 );
-                        Border.HoverVisible = false;
-                        Border.Type = ShapeTypes.Rounded;
-
-                        break;
-                    }
-                }
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
+        
         /// <summary>
         /// Adds the control item.
         /// </summary>

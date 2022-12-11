@@ -7,12 +7,16 @@ namespace BudgetExecution
     using System;
     using System.Drawing;
     using System.Windows.Forms;
+    using MetroSet_UI.Enums;
 
     public class RichTextBox : RichTextBase
     {
         public RichTextBox( )
         {
             // Basic Properties
+            Style = Style.Custom;
+            ThemeAuthor = "Terry D. Eppler";
+            ThemeName = "BudgetExecution";
             Size = new Size( 140, 30 );
             Location = new Point( 1, 1 );
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
@@ -20,21 +24,16 @@ namespace BudgetExecution
             Margin = new Padding( 3 );
             Padding = new Padding( 1 );
             Font = new Font( "Roboto", 9 );
-            ForeColor = Color.White;
+            ForeColor = Color.LightGray;
+            BackColor = Color.FromArgb( 40, 40, 40 );
             Enabled = true;
             Visible = true;
-            Text = string.Empty;
 
             // BackColor SeriesConfiguration
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            BackColorState.Disabled = Color.FromArgb( 15, 15, 15 );
-            BackColorState.Enabled = Color.FromArgb( 15, 15, 15 );
+            BackColor = Color.Transparent;
 
             // Border SeriesConfiguration
-            Border.Color = Color.FromArgb( 15, 15, 15 );
-            Border.Thickness = 1;
-            Border.HoverColor = Color.SteelBlue;
-            Border.HoverVisible = false;
+            BorderColor = Color.FromArgb( 0, 120, 212 );
         }
 
         /// <summary>
@@ -175,7 +174,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    BackColorState.Enabled = backColor;
+                    BackColor = backColor;
                 }
                 catch( Exception ex )
                 {

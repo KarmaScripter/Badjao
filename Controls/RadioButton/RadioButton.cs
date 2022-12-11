@@ -10,6 +10,7 @@ namespace BudgetExecution
     using System.Windows.Forms;
     using MetroSet_UI.Controls;
     using MetroSet_UI.Design;
+    using MetroSet_UI.Enums;
     using CheckState = MetroSet_UI.Enums.CheckState;
 
     public class RadioButton : MetroSetRadioButton

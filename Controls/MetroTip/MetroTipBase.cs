@@ -15,7 +15,7 @@ namespace BudgetExecution
     /// 
     /// </summary>
     /// <seealso cref="SfToolTip" />
-    public abstract class MetroTipBase : MetroSetToolTip
+    public abstract class MetroTipBase : MetroSetSetToolTip
     {
         /// <summary>
         /// Gets or sets the tip icon.

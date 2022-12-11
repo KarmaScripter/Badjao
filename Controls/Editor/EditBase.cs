@@ -271,8 +271,6 @@ namespace BudgetExecution
                     foreach( var _groupBox in GroupBoxes.Values )
                     {
                         _groupBox.SeparatorColor = Color.FromArgb( 64, 64, 64 );
-                        _groupBox.Separate = true;
-                        _groupBox.Separator = true;
                     }
                 }
                 catch( Exception ex )
@@ -322,7 +320,7 @@ namespace BudgetExecution
                         {
                             foreach( var _control in _tab.Controls )
                             {
-                                if( _control is GroupBox _group )
+                                if( _control is System.Windows.Forms.GroupBox _group )
                                 {
                                     foreach( var _item in _group.Controls )
                                     {

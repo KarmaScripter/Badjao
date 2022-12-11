@@ -9,6 +9,7 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Windows.Forms;
     using MetroSet_UI.Design;
+    using MetroSet_UI.Enums;
 
     public class MetroTip : MetroTipBase
     {

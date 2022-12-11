@@ -8,12 +8,13 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
-    using VisualPlus.Models;
+    using CheckState = MetroSet_UI.Enums.CheckState;
 
     /// <summary>
     /// 
     /// </summary>
     /// <seealso cref="BudgetExecution.CheckBoxBase" />
+    [ SuppressMessage( "ReSharper", "UnusedParameter.Global" ) ]
     public class CheckBox : CheckBoxBase
     {
         /// <summary>
@@ -30,26 +31,19 @@ namespace BudgetExecution
         public CheckBox( )
         {
             Size = new Size( 125, 25 );
-            Box = new Size( 14, 14 );
             BackColor = Color.FromArgb( 15, 15, 15 );
             Font = new Font( "Roboto", 8, FontStyle.Regular );
             ForeColor = Color.SteelBlue;
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
             Dock = DockStyle.None;
             Cursor = Cursors.Hand;
-            Border.Color = Color.FromArgb( 28, 28, 28 );
-            Border.HoverColor = Color.FromArgb( 50, 93, 129 );
-            Border.HoverVisible = true;
+            BorderColor = Color.FromArgb( 28, 28, 28 );
             CheckState = CheckState.Unchecked;
-            CheckStyle.Style = CheckStyle.CheckType.Checkmark;
-            CheckStyle.CheckColor = Color.Lime;
-            BoxColorState.Enabled = Color.FromArgb( 28, 28, 28 );
-            BoxColorState.Hover = Color.FromArgb( 50, 93, 129 );
-            BoxColorState.Disabled = Color.FromArgb( 15, 15, 15 );
-            CheckStyle.AutoSize = true;
-            CheckStyle.Bounds = new Rectangle( 0, 0, 125, 23 );
-            CheckStyle.Style = CheckStyle.CheckType.Checkmark;
-            BoxSpacing = 4;
+
+            // Disabled Color Configuration
+            DisabledBorderColor = Color.Transparent;
+
+            // Event Wiring
             MouseHover += OnMouseOver;
             MouseLeave += OnMouseLeave;
         }

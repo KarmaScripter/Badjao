@@ -8,9 +8,9 @@ namespace BudgetExecution
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Windows.Forms;
-    using VisualPlus.Toolkit.Controls.DataManagement;
+    using MetroSet_UI.Controls;
 
-    public abstract class ListBoxBase : VisualListBox
+    public abstract class ListBoxBase : MetroSetListBox
     {
         /// <summary>
         /// Gets or sets the binding source.

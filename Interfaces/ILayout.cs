@@ -19,14 +19,7 @@ namespace BudgetExecution
         /// <param name="color">The color.</param>
         /// <param name="hover">if set to <c>true</c> [hover].</param>
         void SetBorderColor( Color color, bool hover = true );
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="color">The color.</param>
-        /// <param name="hover">if set to <c>true</c> [hover].</param>
-        void SetBorderHoverColor( Color color, bool hover = true );
-
+        
         /// <summary>
         /// Sets the color of the back.
         /// </summary>

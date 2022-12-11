@@ -10,6 +10,8 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Linq;
     using System.Windows.Forms;
+    using MetroSet_UI.Controls;
+    using Syncfusion.Windows.Forms.Tools;
     using VisualPlus.Toolkit.Controls.Layout;
 
     /// <summary>
@@ -18,7 +20,8 @@ namespace BudgetExecution
     /// <seealso cref="VisualPanel" />
     /// <seealso cref="ILayout" />
     /// 
-    public abstract class LayoutBase : VisualPanel, ILayout
+    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
+    public abstract class LayoutBase : MetroSetPanel, ILayout
     {
         /// <summary>
         /// Gets or sets the binding source.
@@ -67,6 +70,8 @@ namespace BudgetExecution
         /// </summary>
         protected LayoutBase( )
         {
+            ThemeAuthor = "Terry D. Eppler";
+            ThemeName = "BudgetExecution";
         }
 
         /// <summary>
@@ -81,6 +86,11 @@ namespace BudgetExecution
         {
             Size = size;
             Location = Settings.ReLocate( location.X, location.Y );
+            BackColor = Color.Transparent;
+            ForeColor = Color.LightSteelBlue;
+            BorderColor = Color.FromArgb( 0, 120, 212 );
+            BorderStyle = BorderStyle.None;
+            Font = new Font( "Roboto", 9 );
         }
 
         /// <summary>
@@ -132,7 +142,6 @@ namespace BudgetExecution
             Location = location;
             Parent = parent;
             Parent.Controls.Add( this );
-            Border.HoverVisible = hover;
         }
 
         /// <summary>
@@ -146,29 +155,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    Border.Color = color;
-                    Border.HoverVisible = hover;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="color">The color.</param>
-        /// <param name="hover">if set to <c>true</c> [hover].</param>
-        public void SetBorderHoverColor( Color color, bool hover = true )
-        {
-            if( color != Color.Empty )
-            {
-                try
-                {
-                    Border.HoverColor = color;
-                    Border.HoverVisible = hover;
+                    BorderColor = color;
                 }
                 catch( Exception ex )
                 {
@@ -188,7 +175,6 @@ namespace BudgetExecution
                 try
                 {
                     BackColor = color;
-                    BackColorState.Enabled = BackColor;
                 }
                 catch( Exception ex )
                 {
@@ -209,7 +195,6 @@ namespace BudgetExecution
                 try
                 {
                     var _list = new List<Control> { item };
-
                     return _list?.Any( ) == true
                         ? _list
                         : default;
@@ -238,7 +223,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }

@@ -9,13 +9,14 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
+    using MetroSet_UI.Controls;
     using VisualPlus.Toolkit.Controls.Interactivity;
 
     /// <summary>
     /// 
     /// </summary>
     /// <seealso cref="VisualButton" />
-    public abstract class ButtonBase : VisualButton
+    public abstract class ButtonBase : MetroSetButton
     {
         /// <summary>
         /// Gets or sets the binding source.
@@ -218,26 +219,7 @@ namespace BudgetExecution
                 Fail( ex );
             }
         }
-
-        /// <summary>
-        /// Sets the image.
-        /// </summary>
-        /// <param name="image">The image.</param>
-        public virtual void SetImage( Image image )
-        {
-            if( image != null )
-            {
-                try
-                {
-                    Image = image;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
+        
         /// <summary>
         /// Called when [mouse leave].
         /// </summary>

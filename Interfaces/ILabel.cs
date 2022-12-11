@@ -6,28 +6,9 @@ namespace BudgetExecution
 {
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Drawing;
 
     public interface ILabel
     {
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="color">The color.</param>
-        void SetOutlineColor( Color color );
-
-        /// <summary>
-        /// Sets the text alignment.
-        /// </summary>
-        /// <param name="alignment">The alignment.</param>
-        void SetTextAlignment( StringAlignment alignment );
-
-        /// <summary>
-        /// Sets the line alignment.
-        /// </summary>
-        /// <param name="alignment">The alignment.</param>
-        void SetLineAlignment( StringAlignment alignment );
-
         /// <summary>
         /// Sets the text.
         /// </summary>
@@ -37,7 +18,7 @@ namespace BudgetExecution
         /// <summary>
         /// Sets the binding source.
         /// </summary>
-        /// <param name="bindingSource">The bindingsource.</param>
+        /// <param name="bindingSource">The binding source.</param>
         void SetDataSource<T1>( T1 bindingSource )
             where T1 : IBindingList;
 
@@ -46,7 +27,7 @@ namespace BudgetExecution
         /// </summary>
         /// <typeparam name="T1"></typeparam>
         /// <typeparam name="T2">The type of the 2.</typeparam>
-        /// <param name="bindingList">The bindingsource.</param>
+        /// <param name="bindingList">The binding source.</param>
         /// <param name="dict">The dictionary.</param>
         void SetDataSource<T1, T2>( T1 bindingList, T2 dict )
             where T1 : IBindingList

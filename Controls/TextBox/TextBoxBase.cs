@@ -7,9 +7,10 @@ namespace BudgetExecution
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
+    using MetroSet_UI.Controls;
     using VisualPlus.Toolkit.Controls.Editors;
 
-    public abstract class TextBoxBase : VisualTextBox
+    public abstract class TextBoxBase : MetroSetTextBox
     {
         /// <summary>
         /// Gets or sets the binding source.

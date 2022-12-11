@@ -88,16 +88,7 @@
             this.ListPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ListPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ListPanel.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ListPanel.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ListPanel.BindingSource = null;
-            this.ListPanel.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ListPanel.Border.HoverColor = System.Drawing.Color.SteelBlue;
-            this.ListPanel.Border.HoverVisible = false;
-            this.ListPanel.Border.Rounding = 6;
-            this.ListPanel.Border.Thickness = 1;
-            this.ListPanel.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
-            this.ListPanel.Border.Visible = true;
             this.ListPanel.Children = null;
             this.ListPanel.Controls.Add(this.ListBox);
             this.ListPanel.DataFilter = null;
@@ -105,58 +96,28 @@
             this.ListPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ListPanel.HoverText = null;
             this.ListPanel.Location = new System.Drawing.Point(869, 112);
-            this.ListPanel.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ListPanel.Name = "ListPanel";
             this.ListPanel.Padding = new System.Windows.Forms.Padding(1);
             this.ListPanel.Size = new System.Drawing.Size(264, 476);
             this.ListPanel.TabIndex = 10;
             this.ListPanel.Text = "layout1";
-            this.ListPanel.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.ListPanel.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ListPanel.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ListPanel.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ListPanel.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.ListPanel.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.ListPanel.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.ListPanel.ToolTip = null;
             // 
             // ListBox
             // 
-            this.ListBox.AlternateColors = false;
             this.ListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ListBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ListBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ListBox.BindingSource = this.BindingSource;
-            this.ListBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ListBox.Border.HoverColor = System.Drawing.Color.SteelBlue;
-            this.ListBox.Border.HoverVisible = true;
-            this.ListBox.Border.Rounding = 6;
-            this.ListBox.Border.Thickness = 1;
-            this.ListBox.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
-            this.ListBox.Border.Visible = true;
             this.ListBox.DataFilter = null;
             this.ListBox.Font = new System.Drawing.Font("Roboto", 9F);
             this.ListBox.ForeColor = System.Drawing.Color.White;
             this.ListBox.HoverText = null;
-            this.ListBox.ItemAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ListBox.ItemHeight = 30;
-            this.ListBox.ItemLineAlignment = System.Drawing.StringAlignment.Center;
-            this.ListBox.ItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ListBox.ItemSelected = System.Drawing.Color.SteelBlue;
             this.ListBox.Location = new System.Drawing.Point(32, 21);
-            this.ListBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.ListBox.Name = "ListBox";
             this.ListBox.Size = new System.Drawing.Size(200, 430);
             this.ListBox.TabIndex = 9;
-            this.ListBox.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.ListBox.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ListBox.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ListBox.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ListBox.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.ListBox.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.ListBox.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // ToolTip
             // 
@@ -169,7 +130,6 @@
             this.ToolTip.Name = null;
             this.ToolTip.OwnerDraw = true;
             this.ToolTip.ReshowDelay = 100;
-            this.ToolTip.Style = MetroSet_UI.Design.Style.Custom;
             this.ToolTip.StyleManager = null;
             this.ToolTip.ThemeAuthor = "Terry D. Eppler";
             this.ToolTip.ThemeName = "Budget Execution";
@@ -182,35 +142,18 @@
             this.PivotPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PivotPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.PivotPanel.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.PivotPanel.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.PivotPanel.BindingSource = this.BindingSource;
-            this.PivotPanel.Border.Color = System.Drawing.Color.Gray;
-            this.PivotPanel.Border.HoverColor = System.Drawing.Color.SteelBlue;
-            this.PivotPanel.Border.HoverVisible = false;
-            this.PivotPanel.Border.Rounding = 6;
-            this.PivotPanel.Border.Thickness = 1;
-            this.PivotPanel.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
-            this.PivotPanel.Border.Visible = true;
             this.PivotPanel.Children = null;
             this.PivotPanel.DataFilter = null;
             this.PivotPanel.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PivotPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.PivotPanel.HoverText = null;
             this.PivotPanel.Location = new System.Drawing.Point(55, 112);
-            this.PivotPanel.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.PivotPanel.Name = "PivotPanel";
             this.PivotPanel.Padding = new System.Windows.Forms.Padding(1);
             this.PivotPanel.Size = new System.Drawing.Size(757, 476);
             this.PivotPanel.TabIndex = 8;
             this.PivotPanel.Text = "layout1";
-            this.PivotPanel.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.PivotPanel.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PivotPanel.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PivotPanel.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PivotPanel.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.PivotPanel.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.PivotPanel.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.PivotPanel.ToolTip = this.ToolTip;
             // 
             // DropDown

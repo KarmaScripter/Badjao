@@ -6,11 +6,9 @@ namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
-    using VisualPlus.Enumerators;
-    using VisualPlus.Models;
+    using MetroSet_UI.Enums;
 
     /// <summary>
     /// 
@@ -61,43 +59,39 @@ namespace BudgetExecution
         public Button( )
         {
             // Basic SeriesConfiguration
+            Style = Style.Custom;
+            ThemeAuthor = "Terry D. Eppler";
+            ThemeName = "BudgetExecution";
             Font = new Font( "Roboto", 9 );
-            ForeColor = Color.White;
+            ForeColor = Color.LightSteelBlue;
             Margin = new Padding( 3 );
             Padding = new Padding( 1 );
             Size = new Size( 140, 40 );
             Location = new Point( 1, 1 );
             Dock = DockStyle.None;
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
-            Animation = true;
             Visible = true;
             Enabled = true;
-            Text = string.Empty;
 
-            // BackColor SeriesConfiguration
-            BackColor = Color.Transparent;
-            BackColorState.Disabled = Color.Transparent;
-            BackColorState.Enabled = Color.Transparent;
-            BackColorState.Hover = Color.FromArgb( 40, 40, 40 );
-            BackColorState.Pressed = Color.SteelBlue;
+            // Normal Color Configuration
+            NormalColor = Color.Transparent;
+            NormalBorderColor = Color.Transparent;
+            NormalTextColor = Color.FromArgb( 0, 120, 212 );
 
-            // BorderColor SeriesConfiguration
-            Border.Color = Color.FromArgb( 15, 15, 15 );
-            Border.HoverColor = Color.FromArgb( 40, 40, 40 );
-            Border.HoverVisible = true;
-            Border.Type = ShapeTypes.Rounded;
-            Border.Thickness = 1;
+            // Hover Color Configuration
+            HoverBorderColor = Color.FromArgb( 50, 93, 129 );
+            HoverColor = Color.FromArgb( 50, 93, 129 );
+            HoverTextColor = Color.LightSteelBlue;
 
-            // BudgetImage SeriesConfiguration
-            TextImageRelation = TextImageRelation.Overlay;
+            // Disabled Color Configuration
+            DisabledBorderColor = Color.Transparent;
+            DisabledBackColor = Color.Transparent;
+            DisabledForeColor = Color.Transparent;
 
-            // Text SeriesConfiguration
-            TextStyle.Pressed = Color.White;
-            TextStyle.Disabled = Color.FromArgb( 15, 15, 15 );
-            TextStyle.Enabled = Color.FromArgb( 0, 120, 212 );
-            TextStyle.Hover = Color.White;
-            TextStyle.TextAlignment = StringAlignment.Center;
-            TextStyle.TextLineAlignment = StringAlignment.Center;
+            // Pressed Color Configuration
+            PressColor = Color.FromArgb( 0, 120, 212 );
+            PressBorderColor = Color.FromArgb( 0, 120, 212 );
+            PressTextColor = Color.White;
 
             // Event-Wiring
             MouseHover += OnMouseOver;
@@ -215,84 +209,13 @@ namespace BudgetExecution
             try
             {
                 BackColor = normal;
-                BackColorState.Disabled = normal;
-                BackColorState.Enabled = normal;
-                BackColorState.Hover = hover;
-                BackColorState.Pressed = hover;
             }
             catch( Exception ex )
             {
                 Fail( ex );
             }
         }
-
-        /// <summary>
-        /// Sets the border configuration. Required Attributes: BorderColor, and HoverColor
-        /// </summary>
-        /// <param name="normal">The format.</param>
-        /// <param name = "hover" > </param>
-        public void SetBorderStyle( Color normal, Color hover )
-        {
-            try
-            {
-                Border.Color = normal;
-                Border.HoverColor = hover;
-                Border.HoverVisible = true;
-                Border.Type = ShapeTypes.Rounded;
-                Border.Thickness = 1;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
-        /// <summary>
-        /// Sets the text style configuration. Required Attributes: PressedColor,
-        /// DisabledColor, EnabledColor, and HoverColor
-        /// </summary>
-        /// <param name="normal">The format.</param>
-        /// <param name = "hover" > </param>
-        public void SetTextStyle( Color normal, Color hover )
-        {
-            try
-            {
-                TextImageRelation = TextImageRelation.ImageBeforeText;
-
-                TextStyle = new TextStyle( );
-
-                TextStyle.TextLineAlignment = StringAlignment.Center;
-                TextStyle.TextAlignment = StringAlignment.Center;
-                TextStyle.Hover = hover;
-                TextStyle.Enabled = normal;
-                TextStyle.Disabled = normal;
-                TextStyle.Pressed = normal;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
-        /// <summary>
-        /// Sets the image.
-        /// </summary>
-        /// <param name="image">The image.</param>
-        public override void SetImage( Image image )
-        {
-            if( image != null )
-            {
-                try
-                {
-                    Image = image;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
+        
         /// <summary>
         /// Called when [mouse over].
         /// </summary>

@@ -41,25 +41,7 @@ namespace BudgetExecution
         /// The filter.
         /// </value>
         IDictionary<string, object> DataFilter { get; set; }
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="color">The color.</param>
-        void SetBorderColor( Color color );
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="color">The color.</param>
-        void SetHoverBorderColor( Color color );
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="hoverColor">if set to <c>true</c> [hover color].</param>
-        void SetBorderConfiguration( bool hoverColor );
-
+        
         /// <summary>
         /// Sets the hover information.
         /// </summary>
@@ -71,23 +53,5 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="text">The text.</param>
         void SetText( string text );
-
-        /// <summary>
-        /// Adds the item.
-        /// </summary>
-        /// <param name="item">The item.</param>
-        void AddItem( string item );
-
-        /// <summary>
-        /// Adds the items.
-        /// </summary>
-        /// <param name="items">The items.</param>
-        void AddItems( IEnumerable<string> items );
-
-        /// <summary>
-        /// Adds the item.
-        /// </summary>
-        /// <param name="item">The item.</param>
-        void RemoveItem( string item );
     }
 }

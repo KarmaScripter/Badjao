@@ -12,7 +12,7 @@ namespace BudgetExecution
     using Syncfusion.Windows.Forms;
     using Syncfusion.Windows.Forms.Tools;
 
-    public class SyncTipBase : SfToolTip
+    public class SyncTipBase : SuperToolTip
     {
         /// <summary>
         /// Gets or sets the tip text.
@@ -115,8 +115,6 @@ namespace BudgetExecution
             try
             {
                 InitialDelay = 500;
-                AutoPopDelay = 3000;
-                ShadowVisible = true;
                 CanApplyTheme = true;
                 CanOverrideStyle = true;
                 TipInfo.BackColor = Color.FromArgb( 40, 40, 40 );

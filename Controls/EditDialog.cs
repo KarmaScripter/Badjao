@@ -147,50 +147,39 @@ namespace BudgetExecution
                     {
                         case ToolType.CopyButton:
                         case ToolType.EditRecordButton:
-
                         {
                             DataTab.Text = "Edit Data";
                             ActiveTab = DataTab;
                             SelectButton.Text = "Save";
                             CloseButton.Text = "Exit";
                             SqlTab.TabVisible = false;
-
                             break;
                         }
-
                         case ToolType.DeleteRecordButton:
-
                         {
                             DataTab.Text = "Delete Data";
                             ActiveTab = DataTab;
                             SelectButton.Text = "Delete";
                             CloseButton.Text = "Exit";
                             SqlTab.TabVisible = false;
-
                             break;
                         }
-
                         case ToolType.EditSqlButton:
-
                         {
                             SqlTab.Text = "SQL Editor";
                             ActiveTab = SqlTab;
                             SelectButton.Text = "Save";
                             CloseButton.Text = "Exit";
                             DataTab.TabVisible = false;
-
                             break;
                         }
-
                         default:
-
                         {
                             DataTab.Text = "Edit Data";
                             ActiveTab = DataTab;
                             SelectButton.Text = "Save";
                             CloseButton.Text = "Exit";
                             SqlTab.TabVisible = false;
-
                             break;
                         }
                     }
@@ -280,19 +269,14 @@ namespace BudgetExecution
                     {
                         case >= 43:
                         case < 43 and >= 35:
-
                             FrameTable.Location = new Point( 12, 25 );
-
                             break;
-
                         case < 35 and >= 28:
                         case < 28 and >= 21:
                         case < 21 and >= 14:
                         case < 14 and > 7:
                         case <= 7:
-
                             FrameTable.Location = new Point( 12, 81 );
-
                             break;
                     }
                 }
@@ -358,7 +342,6 @@ namespace BudgetExecution
                 catch( Exception ex )
                 {
                     Fail( ex );
-
                     return default;
                 }
             }
@@ -395,7 +378,6 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-
                 return default;
             }
         }

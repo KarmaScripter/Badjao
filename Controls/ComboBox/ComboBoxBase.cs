@@ -6,10 +6,12 @@ namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Windows.Forms;
-    using VisualPlus.Toolkit.Controls.Interactivity;
+    using MetroSet_UI.Controls;
 
-    public abstract class ComboBoxBase : VisualComboBox
+    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
+    public abstract class ComboBoxBase : MetroSetComboBox
     {
         /// <summary>
         /// Gets or sets the binding source.

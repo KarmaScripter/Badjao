@@ -104,9 +104,9 @@ namespace BudgetExecution
         {
             InitializeComponent( );
             Load += OnLoad;
-            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
-            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
-            ValueListBox.SelectedValueChanged += OnValueListBoxSelectionChanged;
+            TableListBox.SelectedIndexChanged += OnTableListBoxSelectionChanged;
+            ColumnListBox.SelectedIndexChanged += OnColumnListBoxSelectionChanged;
+            ValueListBox.SelectedIndexChanged += OnValueListBoxSelectionChanged;
         }
 
         /// <summary>
@@ -118,9 +118,9 @@ namespace BudgetExecution
         {
             InitializeComponent( );
             Load += OnLoad;
-            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
-            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
-            ValueListBox.SelectedValueChanged += OnValueListBoxSelectionChanged;
+            TableListBox.SelectedIndexChanged += OnTableListBoxSelectionChanged;
+            ColumnListBox.SelectedIndexChanged += OnColumnListBoxSelectionChanged;
+            ValueListBox.SelectedIndexChanged += OnValueListBoxSelectionChanged;
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        public void OnTableListBoxSelectionChanged( object sender, EventArgs e )
+        public void OnTableListBoxSelectionChanged( object sender )
         {
             try
             {
@@ -232,7 +232,6 @@ namespace BudgetExecution
                     BindingSource.DataSource = DataModel.DataTable;
                     DataGrid.DataSource = BindingSource;
                     ToolStrip.BindingSource = BindingSource;
-
                     DataGridGroupBox.Text =
                         SourcePrefix + DataModel.DataTable.TableName?.SplitPascal( );
 
@@ -260,7 +259,7 @@ namespace BudgetExecution
         /// <param name="e">
         /// The <see cref="EventArgs"/> 
         /// instance containing the event data.</param>
-        public void OnColumnListBoxSelectionChanged( object sender, EventArgs e )
+        public void OnColumnListBoxSelectionChanged( object sender )
         {
             try
             {
@@ -289,7 +288,7 @@ namespace BudgetExecution
             }
         }
 
-        public void OnValueListBoxSelectionChanged( object sender, EventArgs e )
+        public void OnValueListBoxSelectionChanged( object sender )
         {
             try
             {

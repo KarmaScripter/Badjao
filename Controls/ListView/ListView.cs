@@ -24,41 +24,21 @@ namespace BudgetExecution
             // Basic Properties
             Size = new Size( 250, 150 );
             Location = new Point( 1, 1 );
-            Anchor = AnchorStyles.Top | AnchorStyles.Left;
-            Dock = DockStyle.None;
+            Font = new Font( "Roboto", 9 );
             Margin = new Padding( 3 );
             Padding = new Padding( 1 );
-            Font = new Font( "Roboto", 9 );
-            ForeColor = Color.White;
+            Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            Dock = DockStyle.None;
             Enabled = true;
             Visible = true;
-            Selectable = true;
-            ControlStyle = LVControlStyles.SuperFlat;
-            GridLines = GridLines.Horizontal;
-            GridColor = SystemColors.WindowFrame;
-            GridLineStyle = GridLineStyle.Dashed;
-            DisplayTextFont = new Font( "Roboto", 9 );
-            DisplayTextOnEmpty = false;
-            DisplayTextColor = Color.LightSteelBlue;
-            FullRowSelect = true;
-            AllowColumnResize = true;
-            AlternatingColors = false;
-            HoverColumnTracking = true;
-            HeaderVisible = false;
-            ItemSelectedColor = Color.SteelBlue;
-            ItemSelectedTextColor = Color.White;
 
             // BackColor SeriesConfiguration
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            ForeColor = Color.White;
-            BackColorState.Disabled = Color.FromArgb( 15, 15, 15 );
-            BackColorState.Enabled = Color.FromArgb( 15, 15, 15 );
+            BackColor = Color.FromArgb( 20, 20, 20 );
+            ForeColor = Color.LightSteelBlue;
 
             // Border SeriesConfiguration
-            Border.Color = SystemColors.WindowFrame;
-            Border.Thickness = 1;
-            Border.HoverColor = Color.SteelBlue;
-            Border.HoverVisible = false;
+            CanOverrideStyle = true;
+            HotTracking = true;
 
             // Item SeriesConfiguration
             ItemHeight = 30;
@@ -167,86 +147,7 @@ namespace BudgetExecution
         /// The filter.
         /// </value>
         public override IDictionary<string, object> DataFilter { get; set; }
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="color">The color.</param>
-        public void SetBorderColor( Color color )
-        {
-            if( color != Color.Empty )
-            {
-                try
-                {
-                    Border.Color = color;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="color">The color.</param>
-        public void SetHoverBorderColor( Color color )
-        {
-            if( color != Color.Empty )
-            {
-                try
-                {
-                    Border.HoverColor = color;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Sets the color of the border.
-        /// </summary>
-        /// <param name="hoverColor">if set to <c>true</c> [hover color].</param>
-        public void SetBorderConfiguration( bool hoverColor )
-        {
-            try
-            {
-                switch( hoverColor )
-                {
-                    case true:
-
-                    {
-                        Border.Color = Color.FromArgb( 64, 64, 64 );
-                        Border.Thickness = 1;
-                        Border.HoverColor = SystemColors.WindowFrame;
-                        Border.HoverVisible = true;
-                        Border.Type = ShapeTypes.Rounded;
-
-                        break;
-                    }
-
-                    case false:
-
-                    {
-                        Border.Color = Color.FromArgb( 15, 15, 15 );
-                        Border.Thickness = 1;
-                        Border.HoverColor = Color.SteelBlue;
-                        Border.HoverVisible = false;
-                        Border.Type = ShapeTypes.Rounded;
-
-                        break;
-                    }
-                }
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
+        
         /// <summary>
         /// Sets the hover information.
         /// </summary>
@@ -284,76 +185,7 @@ namespace BudgetExecution
                 }
             }
         }
-
-        /// <summary>
-        /// Adds the item.
-        /// </summary>
-        /// <param name="item">The item.</param>
-        public void AddItem( string item )
-        {
-            if( !string.IsNullOrEmpty( item ) )
-            {
-                try
-                {
-                    Items?.Add( item );
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Adds the items.
-        /// </summary>
-        /// <param name="items">The items.</param>
-        public void AddItems( IEnumerable<string> items )
-        {
-            if( items?.Count( ) > 0 )
-            {
-                try
-                {
-                    foreach( var _item in items )
-                    {
-                        if( _item != null )
-                        {
-                            Items?.Add( _item );
-                        }
-                    }
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Adds the item.
-        /// </summary>
-        /// <param name="item">The item.</param>
-        public void RemoveItem( string item )
-        {
-            if( !string.IsNullOrEmpty( item ) )
-            {
-                try
-                {
-                    foreach( var _listItem in Items )
-                    {
-                        if( _listItem?.Equals( item ) == true )
-                        {
-                            Items?.RemoveByKey( item );
-                        }
-                    }
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
+        
         /// <summary>
         /// Sets the tag.
         /// </summary>
