@@ -8,41 +8,38 @@
     ".NETCoreApp,Version=v6.0": {
       "Budget/1.0.0": {
         "dependencies": {
-          "MetroFramework.Design.NetCore": "1.0.0",
-          "MetroFramework.Fonts.NetCore": "1.0.0",
-          "MetroFramework.NetCore": "1.0.0",
           "MetroSet_UI": "2.0.0",
-          "Syncfusion.BulletGraph.Windows": "20.3.0.60",
-          "Syncfusion.Calculate.Base": "20.3.0.60",
-          "Syncfusion.Chart.Windows": "20.3.0.60",
-          "Syncfusion.Compression.Base": "20.3.0.60",
-          "Syncfusion.Core.WinForms": "20.3.0.60",
-          "Syncfusion.Diagram.Windows": "20.3.0.60",
-          "Syncfusion.DocIO.WinForms": "20.3.0.60",
-          "Syncfusion.Edit.Windows": "20.3.0.60",
-          "Syncfusion.Gauge.Windows": "20.3.0.60",
-          "Syncfusion.Grid.Windows": "20.3.0.60",
-          "Syncfusion.GridHelperClasses.Windows": "20.3.0.60",
-          "Syncfusion.Grouping.Base": "20.3.0.60",
+          "Syncfusion.BulletGraph.Windows": "20.3.0.61",
+          "Syncfusion.Calculate.Base": "20.3.0.61",
+          "Syncfusion.Chart.Windows": "20.3.0.61",
+          "Syncfusion.Compression.Base": "20.3.0.61",
+          "Syncfusion.Core.WinForms": "20.3.0.61",
+          "Syncfusion.Diagram.Windows": "20.3.0.61",
+          "Syncfusion.DocIO.WinForms": "20.3.0.61",
+          "Syncfusion.Edit.Windows": "20.3.0.61",
+          "Syncfusion.Gauge.Windows": "20.3.0.61",
+          "Syncfusion.Grid.Windows": "20.3.0.61",
+          "Syncfusion.GridHelperClasses.Windows": "20.3.0.61",
+          "Syncfusion.Grouping.Base": "20.3.0.61",
           "Syncfusion.HTMLUI.windows": "20.3.0.60",
-          "Syncfusion.Maps.Windows": "20.3.0.60",
-          "Syncfusion.OfficeChart.Base": "20.3.0.60",
-          "Syncfusion.Pdf.WinForms": "20.3.0.60",
-          "Syncfusion.PdfViewer.Windows": "20.3.0.60",
-          "Syncfusion.PivotChart.Windows": "20.3.0.60",
-          "Syncfusion.Presentation.WinForms": "20.3.0.60",
-          "Syncfusion.Schedule.Windows": "20.3.0.60",
-          "Syncfusion.SfBarcode.Windows": "20.3.0.60",
-          "Syncfusion.SfDataGrid.WinForms": "20.3.0.60",
-          "Syncfusion.SfInput.WinForms": "20.3.0.60",
-          "Syncfusion.SfSmithChart.WinForms": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60",
-          "Syncfusion.Spreadsheet.Windows": "20.3.0.60",
-          "Syncfusion.Tools.Base": "20.3.0.60",
-          "Syncfusion.Tools.Windows": "20.3.0.60",
-          "Syncfusion.TreeMap.Windows": "20.3.0.60",
-          "Syncfusion.XlsIO.WinForms": "20.3.0.60",
+          "Syncfusion.Maps.Windows": "20.3.0.61",
+          "Syncfusion.OfficeChart.Base": "20.3.0.61",
+          "Syncfusion.Pdf.WinForms": "20.3.0.61",
+          "Syncfusion.PdfViewer.Windows": "20.3.0.61",
+          "Syncfusion.PivotChart.Windows": "20.3.0.61",
+          "Syncfusion.Presentation.WinForms": "20.3.0.61",
+          "Syncfusion.Schedule.Windows": "20.3.0.61",
+          "Syncfusion.SfBarcode.Windows": "20.3.0.61",
+          "Syncfusion.SfDataGrid.WinForms": "20.3.0.61",
+          "Syncfusion.SfInput.WinForms": "20.3.0.61",
+          "Syncfusion.SfSmithChart.WinForms": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61",
+          "Syncfusion.Spreadsheet.Windows": "20.3.0.61",
+          "Syncfusion.Tools.Base": "20.3.0.61",
+          "Syncfusion.Tools.Windows": "20.3.0.61",
+          "Syncfusion.TreeMap.Windows": "20.3.0.61",
+          "Syncfusion.XlsIO.WinForms": "20.3.0.61",
           "System.Data.OleDb": "7.0.0",
           "C1.Win.4.8": "4.8.20221.557",
           "C1.Win.C1FlexGrid.4.8": "4.8.20221.557",
@@ -70,48 +67,6 @@
           "Budget.dll": {}
         }
       },
-      "EnvDTE/16.7.30508.193": {
-        "dependencies": {
-          "stdole": "16.7.30508.193"
-        },
-        "runtime": {
-          "lib/netstandard2.0/EnvDTE.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.50727.932"
-          }
-        }
-      },
-      "MetroFramework.Design.NetCore/1.0.0": {
-        "dependencies": {
-          "EnvDTE": "16.7.30508.193",
-          "MetroFramework.NetCore": "1.0.0"
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/MetroFramework.Design.NetCore.dll": {
-            "assemblyVersion": "1.2.0.3",
-            "fileVersion": "1.2.0.3"
-          }
-        }
-      },
-      "MetroFramework.Fonts.NetCore/1.0.0": {
-        "dependencies": {
-          "MetroFramework.NetCore": "1.0.0"
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/MetroFramework.Fonts.NetCore.dll": {
-            "assemblyVersion": "1.2.0.3",
-            "fileVersion": "1.2.0.3"
-          }
-        }
-      },
-      "MetroFramework.NetCore/1.0.0": {
-        "runtime": {
-          "lib/netcoreapp3.0/MetroFramework.NetCore.dll": {
-            "assemblyVersion": "1.2.0.3",
-            "fileVersion": "1.2.0.3"
-          }
-        }
-      },
       "MetroSet_UI/2.0.0": {
         "runtime": {
           "lib/netcoreapp3.1/MetroSet UI.dll": {
@@ -136,255 +91,247 @@
           }
         }
       },
-      "stdole/16.7.30508.193": {
-        "runtime": {
-          "lib/netstandard2.0/stdole.dll": {
-            "assemblyVersion": "7.0.3300.0",
-            "fileVersion": "7.0.9466.1"
-          }
-        }
-      },
-      "Syncfusion.BulletGraph.Windows/20.3.0.60": {
+      "Syncfusion.BulletGraph.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.BulletGraph.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Calculate.Base/20.3.0.60": {
+      "Syncfusion.Calculate.Base/20.3.0.61": {
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Calculate.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Chart.Base/20.3.0.60": {
+      "Syncfusion.Chart.Base/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Chart.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Chart.Windows/20.3.0.60": {
+      "Syncfusion.Chart.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Chart.Base": "20.3.0.60",
-          "Syncfusion.Grouping.Base": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Chart.Base": "20.3.0.61",
+          "Syncfusion.Grouping.Base": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Chart.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Compression.Base/20.3.0.60": {
+      "Syncfusion.Compression.Base/20.3.0.61": {
         "runtime": {
           "lib/net5.0/Syncfusion.Compression.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Core.WinForms/20.3.0.60": {
+      "Syncfusion.Core.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Core.WinForms.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Data.WinForms/20.3.0.60": {
+      "Syncfusion.Data.WinForms/20.3.0.61": {
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Data.WinForms.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.DataSource.WinForms/20.3.0.60": {
+      "Syncfusion.DataSource.WinForms/20.3.0.61": {
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.DataSource.WinForms.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Diagram.Base/20.3.0.60": {
+      "Syncfusion.Diagram.Base/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Diagram.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Diagram.Windows/20.3.0.60": {
+      "Syncfusion.Diagram.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Diagram.Base": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60"
+          "Syncfusion.Diagram.Base": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Diagram.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.DocIO.WinForms/20.3.0.60": {
+      "Syncfusion.DocIO.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.OfficeChart.Base": "20.3.0.60"
+          "Syncfusion.Compression.Base": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.OfficeChart.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.DocIO.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Edit.Windows/20.3.0.60": {
+      "Syncfusion.Edit.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60",
-          "Syncfusion.Tools.Base": "20.3.0.60",
-          "Syncfusion.Tools.Windows": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61",
+          "Syncfusion.Tools.Base": "20.3.0.61",
+          "Syncfusion.Tools.Windows": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Edit.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Gauge.Windows/20.3.0.60": {
+      "Syncfusion.Gauge.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Gauge.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Grid.Grouping.Windows/20.3.0.60": {
+      "Syncfusion.Grid.Grouping.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Grid.Windows": "20.3.0.60",
-          "Syncfusion.Grouping.Base": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60"
+          "Syncfusion.Grid.Windows": "20.3.0.61",
+          "Syncfusion.Grouping.Base": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Grid.Grouping.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Grid.Windows/20.3.0.60": {
+      "Syncfusion.Grid.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Grid.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.GridCommon.WinForms/20.3.0.60": {
+      "Syncfusion.GridCommon.WinForms/20.3.0.61": {
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.GridCommon.WinForms.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.GridExport.WinForms/20.3.0.60": {
+      "Syncfusion.GridExport.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "20.3.0.60",
-          "Syncfusion.Grid.Grouping.Windows": "20.3.0.60",
-          "Syncfusion.Grid.Windows": "20.3.0.60",
-          "Syncfusion.Grouping.Base": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.XlsIO.WinForms": "20.3.0.60"
+          "Syncfusion.Compression.Base": "20.3.0.61",
+          "Syncfusion.Grid.Grouping.Windows": "20.3.0.61",
+          "Syncfusion.Grid.Windows": "20.3.0.61",
+          "Syncfusion.Grouping.Base": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.XlsIO.WinForms": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Gridconverter.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.GridHelperClasses.Windows/20.3.0.60": {
+      "Syncfusion.GridHelperClasses.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Chart.Base": "20.3.0.60",
-          "Syncfusion.Chart.Windows": "20.3.0.60",
-          "Syncfusion.DocIO.WinForms": "20.3.0.60",
-          "Syncfusion.Grid.Grouping.Windows": "20.3.0.60",
-          "Syncfusion.Grid.Windows": "20.3.0.60",
-          "Syncfusion.GridExport.WinForms": "20.3.0.60",
-          "Syncfusion.Grouping.Base": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Pdf.WinForms": "20.3.0.60",
-          "Syncfusion.PivotAnalysis.Base": "20.3.0.60",
-          "Syncfusion.PivotTable.WinForms": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60",
-          "Syncfusion.Tools.Base": "20.3.0.60",
-          "Syncfusion.Tools.Windows": "20.3.0.60",
-          "Syncfusion.XlsIO.WinForms": "20.3.0.60"
+          "Syncfusion.Chart.Base": "20.3.0.61",
+          "Syncfusion.Chart.Windows": "20.3.0.61",
+          "Syncfusion.DocIO.WinForms": "20.3.0.61",
+          "Syncfusion.Grid.Grouping.Windows": "20.3.0.61",
+          "Syncfusion.Grid.Windows": "20.3.0.61",
+          "Syncfusion.GridExport.WinForms": "20.3.0.61",
+          "Syncfusion.Grouping.Base": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Pdf.WinForms": "20.3.0.61",
+          "Syncfusion.PivotAnalysis.Base": "20.3.0.61",
+          "Syncfusion.PivotTable.WinForms": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61",
+          "Syncfusion.Tools.Base": "20.3.0.61",
+          "Syncfusion.Tools.Windows": "20.3.0.61",
+          "Syncfusion.XlsIO.WinForms": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.GridHelperClasses.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Grouping.Base/20.3.0.60": {
+      "Syncfusion.Grouping.Base/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Grouping.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
       "Syncfusion.HTMLUI.Base/20.3.0.60": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.61",
           "Syncfusion.Mime.Base": "20.3.0.60"
         },
         "runtime": {
@@ -397,9 +344,9 @@
       "Syncfusion.HTMLUI.windows/20.3.0.60": {
         "dependencies": {
           "Syncfusion.HTMLUI.Base": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
+          "Syncfusion.Licensing": "20.3.0.61",
           "Syncfusion.Scripting.Base": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.HTMLUI.windows.dll": {
@@ -408,38 +355,38 @@
           }
         }
       },
-      "Syncfusion.Licensing/20.3.0.60": {
+      "Syncfusion.Licensing/20.3.0.61": {
         "runtime": {
           "lib/net6.0/Syncfusion.Licensing.dll": {
-            "assemblyVersion": "20.3.0.60",
-            "fileVersion": "20.3.0.60"
+            "assemblyVersion": "20.3.0.61",
+            "fileVersion": "20.3.0.61"
           }
         }
       },
-      "Syncfusion.Linq.Base/20.3.0.60": {
+      "Syncfusion.Linq.Base/20.3.0.61": {
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Linq.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Maps.Windows/20.3.0.60": {
+      "Syncfusion.Maps.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Maps.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
       "Syncfusion.Mime.Base/20.3.0.60": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.MIME.Base.dll": {
@@ -448,131 +395,131 @@
           }
         }
       },
-      "Syncfusion.OfficeChart.Base/20.3.0.60": {
+      "Syncfusion.OfficeChart.Base/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "20.3.0.60"
+          "Syncfusion.Compression.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0/Syncfusion.OfficeChart.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Pdf.WinForms/20.3.0.60": {
+      "Syncfusion.Pdf.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60"
+          "Syncfusion.Compression.Base": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Pdf.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.PdfViewer.Windows/20.3.0.60": {
+      "Syncfusion.PdfViewer.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Pdf.WinForms": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Compression.Base": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Pdf.WinForms": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.PdfViewer.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.PivotAnalysis.Base/20.3.0.60": {
+      "Syncfusion.PivotAnalysis.Base/20.3.0.61": {
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.PivotAnalysis.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.PivotChart.Windows/20.3.0.60": {
+      "Syncfusion.PivotChart.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Chart.Base": "20.3.0.60",
-          "Syncfusion.Chart.Windows": "20.3.0.60",
-          "Syncfusion.Grid.Windows": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Linq.Base": "20.3.0.60",
-          "Syncfusion.PivotAnalysis.Base": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60",
-          "Syncfusion.Tools.Windows": "20.3.0.60"
+          "Syncfusion.Chart.Base": "20.3.0.61",
+          "Syncfusion.Chart.Windows": "20.3.0.61",
+          "Syncfusion.Grid.Windows": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Linq.Base": "20.3.0.61",
+          "Syncfusion.PivotAnalysis.Base": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61",
+          "Syncfusion.Tools.Windows": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.PivotChart.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.PivotTable.WinForms/20.3.0.60": {
+      "Syncfusion.PivotTable.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Grid.Windows": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Linq.Base": "20.3.0.60",
-          "Syncfusion.PivotAnalysis.Base": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60",
-          "Syncfusion.Tools.Windows": "20.3.0.60"
+          "Syncfusion.Grid.Windows": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Linq.Base": "20.3.0.61",
+          "Syncfusion.PivotAnalysis.Base": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61",
+          "Syncfusion.Tools.Windows": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.PivotAnalysis.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Presentation.WinForms/20.3.0.60": {
+      "Syncfusion.Presentation.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.OfficeChart.Base": "20.3.0.60"
+          "Syncfusion.Compression.Base": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.OfficeChart.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Presentation.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Schedule.Base/20.3.0.60": {
+      "Syncfusion.Schedule.Base/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Schedule.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Schedule.Windows/20.3.0.60": {
+      "Syncfusion.Schedule.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Grid.Windows": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Schedule.Base": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60",
-          "Syncfusion.Tools.Base": "20.3.0.60",
-          "Syncfusion.Tools.Windows": "20.3.0.60"
+          "Syncfusion.Grid.Windows": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Schedule.Base": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61",
+          "Syncfusion.Tools.Base": "20.3.0.61",
+          "Syncfusion.Tools.Windows": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Schedule.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
       "Syncfusion.Scripting.Base/20.3.0.60": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Scripting.Base.dll": {
@@ -581,176 +528,176 @@
           }
         }
       },
-      "Syncfusion.SfBarcode.Windows/20.3.0.60": {
+      "Syncfusion.SfBarcode.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.SfBarcode.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.SfDataGrid.WinForms/20.3.0.60": {
+      "Syncfusion.SfDataGrid.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Core.WinForms": "20.3.0.60",
-          "Syncfusion.Data.WinForms": "20.3.0.60",
-          "Syncfusion.GridCommon.WinForms": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.SfInput.WinForms": "20.3.0.60",
-          "Syncfusion.SfListView.WinForms": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Core.WinForms": "20.3.0.61",
+          "Syncfusion.Data.WinForms": "20.3.0.61",
+          "Syncfusion.GridCommon.WinForms": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.SfInput.WinForms": "20.3.0.61",
+          "Syncfusion.SfListView.WinForms": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.SfDataGrid.WinForms.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.SfInput.WinForms/20.3.0.60": {
+      "Syncfusion.SfInput.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Core.WinForms": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Core.WinForms": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.SfInput.WinForms.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.SfListView.WinForms/20.3.0.60": {
+      "Syncfusion.SfListView.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Core.WinForms": "20.3.0.60",
-          "Syncfusion.DataSource.WinForms": "20.3.0.60",
-          "Syncfusion.GridCommon.WinForms": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Core.WinForms": "20.3.0.61",
+          "Syncfusion.DataSource.WinForms": "20.3.0.61",
+          "Syncfusion.GridCommon.WinForms": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.SfListView.WinForms.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.SfSmithChart.WinForms/20.3.0.60": {
+      "Syncfusion.SfSmithChart.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Core.WinForms": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Core.WinForms": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.SfSmithChart.WinForms.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Shared.Base/20.3.0.60": {
+      "Syncfusion.Shared.Base/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Shared.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Shared.Windows/20.3.0.60": {
+      "Syncfusion.Shared.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Shared.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.SpellChecker.Base/20.3.0.60": {
+      "Syncfusion.SpellChecker.Base/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.SpellChecker.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Spreadsheet.Windows/20.3.0.60": {
+      "Syncfusion.Spreadsheet.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "20.3.0.60",
-          "Syncfusion.Core.WinForms": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.SfInput.WinForms": "20.3.0.60",
-          "Syncfusion.SfListView.WinForms": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Tools.Windows": "20.3.0.60",
-          "Syncfusion.XlsIO.WinForms": "20.3.0.60"
+          "Syncfusion.Compression.Base": "20.3.0.61",
+          "Syncfusion.Core.WinForms": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.SfInput.WinForms": "20.3.0.61",
+          "Syncfusion.SfListView.WinForms": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Tools.Windows": "20.3.0.61",
+          "Syncfusion.XlsIO.WinForms": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Spreadsheet.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Tools.Base/20.3.0.60": {
+      "Syncfusion.Tools.Base/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Tools.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.Tools.Windows/20.3.0.60": {
+      "Syncfusion.Tools.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Grid.Windows": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60",
-          "Syncfusion.Shared.Windows": "20.3.0.60",
-          "Syncfusion.SpellChecker.Base": "20.3.0.60",
-          "Syncfusion.Tools.Base": "20.3.0.60"
+          "Syncfusion.Grid.Windows": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61",
+          "Syncfusion.Shared.Windows": "20.3.0.61",
+          "Syncfusion.SpellChecker.Base": "20.3.0.61",
+          "Syncfusion.Tools.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.Tools.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.TreeMap.Windows/20.3.0.60": {
+      "Syncfusion.TreeMap.Windows/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Licensing": "20.3.0.60",
-          "Syncfusion.Shared.Base": "20.3.0.60"
+          "Syncfusion.Licensing": "20.3.0.61",
+          "Syncfusion.Shared.Base": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.TreeMap.Windows.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
-      "Syncfusion.XlsIO.WinForms/20.3.0.60": {
+      "Syncfusion.XlsIO.WinForms/20.3.0.61": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "20.3.0.60",
-          "Syncfusion.Licensing": "20.3.0.60"
+          "Syncfusion.Compression.Base": "20.3.0.61",
+          "Syncfusion.Licensing": "20.3.0.61"
         },
         "runtime": {
           "lib/net5.0-windows7.0/Syncfusion.XlsIO.Base.dll": {
-            "assemblyVersion": "20.3500.0.60",
-            "fileVersion": "20.3500.0.60"
+            "assemblyVersion": "20.3500.0.61",
+            "fileVersion": "20.3500.0.61"
           }
         }
       },
@@ -1046,34 +993,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "EnvDTE/16.7.30508.193": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-BD5uEG7O10k/1ilczIdKE2vYz7A+fTHsChnKfXN+OIhdftlhH0hJrlN5aHdrqvzTZKh1PBrLqk5AswPFYHUGBQ==",
-      "path": "envdte/16.7.30508.193",
-      "hashPath": "envdte.16.7.30508.193.nupkg.sha512"
-    },
-    "MetroFramework.Design.NetCore/1.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6dQCFgAjP9IvQ2M5IMYeNBkDOn5QODLe+oigv61Pg+yW4LpOOrMCooUqoroKS0jIB1ren6Y95xdguZ4t9uO6sw==",
-      "path": "metroframework.design.netcore/1.0.0",
-      "hashPath": "metroframework.design.netcore.1.0.0.nupkg.sha512"
-    },
-    "MetroFramework.Fonts.NetCore/1.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-jceGiU9vT/2fc9wf4FEYwP6YQGI6b3+xwM5pGZiKiGlU0qQ+pOv4MrePLnAb8i+uyvwFcS1L5i0AReGHyEWopQ==",
-      "path": "metroframework.fonts.netcore/1.0.0",
-      "hashPath": "metroframework.fonts.netcore.1.0.0.nupkg.sha512"
-    },
-    "MetroFramework.NetCore/1.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-N6S50mkxHy8iqvX8zKN561wbCaWYC5e+Wkpb0QfgEA2ReHupntQ8Kgxv6G64LA0JFpNAmUpj0CFTNXRe7ej7pA==",
-      "path": "metroframework.netcore/1.0.0",
-      "hashPath": "metroframework.netcore.1.0.0.nupkg.sha512"
-    },
     "MetroSet_UI/2.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1088,145 +1007,138 @@
       "path": "microsoft.win32.systemevents/7.0.0",
       "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
     },
-    "stdole/16.7.30508.193": {
+    "Syncfusion.BulletGraph.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BuXBjryTUyhb3Y9blTvpog1NBDkrP6QUJjY2ObJHRjHZ3IhlryMzhjc80BpLJ37ylxPI1Kr9GwkY+acUyCEdOw==",
-      "path": "stdole/16.7.30508.193",
-      "hashPath": "stdole.16.7.30508.193.nupkg.sha512"
+      "sha512": "sha512-3I6j/Ti+JjpGpkUmTFXoN1cNoFyXsj8fGVdzRAgH/JBoAVpPI4r4PGe1LQqWaPBkmlpUvgGDF2Fry9lJ21Ka1A==",
+      "path": "syncfusion.bulletgraph.windows/20.3.0.61",
+      "hashPath": "syncfusion.bulletgraph.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.BulletGraph.Windows/20.3.0.60": {
+    "Syncfusion.Calculate.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZnDYNd60BWCLVUsg+WVVKgKxm9y6INmo4qOq9ZD1DYqSTfYJWxW3/3x+zHXSbqRIQ8JtyYPaF4dX1+rxRXKnGw==",
-      "path": "syncfusion.bulletgraph.windows/20.3.0.60",
-      "hashPath": "syncfusion.bulletgraph.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-rkcbDWDraR/gsaDteQ/0+cdAy70fPUCmIIWRQlJ3ZGrP0RKAbQ4xCsCTuvVfFgFEfq63YmLGVxS3FXxZdMh/nA==",
+      "path": "syncfusion.calculate.base/20.3.0.61",
+      "hashPath": "syncfusion.calculate.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Calculate.Base/20.3.0.60": {
+    "Syncfusion.Chart.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AM3UFCzv/3BGHd0pYtpL8dKW/QGKTZu+uZkUETPpUmRxMRscmNWd08m8YejuFfE2s3FPsjrVEdKHVRgfETo5BQ==",
-      "path": "syncfusion.calculate.base/20.3.0.60",
-      "hashPath": "syncfusion.calculate.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-eKooYEN/R9mjuarX6fImSszBFZ7VylIQ4ScD5gefsYLogBU1S7hwtSG7Noj2OjrdTLvzDKqN3jahHQHnarpyCg==",
+      "path": "syncfusion.chart.base/20.3.0.61",
+      "hashPath": "syncfusion.chart.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Chart.Base/20.3.0.60": {
+    "Syncfusion.Chart.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-T/18DKNETUjyJht+R6ch7lvS68I6onfr+fG8PjtLNbSzM+1pFsHjeddxErES71nV7EyHWPFeSonCXN/WpGJ5XA==",
-      "path": "syncfusion.chart.base/20.3.0.60",
-      "hashPath": "syncfusion.chart.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-BqXY+ij8wgv3PXd3bUY+mYF6HvlFDk7+Rr1esssYTZnrh67AJlaQwGxCab3tyTa7VlfLXszt1XvJaHKZKsgwNg==",
+      "path": "syncfusion.chart.windows/20.3.0.61",
+      "hashPath": "syncfusion.chart.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Chart.Windows/20.3.0.60": {
+    "Syncfusion.Compression.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JLPmXi3aOhRn6ZB2k9nQdRl81CWg48/nbvKgsPwa5aMgZwyz2WkKx78ZeFZTrHtHPRjnMHibPmC2WzJGGUrypw==",
-      "path": "syncfusion.chart.windows/20.3.0.60",
-      "hashPath": "syncfusion.chart.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-dZ2ugCWaf3zrl+iIbWzgQMt3XtwFp48E3rxYuMzT8gO0RWpgEcmZ/xGrptZJxQa/AE4aUTQ+YJD/Sj9qQs98Gw==",
+      "path": "syncfusion.compression.base/20.3.0.61",
+      "hashPath": "syncfusion.compression.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Compression.Base/20.3.0.60": {
+    "Syncfusion.Core.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eHEoGjHZOc6n7k1Tlt9p7Y2V4pvUFE8ZkxQ3B5X1gtOMQG8ajtlKPFEl1/D3Oy4khC0Hij/4NPas0Or8sx81ww==",
-      "path": "syncfusion.compression.base/20.3.0.60",
-      "hashPath": "syncfusion.compression.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-d2zxlFsaaC+9rHbYhE3U96DsIhm+U+R9CHCO/Kp3Sfer5aV55alusNjeTN3Gl7EIzRQgcEDoJPuu4A6djbozfA==",
+      "path": "syncfusion.core.winforms/20.3.0.61",
+      "hashPath": "syncfusion.core.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Core.WinForms/20.3.0.60": {
+    "Syncfusion.Data.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Yc5wnc81gJ3Dtt3JHIbHMbWYpcrGyWB22amUlApDb90KaMFFelvUpKPZikl07G75L7eBO6gC/nefvQoeuFuVdw==",
-      "path": "syncfusion.core.winforms/20.3.0.60",
-      "hashPath": "syncfusion.core.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-RzXIEaYy/j5CvABPhuXNuFT/15vT2FrgsxcL0+gAg2ZyY1XZVaBqSPU/v2GNszmno1mSjw/okZ52hlAWzsSB/Q==",
+      "path": "syncfusion.data.winforms/20.3.0.61",
+      "hashPath": "syncfusion.data.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Data.WinForms/20.3.0.60": {
+    "Syncfusion.DataSource.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WwLo4e79v1ETtZOxVftHngzmwJhZfI2nDbKc756cyoDD4iw6j4LBTi/IHzjPVQTTPwOueHmSIgO0ITPnAhZNVA==",
-      "path": "syncfusion.data.winforms/20.3.0.60",
-      "hashPath": "syncfusion.data.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-n6ocliQ8IbnE7uq5rZHqwqvymzdB6RKksyCE4mFo9Xc+OsbEHbRXKPRepuJFg9pIAnBOrNyA4MAhapmis60O1g==",
+      "path": "syncfusion.datasource.winforms/20.3.0.61",
+      "hashPath": "syncfusion.datasource.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.DataSource.WinForms/20.3.0.60": {
+    "Syncfusion.Diagram.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mnQ2KWYi34Qq9JpgYh+1iQCE88i/6l4Hgu+1z1HN8kykIItlKhMUA670QEkr98SCKTrwEbWigLbT/kS7XWASsw==",
-      "path": "syncfusion.datasource.winforms/20.3.0.60",
-      "hashPath": "syncfusion.datasource.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-L8klbJK25wzjJMHUgVUf7WrGEf3KUeP55sJKM2OJeftGEf6IsXAQRm04eFNjwYwXpgTbAu3SyF+eVaxWfoLThQ==",
+      "path": "syncfusion.diagram.base/20.3.0.61",
+      "hashPath": "syncfusion.diagram.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Diagram.Base/20.3.0.60": {
+    "Syncfusion.Diagram.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AgSZPGwG88d8T7ijN/+fPbfpVTif9qhSN9yD60p2zcJJGGTZyqUiTp0DYKs/tPyjV/dp2sbTuarP4KlXAv6q/w==",
-      "path": "syncfusion.diagram.base/20.3.0.60",
-      "hashPath": "syncfusion.diagram.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-nPDTZxBsrfTIX7oAKd6XixVYgIk6Qu5PZgyYToyLFW5K/v+ZyEQiQVKkvZCtcH79ofKHlAZQtmJkzMTQJkXrbg==",
+      "path": "syncfusion.diagram.windows/20.3.0.61",
+      "hashPath": "syncfusion.diagram.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Diagram.Windows/20.3.0.60": {
+    "Syncfusion.DocIO.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6vOHGdqoEagkXILqDPc//c5kvj0nG81kJc/73xWe8lGTUrqytpHxF21gV0lDXYhTi/lplsy6AIvMSdYBiU0new==",
-      "path": "syncfusion.diagram.windows/20.3.0.60",
-      "hashPath": "syncfusion.diagram.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-Cq7TluL38W6gB4kF2wxkNg6SBlLw/QsBRIVkxLDTdtvk50XRCOXn26gVWrlt+C8hDkFJF6FiQLv0VskSvEsGfA==",
+      "path": "syncfusion.docio.winforms/20.3.0.61",
+      "hashPath": "syncfusion.docio.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.DocIO.WinForms/20.3.0.60": {
+    "Syncfusion.Edit.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-R2C6Pf0kN7yZ4hPOttoL9fTdDhY3n9MbE52pVHF5e5Wl3y6UmYTV5VctN12HQXliVDpmDNNuyrPZHWp0LRjXLQ==",
-      "path": "syncfusion.docio.winforms/20.3.0.60",
-      "hashPath": "syncfusion.docio.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-h87ZLe9mzuvDtyeGjnQyzpzOn2n8HExRIwwFPWD22PoBJiBmhfgz+/8LoRqTQ/yZZnCsIL6fua1aPZFi6TxjRQ==",
+      "path": "syncfusion.edit.windows/20.3.0.61",
+      "hashPath": "syncfusion.edit.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Edit.Windows/20.3.0.60": {
+    "Syncfusion.Gauge.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-FuVNhscyXdVtODjeWcPZPrW+427ZiD1OUJFEKzGdH51PXOAzZn3vtwcFYOmpG/lWNYgHNTqx0XnmAwRCxPXNsg==",
-      "path": "syncfusion.edit.windows/20.3.0.60",
-      "hashPath": "syncfusion.edit.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-e3abpRGGdk01owPPESJSmSFmYDV/dY/X9O7R3pCQNofuAgHffkfHthGIMsCTXnGyID0Q5Y5FJ0IUnshA+gfF6Q==",
+      "path": "syncfusion.gauge.windows/20.3.0.61",
+      "hashPath": "syncfusion.gauge.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Gauge.Windows/20.3.0.60": {
+    "Syncfusion.Grid.Grouping.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Bh3Jc+BLjk/KkvAvzQGPPpT7v5I/hIBF5CPKw0WThRoTRqIuSuR38HJgp18lpVuH6F8aHII3S9qrLiZiqx8Bcg==",
-      "path": "syncfusion.gauge.windows/20.3.0.60",
-      "hashPath": "syncfusion.gauge.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-amIkDcvClPsszk3qbCht0JnqyuPj6XRZ3RY914CbVfE2aksTvjcx4WAmGgB0nfjLgym0s9kdkX0RZLaePV/9tA==",
+      "path": "syncfusion.grid.grouping.windows/20.3.0.61",
+      "hashPath": "syncfusion.grid.grouping.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Grid.Grouping.Windows/20.3.0.60": {
+    "Syncfusion.Grid.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3FW24uDji5XbkPQ31dCRIqEBisyvEWLAxAfpmQf2phckBkDeSt5ZQBsqL9dp46VoN6NMbEYHOT4XkRV6S3+InQ==",
-      "path": "syncfusion.grid.grouping.windows/20.3.0.60",
-      "hashPath": "syncfusion.grid.grouping.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-TFBz3//8cS2QQGnXBCFVnv+tGLYXZX1J8ABlARzySdSCe/Itx3Ac1k+/gKFYd4FWROAw2V8/JiXGpxi9yfo4YQ==",
+      "path": "syncfusion.grid.windows/20.3.0.61",
+      "hashPath": "syncfusion.grid.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Grid.Windows/20.3.0.60": {
+    "Syncfusion.GridCommon.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oPCX7BbFC0bGANx1+l0Mt8u9RM9lgzfilGreVTHr7zfBWYc+CJ0dETPwaft817DWePNJi8MAr2KoDGwSp/WUZg==",
-      "path": "syncfusion.grid.windows/20.3.0.60",
-      "hashPath": "syncfusion.grid.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-bg8VxNyCZZj0zkFilkSx+F9c4CSUeHkYVGAR/GOTgdrbZ6Y0VJtMwwFpAxQf5m71WDQMTlPH/VaQi2qTar+0nw==",
+      "path": "syncfusion.gridcommon.winforms/20.3.0.61",
+      "hashPath": "syncfusion.gridcommon.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.GridCommon.WinForms/20.3.0.60": {
+    "Syncfusion.GridExport.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0dzg0retrdJYyA90W36aqw9R95rQrr+e/UFKs/FhCsMO1BtFcV/yH6JZeIjN7g7ntUUe2pJfDdhNzE/xmh3qtQ==",
-      "path": "syncfusion.gridcommon.winforms/20.3.0.60",
-      "hashPath": "syncfusion.gridcommon.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-70H9yuT8L/jTLqYdBODPEYSh+H9YLuNP7ukOSPpRo3w0LzGrW6teV3D+TqBU38ncbg9f4pw1GtpVvGsol4tjkw==",
+      "path": "syncfusion.gridexport.winforms/20.3.0.61",
+      "hashPath": "syncfusion.gridexport.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.GridExport.WinForms/20.3.0.60": {
+    "Syncfusion.GridHelperClasses.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hN1hCg7zWfhOijgIpfpiQvdpcwQdQYmQJ3LK0HTfSj5giXSpcn9L0dwiV6El5bLHALKxQZy8gLX+Ar4Odhc7fA==",
-      "path": "syncfusion.gridexport.winforms/20.3.0.60",
-      "hashPath": "syncfusion.gridexport.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-DZ6ttVY2fo+uHUeKd2sPC1xXBeA+k+XDzI147e9bTTY12//FEHE/rhCPhR3AsLDJdTwTcyr5FSsB/FsYS2Cs0g==",
+      "path": "syncfusion.gridhelperclasses.windows/20.3.0.61",
+      "hashPath": "syncfusion.gridhelperclasses.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.GridHelperClasses.Windows/20.3.0.60": {
+    "Syncfusion.Grouping.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8f8E8Au/vFzdwUCz+uaXvdfGJxQC8+lACguItuX0A+o1gGdQjEoH/+DeyecGM+aUAMO3C8EwJnFvZGyE1noRuw==",
-      "path": "syncfusion.gridhelperclasses.windows/20.3.0.60",
-      "hashPath": "syncfusion.gridhelperclasses.windows.20.3.0.60.nupkg.sha512"
-    },
-    "Syncfusion.Grouping.Base/20.3.0.60": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-yImNPLF227oYayH27pX3vaKG+qAr8XLWLj6Zc15mH8HDPpQIFjb/5LqYuwj47QLBPZTASFGNCwm6h17bpD8SUw==",
-      "path": "syncfusion.grouping.base/20.3.0.60",
-      "hashPath": "syncfusion.grouping.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-72T1aKXs2D+D1VGMVV/II9reAsrEFDTTv4E6y8R0VIlHr9a9oXQS/LDk/mkTMmz+ZvjKQx+i5beZDOl+8R/Drw==",
+      "path": "syncfusion.grouping.base/20.3.0.61",
+      "hashPath": "syncfusion.grouping.base.20.3.0.61.nupkg.sha512"
     },
     "Syncfusion.HTMLUI.Base/20.3.0.60": {
       "type": "package",
@@ -1242,26 +1154,26 @@
       "path": "syncfusion.htmlui.windows/20.3.0.60",
       "hashPath": "syncfusion.htmlui.windows.20.3.0.60.nupkg.sha512"
     },
-    "Syncfusion.Licensing/20.3.0.60": {
+    "Syncfusion.Licensing/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CqgwRK4uKKx/2i9FRzM/N+sym1PqFBeWJglcXsREEQliLaesjsb/++ebSn81MVuoKWusTFNv5TlrqThnXXeUxA==",
-      "path": "syncfusion.licensing/20.3.0.60",
-      "hashPath": "syncfusion.licensing.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-s0RnBre4NXVKjsUOXIUx90NM+Mw6Exp3Y2MH81GvQBSW/8RSfwFKYzI20AjOXKXPicxn+n/WMlb/6VIiQj+qsQ==",
+      "path": "syncfusion.licensing/20.3.0.61",
+      "hashPath": "syncfusion.licensing.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Linq.Base/20.3.0.60": {
+    "Syncfusion.Linq.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Am5UwWZFxFSapbtJWwDpFC5Lf2mwR2Y/+Me9+zjL0J+W5sDpPBa4esv5BUb4TK1yHkgfgDDYoc89OWCJs3jVHA==",
-      "path": "syncfusion.linq.base/20.3.0.60",
-      "hashPath": "syncfusion.linq.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-PkUGadlyu0MXnEon2HfFWA9B58ZPiDH64jLAyttxSjlxSQfHBWJUe/QZrTUET0WKmks+Y1aWEURG3DZnZ67bGA==",
+      "path": "syncfusion.linq.base/20.3.0.61",
+      "hashPath": "syncfusion.linq.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Maps.Windows/20.3.0.60": {
+    "Syncfusion.Maps.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Q4e8TDa5OT56HhC/tZBGr+nqCmLBnQRQesuZSaqv/ovfV9guQV3zbGXkYAUdntctyRHCwZTqxBsLlfKLRiSoXQ==",
-      "path": "syncfusion.maps.windows/20.3.0.60",
-      "hashPath": "syncfusion.maps.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-FOahrMuCYmOoRpfIUafo0pNrd2t8VKgMfB2JrysIPWzQNGdYJcOLZxIhiotPC6Q8pHD0G0CTzrz4JuyHgyke0g==",
+      "path": "syncfusion.maps.windows/20.3.0.61",
+      "hashPath": "syncfusion.maps.windows.20.3.0.61.nupkg.sha512"
     },
     "Syncfusion.Mime.Base/20.3.0.60": {
       "type": "package",
@@ -1270,68 +1182,68 @@
       "path": "syncfusion.mime.base/20.3.0.60",
       "hashPath": "syncfusion.mime.base.20.3.0.60.nupkg.sha512"
     },
-    "Syncfusion.OfficeChart.Base/20.3.0.60": {
+    "Syncfusion.OfficeChart.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cPyoHsX9uP2Q+QR4ApmBYmTcZeqv0cGwTVYb4PeWshcp4GOMVe36aZsm2iMuJJ3hiZoFLfrrmT/DKUoZf6Zq/w==",
-      "path": "syncfusion.officechart.base/20.3.0.60",
-      "hashPath": "syncfusion.officechart.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-RHPhmkYO691NwY77Y7YDDyuDcxOu4P5JHHV4PCP/19tMiBJ/orK05Otqf0euUIl5XwWzR1z5gr0+iBGhj1vGRw==",
+      "path": "syncfusion.officechart.base/20.3.0.61",
+      "hashPath": "syncfusion.officechart.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Pdf.WinForms/20.3.0.60": {
+    "Syncfusion.Pdf.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2KX+De8xjD2LIqHxQsLMC2e6DTTJNyrRtnZw3Q1cO9St+wk9MnrhgnFWtzkvnDaJl4bYjYMaco7Ssg4NHn/wJw==",
-      "path": "syncfusion.pdf.winforms/20.3.0.60",
-      "hashPath": "syncfusion.pdf.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-tEC4DkOVmyV0IXU8mO9lRSL2OUv/CeSV7ygiS+mG1h6KZ0HzTRqlcm+xqNI6s0jeUNT8feo545oVJAqftoy2RQ==",
+      "path": "syncfusion.pdf.winforms/20.3.0.61",
+      "hashPath": "syncfusion.pdf.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.PdfViewer.Windows/20.3.0.60": {
+    "Syncfusion.PdfViewer.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3dG2T1G1JmGjc08TKaZnbzuvUiQjqmeU1UWAEMcVTPBSvOh43cGjBlzEnPVUVINTOv9gV0dwJ0S2zJ8wr0UPAQ==",
-      "path": "syncfusion.pdfviewer.windows/20.3.0.60",
-      "hashPath": "syncfusion.pdfviewer.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-TcNDtLQ9MHKIJiXOLE7Je41rTsp1XcEXaoEIWLxUk7l+Qtec6YfAavZOVYDLWKApMHONO8iWL9QWqvYD/dWrqQ==",
+      "path": "syncfusion.pdfviewer.windows/20.3.0.61",
+      "hashPath": "syncfusion.pdfviewer.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.PivotAnalysis.Base/20.3.0.60": {
+    "Syncfusion.PivotAnalysis.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2CLU0BflwvxkrLXSODLamDMlbmOyXdbKcLR+vug6O7e3V5XVcR+8Pe3ZyuIYLads0f1PTNV8l5ZIlZjXZvMgvA==",
-      "path": "syncfusion.pivotanalysis.base/20.3.0.60",
-      "hashPath": "syncfusion.pivotanalysis.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-lQcTClWS+PaJI3es+hGQNq7flti5ZoqF+uWxfjTc+ok0DUCzs5yln6l2wtwps/bsJ4VO4Q/k5VA8vTXro9UPdQ==",
+      "path": "syncfusion.pivotanalysis.base/20.3.0.61",
+      "hashPath": "syncfusion.pivotanalysis.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.PivotChart.Windows/20.3.0.60": {
+    "Syncfusion.PivotChart.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-szZySw8yYK9M9TbVmgbhV3fGDx2nTbcuraZvqKvvubkrs+NXPkcLzIwSWgWWrnLAr96nwCRADexrH9rQCiaNvQ==",
-      "path": "syncfusion.pivotchart.windows/20.3.0.60",
-      "hashPath": "syncfusion.pivotchart.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-LAqeBnNynJAPa2u3vEcULahqJBSVRnnQ9xX5lT9wlCG8QdJTSxhMVsItiCMGelGnQ0KaWgpp21H4HQ8XzOKMlw==",
+      "path": "syncfusion.pivotchart.windows/20.3.0.61",
+      "hashPath": "syncfusion.pivotchart.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.PivotTable.WinForms/20.3.0.60": {
+    "Syncfusion.PivotTable.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zvxL69EaBDFXaiJG0vVMCSRQjC5bgB2K1+6NcyLXdGVQkbJgL4rY+RMYkv3ZmJVN0Os9ns6cpk+XRrJDZkd2lg==",
-      "path": "syncfusion.pivottable.winforms/20.3.0.60",
-      "hashPath": "syncfusion.pivottable.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-TmZRmAfxRFS2QjYtsWBYHSPwYJIHhhXM/i3FeQt39tEGTZRlUMtnWUz3lVY7sIBQlrCef0rPl7UYjnEMDBc30w==",
+      "path": "syncfusion.pivottable.winforms/20.3.0.61",
+      "hashPath": "syncfusion.pivottable.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Presentation.WinForms/20.3.0.60": {
+    "Syncfusion.Presentation.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-b357I6IC0Gg5QTL5Zi8vY852/0tjpWc4tv2d+IXDpI4HoQKM2P56D17+qyaNo2fK/Jq5RkdYMLm6QlgvJSzm1g==",
-      "path": "syncfusion.presentation.winforms/20.3.0.60",
-      "hashPath": "syncfusion.presentation.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-th247yjXQu0rOkFR76AK+gDFDkA4tXzmEqNY3N+Dlyx3sWX7H/TptRqDsUWJBdnj7FvMh9gZ4Dyh/WRoo6uvdw==",
+      "path": "syncfusion.presentation.winforms/20.3.0.61",
+      "hashPath": "syncfusion.presentation.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Schedule.Base/20.3.0.60": {
+    "Syncfusion.Schedule.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZUCUJ+DAdJ/Ct4GpzmIBOfT0DDkIBzNVDWL2MYp60QAl8WGDeMR1PfKoRp6MjpZ+0zGwDo+6jbsX1PEpPDd7vg==",
-      "path": "syncfusion.schedule.base/20.3.0.60",
-      "hashPath": "syncfusion.schedule.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-mG5I6UYufeErX6EEeDY1Stl0O0VjmG4NR+A8rGtvmT/pVI/zWlhF9hBKHWOfIirycSaXAxm5BtGQrbF8WQF0oQ==",
+      "path": "syncfusion.schedule.base/20.3.0.61",
+      "hashPath": "syncfusion.schedule.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Schedule.Windows/20.3.0.60": {
+    "Syncfusion.Schedule.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-N6+bsSen5ZOw3z8bilX+9FLkwhQ31cS7Ht/oGWw9yJXC4OJ2wLUA0UcjqX4n35kcMZXJYmX/Pf4H/eknVMW10Q==",
-      "path": "syncfusion.schedule.windows/20.3.0.60",
-      "hashPath": "syncfusion.schedule.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-Vd05uKD0HJOeEJh1aYyWP/SrpNUKsoRZCDKS8G3k2EpqGDv+BLKT5GVuWHaaz3YFdEY9WL5t3kh5sROCo0cvyg==",
+      "path": "syncfusion.schedule.windows/20.3.0.61",
+      "hashPath": "syncfusion.schedule.windows.20.3.0.61.nupkg.sha512"
     },
     "Syncfusion.Scripting.Base/20.3.0.60": {
       "type": "package",
@@ -1340,96 +1252,96 @@
       "path": "syncfusion.scripting.base/20.3.0.60",
       "hashPath": "syncfusion.scripting.base.20.3.0.60.nupkg.sha512"
     },
-    "Syncfusion.SfBarcode.Windows/20.3.0.60": {
+    "Syncfusion.SfBarcode.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vqX4FOo4dfaq8H8z9hix/ku98Jzba3Am21V+q0ObteXi5r1x3WIVmn3KWjXI812k9R+Z806H7cvJxhGwdgRRXQ==",
-      "path": "syncfusion.sfbarcode.windows/20.3.0.60",
-      "hashPath": "syncfusion.sfbarcode.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-vCdsrKhTvSxTvEsqWvEHuSn5NmSXm/5yjoprL1hCNJaaa6ctACmS3pRubKhcXLbUTvkDrkFpWI1C2jMqYMeIZQ==",
+      "path": "syncfusion.sfbarcode.windows/20.3.0.61",
+      "hashPath": "syncfusion.sfbarcode.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.SfDataGrid.WinForms/20.3.0.60": {
+    "Syncfusion.SfDataGrid.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CefaVRzkbTOliLaAMGE/5ZAZ0U45BPtw8mUMi3KiAW8SCY86DvsVPiIM87ybghvqCIVyKlmpnac3DEgusLlHOg==",
-      "path": "syncfusion.sfdatagrid.winforms/20.3.0.60",
-      "hashPath": "syncfusion.sfdatagrid.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-XSRTZvkSTXIxjQfXqLbYda5hAv2MbLzOOUb4h85h7kWwexzv3PnB2JfloAj4DWR3nVrh77EBMJEd6WhJ00UYHw==",
+      "path": "syncfusion.sfdatagrid.winforms/20.3.0.61",
+      "hashPath": "syncfusion.sfdatagrid.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.SfInput.WinForms/20.3.0.60": {
+    "Syncfusion.SfInput.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-x60/M5+kAFE33HcTqvihkPVQinAHbfKsmKLHkh3BKDrXRbj784OB9XHNPPK+3DVfef/Nsh6PVCWuk3KGmsvCuA==",
-      "path": "syncfusion.sfinput.winforms/20.3.0.60",
-      "hashPath": "syncfusion.sfinput.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-+ge50hJp65ym2ALDR33EMpS1M0+0Sn/2xZsTnbOJTWr8W14LDchJZYsy1nTthviGZ1sRFrWpa8pQ/7KcMdV9lg==",
+      "path": "syncfusion.sfinput.winforms/20.3.0.61",
+      "hashPath": "syncfusion.sfinput.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.SfListView.WinForms/20.3.0.60": {
+    "Syncfusion.SfListView.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SDsC/Xi3NMONM+BLUjMDXADCbBBs0qiIvXE+hQmqc7gXAjALOvvqR6stlWJI2o+K7ovC0eQuYKNv5wTvCUHVmQ==",
-      "path": "syncfusion.sflistview.winforms/20.3.0.60",
-      "hashPath": "syncfusion.sflistview.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-PhUxY+pmQAKl6fhNk43ifOuRItYSI4q212M1xCVpo23Q3Tn0tEKPAEjIhbo32nqwXGgyzb12ldVyIH8WgrXi/A==",
+      "path": "syncfusion.sflistview.winforms/20.3.0.61",
+      "hashPath": "syncfusion.sflistview.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.SfSmithChart.WinForms/20.3.0.60": {
+    "Syncfusion.SfSmithChart.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jspiRK6KEckVKL9zkSzOvRFwmM6xf5B++8kPIfPyGQjnVRiwnsmm3ghUYixTdxg2aDF0xLNAHjC6N0Vtsyu/1w==",
-      "path": "syncfusion.sfsmithchart.winforms/20.3.0.60",
-      "hashPath": "syncfusion.sfsmithchart.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-W0l5QrppdPbZLTMiYpPQBoFomxRqmJrAYl9XYY9NejOz1mTSFouatbCQhbsNoPiIYXvgZ5WoHlslqHzEyvLRvw==",
+      "path": "syncfusion.sfsmithchart.winforms/20.3.0.61",
+      "hashPath": "syncfusion.sfsmithchart.winforms.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Shared.Base/20.3.0.60": {
+    "Syncfusion.Shared.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cLnJOh9GxNKZFah8QcAC7ztPf1emg+hX+JfmRANxuIjn3v8xpvGgbIMa4/R2r5l6kORbmbGhT/125LtjvQyEHg==",
-      "path": "syncfusion.shared.base/20.3.0.60",
-      "hashPath": "syncfusion.shared.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-NcKWqKOCAm9BfKtnM1xDP+46oCNAnhGcGxwKFHcGf6JH3HrnD8lziaB9R2HkF67jcOBu9ZgmEhtn+tsx5jB6Qw==",
+      "path": "syncfusion.shared.base/20.3.0.61",
+      "hashPath": "syncfusion.shared.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Shared.Windows/20.3.0.60": {
+    "Syncfusion.Shared.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-N9Giqjlg4q3B8byDVLgRN5mYPtg1pElUuUWxG0EETlxhev+ulQiJ8VyR9No1RuVxDYwhnQF1OrSd+jZjcdxAyQ==",
-      "path": "syncfusion.shared.windows/20.3.0.60",
-      "hashPath": "syncfusion.shared.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-5y9HbV4I5MXXeY36FXAwe2PNXVoarn4qPqqqJqim8W1wmmbuPsTWYXM2a0Bi6k4BuC2mmPUDYlCVaNotcpLX1w==",
+      "path": "syncfusion.shared.windows/20.3.0.61",
+      "hashPath": "syncfusion.shared.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.SpellChecker.Base/20.3.0.60": {
+    "Syncfusion.SpellChecker.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Y17vARB+GTA2IN78M3dWuz651YDmWnD9MdAJPA2fy9HFmxxgKNlNRiTy8YZP4XWOuQw4t2O4//oBElfvbXRBJA==",
-      "path": "syncfusion.spellchecker.base/20.3.0.60",
-      "hashPath": "syncfusion.spellchecker.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-vg8FJehWLOUIqjRMZs8Jr/ZL087tHlmnJvdeaqmHiR72mbouwqF+z4ULIDaIromOTgMvPjgkMnvkjCy2OWdv/Q==",
+      "path": "syncfusion.spellchecker.base/20.3.0.61",
+      "hashPath": "syncfusion.spellchecker.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Spreadsheet.Windows/20.3.0.60": {
+    "Syncfusion.Spreadsheet.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PAM1jneSBaE5AarVUnpV049wr8QU7K8RAY5jqSV2zrmxpKPeDYBMaRdppgJsBRrb5JJDsMjK3y8Tn4jAQ3mW4A==",
-      "path": "syncfusion.spreadsheet.windows/20.3.0.60",
-      "hashPath": "syncfusion.spreadsheet.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-VKAHGQTHSTH0zonsD3KPw6tDnnMiLy8sqLtbwyvN8KSzjzJxHKJ1c+q0V5YBZ+mGWWbaJJd4ZTdkXRToRQ4xnQ==",
+      "path": "syncfusion.spreadsheet.windows/20.3.0.61",
+      "hashPath": "syncfusion.spreadsheet.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Tools.Base/20.3.0.60": {
+    "Syncfusion.Tools.Base/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DODY1P7OAlP+Qe1KDZs8vEr747SbtXprgYh6K6baAO61D4ru/SHc45QeiAEyoid8edWoU9yiFzLo57NQs99MJw==",
-      "path": "syncfusion.tools.base/20.3.0.60",
-      "hashPath": "syncfusion.tools.base.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-OyB91yjGPGtprStIzktoLGdjIOyVGgMrIj6z8CNzai/qegX/H6ZQ1Q9+wtMcpNDHGcrzQDYrNxbyWsdoW51z/Q==",
+      "path": "syncfusion.tools.base/20.3.0.61",
+      "hashPath": "syncfusion.tools.base.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.Tools.Windows/20.3.0.60": {
+    "Syncfusion.Tools.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Eyngj0y1RKxj3gvDVt4YOIwfcS1lPwbe49eQphL74qmBbxsneg4SfGcZOwmo1L39brC3QXslAehUDIipyy1KcA==",
-      "path": "syncfusion.tools.windows/20.3.0.60",
-      "hashPath": "syncfusion.tools.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-7R+lgUd7+YCKmkeHSjZg93asMrzDyIDOkKUkp5zmqvywxMwfiljjsQ46wFHPW7lmBqT6fvkNQMWmOMB362PNFA==",
+      "path": "syncfusion.tools.windows/20.3.0.61",
+      "hashPath": "syncfusion.tools.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.TreeMap.Windows/20.3.0.60": {
+    "Syncfusion.TreeMap.Windows/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NwyQ2PhGBP0VIBALV2N/P4KdaBek+pasdPwldDfkgwSP5IOcPIyegqLIy2OBZGAGb2QQNNtHE5l9oHrwz7KF/w==",
-      "path": "syncfusion.treemap.windows/20.3.0.60",
-      "hashPath": "syncfusion.treemap.windows.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-Un57FTTPmnR5r6HVbjeUme9hth7+3yhAGUy64744zw0ekPDOEEjEjzJzMuSpRXPxbQDjHdufMYWdxsdpdL00vQ==",
+      "path": "syncfusion.treemap.windows/20.3.0.61",
+      "hashPath": "syncfusion.treemap.windows.20.3.0.61.nupkg.sha512"
     },
-    "Syncfusion.XlsIO.WinForms/20.3.0.60": {
+    "Syncfusion.XlsIO.WinForms/20.3.0.61": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VLMndn5+zEcstqidckiIt7qE1A9VttVFGbnhWq9vHlUlmxXDJLOM7pCILYvoJ2GNl/rFDO+NRdz5kRBpcEVQAA==",
-      "path": "syncfusion.xlsio.winforms/20.3.0.60",
-      "hashPath": "syncfusion.xlsio.winforms.20.3.0.60.nupkg.sha512"
+      "sha512": "sha512-KjXTDGwQ3hXrSoEQBNW1gQ49VZhO5FOhgIK5AR5oj9NWEuMQ4RJcLHXC/6ZtBOSMQBdr2FwgYLnoYcfDXr/UnA==",
+      "path": "syncfusion.xlsio.winforms/20.3.0.61",
+      "hashPath": "syncfusion.xlsio.winforms.20.3.0.61.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/7.0.0": {
       "type": "package",

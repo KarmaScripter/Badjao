@@ -14,28 +14,28 @@
     <SourceRoot Include="C:\Program Files (x86)\Syncfusion\Essential Studio\WPF\20.3.0.47\ToolboxNuGetPackages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgSyncfusion_Shared_Base Condition=" '$(PkgSyncfusion_Shared_Base)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.shared.base\20.3.0.60</PkgSyncfusion_Shared_Base>
-    <PkgSyncfusion_TreeMap_Windows Condition=" '$(PkgSyncfusion_TreeMap_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.treemap.windows\20.3.0.60</PkgSyncfusion_TreeMap_Windows>
-    <PkgSyncfusion_Grid_Windows Condition=" '$(PkgSyncfusion_Grid_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.grid.windows\20.3.0.60</PkgSyncfusion_Grid_Windows>
-    <PkgSyncfusion_Tools_Windows Condition=" '$(PkgSyncfusion_Tools_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.tools.windows\20.3.0.60</PkgSyncfusion_Tools_Windows>
-    <PkgSyncfusion_Core_WinForms Condition=" '$(PkgSyncfusion_Core_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.core.winforms\20.3.0.60</PkgSyncfusion_Core_WinForms>
-    <PkgSyncfusion_SfListView_WinForms Condition=" '$(PkgSyncfusion_SfListView_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.sflistview.winforms\20.3.0.60</PkgSyncfusion_SfListView_WinForms>
-    <PkgSyncfusion_SfInput_WinForms Condition=" '$(PkgSyncfusion_SfInput_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.sfinput.winforms\20.3.0.60</PkgSyncfusion_SfInput_WinForms>
-    <PkgSyncfusion_Spreadsheet_Windows Condition=" '$(PkgSyncfusion_Spreadsheet_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.spreadsheet.windows\20.3.0.60</PkgSyncfusion_Spreadsheet_Windows>
-    <PkgSyncfusion_SfSmithChart_WinForms Condition=" '$(PkgSyncfusion_SfSmithChart_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.sfsmithchart.winforms\20.3.0.60</PkgSyncfusion_SfSmithChart_WinForms>
-    <PkgSyncfusion_SfDataGrid_WinForms Condition=" '$(PkgSyncfusion_SfDataGrid_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.sfdatagrid.winforms\20.3.0.60</PkgSyncfusion_SfDataGrid_WinForms>
-    <PkgSyncfusion_Schedule_Windows Condition=" '$(PkgSyncfusion_Schedule_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.schedule.windows\20.3.0.60</PkgSyncfusion_Schedule_Windows>
-    <PkgSyncfusion_PivotTable_WinForms Condition=" '$(PkgSyncfusion_PivotTable_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.pivottable.winforms\20.3.0.60</PkgSyncfusion_PivotTable_WinForms>
-    <PkgSyncfusion_Chart_Windows Condition=" '$(PkgSyncfusion_Chart_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.chart.windows\20.3.0.60</PkgSyncfusion_Chart_Windows>
-    <PkgSyncfusion_PivotChart_Windows Condition=" '$(PkgSyncfusion_PivotChart_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.pivotchart.windows\20.3.0.60</PkgSyncfusion_PivotChart_Windows>
-    <PkgSyncfusion_PdfViewer_Windows Condition=" '$(PkgSyncfusion_PdfViewer_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.pdfviewer.windows\20.3.0.60</PkgSyncfusion_PdfViewer_Windows>
-    <PkgSyncfusion_Maps_Windows Condition=" '$(PkgSyncfusion_Maps_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.maps.windows\20.3.0.60</PkgSyncfusion_Maps_Windows>
+    <PkgSyncfusion_Shared_Base Condition=" '$(PkgSyncfusion_Shared_Base)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.shared.base\20.3.0.61</PkgSyncfusion_Shared_Base>
+    <PkgSyncfusion_TreeMap_Windows Condition=" '$(PkgSyncfusion_TreeMap_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.treemap.windows\20.3.0.61</PkgSyncfusion_TreeMap_Windows>
+    <PkgSyncfusion_Grid_Windows Condition=" '$(PkgSyncfusion_Grid_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.grid.windows\20.3.0.61</PkgSyncfusion_Grid_Windows>
+    <PkgSyncfusion_Tools_Windows Condition=" '$(PkgSyncfusion_Tools_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.tools.windows\20.3.0.61</PkgSyncfusion_Tools_Windows>
+    <PkgSyncfusion_Core_WinForms Condition=" '$(PkgSyncfusion_Core_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.core.winforms\20.3.0.61</PkgSyncfusion_Core_WinForms>
+    <PkgSyncfusion_SfListView_WinForms Condition=" '$(PkgSyncfusion_SfListView_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.sflistview.winforms\20.3.0.61</PkgSyncfusion_SfListView_WinForms>
+    <PkgSyncfusion_SfInput_WinForms Condition=" '$(PkgSyncfusion_SfInput_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.sfinput.winforms\20.3.0.61</PkgSyncfusion_SfInput_WinForms>
+    <PkgSyncfusion_Spreadsheet_Windows Condition=" '$(PkgSyncfusion_Spreadsheet_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.spreadsheet.windows\20.3.0.61</PkgSyncfusion_Spreadsheet_Windows>
+    <PkgSyncfusion_SfSmithChart_WinForms Condition=" '$(PkgSyncfusion_SfSmithChart_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.sfsmithchart.winforms\20.3.0.61</PkgSyncfusion_SfSmithChart_WinForms>
+    <PkgSyncfusion_SfDataGrid_WinForms Condition=" '$(PkgSyncfusion_SfDataGrid_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.sfdatagrid.winforms\20.3.0.61</PkgSyncfusion_SfDataGrid_WinForms>
+    <PkgSyncfusion_Schedule_Windows Condition=" '$(PkgSyncfusion_Schedule_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.schedule.windows\20.3.0.61</PkgSyncfusion_Schedule_Windows>
+    <PkgSyncfusion_PivotTable_WinForms Condition=" '$(PkgSyncfusion_PivotTable_WinForms)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.pivottable.winforms\20.3.0.61</PkgSyncfusion_PivotTable_WinForms>
+    <PkgSyncfusion_Chart_Windows Condition=" '$(PkgSyncfusion_Chart_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.chart.windows\20.3.0.61</PkgSyncfusion_Chart_Windows>
+    <PkgSyncfusion_PivotChart_Windows Condition=" '$(PkgSyncfusion_PivotChart_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.pivotchart.windows\20.3.0.61</PkgSyncfusion_PivotChart_Windows>
+    <PkgSyncfusion_PdfViewer_Windows Condition=" '$(PkgSyncfusion_PdfViewer_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.pdfviewer.windows\20.3.0.61</PkgSyncfusion_PdfViewer_Windows>
+    <PkgSyncfusion_Maps_Windows Condition=" '$(PkgSyncfusion_Maps_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.maps.windows\20.3.0.61</PkgSyncfusion_Maps_Windows>
     <PkgSyncfusion_HTMLUI_windows Condition=" '$(PkgSyncfusion_HTMLUI_windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.htmlui.windows\20.3.0.60</PkgSyncfusion_HTMLUI_windows>
-    <PkgSyncfusion_Grid_Grouping_Windows Condition=" '$(PkgSyncfusion_Grid_Grouping_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.grid.grouping.windows\20.3.0.60</PkgSyncfusion_Grid_Grouping_Windows>
-    <PkgSyncfusion_Gauge_Windows Condition=" '$(PkgSyncfusion_Gauge_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.gauge.windows\20.3.0.60</PkgSyncfusion_Gauge_Windows>
-    <PkgSyncfusion_Edit_Windows Condition=" '$(PkgSyncfusion_Edit_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.edit.windows\20.3.0.60</PkgSyncfusion_Edit_Windows>
-    <PkgSyncfusion_Diagram_Base Condition=" '$(PkgSyncfusion_Diagram_Base)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.diagram.base\20.3.0.60</PkgSyncfusion_Diagram_Base>
-    <PkgSyncfusion_Diagram_Windows Condition=" '$(PkgSyncfusion_Diagram_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.diagram.windows\20.3.0.60</PkgSyncfusion_Diagram_Windows>
-    <PkgSyncfusion_BulletGraph_Windows Condition=" '$(PkgSyncfusion_BulletGraph_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.bulletgraph.windows\20.3.0.60</PkgSyncfusion_BulletGraph_Windows>
+    <PkgSyncfusion_Grid_Grouping_Windows Condition=" '$(PkgSyncfusion_Grid_Grouping_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.grid.grouping.windows\20.3.0.61</PkgSyncfusion_Grid_Grouping_Windows>
+    <PkgSyncfusion_Gauge_Windows Condition=" '$(PkgSyncfusion_Gauge_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.gauge.windows\20.3.0.61</PkgSyncfusion_Gauge_Windows>
+    <PkgSyncfusion_Edit_Windows Condition=" '$(PkgSyncfusion_Edit_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.edit.windows\20.3.0.61</PkgSyncfusion_Edit_Windows>
+    <PkgSyncfusion_Diagram_Base Condition=" '$(PkgSyncfusion_Diagram_Base)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.diagram.base\20.3.0.61</PkgSyncfusion_Diagram_Base>
+    <PkgSyncfusion_Diagram_Windows Condition=" '$(PkgSyncfusion_Diagram_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.diagram.windows\20.3.0.61</PkgSyncfusion_Diagram_Windows>
+    <PkgSyncfusion_BulletGraph_Windows Condition=" '$(PkgSyncfusion_BulletGraph_Windows)' == '' ">C:\Users\terry\.nuget\packages\syncfusion.bulletgraph.windows\20.3.0.61</PkgSyncfusion_BulletGraph_Windows>
   </PropertyGroup>
 </Project>

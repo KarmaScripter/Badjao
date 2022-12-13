@@ -31,42 +31,39 @@
     <Folder Include="Data\Database\SQLite\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MetroFramework.Design.NetCore" Version="1.0.0" />
-    <PackageReference Include="MetroFramework.Fonts.NetCore" Version="1.0.0" />
-    <PackageReference Include="MetroFramework.NetCore" Version="1.0.0" />
     <PackageReference Include="MetroSet_UI" Version="2.0.0" />
     <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
-    <PackageReference Include="Syncfusion.GridHelperClasses.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Grid.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.SfDataGrid.Winforms" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Tools.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Spreadsheet.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Shared.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Shared.Base" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Core.WinForms" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.SfInput.WinForms" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Tools.Base" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.SfBarcode.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Calculate.Base" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Grouping.Base" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.TreeMap.Windows" Version="20.3.0.60" />
+    <PackageReference Include="Syncfusion.GridHelperClasses.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Grid.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.SfDataGrid.Winforms" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Tools.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Spreadsheet.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Shared.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Shared.Base" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Core.WinForms" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.SfInput.WinForms" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Tools.Base" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.SfBarcode.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Calculate.Base" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Grouping.Base" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.TreeMap.Windows" Version="20.3.0.61" />
     <PackageReference Include="Syncfusion.HTMLUI.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Schedule.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Edit.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.PivotChart.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Compression.Base" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.OfficeChart.Base" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.DocIO.WinForms" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Pdf.WinForms" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.PdfViewer.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Presentation.WinForms" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.XlsIO.WinForms" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.BulletGraph.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Chart.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Diagram.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Gauge.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.Maps.Windows" Version="20.3.0.60" />
-    <PackageReference Include="Syncfusion.SfSmithChart.WinForms" Version="20.3.0.60" />
+    <PackageReference Include="Syncfusion.Schedule.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Edit.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.PivotChart.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Compression.Base" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.OfficeChart.Base" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.DocIO.WinForms" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Pdf.WinForms" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.PdfViewer.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Presentation.WinForms" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.XlsIO.WinForms" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.BulletGraph.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Chart.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Diagram.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Gauge.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.Maps.Windows" Version="20.3.0.61" />
+    <PackageReference Include="Syncfusion.SfSmithChart.WinForms" Version="20.3.0.61" />
 </ItemGroup>
   <ItemGroup>
     <Reference Include="C1.Win.4.8">
