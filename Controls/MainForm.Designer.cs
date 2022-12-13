@@ -30,20 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             Syncfusion.Windows.Forms.CaptionImage captionImage1 = new Syncfusion.Windows.Forms.CaptionImage();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.DarkmodeStyleManager = new MetroSet_UI.Components.StyleManager();
+            this.Darkmode = new MetroSet_UI.Components.StyleManager();
             this.ToolTip = new BudgetExecution.MetroTip();
             this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // DarkmodeStyleManager
+            // Darkmode
             // 
-            this.DarkmodeStyleManager.CustomTheme = "C:\\Users\\terry\\AppData\\Roaming\\Microsoft\\Windows\\Templates\\ThemeFile.xml";
-            this.DarkmodeStyleManager.MetroForm = this;
-            this.DarkmodeStyleManager.Style = MetroSet_UI.Enums.Style.Custom;
-            this.DarkmodeStyleManager.ThemeAuthor = "Terry D. Eppler";
-            this.DarkmodeStyleManager.ThemeName = "BudgetExecution";
+            this.Darkmode.CustomTheme = "C:\\Users\\terry\\AppData\\Roaming\\Microsoft\\Windows\\Templates\\ThemeFile.xml";
+            this.Darkmode.MetroForm = this;
+            this.Darkmode.Style = MetroSet_UI.Enums.Style.Custom;
+            this.Darkmode.ThemeAuthor = "Terry D. Eppler";
+            this.Darkmode.ThemeName = "BudgetExecution";
             // 
             // ToolTip
             // 
@@ -85,7 +84,6 @@
             this.ClientSize = new System.Drawing.Size(1388, 713);
             this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Name = "MainForm";
             this.ShowIcon = false;
@@ -98,7 +96,7 @@
         #endregion
 
         public Selector Selector;
-        public MetroSet_UI.Components.StyleManager DarkmodeStyleManager;
+        public MetroSet_UI.Components.StyleManager Darkmode;
         public MetroTip ToolTip;
         public System.Windows.Forms.BindingSource BindingSource;
     }

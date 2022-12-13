@@ -49,7 +49,7 @@
     <Compile Update="Controls\Clock\ClockBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\ColumnConfiguration.cs">
+    <Compile Update="Controls\Dialogs\ColumnConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\ComboBox\ComboBox.cs">
@@ -76,10 +76,10 @@
     <Compile Update="Controls\DataView\DataViewBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\DefinitionDialog.cs">
+    <Compile Update="Controls\Dialogs\DefinitionDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\EditDialog.cs">
+    <Compile Update="Controls\Dialogs\EditDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\Editor\EditBase.cs">
@@ -100,7 +100,7 @@
     <Compile Update="Controls\Excel\SpreadsheetBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\FileBrowser.cs">
+    <Compile Update="Controls\Dialogs\FileBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\Form\FormBase.cs">
@@ -130,13 +130,13 @@
     <Compile Update="Controls\Loader\LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\LookupDialog.cs">
+    <Compile Update="Controls\Dialogs\LookupDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\Message.cs">
+    <Compile Update="Controls\Dialogs\Message.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\MetroTip\MetroTip.cs">
@@ -145,7 +145,7 @@
     <Compile Update="Controls\MetroTip\MetroTipBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\Notification.cs">
+    <Compile Update="Controls\Dialogs\Notification.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\PdfForm.cs">
