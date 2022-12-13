@@ -119,7 +119,6 @@ C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExeuction.Form
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.Frame.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.GroupBox.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.ListBox.resources
-C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.Loader.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.LookupDialog.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.MainForm.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.Message.resources
@@ -138,3 +137,4 @@ C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\refint\Budget.dll
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\Budget.pdb
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\Badjao.genruntimeconfig.cache
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\ref\Budget.dll
+C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.LoadingForm.resources

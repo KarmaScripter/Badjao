@@ -127,7 +127,7 @@
     <Compile Update="Controls\ListView\ListViewBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\LoadingForm.cs">
+    <Compile Update="Controls\Loader\LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\LookupDialog.cs">
