@@ -17,7 +17,7 @@ namespace BudgetExecution
         /// <summary>
         /// The border dark
         /// </summary>
-        public static readonly Color BorderDark = Color.FromArgb( 25, 18, 1 );
+        public static readonly Color BorderDark = Color.FromArgb( 65, 65, 65 );
 
         /// <summary>
         /// The border blue
@@ -32,12 +32,7 @@ namespace BudgetExecution
         /// <summary>
         /// The form dark back color
         /// </summary>
-        public static readonly Color FormDarkBackColor = Color.FromArgb( 20, 20, 20 );
-
-        /// <summary>
-        /// The hover yellow
-        /// </summary>
-        public static readonly Color HoverYellow = Color.FromArgb( 24, 19, 1 );
+        public static readonly Color BackColorDark = Color.FromArgb( 20, 20, 20 );
 
         /// <summary>
         /// The fore red
@@ -68,6 +63,11 @@ namespace BudgetExecution
         /// The transparent
         /// </summary>
         public static readonly Color Transparent = Color.Transparent;
+        
+        /// <summary>
+        /// The hover yellow
+        /// </summary>
+        public static readonly Color HoverYellow = Color.FromArgb( 24, 19, 1 );
 
         /// <summary>
         /// The hover gray

@@ -45,8 +45,8 @@ namespace BudgetExecution
             this.ToolTip = new BudgetExecution.MetroTip();
             this.CloseButton = new BudgetExecution.Button();
             this.Label = new BudgetExecution.Label();
-            this.PictureBox = new BudgetExecution.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            this.Picture = new BudgetExecution.Picture();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
             this.SuspendLayout();
             // 
             // TextBox
@@ -90,7 +90,6 @@ namespace BudgetExecution
             this.OpenButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenButton.ForeColor = System.Drawing.Color.SteelBlue;
             this.OpenButton.HoverText = null;
-            this.OpenButton.Images = null;
             this.OpenButton.Location = new System.Drawing.Point(86, 384);
             this.OpenButton.Margin = new System.Windows.Forms.Padding(0);
             this.OpenButton.Name = "OpenButton";
@@ -128,7 +127,6 @@ namespace BudgetExecution
             this.CloseButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CloseButton.ForeColor = System.Drawing.Color.SteelBlue;
             this.CloseButton.HoverText = null;
-            this.CloseButton.Images = null;
             this.CloseButton.Location = new System.Drawing.Point(485, 384);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseButton.Name = "CloseButton";
@@ -157,21 +155,20 @@ namespace BudgetExecution
             // 
             // PictureBox
             // 
-            this.PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBox.BindingSource = null;
-            this.PictureBox.DataFilter = null;
-            this.PictureBox.Field = BudgetExecution.Field.RpioActivityCode;
-            this.PictureBox.HoverText = null;
-            this.PictureBox.ImageList = null;
-            this.PictureBox.Location = new System.Drawing.Point(3, 3);
-            this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Numeric = BudgetExecution.Numeric.NS;
-            this.PictureBox.Padding = new System.Windows.Forms.Padding(1);
-            this.PictureBox.Size = new System.Drawing.Size(18, 18);
-            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBox.TabIndex = 13;
-            this.PictureBox.TabStop = false;
-            this.PictureBox.ToolTip = null;
+            this.Picture.BackColor = System.Drawing.Color.Transparent;
+            this.Picture.BindingSource = null;
+            this.Picture.DataFilter = null;
+            this.Picture.Field = BudgetExecution.Field.RpioActivityCode;
+            this.Picture.HoverText = null;
+            this.Picture.ImageList = null;
+            this.Picture.Location = new System.Drawing.Point(3, 3);
+            this.Picture.Name = "PictureBox";
+            this.Picture.Padding = new System.Windows.Forms.Padding(1);
+            this.Picture.Size = new System.Drawing.Size(18, 18);
+            this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Picture.TabIndex = 13;
+            this.Picture.TabStop = false;
+            this.Picture.ToolTip = null;
             // 
             // Message
             // 
@@ -187,7 +184,7 @@ namespace BudgetExecution
             this.CaptionForeColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(688, 450);
             this.Controls.Add(this.TextBox);
-            this.Controls.Add(this.PictureBox);
+            this.Controls.Add(this.Picture);
             this.Controls.Add(this.Label);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.OpenButton);
@@ -203,7 +200,7 @@ namespace BudgetExecution
             this.ShowMaximizeBox = false;
             this.ShowMinimizeBox = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture)).EndInit();
             this.ResumeLayout(false);
 
             }
@@ -214,7 +211,7 @@ namespace BudgetExecution
         public MetroTip ToolTip;
         public Button CloseButton;
         public Label Label;
-        public PictureBox PictureBox;
+        public Picture Picture;
     }
     
 }

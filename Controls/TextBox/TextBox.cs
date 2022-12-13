@@ -4,16 +4,51 @@
 
 namespace BudgetExecution
 {
+    using System;
+    using System.Collections.Generic;
     using System.Drawing;
     using System.Windows.Forms;
+    using MetroSet_UI.Controls;
     using MetroSet_UI.Enums;
 
     /// <summary>
     /// 
     /// </summary>
     /// <seealso cref="BudgetExecution.TextBoxBase" />
-    public class TextBox : TextBoxBase
+    public class TextBox : MetroSetTextBox
     {
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public virtual BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public virtual MetroTip ToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hover text.
+        /// </summary>
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public virtual string HoverText { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public virtual IDictionary<string, object> DataFilter { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TextBox"/> class.
         /// </summary>
@@ -34,6 +69,17 @@ namespace BudgetExecution
             Font = new Font( "Roboto", 9 );
             HoverColor = Color.FromArgb( 50, 93, 129 );
             TextAlign = HorizontalAlignment.Left;
+        }
+        
+        /// <summary>
+        /// Get Error Dialog.
+        /// </summary>
+        /// <param name="ex">The ex.</param>
+        protected static void Fail( Exception ex )
+        {
+            using var _error = new Error( ex );
+            _error?.SetText( );
+            _error?.ShowDialog( );
         }
     }
 }

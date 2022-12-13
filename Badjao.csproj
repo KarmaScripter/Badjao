@@ -25,7 +25,6 @@
     <Content Include="Resources\Images\Ninja\ico\BudExNinja.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\GroupBox\" />
     <Folder Include="Data\Database\Access\" />
     <Folder Include="Data\Database\SqlCe\" />
     <Folder Include="Data\Database\SqlServer\" />

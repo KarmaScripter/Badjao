@@ -142,3 +142,4 @@ C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\MetroFramework.Fonts
 C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\MetroFramework.NetCore.dll
 C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\stdole.dll
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.GroupBox.resources
+C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.ListBox.resources

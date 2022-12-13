@@ -5,12 +5,49 @@
 namespace BudgetExecution
 {
     using System;
+    using System.Collections.Generic;
     using System.Drawing;
     using System.Windows.Forms;
+    using MetroSet_UI.Controls;
     using MetroSet_UI.Enums;
 
-    public class RichTextBox : RichTextBase
+    public class RichTextBox : MetroSetRichTextBox
     {
+        /// <summary>
+        /// Gets or sets the binding source.
+        /// </summary>
+        /// <value>
+        /// The binding source.
+        /// </value>
+        public virtual BindingSource BindingSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tool tip.
+        /// </summary>
+        /// <value>
+        /// The tool tip.
+        /// </value>
+        public virtual MetroTip ToolTip { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hover text.
+        /// </summary>
+        /// <value>
+        /// The hover text.
+        /// </value>
+        public virtual string HoverText { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter.
+        /// </summary>
+        /// <value>
+        /// The filter.
+        /// </value>
+        public virtual IDictionary<string, object> DataFilter { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RichTextBox"/> class.
+        /// </summary>
         public RichTextBox( )
         {
             // Basic Properties
@@ -181,6 +218,17 @@ namespace BudgetExecution
                     Fail( ex );
                 }
             }
+        }
+        
+        /// <summary>
+        /// Fails the specified ex.
+        /// </summary>
+        /// <param name="ex">The ex.</param>
+        protected static void Fail( Exception ex )
+        {
+            using var _error = new Error( ex );
+            _error?.SetText( );
+            _error?.ShowDialog( );
         }
     }
 }

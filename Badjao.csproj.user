@@ -13,9 +13,6 @@
     <Compile Update="Controls\Button\Button.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\Button\ButtonBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Controls\CalculationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -46,9 +43,6 @@
     <Compile Update="Controls\CheckBox\CheckBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\CheckBox\CheckBoxBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Controls\Clock\Clock.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -59,9 +53,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\ComboBox\ComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ComboBox\ComboBoxBase.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\CurrencyBox\CurrencyBase.cs">
@@ -124,19 +115,10 @@
     <Compile Update="Controls\Label\Label.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\Label\LabelBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Controls\Layout\Layout.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\Layout\LayoutBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Controls\ListBox\ListBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ListBox\ListBoxBase.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\ListView\ListView.cs">
@@ -169,10 +151,7 @@
     <Compile Update="Controls\PdfForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\PictureBox\PictureBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\PictureBox\PictureBox.cs">
+    <Compile Update="Controls\PictureBox\Picture.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\PivotForm.cs">
@@ -185,9 +164,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\RadioButton\RadioButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\RichTextBox\RichTextBase.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\RichTextBox\RichTextBox.cs">
@@ -206,9 +182,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\TextBox\TextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\TextBox\TextBoxBase.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\Tile\Tile.cs">
@@ -262,8 +235,13 @@
     <Compile Update="Controls\Frame\Frame.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="GroupBox.cs">
+    <Compile Update="Controls\GroupBox\GroupBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\Error.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

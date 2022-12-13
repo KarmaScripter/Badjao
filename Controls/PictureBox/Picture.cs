@@ -8,7 +8,7 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Windows.Forms;
 
-    public class PictureBox : PictureBase, IPictureBox
+    public class Picture : PictureBox 
     {
         /// <summary>
         /// Gets or sets the tool tip.
@@ -16,7 +16,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public override MetroTip ToolTip { get; set; }
+        public virtual MetroTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the binding source.
@@ -24,7 +24,7 @@ namespace BudgetExecution
         /// <value>
         /// The binding source.
         /// </value>
-        public override BindingSource BindingSource { get; set; }
+        public virtual BindingSource BindingSource { get; set; }
 
         /// <summary>
         /// Gets or sets the field.
@@ -32,7 +32,7 @@ namespace BudgetExecution
         /// <value>
         /// The field.
         /// </value>
-        public override Field Field { get; set; }
+        public virtual Field Field { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -40,7 +40,7 @@ namespace BudgetExecution
         /// <value>
         /// The hover text.
         /// </value>
-        public override string HoverText { get; set; }
+        public virtual string HoverText { get; set; }
 
         /// <summary>
         /// Gets or sets the filter.
@@ -48,7 +48,7 @@ namespace BudgetExecution
         /// <value>
         /// The filter.
         /// </value>
-        public override IDictionary<string, object> DataFilter { get; set; }
+        public virtual IDictionary<string, object> DataFilter { get; set; }
 
         /// <summary>
         /// Gets or sets the image list.
@@ -60,10 +60,10 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref="PictureBox" />
+        /// <see cref="Picture" />
         /// class.
         /// </summary>
-        public PictureBox( )
+        public Picture( )
         {
             Size = new Size( 60, 40 );
             Anchor = AnchorStyles.Left | AnchorStyles.Top;
@@ -76,12 +76,12 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref="PictureBox" />
+        /// <see cref="Picture" />
         /// class.
         /// </summary>
         /// <param name="size">The size.</param>
         /// <param name="location">The location.</param>
-        public PictureBox( Size size, Point location )
+        public Picture( Size size, Point location )
             : this( )
         {
             Size = size;
@@ -90,16 +90,16 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref="PictureBox" />
+        /// <see cref="Picture" />
         /// class.
         /// </summary>
         /// <param name="image">The image.</param>
-        public PictureBox( Image image )
+        public Picture( Image image )
             : this( )
         {
         }
 
-        public PictureBox( string path )
+        public Picture( string path )
             : this( )
         {
         }

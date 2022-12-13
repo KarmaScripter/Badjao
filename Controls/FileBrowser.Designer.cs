@@ -61,7 +61,7 @@ namespace BudgetExecution
             this.FileDialog = new System.Windows.Forms.OpenFileDialog();
             this.TopTablePanel = new System.Windows.Forms.TableLayoutPanel();
             this.Header = new BudgetExecution.Label();
-            this.PictureBox = new BudgetExecution.PictureBox();
+            this.Picture = new BudgetExecution.Picture();
             this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MessageLabel = new BudgetExecution.Label();
             this.SelectButton = new BudgetExecution.Button();
@@ -69,7 +69,7 @@ namespace BudgetExecution
             this.TextBoxLayout.SuspendLayout();
             this.CheckBoxLayout.SuspendLayout();
             this.TopTablePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -481,7 +481,7 @@ namespace BudgetExecution
             this.TopTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.61539F));
             this.TopTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
             this.TopTablePanel.Controls.Add(this.Header, 1, 0);
-            this.TopTablePanel.Controls.Add(this.PictureBox, 0, 0);
+            this.TopTablePanel.Controls.Add(this.Picture, 0, 0);
             this.TopTablePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopTablePanel.Location = new System.Drawing.Point(0, 0);
             this.TopTablePanel.Name = "TopTablePanel";
@@ -508,21 +508,20 @@ namespace BudgetExecution
             // 
             // PictureBox
             // 
-            this.PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBox.BindingSource = this.BindingSource;
-            this.PictureBox.DataFilter = null;
-            this.PictureBox.Field = BudgetExecution.Field.AccountCode;
-            this.PictureBox.HoverText = null;
-            this.PictureBox.ImageList = null;
-            this.PictureBox.Location = new System.Drawing.Point(3, 3);
-            this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Numeric = BudgetExecution.Numeric.Accepted;
-            this.PictureBox.Padding = new System.Windows.Forms.Padding(1);
-            this.PictureBox.Size = new System.Drawing.Size(31, 31);
-            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PictureBox.TabIndex = 1;
-            this.PictureBox.TabStop = false;
-            this.PictureBox.ToolTip = this.ToolTip;
+            this.Picture.BackColor = System.Drawing.Color.Transparent;
+            this.Picture.BindingSource = this.BindingSource;
+            this.Picture.DataFilter = null;
+            this.Picture.Field = BudgetExecution.Field.AccountCode;
+            this.Picture.HoverText = null;
+            this.Picture.ImageList = null;
+            this.Picture.Location = new System.Drawing.Point(3, 3);
+            this.Picture.Name = "PictureBox";
+            this.Picture.Padding = new System.Windows.Forms.Padding(1);
+            this.Picture.Size = new System.Drawing.Size(31, 31);
+            this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Picture.TabIndex = 1;
+            this.Picture.TabStop = false;
+            this.Picture.ToolTip = this.ToolTip;
             // 
             // MessageLabel
             // 
@@ -547,7 +546,6 @@ namespace BudgetExecution
             this.SelectButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SelectButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.SelectButton.HoverText = "Select File";
-            this.SelectButton.Images = null;
             this.SelectButton.Location = new System.Drawing.Point(40, 411);
             this.SelectButton.Margin = new System.Windows.Forms.Padding(0);
             this.SelectButton.Name = "SelectButton";
@@ -565,7 +563,6 @@ namespace BudgetExecution
             this.CloseButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
             this.CloseButton.HoverText = "Close Window";
-            this.CloseButton.Images = null;
             this.CloseButton.Location = new System.Drawing.Point(517, 411);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseButton.Name = "CloseButton";
@@ -614,7 +611,7 @@ namespace BudgetExecution
             this.CheckBoxLayout.ResumeLayout(false);
             this.TopTablePanel.ResumeLayout(false);
             this.TopTablePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -631,7 +628,7 @@ namespace BudgetExecution
         public Button CloseButton;
         public Button SelectButton;
         public BindingSource BindingSource;
-        public PictureBox PictureBox;
+        public Picture Picture;
         public ListBox FileList;
         public Label FoundLabel;
         public Label MessageLabel;

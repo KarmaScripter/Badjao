@@ -10,10 +10,11 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Linq;
     using System.Windows.Forms;
+    using MetroSet_UI.Controls;
     using MetroSet_UI.Enums;
     using VisualPlus.Enumerators;
 
-    public class ListBox : ListBoxBase
+    public class ListBox : MetroSetListBox
     {
         /// <summary>
         /// Gets or sets the binding source.
@@ -21,7 +22,7 @@ namespace BudgetExecution
         /// <value>
         /// The binding source.
         /// </value>
-        public override BindingSource BindingSource { get; set; }
+        public virtual BindingSource BindingSource { get; set; }
 
         /// <summary>
         /// Gets or sets the tool tip.
@@ -29,7 +30,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public override MetroTip ToolTip { get; set; }
+        public virtual MetroTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -37,7 +38,7 @@ namespace BudgetExecution
         /// <value>
         /// The hover text.
         /// </value>
-        public override string HoverText { get; set; }
+        public virtual string HoverText { get; set; }
 
         /// <summary>
         /// Gets or sets the filter.
@@ -45,7 +46,7 @@ namespace BudgetExecution
         /// <value>
         /// The filter.
         /// </value>
-        public override IDictionary<string, object> DataFilter { get; set; }
+        public virtual IDictionary<string, object> DataFilter { get; set; }
 
         /// <summary>
         /// Initializes a new instance
@@ -64,7 +65,6 @@ namespace BudgetExecution
             ForeColor = Color.LightGray;
             Enabled = true;
             Visible = true;
-            Text = string.Empty;
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
             // BackColor SeriesConfiguration
@@ -72,10 +72,14 @@ namespace BudgetExecution
             BackColor = Color.FromArgb( 40, 40, 40 );
             ShowBorder = false;
             BorderColor = Color.FromArgb( 65, 65, 65 );
-            HoveredItemBackColor = Color.FromArgb( 50, 93, 129 );
-            HoveredItemColor = Color.White;
             ThemeAuthor = "Terry D. Eppler";
             ThemeName = "BudgetExecution";
+
+            // Item Configuration
+            HoveredItemColor = Color.LightSteelBlue;
+            HoveredItemBackColor = Color.FromArgb( 50, 93, 129 );
+            SelectedItemColor = Color.White;
+            SelectedItemBackColor = Color.FromArgb( 0, 120, 212 );
         }
 
         /// <summary>
@@ -272,6 +276,17 @@ namespace BudgetExecution
                     Fail( ex );
                 }
             }
+        }
+
+        /// <summary>
+        /// Get Error Dialog.
+        /// </summary>
+        /// <param name="ex">The ex.</param>
+        protected static void Fail( Exception ex )
+        {
+            using var _error = new Error( ex );
+            _error?.SetText( );
+            _error?.ShowDialog( );
         }
     }
 }

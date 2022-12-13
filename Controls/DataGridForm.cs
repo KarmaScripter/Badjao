@@ -104,9 +104,9 @@ namespace BudgetExecution
         {
             InitializeComponent( );
             Load += OnLoad;
-            TableListBox.SelectedIndexChanged += OnTableListBoxSelectionChanged;
-            ColumnListBox.SelectedIndexChanged += OnColumnListBoxSelectionChanged;
-            ValueListBox.SelectedIndexChanged += OnValueListBoxSelectionChanged;
+            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
+            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
+            ValueListBox.SelectedValueChanged += OnValueListBoxSelectionChanged;
         }
 
         /// <summary>
@@ -118,9 +118,9 @@ namespace BudgetExecution
         {
             InitializeComponent( );
             Load += OnLoad;
-            TableListBox.SelectedIndexChanged += OnTableListBoxSelectionChanged;
-            ColumnListBox.SelectedIndexChanged += OnColumnListBoxSelectionChanged;
-            ValueListBox.SelectedIndexChanged += OnValueListBoxSelectionChanged;
+            TableListBox.SelectedValueChanged += OnTableListBoxSelectionChanged;
+            ColumnListBox.SelectedValueChanged += OnColumnListBoxSelectionChanged;
+            ValueListBox.SelectedValueChanged += OnValueListBoxSelectionChanged;
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace BudgetExecution
             {
                 FormFilter = new Dictionary<string, object>
                 {
-                    { "BFY", "2022" },
+                    { "BFY", "2023" },
                     { "FundCode", "B" }
                 };
 
@@ -144,9 +144,9 @@ namespace BudgetExecution
                 PopulateTableListBoxItems( );
                 PopulateToolBarDropDownItems( );
                 ToolStrip.Office12Mode = true;
-                TableGroupBox.Text = TablePrefix + TableListBox.Items.Count;
-                ColumnGroupBox.Text = ColumnPrefix;
-                DataGridGroupBox.Text = SourcePrefix + DataModel.DataTable.TableName.SplitPascal( );
+                TableLabel.Text = TablePrefix + TableListBox.Items.Count;
+                ColumnLabel.Text = ColumnPrefix;
+                DataGridLabel.Text = SourcePrefix + DataModel.DataTable.TableName.SplitPascal( );
                 SelectedTable = string.Empty;
                 SelectedColumn = string.Empty;
                 SelectedValue = string.Empty;
@@ -209,7 +209,6 @@ namespace BudgetExecution
         /// Called when [table ListBox selection changed].
         /// </summary>
         /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         public void OnTableListBoxSelectionChanged( object sender )
         {
             try
@@ -219,10 +218,10 @@ namespace BudgetExecution
                 HeaderLabel.Text = string.Empty;
                 ColumnListBox.Items.Clear( );
                 ValueListBox.Items.Clear( );
-                ColumnGroupBox.Text = string.Empty;
-                ValueGroupBox.Text = string.Empty;
-                var _listBox = sender as VisualListBox;
-                var _value = _listBox?.SelectedItem.ToString( );
+                ColumnPanel.Text = string.Empty;
+                ValuePanel.Text = string.Empty;
+                var _listBox = sender as ListBox;
+                var _value = _listBox?.SelectedValue.ToString( );
                 SelectedTable = _value;
 
                 if( !string.IsNullOrEmpty( _value ) )
@@ -232,7 +231,7 @@ namespace BudgetExecution
                     BindingSource.DataSource = DataModel.DataTable;
                     DataGrid.DataSource = BindingSource;
                     ToolStrip.BindingSource = BindingSource;
-                    DataGridGroupBox.Text =
+                    DataGridLabel.Text =
                         SourcePrefix + DataModel.DataTable.TableName?.SplitPascal( );
 
                     var _columns = DataModel.GetDataColumns( );
@@ -242,8 +241,8 @@ namespace BudgetExecution
                         ColumnListBox.Items.Add( col.ColumnName );
                     }
 
-                    ColumnGroupBox.Text = ColumnPrefix + ColumnListBox.Items.Count;
-                    ValueGroupBox.Text = ValuePrefix;
+                    ColumnLabel.Text = ColumnPrefix + ColumnListBox.Items.Count;
+                    ValueLabel.Text = ValuePrefix;
                 }
             }
             catch( Exception ex )
@@ -266,8 +265,8 @@ namespace BudgetExecution
                 ValueListBox.Items.Clear( );
                 SqlQuery = string.Empty;
                 HeaderLabel.Text = string.Empty;
-                var _listBox = sender as VisualListBox;
-                var _column = _listBox?.SelectedItem?.ToString( );
+                var _listBox = sender as ListBox;
+                var _column = _listBox?.SelectedValue?.ToString( );
                 var _series = DataModel.DataElements;
 
                 if( !string.IsNullOrEmpty( _column ) )
@@ -280,7 +279,7 @@ namespace BudgetExecution
                     }
                 }
 
-                ValueGroupBox.Text = ValuePrefix + ValueListBox.Items.Count;
+                ValueLabel.Text = ValuePrefix + ValueListBox.Items.Count;
             }
             catch( Exception ex )
             {
@@ -288,14 +287,18 @@ namespace BudgetExecution
             }
         }
 
+        /// <summary>
+        /// Called when [value ListBox selection changed].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
         public void OnValueListBoxSelectionChanged( object sender )
         {
             try
             {
                 SqlQuery = string.Empty;
                 HeaderLabel.Text = string.Empty;
-                var _listBox = sender as VisualListBox;
-                var _value = _listBox?.SelectedItem?.ToString( );
+                var _listBox = sender as ListBox;
+                var _value = _listBox?.SelectedValue?.ToString( );
                 SelectedValue = _value?.Trim( );
                 var _query = string.Empty;
 
@@ -309,7 +312,7 @@ namespace BudgetExecution
 
                 SqlQuery = _query;
                 HeaderLabel.Text = SqlQuery;
-                ValueGroupBox.Text = ValuePrefix + ValueListBox.Items.Count;
+                ValueLabel.Text = ValuePrefix + ValueListBox.Items.Count;
             }
             catch( Exception ex )
             {

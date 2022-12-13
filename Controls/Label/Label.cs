@@ -18,7 +18,7 @@ namespace BudgetExecution
     /// <see cref="Label" />
     /// </summary>
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
-    public class Label : LabelBase, ILabel
+    public class Label : MetroSetLabel 
     {
         /// <summary>
         /// Gets or sets the binding source.
@@ -26,7 +26,7 @@ namespace BudgetExecution
         /// <value>
         /// The binding source.
         /// </value>
-        public override BindingSource BindingSource { get; set; }
+        public virtual BindingSource BindingSource { get; set; }
 
         /// <summary>
         /// Gets or sets the tool tip.
@@ -34,7 +34,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public override MetroTip ToolTip { get; set; }
+        public virtual MetroTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -42,7 +42,7 @@ namespace BudgetExecution
         /// <value>
         /// The hover text.
         /// </value>
-        public override string HoverText { get; set; }
+        public virtual string HoverText { get; set; }
 
         /// <summary>
         /// Gets or sets the filter.
@@ -50,7 +50,7 @@ namespace BudgetExecution
         /// <value>
         /// The filter.
         /// </value>
-        public override IDictionary<string, object> DataFilter { get; set; }
+        public virtual IDictionary<string, object> DataFilter { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the
@@ -190,6 +190,77 @@ namespace BudgetExecution
                     Fail( ex );
                 }
             }
+        }
+        /// <summary>
+        /// Called when [mouse over].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The
+        /// <see cref="EventArgs" />
+        /// instance containing the event data.</param>
+        public virtual void OnMouseOver( object sender, EventArgs e )
+        {
+            var _budgetLabel = sender as Label;
+
+            try
+            {
+                if( _budgetLabel != null
+                   && !string.IsNullOrEmpty( HoverText ) )
+                {
+                    if( !string.IsNullOrEmpty( HoverText ) )
+                    {
+                        var _hoverText = _budgetLabel?.HoverText;
+                        var _ = new MetroTip( _budgetLabel, _hoverText );
+                    }
+                    else
+                    {
+                        if( !string.IsNullOrEmpty( Tag?.ToString( ) ) )
+                        {
+                            var _text = Tag?.ToString( )?.SplitPascal( );
+                            var _ = new MetroTip( _budgetLabel, _text );
+                        }
+                    }
+                }
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+            }
+        }
+
+        /// <summary>
+        /// Called when [mouse leave].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The
+        /// <see cref="EventArgs" />
+        /// instance containing the event data.
+        /// </param>
+        public virtual void OnMouseLeave( object sender, EventArgs e )
+        {
+            var _budgetLabel = sender as Label;
+
+            try
+            {
+                if( _budgetLabel != null )
+                {
+                }
+            }
+            catch( Exception ex )
+            {
+                Fail( ex );
+            }
+        }
+
+        /// <summary>
+        /// Fails the specified ex.
+        /// </summary>
+        /// <param name="ex">The ex.</param>
+        protected static void Fail( Exception ex )
+        {
+            using var _error = new Error( ex );
+            _error?.SetText( );
+            _error?.ShowDialog( );
         }
     }
 }

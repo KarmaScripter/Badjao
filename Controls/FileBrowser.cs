@@ -90,7 +90,7 @@ namespace BudgetExecution
             InitialDirPaths = GetInitialDirPaths( );
             RadioButtons = GetRadioButtons( );
             FileExtension = "xlsx";
-            PictureBox.Image = GetImage( );
+            Picture.Image = GetImage( );
             FilePaths = GetListViewPaths( );
             FileDialog.DefaultExt = FileExtension;
             FileDialog.InitialDirectory = GetFolderPath( SpecialFolder.DesktopDirectory );
@@ -280,7 +280,7 @@ namespace BudgetExecution
                     FoundLabel.Text = string.Empty;
                     var _paths = GetListViewPaths( );
                     PopulateListView( _paths );
-                    PictureBox.Image = GetImage( );
+                    Picture.Image = GetImage( );
                     FoundLabel.Text = "Found: " + _paths?.ToList( )?.Count ?? "0";
                 }
                 catch( Exception ex )

@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Error));
             this.TextBox = new VisualPlus.Toolkit.Controls.Editors.VisualRichTextBox();
             this.BackPanel = new VisualPlus.Toolkit.Controls.Layout.VisualPanel();
-            this.PictureBox = new BudgetExecution.PictureBox();
+            this.Picture = new BudgetExecution.Picture();
             this.Label = new BudgetExecution.Label();
             this.CloseButton = new BudgetExecution.Button();
             this.ToolTip = new BudgetExecution.MetroTip();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
             this.SuspendLayout();
             // 
             // TextBox
@@ -100,22 +100,21 @@
             // 
             // PictureBox
             // 
-            this.PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBox.BindingSource = null;
-            this.PictureBox.DataFilter = null;
-            this.PictureBox.Field = BudgetExecution.Field.RpioActivityCode;
-            this.PictureBox.HoverText = null;
-            this.PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox.Image")));
-            this.PictureBox.ImageList = null;
-            this.PictureBox.Location = new System.Drawing.Point(3, 3);
-            this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Numeric = BudgetExecution.Numeric.NS;
-            this.PictureBox.Padding = new System.Windows.Forms.Padding(1);
-            this.PictureBox.Size = new System.Drawing.Size(24, 22);
-            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox.TabIndex = 14;
-            this.PictureBox.TabStop = false;
-            this.PictureBox.ToolTip = null;
+            this.Picture.BackColor = System.Drawing.Color.Transparent;
+            this.Picture.BindingSource = null;
+            this.Picture.DataFilter = null;
+            this.Picture.Field = BudgetExecution.Field.RpioActivityCode;
+            this.Picture.HoverText = null;
+            this.Picture.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox.Image")));
+            this.Picture.ImageList = null;
+            this.Picture.Location = new System.Drawing.Point(3, 3);
+            this.Picture.Name = "PictureBox";
+            this.Picture.Padding = new System.Windows.Forms.Padding(1);
+            this.Picture.Size = new System.Drawing.Size(24, 22);
+            this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Picture.TabIndex = 14;
+            this.Picture.TabStop = false;
+            this.Picture.ToolTip = null;
             // 
             // Label
             // 
@@ -141,7 +140,6 @@
             this.CloseButton.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CloseButton.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.CloseButton.HoverText = null;
-            this.CloseButton.Images = null;
             this.CloseButton.Location = new System.Drawing.Point(462, 384);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseButton.Name = "CloseButton";
@@ -182,7 +180,7 @@
             this.CaptionFont = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CaptionForeColor = System.Drawing.Color.Red;
             this.ClientSize = new System.Drawing.Size(688, 450);
-            this.Controls.Add(this.PictureBox);
+            this.Controls.Add(this.Picture);
             this.Controls.Add(this.Label);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.TextBox);
@@ -194,7 +192,7 @@
             this.Name = "Error";
             this.ShowIcon = false;
             this.Text = "Error";
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,6 +205,6 @@
         public Button CloseButton;
         public MetroTip ToolTip;
         public Label Label;
-        public PictureBox PictureBox;
+        public Picture Picture;
     }
 }
