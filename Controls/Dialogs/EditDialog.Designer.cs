@@ -1,5 +1,7 @@
-﻿namespace BudgetExecution 
+﻿namespace BudgetExecution
 {
+    
+
     partial class EditDialog
     {
         /// <summary>
@@ -86,16 +88,16 @@
             this.Frame44 = new BudgetExecution.Frame();
             this.SqlTab = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.SqlEditor = new Syncfusion.Windows.Forms.Edit.EditControl();
-            this.ToolTip = new BudgetExecution.MetroTip();
+            this.ToolTip = new BudgetExecution.SmallTip();
             this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.groupBox7 = new BudgetExecution.GroupBox();
             this.listBox5 = new BudgetExecution.ListBox();
             this.listBox6 = new BudgetExecution.ListBox();
             this.groupBox8 = new BudgetExecution.GroupBox();
-            this.visualComboBox3 = new VisualPlus.Toolkit.Controls.Interactivity.VisualComboBox();
-            this.visualLabel3 = new VisualPlus.Toolkit.Controls.Interactivity.VisualLabel();
-            this.visualLabel5 = new VisualPlus.Toolkit.Controls.Interactivity.VisualLabel();
-            this.visualTextBox3 = new VisualPlus.Toolkit.Controls.Editors.VisualTextBox();
+            this.visualComboBox3 = new BudgetExecution.ComboBox();
+            this.visualLabel3 = new BudgetExecution.Label();
+            this.visualLabel5 = new BudgetExecution.Label();
+            this.visualTextBox3 = new BudgetExecution.TextBox();
             this.SelectButton = new BudgetExecution.Button();
             this.RefreshButton = new BudgetExecution.Button();
             this.CloseButton = new BudgetExecution.Button();
@@ -1072,175 +1074,50 @@
             // visualComboBox3
             // 
             this.visualComboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.visualComboBox3.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.visualComboBox3.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.visualComboBox3.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.visualComboBox3.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
-            this.visualComboBox3.Border.HoverVisible = true;
-            this.visualComboBox3.Border.Rounding = 6;
-            this.visualComboBox3.Border.Thickness = 1;
-            this.visualComboBox3.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
-            this.visualComboBox3.Border.Visible = true;
-            this.visualComboBox3.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
-            this.visualComboBox3.ButtonImage = null;
-            this.visualComboBox3.ButtonStyle = VisualPlus.Toolkit.Controls.Interactivity.VisualComboBox.ButtonStyles.Arrow;
-            this.visualComboBox3.ButtonWidth = 30;
             this.visualComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.visualComboBox3.DropDownHeight = 100;
             this.visualComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.visualComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.visualComboBox3.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.visualComboBox3.FormattingEnabled = true;
-            this.visualComboBox3.ImageList = null;
-            this.visualComboBox3.ImageVisible = false;
-            this.visualComboBox3.Index = 0;
             this.visualComboBox3.IntegralHeight = false;
             this.visualComboBox3.ItemHeight = 24;
-            this.visualComboBox3.ItemImageVisible = true;
             this.visualComboBox3.Location = new System.Drawing.Point(92, 91);
-            this.visualComboBox3.MenuItemHover = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
-            this.visualComboBox3.MenuItemNormal = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
-            this.visualComboBox3.MenuTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualComboBox3.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.visualComboBox3.Name = "visualComboBox3";
-            this.visualComboBox3.SeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.visualComboBox3.Size = new System.Drawing.Size(221, 30);
-            this.visualComboBox3.State = VisualPlus.Enumerators.MouseStates.Normal;
             this.visualComboBox3.TabIndex = 4;
-            this.visualComboBox3.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.visualComboBox3.TextDisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.visualComboBox3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.visualComboBox3.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.visualComboBox3.TextRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.visualComboBox3.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.visualComboBox3.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualComboBox3.TextStyle.Hover = System.Drawing.Color.Empty;
-            this.visualComboBox3.TextStyle.Pressed = System.Drawing.Color.Empty;
-            this.visualComboBox3.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.visualComboBox3.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.visualComboBox3.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.visualComboBox3.Watermark.Active = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.visualComboBox3.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.visualComboBox3.Watermark.Inactive = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.visualComboBox3.Watermark.Text = "Watermark text";
-            this.visualComboBox3.Watermark.Visible = false;
             // 
             // visualLabel3
             // 
             this.visualLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.visualLabel3.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.visualLabel3.Location = new System.Drawing.Point(92, 57);
-            this.visualLabel3.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.visualLabel3.Name = "visualLabel3";
-            this.visualLabel3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.visualLabel3.Outline = false;
-            this.visualLabel3.OutlineColor = System.Drawing.Color.Red;
-            this.visualLabel3.OutlineLocation = new System.Drawing.Point(0, 0);
-            this.visualLabel3.ReflectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualLabel3.ReflectionSpacing = 0;
-            this.visualLabel3.ShadowColor = System.Drawing.Color.Black;
-            this.visualLabel3.ShadowDirection = 315;
-            this.visualLabel3.ShadowLocation = new System.Drawing.Point(0, 0);
-            this.visualLabel3.ShadowOpacity = 100;
             this.visualLabel3.Size = new System.Drawing.Size(177, 23);
             this.visualLabel3.TabIndex = 3;
             this.visualLabel3.Text = "Select  Existing Column";
-            this.visualLabel3.TextAlignment = System.Drawing.StringAlignment.Near;
-            this.visualLabel3.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.visualLabel3.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.visualLabel3.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualLabel3.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualLabel3.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualLabel3.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.visualLabel3.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.visualLabel3.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // visualLabel5
             // 
             this.visualLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.visualLabel5.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.visualLabel5.Location = new System.Drawing.Point(419, 57);
-            this.visualLabel5.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.visualLabel5.Name = "visualLabel5";
-            this.visualLabel5.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.visualLabel5.Outline = false;
-            this.visualLabel5.OutlineColor = System.Drawing.Color.Red;
-            this.visualLabel5.OutlineLocation = new System.Drawing.Point(0, 0);
-            this.visualLabel5.ReflectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualLabel5.ReflectionSpacing = 0;
-            this.visualLabel5.ShadowColor = System.Drawing.Color.Black;
-            this.visualLabel5.ShadowDirection = 315;
-            this.visualLabel5.ShadowLocation = new System.Drawing.Point(0, 0);
-            this.visualLabel5.ShadowOpacity = 100;
             this.visualLabel5.Size = new System.Drawing.Size(120, 23);
             this.visualLabel5.TabIndex = 2;
             this.visualLabel5.Text = "Enter New Name";
-            this.visualLabel5.TextAlignment = System.Drawing.StringAlignment.Near;
-            this.visualLabel5.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.visualLabel5.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.visualLabel5.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualLabel5.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualLabel5.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualLabel5.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.visualLabel5.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.visualLabel5.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // visualTextBox3
             // 
-            this.visualTextBox3.AlphaNumeric = false;
             this.visualTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.visualTextBox3.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.visualTextBox3.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.visualTextBox3.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.visualTextBox3.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
-            this.visualTextBox3.Border.HoverVisible = true;
-            this.visualTextBox3.Border.Rounding = 6;
-            this.visualTextBox3.Border.Thickness = 1;
-            this.visualTextBox3.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
-            this.visualTextBox3.Border.Visible = true;
-            this.visualTextBox3.ButtonBorder.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.visualTextBox3.ButtonBorder.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
-            this.visualTextBox3.ButtonBorder.HoverVisible = true;
-            this.visualTextBox3.ButtonBorder.Rounding = 6;
-            this.visualTextBox3.ButtonBorder.Thickness = 1;
-            this.visualTextBox3.ButtonBorder.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
-            this.visualTextBox3.ButtonBorder.Visible = true;
-            this.visualTextBox3.ButtonColor.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.visualTextBox3.ButtonColor.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.visualTextBox3.ButtonColor.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.visualTextBox3.ButtonColor.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.visualTextBox3.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.visualTextBox3.ButtonIndent = 3;
-            this.visualTextBox3.ButtonText = "visualButton";
-            this.visualTextBox3.ButtonVisible = false;
             this.visualTextBox3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.visualTextBox3.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.visualTextBox3.Image = null;
-            this.visualTextBox3.ImageSize = new System.Drawing.Size(16, 16);
-            this.visualTextBox3.ImageVisible = false;
-            this.visualTextBox3.ImageWidth = 35;
             this.visualTextBox3.Location = new System.Drawing.Point(419, 91);
-            this.visualTextBox3.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.visualTextBox3.Name = "visualTextBox3";
-            this.visualTextBox3.PasswordChar = '\0';
             this.visualTextBox3.ReadOnly = false;
-            this.visualTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.visualTextBox3.Size = new System.Drawing.Size(278, 25);
             this.visualTextBox3.TabIndex = 1;
-            this.visualTextBox3.TextBoxWidth = 268;
-            this.visualTextBox3.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.visualTextBox3.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualTextBox3.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualTextBox3.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.visualTextBox3.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.visualTextBox3.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.visualTextBox3.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.visualTextBox3.Watermark.Active = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.visualTextBox3.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.visualTextBox3.Watermark.Inactive = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.visualTextBox3.Watermark.Text = "Watermark text";
-            this.visualTextBox3.Watermark.Visible = false;
-            this.visualTextBox3.WordWrap = true;
             // 
             // SelectButton
             // 
@@ -1413,26 +1290,26 @@
         }
 
         #endregion
-        public MetroTip ToolTip;
+        public SmallTip ToolTip;
         public System.Windows.Forms.BindingSource BindingSource;
         public Button RefreshButton;
         public Button CloseButton;
         public Button SelectButton;
-        private GroupBox groupBox2;
-        private GroupBox groupBox3;
-        private GroupBox groupBox4;
+        public GroupBox groupBox2;
+        public GroupBox groupBox3;
+        public GroupBox groupBox4;
         public Syncfusion.Windows.Forms.Tools.TabControlAdv TabControl;
         public Syncfusion.Windows.Forms.Edit.EditControl SqlEditor;
         public GroupBox groupBox7;
         public ListBox listBox5;
         public ListBox listBox6;
         public GroupBox groupBox8;
-        private VisualPlus.Toolkit.Controls.Interactivity.VisualComboBox visualComboBox3;
-        public VisualPlus.Toolkit.Controls.Interactivity.VisualLabel visualLabel3;
-        private VisualPlus.Toolkit.Controls.Interactivity.VisualLabel visualLabel5;
-        public VisualPlus.Toolkit.Controls.Editors.VisualTextBox visualTextBox3;
-        private GroupBox groupBox9;
-        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv1;
+        public BudgetExecution.ComboBox visualComboBox3;
+        public BudgetExecution.Label visualLabel3;
+        public BudgetExecution.Label visualLabel5;
+        public BudgetExecution.TextBox visualTextBox3;
+        public GroupBox groupBox9;
+        public Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv1;
         public Syncfusion.Windows.Forms.Tools.TabPageAdv SqlTab;
         public Syncfusion.Windows.Forms.Tools.TabPageAdv DataTab;
         public System.Windows.Forms.TableLayoutPanel FrameTable;

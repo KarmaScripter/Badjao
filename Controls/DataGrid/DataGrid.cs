@@ -11,6 +11,7 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Linq;
     using System.Windows.Forms;
+    
 
     /// <summary>
     /// 
@@ -33,7 +34,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public MetroTip ToolTip { get; set; }
+        public SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the binding source.

@@ -9,6 +9,7 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
+    
 
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class ToolStripLabelBase : System.Windows.Forms.ToolStripLabel
@@ -19,7 +20,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the binding source.

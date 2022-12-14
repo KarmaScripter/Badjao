@@ -60,8 +60,7 @@
           "System.Data.SQLite.EF6": "1.0.108.0",
           "System.Data.SQLite.Linq": "1.0.108.0",
           "System.Data.SqlServerCe": "4.0.0.0",
-          "System.Runtime.Remoting": "4.0.0.0",
-          "VisualPlus": "0.4.1.7"
+          "System.Runtime.Remoting": "4.0.0.0"
         },
         "runtime": {
           "Budget.dll": {}
@@ -976,14 +975,6 @@
             "fileVersion": "4.8.3752.0"
           }
         }
-      },
-      "VisualPlus/0.4.1.7": {
-        "runtime": {
-          "VisualPlus.dll": {
-            "assemblyVersion": "0.4.1.7",
-            "fileVersion": "0.4.1.7"
-          }
-        }
       }
     }
   },
@@ -1488,11 +1479,6 @@
       "sha512": ""
     },
     "System.Runtime.Remoting/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "VisualPlus/0.4.1.7": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

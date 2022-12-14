@@ -9,13 +9,14 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
+    
     using MetroSet_UI.Controls;
+    using MetroSet_UI.Enums;
     using CheckState = MetroSet_UI.Enums.CheckState;
 
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="BudgetExecution.CheckBoxBase" />
     [ SuppressMessage( "ReSharper", "UnusedParameter.Global" ) ]
     public class CheckBox : MetroSetCheckBox
     {
@@ -25,7 +26,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -56,14 +57,18 @@ namespace BudgetExecution
         /// </summary>
         public CheckBox( )
         {
+            // Basic Properties
+            Style = Style.Custom;
+            ThemeAuthor = "Terry D. Eppler";
+            ThemeName = "BudgetExecution";
             Size = new Size( 125, 25 );
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            Font = new Font( "Roboto", 8, FontStyle.Regular );
-            ForeColor = Color.SteelBlue;
+            BackColor = Color.FromArgb( 20, 20, 20 );
+            Font = new Font( "Roboto", 9, FontStyle.Regular );
+            ForeColor = Color.LightGray;
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
             Dock = DockStyle.None;
             Cursor = Cursors.Hand;
-            BorderColor = Color.FromArgb( 28, 28, 28 );
+            BorderColor = Color.FromArgb( 0, 120, 212 );
             CheckState = CheckState.Unchecked;
 
             // Disabled Color Configuration
@@ -91,14 +96,14 @@ namespace BudgetExecution
                    && !string.IsNullOrEmpty( HoverText ) )
                 {
                     var _hoverText = _checkBox?.HoverText;
-                    var _ = new MetroTip( _checkBox, _hoverText );
+                    var _ = new SmallTip( _checkBox, _hoverText );
                 }
                 else
                 {
                     if( !string.IsNullOrEmpty( Tag?.ToString( ) ) )
                     {
                         var _text = Tag?.ToString( )?.SplitPascal( );
-                        var _ = new MetroTip( _checkBox, _text );
+                        var _ = new SmallTip( _checkBox, _text );
                     }
                 }
             }

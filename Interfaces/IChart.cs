@@ -1,6 +1,6 @@
-﻿// // <copyright file = "IChart.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿// <copyright file = "IChart.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -33,7 +33,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        MetroTip ToolTip { get; set; }
+        SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.

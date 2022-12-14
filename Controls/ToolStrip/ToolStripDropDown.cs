@@ -13,7 +13,12 @@ namespace BudgetExecution
     using System.Windows.Forms;
     using Syncfusion.Windows.Forms.Tools;
 
-    public class ToolStripDropDown : ToolStripDropDownBase, IToolbarComboBox
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="BudgetExecution.ToolStripDropDownBase" />
+    /// <seealso cref="IToolStripComboBox" />
+    public class ToolStripDropDown : ToolStripDropDownBase, IToolStripComboBox
     {
         /// <summary>
         /// Gets or sets the tool tip.
@@ -21,7 +26,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public MetroTip ToolTip { get; set; }
+        public SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolStripComboBoxEx"/> class.
@@ -34,7 +39,7 @@ namespace BudgetExecution
             DropDownStyle = ComboBoxStyle.DropDownList;
             AllowDrop = true;
             MaxDropDownItems = 100;
-            BackColor = Color.FromArgb( 15, 15, 15 );
+            BackColor = Color.FromArgb( 40, 40, 40 );
             ForeColor = Color.White;
             Font = new Font( "Roboto", 9 );
             Tag = "Make Selection";
@@ -43,7 +48,7 @@ namespace BudgetExecution
             Visible = true;
             Enabled = true;
             Style = ToolStripExStyle.Office2016Black;
-            ToolTip = new MetroTip( this, ToolTipText );
+            ToolTip = new SmallTip( this, ToolTipText );
             MouseHover += OnMouseHover;
             MouseLeave += OnMouseLeave;
         }
@@ -114,14 +119,14 @@ namespace BudgetExecution
                 if( !string.IsNullOrEmpty( _comboBox?.HoverText ) )
                 {
                     var _text = _comboBox?.HoverText;
-                    var _ = new MetroTip( _comboBox, _text );
+                    var _ = new SmallTip( _comboBox, _text );
                 }
                 else
                 {
                     if( !string.IsNullOrEmpty( _comboBox?.Tag?.ToString( ) ) )
                     {
                         var _text = _comboBox?.Tag?.ToString( )?.SplitPascal( );
-                        var _ = new MetroTip( _comboBox, _text );
+                        var _ = new SmallTip( _comboBox, _text );
                     }
                 }
             }

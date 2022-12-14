@@ -88,7 +88,6 @@ C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\System.Data.SQLite.E
 C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\System.Data.SQLite.Linq.dll
 C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\System.Data.SqlServerCe.dll
 C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\System.Runtime.Remoting.dll
-C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\VisualPlus.dll
 C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\C1.Win.4.8.xml
 C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\C1.Win.C1FlexGrid.4.8.xml
 C:\Users\terry\source\repos\Badjao\bin\Debug\net6.0-windows\DataGridMetro.dll.config
@@ -115,7 +114,6 @@ C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.Edit
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.Error.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.ExcelForm.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.FileBrowser.resources
-C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExeuction.FormBase.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.Frame.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.GroupBox.resources
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.ListBox.resources
@@ -138,3 +136,4 @@ C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\Budget.pdb
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\Badjao.genruntimeconfig.cache
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\ref\Budget.dll
 C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.LoadingForm.resources
+C:\Users\terry\source\repos\Badjao\obj\Debug\net6.0-windows\BudgetExecution.FormBase.resources

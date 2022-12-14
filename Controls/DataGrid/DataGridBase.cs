@@ -15,7 +15,7 @@ namespace BudgetExecution
         {
             // Basic Properties
             ForeColor = Color.White;
-            BackColor = Color.FromArgb( 15, 15, 15 );
+            BackColor = Color.FromArgb( 20, 20, 20 );
             Font = new Font( "Roboto", 9 );
             Margin = new Padding( 0 );
             Padding = new Padding( 0 );

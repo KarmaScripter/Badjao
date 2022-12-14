@@ -135,34 +135,19 @@ namespace BudgetExecution
                 Fail( ex );
             }
         }
-
-        /// <summary>
-        /// Sets the tag.
-        /// </summary>
-        /// <param name="tag">The tag.</param>
-        public virtual void ReTag( object tag )
-        {
-            try
-            {
-                Tag = Settings.ReTag( tag );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
+        
         /// <summary>
         /// Sets the hover text.
         /// </summary>
         /// <param name="item">The item.</param>
         public virtual void SetHoverText( ToolStripItem item )
         {
-            var _text = item?.Tag?.ToString( );
-
             try
             {
-                HoverText = Settings.GetText( _text );
+                var _text = item?.Tag?.ToString( );
+                HoverText = !string.IsNullOrEmpty( _text )
+                    ? _text
+                    : string.Empty;
             }
             catch( Exception ex )
             {
@@ -178,7 +163,9 @@ namespace BudgetExecution
         {
             try
             {
-                HoverText = text;
+                HoverText = !string.IsNullOrEmpty( text )
+                    ? text
+                    : string.Empty;
             }
             catch( Exception ex )
             {

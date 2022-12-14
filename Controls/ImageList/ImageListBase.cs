@@ -9,6 +9,7 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
+    
     using Syncfusion.Windows.Forms.Tools;
 
     public abstract class ImageListBase : ImageListAdv
@@ -27,7 +28,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.

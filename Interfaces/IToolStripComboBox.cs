@@ -1,6 +1,6 @@
-﻿// // <copyright file = "IToolStripComboBox.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿// <copyright file = "IToolStripComboBox.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -8,7 +8,7 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Windows.Forms;
 
-    public interface IToolbarComboBox
+    public interface IToolStripComboBox
     {
         /// <summary> Sets the data source.
         /// </summary>
@@ -58,13 +58,7 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="field">The field.</param>
         void SetField( Field field );
-
-        /// <summary>
-        /// Sets the tag.
-        /// </summary>
-        /// <param name="tag">The tag.</param>
-        void ReTag( object tag );
-
+        
         /// <summary>
         /// Sets the hover text.
         /// </summary>

@@ -11,7 +11,6 @@ namespace BudgetExecution
     using System.Windows.Forms;
     using MetroSet_UI.Controls;
     using MetroSet_UI.Enums;
-    using VisualPlus.Toolkit.Controls.Interactivity;
 
     /// <summary>
     /// 
@@ -29,7 +28,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -71,7 +70,6 @@ namespace BudgetExecution
             Margin = new Padding( 3 );
             Padding = new Padding( 1 );
             Size = new Size( 140, 40 );
-            Location = new Point( 1, 1 );
             Dock = DockStyle.None;
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
             Visible = true;
@@ -189,22 +187,6 @@ namespace BudgetExecution
         /// <summary>
         /// Sets the size.
         /// </summary>
-        /// <param name="size">The size.</param>
-        public virtual void ReSize( Size size )
-        {
-            try
-            {
-                Size = size;
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
-        /// <summary>
-        /// Sets the size.
-        /// </summary>
         /// <param name="width">The width.</param>
         /// <param name="height">The height.</param>
         public virtual void ReSize( int width, int height )
@@ -234,26 +216,7 @@ namespace BudgetExecution
                 Fail( ex );
             }
         }
-
-        /// <summary>
-        /// Sets the location.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        public virtual void ReLocate( Point point )
-        {
-            if( point != Point.Empty )
-            {
-                try
-                {
-                    Location = point;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
-            }
-        }
-
+        
         /// <summary>
         /// Sets the location.
         /// </summary>
@@ -276,70 +239,6 @@ namespace BudgetExecution
         }
         
         /// <summary>
-        /// Sets the anchor style.
-        /// </summary>
-        /// <param name="anchor">The anchor.</param>
-        public virtual void ReAnchor( AnchorStyles anchor )
-        {
-            try
-            {
-                Anchor = Settings.ReAnchor( anchor );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
-        /// <summary>
-        /// Sets the dock style.
-        /// </summary>
-        /// <param name="dock">The dock.</param>
-        public virtual void ReDock( DockStyle dock )
-        {
-            try
-            {
-                Dock = Settings.ReDock( dock );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
-        /// <summary>
-        /// Sets the tag.
-        /// </summary>
-        /// <param name="tag">The tag.</param>
-        public virtual void ReTag( object tag )
-        {
-            try
-            {
-                Tag = Settings.ReTag( tag );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-
-        /// <summary>
-        /// Sets the tool tip.
-        /// </summary>
-        /// <param name="tip">The tip.</param>
-        public virtual void SetToolTip( string tip )
-        {
-            try
-            {
-                Tag = Settings.GetToolTip( this, tip );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
-            }
-        }
-        
-        /// <summary>
         /// Called when [mouse leave].
         /// </summary>
         /// <param name="sender">The sender.</param>
@@ -348,7 +247,7 @@ namespace BudgetExecution
         {
             try
             {
-                if( sender is VisualButton _button
+                if( sender is Button _button
                    && _button != null
                    && ToolTip?.Active == true )
                 {
@@ -418,14 +317,14 @@ namespace BudgetExecution
                     if( !string.IsNullOrEmpty( HoverText ) )
                     {
                         var _hoverText = _button?.HoverText;
-                        var _ = new MetroTip( _button, _hoverText );
+                        var _ = new SmallTip( _button, _hoverText );
                     }
                     else
                     {
                         if( !string.IsNullOrEmpty( Tag?.ToString( ) ) )
                         {
                             var _text = Tag?.ToString( )?.SplitPascal( );
-                            var _ = new MetroTip( _button, _text );
+                            var _ = new SmallTip( _button, _text );
                         }
                     }
                 }

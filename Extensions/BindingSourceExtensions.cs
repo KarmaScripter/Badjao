@@ -1,9 +1,8 @@
 ﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
 // Copyright (c) Terry Eppler. All rights reserved.
 // </copyright>
-//
 
-namespace BudgetExecution.Extensions
+namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;
@@ -33,7 +32,7 @@ namespace BudgetExecution.Extensions
                     : default( IEnumerable<DataRow> );
             }
 
-            return default( IEnumerable<DataRow> );
+            return default;
         }
 
         /// <summary>
@@ -48,17 +47,17 @@ namespace BudgetExecution.Extensions
                 switch( bindingSource.DataSource )
                 {
                     case DataTable _table:
-                        {
-                            return _table;
-                        }
+                    {
+                        return _table;
+                    }
                     case IEnumerable<DataRow> _data:
-                        {
-                            return _data.CopyToDataTable( );
-                        }
+                    {
+                        return _data.CopyToDataTable( );
+                    }
                 }
             }
 
-            return default( DataTable );
+            return default;
         }
     }
 }

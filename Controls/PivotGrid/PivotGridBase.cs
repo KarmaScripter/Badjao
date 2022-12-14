@@ -12,6 +12,8 @@ namespace BudgetExecution
     using System.Windows.Forms;
     using Syncfusion.Windows.Forms.PivotAnalysis;
 
+    [ SuppressMessage( "ReSharper", "CompareNonConstrainedGenericWithNull" ) ]
+    [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
     public abstract class PivotGridBase : PivotGridControl
     {
         /// <summary>
@@ -28,7 +30,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTipBase ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the filter.

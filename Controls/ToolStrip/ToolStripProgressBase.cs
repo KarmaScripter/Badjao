@@ -7,6 +7,7 @@ namespace BudgetExecution
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Windows.Forms;
+    
 
     public abstract class ToolStripProgressBase : System.Windows.Forms.ToolStripProgressBar
     {
@@ -32,7 +33,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.

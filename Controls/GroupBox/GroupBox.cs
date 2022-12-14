@@ -10,6 +10,7 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
+    
 
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     [ SuppressMessage( "ReSharper", "VirtualMemberNeverOverridden.Global" ) ]
@@ -29,7 +30,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public MetroTip ToolTip { get; set; }
+        public SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -211,14 +212,14 @@ namespace BudgetExecution
                     if( !string.IsNullOrEmpty( HoverText ) )
                     {
                         var _hoverText = _groupBox?.HoverText;
-                        var _ = new MetroTip( _groupBox, _hoverText );
+                        var _ = new SmallTip( _groupBox, _hoverText );
                     }
                     else
                     {
                         if( !string.IsNullOrEmpty( Tag?.ToString( ) ) )
                         {
                             var _text = Tag?.ToString( )?.SplitPascal( );
-                            var _ = new MetroTip( _groupBox, _text );
+                            var _ = new SmallTip( _groupBox, _text );
                         }
                     }
                 }

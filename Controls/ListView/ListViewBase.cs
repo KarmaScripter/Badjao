@@ -12,7 +12,6 @@ namespace BudgetExecution
     using System.Threading;
     using System.Windows.Forms;
     using Syncfusion.WinForms.ListView;
-    using VisualPlus.Toolkit.Controls.DataManagement;
 
     public abstract class ListViewBase : SfListView
     {
@@ -30,7 +29,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.

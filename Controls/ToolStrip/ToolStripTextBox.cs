@@ -28,7 +28,7 @@ namespace BudgetExecution
             Margin = new Padding( 1, 1, 1, 1 );
             Padding = new Padding( 1, 1, 1, 1 );
             Size = new Size( 150, 23 );
-            BackColor = Color.FromArgb( 15, 15, 15 );
+            BackColor = Color.FromArgb( 20, 20, 20 );
             ForeColor = Color.FromArgb( 141, 139, 138 );
             Font = new Font( "Roboto", 9 );
             Visible = true;
@@ -91,7 +91,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _ = new MetroTip( item, _text );
+                    var _ = new SmallTip( item, _text );
                 }
                 catch( Exception ex )
                 {
@@ -115,14 +115,14 @@ namespace BudgetExecution
                    && !string.IsNullOrEmpty( HoverText ) )
                 {
                     _button.Tag = HoverText;
-                    var _tip = new MetroTip( _button );
+                    var _tip = new SmallTip( _button );
                     ToolTip = _tip;
                 }
                 else
                 {
                     if( !string.IsNullOrEmpty( Tag?.ToString( ) ) )
                     {
-                        var _tool = new MetroTip( _button );
+                        var _tool = new SmallTip( _button );
                         ToolTip = _tool;
                     }
                 }

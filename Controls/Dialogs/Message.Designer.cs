@@ -1,15 +1,12 @@
 ﻿
 namespace BudgetExecution
 {
-        using System;
-        using System.ComponentModel;
-        using System.Threading;
-        using System.Windows.Forms;
-        using VisualPlus.Toolkit.Controls.Editors;
-        using VisualPlus.Toolkit.Controls.Interactivity;
-        using VisualPlus.Toolkit.Controls.Layout;
+    using System;
+    using System.ComponentModel;
+    using System.Threading;
+    using System.Windows.Forms;
 
-        partial class Message
+    partial class Message
         {
             /// <summary>
             /// Required designer variable.
@@ -40,9 +37,9 @@ namespace BudgetExecution
             {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Message));
-            this.TextBox = new VisualPlus.Toolkit.Controls.Editors.VisualRichTextBox();
+            this.TextBox = new BudgetExecution.TextBox();
             this.OpenButton = new BudgetExecution.Button();
-            this.ToolTip = new BudgetExecution.MetroTip();
+            this.ToolTip = new BudgetExecution.SmallTip();
             this.CloseButton = new BudgetExecution.Button();
             this.Label = new BudgetExecution.Label();
             this.Picture = new BudgetExecution.Picture();
@@ -52,33 +49,14 @@ namespace BudgetExecution
             // TextBox
             // 
             this.TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.TextBox.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.TextBox.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.TextBox.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TextBox.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(93)))), ((int)(((byte)(129)))));
-            this.TextBox.Border.HoverVisible = false;
-            this.TextBox.Border.Rounding = 6;
-            this.TextBox.Border.Thickness = 1;
-            this.TextBox.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
-            this.TextBox.Border.Visible = true;
             this.TextBox.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TextBox.ForeColor = System.Drawing.Color.White;
             this.TextBox.Location = new System.Drawing.Point(86, 90);
             this.TextBox.MaxLength = 2147483647;
-            this.TextBox.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
-            this.TextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both;
-            this.TextBox.ShowSelectionMargin = false;
             this.TextBox.Size = new System.Drawing.Size(526, 245);
             this.TextBox.TabIndex = 8;
-            this.TextBox.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.TextBox.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.TextBox.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.TextBox.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.TextBox.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.TextBox.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.TextBox.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // OpenButton
             // 
@@ -206,9 +184,9 @@ namespace BudgetExecution
             }
 
             #endregion
-        public VisualRichTextBox TextBox;
+        public TextBox TextBox;
         public Button OpenButton;
-        public MetroTip ToolTip;
+        public SmallTip ToolTip;
         public Button CloseButton;
         public Label Label;
         public Picture Picture;

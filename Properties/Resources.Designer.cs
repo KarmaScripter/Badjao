@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BudgetExecution.Properties {
+namespace BudgetExecution {
     using System;
     
     

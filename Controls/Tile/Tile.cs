@@ -16,7 +16,7 @@ namespace BudgetExecution
         /// </summary>
         public Tile( )
         {
-            BackColor = Color.FromArgb( 15, 15, 15 );
+            BackColor = Color.FromArgb( 20, 20, 20 );
             ForeColor = Color.White;
             Size = new Size( 140, 140 );
             Font = new Font( "Roboto", 9 );

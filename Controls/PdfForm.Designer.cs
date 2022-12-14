@@ -1,6 +1,7 @@
 ﻿namespace BudgetExecution
 {
     using System.Windows.Forms;
+    
 
     partial class PdfForm
     {
@@ -37,7 +38,7 @@
             Syncfusion.Windows.Forms.CaptionImage captionImage1 = new Syncfusion.Windows.Forms.CaptionImage();
             this.pdfViewerControl1 = new Syncfusion.Windows.Forms.PdfViewer.PdfViewerControl();
             this.BindingSource = new BindingSource( );
-            this.ToolTip = new BudgetExecution.MetroTip();
+            this.ToolTip = new BudgetExecution.SmallTip();
             this.ToolStrip = new BudgetExecution.ToolStrip();
             this.AddButton = new BudgetExecution.ToolStripButton();
             this.BrowseButton = new BudgetExecution.ToolStripButton();
@@ -662,7 +663,7 @@
 
         private Syncfusion.Windows.Forms.PdfViewer.PdfViewerControl pdfViewerControl1;
         private BindingSource BindingSource;
-        private MetroTip ToolTip;
+        private SmallTip ToolTip;
         public ToolStrip ToolStrip;
         public ToolStripButton AddButton;
         public ToolStripButton BrowseButton;

@@ -34,7 +34,7 @@
             this.Message = new System.Windows.Forms.Label();
             this.NotifyIcon = new System.Windows.Forms.PictureBox();
             this.Timer = new System.Windows.Forms.Timer(this.components);
-            this.BackPanel = new VisualPlus.Toolkit.Controls.Layout.VisualPanel();
+            this.BackPanel = new BudgetExecution.Layout();
             ((System.ComponentModel.ISupportInitialize)(this.NotifyIcon)).BeginInit();
             this.BackPanel.SuspendLayout();
             this.SuspendLayout();
@@ -78,15 +78,6 @@
             // BackPanel
             // 
             this.BackPanel.BackColor = System.Drawing.Color.Transparent;
-            this.BackPanel.BackColorState.Disabled = System.Drawing.Color.Transparent;
-            this.BackPanel.BackColorState.Enabled = System.Drawing.Color.Transparent;
-            this.BackPanel.Border.Color = System.Drawing.Color.Transparent;
-            this.BackPanel.Border.HoverColor = System.Drawing.Color.Transparent;
-            this.BackPanel.Border.HoverVisible = false;
-            this.BackPanel.Border.Rounding = 1;
-            this.BackPanel.Border.Thickness = 1;
-            this.BackPanel.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rectangle;
-            this.BackPanel.Border.Visible = true;
             this.BackPanel.Controls.Add(this.NotifyIcon);
             this.BackPanel.Controls.Add(this.Message);
             this.BackPanel.Controls.Add(this.Title);
@@ -94,18 +85,10 @@
             this.BackPanel.ForeColor = System.Drawing.Color.White;
             this.BackPanel.Location = new System.Drawing.Point(1, 1);
             this.BackPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.BackPanel.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Padding = new System.Windows.Forms.Padding(5);
             this.BackPanel.Size = new System.Drawing.Size(348, 149);
             this.BackPanel.TabIndex = 3;
-            this.BackPanel.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
-            this.BackPanel.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BackPanel.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BackPanel.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BackPanel.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BackPanel.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
-            this.BackPanel.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // Notification
             // 
@@ -145,7 +128,7 @@
         public System.Windows.Forms.Label Title;
         public System.Windows.Forms.Label Message;
         public System.Windows.Forms.PictureBox NotifyIcon;
-        private System.Windows.Forms.Timer Timer;
-        public VisualPlus.Toolkit.Controls.Layout.VisualPanel BackPanel;
+        public System.Windows.Forms.Timer Timer;
+        public BudgetExecution.Layout BackPanel;
     }
 }

@@ -9,6 +9,7 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
+    
     using Syncfusion.Windows.Forms.Tools;
 
     /// <summary>
@@ -31,7 +32,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -217,14 +218,14 @@ namespace BudgetExecution
                     if( !string.IsNullOrEmpty( HoverText ) )
                     {
                         var _hoverText = _budgetClock?.HoverText;
-                        var _ = new MetroTip( _budgetClock, _hoverText );
+                        var _ = new SmallTip( _budgetClock, _hoverText );
                     }
                     else
                     {
                         if( !string.IsNullOrEmpty( Tag?.ToString( ) ) )
                         {
                             var _text = Tag?.ToString( )?.SplitPascal( );
-                            var _ = new MetroTip( _budgetClock, _text );
+                            var _ = new SmallTip( _budgetClock, _text );
                         }
                     }
                 }

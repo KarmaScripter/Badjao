@@ -2,7 +2,7 @@
 // Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
-namespace BudgetExcess
+namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;

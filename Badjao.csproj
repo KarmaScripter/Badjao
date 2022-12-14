@@ -129,9 +129,6 @@
     <Reference Include="System.Runtime.Remoting">
       <HintPath>Libraries\System.Runtime.Remoting.dll</HintPath>
     </Reference>
-    <Reference Include="VisualPlus">
-      <HintPath>Libraries\VisualPlus.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">
@@ -139,7 +136,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Update="Controls\CalendarForm.cs" />
+    <Compile Update="Controls\Calendar\CalendarForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">

@@ -10,6 +10,7 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Linq;
     using System.Windows.Forms;
+    
     using MetroSet_UI.Controls;
     using MetroSet_UI.Enums;
 
@@ -34,7 +35,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -77,19 +78,22 @@ namespace BudgetExecution
             Padding = new Padding( 1 );
             Enabled = true;
             Visible = true;
+            Font = new Font( "Roboto", 11  );
 
             // Back color SeriesConfiguration
             BorderStyle = BorderStyle.None;
-            BackColor = Color.Transparent;
+            BackColor = Color.FromArgb( 20, 20, 20 );
+            BackgroundColor = Color.FromArgb( 20, 20, 20 );
             ForeColor = Color.LightGray;
-            BorderColor = Color.FromArgb( 0, 120, 212 );
+            BorderColor = Color.Transparent;
+            BorderStyle = BorderStyle.FixedSingle;
         }
 
         public Layout( Size size, Point location )
             : this( )
         {
             Size = size;
-            Location = Settings.ReLocate( location.X, location.Y );
+            Location = location;
         }
 
         /// <summary>
@@ -104,7 +108,7 @@ namespace BudgetExecution
             : this( size, location )
         {
             Size = new Size( size.Width, size.Height );
-            Location = Settings.ReLocate( location.X, location.Y );
+            Location = location;
             Parent = parent;
             Parent.Controls.Add( this );
         }
@@ -125,8 +129,7 @@ namespace BudgetExecution
         /// Sets the color of the border.
         /// </summary>
         /// <param name="color">The color.</param>
-        /// <param name="hover">if set to <c>true</c> [hover].</param>
-        public void SetBorderColor( Color color, bool hover = true )
+        public void SetBorderColor( Color color )
         {
             if( color != Color.Empty )
             {
@@ -152,6 +155,7 @@ namespace BudgetExecution
                 try
                 {
                     BackColor = color;
+                    BackgroundColor = color;
                 }
                 catch( Exception ex )
                 {
@@ -205,21 +209,20 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Sets the tag.
+        /// Called when [load].
         /// </summary>
-        /// <param name="tag">The tag.</param>
-        public void SetTag( object tag )
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        public void OnLoad( object sender, EventArgs e )
         {
-            if( tag != null )
+            try
             {
-                try
-                {
-                    Tag = tag;
-                }
-                catch( Exception ex )
-                {
-                    Fail( ex );
-                }
+                BackColor = Color.FromArgb( 20, 20, 20 );
+                BackgroundColor = Color.FromArgb( 20, 20, 20 );
+            }
+            catch ( Exception ex )
+            {
+                Fail( ex );
             }
         }
 

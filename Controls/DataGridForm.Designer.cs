@@ -1,5 +1,7 @@
 ﻿namespace BudgetExecution
 {
+    
+
     partial class DataGridForm
     {
         /// <summary>
@@ -37,7 +39,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataGridForm));
             this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.HeaderLabel = new BudgetExecution.Label();
-            this.ToolTip = new BudgetExecution.MetroTip();
+            this.ToolTip = new BudgetExecution.SmallTip();
             this.ColumnListBox = new BudgetExecution.ListBox();
             this.ValueListBox = new BudgetExecution.ListBox();
             this.Separator16 = new BudgetExecution.ToolSeparator();
@@ -400,7 +402,6 @@
             this.FirstButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FirstButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.FirstButton.HoverText = "First Record";
-            this.FirstButton.Image = global::BudgetExecution.Properties.Resources.FirstButton;
             this.FirstButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.FirstButton.Margin = new System.Windows.Forms.Padding(1);
             this.FirstButton.Name = "FirstButton";
@@ -429,7 +430,6 @@
             this.PreviousButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PreviousButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.PreviousButton.HoverText = "Previous Record";
-            this.PreviousButton.Image = global::BudgetExecution.Properties.Resources.PreviousButton;
             this.PreviousButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PreviousButton.Margin = new System.Windows.Forms.Padding(1);
             this.PreviousButton.Name = "PreviousButton";
@@ -458,7 +458,6 @@
             this.NextButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NextButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.NextButton.HoverText = "Next Record";
-            this.NextButton.Image = global::BudgetExecution.Properties.Resources.NextButton;
             this.NextButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NextButton.Margin = new System.Windows.Forms.Padding(1);
             this.NextButton.Name = "NextButton";
@@ -487,7 +486,6 @@
             this.LastButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LastButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.LastButton.HoverText = "Last Record";
-            this.LastButton.Image = global::BudgetExecution.Properties.Resources.LastButton;
             this.LastButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.LastButton.Margin = new System.Windows.Forms.Padding(1);
             this.LastButton.Name = "LastButton";
@@ -516,7 +514,6 @@
             this.EditRecordButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditRecordButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.EditRecordButton.HoverText = "Edit Record";
-            this.EditRecordButton.Image = global::BudgetExecution.Properties.Resources.EditRecord;
             this.EditRecordButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EditRecordButton.Margin = new System.Windows.Forms.Padding(1);
             this.EditRecordButton.Name = "EditRecordButton";
@@ -545,7 +542,6 @@
             this.AddRecordButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddRecordButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.AddRecordButton.HoverText = "Add Record";
-            this.AddRecordButton.Image = global::BudgetExecution.Properties.Resources.AddRecord;
             this.AddRecordButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddRecordButton.Margin = new System.Windows.Forms.Padding(1);
             this.AddRecordButton.Name = "AddRecordButton";
@@ -574,7 +570,6 @@
             this.SaveButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SaveButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.SaveButton.HoverText = "Save Changes";
-            this.SaveButton.Image = global::BudgetExecution.Properties.Resources.SaveButton;
             this.SaveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveButton.Margin = new System.Windows.Forms.Padding(1);
             this.SaveButton.Name = "SaveButton";
@@ -603,7 +598,6 @@
             this.DeleteRecordButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DeleteRecordButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.DeleteRecordButton.HoverText = "Delete Record";
-            this.DeleteRecordButton.Image = global::BudgetExecution.Properties.Resources.DeleteRecord;
             this.DeleteRecordButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DeleteRecordButton.Margin = new System.Windows.Forms.Padding(1);
             this.DeleteRecordButton.Name = "DeleteRecordButton";
@@ -632,7 +626,6 @@
             this.BrowseButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BrowseButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.BrowseButton.HoverText = "Browse File";
-            this.BrowseButton.Image = global::BudgetExecution.Properties.Resources.BrowseButton;
             this.BrowseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BrowseButton.Margin = new System.Windows.Forms.Padding(1);
             this.BrowseButton.Name = "BrowseButton";
@@ -661,7 +654,6 @@
             this.AddTableButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddTableButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.AddTableButton.HoverText = "Add Table";
-            this.AddTableButton.Image = global::BudgetExecution.Properties.Resources.AddTable;
             this.AddTableButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddTableButton.Margin = new System.Windows.Forms.Padding(1);
             this.AddTableButton.Name = "AddTableButton";
@@ -716,7 +708,6 @@
             this.AddColumnButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddColumnButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.AddColumnButton.HoverText = null;
-            this.AddColumnButton.Image = global::BudgetExecution.Properties.Resources.AddColumn;
             this.AddColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddColumnButton.Margin = new System.Windows.Forms.Padding(1);
             this.AddColumnButton.Name = "AddColumnButton";
@@ -745,7 +736,6 @@
             this.ExportButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ExportButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ExportButton.HoverText = "Excel Export";
-            this.ExportButton.Image = global::BudgetExecution.Properties.Resources.ExcelButton;
             this.ExportButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExportButton.Margin = new System.Windows.Forms.Padding(1);
             this.ExportButton.Name = "ExportButton";
@@ -774,7 +764,6 @@
             this.CalendarButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CalendarButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.CalendarButton.HoverText = "Date Selector";
-            this.CalendarButton.Image = global::BudgetExecution.Properties.Resources.CalendarButton;
             this.CalendarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CalendarButton.Margin = new System.Windows.Forms.Padding(1);
             this.CalendarButton.Name = "CalendarButton";
@@ -803,7 +792,6 @@
             this.ChartButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ChartButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.ChartButton.HoverText = "Visualizations";
-            this.ChartButton.Image = global::BudgetExecution.Properties.Resources.Chart;
             this.ChartButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ChartButton.Margin = new System.Windows.Forms.Padding(1);
             this.ChartButton.Name = "ChartButton";
@@ -832,7 +820,6 @@
             this.CalculatorButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CalculatorButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.CalculatorButton.HoverText = "Budget Calculator";
-            this.CalculatorButton.Image = global::BudgetExecution.Properties.Resources.CalculatorButton;
             this.CalculatorButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CalculatorButton.Margin = new System.Windows.Forms.Padding(1);
             this.CalculatorButton.Name = "CalculatorButton";
@@ -890,7 +877,6 @@
             this.HomeButton.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.HomeButton.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.HomeButton.HoverText = "Main Menu";
-            this.HomeButton.Image = global::BudgetExecution.Properties.Resources.HomeButton;
             this.HomeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.HomeButton.Margin = new System.Windows.Forms.Padding(1);
             this.HomeButton.Name = "HomeButton";
@@ -1271,7 +1257,7 @@
         }
 
         #endregion
-        public MetroTip ToolTip;
+        public SmallTip ToolTip;
         public ToolSeparator Separator16;
         public ListBox ColumnListBox;
         public System.Windows.Forms.BindingSource BindingSource;

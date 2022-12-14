@@ -8,11 +8,12 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
+    
     using MetroSet_UI.Controls;
-    using MetroSet_UI.Design;
     using MetroSet_UI.Enums;
     using CheckState = MetroSet_UI.Enums.CheckState;
 
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class RadioButton : MetroSetRadioButton
     {
         /// <summary>
@@ -21,7 +22,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public MetroTip ToolTip { get; set; }
+        public SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the result.
@@ -45,18 +46,21 @@ namespace BudgetExecution
         /// </summary>
         public RadioButton( )
         {
-            BackgroundColor = Color.FromArgb( 30, 30, 30 );
-            ForeColor = Color.FromArgb( 0, 120, 212 );
-            CheckSignColor = Color.LimeGreen;
-            BorderColor = Color.FromArgb( 0, 120, 212 );
+            // Basic Properties
             Style = Style.Custom;
-            Size = new Size( 125, 17 );
             ThemeAuthor = "Terry D. Eppler";
             ThemeName = "Budget Execution";
-            Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            BackgroundColor = Color.FromArgb( 30, 30, 30 );
             Font = new Font( "Roboto", 9, FontStyle.Regular );
+            ForeColor = Color.LightSteelBlue;
+            CheckSignColor = Color.LimeGreen;
+            BorderColor = Color.FromArgb( 0, 120, 212 );
+            Size = new Size( 125, 17 );
+            Anchor = AnchorStyles.Top | AnchorStyles.Left;
             Dock = DockStyle.None;
             CheckState = CheckState.Unchecked;
+
+            // Event Wiring
             CheckedChanged += OnCheckStateChanged;
             MouseEnter += OnMouseHover;
             MouseLeave += OnMouseLeave;
@@ -107,14 +111,14 @@ namespace BudgetExecution
                 if( _control is RadioButton _radioButton
                    && !string.IsNullOrEmpty( HoverText ) )
                 {
-                    var tip = new MetroTip( _radioButton, HoverText );
+                    var tip = new SmallTip( _radioButton, HoverText );
                     ToolTip = tip;
                 }
                 else
                 {
                     if( !string.IsNullOrEmpty( Tag?.ToString( ) ) )
                     {
-                        var _tool = new MetroTip( _control );
+                        var _tool = new SmallTip( _control );
                         ToolTip = _tool;
                     }
                 }

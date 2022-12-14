@@ -1,5 +1,7 @@
 ﻿namespace BudgetExecution
 {
+    
+
     partial class MainForm
     {
         /// <summary>
@@ -31,7 +33,6 @@
             this.components = new System.ComponentModel.Container();
             Syncfusion.Windows.Forms.CaptionImage captionImage1 = new Syncfusion.Windows.Forms.CaptionImage();
             this.Darkmode = new MetroSet_UI.Components.StyleManager();
-            this.ToolTip = new BudgetExecution.MetroTip();
             this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -43,26 +44,6 @@
             this.Darkmode.Style = MetroSet_UI.Enums.Style.Custom;
             this.Darkmode.ThemeAuthor = "Terry D. Eppler";
             this.Darkmode.ThemeName = "BudgetExecution";
-            // 
-            // ToolTip
-            // 
-            this.ToolTip.AutoPopDelay = 5000;
-            this.ToolTip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
-            this.ToolTip.BindingSource = null;
-            this.ToolTip.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.ToolTip.ForeColor = System.Drawing.Color.White;
-            this.ToolTip.InitialDelay = 500;
-            this.ToolTip.IsDerivedStyle = true;
-            this.ToolTip.Name = null;
-            this.ToolTip.OwnerDraw = true;
-            this.ToolTip.ReshowDelay = 100;
-            this.ToolTip.Style = MetroSet_UI.Enums.Style.Custom;
-            this.ToolTip.StyleManager = null;
-            this.ToolTip.ThemeAuthor = "Terry D. Eppler";
-            this.ToolTip.ThemeName = "Budget Execution";
-            this.ToolTip.TipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.ToolTip.TipText = null;
-            this.ToolTip.TipTitle = null;
             // 
             // MainForm
             // 
@@ -83,7 +64,7 @@
             this.CaptionImages.Add(captionImage1);
             this.ClientSize = new System.Drawing.Size(1388, 713);
             this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ForeColor = System.Drawing.Color.LightSteelBlue;
+            this.ForeColor = System.Drawing.Color.LightGray;
             this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Name = "MainForm";
             this.ShowIcon = false;
@@ -97,7 +78,7 @@
 
         public Selector Selector;
         public MetroSet_UI.Components.StyleManager Darkmode;
-        public MetroTip ToolTip;
+        public SmallTip ToolTip;
         public System.Windows.Forms.BindingSource BindingSource;
     }
 }

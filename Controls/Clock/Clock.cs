@@ -8,6 +8,7 @@ namespace BudgetExecution
     using System.Collections.Generic;
     using System.Drawing;
     using System.Windows.Forms;
+    
     using Syncfusion.Windows.Forms.Tools;
 
     public class Clock : ClockBase
@@ -26,7 +27,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public override MetroTip ToolTip { get; set; }
+        public override SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -51,8 +52,8 @@ namespace BudgetExecution
         public Clock( )
         {
             // Basic Properties
-            BackColor = Color.FromArgb( 15, 15, 15 );
-            BorderColor = BackColor;
+            BackColor = Color.FromArgb( 20, 20, 20 );
+            BorderColor = Color.Transparent;
             ForeColor = Color.FromArgb( 141, 139, 138 );
             Font = new Font( "Roboto", 9 );
             Margin = new Padding( 3 );
@@ -88,7 +89,7 @@ namespace BudgetExecution
             : this( )
         {
             Size = new Size( size.Width, size.Height );
-            Location = Settings.ReLocate( location.X, location.Y );
+            Location = location;
         }
 
         /// <summary>

@@ -13,28 +13,22 @@
     <Compile Update="Controls\Button\Button.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\CalculationForm.cs">
+    <Compile Update="Controls\Calculator\CalculationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\Calculator\CalculatorBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\CalendarForm.cs">
+    <Compile Update="Controls\Calendar\CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\CarouselForm.cs">
+    <Compile Update="Controls\Carousel\CarouselForm.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Controls\Carousel\CarouselBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\Carousel\Rotator.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\Carousel\Selector.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\ChartForm.cs">
+    <Compile Update="Controls\Chart\ChartForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\Chart\Chart.cs">
@@ -85,10 +79,10 @@
     <Compile Update="Controls\Editor\EditBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\Error.cs">
+    <Compile Update="Controls\Dialogs\Error.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\ExcelForm.cs">
+    <Compile Update="Controls\Excel\ExcelForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\Excel\GridBase.cs">
@@ -103,7 +97,7 @@
     <Compile Update="Controls\Dialogs\FileBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\Form\FormBase.cs">
+    <Compile Update="Controls\Forms\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\ImageList\ImageList.cs">
@@ -139,10 +133,7 @@
     <Compile Update="Controls\Dialogs\Message.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\MetroTip\MetroTip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\MetroTip\MetroTipBase.cs">
+    <Compile Update="Controls\ToolTips\SmallTip.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\Dialogs\Notification.cs">
@@ -169,16 +160,10 @@
     <Compile Update="Controls\RichTextBox\RichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\SplashControl\SplashBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Controls\SplashControl\SplashControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\SyncTip\SyncTip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\SyncTip\SyncTipBase.cs">
+    <Compile Update="Controls\ToolTips\BigTip.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Controls\TextBox\TextBox.cs">
@@ -240,7 +225,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="Controls\Error.resx">
+    <EmbeddedResource Update="Controls\Dialogs\Error.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

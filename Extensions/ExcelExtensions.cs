@@ -12,7 +12,7 @@ namespace BudgetExecution
     using System.Linq;
     using OfficeOpenXml;
     using OfficeOpenXml.Style;
-    using VisualPlus.Extensibility;
+    using Syncfusion.Linq;
 
     /// <summary>
     /// 
@@ -32,7 +32,7 @@ namespace BudgetExecution
             ColumnLeft
         }
 
-        /// <summary>Converts to dataset.</summary>
+        /// <summary>Converts to data set.</summary>
         /// <param name="excelPackage">The excelPackage.</param>
         /// <param name="header">if set to <c>true</c> [header].</param>
         /// <returns></returns>
@@ -78,7 +78,6 @@ namespace BudgetExecution
                         : $"Column {_cell?.Start?.Column}" );
 
                 _table.Columns.AddRange( _columns?.ToArray( ) );
-
                 var i = header > 0
                     ? _start + 1
                     : _start;
@@ -144,7 +143,6 @@ namespace BudgetExecution
                     / 12.0, 2 );
 
             var _second = width - _first;
-
             var _third = width >= 1.0
                 ? Math.Round( 7.0 * _second - 0.0, 0 ) / 7.0
                 : Math.Round( 12.0 * _second - 0.0, 0 ) / 12.0 + 0.0;
@@ -170,7 +168,6 @@ namespace BudgetExecution
         {
             var _column = index;
             _column[ 3 ] += offset;
-
             return _column;
         }
 
@@ -182,7 +179,6 @@ namespace BudgetExecution
         {
             var row = index;
             row[ 2 ] += offset;
-
             return row;
         }
 
@@ -195,7 +191,6 @@ namespace BudgetExecution
             var _column = index;
             _column[ 1 ] += offset;
             _column[ 3 ] += offset;
-
             return _column;
         }
 
@@ -208,26 +203,25 @@ namespace BudgetExecution
             var _row = index;
             _row[ 0 ] += offset;
             _row[ 2 ] += offset;
-
             return _row;
         }
 
-        /// <summary>Alls the border.</summary>
+        /// <summary> All the borders.</summary>
         /// <param name="range">The range.</param>
-        /// <param name="borderstyle">The borderstyle.</param>
-        public static void AllBorder( this ExcelRange range, ExcelBorderStyle borderstyle )
+        /// <param name = "borderStyle" > </param>
+        public static void AllBorder( this ExcelRange range, ExcelBorderStyle borderStyle )
         {
-            range.ForEach( r => r.Style.Border.BorderAround( borderstyle ) );
+            range.ForEach( r => r.Style.Border.BorderAround( borderStyle ) );
         }
 
         /// <summary>Backgrounds the color.</summary>
         /// <param name="range">The range.</param>
         /// <param name="color">The color.</param>
-        /// <param name="fillstyle">The fillstyle.</param>
+        /// <param name = "fillStyle" > </param>
         public static void BackgroundColor( this ExcelRange range, Color color,
-            ExcelFillStyle fillstyle = ExcelFillStyle.Solid )
+            ExcelFillStyle fillStyle = ExcelFillStyle.Solid )
         {
-            range.Style.Fill.PatternType = fillstyle;
+            range.Style.Fill.PatternType = fillStyle;
             range.Style.Fill.BackgroundColor.SetColor( color );
         }
 

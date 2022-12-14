@@ -6,12 +6,8 @@ namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
-    using System.Linq;
     using System.Windows.Forms;
-    using VisualPlus.Enumerators;
-    using VisualPlus.Toolkit.Controls.Interactivity;
 
     public class ListView : ListViewBase, IListView
     {
@@ -23,7 +19,6 @@ namespace BudgetExecution
         {
             // Basic Properties
             Size = new Size( 250, 150 );
-            Location = new Point( 1, 1 );
             Font = new Font( "Roboto", 9 );
             Margin = new Padding( 3 );
             Padding = new Padding( 1 );
@@ -34,7 +29,7 @@ namespace BudgetExecution
 
             // BackColor SeriesConfiguration
             BackColor = Color.FromArgb( 20, 20, 20 );
-            ForeColor = Color.LightSteelBlue;
+            ForeColor = Color.LightGray;
 
             // Border SeriesConfiguration
             CanOverrideStyle = true;
@@ -64,7 +59,7 @@ namespace BudgetExecution
         /// class.
         /// </summary>
         /// <param name="label">The label.</param>
-        public ListView( VisualLabel label )
+        public ListView( Label label )
             : this( label.Size, label.Location )
         {
         }
@@ -130,7 +125,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public override MetroTip ToolTip { get; set; }
+        public override SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -158,7 +153,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _ = new MetroTip( this, text );
+                    var _ = new SmallTip( this, text );
                 }
                 catch( Exception ex )
                 {

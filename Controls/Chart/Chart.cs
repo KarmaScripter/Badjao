@@ -11,6 +11,7 @@ namespace BudgetExecution
     using System.Drawing;
     using System.Linq;
     using System.Windows.Forms;
+    
     using Syncfusion.Drawing;
     using Syncfusion.Windows.Forms.Chart;
 
@@ -43,7 +44,7 @@ namespace BudgetExecution
             AllowUserEditStyles = true;
             PrintColorMode = ChartPrintColorMode.CheckPrinter;
             BackInterior = new BrushInfo( Color.FromArgb( 15, 15, 15 ) );
-            BackColor = Color.FromArgb( 15, 15, 15 );
+            BackColor = Color.FromArgb( 20, 20, 20 );
 
             ChartInterior = new BrushInfo( GradientStyle.PathRectangle, Color.LightSteelBlue,
                 Color.FromArgb( 15, 15, 15 ) );
@@ -240,7 +241,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public MetroTip ToolTip { get; set; }
+        public SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.

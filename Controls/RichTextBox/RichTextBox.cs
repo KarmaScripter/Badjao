@@ -8,6 +8,7 @@ namespace BudgetExecution
     using System.Collections.Generic;
     using System.Drawing;
     using System.Windows.Forms;
+    
     using MetroSet_UI.Controls;
     using MetroSet_UI.Enums;
 
@@ -27,7 +28,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -55,22 +56,20 @@ namespace BudgetExecution
             ThemeAuthor = "Terry D. Eppler";
             ThemeName = "BudgetExecution";
             Size = new Size( 140, 30 );
-            Location = new Point( 1, 1 );
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
             Dock = DockStyle.None;
             Margin = new Padding( 3 );
             Padding = new Padding( 1 );
             Font = new Font( "Roboto", 9 );
-            ForeColor = Color.LightGray;
+            ForeColor = Color.White;
             BackColor = Color.FromArgb( 40, 40, 40 );
             Enabled = true;
             Visible = true;
 
             // BackColor SeriesConfiguration
-            BackColor = Color.Transparent;
 
             // Border SeriesConfiguration
-            BorderColor = Color.FromArgb( 0, 120, 212 );
+            BorderColor = Color.FromArgb( 65, 65, 65 );
         }
 
         /// <summary>

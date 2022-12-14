@@ -1,6 +1,6 @@
-﻿// // <copyright file = "IGroupBox.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿// <copyright file = "IGroupBox.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
@@ -9,7 +9,6 @@ namespace BudgetExecution
     using System.Data;
     using System.Drawing;
     using System.Windows.Forms;
-    using VisualPlus.Toolkit.Controls.Layout;
 
     public interface IGroupBox
     {
@@ -48,14 +47,7 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="text">The text.</param>
         void SetHeaderText( string text );
-
-        /// <summary>
-        /// Sets the box style.
-        /// </summary>
-        /// <param name="style">The style.</param>
-        void SetBoxStyle(
-            VisualGroupBox.GroupBoxStyle style = VisualGroupBox.GroupBoxStyle.Default );
-
+        
         /// <summary>
         /// Adds the control item.
         /// </summary>

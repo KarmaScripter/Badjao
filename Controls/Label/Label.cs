@@ -9,9 +9,9 @@ namespace BudgetExecution
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Windows.Forms;
+    
     using MetroSet_UI.Controls;
     using MetroSet_UI.Enums;
-    using VisualPlus.Toolkit.Controls.Interactivity;
 
     /// <summary>
     /// Defines the
@@ -34,7 +34,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -64,7 +64,6 @@ namespace BudgetExecution
             ThemeAuthor = "Terry D. Eppler";
             ThemeName = "BudgetExecution";
             Size = new Size( 165, 23 );
-            Location = new Point( 1, 1 );
             BackColor = Color.Transparent;
             ForeColor = Color.LightGray;
             Font = new Font( "Roboto", 9 );
@@ -210,14 +209,14 @@ namespace BudgetExecution
                     if( !string.IsNullOrEmpty( HoverText ) )
                     {
                         var _hoverText = _budgetLabel?.HoverText;
-                        var _ = new MetroTip( _budgetLabel, _hoverText );
+                        var _ = new SmallTip( _budgetLabel, _hoverText );
                     }
                     else
                     {
                         if( !string.IsNullOrEmpty( Tag?.ToString( ) ) )
                         {
                             var _text = Tag?.ToString( )?.SplitPascal( );
-                            var _ = new MetroTip( _budgetLabel, _text );
+                            var _ = new SmallTip( _budgetLabel, _text );
                         }
                     }
                 }
@@ -238,11 +237,9 @@ namespace BudgetExecution
         /// </param>
         public virtual void OnMouseLeave( object sender, EventArgs e )
         {
-            var _budgetLabel = sender as Label;
-
             try
             {
-                if( _budgetLabel != null )
+                if( sender is Label _budgetLabel )
                 {
                 }
             }

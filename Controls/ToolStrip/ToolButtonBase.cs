@@ -8,6 +8,7 @@ namespace BudgetExecution
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Windows.Forms;
+    
 
     /// <summary>
     /// 
@@ -24,7 +25,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the binding source.

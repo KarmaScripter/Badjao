@@ -11,6 +11,7 @@ namespace BudgetExecution
     using System.ComponentModel;
     using System.Diagnostics.CodeAnalysis;
     using System.Windows.Forms;
+    
 
     public abstract class GridBase : DataGridView
     {
@@ -28,7 +29,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the binding source.

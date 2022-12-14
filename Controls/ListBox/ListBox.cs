@@ -12,8 +12,8 @@ namespace BudgetExecution
     using System.Windows.Forms;
     using MetroSet_UI.Controls;
     using MetroSet_UI.Enums;
-    using VisualPlus.Enumerators;
 
+    [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class ListBox : MetroSetListBox
     {
         /// <summary>
@@ -30,7 +30,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -55,8 +55,10 @@ namespace BudgetExecution
         public ListBox( )
         {
             // Basic Properties
+            Style = Style.Custom;
+            ThemeAuthor = "Terry D. Eppler";
+            ThemeName = "BudgetExecution";
             Size = new Size( 200, 100 );
-            Location = new Point( 1, 1 );
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
             Dock = DockStyle.None;
             Margin = new Padding( 3 );
@@ -65,17 +67,15 @@ namespace BudgetExecution
             ForeColor = Color.LightGray;
             Enabled = true;
             Visible = true;
-            Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
             // BackColor SeriesConfiguration
             Style = Style.Custom;
             BackColor = Color.FromArgb( 40, 40, 40 );
             ShowBorder = false;
             BorderColor = Color.FromArgb( 65, 65, 65 );
-            ThemeAuthor = "Terry D. Eppler";
-            ThemeName = "BudgetExecution";
 
             // Item Configuration
+            ItemHeight = 22;
             HoveredItemColor = Color.LightSteelBlue;
             HoveredItemBackColor = Color.FromArgb( 50, 93, 129 );
             SelectedItemColor = Color.White;
@@ -250,7 +250,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _ = new MetroTip( this, text );
+                    var _ = new SmallTip( this, text );
                 }
                 catch( Exception ex )
                 {
@@ -282,7 +282,7 @@ namespace BudgetExecution
         /// Get Error Dialog.
         /// </summary>
         /// <param name="ex">The ex.</param>
-        protected static void Fail( Exception ex )
+        private protected static void Fail( Exception ex )
         {
             using var _error = new Error( ex );
             _error?.SetText( );

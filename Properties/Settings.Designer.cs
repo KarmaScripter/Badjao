@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BudgetExecution.Properties {
+namespace BudgetExecution {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

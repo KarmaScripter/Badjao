@@ -8,6 +8,7 @@ namespace BudgetExecution
     using System.Collections.Generic;
     using System.Drawing;
     using System.Windows.Forms;
+    
     using MetroSet_UI.Controls;
     using MetroSet_UI.Enums;
 
@@ -31,7 +32,7 @@ namespace BudgetExecution
         /// <value>
         /// The tool tip.
         /// </value>
-        public virtual MetroTip ToolTip { get; set; }
+        public virtual SmallTip ToolTip { get; set; }
 
         /// <summary>
         /// Gets or sets the hover text.
@@ -61,14 +62,14 @@ namespace BudgetExecution
             BackColor = Color.FromArgb( 40, 40, 40 );
             ForeColor = Color.LightGray;
             BorderColor = Color.FromArgb( 0, 120, 212 );
+            Font = new Font( "Roboto", 9 );
+            HoverColor = Color.FromArgb( 50, 93, 129 );
+            TextAlign = HorizontalAlignment.Left;
 
             // Disabled Color Configuration
             DisabledBackColor = Color.Transparent;
             DisabledBorderColor = Color.Transparent;
             DisabledForeColor = Color.Transparent;
-            Font = new Font( "Roboto", 9 );
-            HoverColor = Color.FromArgb( 50, 93, 129 );
-            TextAlign = HorizontalAlignment.Left;
         }
         
         /// <summary>

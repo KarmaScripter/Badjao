@@ -1,6 +1,7 @@
 ﻿namespace BudgetExecution
 {
     using System.Windows.Forms;
+    
     using Syncfusion.Windows.Forms.Tools;
 
     partial class PivotForm
@@ -37,7 +38,7 @@
             this.ListPanel = new BudgetExecution.Layout();
             this.ListBox = new BudgetExecution.ListBox();
             this.BindingSource = new BindingSource( );
-            this.ToolTip = new BudgetExecution.MetroTip();
+            this.ToolTip = new BudgetExecution.SmallTip();
             this.PivotPanel = new BudgetExecution.Layout();
             this.ToolStrip = new BudgetExecution.ToolStrip();
             this.AddButton = new BudgetExecution.ToolStripButton();
@@ -583,7 +584,7 @@
         public Layout PivotPanel;
         public BindingSource BindingSource;
         public System.Data.DataSet DataSet;
-        public MetroTip ToolTip;
+        public SmallTip ToolTip;
         public Layout ListPanel;
         public ListBox ListBox;
     }
