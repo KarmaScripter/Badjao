@@ -147,7 +147,7 @@
             this.spreadsheet1.SelectedTabIndex = 0;
             this.spreadsheet1.SelectedTabItem = null;
             this.spreadsheet1.ShowBusyIndicator = true;
-            this.spreadsheet1.Size = new System.Drawing.Size(1388, 558);
+            this.spreadsheet1.Size = new System.Drawing.Size(1388, 508);
             this.spreadsheet1.TabIndex = 1;
             this.spreadsheet1.TabItemContextMenu = null;
             this.spreadsheet1.Text = "Spreadsheet";
@@ -233,7 +233,7 @@
             this.ToolStrip.Label = null;
             this.ToolStrip.LastButton = null;
             this.ToolStrip.LauncherStyle = Syncfusion.Windows.Forms.Tools.LauncherStyle.Office12;
-            this.ToolStrip.Location = new System.Drawing.Point(0, 713);
+            this.ToolStrip.Location = new System.Drawing.Point(0, 663);
             this.ToolStrip.Margin = new System.Windows.Forms.Padding(1);
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.NextButton = null;
@@ -282,7 +282,7 @@
             this.TextBox.Margin = new System.Windows.Forms.Padding(5);
             this.TextBox.Name = "TextBox";
             this.TextBox.Padding = new System.Windows.Forms.Padding(1);
-            this.TextBox.Size = new System.Drawing.Size(148, 24);
+            this.TextBox.Size = new System.Drawing.Size(146, 24);
             this.TextBox.Tag = "";
             this.TextBox.ToolTip = this.ToolTip;
             // 
@@ -294,9 +294,11 @@
             this.ToolTip.BorderColor = System.Drawing.SystemColors.Highlight;
             this.ToolTip.ForeColor = System.Drawing.Color.White;
             this.ToolTip.InitialDelay = 500;
+            this.ToolTip.IsDerivedStyle = true;
             this.ToolTip.Name = null;
             this.ToolTip.OwnerDraw = true;
             this.ToolTip.ReshowDelay = 100;
+            this.ToolTip.Style = MetroSet_UI.Enums.Style.Custom;
             this.ToolTip.StyleManager = null;
             this.ToolTip.ThemeAuthor = "Terry D. Eppler";
             this.ToolTip.ThemeName = "Budget Execution";
@@ -353,7 +355,7 @@
             this.DropDown.Name = "DropDown";
             this.DropDown.Numeric = BudgetExecution.Numeric.NS;
             this.DropDown.Padding = new System.Windows.Forms.Padding(1);
-            this.DropDown.Size = new System.Drawing.Size(200, 24);
+            this.DropDown.Size = new System.Drawing.Size(198, 24);
             this.DropDown.Style = Syncfusion.Windows.Forms.Tools.ToolStripExStyle.Office2016Black;
             this.DropDown.Tag = "Make Selection";
             this.DropDown.ToolTip = this.ToolTip;
@@ -767,7 +769,7 @@
             captionImage1.Name = "CaptionImage";
             captionImage1.Size = new System.Drawing.Size(22, 22);
             this.CaptionImages.Add(captionImage1);
-            this.ClientSize = new System.Drawing.Size(1388, 763);
+            this.ClientSize = new System.Drawing.Size(1388, 713);
             this.Controls.Add(this.spreadsheet1);
             this.Controls.Add(this.ToolStrip);
             this.Controls.Add(this.Ribbon);
