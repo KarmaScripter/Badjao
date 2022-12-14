@@ -55,7 +55,7 @@
     <Compile Update="Controls\CurrencyBox\CurrencyBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\DataGridForm.cs">
+    <Compile Update="Controls\DataGrid\DataGridForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\DataGrid\DataGrid.cs">
@@ -97,7 +97,7 @@
     <Compile Update="Controls\Dialogs\FileBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\Forms\FormBase.cs">
+    <Compile Update="Controls\Main\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\ImageList\ImageList.cs">
@@ -127,7 +127,7 @@
     <Compile Update="Controls\Dialogs\LookupDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\MainForm.cs">
+    <Compile Update="Controls\Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\Dialogs\Message.cs">
@@ -139,13 +139,13 @@
     <Compile Update="Controls\Dialogs\Notification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controls\PdfForm.cs">
+    <Compile Update="Controls\PDF\PdfForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\PictureBox\Picture.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\PivotForm.cs">
+    <Compile Update="Controls\PivotGrid\PivotForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Controls\PivotGrid\PivotGrid.cs">

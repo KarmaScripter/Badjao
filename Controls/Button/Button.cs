@@ -17,7 +17,6 @@ namespace BudgetExecution
     /// </summary>
     /// <seealso cref="ButtonBase" />
     /// <seealso cref="IButton" />
-    /// <seealso cref="VisualPlus.Toolkit.Controls.Interactivity.VisualButton" />
     /// <seealso cref="IDisposable" />
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     public class Button : MetroSetButton, IButton
@@ -66,7 +65,7 @@ namespace BudgetExecution
             ThemeAuthor = "Terry D. Eppler";
             ThemeName = "BudgetExecution";
             Font = new Font( "Roboto", 9 );
-            ForeColor = Color.LightSteelBlue;
+            ForeColor = Color.FromArgb( 0, 120, 212 );
             Margin = new Padding( 3 );
             Padding = new Padding( 1 );
             Size = new Size( 140, 40 );

@@ -69,10 +69,13 @@ namespace BudgetExecution
             Visible = true;
 
             // BackColor SeriesConfiguration
-            Style = Style.Custom;
             BackColor = Color.FromArgb( 40, 40, 40 );
             ShowBorder = false;
-            BorderColor = Color.FromArgb( 65, 65, 65 );
+            BorderColor = Color.FromArgb( 50, 50, 50 );
+
+            // Disabled Color Configuration
+            DisabledBackColor = Color.FromArgb( 20, 20, 20 ); 
+            DisabledForeColor = Color.FromArgb( 20, 20, 20 );
 
             // Item Configuration
             ItemHeight = 22;

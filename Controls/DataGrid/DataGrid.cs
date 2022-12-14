@@ -12,7 +12,6 @@ namespace BudgetExecution
     using System.Linq;
     using System.Windows.Forms;
     
-
     /// <summary>
     /// 
     /// </summary>
@@ -66,10 +65,10 @@ namespace BudgetExecution
             Padding = new Padding( 1 );
             Size = new Size( 906, 527 );
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
-            BackColor = Color.FromArgb( 55, 55, 55 );
+            BackColor = Color.FromArgb( 40, 40, 40 );
             BorderStyle = BorderStyle.None;
             CellBorderStyle = DataGridViewCellBorderStyle.None;
-            BackgroundColor = Color.FromArgb( 55, 55, 55 );
+            BackgroundColor = Color.FromArgb( 40, 40, 40 );
             GridColor = Color.FromArgb( 141, 139, 138 );
             SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
@@ -80,7 +79,7 @@ namespace BudgetExecution
             // Default Cell Style
             DefaultCellStyle.BackColor = Color.FromArgb( 40, 40, 40 );
             DefaultCellStyle.ForeColor = Color.LightSteelBlue;
-            DefaultCellStyle.SelectionBackColor = Color.FromArgb( 22, 39, 70 );
+            DefaultCellStyle.SelectionBackColor = Color.FromArgb( 50, 93, 129 );
             DefaultCellStyle.SelectionForeColor = Color.White;
             DefaultCellStyle.Font = new Font( "Roboto", 8, FontStyle.Regular );
 
@@ -91,7 +90,7 @@ namespace BudgetExecution
             ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue;
             ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb( 22, 39, 70 );
+            ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb( 50, 93, 129 );
             ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
             ColumnHeadersDefaultCellStyle.Font = new Font( "Roboto", 9, FontStyle.Regular );
 
@@ -108,13 +107,13 @@ namespace BudgetExecution
             RowsDefaultCellStyle.BackColor = Color.FromArgb( 45, 45, 45 );
             RowsDefaultCellStyle.Font = new Font( "Roboto", 8 );
             RowsDefaultCellStyle.ForeColor = Color.LightSteelBlue;
-            RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb( 22, 39, 70 );
+            RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb( 50, 93, 129 );
             RowsDefaultCellStyle.SelectionForeColor = Color.White;
             RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb( 55, 55, 55 );
             AlternatingRowsDefaultCellStyle.ForeColor = Color.LightSteelBlue;
             AlternatingRowsDefaultCellStyle.Font = new Font( "Roboto", 8 );
-            AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb( 22, 39, 70 );
+            AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb( 50, 93, 129 );
             AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.White;
 
             // Epilog
