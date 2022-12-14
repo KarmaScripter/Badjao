@@ -264,6 +264,9 @@ namespace BudgetExecution
             }
         }
 
+        /// <summary>
+        /// Adds the ComboBox.
+        /// </summary>
         public virtual void AddComboBox( )
         {
             try
@@ -277,24 +280,34 @@ namespace BudgetExecution
             }
         }
 
+        /// <summary>
+        /// Adds the drop down item.
+        /// </summary>
+        /// <param name="item">The item.</param>
         public virtual void AddDropDownItem( object item )
         {
-            try
+            if( item != null )
             {
-                DropDown?.ComboBox?.Items.Add( item );
-            }
-            catch( Exception ex )
-            {
-                Fail( ex );
+                try
+                {
+                    DropDown?.ComboBox?.Items.Add( item );
+                }
+                catch( Exception ex )
+                {
+                    Fail( ex );
+                }
             }
         }
 
+        /// <summary>
+        /// Resets the drop down list.
+        /// </summary>
+        /// <param name="items">The items.</param>
         public virtual void ResetDropDownList( IEnumerable<object> items )
         {
             try
             {
                 DropDown?.ComboBox.Items?.Clear( );
-
                 if( items?.Count( ) > 0 )
                 {
                     foreach( var item in items )

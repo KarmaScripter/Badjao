@@ -23,6 +23,7 @@ namespace BudgetExecution
 
             // Basic Properties
             Size = new Size( 1400, 750 );
+            MaximumSize = new Size( 1400, 800 );
             BackColor = Color.FromArgb( 20, 20, 20 );
             ForeColor = Color.LightGray;
             Font = new Font( "Roboto", 9 );
@@ -31,12 +32,16 @@ namespace BudgetExecution
             Dock = DockStyle.None;
             Anchor = AnchorStyles.Top | AnchorStyles.Left;
             ShowIcon = false;
+            ShowInTaskbar = true;
+            ShowMouseOver = true;
             MetroColor = Color.FromArgb( 20, 20, 20 );
             CaptionFont = new Font( "Roboto", 11 );
             CaptionBarColor = Color.FromArgb( 20, 20, 20 );
-            CaptionForeColor = Color.FromArgb( 0, 120, 212 );
+            CaptionForeColor = Color.LightSteelBlue;
             CaptionButtonColor = Color.FromArgb( 65, 65, 65 );
             CaptionButtonHoverColor = Color.Red;
+            MinimizeBox = false;
+            MaximizeBox = false;
         }
     }
 }

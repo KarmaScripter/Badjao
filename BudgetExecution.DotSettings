@@ -28,7 +28,7 @@
 	<s:Boolean x:Key="/Default/CodeEditing/StackTraceExplorer/WrapLines/@EntryValue">True</s:Boolean>
 	<s:String x:Key="/Default/CodeInspection/Highlighting/AnalysisEnabled/@EntryValue">SOLUTION</s:String>
 	<s:Boolean x:Key="/Default/CodeInspection/Highlighting/DoNotShowVsBulb/@EntryValue">False</s:Boolean>
-	<s:Boolean x:Key="/Default/CodeInspection/Highlighting/ForceVsLightbulbSession/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/Highlighting/ForceVsLightbulbSession/@EntryValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/Highlighting/IdentifierHighlightingEnabled/@EntryValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/Highlighting/IncludeWarningsInSwea/@EntryValue">True</s:Boolean>
 	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=ArgumentsStyleAnonymousFunction/@EntryIndexedValue">WARNING</s:String>
@@ -888,7 +888,7 @@
 	<s:Boolean x:Key="/Default/Environment/TreeGridPresentableViewSearchBox/WasNoticeShown/@EntryValue">True</s:Boolean>
 	<s:String x:Key="/Default/Environment/UpdatesManger/LastUpdateCheck/@EntryValue">10/31/2019 14:39:10</s:String>
 	<s:Boolean x:Key="/Default/Environment/UserInterface/OpenReSharperMenuByAltR/@EntryValue">False</s:Boolean>
-	<s:Boolean x:Key="/Default/Environment/UserInterface/OverrideVsRefactorings/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/UserInterface/OverrideVsRefactorings/@EntryValue">True</s:Boolean>
 	
 	
 	

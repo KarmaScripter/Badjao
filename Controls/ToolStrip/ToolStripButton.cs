@@ -21,6 +21,7 @@ namespace BudgetExecution
         /// </summary>
         public ToolStripButton( )
         {
+            // Basic Properties
             Margin = new Padding( 1, 1, 1, 1 );
             Padding = new Padding( 1 );
             DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -28,11 +29,13 @@ namespace BudgetExecution
             ForeColor = Color.LightSteelBlue;
             Font = new Font( "Roboto", 8 );
             AutoToolTip = false;
+            Text = string.Empty;
+            Size = new Size( 25, 22 );
+
+            // Event Wiring
             MouseHover += OnMouseHover;
             MouseLeave += OnMouseLeave;
             Click += OnClick;
-            Text = string.Empty;
-            Size = new Size( 25, 42 );
         }
 
         /// <summary>
@@ -181,45 +184,27 @@ namespace BudgetExecution
                         }
                         case ToolType.AddTableButton:
                         case ToolType.AddDatabaseButton:
+                        case ToolType.EditColumnButton:
+                        case ToolType.DeleteColumnButton:
+                        case ToolType.DeleteTableButton:
+                        case ToolType.DeleteDatabaseButton:
                         case ToolType.AddColumnButton:
                         {
                             var _dialog = new DefinitionDialog( _button.ToolType, BindingSource );
                             _dialog?.ShowDialog( );
                             break;
                         }
-                        case ToolType.EditColumnButton:
-                        {
-                            var _dialog = new DefinitionDialog( _button.ToolType, BindingSource );
-                            _dialog?.ShowDialog( );
-                            break;
-                        }
-                        case ToolType.DeleteColumnButton:
-                        {
-                            var _dialog = new DefinitionDialog( _button.ToolType, BindingSource );
-                            _dialog?.ShowDialog( );
-                            break;
-                        }
-                        case ToolType.DeleteTableButton:
-                        {
-                            var _dialog = new DefinitionDialog( _button.ToolType, BindingSource );
-                            _dialog?.ShowDialog( );
-                            break;
-                        }
-                        case ToolType.DeleteDatabaseButton:
-                        {
-                            using var _dialog = new DefinitionDialog( _button.ToolType, BindingSource );
-                            _dialog?.ShowDialog( );
-                            break;
-                        }
+                        case ToolType.DeleteButton:
+                        case ToolType.EditSqlButton:
+                        case ToolType.EditButton:
+                        case ToolType.EditRecordButton:
+                        case ToolType.UpdateButton:
+                        case ToolType.InsertButton:
+                        case ToolType.CopyButton:
                         case ToolType.DeleteRecordButton:
                         {
                             using var _dialog = new EditDialog( _button.ToolType, BindingSource );
-                            _dialog?.ShowDialog( );
-                            break;
-                        }
-                        case ToolType.DeleteButton:
-                        {
-                            using var _dialog = new EditDialog( _button.ToolType, BindingSource ); 
+                            _dialog.Current = BindingSource.GetCurrentDataRow( );
                             _dialog?.ShowDialog( );
                             break;
                         }
@@ -254,48 +239,6 @@ namespace BudgetExecution
                             _dialog?.ShowDialog( );
                             break;
                         }
-                        case ToolType.EditSqlButton:
-                        {
-                            using var _dialog = new EditDialog( _button.ToolType, BindingSource ); 
-                            _dialog.Current = BindingSource.GetCurrentDataRow( );
-                            _dialog.ShowDialog( );
-                            break;
-                        }
-                        case ToolType.EditButton:
-                        {
-                            using var _dialog = new EditDialog( _button.ToolType, BindingSource ); 
-                            _dialog.Current = BindingSource.GetCurrentDataRow( );
-                            _dialog.ShowDialog( );
-                            break;
-                        }
-                        case ToolType.EditRecordButton:
-                        {
-                            using var _dialog = new EditDialog( _button.ToolType, BindingSource );
-                            _dialog.Current = BindingSource.GetCurrentDataRow( );
-                            _dialog?.ShowDialog( );
-                            break;
-                        }
-                        case ToolType.CopyButton:
-                        {
-                            using var _dialog = new EditDialog( _button.ToolType, BindingSource );
-                            _dialog.Current = BindingSource.GetCurrentDataRow( );
-                            _dialog?.ShowDialog( );
-                            break;
-                        }
-                        case ToolType.UpdateButton:
-                        {
-                            using var _dialog = new EditDialog( _button.ToolType, BindingSource );
-                            _dialog.Current = BindingSource.GetCurrentDataRow( );
-                            _dialog?.ShowDialog( );
-                            break;
-                        }
-                        case ToolType.InsertButton:
-                        {
-                            using var _dialog = new EditDialog( _button.ToolType, BindingSource );
-                            _dialog.Current = BindingSource.GetCurrentDataRow( );
-                            _dialog?.ShowDialog( );
-                            break;
-                        }
                         case ToolType.CalculatorButton:
                         {
                             using var _calculator = new CalculationForm( );
@@ -317,7 +260,7 @@ namespace BudgetExecution
                         case ToolType.HomeButton:
                         {
                             using var _form = new MainForm( );
-                            _form?.ShowDialog( );
+                            _form?.Show( );
                             break;
                         }
                         case ToolType.ChartButton:
@@ -361,15 +304,14 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _path = AppSettings[ "ToolStrip" ] + $"{toolType}.png";
-                    using var _stream = File.Open( _path, FileMode.Open );
-
-                    if( _stream != Stream.Null )
+                    var _path = AppSettings[ "ToolStrip" ] + $"{ toolType }.png";
+                    if( File.Exists( _path ) )
                     {
+                        using var _stream = File.Open( _path, FileMode.Open );
                         var _image = Image.FromStream( _stream );
                         return ( _image != null )
                             ? _image
-                            : default;
+                            : default( Image );
                     }
                 }
                 catch( Exception ex )
@@ -391,7 +333,7 @@ namespace BudgetExecution
             {
                 try
                 {
-                    var _path = AppSettings[ "ToolStrip" ] + $"{ToolType}.png";
+                    var _path = AppSettings[ "ToolStrip" ] + $"{ ToolType }.png";
                     using var _stream = File.Open( _path, FileMode.Open );
 
                     if( _stream != null )

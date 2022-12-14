@@ -201,11 +201,11 @@ namespace BudgetExecution
                 Fail( ex );
             }
         }
-        
+
         /// <summary>
-        /// Adds the control item.
+        /// Adds the items.
         /// </summary>
-        /// <param name = "items" > </param>
+        /// <param name="items">The items.</param>
         public void AddItems( IEnumerable<object> items )
         {
             if( items?.Count( ) > -1 )
